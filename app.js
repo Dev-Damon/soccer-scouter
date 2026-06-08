@@ -11,6 +11,8 @@
   DATA.players.forEach(function (p) { playersById[p.id] = p; });
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
+  var fixturesById = {};
+  (DATA.fixtures || []).forEach(function (f) { if (f.id) fixturesById[f.id] = f; });
 
   var viewEl = document.getElementById("view");
   var searchEl = document.getElementById("search");
@@ -75,6 +77,7 @@
     var parts = h.split("/");
     if (parts[0] === "player") return { name: "player", id: parts[1] };
     if (parts[0] === "team") return { name: "team", id: parts[1] };
+    if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "search") return { name: "search" };
     if (parts[0] === "saved") return { name: "saved" };
     if (parts[0] === "my") return { name: "my" };
@@ -148,7 +151,9 @@
   function heroCard(fx) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
     var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
-    return '<div class="hero" data-team="' + esc(fx.homeId || fx.awayId) + '">' +
+    var heroAttr = (fx.homeId && fx.awayId) ? ' data-match="' + esc(fx.id) + '"'
+      : ' data-team="' + esc(fx.homeId || fx.awayId) + '"';
+    return '<div class="hero"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
       '<div class="hero-tag"><span class="dot"></span>오늘의 빅매치 · ' + esc(groupLabel) + "</div>" +
       '<div class="hero-match">' +
@@ -159,13 +164,15 @@
           '<span class="hero-team">' + esc(fx.awayName) + "</span></div>" +
       "</div>" +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
-      '<div class="hero-cta">전력 분석 보기 →</div>' +
+      '<div class="hero-cta">경기 예상 보기 →</div>' +
       "</div>";
   }
 
   function fixtureCard(fx) {
+    var both = !!(fx.homeId && fx.awayId);
     var clickable = !!(fx.homeId || fx.awayId);
-    var attr = clickable ? ' data-team="' + esc(fx.homeId || fx.awayId) + '"' : "";
+    var attr = both ? ' data-match="' + esc(fx.id) + '"'
+      : (clickable ? ' data-team="' + esc(fx.homeId || fx.awayId) + '"' : "");
     var timeLabel = fx.time ? esc(fx.time) : "시간 미정";
     var groupLabel = fx.group ? esc(fx.group) + "조" : esc(fx.stage || "");
     var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
@@ -476,6 +483,85 @@
     viewEl.innerHTML = html;
   }
 
+  // ===================== 경기 예상 (매치업) =====================
+  function teamPower(t) {
+    var i = t.indices || {};
+    var vals = [i.attack, i.defense, i.organization, i.experience].filter(function (v) { return typeof v === "number"; });
+    if (vals.length) return vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
+    return t.fifaRank ? Math.max(45, 92 - t.fifaRank * 0.4) : 55; // 폴백: FIFA 랭킹
+  }
+  function predict(a, b) {
+    var pa = teamPower(a), pb = teamPower(b), diff = pa - pb;
+    var ea = 1 / (1 + Math.pow(10, -diff / 16)); // a의 상대 우위(0~1)
+    var draw = 0.30 * (1 - Math.min(1, Math.abs(diff) / 35));
+    var winA = ea * (1 - draw), winB = (1 - ea) * (1 - draw);
+    var s = winA + winB + draw; winA /= s; winB /= s; draw /= s;
+    var ga = Math.max(0, Math.round(1.35 + diff / 22));
+    var gb = Math.max(0, Math.round(1.35 - diff / 22));
+    return {
+      winA: Math.round(winA * 100), draw: Math.round(draw * 100), winB: Math.round(winB * 100),
+      ga: ga, gb: gb, pa: Math.round(pa), pb: Math.round(pb),
+    };
+  }
+  function cmpRow(label, va, vb) {
+    va = va || 0; vb = vb || 0;
+    return '<div class="cmp-row"><span class="cmp-v' + (va >= vb ? " hi" : "") + '">' + va + "</span>" +
+      '<span class="cmp-k">' + esc(label) + "</span>" +
+      '<span class="cmp-v' + (vb >= va ? " hi" : "") + '">' + vb + "</span></div>";
+  }
+
+  function renderMatch(id) {
+    var fx = fixturesById[id];
+    if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
+    backBtn.hidden = false; tabsEl.hidden = true;
+    var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
+    var when = fmtDate(fx.date).d + (fx.time ? " " + esc(fx.time) : "");
+    var where = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
+    var top = (fx.group ? esc(fx.group) + "조" : esc(fx.stage || "")) + " · " + when + (where ? " · " + where : "");
+
+    // 한쪽만 정해진 경우(토너먼트 미정 등)
+    if (!a || !b) {
+      var known = a || b;
+      viewEl.innerHTML = '<div class="detail"><div class="match-meta-top">' + top + "</div>" +
+        '<div class="empty">아직 양 팀이 확정되지 않은 경기예요.' +
+        (known ? '<br><br><button class="mbtn" data-team="' + esc(known.id) + '">' + esc(known.flag) + " " + esc(known.name) + ' 전력 보기</button>' : "") +
+        "</div></div>";
+      return;
+    }
+
+    var pr = predict(a, b);
+    var ia = a.indices || {}, ib = b.indices || {};
+    var cmp = cmpRow("공격력", ia.attack, ib.attack) + cmpRow("수비력", ia.defense, ib.defense) +
+      cmpRow("조직력", ia.organization, ib.organization) + cmpRow("경험치", ia.experience, ib.experience) +
+      cmpRow("종합", pr.pa, pr.pb);
+
+    viewEl.innerHTML =
+      '<div class="detail match-view">' +
+        '<div class="match-meta-top">' + top + "</div>" +
+        '<div class="vs-head">' +
+          '<div class="vs-team" data-team="' + esc(a.id) + '"><span class="vs-flag">' + esc(a.flag) + "</span>" +
+            '<span class="vs-name">' + esc(a.name) + '</span><span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span></div>" +
+          '<div class="vs-center"><div class="pred-score">' + pr.ga + '<span>:</span>' + pr.gb + "</div>" +
+            '<div class="pred-label">예상 스코어</div></div>' +
+          '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
+            '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
+        "</div>" +
+        '<div class="block"><h3>승부 예상 <span class="muted-note">자체 지표 기반 · 재미용</span></h3>' +
+          '<div class="prob">' +
+            '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
+            '<div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + "</div>" +
+            '<div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div>" +
+          "</div>" +
+          '<div class="prob-legend"><span>' + esc(a.name) + " 승</span><span>무</span><span>" + esc(b.name) + " 승</span></div>" +
+        "</div>" +
+        '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
+        '<div class="match-cta">' +
+          '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
+          '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
+        "</div>" +
+      "</div>";
+  }
+
   // ===================== 라우터 =====================
   function setTabbar(active) {
     if (!tabbarEl) return;
@@ -489,6 +575,7 @@
     window.scrollTo(0, 0);
     if (r.name === "player") { setTabbar(""); return renderPlayer(r.id); }
     if (r.name === "team") { setTabbar(""); return renderTeam(r.id); }
+    if (r.name === "match") { setTabbar(""); return renderMatch(r.id); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;
       return renderSearch(searchEl.value);
@@ -515,6 +602,8 @@
     if (rc) { searchEl.value = rc.getAttribute("data-q"); renderSearchResults(rc.getAttribute("data-q").toLowerCase()); return; }
     var gb = e.target.closest("[data-grade]");
     if (gb) { renderGradeList(gb.getAttribute("data-grade")); return; }
+    var mt = e.target.closest("[data-match]");
+    if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var pl = e.target.closest("[data-player]");
     if (pl) { go("player/" + pl.getAttribute("data-player")); return; }
     var tm = e.target.closest("[data-team]");
