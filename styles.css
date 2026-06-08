@@ -429,3 +429,7 @@ body { padding-bottom: 64px; } /* 하단 탭바 공간 */
 .manager:hover { border-color: var(--accent); }
 .mgr-main { flex: 1; min-width: 0; }
 .mgr-chev { color: var(--muted); font-size: 22px; flex: none; }
+
+/* 포메이션 선수 점 탭 가능 */
+.pd.tappable { cursor: pointer; }
+.pd.tappable:hover .pd-dot { transform: scale(1.12); box-shadow: 0 0 0 3px rgba(79,140,255,.4); }

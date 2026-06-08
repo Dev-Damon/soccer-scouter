@@ -441,7 +441,8 @@
         var pc = posClass(d.pos);
         var x = Math.max(4, Math.min(96, d.x || 50));
         var y = Math.max(4, Math.min(96, d.y || 50));
-        html += '<div class="pd ' + pc + '" style="left:' + x + "%;top:" + y + '%" title="' + esc(d.name || "") + '">' +
+        var pdAttr = (d.playerId && playersById[d.playerId]) ? ' data-player="' + esc(d.playerId) + '"' : "";
+        html += '<div class="pd ' + pc + (pdAttr ? " tappable" : "") + '"' + pdAttr + ' style="left:' + x + "%;top:" + y + '%" title="' + esc(d.name || "") + '">' +
           '<span class="pd-dot">' + esc(d.number != null ? d.number : "") + "</span>" +
           '<span class="pd-name">' + esc((d.name || "").split(" ").slice(-1)[0]) + "</span></div>";
       });
