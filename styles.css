@@ -433,3 +433,11 @@ body { padding-bottom: 64px; } /* 하단 탭바 공간 */
 /* 포메이션 선수 점 탭 가능 */
 .pd.tappable { cursor: pointer; }
 .pd.tappable:hover .pd-dot { transform: scale(1.12); box-shadow: 0 0 0 3px rgba(79,140,255,.4); }
+
+/* 나라 최신 뉴스 */
+.news-list { display: grid; gap: 8px; }
+.news-item { display: block; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; text-decoration: none; color: var(--text); }
+.news-item:hover { border-color: var(--accent); }
+.news-title { font-weight: 700; font-size: 13.5px; line-height: 1.35; }
+.news-sum { color: var(--muted); font-size: 12.5px; margin-top: 3px; line-height: 1.4; }
+.news-meta { color: var(--accent); font-size: 11px; margin-top: 5px; font-weight: 600; }

@@ -417,6 +417,21 @@
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
 
+    // 최신 뉴스 (있으면)
+    if (t.news && t.news.length) {
+      html += '<div class="block"><h3>최신 뉴스</h3><div class="news-list">';
+      t.news.slice(0, 5).forEach(function (nw) {
+        var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
+        var tag = nw.url ? "a" : "div";
+        html += "<" + tag + ' class="news-item"' + (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
+          '<div class="news-title">' + esc(nw.title) + "</div>" +
+          (nw.summary ? '<div class="news-sum">' + esc(nw.summary) + "</div>" : "") +
+          (meta ? '<div class="news-meta">' + meta + "</div>" : "") +
+          "</" + tag + ">";
+      });
+      html += "</div></div>";
+    }
+
     // 전력 지표 (있으면)
     if (t.indices) {
       html += '<div class="block"><h3>전력 지표 <span class="muted-note">자체 평가</span></h3>' +
