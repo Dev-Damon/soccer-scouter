@@ -69,10 +69,10 @@
   }
   // 포지션 → 색 클래스(GK/DF/MF/FW)
   function posClass(pos) {
-    var p = String(pos || "").toUpperCase();
-    if (p.indexOf("GK") !== -1) return "gk";
-    if (p.indexOf("DF") !== -1 || p.indexOf("CB") !== -1 || p.indexOf("B") === 0) return "df";
-    if (p.indexOf("FW") !== -1 || p.indexOf("ST") !== -1 || p.indexOf("LW") !== -1 || p.indexOf("RW") !== -1) return "fw";
+    var s = String(pos || ""); var p = s.toUpperCase();
+    if (p.indexOf("GK") !== -1 || s.indexOf("골키퍼") !== -1) return "gk";
+    if (/\bDF\b|CB|LB|RB|WB/.test(p) || /센터백|레프트백|라이트백|풀백|윙백|수비수/.test(s) || (s.indexOf("수비") !== -1 && s.indexOf("수비형 미") === -1)) return "df";
+    if (/\bFW\b|ST|CF|LW|RW/.test(p) || /스트라이커|공격수|윙어|포워드/.test(s)) return "fw";
     return "mf";
   }
 
