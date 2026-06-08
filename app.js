@@ -43,6 +43,15 @@
     return '<span class="badge ' + gradeClass(p.grade) + '">' + esc(p.grade) +
       ' <span class="score">' + (p.gradeScore || "") + "</span></span>";
   }
+  // 이름 첫글자 대신 '포지션 배지'(GK/DF/MF/FW 색상) — 의미 있는 시각 요소
+  function shortPos(pos) {
+    var m = /\(([^)]+)\)/.exec(pos || "");
+    if (m) return m[1].split("/")[0].trim().toUpperCase().slice(0, 3);
+    return posClass(pos).toUpperCase();
+  }
+  function posBadge(p, lg) {
+    return '<span class="posb ' + posClass(p.position) + (lg ? " lg" : "") + '">' + esc(shortPos(p.position)) + "</span>";
+  }
   function flagOf(teamId) {
     var t = teamId ? teamsById[teamId] : null;
     return t ? t.flag : "🏳️";
@@ -222,12 +231,10 @@
 
   // ===================== 공통: 선수 행 =====================
   function playerRow(p) {
-    var pc = posClass(p.position);
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
-      '<div class="avatar">' + esc(initials(p.name)) + "</div>" +
-      '<div class="player-main"><div class="player-name">' + esc(p.name) +
-        ' <span class="pos ' + pc + '">' + esc(String(p.position || "").split(" ")[0]) + "</span></div>" +
-      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + "</div></div>" +
+      posBadge(p) +
+      '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
+      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + " · " + esc(p.position) + "</div></div>" +
       badge(p) + "</div>";
   }
 
@@ -372,7 +379,7 @@
     viewEl.innerHTML =
       '<div class="detail">' +
         '<div class="pl-hero">' +
-          '<div class="avatar lg">' + esc(initials(p.name)) + "</div>" +
+          posBadge(p, true) +
           '<div class="pl-meta"><div class="pl-sub">' + esc(p.club) + " · " + esc(p.league) + "</div>" +
             '<div class="pl-name">' + esc(p.name) + "</div>" +
             '<div class="detail-name-en">' + esc(p.nameEn) + "</div>" +
@@ -471,7 +478,7 @@
       coreIds.forEach(function (pid) {
         var p = playersById[pid];
         html += '<div class="corecard" data-player="' + esc(p.id) + '">' +
-          '<div class="avatar">' + esc(initials(p.name)) + "</div>" +
+          posBadge(p) +
           '<div class="cc-name">' + esc(p.name) + "</div>" +
           '<div class="cc-club">' + esc(p.club) + "</div>" +
           '<span class="badge ' + gradeClass(p.grade) + '">' + esc(p.grade) + "</span></div>";
@@ -481,8 +488,7 @@
 
     // 감독 (있으면) — 탭하면 감독 상세 페이지
     if (t.manager && t.manager.name) {
-      html += '<div class="block"><h3>감독</h3><div class="manager" data-manager="' + esc(t.id) + '"><div class="avatar">' +
-        esc(initials(t.manager.name)) + '</div><div class="mgr-main"><div class="mgr-name">' + esc(t.manager.name) +
+      html += '<div class="block"><h3>감독</h3><div class="manager" data-manager="' + esc(t.id) + '"><span class="posb mgr">감독</span><div class="mgr-main"><div class="mgr-name">' + esc(t.manager.name) +
         (t.manager.nationality ? ' <span class="mgr-nat">' + esc(t.manager.nationality) + "</span>" : "") + "</div>" +
         (t.manager.note ? '<div class="mgr-note">' + esc(t.manager.note) + "</div>" : "") + '</div><span class="mgr-chev">›</span></div></div>';
     }
@@ -603,7 +609,7 @@
 
     viewEl.innerHTML =
       '<div class="detail">' +
-        '<div class="pl-hero"><div class="avatar lg">' + esc(initials(m.name)) + "</div>" +
+        '<div class="pl-hero"><span class="posb mgr lg">감독</span>' +
           '<div class="pl-meta"><div class="pl-sub">감독 · ' + esc(t.name) + " 대표팀</div>" +
           '<div class="pl-name">' + esc(m.name) + "</div>" +
           (m.nationality ? '<div class="detail-name-en">' + esc(m.nationality) + "</div>" : "") + "</div></div>" +
