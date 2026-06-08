@@ -562,8 +562,7 @@
         '<div class="vs-head">' +
           '<div class="vs-team" data-team="' + esc(a.id) + '"><span class="vs-flag">' + esc(a.flag) + "</span>" +
             '<span class="vs-name">' + esc(a.name) + '</span><span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span></div>" +
-          '<div class="vs-center"><div class="pred-score">' + pr.ga + '<span>:</span>' + pr.gb + "</div>" +
-            '<div class="pred-label">예상 스코어</div></div>' +
+          '<div class="vs-center"><div class="vs-x">VS</div></div>' +
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +

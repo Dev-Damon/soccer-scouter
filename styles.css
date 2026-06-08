@@ -455,3 +455,6 @@ body { padding-bottom: 64px; } /* 하단 탭바 공간 */
 .posb.fw { background: rgba(255,94,99,.16); color: #ff6a6f; border-color: rgba(255,94,99,.32); }
 .posb.mgr { background: var(--bg-soft); color: var(--muted); border-color: var(--line); font-size: 11px; }
 .posb.mgr.lg { font-size: 13px; }
+
+/* 매치업 중앙 VS (예상 스코어 제거) */
+.vs-x { font-size: 24px; font-weight: 900; color: var(--muted); letter-spacing: 1px; }
