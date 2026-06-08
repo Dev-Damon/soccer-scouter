@@ -423,3 +423,9 @@ body { padding-bottom: 64px; } /* 하단 탭바 공간 */
 .mbtn:hover { border-color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* 감독 카드 클릭 가능 + 상세 */
+.manager { cursor: pointer; }
+.manager:hover { border-color: var(--accent); }
+.mgr-main { flex: 1; min-width: 0; }
+.mgr-chev { color: var(--muted); font-size: 22px; flex: none; }

@@ -26,10 +26,8 @@
   // 날짜 스트립 선택
   var selectedDate = null;
 
-  // 푸터: 합법성 한 줄
-  sampleNote.innerHTML =
-    (DATA.meta && DATA.meta.sample ? "⚠️ <b>샘플 데이터</b> · " : "") +
-    "등급/지수는 공개된 <b>사실</b>(소속·출전·국대·수상)로 만든 자체 지표입니다. 타사 몸값을 복제하지 않습니다.";
+  // 푸터: 비워둠 (불필요한 안내 문구 제거)
+  if (sampleNote) sampleNote.innerHTML = "";
 
   // ---- 유틸 ----
   function esc(s) {
@@ -78,6 +76,7 @@
     if (parts[0] === "player") return { name: "player", id: parts[1] };
     if (parts[0] === "team") return { name: "team", id: parts[1] };
     if (parts[0] === "match") return { name: "match", id: parts[1] };
+    if (parts[0] === "manager") return { name: "manager", id: parts[1] };
     if (parts[0] === "search") return { name: "search" };
     if (parts[0] === "saved") return { name: "saved" };
     if (parts[0] === "my") return { name: "my" };
@@ -464,12 +463,12 @@
       html += "</div></div>";
     }
 
-    // 감독 (있으면)
+    // 감독 (있으면) — 탭하면 감독 상세 페이지
     if (t.manager && t.manager.name) {
-      html += '<div class="block"><h3>감독</h3><div class="manager"><div class="avatar">' +
-        esc(initials(t.manager.name)) + '</div><div><div class="mgr-name">' + esc(t.manager.name) +
+      html += '<div class="block"><h3>감독</h3><div class="manager" data-manager="' + esc(t.id) + '"><div class="avatar">' +
+        esc(initials(t.manager.name)) + '</div><div class="mgr-main"><div class="mgr-name">' + esc(t.manager.name) +
         (t.manager.nationality ? ' <span class="mgr-nat">' + esc(t.manager.nationality) + "</span>" : "") + "</div>" +
-        (t.manager.note ? '<div class="mgr-note">' + esc(t.manager.note) + "</div>" : "") + "</div></div></div>";
+        (t.manager.note ? '<div class="mgr-note">' + esc(t.manager.note) + "</div>" : "") + '</div><span class="mgr-chev">›</span></div></div>';
     }
 
     html += "</div>";
@@ -546,7 +545,7 @@
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
-        '<div class="block"><h3>승부 예상 <span class="muted-note">자체 지표 기반 · 재미용</span></h3>' +
+        '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
             '<div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + "</div>" +
@@ -559,6 +558,45 @@
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
         "</div>" +
+      "</div>";
+  }
+
+  // ===================== 감독 상세 =====================
+  function renderManager(teamId) {
+    var t = teamsById[teamId];
+    var m = t && t.manager;
+    if (!t || !m || !m.name) { viewEl.innerHTML = '<div class="empty">감독 정보를 찾을 수 없어요.</div>'; return; }
+    backBtn.hidden = false; tabsEl.hidden = true;
+
+    var facts = [];
+    if (m.nationality) facts.push(["국적", m.nationality]);
+    if (m.age != null) facts.push(["나이", m.age + "세"]);
+    facts.push(["현 소속", t.flag + " " + t.name + " 대표팀" + (m.currentSince ? " (" + m.currentSince + "~)" : "")]);
+    var factsHtml = facts.map(function (f) {
+      return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
+    }).join("");
+
+    var career = (m.career || []).map(function (c) {
+      return '<div class="tl-item"><span class="tl-year">' + esc(c.period || "") + '</span><span class="tl-dot"></span>' +
+        '<span class="tl-text">' + esc(c.team || "") + (c.note ? ' <span class="muted-note">' + esc(c.note) + "</span>" : "") + "</span></div>";
+    }).join("");
+    var honours = (m.honours || []).map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("");
+    var careerHtml = career
+      ? '<div class="block"><h3>지도자 커리어 <span class="muted-note">맡은 팀</span></h3><div class="tl">' + career + "</div></div>"
+      : '<div class="block"><h3>지도자 커리어</h3><div class="transfer">상세 이력 수집 중입니다.</div></div>';
+
+    viewEl.innerHTML =
+      '<div class="detail">' +
+        '<div class="pl-hero"><div class="avatar lg">' + esc(initials(m.name)) + "</div>" +
+          '<div class="pl-meta"><div class="pl-sub">감독 · ' + esc(t.name) + " 대표팀</div>" +
+          '<div class="pl-name">' + esc(m.name) + "</div>" +
+          (m.nationality ? '<div class="detail-name-en">' + esc(m.nationality) + "</div>" : "") + "</div></div>" +
+        (m.note ? '<div class="quote">' + esc(m.note) + "</div>" : "") +
+        '<div class="facts">' + factsHtml + "</div>" +
+        careerHtml +
+        (honours ? '<div class="block"><h3>주요 우승·수상</h3><ul class="honours">' + honours + "</ul></div>" : "") +
+        (m.playerCareer ? '<div class="block"><h3>선수 시절</h3><div class="transfer">' + esc(m.playerCareer) + "</div></div>" : "") +
+        '<div class="team-link" data-team="' + esc(t.id) + '">' + esc(t.flag) + " " + esc(t.name) + " 전력 보기 →</div>" +
       "</div>";
   }
 
@@ -576,6 +614,7 @@
     if (r.name === "player") { setTabbar(""); return renderPlayer(r.id); }
     if (r.name === "team") { setTabbar(""); return renderTeam(r.id); }
     if (r.name === "match") { setTabbar(""); return renderMatch(r.id); }
+    if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;
       return renderSearch(searchEl.value);
@@ -604,6 +643,8 @@
     if (gb) { renderGradeList(gb.getAttribute("data-grade")); return; }
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
+    var mg = e.target.closest("[data-manager]");
+    if (mg) { go("manager/" + mg.getAttribute("data-manager")); return; }
     var pl = e.target.closest("[data-player]");
     if (pl) { go("player/" + pl.getAttribute("data-player")); return; }
     var tm = e.target.closest("[data-team]");
