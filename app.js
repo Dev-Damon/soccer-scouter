@@ -1,0 +1,576 @@
+// 축구 스카우터 — 앱 로직 (프레임워크 없는 순수 JS)
+// 와이어프레임 구조: 일정(홈) → 나라 상세 → 선수 상세 → 검색 + 하단 탭바.
+// 색상/룩앤필은 기존 다크 테마 유지. 새 데이터 필드(indices/formation/manager/ovr/scout)는 있으면 자동 표시.
+(function () {
+  "use strict";
+
+  var DATA = window.DATA || { teams: [], players: [], groups: [], fixtures: [], meta: {} };
+  DATA.groups = DATA.groups || [];
+  DATA.fixtures = DATA.fixtures || [];
+  var playersById = {};
+  DATA.players.forEach(function (p) { playersById[p.id] = p; });
+  var teamsById = {};
+  DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
+
+  var viewEl = document.getElementById("view");
+  var searchEl = document.getElementById("search");
+  var backBtn = document.getElementById("backBtn");
+  var sampleNote = document.getElementById("sampleNote");
+  var tabsEl = document.getElementById("tabs");
+  var tabbarEl = document.getElementById("tabbar");
+
+  // 홈 탭 상태: 'schedule'(일정) | 'groups'(조별)
+  var homeTab = "schedule";
+  // 날짜 스트립 선택
+  var selectedDate = null;
+
+  // 푸터: 합법성 한 줄
+  sampleNote.innerHTML =
+    (DATA.meta && DATA.meta.sample ? "⚠️ <b>샘플 데이터</b> · " : "") +
+    "등급/지수는 공개된 <b>사실</b>(소속·출전·국대·수상)로 만든 자체 지표입니다. 타사 몸값을 복제하지 않습니다.";
+
+  // ---- 유틸 ----
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function initials(name) {
+    var s = String(name || "").trim();
+    return s ? s.slice(0, 1) : "?";
+  }
+  function gradeClass(g) { return "g-" + esc(g); }
+  function badge(p) {
+    return '<span class="badge ' + gradeClass(p.grade) + '">' + esc(p.grade) +
+      ' <span class="score">' + (p.gradeScore || "") + "</span></span>";
+  }
+  function flagOf(teamId) {
+    var t = teamId ? teamsById[teamId] : null;
+    return t ? t.flag : "🏳️";
+  }
+  var DOW = ["일", "월", "화", "수", "목", "금", "토"];
+  function parseDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+    return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null;
+  }
+  function fmtDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+    if (!m) return { d: esc(iso || "날짜 미정"), dow: "", mo: +m, day: 0 };
+    var dt = new Date(+m[1], +m[2] - 1, +m[3]);
+    return { d: +m[2] + "월 " + +m[3] + "일", dow: DOW[dt.getDay()] || "", mo: +m[2], day: +m[3] };
+  }
+  // 포지션 → 색 클래스(GK/DF/MF/FW)
+  function posClass(pos) {
+    var p = String(pos || "").toUpperCase();
+    if (p.indexOf("GK") !== -1) return "gk";
+    if (p.indexOf("DF") !== -1 || p.indexOf("CB") !== -1 || p.indexOf("B") === 0) return "df";
+    if (p.indexOf("FW") !== -1 || p.indexOf("ST") !== -1 || p.indexOf("LW") !== -1 || p.indexOf("RW") !== -1) return "fw";
+    return "mf";
+  }
+
+  // ---- 라우팅(해시 기반) ----
+  function go(hash) { window.location.hash = hash; }
+  function parseHash() {
+    var h = (window.location.hash || "").replace(/^#/, "");
+    if (!h) return { name: "home" };
+    var parts = h.split("/");
+    if (parts[0] === "player") return { name: "player", id: parts[1] };
+    if (parts[0] === "team") return { name: "team", id: parts[1] };
+    if (parts[0] === "search") return { name: "search" };
+    if (parts[0] === "saved") return { name: "saved" };
+    if (parts[0] === "my") return { name: "my" };
+    return { name: "home" };
+  }
+
+  // ===================== 홈: 일정 / 조별 =====================
+  function renderHome() {
+    backBtn.hidden = true;
+    tabsEl.hidden = false;
+    Array.prototype.forEach.call(tabsEl.querySelectorAll(".tab"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-tab") === homeTab);
+    });
+    if (homeTab === "groups") return renderGroups();
+    return renderSchedule();
+  }
+
+  function fixtureDates() {
+    var set = {};
+    (DATA.fixtures || []).forEach(function (f) { if (f.date) set[f.date] = 1; });
+    return Object.keys(set).sort();
+  }
+
+  function renderSchedule() {
+    var dates = fixtureDates();
+    if (!dates.length) {
+      viewEl.innerHTML = '<div class="empty">경기 일정 데이터를 채우는 중입니다.</div>';
+      return;
+    }
+    if (!selectedDate || dates.indexOf(selectedDate) === -1) selectedDate = dates[0];
+
+    // 날짜 스트립
+    var strip = '<div class="datestrip">';
+    dates.forEach(function (d) {
+      var f = fmtDate(d);
+      strip += '<button class="dchip' + (d === selectedDate ? " on" : "") + '" data-date="' + esc(d) + '">' +
+        '<span class="dchip-dow">' + esc(f.dow) + "</span>" +
+        '<span class="dchip-day">' + f.day + "</span>" +
+        '<span class="dchip-mo">' + f.mo + "월</span></button>";
+    });
+    strip += "</div>";
+
+    var dayFixtures = (DATA.fixtures || []).filter(function (f) { return f.date === selectedDate; })
+      .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
+
+    // 빅매치 히어로: 양 팀 모두 알려진 경기 중 FIFA 합산 랭킹이 가장 높은(숫자 작은) 경기
+    var hero = pickBigMatch(dayFixtures);
+    var heroHtml = hero ? heroCard(hero) : "";
+
+    // 그 날의 경기 리스트
+    var listHtml = '<div class="sec-h">' + fmtDate(selectedDate).d + " " +
+      (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
+      ' · ' + dayFixtures.length + '경기</div>';
+    dayFixtures.forEach(function (fx) { if (!hero || fx !== hero) listHtml += fixtureCard(fx); });
+
+    viewEl.innerHTML = strip + heroHtml + listHtml;
+  }
+
+  function pickBigMatch(list) {
+    var best = null, bestScore = 1e9;
+    list.forEach(function (fx) {
+      if (!fx.homeId || !fx.awayId) return;
+      var h = teamsById[fx.homeId], a = teamsById[fx.awayId];
+      var hr = (h && h.fifaRank) || 999, ar = (a && a.fifaRank) || 999;
+      var s = hr + ar;
+      if (s < bestScore) { bestScore = s; best = fx; }
+    });
+    return best;
+  }
+
+  function heroCard(fx) {
+    var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
+    var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
+    return '<div class="hero" data-team="' + esc(fx.homeId || fx.awayId) + '">' +
+      '<div class="hero-grid"></div>' +
+      '<div class="hero-tag"><span class="dot"></span>오늘의 빅매치 · ' + esc(groupLabel) + "</div>" +
+      '<div class="hero-match">' +
+        '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(fx.homeId)) + "</span>" +
+          '<span class="hero-team">' + esc(fx.homeName) + "</span></div>" +
+        '<div class="hero-mid"><span class="hero-kick">' + esc(fx.time || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>" +
+        '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(fx.awayId)) + "</span>" +
+          '<span class="hero-team">' + esc(fx.awayName) + "</span></div>" +
+      "</div>" +
+      (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
+      '<div class="hero-cta">전력 분석 보기 →</div>' +
+      "</div>";
+  }
+
+  function fixtureCard(fx) {
+    var clickable = !!(fx.homeId || fx.awayId);
+    var attr = clickable ? ' data-team="' + esc(fx.homeId || fx.awayId) + '"' : "";
+    var timeLabel = fx.time ? esc(fx.time) : "시간 미정";
+    var groupLabel = fx.group ? esc(fx.group) + "조" : esc(fx.stage || "");
+    var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
+    return '<div class="fixture' + (clickable ? " clickable" : "") + '"' + attr + ">" +
+      '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(fx.homeId)) + "</span>" +
+        '<span class="fx-team">' + esc(fx.homeName) + "</span></div>" +
+      '<div class="fx-mid"><span class="fx-stage">' + groupLabel + "</span>" +
+        '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span></div>' +
+      '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(fx.awayId)) + "</span>" +
+        '<span class="fx-team">' + esc(fx.awayName) + "</span></div>" +
+      (meta ? '<div class="fx-meta">' + meta + "</div>" : "") +
+      "</div>";
+  }
+
+  function renderGroups() {
+    var groups = DATA.groups || [];
+    if (!groups.length) {
+      viewEl.innerHTML = '<div class="empty">조 편성 데이터를 채우는 중입니다.</div>';
+      return;
+    }
+    var html = "";
+    groups.forEach(function (g) {
+      html += '<div class="group-card"><h3><span class="group-letter">' +
+        esc(g.group) + "</span>" + esc(g.group) + "조</h3>";
+      var ids = g.teamIds || [];
+      if (ids.length) {
+        html += '<div class="group-teams">';
+        ids.forEach(function (id) {
+          var t = teamsById[id];
+          if (t) {
+            html += '<div class="group-team" data-team="' + esc(t.id) + '">' +
+              '<span class="team-flag">' + esc(t.flag) + "</span>" +
+              '<span class="gt-name">' + esc(t.name) + "</span>" +
+              '<span class="gt-rank">FIFA ' + esc(t.fifaRank) + "위</span></div>";
+          } else {
+            html += '<div class="group-team"><span class="team-flag">🏳️</span>' +
+              '<span class="gt-name">' + esc(id) + "</span></div>";
+          }
+        });
+        html += "</div>";
+      } else {
+        html += '<div class="group-empty">팀 미정 (조 추첨 대기)</div>';
+      }
+      html += "</div>";
+    });
+    viewEl.innerHTML = html;
+  }
+
+  // ===================== 공통: 선수 행 =====================
+  function playerRow(p) {
+    var pc = posClass(p.position);
+    return '<div class="player-row" data-player="' + esc(p.id) + '">' +
+      '<div class="avatar">' + esc(initials(p.name)) + "</div>" +
+      '<div class="player-main"><div class="player-name">' + esc(p.name) +
+        ' <span class="pos ' + pc + '">' + esc(String(p.position || "").split(" ")[0]) + "</span></div>" +
+      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + "</div></div>" +
+      badge(p) + "</div>";
+  }
+
+  // ===================== 검색 =====================
+  function recentGet() {
+    try { return JSON.parse(localStorage.getItem("ss_recent") || "[]"); } catch (e) { return []; }
+  }
+  function recentPush(q) {
+    q = (q || "").trim();
+    if (!q) return;
+    var list = recentGet().filter(function (x) { return x !== q; });
+    list.unshift(q);
+    list = list.slice(0, 8);
+    try { localStorage.setItem("ss_recent", JSON.stringify(list)); } catch (e) {}
+  }
+
+  function renderSearch(q) {
+    backBtn.hidden = true;
+    tabsEl.hidden = true;
+    var nq = (q || "").trim().toLowerCase();
+
+    // 검색어 없을 때: 최근 검색 + 등급별 둘러보기
+    if (!nq) {
+      var recent = recentGet();
+      var html = "";
+      if (recent.length) {
+        html += '<div class="sec-h">최근 검색</div><div class="chips">';
+        recent.forEach(function (r) { html += '<button class="chip rchip" data-q="' + esc(r) + '">' + esc(r) + "</button>"; });
+        html += "</div>";
+      }
+      // 등급별 둘러보기
+      var grades = ["월드클래스", "주전급", "로테이션", "유망주"];
+      var counts = {};
+      DATA.players.forEach(function (p) { counts[p.grade] = (counts[p.grade] || 0) + 1; });
+      html += '<div class="sec-h">등급별 둘러보기</div><div class="grade-browse">';
+      grades.forEach(function (g) {
+        if (!counts[g]) return;
+        html += '<button class="grade-row" data-grade="' + esc(g) + '">' +
+          '<span class="badge ' + gradeClass(g) + '">' + esc(g) + "</span>" +
+          '<span class="grade-count">' + counts[g] + "명 →</span></button>";
+      });
+      html += "</div>";
+      html += '<div class="search-hint">선수·나라·소속 클럽을 검색해보세요.</div>';
+      viewEl.innerHTML = html;
+      return;
+    }
+
+    renderSearchResults(nq);
+  }
+
+  function renderSearchResults(nq) {
+    var players = DATA.players.filter(function (p) {
+      return [p.name, p.nameEn, p.team, p.club, p.league, p.position].join(" ").toLowerCase().indexOf(nq) !== -1;
+    });
+    var teams = DATA.teams.filter(function (t) {
+      return [t.name, t.nameEn].join(" ").toLowerCase().indexOf(nq) !== -1;
+    });
+    var html = "";
+    if (teams.length) {
+      html += '<div class="sec-h">나라 · ' + teams.length + "</div><div class=\"grid\">";
+      teams.forEach(function (t) {
+        html += '<div class="team-card" data-team="' + esc(t.id) + '">' +
+          '<span class="team-flag">' + esc(t.flag) + "</span>" +
+          '<div><div class="team-name">' + esc(t.name) + "</div>" +
+          '<div class="team-rank">FIFA ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div></div></div>";
+      });
+      html += "</div>";
+    }
+    html += '<div class="sec-h">선수 · ' + players.length + "</div>";
+    if (players.length) {
+      html += '<div class="grid">';
+      players.sort(function (a, b) { return (b.gradeScore || 0) - (a.gradeScore || 0); });
+      players.forEach(function (p) { html += playerRow(p); });
+      html += "</div>";
+    } else {
+      html += '<div class="empty">검색 결과가 없어요.<br>다른 이름이나 소속 클럽으로 찾아보세요.</div>';
+    }
+    viewEl.innerHTML = html;
+  }
+
+  function renderGradeList(grade) {
+    backBtn.hidden = false;
+    tabsEl.hidden = true;
+    var list = DATA.players.filter(function (p) { return p.grade === grade; })
+      .sort(function (a, b) { return (b.gradeScore || 0) - (a.gradeScore || 0); });
+    var html = '<div class="sec-h"><span class="badge ' + gradeClass(grade) + '">' + esc(grade) + "</span> " + list.length + "명</div><div class=\"grid\">";
+    list.forEach(function (p) { html += playerRow(p); });
+    html += "</div>";
+    viewEl.innerHTML = html;
+  }
+
+  // ===================== 선수 상세 =====================
+  function idxRow(label, val) {
+    var v = Math.max(0, Math.min(100, val || 0));
+    return '<div class="idx-row"><span class="idx-k">' + esc(label) + "</span>" +
+      '<span class="idx-track"><span class="idx-fill" style="width:' + v + '%"></span></span>' +
+      '<span class="idx-v">' + v + "</span></div>";
+  }
+
+  function renderPlayer(id) {
+    var p = playersById[id];
+    if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
+    backBtn.hidden = false;
+    tabsEl.hidden = true;
+
+    var ovr = p.ovr || p.gradeScore || 0;
+    var team = teamsById[teamIdByName(p.team)];
+
+    var facts = [
+      ["포지션", p.position],
+      ["나이", (p.age != null ? p.age + "세" : "-")],
+      ["대표팀", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
+    ];
+    var factsHtml = facts.map(function (f) {
+      return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
+    }).join("");
+
+    // 스카우터 지수(있으면 3축, 없으면 단일 등급 점수 바)
+    var scoutHtml;
+    if (p.scout && (p.scout.value != null || p.scout.fame != null || p.scout.skill != null)) {
+      scoutHtml = '<div class="block"><h3>스카우터 지수 <span class="muted-note">자체 평가</span></h3>' +
+        idxRow("가치", p.scout.value) + idxRow("유명도", p.scout.fame) + idxRow("실력", p.scout.skill) + "</div>";
+    } else {
+      scoutHtml = '<div class="block"><h3>등급 점수 <span class="muted-note">자체 평가</span></h3>' +
+        '<div class="score-bar"><div class="score-fill" style="width:' + ovr + '%"></div></div></div>';
+    }
+
+    var strengths = (p.strengths || []).map(function (s) { return '<span class="tag">' + esc(s) + "</span>"; }).join("");
+    var weaknesses = (p.weaknesses || []).map(function (s) { return '<span class="tag weak">' + esc(s) + "</span>"; }).join("");
+
+    // 커리어 타임라인: honours + 이적 (연도 추출 가능하면 표시)
+    var tlItems = [];
+    (p.honours || []).forEach(function (h) { tlItems.push(h); });
+    if (p.notableTransfer) tlItems.push(p.notableTransfer);
+    var timeline = tlItems.map(function (it) {
+      var ym = /(\d{4})/.exec(it);
+      var yr = ym ? ym[1] : "";
+      return '<div class="tl-item"><span class="tl-year">' + esc(yr) + '</span><span class="tl-dot"></span>' +
+        '<span class="tl-text">' + esc(it) + "</span></div>";
+    }).join("");
+
+    viewEl.innerHTML =
+      '<div class="detail">' +
+        '<div class="pl-hero">' +
+          '<div class="avatar lg">' + esc(initials(p.name)) + "</div>" +
+          '<div class="pl-meta"><div class="pl-sub">' + esc(p.club) + " · " + esc(p.league) + "</div>" +
+            '<div class="pl-name">' + esc(p.name) + "</div>" +
+            '<div class="detail-name-en">' + esc(p.nameEn) + "</div>" +
+            '<div class="pl-badges">' + badge(p) + "</div></div>" +
+          '<div class="ovr"><span class="ovr-l">OVR</span><span class="ovr-v">' + ovr + "</span></div>" +
+        "</div>" +
+        '<div class="quote">' + esc(p.oneLiner) + "</div>" +
+        '<div class="facts">' + factsHtml + "</div>" +
+        scoutHtml +
+        '<div class="sw">' +
+          '<div class="swbox pos"><h4>강점</h4><div class="tags">' + (strengths || '<span class="tag">-</span>') + "</div></div>" +
+          '<div class="swbox neg"><h4>약점</h4><div class="tags">' + (weaknesses || '<span class="tag weak">-</span>') + "</div></div>" +
+        "</div>" +
+        (timeline ? '<div class="block"><h3>커리어</h3><div class="tl">' + timeline + "</div></div>" : "") +
+        '<div class="block"><h3>이적</h3><div class="transfer">' + esc(p.notableTransfer || "-") + "</div></div>" +
+        (team ? '<div class="team-link" data-team="' + esc(team.id) + '">' + esc(team.flag) + " " + esc(team.name) + " 전력 보기 →</div>" : "") +
+      "</div>";
+  }
+
+  function teamIdByName(name) {
+    var found = DATA.teams.filter(function (t) { return t.name === name; })[0];
+    return found ? found.id : null;
+  }
+
+  // ===================== 나라 상세 =====================
+  function renderTeam(id) {
+    var t = teamsById[id];
+    if (!t) { viewEl.innerHTML = '<div class="empty">팀을 찾을 수 없어요.</div>'; return; }
+    backBtn.hidden = false;
+    tabsEl.hidden = true;
+
+    var roster = DATA.players.filter(function (p) { return p.team === t.name; })
+      .sort(function (a, b) { return (b.gradeScore || 0) - (a.gradeScore || 0); });
+
+    // 컨트리 히어로
+    var html = '<div class="detail">' +
+      '<div class="country-hero">' +
+        '<div class="ch-grid"></div>' +
+        '<span class="team-flag lg">' + esc(t.flag) + "</span>" +
+        '<div class="ch-meta"><h2>' + esc(t.name) + "</h2>" +
+        '<div class="team-rank">FIFA 랭킹 ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div></div>" +
+      "</div>" +
+      '<div class="quote">' + esc(t.tierSummary) + "</div>";
+
+    // 전력 지표 (있으면)
+    if (t.indices) {
+      html += '<div class="block"><h3>전력 지표 <span class="muted-note">자체 평가</span></h3>' +
+        idxRow("공격력", t.indices.attack) + idxRow("수비력", t.indices.defense) +
+        idxRow("조직력", t.indices.organization) + idxRow("경험치", t.indices.experience) + "</div>";
+    }
+
+    // 플레이 스타일
+    if (t.styleSummary && t.styleSummary.length) {
+      html += '<div class="block"><h3>플레이 스타일</h3><div class="chips">';
+      t.styleSummary.forEach(function (s, i) {
+        html += '<span class="chip' + (i === 0 ? " solid" : "") + '">' + esc(s) + "</span>";
+      });
+      html += "</div></div>";
+    }
+
+    // 예상 포메이션 피치 (있으면)
+    if (t.lineup && t.lineup.length) {
+      html += '<div class="block"><h3>예상 포메이션' + (t.formation ? ' <span class="muted-note">' + esc(t.formation) + "</span>" : "") + "</h3>" +
+        '<div class="pitch"><div class="pitch-line halfway"></div><div class="pitch-circle"></div>';
+      t.lineup.forEach(function (d) {
+        var pc = posClass(d.pos);
+        var x = Math.max(4, Math.min(96, d.x || 50));
+        var y = Math.max(4, Math.min(96, d.y || 50));
+        html += '<div class="pd ' + pc + '" style="left:' + x + "%;top:" + y + '%" title="' + esc(d.name || "") + '">' +
+          '<span class="pd-dot">' + esc(d.number != null ? d.number : "") + "</span>" +
+          '<span class="pd-name">' + esc((d.name || "").split(" ").slice(-1)[0]) + "</span></div>";
+      });
+      html += "</div></div>";
+    }
+
+    // 핵심 선수 가로 카드
+    var coreIds = (t.keyPlayerIds || []).filter(function (pid) { return playersById[pid]; });
+    if (coreIds.length) {
+      html += '<div class="block"><h3>핵심 선수</h3><div class="core-scroll">';
+      coreIds.forEach(function (pid) {
+        var p = playersById[pid];
+        html += '<div class="corecard" data-player="' + esc(p.id) + '">' +
+          '<div class="avatar">' + esc(initials(p.name)) + "</div>" +
+          '<div class="cc-name">' + esc(p.name) + "</div>" +
+          '<div class="cc-club">' + esc(p.club) + "</div>" +
+          '<span class="badge ' + gradeClass(p.grade) + '">' + esc(p.grade) + "</span></div>";
+      });
+      html += "</div></div>";
+    }
+
+    // 감독 (있으면)
+    if (t.manager && t.manager.name) {
+      html += '<div class="block"><h3>감독</h3><div class="manager"><div class="avatar">' +
+        esc(initials(t.manager.name)) + '</div><div><div class="mgr-name">' + esc(t.manager.name) +
+        (t.manager.nationality ? ' <span class="mgr-nat">' + esc(t.manager.nationality) + "</span>" : "") + "</div>" +
+        (t.manager.note ? '<div class="mgr-note">' + esc(t.manager.note) + "</div>" : "") + "</div></div></div>";
+    }
+
+    html += "</div>";
+
+    // 전체 선수단
+    var rosterHtml = roster.length
+      ? '<div class="grid">' + roster.map(playerRow).join("") + "</div>"
+      : '<div class="empty">선수 데이터를 채우는 중입니다.</div>';
+    html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
+
+    viewEl.innerHTML = html;
+  }
+
+  // ===================== 라우터 =====================
+  function setTabbar(active) {
+    if (!tabbarEl) return;
+    Array.prototype.forEach.call(tabbarEl.querySelectorAll(".tabbar-btn"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-nav") === active);
+    });
+  }
+
+  function route() {
+    var r = parseHash();
+    window.scrollTo(0, 0);
+    if (r.name === "player") { setTabbar(""); return renderPlayer(r.id); }
+    if (r.name === "team") { setTabbar(""); return renderTeam(r.id); }
+    if (r.name === "search") {
+      setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;
+      return renderSearch(searchEl.value);
+    }
+    if (r.name === "saved") { setTabbar("saved"); return renderPlaceholder("저장", "찜한 선수·나라를 모아보는 공간 (준비 중)"); }
+    if (r.name === "my") { setTabbar("my"); return renderPlaceholder("MY", "로그인하면 내 정보·찜·설정을 볼 수 있어요 (준비 중)"); }
+    // 홈
+    setTabbar("home");
+    if (searchEl.value.trim()) { tabsEl.hidden = true; return renderSearchResults(searchEl.value.trim().toLowerCase()); }
+    return renderHome();
+  }
+
+  function renderPlaceholder(title, msg) {
+    backBtn.hidden = true; tabsEl.hidden = true;
+    viewEl.innerHTML = '<div class="empty"><div style="font-size:18px;font-weight:800;color:var(--text);margin-bottom:8px">' +
+      esc(title) + "</div>" + esc(msg) + "</div>";
+  }
+
+  // ===================== 이벤트 =====================
+  viewEl.addEventListener("click", function (e) {
+    var dc = e.target.closest("[data-date]");
+    if (dc) { selectedDate = dc.getAttribute("data-date"); renderSchedule(); return; }
+    var rc = e.target.closest(".rchip");
+    if (rc) { searchEl.value = rc.getAttribute("data-q"); renderSearchResults(rc.getAttribute("data-q").toLowerCase()); return; }
+    var gb = e.target.closest("[data-grade]");
+    if (gb) { renderGradeList(gb.getAttribute("data-grade")); return; }
+    var pl = e.target.closest("[data-player]");
+    if (pl) { go("player/" + pl.getAttribute("data-player")); return; }
+    var tm = e.target.closest("[data-team]");
+    if (tm) { go("team/" + tm.getAttribute("data-team")); return; }
+  });
+
+  // 홈 탭(일정/조별) 전환
+  tabsEl.addEventListener("click", function (e) {
+    var btn = e.target.closest(".tab");
+    if (!btn) return;
+    homeTab = btn.getAttribute("data-tab");
+    searchEl.value = "";
+    if (window.location.hash) { go(""); } else { renderHome(); }
+  });
+
+  // 하단 탭바
+  if (tabbarEl) {
+    tabbarEl.addEventListener("click", function (e) {
+      var btn = e.target.closest(".tabbar-btn");
+      if (!btn) return;
+      var nav = btn.getAttribute("data-nav");
+      searchEl.value = "";
+      if (nav === "home") { homeTab = "schedule"; go(""); }
+      else if (nav === "search") { go("search"); setTimeout(function () { searchEl.focus(); }, 30); }
+      else if (nav === "saved") { go("saved"); }
+      else if (nav === "my") { go("my"); }
+    });
+  }
+
+  var searchDebounce;
+  searchEl.addEventListener("input", function () {
+    var r = parseHash();
+    if (r.name === "search") { renderSearch(searchEl.value); }
+    else if (window.location.hash) { go(""); }
+    else { route(); }
+    clearTimeout(searchDebounce);
+    var val = searchEl.value;
+    searchDebounce = setTimeout(function () { if (val.trim().length > 1) recentPush(val); }, 1200);
+  });
+
+  backBtn.addEventListener("click", function () {
+    if (window.location.hash) { go(""); } else { window.history.back(); }
+  });
+
+  document.getElementById("homeLink").addEventListener("click", function () {
+    searchEl.value = ""; homeTab = "schedule"; go("");
+  });
+
+  window.addEventListener("hashchange", route);
+
+  // 서비스워커 (PWA, http(s)에서만)
+  if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () {});
+    });
+  }
+
+  route();
+})();

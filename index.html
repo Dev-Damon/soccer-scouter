@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>축구 스카우터 — 이 선수 누구야?</title>
+  <meta name="description" content="월드컵 보다가 '쟤 누구야?' 싶을 때. 선수·팀 검색 한 번으로 등급·소속·강점을 카드 한 장으로." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="backBtn" class="back-btn" hidden aria-label="뒤로">←</button>
+    <h1 class="brand" id="homeLink">⚽ 축구 스카우터</h1>
+    <span class="tagline">이 선수 누구야?</span>
+  </header>
+
+  <main id="app">
+    <!-- 검색 -->
+    <section class="search-wrap">
+      <input id="search" class="search" type="search" inputmode="search"
+        placeholder="선수·팀·소속 클럽 검색 (예: 손흥민, 프랑스, 레알)" autocomplete="off" />
+    </section>
+
+    <!-- 홈 탭(일정/조별) -->
+    <nav id="tabs" class="tabs" role="tablist">
+      <button class="tab" data-tab="schedule" role="tab">📅 일정</button>
+      <button class="tab" data-tab="groups" role="tab">🏆 조별</button>
+    </nav>
+
+    <!-- 동적 영역 -->
+    <section id="view"></section>
+  </main>
+
+  <footer class="foot">
+    <span id="sampleNote"></span>
+  </footer>
+
+  <!-- 하단 탭바 -->
+  <nav id="tabbar" class="tabbar" aria-label="주요 탭">
+    <button class="tabbar-btn active" data-nav="home"><span class="tb-ic">📅</span><span class="tb-l">일정</span></button>
+    <button class="tabbar-btn" data-nav="search"><span class="tb-ic">🔍</span><span class="tb-l">검색</span></button>
+    <button class="tabbar-btn" data-nav="saved"><span class="tb-ic">⭐</span><span class="tb-l">저장</span></button>
+    <button class="tabbar-btn" data-nav="my"><span class="tb-ic">👤</span><span class="tb-l">MY</span></button>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
