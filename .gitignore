@@ -4,3 +4,4 @@ final-*.png
 real-*.png
 .DS_Store
 *.png
+scripts/out/
