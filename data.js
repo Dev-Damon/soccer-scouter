@@ -131,7 +131,9 @@ window.DATA = {
       "homeName": "멕시코",
       "awayName": "남아프리카공화국",
       "venue": "Estadio Azteca",
-      "city": "Mexico City"
+      "city": "Mexico City",
+      "kstDate": "2026-06-12",
+      "kstTime": "04:00"
     },
     {
       "id": "match-2",
@@ -144,7 +146,9 @@ window.DATA = {
       "homeName": "대한민국",
       "awayName": "체코",
       "venue": "Estadio Akron",
-      "city": "Zapopan"
+      "city": "Zapopan",
+      "kstDate": "2026-06-12",
+      "kstTime": "11:00"
     },
     {
       "id": "match-3",
@@ -157,7 +161,9 @@ window.DATA = {
       "homeName": "체코",
       "awayName": "남아프리카공화국",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-06-19",
+      "kstTime": "01:00"
     },
     {
       "id": "match-4",
@@ -170,7 +176,9 @@ window.DATA = {
       "homeName": "멕시코",
       "awayName": "대한민국",
       "venue": "Estadio Akron",
-      "city": "Zapopan"
+      "city": "Zapopan",
+      "kstDate": "2026-06-19",
+      "kstTime": "10:00"
     },
     {
       "id": "match-5",
@@ -183,7 +191,9 @@ window.DATA = {
       "homeName": "체코",
       "awayName": "멕시코",
       "venue": "Estadio Azteca",
-      "city": "Mexico City"
+      "city": "Mexico City",
+      "kstDate": "2026-06-25",
+      "kstTime": "10:00"
     },
     {
       "id": "match-6",
@@ -196,7 +206,9 @@ window.DATA = {
       "homeName": "남아프리카공화국",
       "awayName": "대한민국",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, Nuevo León"
+      "city": "Guadalupe, Nuevo León",
+      "kstDate": "2026-06-25",
+      "kstTime": "10:00"
     },
     {
       "id": "match-7",
@@ -209,7 +221,9 @@ window.DATA = {
       "homeName": "캐나다",
       "awayName": "보스니아 헤르체고비나",
       "venue": "BMO Field",
-      "city": "Toronto"
+      "city": "Toronto",
+      "kstDate": "2026-06-13",
+      "kstTime": "04:00"
     },
     {
       "id": "match-8",
@@ -222,7 +236,9 @@ window.DATA = {
       "homeName": "카타르",
       "awayName": "스위스",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara"
+      "city": "Santa Clara",
+      "kstDate": "2026-06-14",
+      "kstTime": "04:00"
     },
     {
       "id": "match-9",
@@ -235,7 +251,9 @@ window.DATA = {
       "homeName": "스위스",
       "awayName": "보스니아 헤르체고비나",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-06-19",
+      "kstTime": "04:00"
     },
     {
       "id": "match-10",
@@ -248,7 +266,9 @@ window.DATA = {
       "homeName": "캐나다",
       "awayName": "카타르",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-06-19",
+      "kstTime": "07:00"
     },
     {
       "id": "match-11",
@@ -261,7 +281,9 @@ window.DATA = {
       "homeName": "스위스",
       "awayName": "캐나다",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-06-25",
+      "kstTime": "04:00"
     },
     {
       "id": "match-12",
@@ -274,7 +296,9 @@ window.DATA = {
       "homeName": "보스니아 헤르체고비나",
       "awayName": "카타르",
       "venue": "Lumen Field",
-      "city": "Seattle"
+      "city": "Seattle",
+      "kstDate": "2026-06-25",
+      "kstTime": "04:00"
     },
     {
       "id": "match-13",
@@ -287,7 +311,9 @@ window.DATA = {
       "homeName": "브라질",
       "awayName": "모로코",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "kstDate": "2026-06-14",
+      "kstTime": "07:00"
     },
     {
       "id": "match-14",
@@ -300,7 +326,9 @@ window.DATA = {
       "homeName": "아이티",
       "awayName": "스코틀랜드",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "kstDate": "2026-06-14",
+      "kstTime": "10:00"
     },
     {
       "id": "match-15",
@@ -313,7 +341,9 @@ window.DATA = {
       "homeName": "스코틀랜드",
       "awayName": "모로코",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "kstDate": "2026-06-20",
+      "kstTime": "07:00"
     },
     {
       "id": "match-16",
@@ -326,7 +356,9 @@ window.DATA = {
       "homeName": "브라질",
       "awayName": "아이티",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "kstDate": "2026-06-20",
+      "kstTime": "09:30"
     },
     {
       "id": "match-17",
@@ -339,7 +371,9 @@ window.DATA = {
       "homeName": "스코틀랜드",
       "awayName": "브라질",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, FL"
+      "city": "Miami Gardens, FL",
+      "kstDate": "2026-06-25",
+      "kstTime": "07:00"
     },
     {
       "id": "match-18",
@@ -352,7 +386,9 @@ window.DATA = {
       "homeName": "모로코",
       "awayName": "아이티",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA"
+      "city": "Atlanta, GA",
+      "kstDate": "2026-06-25",
+      "kstTime": "07:00"
     },
     {
       "id": "match-19",
@@ -365,7 +401,9 @@ window.DATA = {
       "homeName": "미국",
       "awayName": "파라과이",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-06-13",
+      "kstTime": "10:00"
     },
     {
       "id": "match-20",
@@ -378,7 +416,9 @@ window.DATA = {
       "homeName": "오스트레일리아",
       "awayName": "튀르키예",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-06-14",
+      "kstTime": "13:00"
     },
     {
       "id": "match-21",
@@ -391,7 +431,9 @@ window.DATA = {
       "homeName": "미국",
       "awayName": "오스트레일리아",
       "venue": "Lumen Field",
-      "city": "Seattle"
+      "city": "Seattle",
+      "kstDate": "2026-06-20",
+      "kstTime": "04:00"
     },
     {
       "id": "match-22",
@@ -404,7 +446,9 @@ window.DATA = {
       "homeName": "튀르키예",
       "awayName": "파라과이",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara"
+      "city": "Santa Clara",
+      "kstDate": "2026-06-20",
+      "kstTime": "12:00"
     },
     {
       "id": "match-23",
@@ -417,7 +461,9 @@ window.DATA = {
       "homeName": "튀르키예",
       "awayName": "미국",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-06-26",
+      "kstTime": "11:00"
     },
     {
       "id": "match-24",
@@ -430,7 +476,9 @@ window.DATA = {
       "homeName": "파라과이",
       "awayName": "오스트레일리아",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara"
+      "city": "Santa Clara",
+      "kstDate": "2026-06-26",
+      "kstTime": "11:00"
     },
     {
       "id": "match-25",
@@ -443,7 +491,9 @@ window.DATA = {
       "homeName": "독일",
       "awayName": "퀴라소",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-06-15",
+      "kstTime": "02:00"
     },
     {
       "id": "match-26",
@@ -456,7 +506,9 @@ window.DATA = {
       "homeName": "코트디부아르",
       "awayName": "에콰도르",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia"
+      "city": "Philadelphia",
+      "kstDate": "2026-06-15",
+      "kstTime": "08:00"
     },
     {
       "id": "match-27",
@@ -469,7 +521,9 @@ window.DATA = {
       "homeName": "독일",
       "awayName": "코트디부아르",
       "venue": "BMO Field",
-      "city": "Toronto"
+      "city": "Toronto",
+      "kstDate": "2026-06-21",
+      "kstTime": "05:00"
     },
     {
       "id": "match-28",
@@ -482,7 +536,9 @@ window.DATA = {
       "homeName": "에콰도르",
       "awayName": "퀴라소",
       "venue": "Arrowhead Stadium",
-      "city": "Kansas City"
+      "city": "Kansas City",
+      "kstDate": "2026-06-21",
+      "kstTime": "09:00"
     },
     {
       "id": "match-29",
@@ -495,7 +551,9 @@ window.DATA = {
       "homeName": "퀴라소",
       "awayName": "코트디부아르",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia"
+      "city": "Philadelphia",
+      "kstDate": "2026-06-26",
+      "kstTime": "05:00"
     },
     {
       "id": "match-30",
@@ -508,7 +566,9 @@ window.DATA = {
       "homeName": "에콰도르",
       "awayName": "독일",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford"
+      "city": "East Rutherford",
+      "kstDate": "2026-06-26",
+      "kstTime": "05:00"
     },
     {
       "id": "match-31",
@@ -521,7 +581,9 @@ window.DATA = {
       "homeName": "네덜란드",
       "awayName": "일본",
       "venue": "AT&T Stadium",
-      "city": "Arlington, Texas"
+      "city": "Arlington, Texas",
+      "kstDate": "2026-06-15",
+      "kstTime": "05:00"
     },
     {
       "id": "match-32",
@@ -534,7 +596,9 @@ window.DATA = {
       "homeName": "스웨덴",
       "awayName": "튀니지",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, Nuevo León"
+      "city": "Guadalupe, Nuevo León",
+      "kstDate": "2026-06-15",
+      "kstTime": "11:00"
     },
     {
       "id": "match-33",
@@ -547,7 +611,9 @@ window.DATA = {
       "homeName": "네덜란드",
       "awayName": "스웨덴",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-06-21",
+      "kstTime": "02:00"
     },
     {
       "id": "match-34",
@@ -560,7 +626,9 @@ window.DATA = {
       "homeName": "튀니지",
       "awayName": "일본",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, Nuevo León"
+      "city": "Guadalupe, Nuevo León",
+      "kstDate": "2026-06-21",
+      "kstTime": "13:00"
     },
     {
       "id": "match-35",
@@ -573,7 +641,9 @@ window.DATA = {
       "homeName": "일본",
       "awayName": "스웨덴",
       "venue": "AT&T Stadium",
-      "city": "Arlington, Texas"
+      "city": "Arlington, Texas",
+      "kstDate": "2026-06-26",
+      "kstTime": "08:00"
     },
     {
       "id": "match-36",
@@ -586,7 +656,9 @@ window.DATA = {
       "homeName": "튀니지",
       "awayName": "네덜란드",
       "venue": "Arrowhead Stadium",
-      "city": "Kansas City, Missouri"
+      "city": "Kansas City, Missouri",
+      "kstDate": "2026-06-26",
+      "kstTime": "08:00"
     },
     {
       "id": "match-37",
@@ -599,7 +671,9 @@ window.DATA = {
       "homeName": "벨기에",
       "awayName": "이집트",
       "venue": "Lumen Field",
-      "city": "Seattle"
+      "city": "Seattle",
+      "kstDate": "2026-06-16",
+      "kstTime": "04:00"
     },
     {
       "id": "match-38",
@@ -612,7 +686,9 @@ window.DATA = {
       "homeName": "이란",
       "awayName": "뉴질랜드",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-06-16",
+      "kstTime": "10:00"
     },
     {
       "id": "match-39",
@@ -625,7 +701,9 @@ window.DATA = {
       "homeName": "벨기에",
       "awayName": "이란",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-06-22",
+      "kstTime": "04:00"
     },
     {
       "id": "match-40",
@@ -638,7 +716,9 @@ window.DATA = {
       "homeName": "뉴질랜드",
       "awayName": "이집트",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-06-22",
+      "kstTime": "10:00"
     },
     {
       "id": "match-41",
@@ -651,7 +731,9 @@ window.DATA = {
       "homeName": "이집트",
       "awayName": "이란",
       "venue": "Lumen Field",
-      "city": "Seattle"
+      "city": "Seattle",
+      "kstDate": "2026-06-27",
+      "kstTime": "12:00"
     },
     {
       "id": "match-42",
@@ -664,7 +746,9 @@ window.DATA = {
       "homeName": "뉴질랜드",
       "awayName": "벨기에",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-06-27",
+      "kstTime": "12:00"
     },
     {
       "id": "match-43",
@@ -677,7 +761,9 @@ window.DATA = {
       "homeName": "스페인",
       "awayName": "카보베르데",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-06-16",
+      "kstTime": "01:00"
     },
     {
       "id": "match-44",
@@ -690,7 +776,9 @@ window.DATA = {
       "homeName": "사우디아라비아",
       "awayName": "우루과이",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens"
+      "city": "Miami Gardens",
+      "kstDate": "2026-06-16",
+      "kstTime": "07:00"
     },
     {
       "id": "match-45",
@@ -703,7 +791,9 @@ window.DATA = {
       "homeName": "스페인",
       "awayName": "사우디아라비아",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-06-22",
+      "kstTime": "01:00"
     },
     {
       "id": "match-46",
@@ -716,7 +806,9 @@ window.DATA = {
       "homeName": "우루과이",
       "awayName": "카보베르데",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens"
+      "city": "Miami Gardens",
+      "kstDate": "2026-06-22",
+      "kstTime": "07:00"
     },
     {
       "id": "match-47",
@@ -729,7 +821,9 @@ window.DATA = {
       "homeName": "카보베르데",
       "awayName": "사우디아라비아",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-06-27",
+      "kstTime": "09:00"
     },
     {
       "id": "match-48",
@@ -742,7 +836,9 @@ window.DATA = {
       "homeName": "우루과이",
       "awayName": "스페인",
       "venue": "Estadio Akron",
-      "city": "Zapopan"
+      "city": "Zapopan",
+      "kstDate": "2026-06-27",
+      "kstTime": "09:00"
     },
     {
       "id": "match-49",
@@ -755,7 +851,9 @@ window.DATA = {
       "homeName": "프랑스",
       "awayName": "세네갈",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "kstDate": "2026-06-17",
+      "kstTime": "04:00"
     },
     {
       "id": "match-50",
@@ -768,7 +866,9 @@ window.DATA = {
       "homeName": "이라크",
       "awayName": "노르웨이",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "kstDate": "2026-06-17",
+      "kstTime": "07:00"
     },
     {
       "id": "match-51",
@@ -781,7 +881,9 @@ window.DATA = {
       "homeName": "프랑스",
       "awayName": "이라크",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "kstDate": "2026-06-23",
+      "kstTime": "06:00"
     },
     {
       "id": "match-52",
@@ -794,7 +896,9 @@ window.DATA = {
       "homeName": "노르웨이",
       "awayName": "세네갈",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "kstDate": "2026-06-23",
+      "kstTime": "09:00"
     },
     {
       "id": "match-53",
@@ -807,7 +911,9 @@ window.DATA = {
       "homeName": "노르웨이",
       "awayName": "프랑스",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "kstDate": "2026-06-27",
+      "kstTime": "04:00"
     },
     {
       "id": "match-54",
@@ -820,7 +926,9 @@ window.DATA = {
       "homeName": "세네갈",
       "awayName": "이라크",
       "venue": "BMO Field",
-      "city": "Toronto, ON"
+      "city": "Toronto, ON",
+      "kstDate": "2026-06-27",
+      "kstTime": "04:00"
     },
     {
       "id": "match-55",
@@ -833,7 +941,9 @@ window.DATA = {
       "homeName": "아르헨티나",
       "awayName": "알제리",
       "venue": "Arrowhead Stadium",
-      "city": "Kansas City, MO"
+      "city": "Kansas City, MO",
+      "kstDate": "2026-06-17",
+      "kstTime": "10:00"
     },
     {
       "id": "match-56",
@@ -846,7 +956,9 @@ window.DATA = {
       "homeName": "오스트리아",
       "awayName": "요르단",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "kstDate": "2026-06-17",
+      "kstTime": "13:00"
     },
     {
       "id": "match-57",
@@ -859,7 +971,9 @@ window.DATA = {
       "homeName": "아르헨티나",
       "awayName": "오스트리아",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "kstDate": "2026-06-23",
+      "kstTime": "02:00"
     },
     {
       "id": "match-58",
@@ -872,7 +986,9 @@ window.DATA = {
       "homeName": "요르단",
       "awayName": "알제리",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "kstDate": "2026-06-23",
+      "kstTime": "12:00"
     },
     {
       "id": "match-59",
@@ -885,7 +1001,9 @@ window.DATA = {
       "homeName": "알제리",
       "awayName": "오스트리아",
       "venue": "Arrowhead Stadium",
-      "city": "Kansas City, MO"
+      "city": "Kansas City, MO",
+      "kstDate": "2026-06-28",
+      "kstTime": "11:00"
     },
     {
       "id": "match-60",
@@ -898,7 +1016,9 @@ window.DATA = {
       "homeName": "요르단",
       "awayName": "아르헨티나",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "kstDate": "2026-06-28",
+      "kstTime": "11:00"
     },
     {
       "id": "match-61",
@@ -911,7 +1031,9 @@ window.DATA = {
       "homeName": "포르투갈",
       "awayName": "콩고민주공화국",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-06-18",
+      "kstTime": "02:00"
     },
     {
       "id": "match-62",
@@ -924,7 +1046,9 @@ window.DATA = {
       "homeName": "우즈베키스탄",
       "awayName": "콜롬비아",
       "venue": "Estadio Azteca",
-      "city": "Mexico City"
+      "city": "Mexico City",
+      "kstDate": "2026-06-18",
+      "kstTime": "11:00"
     },
     {
       "id": "match-63",
@@ -937,7 +1061,9 @@ window.DATA = {
       "homeName": "포르투갈",
       "awayName": "우즈베키스탄",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-06-24",
+      "kstTime": "02:00"
     },
     {
       "id": "match-64",
@@ -950,7 +1076,9 @@ window.DATA = {
       "homeName": "콜롬비아",
       "awayName": "콩고민주공화국",
       "venue": "Estadio Akron",
-      "city": "Zapopan"
+      "city": "Zapopan",
+      "kstDate": "2026-06-24",
+      "kstTime": "11:00"
     },
     {
       "id": "match-65",
@@ -963,7 +1091,9 @@ window.DATA = {
       "homeName": "콜롬비아",
       "awayName": "포르투갈",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens"
+      "city": "Miami Gardens",
+      "kstDate": "2026-06-28",
+      "kstTime": "08:30"
     },
     {
       "id": "match-66",
@@ -976,7 +1106,9 @@ window.DATA = {
       "homeName": "콩고민주공화국",
       "awayName": "우즈베키스탄",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-06-28",
+      "kstTime": "08:30"
     },
     {
       "id": "match-67",
@@ -989,7 +1121,9 @@ window.DATA = {
       "homeName": "잉글랜드",
       "awayName": "크로아티아",
       "venue": "AT&T Stadium",
-      "city": "Arlington"
+      "city": "Arlington",
+      "kstDate": "2026-06-18",
+      "kstTime": "05:00"
     },
     {
       "id": "match-68",
@@ -1002,7 +1136,9 @@ window.DATA = {
       "homeName": "가나",
       "awayName": "파나마",
       "venue": "BMO Field",
-      "city": "Toronto"
+      "city": "Toronto",
+      "kstDate": "2026-06-18",
+      "kstTime": "08:00"
     },
     {
       "id": "match-69",
@@ -1015,7 +1151,9 @@ window.DATA = {
       "homeName": "잉글랜드",
       "awayName": "가나",
       "venue": "Gillette Stadium",
-      "city": "Foxborough"
+      "city": "Foxborough",
+      "kstDate": "2026-06-24",
+      "kstTime": "05:00"
     },
     {
       "id": "match-70",
@@ -1028,7 +1166,9 @@ window.DATA = {
       "homeName": "파나마",
       "awayName": "크로아티아",
       "venue": "BMO Field",
-      "city": "Toronto"
+      "city": "Toronto",
+      "kstDate": "2026-06-24",
+      "kstTime": "08:00"
     },
     {
       "id": "match-71",
@@ -1041,7 +1181,9 @@ window.DATA = {
       "homeName": "파나마",
       "awayName": "잉글랜드",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford"
+      "city": "East Rutherford",
+      "kstDate": "2026-06-28",
+      "kstTime": "06:00"
     },
     {
       "id": "match-72",
@@ -1054,7 +1196,9 @@ window.DATA = {
       "homeName": "크로아티아",
       "awayName": "가나",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia"
+      "city": "Philadelphia",
+      "kstDate": "2026-06-28",
+      "kstTime": "06:00"
     },
     {
       "id": "match-73",
@@ -1067,7 +1211,9 @@ window.DATA = {
       "homeName": "A조 2위",
       "awayName": "B조 2위",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-06-29",
+      "kstTime": "04:00"
     },
     {
       "id": "match-74",
@@ -1080,7 +1226,9 @@ window.DATA = {
       "homeName": "E조 1위",
       "awayName": "A/B/C/D/F조 3위",
       "venue": "Gillette Stadium",
-      "city": "Foxborough"
+      "city": "Foxborough",
+      "kstDate": "2026-06-30",
+      "kstTime": "05:30"
     },
     {
       "id": "match-75",
@@ -1093,7 +1241,9 @@ window.DATA = {
       "homeName": "F조 1위",
       "awayName": "C조 2위",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, Nuevo León"
+      "city": "Guadalupe, Nuevo León",
+      "kstDate": "2026-06-30",
+      "kstTime": "10:00"
     },
     {
       "id": "match-76",
@@ -1106,7 +1256,9 @@ window.DATA = {
       "homeName": "C조 1위",
       "awayName": "F조 2위",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-06-30",
+      "kstTime": "02:00"
     },
     {
       "id": "match-77",
@@ -1119,7 +1271,9 @@ window.DATA = {
       "homeName": "I조 1위",
       "awayName": "C/D/F/G/H조 3위",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford"
+      "city": "East Rutherford",
+      "kstDate": "2026-07-01",
+      "kstTime": "06:00"
     },
     {
       "id": "match-78",
@@ -1132,7 +1286,9 @@ window.DATA = {
       "homeName": "E조 2위",
       "awayName": "I조 2위",
       "venue": "AT&T Stadium",
-      "city": "Arlington"
+      "city": "Arlington",
+      "kstDate": "2026-07-01",
+      "kstTime": "02:00"
     },
     {
       "id": "match-79",
@@ -1145,7 +1301,9 @@ window.DATA = {
       "homeName": "A조 1위",
       "awayName": "C/E/F/H/I조 3위",
       "venue": "Estadio Azteca",
-      "city": "Mexico City"
+      "city": "Mexico City",
+      "kstDate": "2026-07-01",
+      "kstTime": "10:00"
     },
     {
       "id": "match-80",
@@ -1158,7 +1316,9 @@ window.DATA = {
       "homeName": "L조 1위",
       "awayName": "E/H/I/J/K조 3위",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-07-02",
+      "kstTime": "01:00"
     },
     {
       "id": "match-81",
@@ -1171,7 +1331,9 @@ window.DATA = {
       "homeName": "D조 1위",
       "awayName": "B/E/F/I/J조 3위",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara"
+      "city": "Santa Clara",
+      "kstDate": "2026-07-02",
+      "kstTime": "09:00"
     },
     {
       "id": "match-82",
@@ -1184,7 +1346,9 @@ window.DATA = {
       "homeName": "G조 1위",
       "awayName": "A/E/H/I/J조 3위",
       "venue": "Lumen Field",
-      "city": "Seattle"
+      "city": "Seattle",
+      "kstDate": "2026-07-02",
+      "kstTime": "05:00"
     },
     {
       "id": "match-83",
@@ -1197,7 +1361,9 @@ window.DATA = {
       "homeName": "K조 2위",
       "awayName": "L조 2위",
       "venue": "BMO Field",
-      "city": "Toronto"
+      "city": "Toronto",
+      "kstDate": "2026-07-03",
+      "kstTime": "08:00"
     },
     {
       "id": "match-84",
@@ -1210,7 +1376,9 @@ window.DATA = {
       "homeName": "H조 1위",
       "awayName": "J조 2위",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-07-03",
+      "kstTime": "04:00"
     },
     {
       "id": "match-85",
@@ -1223,7 +1391,9 @@ window.DATA = {
       "homeName": "B조 1위",
       "awayName": "E/F/G/I/J조 3위",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-07-03",
+      "kstTime": "12:00"
     },
     {
       "id": "match-86",
@@ -1236,7 +1406,9 @@ window.DATA = {
       "homeName": "J조 1위",
       "awayName": "H조 2위",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens"
+      "city": "Miami Gardens",
+      "kstDate": "2026-07-04",
+      "kstTime": "07:00"
     },
     {
       "id": "match-87",
@@ -1249,7 +1421,9 @@ window.DATA = {
       "homeName": "K조 1위",
       "awayName": "D/E/I/J/L조 3위",
       "venue": "Arrowhead Stadium",
-      "city": "Kansas City"
+      "city": "Kansas City",
+      "kstDate": "2026-07-04",
+      "kstTime": "10:30"
     },
     {
       "id": "match-88",
@@ -1262,7 +1436,9 @@ window.DATA = {
       "homeName": "D조 2위",
       "awayName": "G조 2위",
       "venue": "AT&T Stadium",
-      "city": "Arlington"
+      "city": "Arlington",
+      "kstDate": "2026-07-04",
+      "kstTime": "03:00"
     },
     {
       "id": "match-89",
@@ -1275,7 +1451,9 @@ window.DATA = {
       "homeName": "74경기 승자",
       "awayName": "77경기 승자",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia"
+      "city": "Philadelphia",
+      "kstDate": "2026-07-05",
+      "kstTime": "06:00"
     },
     {
       "id": "match-90",
@@ -1288,7 +1466,9 @@ window.DATA = {
       "homeName": "73경기 승자",
       "awayName": "75경기 승자",
       "venue": "NRG Stadium",
-      "city": "Houston"
+      "city": "Houston",
+      "kstDate": "2026-07-05",
+      "kstTime": "02:00"
     },
     {
       "id": "match-91",
@@ -1301,7 +1481,9 @@ window.DATA = {
       "homeName": "76경기 승자",
       "awayName": "78경기 승자",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford"
+      "city": "East Rutherford",
+      "kstDate": "2026-07-06",
+      "kstTime": "05:00"
     },
     {
       "id": "match-92",
@@ -1314,7 +1496,9 @@ window.DATA = {
       "homeName": "79경기 승자",
       "awayName": "80경기 승자",
       "venue": "Estadio Azteca",
-      "city": "Mexico City"
+      "city": "Mexico City",
+      "kstDate": "2026-07-06",
+      "kstTime": "09:00"
     },
     {
       "id": "match-93",
@@ -1327,7 +1511,9 @@ window.DATA = {
       "homeName": "83경기 승자",
       "awayName": "84경기 승자",
       "venue": "AT&T Stadium",
-      "city": "Arlington"
+      "city": "Arlington",
+      "kstDate": "2026-07-07",
+      "kstTime": "04:00"
     },
     {
       "id": "match-94",
@@ -1340,7 +1526,9 @@ window.DATA = {
       "homeName": "81경기 승자",
       "awayName": "82경기 승자",
       "venue": "Lumen Field",
-      "city": "Seattle"
+      "city": "Seattle",
+      "kstDate": "2026-07-07",
+      "kstTime": "09:00"
     },
     {
       "id": "match-95",
@@ -1353,7 +1541,9 @@ window.DATA = {
       "homeName": "86경기 승자",
       "awayName": "88경기 승자",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-07-08",
+      "kstTime": "01:00"
     },
     {
       "id": "match-96",
@@ -1366,7 +1556,9 @@ window.DATA = {
       "homeName": "85경기 승자",
       "awayName": "87경기 승자",
       "venue": "BC Place",
-      "city": "Vancouver"
+      "city": "Vancouver",
+      "kstDate": "2026-07-08",
+      "kstTime": "05:00"
     },
     {
       "id": "match-97",
@@ -1379,7 +1571,9 @@ window.DATA = {
       "homeName": "89경기 승자",
       "awayName": "90경기 승자",
       "venue": "Gillette Stadium",
-      "city": "Foxborough"
+      "city": "Foxborough",
+      "kstDate": "2026-07-10",
+      "kstTime": "05:00"
     },
     {
       "id": "match-98",
@@ -1392,7 +1586,9 @@ window.DATA = {
       "homeName": "93경기 승자",
       "awayName": "94경기 승자",
       "venue": "SoFi Stadium",
-      "city": "Inglewood"
+      "city": "Inglewood",
+      "kstDate": "2026-07-11",
+      "kstTime": "04:00"
     },
     {
       "id": "match-99",
@@ -1405,7 +1601,9 @@ window.DATA = {
       "homeName": "91경기 승자",
       "awayName": "92경기 승자",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens"
+      "city": "Miami Gardens",
+      "kstDate": "2026-07-12",
+      "kstTime": "06:00"
     },
     {
       "id": "match-100",
@@ -1418,7 +1616,9 @@ window.DATA = {
       "homeName": "95경기 승자",
       "awayName": "96경기 승자",
       "venue": "Arrowhead Stadium",
-      "city": "Kansas City"
+      "city": "Kansas City",
+      "kstDate": "2026-07-12",
+      "kstTime": "10:00"
     },
     {
       "id": "match-101",
@@ -1431,7 +1631,9 @@ window.DATA = {
       "homeName": "97경기 승자",
       "awayName": "98경기 승자",
       "venue": "AT&T Stadium",
-      "city": "Arlington"
+      "city": "Arlington",
+      "kstDate": "2026-07-15",
+      "kstTime": "04:00"
     },
     {
       "id": "match-102",
@@ -1444,7 +1646,9 @@ window.DATA = {
       "homeName": "99경기 승자",
       "awayName": "100경기 승자",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta"
+      "city": "Atlanta",
+      "kstDate": "2026-07-16",
+      "kstTime": "04:00"
     },
     {
       "id": "match-103",
@@ -1457,7 +1661,9 @@ window.DATA = {
       "homeName": "101경기 패자",
       "awayName": "102경기 패자",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens"
+      "city": "Miami Gardens",
+      "kstDate": "2026-07-19",
+      "kstTime": "06:00"
     },
     {
       "id": "match-104",
@@ -1470,7 +1676,9 @@ window.DATA = {
       "homeName": "101경기 승자",
       "awayName": "102경기 승자",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford"
+      "city": "East Rutherford",
+      "kstDate": "2026-07-20",
+      "kstTime": "04:00"
     }
   ],
   "teams": [
@@ -1683,14 +1891,14 @@ window.DATA = {
       "news": [
         {
           "title": "오초아, 역대 최다 6번째 월드컵 출전… 멕시코 최종 26인 명단 발표",
-          "summary": "아기레 감독이 발표한 멕시코 월드컵 최종 명단에 40세 골키퍼 오초아가 포함되며 메시·호날두와 함께 6회 월드컵 출전 기록에 도전한다.",
+          "summary": "하비에르 아기레 감독이 6월 1일 발표한 멕시코의 26인 월드컵 최종 명단에 40세 골키퍼 기예르모 오초아가 포함됐다. 오초아는 이번이 통산 여섯 번째 월드컵으로, 메시·호날두와 함께 역대 최다 월드컵 출전 기록을 공유하게 된다. 명단에는 라울 히메네스(풀럼), 산티아고 히메네스(AC밀란), 10대 유망주 길베르토 모라(클럽 티후아나) 등이 함께 이름을 올렸으며, 멕시코는 6월 11일 아즈테카에서 남아공과 개막전을 치른다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48924377/mexico-2026-world-cup-squad-guillermo-ochoa",
           "date": "2026-06-01"
         },
         {
           "title": "멕시코 vs 남아공 개막전 프리뷰… 말라곤·루이스 부상 결장",
-          "summary": "6월 11일 아즈테카에서 열리는 개막전에서 멕시코는 부상으로 골키퍼 말라곤과 미드필더 마르셀 루이스 없이 라울 히메네스를 앞세워 나선다.",
+          "summary": "멕시코는 6월 11일 멕시코시티 아즈테카(현지시간 오후 1시 킥오프)에서 남아공과 2026 월드컵 개막전을 치른다. 멕시코는 골키퍼 루이스 앙헬 말라곤과 미드필더 마르셀 루이스가 부상으로 빠지며, 알바라도-라울 히메네스-키뇨네스로 이어지는 공격진을 가동한다. 가나(2-0)·호주(1-0)·세르비아(5-1)를 꺾는 등 8경기 무패로 상승세인 멕시코와 달리, 남아공은 니카라과(0-0)·자메이카(1-1)와 비기며 후고 브로스 감독이 부진을 인정했다.",
           "source": "ESPN",
           "url": "https://www.espn.com/espn/story/_/id/48998339/mexico-vs-south-africa-kick-team-news-how-watch-fifa-world-cup-opener",
           "date": "2026-06-08"
@@ -1704,21 +1912,21 @@ window.DATA = {
         },
         {
           "title": "멕시코 명단 승자와 패자… 오초아의 6번째 월드컵, 베르테라메 탈락",
-          "summary": "골닷컴은 명단 발표 분석에서 오초아의 역사적 선발을 승자로, 인터 마이애미 공격수 베르테라메의 의외의 탈락을 패자로 꼽았다.",
+          "summary": "골닷컴은 멕시코 명단 발표 분석에서 6번째 월드컵에 나서는 오초아, AC밀란에서 부진했지만 신뢰를 받은 산티아고 히메네스, 강도 높은 체력 테스트를 통과한 미드필더 루이스 차베스, 그리고 17세 길베르토 모라와 클라우수라 12골의 아르만도 곤살레스 등 젊은 선수들을 '승자'로 꼽았다. 반면 MLS 15경기 7골의 호조에도 푸마스의 기예르모 마르티네스에게 마지막 공격수 자리를 내준 인터 마이애미의 헤르만 베르테라메, 월드컵을 위해 무릎 수술을 미뤘으나 탈락한 톨루카의 마르셀 루이스를 '패자'로 분류했다. 또 명목상 수비수가 6명에 그쳐 수비 뎁스 부족이 우려된다고 지적했다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-us/lists/from-guillermo-ochoa-s-sixth-world-cup-to-inter-miami-star-german-berterame-s-snub-winners-and-losers-from-mexico-s-squad-announcement/blt448ecb1861dce7f7",
           "date": "2026-06-02"
         },
         {
           "title": "추키 로사노, 멕시코 월드컵 예비명단서 제외",
-          "summary": "최근 두 번의 월드컵에 나섰던 로사노가 출전 시간 부족과 징계 문제로 아기레 감독의 55인 예비명단에서 빠졌다.",
+          "summary": "최근 두 차례 월드컵에 나섰던 30세 공격수 이르빙 '추키' 로사노가 아기레 감독의 55인 예비명단에서 제외됐다. 소속팀 샌디에이고 FC에서의 출전 시간 부족과 징계 문제가 결정적이었다. 한편 2월 발목 수술을 받은 주장 에드손 알바레스는 명단에 포함됐고, 예비명단에는 리가 MX 선수 12명과 일부 무캡 선수가 들어갔으며 최종 26인은 6월 1일 발표될 예정이다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48757812/chucky-lozano-omitted-mexico-provisional-world-cup-squad",
           "date": ""
         },
         {
           "title": "멕시코 vs 남아공 개막전 중계·시청 안내",
-          "summary": "골닷컴이 6월 11일 멕시코-남아공 개막전의 킥오프 시간, TV 채널 및 온라인 생중계 시청 방법을 정리했다.",
+          "summary": "멕시코는 6월 11일 아즈테카에서 남아공과 2026 월드컵 A조 개막전(미 동부시간 오후 2시 킥오프)을 치른다. 미국에서는 FOX 중계와 Fubo TV 스트리밍으로 시청할 수 있다. 이 경기는 2010년 월드컵 개막전의 리매치로, 개최국 자격으로 자동 출전한 멕시코는 멕시코 대표팀 최다 A매치(125경기) 출전 기록의 라울 히메네스(풀럼)를 앞세우고, 남아공은 2010년 이후 첫 본선 진출로 모포켕·모코에나 등을 내세운다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-us/news/mexico-south-africa-world-cup-preview/bltbbc641c3e0e20e59",
           "date": ""
@@ -1916,28 +2124,28 @@ window.DATA = {
         },
         {
           "title": "바파나 바파나, 무관 신예 2명 깜짝 발탁",
-          "summary": "필라델피아 유니언의 마카냐(22)와 카이저 치프스의 크로스(25)가 예선에 뛰지 않고도 최종 명단에 포함됐다.",
+          "summary": "휴고 브로스 감독이 수비 보강을 위해 A매치 경험이 없는 두 선수를 최종 26인에 깜짝 발탁했다. 필라델피아 유니언 소속 22세 센터백 올웨투 마카냐와 카이저 치프스의 25세 왼쪽 풀백 브래들리 크로스로, 둘 다 예선에 한 번도 출전하지 않았다. 명단은 자국 리그 19명을 중심으로 마멜로디 선다운스와 올랜도 파이리츠가 각각 8명씩 배출했으며, 36세 플레이메이커 템바 즈와네와 번리의 공격수 라일 포스터가 포함된 반면 맹장 수술을 받은 골키퍼 브랜던 피터슨은 제외됐다.",
           "source": "Al Jazeera",
           "url": "https://www.aljazeera.com/sports/2026/5/28/bafana-bafana-world-cup-squad-south-africa-names-two-uncapped-players",
           "date": "2026-05-28"
         },
         {
           "title": "남아공, 마지막 평가전서 자메이카와 1-1 무승부",
-          "summary": "비공개 경기에서 라일 포스터가 선제골을 넣었으나 앳킨슨에게 동점골을 허용, 월드컵 직전 5경기 연속 무승 행진이 이어졌다.",
+          "summary": "남아공은 6월 6일 토요일 멕시코 파추카의 에스타디오 이달고에서 비공개로 치른 자메이카와의 마지막 평가전에서 1-1로 비겼다(초기에는 1-0 승리로 잘못 전해져 혼선이 빚어졌다). 후반에 라일 포스터가 선제골을 넣었으나 드웨인 앳킨슨에게 동점골을 허용했고, 브로스 감독은 \"기대했던 경기력이 아니었다\"며 실망을 드러냈다. 이로써 남아공은 AFCON 16강 카메룬전 패배, 파나마·니카라과전 무승 등 최근 5경기 연속 무승으로 월드컵 본선에 들어가게 됐다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-za/lists/jamaica-1-1-south-africa-confusion-reigns-after-bafana-bafana-s-behind-closed-doors-fifa-world-cup-warm-up/blt5b925bdb40e375d3",
           "date": "2026-06-07"
         },
         {
           "title": "남아공-멕시코, 6월 11일 아즈테카서 월드컵 개막전",
-          "summary": "남아공은 개최국 멕시코와 멕시코시티 에스타디오 아즈테카에서 대회 개막전을 치른 뒤 체코, 한국과 A조 일정을 소화한다.",
+          "summary": "남아공은 6월 11일(현지시간 오후 2시, 미 중부 기준) 멕시코시티 에스타디오 아즈테카에서 개최국 멕시코와 2026 월드컵 개막전을 치른다. 아즈테카가 월드컵 개막전을 여는 것은 역대 세 번째이며, 두 팀은 2010년 요하네스버그 개막전에서 1-1로 비긴 바 있다. 멕시코, 미국, 캐나다가 공동 개최하는 48개국 사상 최대 규모 대회로, 남아공은 멕시코에 이어 체코, 한국과 A조 일정을 소화한다.",
           "source": "Yahoo Sports",
           "url": "https://sports.yahoo.com/articles/mexico-vs-south-africa-watch-110000410.html",
           "date": "2026-06-05"
         },
         {
           "title": "브로스의 문화 혁신, 16년 만의 월드컵 본선 결실",
-          "summary": "2021년 부임한 브로스 감독이 젊은 선수 중심의 정신력 강화로 팀을 변화시켜 르완다전 3-0 승리로 본선행을 확정했다.",
+          "summary": "2021년 부임한 휴고 브로스 감독은 경험 많은 노장들의 결정적 순간 투지 부족을 약점으로 보고, 정신력을 키울 젊은 선수 중심으로 팀을 재편하는 과감한 변화를 단행했다. 이 전략은 탈렌테 음바타, 오스윈 아폴리스, 에비던스 마크고파 등 20대 중반 선수들의 활약으로 결실을 맺어, 르완다전 3-0 승리로 2010년 개최국 자격 이후 16년 만의 월드컵 본선행을 확정했다. 마멜로디 선다운스와 올랜도 파이리츠 등 자국 클럽의 유망주 육성 투자도 이런 변화를 뒷받침했다.",
           "source": "ESPN",
           "url": "https://www.espn.com/espn/story/_/id/46600100/fifa-world-cup-qualifying-hugo-broos-culture-shift-pays-dividends-south-africa",
           "date": "2025-10-16"
@@ -2108,42 +2316,42 @@ window.DATA = {
       "news": [
         {
           "title": "한국-체코 월드컵 개막전 프리뷰: 알아야 할 모든 것",
-          "summary": "고지대 과달라하라에서 열리는 A조 1차전, 홍명보의 전방 압박 대 코우베크의 수비적 실리주의 맞대결이 조 초반 흐름을 가른다.",
+          "summary": "한국과 체코는 2026 월드컵 A조 1차전을 6월 12일(GMT 02:00, 현지 시각 6월 11일) 멕시코 과달라하라(자포판) 경기장에서 치른다. 11회 연속 본선에 오른 홍명보호는 고강도 압박과 빠른 종패스를 앞세운 4-2-3-1을, 20년 만에 본선에 복귀한 74세 코우베크 감독의 체코는 수비 조직 중심의 3-4-1-2를 가동한다. 김민재(바이에른)와 191cm 장신 스트라이커 시크(레버쿠젠), 이재성과 웨스트햄 주장 소우체크의 맞대결이 관전 포인트이며, 최근 5연승(15득점)의 체코가 상승세다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/news/south-korea-czech-republic-world-cup-preview/bltc5df400bcedf8307",
           "date": "2026-06-05"
         },
         {
           "title": "손흥민, 4번째 월드컵 출전... 한국 26인 최종 명단 발표",
-          "summary": "홍명보 감독이 손흥민(LAFC)을 주축으로 한 26인 최종 명단을 발표, 이강인·김민재가 함께 승선했다.",
+          "summary": "홍명보 감독이 5월 16일 통산 4번째 월드컵에 나서는 주장 손흥민(LAFC)을 중심으로 26인 최종 명단을 확정했으며, 이강인(PSG)과 김민재(바이에른)가 핵심으로 포함됐다. 발목 부상을 안고 있는 황인범(페예노르트)도 명단에 살아남았다. 홍 감독은 '1차 목표는 32강 통과이며 그 이후는 알 수 없다'고 밝혔고, 대표팀은 솔트레이크시티로 이동해 트리니다드토바고·엘살바도르와 평가전을 치른 뒤 6월 11일 체코, 18일 멕시코, 24일 남아공과 A조 경기를 갖는다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48788433/son-heung-min-south-korea-world-cup-squad-lee-kang-kim-min-jae",
           "date": "2026-05-16"
         },
         {
           "title": "손흥민 외에 누가 한국 공격을 책임질까",
-          "summary": "33세 주장 손흥민 의존도를 낮추기 위해 이강인·황희찬 등 공격 옵션을 점검한 분석 기사.",
+          "summary": "33세에 MLS LAFC로 이적한 손흥민이 토트넘 시절 폼을 재현하기 어려운 가운데, 대안으로 25세 이강인(PSG)과 30세 황희찬이 집중 분석됐다. 이강인은 리그앙 3회·2024-25 챔피언스리그 우승 경력에도 챔스 녹아웃에서 19분 출전에 그쳤고, 황희찬은 2022년 포르투갈전 결승골의 영웅이지만 강등당한 울버햄튼에서 31경기 3골에 머물렀다. 배준호(스토크)·양현준(셀틱)·오현규(베식타스) 등 젊은 자원은 잠재력은 있으나 검증이 부족해, 한국은 이번 대회와 그 이후를 위한 공격진 보강이 과제로 지적됐다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48899380/who-step-south-korea-help-son-heung-min-fifa-world-cup",
           "date": "2026-05-28"
         },
         {
           "title": "홍명보호, 16강 진출 시 2억 포상금... '성과 비례형' 제도 확정",
-          "summary": "대한축구협회가 기본 수당 5천만원에 16강 2억·8강 3억 등 단계별 보상을 강화한 포상금 제도를 확정했다.",
+          "summary": "대한축구협회가 2026 북중미 월드컵을 앞두고 26명 전원에게 기본 수당 5천만원을 지급하고, 성과에 따라 32강 1억·16강 2억·8강 3억·4강 4억·3위 4억5천만·준우승 5억·우승 6억원을 차등 지급하는 포상금 제도를 확정했다. 별도 승리 수당도 신설해 조별리그 승리 3천만원, 32강 5천만·16강 8천만·8강 1억4천만·4강 2억·결승 3억원을 지급한다. 협회는 또 선수 가족 숙소와 1등석 관전 티켓, 훈련 캠프와 멕시코를 오가는 전세기까지 지원한다.",
           "source": "풋볼리스트",
           "url": "https://www.footballist.co.kr/news/articleView.html?idxno=210549",
           "date": "2026-05-25"
         },
         {
           "title": "홍명보호, 월드컵 로드맵 확정... 멕시코 입성 전 솔트레이크시티 사전캠프",
-          "summary": "대표팀은 격전지 과달라하라 이동에 앞서 미국 유타주 솔트레이크시티에서 약 2주간 사전 훈련캠프를 진행한다.",
+          "summary": "대한축구협회가 홍명보호의 월드컵 로드맵을 확정해, 대표팀은 멕시코 과달라하라 베이스캠프 이동에 앞서 미국 유타주 솔트레이크시티에서 약 2주간 MLS 레알 솔트레이크와 유타대 시설을 활용해 사전 훈련한다. 해발 약 1,460m로 과달라하라(약 1,500m)와 고도·기후가 유사하고 서머타임 적용 시 시차도 동일해 적응에 유리하다는 점이 선정 이유다. 5월 16일 명단 발표, 18일 1차 출국, 6월 초 솔트레이크시티 평가전 2경기, 6월 5일 과달라하라 입성을 거쳐 6월 12~25일 체코·멕시코·남아공과 조별리그를 치른다.",
           "source": "풋볼리스트",
           "url": "https://www.footballist.co.kr/news/articleView.html?idxno=208975",
           "date": "2026-04-16"
         },
         {
           "title": "[오피셜] 한국 첫 상대 체코, 29인 명단 발표... '황희찬 동료' 크레이치 등 익숙한 이름",
-          "summary": "월드컵 개막전 상대 체코가 29인 명단을 공개, 황희찬의 소속팀 동료 크레이치 등 낯익은 선수들이 포함됐다.",
+          "summary": "6월 12일 과달라하라에서 한국과 개막전을 치르는 체코가 코우베크 감독 체제로 29인 예비 명단을 발표했으며, 슬라비아 프라하 소속 10명을 포함해 국내파 19명과 해외파 10명으로 구성됐다. 황희찬의 울버햄튼 동료이자 주장인 수비수 크레이치, A매치 89경기 17골에 190cm 장신으로 세트피스에 강한 미드필더 소우체크, PSV 주전 골키퍼 코바르시, 레버쿠젠에서 210경기 103골을 넣은 핵심 공격수 시크 등 익숙한 이름이 이름을 올렸다. 체코는 5월 31일 코소보전 이후 3명을 제외해 26인으로 명단을 줄인다.",
           "source": "베스트일레븐",
           "url": "https://www.besteleven.com/news/articleView.html?idxno=307094",
           "date": ""
@@ -2334,28 +2542,28 @@ window.DATA = {
       "news": [
         {
           "title": "한국 vs 체코 월드컵 2026 프리뷰… 손흥민과 시크의 대결",
-          "summary": "6월 12일 과달라하라에서 열리는 A조 1차전 프리뷰로, 손흥민의 한국과 20년 만에 본선에 복귀한 체코(시크 중심)가 맞붙는다.",
+          "summary": "현지시간 6월 12일 오전 11시 멕시코 과달라하라(사포판)의 에스타디오 치바스에서 열리는 2026 월드컵 A조 1차전 프리뷰다. 11회 연속 본선에 오른 홍명보 감독의 한국(4-2-3-1, 손흥민·황희찬·김민재)이, 20년 만에 본선에 복귀한 미로슬라프 코우베크(74세, 대회 최고령 감독)의 체코(3-4-1-2, 파트리크 시크 중심, 슬라비아 프라하 선수 10명 포함)와 맞붙는다. 매체는 김민재와 시크의 공중볼 경합, 손흥민과 체코의 조직적 수비 라인, 이재성과 토마시 수첵의 중원 싸움을 승부처로 꼽았다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/news/south-korea-czech-republic-world-cup-preview/bltc5df400bcedf8307",
           "date": "2026-06-05"
         },
         {
           "title": "월드컵 2026 A조 가이드: 멕시코·남아공·한국·체코 일정과 배당률",
-          "summary": "공동 개최국 멕시코와 남아공, 한국, FIFA 랭킹 41위 체코(코우베크 감독)가 속한 A조의 일정과 전망을 정리했다.",
+          "summary": "공동 개최국 멕시코, 남아공, 한국과 함께 FIFA 랭킹 41위 체코(코우베크 감독)가 속한 A조 가이드다. 2006년 이후 20년 만에 본선에 복귀한 체코는 6월 12일 한국(에스타디오 치바스), 6월 18일 남아공(애틀랜타 메르세데스-벤츠 스타디움), 6월 25일 멕시코(멕시코시티)와 차례로 맞붙는다. 주축 선수로는 토마시 수첵(웨스트햄), 파트리크 시크(레버쿠젠), 라디슬라프 크레이치(울버햄튼)가 거론됐고, 체코의 역대 최고 성적은 1934·1962년 준우승이다.",
           "source": "스카이스포츠",
           "url": "https://www.skysports.com/football/news/12098/13540670/world-cup-2026-group-a-guide-fixtures-schedule-standings-and-odds-for-mexico-south-africa-south-korea-and-czech-republic",
           "date": "2026-06-06"
         },
         {
           "title": "체코 3-1 과테말라… 월드컵 직전 평가전 승리",
-          "summary": "6월 4일 뉴저지 레드불 아레나에서 열린 본선 직전 평가전에서 시크의 선제골 등으로 체코가 과테말라를 3-1로 꺾었다.",
+          "summary": "6월 4일 미국 뉴저지 해리슨의 레드불 아레나에서 열린 본선 직전 평가전에서 체코가 과테말라를 3-1로 꺾었다. 파트리크 시크가 전반 11분 선제골을 넣었고, 전반 40분 윌리엄 파하르도에게 동점골을 허용했으나 후반 토마시 호리(72분)와 데니스 비신스키(79분)가 추가골을 터뜨려 승리를 확정했다. 체코는 3-4-2-1, 과테말라는 5-4-1 포메이션으로 맞섰다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/match/_/gameId/401870095/guatemala-czechia",
           "date": "2026-06-04"
         },
         {
           "title": "2026 월드컵 48개국 명단 총정리… 체코 5월 31일 최종 명단 확정",
-          "summary": "체코는 5월 31일 26인 최종 명단을 발표했으며, 시크(레버쿠젠)와 수첵(웨스트햄)이 핵심 자원으로 포함됐다.",
+          "summary": "체코는 5월 31일 골키퍼 3명, 수비수 10명, 미드필더 7명, 공격수 6명으로 구성된 26인 최종 명단을 확정했다. 골키퍼 인드르지흐 스타네크(슬라비아 프라하), 수비수 블라디미르 초우팔(호펜하임)·라디슬라프 크레이치(울버햄튼), 미드필더 토마시 수첵(웨스트햄), 공격수 아담 흘로제크(호펜하임)·파트리크 시크(레버쿠젠) 등이 포함됐다. 대부분 유럽 클럽 소속으로 슬라비아 프라하와 호펜하임 자원이 두드러진다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams",
           "date": "2026-06-03"
@@ -2538,42 +2746,42 @@ window.DATA = {
       "news": [
         {
           "title": "캐나다, 2026 월드컵 26인 최종 명단 발표… 다비드·데이비스 승선",
-          "summary": "제시 마쉬 감독이 골키퍼 3명, 수비수 9명, 미드필더 10명, 공격수 4명으로 구성된 26인 명단을 확정했고 부상 중인 알폰소 데이비스도 포함됐다.",
+          "summary": "제시 마쉬 감독은 5월 29일 골키퍼 3명, 수비수 9명, 미드필더 10명, 공격수 4명으로 구성된 26인 최종 명단을 발표했으며, PSG와의 챔피언스리그 4강전에서 햄스트링 부상을 당한 주장 알폰소 데이비스(바이에른 뮌헨)를 비롯해 조나단 다비드(유벤투스), 사일 라린(사우샘프턴), 타종 뷰캐넌(비야레알)이 이름을 올렸다. 2월 고관절 수술을 받은 프로미스 다비드, 지난해 10월부터 다리 골절로 결장 중인 모이즈 봉비토 등 부상 회복 선수들도 포함됐고, 주전 골키퍼는 막심 크레포와 데인 세인트클레어가 평가전 이후 가려진다. 개최국 캐나다는 스위스·카타르·보스니아헤르체고비나와 함께 B조에 속해 6월 12일 토론토에서 보스니아와 개막전을 치르며, 1986년과 2022년 두 차례 모두 조별리그를 넘지 못한 벽을 깨려 한다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48914937/alphonso-davies-named-canada-world-cup-squad-injury-concerns",
           "date": "2026-05-29"
         },
         {
           "title": "데이비스, 월드컵 캠프 합류했지만 출전 시기는 불투명",
-          "summary": "햄스트링 부상에서 회복 중인 주장 알폰소 데이비스가 대표팀 훈련에 합류했으나 6월 12일 개막전 출전 여부는 여전히 불확실하다.",
+          "summary": "5월에 PSG와의 챔피언스리그 4강전에서 햄스트링을 다친 주장 알폰소 데이비스가 일요일 대표팀에 합류해, 월요일 에드먼턴에서 열린 우즈베키스탄전(2-0 승) 때는 가벼운 러닝만 소화하며 벤치를 지켰다. 26인 명단에는 포함됐지만 6월 12일 토론토 보스니아전 출전 여부는 여전히 불확실하며, 데이비스는 '며칠 더 지켜봐야 한다, 하루하루 차근차근 가겠다'고 했고 마쉬 감독은 '다시 다치는 상황을 만들고 싶지 않아 매일 그를 면밀히 살피겠다'며 신중한 태도를 보였다. 2025년 3월 콘카카프 네이션스리그에서 ACL 파열까지 겪었던 데이비스는 그 이후 대표팀 경기에 나서지 못했고, 통산 A매치 58경기 15골을 기록 중이다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48944438/alphonso-davies-joins-canada-world-cup-prep-unclear-play",
           "date": "2026-06-02"
         },
         {
           "title": "데이비스 '부상은 정신적으로 힘들었다'… 개막전 출전엔 신중한 기대",
-          "summary": "바이에른 뮌헨 측면 수비수 데이비스가 연이은 부상의 심리적 부담을 토로하면서도 보스니아전 출전 가능성에 조심스러운 기대를 내비쳤다.",
+          "summary": "바이에른 뮌헨 측면 수비수 알폰소 데이비스(25)는 PSG와의 챔피언스리그 4강전에서 입은 햄스트링 부상으로 6월 12일 보스니아전 출전이 불확실한 가운데, '첫 경기가 빠르게 다가오고 있다, 최대한 잘 회복되면 한번 보겠지만 아니라면 무리할 필요는 없다'며 조심스러운 입장을 밝혔다. 그는 ACL 파열에 이은 연이은 부상에 대해 '정신적으로 매우 소모적이었다'며 자기 의심에 빠졌던 시기를 솔직히 털어놓았고, 회복 기간 동안 동기를 다시 다잡았다고 말했다. 데이비스는 5월 31일 샬럿의 초기 캠프를 건너뛴 뒤 에드먼턴에서 합류해 별도 재활을 이어가고 있으며, 통산 A매치 58경기 15골에 2022년 월드컵에서는 3경기 1골을 기록했다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-us/lists/alphonso-davies-canada-world-cup-fitness-update-bayern-munich/bltbe266697cd19d80c",
           "date": "2026-06-04"
         },
         {
           "title": "데이비스, 개막전 결장 유력… 마쉬 '대회 중 복귀할 것'",
-          "summary": "마쉬 감독은 데이비스가 6월 12일 보스니아전에는 뛰기 어렵지만 월드컵 도중 복귀해 출전할 것이라고 밝혔다.",
+          "summary": "제시 마쉬 감독은 PSG전에서 햄스트링을 다친 알폰소 데이비스가 월드컵에는 분명히 뛸 것이라면서도 6월 12일 보스니아와의 B조 개막전에는 준비가 안 될 것이라고 밝혔다. 마쉬는 '데이비스는 월드컵에서 뛸 것이라 본다, 다만 6월 12일에는 준비되지 않을 것'이라고 못박았으며, 데이비스는 5월 28일까지 바이에른 뮌헨에서 북미에서는 받기 어려운 첨단 치료를 받은 뒤 5월 31일 에드먼턴에서 대표팀에 합류할 예정이라고 설명했다. 캐나다는 금요일 26인 명단을 확정하며 부상 우려에도 통산 58경기 15골의 핵심 자원 데이비스를 포함시킬 계획이다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/alphonso-davies-canada-world-cup-injury-return-update/blt509473d1a2aca623",
           "date": "2026-06-04"
         },
         {
           "title": "평가전 마친 캐나다, 월드컵 준비 완료… 봉비토 부상은 변수",
-          "summary": "캐나다는 우즈베키스탄 2-0 승리와 아일랜드 1-1 무승부로 월드컵 준비를 마쳤으나 수비수 모이즈 봉비토의 다리 부상이 개막을 앞둔 악재로 떠올랐다.",
+          "summary": "캐나다는 에드먼턴에서 우즈베키스탄을 2-0으로 꺾은 뒤 6월 8일 몬트리올에서 아일랜드와 1-1로 비기며 월드컵 직전 평가전을 마쳤고, 마쉬 감독은 '대단한 이야기를 가진 선수들로 가득한 팀'이라며 준비가 됐다고 자신감을 보였다. 그러나 다리 골절 후 8개월 만에 복귀한 센터백 모이즈 봉비토가 우즈베키스탄전에서 30분 만에 교체되며 컨디션 난조를 드러냈고, TSN은 그가 장기적 건강을 위해 최종 명단에서 제외될 가능성이 크다고 보도해 수비의 핵심 전력 이탈이 우려된다. 한편 막심 크레포가 아일랜드전 페널티킥 선방 등으로 데인 세인트클레어를 제치고 주전 골키퍼를 확정했고, 20세 뤽 드 푸제롤이 봉비토의 대체 자원으로 인상적인 활약을 보였으나, 공격진은 30개의 슈팅에서 단 3골에 그치는 결정력 부족을 노출했다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-ca/lists/jesse-marsch-canada-world-cup-ready-after-uzbekistan-ireland-friendlies/blt16df97cdd55a0c0b",
           "date": "2026-06-08"
         },
         {
           "title": "월드컵 2026 B조 가이드: 캐나다·보스니아·카타르·스위스",
-          "summary": "개최국 캐나다가 속한 B조의 일정과 전력, 전망을 정리한 프리뷰로 캐나다는 6월 12일 토론토에서 보스니아와 개막전을 치른다.",
+          "summary": "개최국 캐나다(FIFA 30위)는 스위스(19위), 카타르(55위), 보스니아헤르체고비나(65위)와 B조에 편성됐으며, 캐나다와 스위스가 조 1·2위 후보로 꼽힌다. 캐나다는 6월 12일 토론토에서 보스니아와 홈 개막전을 치르고 6월 18일 밴쿠버에서 카타르, 6월 24일 마지막 경기를 갖는다. 조 상위 2개 팀과 각 조 3위 중 성적이 좋은 8개 팀이 32강에 진출하며, 조 경기는 토론토·밴쿠버 등 캐나다 도시와 산타클라라·로스앤젤레스·시애틀 등 미국 개최지에서 분산 진행된다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
           "date": ""
@@ -2716,7 +2924,7 @@ window.DATA = {
       "news": [
         {
           "title": "보스니아, 26인 월드컵 최종 명단 발표… 제코가 이끈다",
-          "summary": "바르바레즈 감독이 가장 먼저 26인 최종 명단을 확정했고, 40세 주장 에딘 제코가 공격의 핵으로 선발됐다.",
+          "summary": "세르게이 바르바레즈 감독이 가장 먼저 26인 최종 명단을 확정했고, 40세 주장 에딘 제코가 공격의 핵으로 선발됐다.",
           "source": "FIFA.com",
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/bosnia-and-herzegovina-sergej-barbarez-names-squad",
           "date": "2026-05-20"
@@ -2730,14 +2938,14 @@ window.DATA = {
         },
         {
           "title": "샬케 제코, 보스니아 소집 중 어깨 부상… 월드컵 출전 불투명",
-          "summary": "이탈리아전 막판 어깨를 다친 제코가 승부차기에 빠졌고, 바르바레즈 감독은 본선 출전을 기대한다고 밝혔다.",
+          "summary": "보스니아의 베테랑 공격수 에딘 제코(40세)가 2026년 4월 1일 이탈리아와의 월드컵 플레이오프 막판에 어깨를 다쳐, 붕대를 감은 채 승부차기에 나서지 못했다. 세르게이 바르바레즈 감독은 \"제코의 부상이 심하지 않아 월드컵에 나설 수 있기를 바란다\"고 밝혔다. 1월 샬케(2.분데스리가)에 합류해 8경기 6골 3도움을 기록 중인 그는 정밀 검진을 받게 됐으며, 28라운드 카를스루에전 결장이 확정됐다.",
           "source": "Bundesliga.com",
           "url": "https://www.bundesliga.com/en/2bundesliga/news/edin-dzeko-injury-bosnia-herzegovina-world-cup-schalke-36695",
           "date": "2026-04-01"
         },
         {
           "title": "월드컵 2026 B조 가이드: 캐나다·보스니아·스위스·카타르 일정과 전망",
-          "summary": "보스니아는 6월 12일 토론토에서 개최국 캐나다와 첫 경기를 치르며 2014년 이후 첫 본선 무대에 나선다.",
+          "summary": "보스니아(FIFA 랭킹 65위, 바르바레즈 감독)는 개최국 캐나다(30위), 무라트 야킨 감독의 스위스(19위), 로페테기 감독의 카타르(55위)와 함께 B조에 편성됐다. 보스니아는 6월 12일 토론토에서 캐나다와 첫 경기를 치른 뒤, 6월 18일 LA에서 스위스, 6월 24일 시애틀에서 카타르를 차례로 만난다. 각 조 상위 2팀이 32강에 직행하며, 랭킹 19위 스위스가 조 최강으로 꼽히는 가운데 플레이오프를 통과한 보스니아는 도전자 입장이다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
           "date": "2026-06-06"
@@ -2922,28 +3130,28 @@ window.DATA = {
       "news": [
         {
           "title": "로페테기 감독, 2026 월드컵 카타르 최종 26인 명단 발표",
-          "summary": "율렌 로페테기 감독이 6월 2일 카타르의 월드컵 최종 26인 명단을 확정했고, 아일랜드전(0-1 패) 이후 골키퍼 알 라이티와 미드필더 라얀 알 알리가 제외됐다.",
+          "summary": "율렌 로페테기 감독이 2026년 6월 1일 카타르의 월드컵 최종 26인 명단을 발표했으며, 골키퍼 3명·수비수 8명·미드필더 6명·공격수 9명으로 구성됐다. 공격진에는 알모에즈 알리(알 두하일)와 두 차례 아시아 올해의 선수에 오른 아크람 아피프(알 사드), 베테랑 하산 알 하이도스(알 사드)가 이름을 올렸고, 수비는 부알렘 쿠키와 페드로 미겔(이상 알 사드)이 중심을 잡는다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams",
           "date": "2026-06-03"
         },
         {
           "title": "아시아 챔피언 카타르, 16강 진출 가능할까",
-          "summary": "사상 첫 직행 본선에 오른 카타르는 B조에서 스위스·캐나다·보스니아와 맞붙으며, 30위 캐나다전 승리가 16강행 분수령이 될 전망이다.",
+          "summary": "2022년 개최국 이후 두 번째 본선이자 사상 첫 실력으로 진출한 카타르는 B조에서 스위스(FIFA 19위)·캐나다(30위)·보스니아(65위)와 한 조에 묶였다. 알 자지라 분석에 따르면 6월 18일 밴쿠버에서 열리는 캐나다전이 사실상 '반드시 이겨야 하는' 승부로, 이 경기 승리와 1무를 더하면 8개 3위 팀 중 하나로 16강에 오를 수 있다. 통산 60골의 알모에즈 알리와 아피프, 은퇴를 번복하고 복귀한 주장 알 하이도스가 로페테기호의 핵심이다.",
           "source": "Al Jazeera",
           "url": "https://www.aljazeera.com/sports/2026/6/3/fifa-world-cup-2026-qatar-squad-team-players-group-knockouts",
           "date": "2026-06-03"
         },
         {
           "title": "카타르 vs 스위스, 6월 13일 조별리그 개막전 프리뷰",
-          "summary": "FIFA 55위 카타르가 6월 13일 산타클라라에서 19위 스위스와 첫 경기를 치르며, 아크람 아피프가 공격을 이끈다.",
+          "summary": "FIFA 55위 카타르가 6월 13일(현지) 캘리포니아 산타클라라에서 19위 스위스와 조별리그 첫 경기를 치른다. 카타르는 최근 5경기에서 1무 3패로 부진하지만, 양 팀의 유일한 맞대결에서는 카타르가 1-0으로 승리한 바 있다. 카타르는 알 사드의 아크람 아피프가 공격을 풀어가며 레알 마드리드·세비야를 거친 59세 로페테기 감독이 지휘하고, 스위스는 주장 그라니트 자카(선덜랜드)와 무라트 야킨 감독이 이끈다.",
           "source": "골닷컴(Goal.com)",
           "url": "https://www.goal.com/en-gb/news/qatar-switzerland-world-cup-preview/blt152850821751c25d",
           "date": "2026-06-07"
         },
         {
           "title": "월드컵 2026 B조 가이드 - 카타르 일정·전력 분석",
-          "summary": "카타르는 6월 13일 스위스, 18일 캐나다, 24일 보스니아와 차례로 격돌하며, 로페테기 감독 아래 2022년 조별 탈락 설욕을 노린다.",
+          "summary": "FIFA 55위 카타르는 AFC A조 1위로 본선에 올라, 6월 13일 산타클라라에서 스위스, 18일 밴쿠버에서 개최국 캐나다, 24일 시애틀에서 보스니아와 차례로 맞붙는다. 2022년 자국 월드컵에서 조별리그 탈락에 그쳤던 카타르는 알모에즈 알리·하산 알 하이도스가 공격을, 페드로 미겔·부알렘 쿠키가 수비를 맡아 설욕을 노린다. 북미 3개 도시를 돌며 유럽의 스위스·보스니아와 개최국 캐나다를 상대하는 까다로운 대진이다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
           "date": "2026-06-06"
@@ -3139,28 +3347,28 @@ window.DATA = {
       "news": [
         {
           "title": "샤카, 스위스 주장으로 2026 월드컵 최종 26인 명단 발표",
-          "summary": "무라트 야킨 감독이 그라니트 샤카를 주장으로 한 26인 명단을 확정했으며, 무릎 부상에서 복귀한 제키 암두니가 깜짝 포함됐다.",
+          "summary": "무라트 야킨 감독이 2026년 5월 19일 26인 명단을 발표했으며, 선덜랜드 소속의 33세 미드필더 그라니트 샤카가 주장으로서 4회 연속 월드컵에 나선다. 지난 7월 십자인대 파열을 당해 이번 시즌 교체로 3경기만 뛴 번리 공격수 제키 암두니가 깜짝 발탁됐고, 영보이스 리그 득점왕(18골) 크리스티안 파스나흐트와 골키퍼 마르빈 켈러도 이름을 올렸다. 세리에A 우승을 막 차지한 인터 밀란의 마누엘 아칸지, 최근 미국과의 평가전에서 득점한 20세 유망주 요한 만잠비(프라이부르크), 브렐 엠볼로(렌) 등이 포함됐다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48818354/granit-xhaka-captain-switzerland-world-cup-squad",
           "date": "2026-05-19"
         },
         {
           "title": "스위스 1-1 호주, 월드컵 직전 마지막 평가전서 무승부",
-          "summary": "은도예가 14분 선제골을 넣었으나 호주의 예지에게 동점골을 허용하며 1-1로 비겼고, 느린 경기 시작이 과제로 지적됐다.",
+          "summary": "스위스는 14분 샤카의 정교한 패스에 이은 단 은도예의 선제골로 앞서갔으나, 후반 56분 호주 데뷔전을 치른 테테 옌지에게 동점골을 내주며 1-1로 비겼다. 이 경기는 호주가 월드컵 D조 첫 상대 튀르키예전을 앞두고 치른 마지막 점검 무대였으며, 호주에서는 20세 윙어 네스토리 이란쿤다가 가장 위협적인 선수로 평가받았고 해리 수타가 처음으로 주장 완장을 찼다. 스위스는 초반 우세를 끝까지 살리지 못한 점이 과제로 지적됐다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/report/_/gameId/401869743",
           "date": "2026-06-06"
         },
         {
           "title": "월드컵 2026 B조 가이드: 스위스가 캐나다·보스니아·카타르와 격돌",
-          "summary": "스위스는 FIFA 랭킹 19위, UEFA B조 1위로 통과해 B조 최강 후보로 평가받는다.",
+          "summary": "스위스는 UEFA 예선 B조 1위로 본선에 올랐고 FIFA 랭킹 19위로, 30위 캐나다·55위 카타르·65위 보스니아가 속한 B조에서 가장 높은 순위의 팀이다. 조별리그 일정은 6월 13일 카타르전(미국 산타클라라), 6월 18일 보스니아전(미국 로스앤젤레스), 6월 24일 캐나다전(캐나다 밴쿠버)으로 짜였다. 스위스의 월드컵 역대 최고 성적은 1934·1938·1954년의 8강 진출이다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
           "date": "2026-06-06"
         },
         {
           "title": "스위스 월드컵 2026 스쿼드 분석: 경험과 신예의 조화",
-          "summary": "샤카·아칸지·로드리게스·엠볼로 등 베테랑과 함께 프라이부르크의 신예 요한 만잠비가 주목받는다.",
+          "summary": "주장 샤카(선덜랜드)를 중심으로 마누엘 아칸지(인터 밀란), 리카르도 로드리게스(레알 베티스) 등 베테랑이 중심을 이루며, 얀 좀머 은퇴로 비게 된 골문은 그레고어 코벨(보루시아 도르트문트)이 맡는다. 공격은 29세 브렐 엠볼로(렌)가 주포로 나서고 단 은도예(노팅엄 포레스트), 루벤 바르가스(세비야)가 측면을 지원하며, 20세 미드필더 요한 만잠비(프라이부르크)가 최고의 신예로 꼽힌다. 예상 전형은 코벨-아칸지·엘베디 중앙 수비-샤카가 이끄는 3미드필더의 4-3-3이다.",
           "source": "Goal.com",
           "url": "https://www.goal.com/en/lists/switzerland-squad-world-cup-2026/bltf2af984bafb74a30",
           "date": ""
@@ -3174,7 +3382,7 @@ window.DATA = {
         },
         {
           "title": "카타르 vs 스위스 월드컵 경기 프리뷰 및 중계 정보",
-          "summary": "스위스의 B조 일정 중 카타르전 중계 채널과 킥오프 시간 등 시청 정보를 정리했다.",
+          "summary": "스위스의 B조 개막전인 카타르전은 2026년 6월 13일 15:00(미국 동부시간) 캘리포니아 산타클라라에서 열리며, 미국에서는 FOX와 Fubo TV로 중계된다. 야킨 감독과 주장 샤카(통산 4번째 월드컵)가 이끄는 FIFA 19위 스위스는 최근 5경기 2승 2무 1패로, 1무 3패에 그친 55위 카타르(로페테기 감독, 에이스 아크람 아피프)보다 좋은 흐름이다. 다만 두 팀의 유일한 맞대결에서는 카타르가 1-0으로 승리한 바 있고, 양 팀 모두 부상 없이 경기를 맞는다.",
           "source": "Goal.com",
           "url": "https://www.goal.com/en-us/news/qatar-switzerland-world-cup-preview/blt152850821751c25d",
           "date": ""
@@ -3390,28 +3598,28 @@ window.DATA = {
         },
         {
           "title": "브라질, 평가전 에데르송 추가 소집...웨슬리 부상으로 월드컵 낙마",
-          "summary": "이집트전에서 왼쪽 허벅지 부상을 입은 웨슬리가 월드컵에서 제외되고 아탈란타의 에데르송이 대체 발탁됐다.",
+          "summary": "6월 6일 이집트와의 평가전에서 근육 부상을 당한 로마 소속 라이트백 웨슬리가 월드컵 개막 전 회복이 불가능해 안첼로티 감독의 최종 명단에서 제외됐다. 대체 선수로는 맨체스터 유나이티드 이적이 임박한 것으로 알려진 아탈란타의 미드필더 에데르송이 발탁됐으며, 그는 SNS를 통해 '세계 최고의 대표팀에 합류해 영광'이라고 소감을 밝혔다. 웨슬리는 '부상 때문에 꿈을 잠시 미뤄야 한다'면서도 더 강해져 돌아오겠다는 의지를 드러냈다.",
           "source": "Football Italia",
           "url": "https://football-italia.net/ederson-wesley-break-ancelotti-change-brazil/",
           "date": "2026-06-08"
         },
         {
           "title": "브라질 2-1 이집트, 월드컵 직전 평가전 승리...웨슬리 부상 이탈",
-          "summary": "브루누 기마랑이스와 엔드릭의 골로 이집트를 꺾었으나 웨슬리가 전반 부상으로 교체돼 우려를 남겼다.",
+          "summary": "6월 6일 미국 클리블랜드 헌팅턴뱅크필드에서 6만4311명의 관중 앞에 열린 평가전에서 브라질이 이집트를 2-1로 꺾었다. 전반 7분 브루누 기마랑이스가 페널티 박스 외곽에서 선제골을 넣었으나 3분 뒤 무스타파 지코에게 동점골을 허용했고, 후반 7분(52분) 후반 교체 투입된 엔드릭이 라피냐의 크로스를 마무리해 결승골을 터뜨렸다. 다만 수비수 웨슬리가 부상으로 교체되며 우려를 남겼고, 이 경기는 네이마르 없이 치러진 모로코와의 조별리그 개막전 직전 마지막 점검 무대였다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/report/_/gameId/401861998",
           "date": "2026-06-06"
         },
         {
           "title": "월드컵 2026 브라질 스쿼드 리스트: 네이마르 포함 정리",
-          "summary": "스카이스포츠가 알리송, 비니시우스, 라피냐, 네이마르 등 안첼로티호 브라질 명단 전원을 포지션별로 정리했다.",
+          "summary": "스카이스포츠가 안첼로티 감독이 이끄는 브라질 대표팀 명단을 포지션별로 정리했다. 골키퍼에는 알리송(리버풀)과 베베르통(그레미우) 등이 포함됐고, 수비진은 마르키뉴스, 가브리엘(아스널), 브레메르와 풀백 다닐루·알렉스 산드루가 자리했으며, 중원은 카세미루(맨유)와 브루누 기마랑이스(뉴캐슬), 루카스 파케타로 구성됐다. 공격진에는 비니시우스 주니오르(레알 마드리드), 라피냐(바르셀로나), 가브리엘 마르티넬리와 함께 산투스로 복귀한 베테랑 네이마르가 깜짝 발탁됐다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/11095/13543070/world-cup-2026-squad-lists-england-scotland-brazil-usa-spain-france-germany-netherlands-argentina-portugal-and-more",
           "date": "2026-06-08"
         },
         {
           "title": "브라질 월드컵 명단 프리뷰: 누가 뽑혔고 누가 탈락했나",
-          "summary": "히샬리송, 호드리구, 조앙 페드루가 탈락하고 C조에서 모로코·아이티·스코틀랜드를 상대하는 명단을 분석했다.",
+          "summary": "안첼로티 감독이 네이마르(산투스), 비니시우스 주니오르(레알 마드리드), 라피냐(바르셀로나), 브루누 기마랑이스(뉴캐슬) 등 경험과 신예를 아우른 명단을 발표했다. 반면 히샬리송과 조앙 페드루가 탈락했고 호드리구는 부상으로 제외됐는데, 안첼로티가 이들 대신 네이마르를 주요 공격 옵션으로 택한 결과다. 브라질은 C조에서 모로코·아이티·스코틀랜드와 맞붙으며 비교적 유리한 조 편성을 받았다는 평가다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/brazil-squad-world-cup-2026/blt08d5bff83176ff6a",
           "date": "2026-05-19"
@@ -3597,14 +3805,14 @@ window.DATA = {
       "news": [
         {
           "title": "모로코, 2026 월드컵 26인 최종 명단 확정… 하키미가 주장",
-          "summary": "신임 감독 무함마드 우아비가 아슈라프 하키미를 주장으로 한 26인 명단을 발표했으며, 2022 카타르 대회 대비 16명이 새 얼굴이다.",
+          "summary": "지난 3월 발리드 레그라기 후임으로 부임한 무함마드 우아비 감독이 2026 월드컵에 나설 26인 최종 명단을 발표하고, PSG 수비수 아슈라프 하키미를 주장으로 선임했다. 4강 신화를 쓴 2022 카타르 대회 멤버를 상당수 유지하면서도 레알 마드리드의 브라힘 디아스 등을 핵심 자원으로 내세웠으며, 이번 대회는 그동안 유스팀만 지휘했던 우아비 감독의 첫 메이저 대회다. 다만 모로코는 직전 아프리카네이션스컵(AFCON) 결승에서 세네갈에 승부차기로 패한 뒤 대회를 맞이한다.",
           "source": "FourFourTwo",
           "url": "https://www.fourfourtwo.com/team/morocco-world-cup-2026-squad",
           "date": "2026-05-26"
         },
         {
           "title": "모로코 월드컵 프리뷰: 주목할 선수, 조 편성과 명단",
-          "summary": "브라질·스코틀랜드·아이티와 함께 C조에 편성된 모로코, 6월 13일 브라질과 첫 경기를 치르며 브라힘 디아스가 주목 선수로 꼽혔다.",
+          "summary": "모로코는 브라질·스코틀랜드·아이티와 함께 C조에 편성돼, 6월 13일 뉴저지에서 브라질, 19일 보스턴에서 스코틀랜드, 24일 애틀랜타에서 아이티와 차례로 맞붙는다. 주목할 선수로는 AFCON에서 5골로 득점왕에 오른 레알 마드리드의 브라힘 디아스, 지난 시즌 11골 14도움으로 'CAF 올해의 선수'에 선정된 하키미, 그리고 18세 신예 미드필더 아유브 부아디(릴)가 꼽힌다. 49세의 우아비 감독이 3월 레그라기의 뒤를 이었으며, FIFA 랭킹 8위인 모로코를 두고 알자지라는 16강 진출을 전망했다.",
           "source": "Al Jazeera",
           "url": "https://www.aljazeera.com/sports/2026/6/3/morocco-world-cup-2026-preview-players-to-watch-group-and-squad-list",
           "date": "2026-06-03"
@@ -3618,7 +3826,7 @@ window.DATA = {
         },
         {
           "title": "브라질 vs 모로코 월드컵 프리뷰: 알아야 할 모든 것",
-          "summary": "6월 13일 뉴저지에서 열리는 개막 상대전, 모로코는 코소보전 2-1 승리로 큰 부상 없이 최정예 라인업을 가동할 전망이다.",
+          "summary": "6월 13일(현지시간) 뉴욕/뉴저지 스타디움에서 열리는 C조 개막전에서 모로코는 카를로 안첼로티 감독이 이끄는 브라질과 격돌한다. 양 팀 모두 결장자가 없는 가운데 브라질은 2년 반 만에 복귀하는 네이마르(경미한 근육 부종)와 비니시우스·하피냐의 공격진이 화두이며, 모로코는 무패로 아프리카 예선을 통과한 기세를 앞세워 하키미를 중심으로 한 견고한 수비 조직을 가동한다. 모로코는 직전 평가전에서 코소보를 2-1로 꺾으며 컨디션을 끌어올렸고, 과거 두 팀의 유일한 맞대결에서도 2-1로 승리한 바 있다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/news/brazil-morocco-world-cup-preview/bltdf80391584379c4e",
           "date": ""
@@ -3801,7 +4009,7 @@ window.DATA = {
       "news": [
         {
           "title": "월드컵 2026 C조 가이드: 아이티, 52년 만의 본선 복귀",
-          "summary": "아이티는 1974년 이후 처음으로 월드컵 본선에 올라 브라질, 모로코, 스코틀랜드와 C조에서 격돌하며 6월 13일 첫 경기를 치른다.",
+          "summary": "아이티는 1974년 서독 대회 이후 52년 만에 처음으로 월드컵 본선에 진출해 브라질, 모로코, 스코틀랜드와 함께 C조에 편성됐다(FIFA 랭킹 83위). 일정은 6월 14일 스코틀랜드전(폭스버러), 6월 20일 브라질전(필라델피아), 6월 24일 모로코전(애틀랜타) 순이며, 세바스티앵 미녜 감독이 이끄는 스쿼드에는 울버햄튼 미드필더 장-리크네르 벨가르드, 선덜랜드 공격수 윌슨 이시도르, 토론토FC의 데릭 에티엔, 바스티아 골키퍼 조니 플라시드 등이 포함된다.",
           "source": "스카이스포츠",
           "url": "https://www.skysports.com/football/news/12098/13543087/world-cup-2026-group-c-guide-fixtures-schedule-standings-and-odds-for-scotland-brazil-morocco-and-haiti",
           "date": "2026-06-07"
@@ -3815,21 +4023,21 @@ window.DATA = {
         },
         {
           "title": "아이티 2026 월드컵 스쿼드 (ESPN)",
-          "summary": "베테랑 골키퍼 조니 플라시드와 통산 최다 득점자 두켄스 나존 등 포지션별 26인 전체 명단이 정리돼 있다.",
+          "summary": "ESPN이 정리한 아이티 26인 명단은 골키퍼 3명, 수비수 8명, 미드필더 6명, 공격수 9명으로 구성된다. 골문은 38세 베테랑 조니 플라시드(1번)가 지키고, 중원은 27세 핵심 자원 장-리크네르 벨가르드(10번)가 이끌며, 공격진에는 통산 최다 득점자인 32세 두켄스 나존(9번)과 데릭 에티엔 주니어(29세·7번)가 포진한다. 스쿼드 평균 연령대는 24~32세로, 노련함과 젊음이 섞여 있다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/team/squad/_/id/2654/haiti",
           "date": ""
         },
         {
           "title": "아이티 대표팀 스쿼드 & 선수 명단 (Goal.com)",
-          "summary": "울버햄튼 미드필더 장-리크네르 벨가르드와 선덜랜드 공격수 윌슨 이시도르 등 전원 해외파로 구성된 아이티 명단을 소개한다.",
+          "summary": "골닷컴은 미녜 감독이 이끄는 아이티 26인 명단을 골키퍼 3명(플라시드·피에르·뒤베르제), 수비수 8명, 미드필더, 공격수 11명으로 구분해 소개한다. 명단에는 10번 벨가르드와 18번 윌슨 이시도르 등이 포함되며, 9번 두켄스 나존과 20번 프란츠두실라스 피에로 등 다수의 공격 자원이 눈에 띈다. 해당 페이지는 출전·득점·도움·경고 등 경기 기록 위주로 구성돼 소속 구단 정보는 별도 표기돼 있지 않다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/team/haiti/squad/151psmk1h1c846f2lqmflkx75",
           "date": ""
         },
         {
           "title": "감독이 한 번도 입국 못한 채 월드컵 본선行 이뤄낸 아이티",
-          "summary": "치안 불안으로 아이티를 방문하지 못한 프랑스인 미녜 감독 체제로 니카라과를 2-0으로 꺾고 52년 만의 본선 진출을 확정했다.",
+          "summary": "아이티는 2025년 11월 19일 니카라과를 2-0으로 꺾고 온두라스·코스타리카를 제친 채 조 1위로 1974년 이후 52년 만의 월드컵 본선 진출을 확정했다. 프랑스인 미녜 감독은 치안 불안과 국제선 운항 중단으로 단 한 번도 아이티 땅을 밟지 못했고, 그는 프랑스풋볼에 \"너무 위험해 불가능하다\"고 밝혔다. 대표팀은 자국에서 약 500마일(약 800km) 떨어진 쿠라소에서 홈경기를 치르며 전원 해외파로 구성됐고, 핵심 선수는 울버햄튼의 벨가르드, 그리고 선덜랜드의 상승세 공격수 윌슨 이시도르 영입을 추진 중이다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/47019793/haiti-reach-2026-world-cup-manager-never-setting-foot-country",
           "date": "2025-11-19"
@@ -4017,42 +4225,42 @@ window.DATA = {
       "news": [
         {
           "title": "스코틀랜드 2026 월드컵 26인 최종 명단 발표",
-          "summary": "스티브 클라크 감독이 크레이그 고든, 핀들레이 커티스, 로스 스튜어트를 포함한 26인 명단을 확정했으며 앤디 로버트슨이 주장을 맡는다.",
+          "summary": "스티브 클라크 감독이 5월 20일 2026 월드컵에 나설 26인 명단을 발표했으며, 리버풀의 앤디 로버트슨이 주장을 맡는다. 명단에는 클럽 출전이 거의 없었음에도 발탁된 43세의 베테랑 골키퍼 크레이그 고든(하츠), 19세 윙어 핀들레이 커티스(레인저스 소속·킬마녹 임대), 부상을 딛고 9골을 넣은 로스 스튜어트(사우샘프턴)가 포함됐다. 반면 시즌 18골의 올리 맥버니(헐 시티)와 발목 부상의 토미 코너웨이는 제외됐고, 골키퍼 3명·수비수 13명·미드필더 8명·공격수 5명으로 구성됐다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12017/13545649/world-cup-2026-steve-clarke-names-craig-gordon-findlay-curtis-ross-stewart-in-scotlands-26-man-squad",
           "date": "2026-05-29"
         },
         {
           "title": "빌리 길무어, 무릎 부상으로 월드컵 낙마",
-          "summary": "쿠라사오와의 친선전에서 무릎을 다친 나폴리 미드필더 길무어가 월드컵에서 제외됐고 맨유 유망주 타일러 플레처가 대체 발탁됐다.",
+          "summary": "나폴리 미드필더 빌리 길무어가 5월 30일 쿠라사오와의 친선전(4-1 승)에서 무릎을 다쳐 2026 월드컵에 나설 수 없게 됐다. 클라크 감독이 핵심 자원으로 꼽았던 길무어의 이탈은 큰 타격이며, 대체 선수로는 전 스코틀랜드 국가대표 대런 플레처의 아들이자 맨유 유망주인 타일러 플레처가 발탁됐다. 스코틀랜드는 1998년 이후 28년 만의 월드컵 무대에서 C조에 속해 브라질, 모로코, 아이티와 대결한다.",
           "source": "ESPN",
           "url": "https://www.espn.com/football/story/_/id/48701669/scotland-world-cup-2026-schedule-fixtures-results-scores-group-c-how-watch-uk-news-analysis-injuries",
           "date": "2026-05-31"
         },
         {
           "title": "스코틀랜드, 쿠라사오 4-1 격파하며 월드컵 출정식",
-          "summary": "10명이 된 쿠라사오를 상대로 핀들레이 커티스의 데뷔골과 섕클런드의 멀티골로 4-1 승리를 거뒀으나 길무어가 부상으로 이탈했다.",
+          "summary": "스코틀랜드가 월드컵 전 마지막 홈경기인 출정식에서 10명이 된 쿠라사오를 4-1로 꺾었다. 쿠라사오가 21분 타히트 총의 선제골로 앞서갔으나, 38분 유르겐 로카디아가 아론 히키를 향한 팔꿈치 가격으로 퇴장당하며 흐름이 바뀌었고, 19세 핀들레이 커티스가 전반 종료 직전 데뷔골로 동점을 만든 뒤 로런스 섕클런드의 후반 멀티골과 라이언 크리스티의 페널티킥으로 역전승했다. 다만 후반전 들어온 커티스가 교체 투입된 자리의 주인공인 빌리 길무어가 전반 무릎 부상으로 빠진 점은 6월 14일 보스턴 아이티전을 앞둔 큰 우려로 남았다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12017/13549157/scotland-beat-10-man-curacao-4-1-in-world-cup-send-off-match-as-findlay-curtis-nets-first-international-goal",
           "date": "2026-05-30"
         },
         {
           "title": "스코틀랜드, 볼리비아 4-0 완파하며 월드컵 준비 마무리",
-          "summary": "셰 아담스의 멀티골과 맥토미네이의 활약으로 볼리비아를 4-0으로 꺾으며 클라크 감독에게 '행복한 고민'을 안겼다.",
+          "summary": "스코틀랜드가 6월 6일 미국 뉴저지에서 열린 마지막 월드컵 워밍업 경기에서 볼리비아를 4-0으로 완파했다. 무더위 속에서 전반에만 4골을 몰아쳤는데, 로런스 섕클런드가 앤디 로버트슨의 크로스를 헤더로 마무리해 선제골을 넣었고 스콧 맥토미네이가 추가골을, 셰 아담스가 멀티골을 터뜨렸다. 쿠라사오전에 이어 2경기 연속 득점한 섕클런드가 선발 공격수에 유력해지는 등 클라크 감독은 다음 주 28년 만의 월드컵 개막전을 앞두고 행복한 고민을 안게 됐다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/11095/13551165/bolivia-0-4-scotland-che-adams-scores-twice-in-emphatic-world-cup-warm-up-win",
           "date": "2026-06-06"
         },
         {
           "title": "스코틀랜드 월드컵 등번호 확정… 앵거스 건 1번",
-          "summary": "노팅엄 포레스트의 앵거스 건이 1번을 받았고 고든은 21번, 로버트슨 3번, 맥기니 7번 등 등번호가 공개됐다.",
+          "summary": "스코틀랜드의 2026 월드컵 등번호가 공개돼, 노팅엄 포레스트의 앵거스 건이 1번을 받았고 주전 골키퍼로 예상되는 크레이그 고든은 21번을 달게 됐다. 주장 앤디 로버트슨은 3번, 스콧 맥토미네이 4번, 존 맥기니 7번, 린든 다이크스 9번, 셰 아담스 10번이 배정됐다. 부상당한 빌리 길무어의 대체로 합류한 타일러 플레처는 8번을 받았으나, 구단 측은 이것이 맨유 출신 10대 선수의 선발 출전을 시사하는 것은 아니라고 밝혔다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12017/13550179/world-cup-2026-scotland-squad-numbers-revealed-with-angus-gunn-handed-no-1-jersey-ahead-of-craig-gordon",
           "date": "2026-06-04"
         },
         {
           "title": "스코틀랜드, 1998년 이후 첫 월드컵… 14일 아이티전으로 개막",
-          "summary": "C조에 속한 스코틀랜드는 6월 14일 아이티, 19일 모로코, 24일 브라질과 차례로 맞붙으며 조별리그 첫 통과에 도전한다.",
+          "summary": "스코틀랜드가 1998년 이후 28년 만에 월드컵 무대에 복귀하며, 클라크 감독은 이로써 3개 메이저 대회 연속 진출을 이끌었다. C조에 속한 스코틀랜드는 6월 14일 보스턴에서 아이티(영국 시간 새벽 2시), 19일 모로코, 24일 마이애미에서 브라질과 차례로 맞붙는다. 1998년과 똑같이 세계 8위권의 브라질·모로코를 다시 만나는 험난한 조에서, 단 한 번도 이루지 못한 월드컵 조별리그 통과라는 새 역사에 도전한다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/36621/13551871/scotland-at-world-cup-2026-steve-clarkes-side-look-to-progress-beyond-the-group-stage-for-first-time",
           "date": "2026-06-08"
@@ -4222,42 +4430,42 @@ window.DATA = {
       "news": [
         {
           "title": "포체티노, 2026 월드컵 미국 대표팀 26인 최종 명단 발표",
-          "summary": "풀리시치, 타일러 애덤스, 매케니가 이끄는 26인 명단 확정, 13명은 첫 월드컵 출전.",
+          "summary": "마우리시오 포체티노 감독이 5월 26일 뉴욕에서 크리스티안 풀리시치, 타일러 애덤스, 웨스턴 매케니를 중심으로 한 26인 최종 명단을 공식 발표했다. 시즌 19골을 넣은 폴라린 발로건, PSV에서 19골의 리카르도 페피, 잔여 명단에는 1월 이후 137분만 뛴 지오 레이나까지 포함됐으며, 2022년 대회 멤버 13명이 잔류하고 크리스 리처즈·마일스 로빈슨·페피 등 13명은 첫 월드컵에 나선다. 미국은 조별리그에서 파라과이, 호주, 튀르키예와 차례로 맞붙는다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48882389/usa-2026-world-cup-roster-christian-pulisic-squad-mckennie-adams",
           "date": "2026-05-26"
         },
         {
           "title": "주전 센터백 크리스 리처즈, 발목 인대 부상으로 독일전 결장",
-          "summary": "포체티노가 리처즈의 부상에 답답함 토로, 파라과이전 출전 여부도 불투명.",
+          "summary": "주전 센터백 크리스 리처즈가 5월 17일 크리스털 팰리스의 브렌트포드전에서 발목 인대 손상을 입어 시카고에서 열리는 독일과의 평가전에 결장이 확정됐다. 포체티노 감독은 소속팀으로부터 부상 정도에 대한 정보가 계속 엇갈려 회복 시점이 미뤄졌다며 답답함을 드러냈고, 6월 12일 파라과이와의 월드컵 개막전 출전 여부도 점검이 필요하다고 밝혔다. 다만 리처즈가 금요일 팀 훈련에 참여했고 매케니도 복귀가 순조로워 보인다고 전해 회복 기대를 남겼다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48976577/usa-world-cup-chris-richards-injury-mauricio-pochettino-germany",
           "date": "2026-06-05"
         },
         {
           "title": "미국, 월드컵 직전 마지막 평가전서 독일에 1-2 패배",
-          "summary": "시카고 솔저필드 매진 속 독일에 역전패, 월드컵 준비 상태에 물음표.",
+          "summary": "6월 6일 시카고에서 열린 월드컵 직전 마지막 평가전에서 미국이 독일에 1-2로 역전패했다. 카이 하베르츠가 초반 헤더로 선제골을 넣은 뒤 레로이 사네의 57분 결승골을 도왔고, 미국은 37분 안토니 로빈슨의 환상적인 발리슛으로 만회하는 데 그쳤다. 포체티노는 통계상 호각세였다며 선수들의 투지에 만족을 표했지만, 부상 중인 리처즈의 공백 속 두 실점 모두 수비 균열에서 비롯돼 파라과이전을 앞둔 준비 상태에 물음표가 남았다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48986237/is-usmnt-ready-world-cup-loss-germany-jury-out",
           "date": "2026-06-06"
         },
         {
           "title": "풀리시치, 5개월 만에 골 침묵 깨고 세네갈전 1골 1도움",
-          "summary": "세네갈과의 평가전 3-2 승리에서 득점 포함 활약, '이제 그만 얘기됐으면' 소감.",
+          "summary": "크리스티안 풀리시치가 5월 31일 노스캐롤라이나 샬럿에서 열린 세네갈과의 평가전 3-2 승리에서 1골 1도움을 기록하며 약 5개월간의 골 침묵을 끝냈다. 7분 세르지뇨 데스트의 선제골을 돕고 20분에는 페피의 패스를 받아 골키퍼를 제치고 직접 득점했는데, 이는 작년 12월 28일 AC 밀란 골 이후 첫 골이자 대표팀에서는 8경기 만의 득점이다. 풀리시치는 \"사람들이 골만 본다. 이제 그만 얘기됐으면 좋겠다\"고 했고, 발로건도 63분 추가골을 보탰다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48933034/usmnt-pulisic-breaks-goal-drought-people-stop-talking",
           "date": "2026-05-31"
         },
         {
           "title": "미국 vs 파라과이 2026 월드컵 개막전 프리뷰",
-          "summary": "6월 13일 LA에서 열리는 D조 개막전, 포체티노의 공격 축구와 파라과이 수비 조직력 대결.",
+          "summary": "미국은 6월 13일 로스앤젤레스에서 파라과이와 D조 개막전을 치르는데, 공동 개최국으로 예선 없이 강팀과의 평가전으로 준비해 온 미국에는 그동안의 성장을 입증할 무대다. 반면 파라과이는 2010년 이후 16년 만의 월드컵 복귀로, 구스타보 알파로 감독 아래 남미 예선 18경기에서 10실점·9경기 무패 행진을 이어가며 진출했다. 포체티노의 강한 압박 축구와 알파로의 견고한 4-3-3 수비 블록 및 역습이 맞붙으며, 풀리시치·매케니에 맞서 파라과이는 미겔 알미론·훌리오 엔시소와 주장 구스타보 고메스가 이끄는 조직적 수비로 대응한다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/news/usa-paraguay-world-cup-preview/blt6d2779c2ca4a708f",
           "date": "2026-06-06"
         },
         {
           "title": "미국의 최종 월드컵 명단은 전형적 포체티노 스타일이자 큰 모험",
-          "summary": "8명의 MLS 선수와 유럽파를 섞은 명단 구성에 따른 위험 요소 분석.",
+          "summary": "포체티노가 부상 가능성이 조금이라도 있는 선수를 배제하는 평소 성향대로 근육 부상에서 회복 중이던 리옹 미드필더 태너 테스만을 제외해 본인까지 놀라게 했고, 그 자리를 미드필더 대신 보루시아 묀헨글라트바흐 수비수 조 스컬리로 채운 결정은 '불필요한 중복'이라는 비판을 받았다. 그 결과 중원이 얇아져 부상이 잦은 애덤스 옆에 크리스티안 롤단 같은 자원을 세워야 하고 경고 누적에 따른 출전 정지 위험까지 안게 됐다. 다만 발로건, 코번트리에서 17골의 하지 라이트, 페피로 구성된 공격진은 호조를 보이며, 리처즈의 발목 부상 변수는 파라과이전 수비 불안 요인으로 남았다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48882849/usmnt-final-world-cup-roster-pochettino-taking-risks",
           "date": "2026-05-26"
@@ -4466,7 +4674,7 @@ window.DATA = {
       "news": [
         {
           "title": "미국 vs 파라과이 월드컵 개막전 프리뷰: 알아야 할 모든 것",
-          "summary": "16년 만에 본선에 복귀한 파라과이가 6월 12일 개최국 미국과 D조 개막전을 치르며, 예선서 18경기 단 10실점의 견고한 수비가 무기로 꼽힌다.",
+          "summary": "파라과이는 한국시간 6월 13일 새벽 로스앤젤레스 스타디움에서 개최국 미국과 D조(터키·호주 포함) 첫 경기를 치른다. 16년 만에 본선에 복귀한 구스타보 알파로 감독의 파라과이는 남미예선 18경기에서 단 10실점만 허용한 견고한 수비와 미겔 알미론(뉴캐슬)을 앞세운 역습이 강점이며, 주장 구스타보 고메스가 이끄는 수비벽이 포체티노 감독의 미국과 크리스티안 풀리시치를 막아설 핵심으로 꼽힌다. 최근 미국은 평가전 2승 2패로 주춤한 반면 파라과이는 3연승으로 상승세를 타고 있다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/news/usa-paraguay-world-cup-preview/blt6d2779c2ca4a708f",
           "date": "2026-06-06"
@@ -4860,14 +5068,14 @@ window.DATA = {
         },
         {
           "title": "튀르키예, 평가전서 베네수엘라 2-1 격파",
-          "summary": "월드컵 직전 마지막 점검 평가전에서 바르스 알페르, 유누스 아큔의 골로 역전승을 거뒀다.",
+          "summary": "튀르키예가 2026년 6월 6일 미국 플로리다주 포트로더데일의 체이스 스타디움에서 열린 월드컵 직전 마지막 평가전에서 베네수엘라를 2-1로 꺾었다. 전반 13분 글레이케르 멘도사에게 선제골을 내줬으나, 전반 44분 바르스 알페르 일마즈가 동점골을, 후반 9분(54분) 유누스 아큔이 역전골을 터뜨려 경기를 뒤집었다. 튀르키예는 슈팅 8-2, 코너킥 12-2로 경기를 지배하며 본선을 앞두고 좋은 흐름을 만들었다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/match/_/gameId/401871361",
           "date": "2026-06-06"
         },
         {
           "title": "호주 vs 튀르키예 월드컵 1차전 프리뷰",
-          "summary": "6월 14일 밴쿠버에서 열리는 D조 개막전, 24년 만의 월드컵 복귀전 관전 포인트를 정리했다.",
+          "summary": "튀르키예와 호주의 2026 월드컵 D조 개막전이 6월 14일 캐나다 밴쿠버 BC플레이스에서 열린다(GMT 기준 04:00 킥오프). 빈센초 몬텔라 감독의 튀르키예는 24년 만의 월드컵 복귀전에서 4-2-3-1 포메이션으로 아르다 귈레르, 케난 이을드즈가 공격형 미드필더로, 데니즈 귈이 최전방에 설 것으로 예상되며, 토니 포포비치 감독의 호주는 6회 연속 본선 진출 팀답게 3-4-2-1로 수비 안정을 노린다. 미국·파라과이가 함께 속한 D조에서 초반 기선 제압이 16강행에 중요하며, 최근 두 차례 맞대결(3-1, 1-0)에서는 모두 튀르키예가 승리했다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-us/news/australia-turkiye-world-cup-preview/blt1190b9a0b445ce26",
           "date": "2026-06-07"
@@ -5044,21 +5252,21 @@ window.DATA = {
       "news": [
         {
           "title": "나겔스만, 노이어 출전 확정… 16일 쿠라소전 선발",
-          "summary": "나겔스만 감독이 종아리 부상에서 회복한 노이어를 6월 14일 쿠라소와의 월드컵 개막전 선발 골키퍼로 기용한다고 확정했다.",
+          "summary": "율리안 나겔스만 감독은 5월 말 종아리 부상 이후 회복 중인 마누엘 노이어를 6월 14일(일) 쿠라소와의 월드컵 개막전 선발 골키퍼로 기용한다고 RTL을 통해 확정했다. 노이어는 5월 15일 바이에른의 쾰른전(5-1 승) 이후 실전을 뛰지 못했지만, 나겔스만은 윈스턴세일럼 합류 후 팀 훈련에 참여해 컨디션을 끌어올릴 것이며 나이가 있는 만큼 적응 기간 없이 압박 상황을 감당할 수 있다고 설명했다. 이 결정으로 미국과의 평가전(2-1 승) 등에서 주전으로 활약했던 36세 호펜하임 골키퍼 올리버 바우만은 백업으로 밀렸으나, 실망감 속에서도 팀을 위해 헌신하겠다는 뜻을 밝혔다.",
           "source": "Bundesliga",
           "url": "https://www.bundesliga.com/en/bundesliga/news/manuel-neuer-julian-nagelsmann-world-cup-opener-germany-curacao-oliver-baumann-37733",
           "date": "2026-06-07"
         },
         {
           "title": "독일 2026 월드컵 프리뷰: 주목할 선수와 조 편성",
-          "summary": "2014년 우승팀 독일이 두 차례 조별리그 탈락 후 무지알라·비르츠 등 젊은 공격진과 노이어의 복귀로 명예 회복을 노린다.",
+          "summary": "2018·2022년 연속 조별리그 탈락의 아픔을 씻으려는 독일은 2023년 9월 부임한 나겔스만 감독 체제에서 예선 6경기 중 5승을 거두며 명예 회복을 노린다. 주목할 선수로는 부상에서 돌아오는 유로 2024의 주역 무지알라(23), 리버풀의 비르츠, 바이에른 최연소 챔스 득점자 레나르트 카를(18), 은퇴를 번복하고 주전 골키퍼로 복귀한 노이어(40), 주장 키미히 등이 꼽힌다. 독일은 E조에서 6월 14일 휴스턴 쿠라소전, 20일 토론토 코트디부아르전, 25일 뉴저지 에콰도르전을 치르며, 2014년 이후 가장 수월한 조라는 평가 속에 나겔스만은 우승을 목표로 한다고 공언했다.",
           "source": "Al Jazeera",
           "url": "https://www.aljazeera.com/sports/2026/5/31/germany-world-cup-2026-team-preview-players-to-watch-group-and-squad-list",
           "date": "2026-05-31"
         },
         {
           "title": "독일, 부상당한 레나르트 카를 빼고 우에드라오고 발탁",
-          "summary": "18세 윙어 레나르트 카를이 훈련 중 허벅지 근육 부상으로 이탈하면서 RB라이프치히 미드필더 아산 우에드라오고가 대체 발탁됐다.",
+          "summary": "바이에른 뮌헨의 유망한 18세 미드필더 레나르트 카를이 부상으로 2026 월드컵에 출전하지 못하게 되면서, RB라이프치히의 아산 우에드라오고가 대체 발탁됐다. 나겔스만 감독이 이끄는 독일은 유로 2024 이후 은퇴했다가 복귀한 노이어를 비롯해 무지알라, 비르츠, 키미히, 9번 자리에서 공격을 이끌 카이 하베르츠 등을 보유했으며, 예상 선발 라인업은 4-2-3-1 포메이션으로 노이어-키미히, 타, 슐로터베크, 라움-파블로비치, 고레츠카-하베르츠, 무지알라, 비르츠-볼테마데로 구성된다. 2014년 우승 이후 최근 두 대회 조별리그 탈락에 그친 독일은 경험과 신예의 조화로 재건을 노린다.",
           "source": "Goal.com",
           "url": "https://www.goal.com/en/lists/germany-squad-world-cup-2026/bltb0b26b83c2a59617",
           "date": "2026-06-08"
@@ -5261,21 +5469,21 @@ window.DATA = {
       "news": [
         {
           "title": "스코틀랜드, 10명 싸운 퀴라소 4-1 격파… 월드컵 출정식 승리",
-          "summary": "월드컵 직전 평가전에서 퀴라소가 총 선제골을 넣었으나 로카디아 퇴장 후 스코틀랜드에 4-1로 패했다.",
+          "summary": "2026년 5월 30일 스코틀랜드의 월드컵 출정 평가전에서, 퀴라소가 타히스 총의 전반 21분 선제골로 앞서갔으나 38분 위르헌 로카디아가 애런 히키를 향한 늦은 팔꿈치 가격으로 퇴장당하며 수적 열세에 몰렸다. 핀들레이 커티스의 데뷔골(전반 45분)에 이어 로런스 섕클런드가 후반 59·63분 멀티골, 라이언 크리스티가 후반 추가시간 페널티골을 보태며 스코틀랜드가 4-1로 역전승했다. 한편 나폴리 미드필더 빌리 길무어가 전반 무릎 부상으로 교체돼 월드컵을 앞두고 우려를 남겼다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12017/13549157/scotland-beat-10-man-curacao-4-1-in-world-cup-send-off-match-as-findlay-curtis-nets-first-international-goal",
           "date": "2026-05-30"
         },
         {
           "title": "딕 아드보카트, 퀴라소 감독 복귀… 월드컵 최고령 감독 등극",
-          "summary": "78세 아드보카트가 퀴라소 사령탑으로 돌아오며 월드컵 역사상 최고령 감독이 된다.",
+          "summary": "네덜란드 출신 베테랑 딕 아드보카트(78세)가 가족 건강 문제로 약 3개월 전 사임했다가 퀴라소 사령탑으로 복귀했으며, 협회는 프레드 루텐 감독이 떠난 다음 날인 2026년 5월 14일 이를 공식 확정했다. 그는 6월 14일 휴스턴에서 열리는 독일과의 조별리그 첫 경기에서 그리스를 이끌던 71세 오토 레하겔(2010년)의 기록을 7년 경신하며 월드컵 역사상 최고령 감독이 된다. 길베르트 마르티나 협회장은 루텐의 사임이 외압이나 선수단 갈등 때문이 아니라 코칭 스타일 차이에 따른 것이라며, 팀 안정을 위한 결정이라고 설명했다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48757275/curacao-reinstate-dick-advocaat-deny-change-due-external-pressure",
           "date": "2026-05-13"
         },
         {
           "title": "아드보카트, 퀴라소 월드컵 최종 26인 명단 발표",
-          "summary": "퀴라소가 사상 첫 월드컵을 위해 유럽파 위주의 26인 명단을 확정했다.",
+          "summary": "78세 딕 아드보카트 감독이 퀴라소의 사상 첫 월드컵을 위한 26인 명단을 발표했으며, 6월 14일 휴스턴에서 독일을 상대로 E조 일정을 시작한다. 명단은 유럽파가 주축으로, 에레디비시(PSV 아르만도 오비스포, NEC 데베론 폰빌러 등) 소속이 8명에 달하고 셰필드 유나이티드의 타히스 총, 미들즈브러의 손체 한선 등 잉글랜드파와 리헤들리 바조어(볼프스부르크) 등 분데스리가 경력자도 포함됐다. 위르헌 로카디아와 총이 공격의 핵심으로 꼽힌다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/curacao-squad-world-cup-2026-which-players-have-made-it-to-the-showpiece-in-usa-mexico-and-canada/bltdff3555ed2b8ce24",
           "date": "2026-05-20"
@@ -5289,7 +5497,7 @@ window.DATA = {
         },
         {
           "title": "월드컵 사상 최소 인구국 퀴라소 프리뷰… E조 독일·에콰도르·코트디부아르와 격돌",
-          "summary": "인구 15만의 카리브 섬나라 퀴라소가 사상 첫 월드컵에서 E조 강호들과 맞붙는다.",
+          "summary": "인구 16만 명이 채 안 되는, 베네수엘라 북쪽 약 64km(40마일) 카리브해 섬이자 네덜란드 왕국 구성국인 퀴라소가 월드컵 본선에 오른 역대 최소 인구국이 됐다. 이들은 E조에서 독일(6월 14일 휴스턴)·에콰도르(6월 20일 캔자스시티)·코트디부아르(6월 25일 필라델피아)와 맞붙으며, 2025년 11월 자메이카와 0-0으로 비기며 무패로 콘카카프 예선 조 1위를 차지해 본선행을 확정했다. FIFA 랭킹 83위로 본선 참가국 중 두 번째로 낮은 순위이며, 전 애스턴 빌라 수비수 레안드로 바쿠나와 셰필드 유나이티드의 타히스 총 등 잉글랜드 무대 경험자가 포함됐다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12098/13545528/world-cup-2026-curacao-caribbean-nations-historic-first-appearance",
           "date": "2026-06-06"
@@ -5461,35 +5669,35 @@ window.DATA = {
       "news": [
         {
           "title": "코트디부아르 월드컵 명단: 알레르 제외, 인터 봉니 발탁",
-          "summary": "에메르스 파에 감독이 2024 아프리카 네이션스컵 우승 주역 세바스티앵 알레르를 26인 명단에서 제외하고, 인터 밀란 공격수 앙주-요안 봉니를 깜짝 발탁했다.",
+          "summary": "에메르스 파에 감독이 2026년 5월 15일 26인 월드컵 명단을 발표하면서, 2024 아프리카 네이션스컵 우승에 결정적 골로 기여한 세바스티앵 알레르(위트레흐트 출전 시간 부족)를 본 명단에서 제외하고 예비 명단으로 돌렸다. 대신 5월 8일 FIFA가 프랑스에서 코트디부아르로의 국적 변경을 승인한 인터 밀란 무명 공격수 앙주-요안 봉니를 처음으로 발탁했으며, 에인트라흐트 프랑크푸르트 임대 중인 엘리에 와히도 포함됐다. 빌프리드 자하와 제레미 보가는 탈락했고, 코트디부아르는 E조에서 에콰도르(6월 14일)·독일(6월 20일)·쿠라사오(6월 25일)와 차례로 맞붙는다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/story/_/id/48778996/ivory-coast-2026-world-cup-squad-sebastien-haller-ange-yoan-bonny",
           "date": "2026-05-15"
         },
         {
           "title": "코트디부아르 2026 월드컵 최종 명단 발표",
-          "summary": "파에 감독이 26인 명단을 확정, 라이프치히 얀 디오망데와 호펜하임 바주마나 투레 등 신예를 포함했고 알레르는 부진 끝에 탈락했다.",
+          "summary": "에메르스 파에 감독이 미국·멕시코·캐나다 공동 개최 월드컵에 나설 26인 명단을 확정했으며, 2025년 10월 대표팀에 데뷔한 라이프치히 얀 디오망데와 호펜하임 바주마나 투레 등 분데스리가 신예들을 포함시켰다. PSG 데지레 두에의 형 구엘라 두에와, 프랑스 U21 출신으로 최근 코트디부아르 출전 자격을 얻은 인터 밀란 공격수 봉니도 발탁됐으나, 도르트문트를 거친 베테랑 공격수 세바스티앵 알레르는 의외로 제외됐다. 코트디부아르는 조별리그 2차전인 6월 20일 독일과 대결한다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/ivory-coast-squad-world-cup-2026/bltd60ba61f4582cc11",
           "date": "2026-05-20"
         },
         {
           "title": "봉니, 프랑스 대신 코트디부아르 선택해 월드컵 출전",
-          "summary": "인터 밀란 공격수 봉니가 프랑스 데샹 감독의 구상에서 빠지자 코트디부아르 대표를 택했으며, 파에 감독이 치아 문제 회복을 위해 인터 잔류를 허용했다.",
+          "summary": "프랑스·코트디부아르 이중국적자인 인터 밀란 공격수 앙주-요안 봉니가, 프랑스 데샹 감독의 2026 월드컵 구상에 들지 못하자 코트디부아르 대표를 선택했다. 에메르스 파에 감독은 \"봉니가 우리와 함께하기로 했다\"며 합류를 확정했고, 봉니가 치아 문제 회복과 경기력 유지를 위해 대회 전까지 인터 밀란에 잔류하도록 허용했다고 밝혔다. 코트디부아르는 6월 11일부터 7월 19일까지 미국·캐나다·멕시코에서 열리는 대회 E조에서 에콰도르·독일·쿠라사오와 같은 조에 편성됐다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/inter-bonny-to-play-for-the-ivory-coast-at-the-world-cup-as-confirmed-by-the-manager-he-has-decided-to-play-for-us/blt622c7ffb2bca9e7b",
           "date": "2026-03-19"
         },
         {
           "title": "독일전 티켓 안내: 6월 20일 토론토 BMO 필드 격돌",
-          "summary": "코트디부아르가 12년 만의 월드컵 복귀전에서 E조 강호 독일과 6월 20일 토론토에서 맞붙으며, 티켓 가격과 경기장 정보가 공개됐다.",
+          "summary": "코트디부아르는 2014년 이후 12년 만의 월드컵 복귀전 일정 중 E조 강호 독일과 2026년 6월 20일(토) 오후 5시(미 동부시각) 토론토 BMO 필드에서 맞붙는다. 이 경기를 위해 BMO 필드는 임시 좌석 1만7756석을 추가해 수용 규모를 4만5736석으로 늘리며, 조별리그 티켓은 카테고리별로 약 60달러부터 400달러까지 책정됐다. 구매는 FIFA 막판 판매 단계, 공식 액면가 재판매 마켓플레이스, 스텁허브 등 2차 시장을 통해 가능하며, 명단에는 프랑크 케시에와 아마드 디알로 등이 포함돼 있다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en-us/news/germany-vs-ivory-coast-world-cup-tickets-how-to-buy/bltf59ce077b9b14067",
           "date": "2026-06-03"
         },
         {
           "title": "코트디부아르 월드컵 명단 정리: 누가 포함되고 누가 빠졌나",
-          "summary": "케시에·산가레·아마드 디알로·페페 등 핵심 자원이 포함된 26인 명단을 위치별로 정리했으며, 알레르의 의외의 제외가 화제가 됐다.",
+          "summary": "예선 조 1위로 12년 만에 월드컵에 복귀한 코트디부아르의 26인 명단을 포지션별로 정리한 기사로, 골키퍼는 야히아 포파나(리제스포르)가 알반 라퐁(파나티나이코스)을 제치고 주전이 유력하다. 수비에는 엠마누엘 아그바두(울버햄프턴)·에반 은디카(로마)·오딜롱 코수누(아탈란타), 중원에는 이브라힘 산가레(노팅엄 포레스트)와 주장 케시에(알 아흘리), 공격에는 에이스 아마드 디알로(맨유)와 얀 디오망데(라이프치히)가 자리하며 니콜라 페페(비야레알)는 막판에 합류했다. 파에 감독은 4-3-3 포메이션을 선호하며, 알레르는 부상 여파로 명단행이 불투명한 상황으로 전해졌다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/ivory-coast-squad-world-cup-2026/blt9aedfc5d4aee5816",
           "date": "2026-05-20"
@@ -5677,7 +5885,7 @@ window.DATA = {
       "news": [
         {
           "title": "에콰도르, 과테말라 3-0 완파… 무패 행진 19경기로 월드컵 직전 점검",
-          "summary": "조르디 카이세도, 닐손 앙굴로, 페르비스 에스투피냔이 득점하며 월드컵 직전 마지막 평가전을 완승으로 마무리했다.",
+          "summary": "에콰도르가 2026년 6월 7일 미국 오하이오주 콜럼버스에서 열린 국제 친선경기에서 과테말라를 3-0으로 완파했다. 전반 19분 조르디 카이세도의 페널티킥 선제골에 이어 후반 닐손 앙굴로(73분)와 페르비스 에스투피냔(78분)이 추가골을 터뜨렸다. 점유율 67%에 슈팅 18-3(유효슈팅 6-0)의 압도적 경기력으로 무패 행진을 이어가며 월드컵 직전 마지막 점검을 성공적으로 마쳤다.",
           "source": "ESPN",
           "url": "https://www.espn.com/soccer/match/_/gameId/401870000/guatemala-ecuador",
           "date": "2026-06-07"
@@ -5691,7 +5899,7 @@ window.DATA = {
         },
         {
           "title": "에콰도르 월드컵 스쿼드 2026: 누가 미국·멕시코·캐나다 무대에 서나",
-          "summary": "카이세도, 파초, 인카피에, 신성 켄드리 파에스 등 에콰도르의 '황금세대'가 조별리그 E조에서 독일과 한 조에 편성됐다.",
+          "summary": "세바스티안 베카세세 감독이 이끄는 에콰도르는 2002년 첫 출전 이후 통산 5번째 월드컵 무대에 서며, 본선 E조에서 독일, 쿠라소, 코트디부아르와 한 조에 편성됐다. 첼시의 핵심 미드필더 모이세스 카이세도와 10대 신성 켄드리 파에스, PSG의 윌리안 파초와 아스널의 피에로 인카피에로 구성된 견고한 센터백 듀오, AC 밀란의 좌측 수비수 에스투피냔, 그리고 역대 최다 득점자 에네르 발렌시아가 핵심 전력이다. 남미 예선에서 단 5실점으로 콘메볼 최소 실점을 기록한 단단한 수비가 강점이지만, 14골에 그친 빈약한 공격력은 과제로 남아 있다.",
           "source": "골닷컴(Goal.com)",
           "url": "https://www.goal.com/en-in/lists/ecuador-squad-world-cup-2026/blt0d6faa95026c07f5",
           "date": ""
@@ -5892,7 +6100,7 @@ window.DATA = {
       "news": [
         {
           "title": "네덜란드 vs 일본 월드컵 개막전 프리뷰 - 데파이 건강 복귀",
-          "summary": "F조 1차전 네덜란드-일본 맞대결 전망. 쿠만은 4-3-3, 데파이는 건강하게 복귀했고 일본은 미토마 부상으로 결장.",
+          "summary": "6월 15일(GMT 21시) 댈러스(알링턴) 경기장에서 열리는 F조 1차전으로, 로날드 쿠만 감독의 네덜란드는 점유 시 3-4-3으로 변형되는 4-3-3을 가동하며 허벅지 부상에서 회복한 멤피스 데파이가 가크포·말렌과 함께 전방을 이끈다. 일본은 모리야스 하지메 감독의 4-2-3-1로 맞서지만 핵심 윙어 미토마 가오루가 막판 부상으로 빠지고, 리버풀 소속 주장 엔도 와타루와 구보 다케후사가 중원을 책임진다. 네덜란드는 유럽 예선 24점 중 20점을 따내며 8경기 4실점에 그쳤고 일본도 아시아 예선을 무패로 통과해 두 팀 모두 개막전 승점이 중요하다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/news/netherlands-japan-world-cup-preview/blt48135779b5e280e4",
           "date": "2026-06-07"
@@ -5906,21 +6114,21 @@ window.DATA = {
         },
         {
           "title": "월드컵 F조 가이드 - 네덜란드·일본·스웨덴·튀니지 일정과 전력",
-          "summary": "네덜란드가 속한 F조 일정·순위·배당 정리, 6월 14일 일본전으로 대회 시작.",
+          "summary": "F조는 FIFA 랭킹 7위 네덜란드(통산 3회 준우승, 쿠만 감독), 18위 일본, 그레이엄 포터 감독의 38위 스웨덴(플레이오프 통과), 45위 튀니지로 구성된다. 일정은 6월 14일 네덜란드-일본(알링턴, BST 21시)을 시작으로 6월 20일 네덜란드-스웨덴(휴스턴), 6월 26일 튀니지-네덜란드(캔자스시티)로 이어지며, 상위 2팀과 3위 중 성적 좋은 8개 팀이 32강에 진출한다. 네덜란드는 반 다이크·가크포·더 용, 일본은 엔도·구보, 스웨덴은 이삭·요케레스를 앞세우며 동률 시 상대 전적·득실차·득점 순으로 순위를 가린다.",
           "source": "Sky Sports",
           "url": "https://www.skysports.com/football/news/12098/13543097/world-cup-2026-group-f-guide-fixtures-schedule-standings-and-odds-for-netherlands-japan-sweden-and-tunisia",
           "date": "2026-06-05"
         },
         {
           "title": "네덜란드 월드컵 팀 프리뷰 - 주목할 선수와 조 편성",
-          "summary": "예선 무패로 통과한 네덜란드의 핵심 선수, 조 편성, 우승 후보 평가 등 대회 전반 전망.",
+          "summary": "네덜란드는 예선 8경기를 무패로 통과(폴란드와는 무승부)하며 통산 12번째 월드컵에 나서지만 1974·1978·2010년 결승 패배의 한을 안고 있고, 2018~2020년에 이어 두 번째로 지휘봉을 잡은 쿠만 감독이 이끈다. 주목할 선수로는 유럽 정상급 미드필더로 성장한 맨시티의 테이아니 레이네르스가 꼽히며, 반 다이크가 이끄는 수비진 앞에 그라벤베르흐가 버티고 55골의 데파이가 햄스트링 부상을 안고 공격을 이끈다. 다만 사비 시몬스가 ACL 파열로 낙마했고, 알자지라는 개인 기량은 세계적이나 조직력 부족을 이유로 16강 탈락을 전망했다.",
           "source": "Al Jazeera",
           "url": "https://www.aljazeera.com/sports/2026/5/29/netherlands-world-cup-2026-team-preview-players-to-watch-group-squad",
           "date": "2026-05-29"
         },
         {
           "title": "네덜란드 스쿼드 분석 - 26인 로스터와 등번호 공개",
-          "summary": "월드컵 본선용 네덜란드 26인 전원의 포지션별 명단과 배번, 예상 라인업 정리.",
+          "summary": "본선 26인은 골키퍼 3명(베르브뤼헌·루프스·플레켄), 수비수 8명(둠프리스·반 다이크·반 헤케·반 더 펜·아케·팀버·하토·비퍼르), 미드필더 7명(더 용·그라벤베르흐·레이네르스·코프메이너스·더 론·틸·큄턴 팀버), 공격수 8명(데파이·가크포·말렌·클라위베르트·랑·브로비·베흐호르스트·쉬머빌)으로 구성된다. 예상 선발은 4-3-3 포메이션으로 베르브뤼헌을 골문에, 둠프리스-반 헤케-반 다이크-반 더 펜의 포백, 더 용-레이네르스-그라벤베르흐 중원, 말렌-데파이-가크포 스리톱이 나설 전망이다. 매체는 세 라인 모두 양질의 선수층을 갖춰 대회 경쟁력이 충분하다고 평가했다.",
           "source": "골닷컴",
           "url": "https://www.goal.com/en/lists/netherlands-squad-world-cup-2026/bltab8e400140133c06",
           "date": "2026-05-28"
@@ -6083,7 +6291,7 @@ window.DATA = {
       "news": [
         {
           "title": "미토마, 햄스트링 부상으로 월드컵 낙마…토미야스 복귀",
-          "summary": "브라이턴 윙어 미토마 가오루가 햄스트링 부상으로 26인 명단에서 제외됐고, 아약스 수비수 토미야스가 약 2년 만에 대표팀에 복귀했다.",
+          "summary": "브라이턴 윙어 미토마 가오루가 지난 주말 울버햄튼전(3-0 승리)에서 햄스트링을 다쳐 26인 명단에서 제외됐다. 모리야스 하지메 감독은 의료진 판단상 대회 기간 내 회복이 어렵다고 밝혔으며, 미토마는 지난 3월 잉글랜드전 결승골을 넣고 2022년 독일·스페인 격파를 이끈 핵심 자원이라 공백이 크다. 대신 아약스 수비수 토미야스 타케히로가 2024년 6월 이후 약 2년 만에 대표팀에 복귀했고, 모나코 미드필더 미나미노는 12월 십자인대(ACL) 부상으로 이미 빠진 상태다.",
           "source": "ESPN",
           "url": "https://www.espn.com/football/story/_/id/48775615/kaoru-mitoma-ruled-world-cup-injury-takehiro-tomiyasu-recalled-japan-squad",
           "date": "2026-05-15"
@@ -6097,14 +6305,14 @@ window.DATA = {
         },
         {
           "title": "유럽파 23명 일본, 월드컵 최종 명단 발표…미토마는 낙마",
-          "summary": "유럽파 23명이 포함된 일본 최종 명단이 공개됐으며, 5월 9일 울버햄튼전에서 햄스트링을 다친 미토마가 제외됐다.",
+          "summary": "모리야스 하지메 감독이 이끄는 일본이 유럽파 23명을 포함한 26인 최종 명단을 발표했고, 쿠보 다케후사·엔도 와타루·이토 히로키 등이 이름을 올렸다. 5월 9일 울버햄튼전에서 햄스트링을 다친 미토마는 장기 결장이 불가피해 제외됐다. 39세 베테랑 나가토모 유토는 5회 연속 월드컵 출전이라는 아시아 기록을 세우며 합류했고, J리그 소속은 골키퍼 등 3명뿐이다. 일본은 F조에서 네덜란드(6월 15일)·튀니지(6월 21일)·스웨덴(6월 26일)과 맞붙는다.",
           "source": "인터풋볼",
           "url": "https://www.interfootball.co.kr/news/articleView.html?idxno=686552",
           "date": "2026-05-15"
         },
         {
           "title": "일본 월드컵 프리뷰: 주목할 선수와 F조 전망",
-          "summary": "미토마 부상 공백 속 쿠보가 핵심으로 떠오르며, 역대 가장 재능 있는 스쿼드로 16강 징크스 돌파에 도전하는 일본을 분석했다.",
+          "summary": "미토마가 5월 햄스트링 부상으로 낙마하자 레알 소시에다드에서 호성적을 낸 24세 쿠보 다케후사가 공격의 핵심으로 떠올랐고, 수비형 미드필더 엔도 와타루와 셀틱에서 14골을 넣은 마에다 다이젠 등이 가세해 역대 가장 재능 있는 스쿼드로 평가받는다. 일본은 개최국을 제외하고 가장 먼저 본선행을 확정했으며, 2022년 이후 독일·브라질·잉글랜드·스페인을 모두 꺾었다. F조에서 네덜란드(6월 14일 댈러스)·튀니지(6월 20일 몬테레이)·스웨덴(6월 25일 댈러스)과 격돌하며, 4차례나 16강에 올랐지만 한 번도 넘지 못한 16강 벽 돌파에 도전한다.",
           "source": "Al Jazeera",
           "url": "https://www.aljazeera.com/sports/2026/5/22/japans-world-cup-2026-team-preview-players-to-watch-group-squad",
           "date": "2026-05-22"

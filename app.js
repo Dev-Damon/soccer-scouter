@@ -75,6 +75,9 @@
     var dt = new Date(+m[1], +m[2] - 1, +m[3]);
     return { d: +m[2] + "월 " + +m[3] + "일", dow: DOW[dt.getDay()] || "", mo: +m[2], day: +m[3] };
   }
+  // 한국시간(KST) 우선 표시
+  function fxDate(fx) { return fx.kstDate || fx.date; }
+  function fxTime(fx) { return fx.kstTime || fx.time; }
   // 포지션 → 색 클래스(GK/DF/MF/FW)
   function posClass(pos) {
     var s = String(pos || ""); var p = s.toUpperCase();
@@ -113,7 +116,7 @@
 
   function fixtureDates() {
     var set = {};
-    (DATA.fixtures || []).forEach(function (f) { if (f.date) set[f.date] = 1; });
+    (DATA.fixtures || []).forEach(function (f) { if (f.date) set[fxDate(f)] = 1; });
     return Object.keys(set).sort();
   }
 
@@ -158,7 +161,7 @@
     });
     strip += "</div>";
 
-    var dayFixtures = (DATA.fixtures || []).filter(function (f) { return f.date === selectedDate; })
+    var dayFixtures = (DATA.fixtures || []).filter(function (f) { return fxDate(f) === selectedDate; })
       .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
 
     // 빅매치 히어로: 양 팀 모두 알려진 경기 중 FIFA 합산 랭킹이 가장 높은(숫자 작은) 경기
@@ -168,7 +171,7 @@
     // 그 날의 경기 리스트
     var listHtml = '<div class="sec-h">' + fmtDate(selectedDate).d + " " +
       (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
-      ' · ' + dayFixtures.length + '경기</div>';
+      ' · ' + dayFixtures.length + '경기 <span class="kst-note">한국시간</span></div>';
     dayFixtures.forEach(function (fx) { if (!hero || fx !== hero) listHtml += fixtureCard(fx); });
 
     // 주요 소식 (팀 뉴스가 있을 때만)
@@ -228,7 +231,7 @@
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(fx.homeId)) + "</span>" +
           '<span class="hero-team">' + esc(fx.homeName) + "</span></div>" +
-        '<div class="hero-mid"><span class="hero-kick">' + esc(fx.time || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>" +
+        '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>" +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(fx.awayId)) + "</span>" +
           '<span class="hero-team">' + esc(fx.awayName) + "</span></div>" +
       "</div>" +
@@ -242,7 +245,7 @@
     var clickable = !!(fx.homeId || fx.awayId);
     var attr = both ? ' data-match="' + esc(fx.id) + '"'
       : (clickable ? ' data-team="' + esc(fx.homeId || fx.awayId) + '"' : "");
-    var timeLabel = fx.time ? esc(fx.time) : "시간 미정";
+    var timeLabel = fxTime(fx) ? esc(fxTime(fx)) : "시간 미정";
     var groupLabel = fx.group ? esc(fx.group) + "조" : esc(fx.stage || "");
     var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
     return '<div class="fixture' + (clickable ? " clickable" : "") + '"' + attr + ">" +
@@ -599,7 +602,7 @@
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
-    var when = fmtDate(fx.date).d + (fx.time ? " " + esc(fx.time) : "");
+    var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
     var where = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
     var top = (fx.group ? esc(fx.group) + "조" : esc(fx.stage || "")) + " · " + when + (where ? " · " + where : "");
 
@@ -618,6 +621,14 @@
     var cmp = cmpRow("공격력", ia.attack, ib.attack) + cmpRow("수비력", ia.defense, ib.defense) +
       cmpRow("조직력", ia.organization, ib.organization) + cmpRow("경험치", ia.experience, ib.experience) +
       cmpRow("종합", pr.pa, pr.pb);
+    var pv = fx.preview, previewHtml = "";
+    if (pv) {
+      var wpts = (pv.watchPoints || []).map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
+      var strat = (pv.homeStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(a.name) + '</div><div class="strat-txt">' + esc(pv.homeStrategy) + "</div></div>" : "") +
+        (pv.awayStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(b.name) + '</div><div class="strat-txt">' + esc(pv.awayStrategy) + "</div></div>" : "");
+      previewHtml = (wpts ? '<div class="block"><h3>관전 포인트</h3><ul class="watch-list">' + wpts + "</ul></div>" : "") +
+        (strat ? '<div class="block"><h3>예상 전략</h3><div class="strat">' + strat + "</div></div>" : "");
+    }
 
     viewEl.innerHTML =
       '<div class="detail match-view">' +
@@ -638,6 +649,7 @@
           '<div class="prob-legend"><span>' + esc(a.name) + " 승</span><span>무</span><span>" + esc(b.name) + " 승</span></div>" +
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
+        previewHtml +
         '<div class="match-cta">' +
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
