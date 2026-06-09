@@ -1,5 +1,5 @@
 // 축구 스카우터 — 서비스워커 (오프라인 캐시)
-var CACHE = "scouter-v0.8";
+var CACHE = "scouter-v0.9";
 var ASSETS = [
   "./",
   "./index.html",
@@ -27,13 +27,30 @@ self.addEventListener("activate", function (e) {
 
 self.addEventListener("fetch", function (e) {
   if (e.request.method !== "GET") return;
-  e.respondWith(
-    caches.match(e.request).then(function (hit) {
-      return hit || fetch(e.request).then(function (res) {
+  var url = new URL(e.request.url);
+  // 앱 셸/데이터(html/css/js)는 네트워크 우선 → 배포 즉시 반영. 오프라인이면 캐시.
+  var shell = e.request.mode === "navigate" || /\.(html|css|js)$/.test(url.pathname) ||
+    url.pathname === "/" || url.pathname.slice(-1) === "/";
+  if (shell) {
+    e.respondWith(
+      fetch(e.request).then(function (res) {
         var copy = res.clone();
         caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
         return res;
-      }).catch(function () { return caches.match("./index.html"); });
-    })
-  );
+      }).catch(function () {
+        return caches.match(e.request).then(function (h) { return h || caches.match("./index.html"); });
+      })
+    );
+  } else {
+    // 이미지/아이콘 등은 캐시 우선(빠름)
+    e.respondWith(
+      caches.match(e.request).then(function (hit) {
+        return hit || fetch(e.request).then(function (res) {
+          var copy = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
+          return res;
+        }).catch(function () { return caches.match("./index.html"); });
+      })
+    );
+  }
 });

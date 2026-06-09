@@ -35,9 +35,16 @@
   <main id="app">
     <!-- 검색 -->
     <section class="search-wrap">
-      <input id="search" class="search" type="search" inputmode="search"
-        placeholder="선수·팀·소속 클럽 검색 (예: 손흥민, 프랑스, 레알)" autocomplete="off" />
-      <span class="search-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="search-field" style="position:relative;display:block">
+        <input id="search" class="search" type="search" inputmode="search"
+          placeholder="선수·팀·소속 클럽 검색 (예: 손흥민, 프랑스, 레알)" autocomplete="off"
+          style="padding-right:42px" />
+        <svg class="search-ic" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+          style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#9fb0c3;pointer-events:none">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
     </section>
 
     <!-- 홈 탭(일정/조별) -->
