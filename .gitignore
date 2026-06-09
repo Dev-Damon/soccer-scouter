@@ -5,3 +5,7 @@ real-*.png
 .DS_Store
 *.png
 scripts/out/
+
+# 배포 자산(이미지)은 예외로 추적
+!og.png
+!apple-touch-icon.png
