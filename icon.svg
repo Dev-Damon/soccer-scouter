@@ -1,5 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="112" fill="#0b1220"/>
-  <circle cx="256" cy="256" r="150" fill="#18233a" stroke="#4f8cff" stroke-width="14"/>
-  <text x="256" y="300" font-size="170" text-anchor="middle" fill="#f5b301" font-family="Apple Color Emoji, sans-serif">⚽</text>
+  <circle cx="256" cy="256" r="172" fill="#ffffff" stroke="#0b1220" stroke-width="6"/>
+  <!-- 중앙 오각형 -->
+  <polygon points="256,198 311,238 290,303 222,303 201,238" fill="#0b1220"/>
+  <!-- 스포크(오각형 꼭짓점 → 공 가장자리) -->
+  <g stroke="#0b1220" stroke-width="15" stroke-linecap="round">
+    <line x1="256" y1="198" x2="256" y2="96"/>
+    <line x1="311" y1="238" x2="408" y2="206"/>
+    <line x1="290" y1="303" x2="350" y2="386"/>
+    <line x1="222" y1="303" x2="162" y2="386"/>
+    <line x1="201" y1="238" x2="104" y2="206"/>
+  </g>
+  <!-- 가장자리 검은 패치 힌트 -->
+  <g fill="#0b1220">
+    <path d="M256 84 l34 26 -13 38 -42 0 -13 -38 z" opacity="0"/>
+  </g>
 </svg>
