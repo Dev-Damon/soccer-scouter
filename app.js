@@ -262,14 +262,28 @@
     var timeLabel = fxTime(fx) ? esc(fxTime(fx)) : "시간 미정";
     var groupLabel = fx.group ? esc(fx.group) + "조" : esc(fx.stage || "");
     var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
-    return '<div class="fixture' + (clickable ? " clickable" : "") + '"' + attr + ">" +
+    var lv = LIVE[fx.id];
+    var live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
+    var mid;
+    if (live || ended) {
+      mid = '<span class="fx-stage">' + groupLabel + "</span>" +
+        '<span class="fx-score">' + (lv.hs | 0) + ' <i>-</i> ' + (lv.as | 0) + "</span>" +
+        (live ? '<span class="fx-live"><span class="lv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>"
+              : '<span class="fx-final">종료</span>');
+    } else {
+      mid = '<span class="fx-stage">' + groupLabel + "</span>" +
+        '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span>';
+    }
+    var goals = (lv && lv.events && lv.events.length)
+      ? '<div class="fx-goals">⚽ ' + lv.events.map(function (g) { return esc(g.who) + (g.clk ? " " + esc(g.clk) : ""); }).join(" · ") + "</div>"
+      : "";
+    return '<div class="fixture' + (clickable ? " clickable" : "") + (live ? " is-live" : "") + '"' + attr + ">" +
       '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(fx.homeId)) + "</span>" +
         '<span class="fx-team">' + esc(fx.homeName) + "</span></div>" +
-      '<div class="fx-mid"><span class="fx-stage">' + groupLabel + "</span>" +
-        '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span></div>' +
+      '<div class="fx-mid">' + mid + "</div>" +
       '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(fx.awayId)) + "</span>" +
         '<span class="fx-team">' + esc(fx.awayName) + "</span></div>" +
-      (meta ? '<div class="fx-meta">' + meta + "</div>" : "") +
+      (goals || (meta ? '<div class="fx-meta">' + meta + "</div>" : "")) +
       "</div>";
   }
 
@@ -719,6 +733,82 @@
       "</div>";
   }
 
+  // ===================== 라이브 경기 (ESPN 공개 API · 분단위 폴링, 백엔드/키 불필요) =====================
+  var LIVE = {};            // fixtureId -> {state:'in'|'post', clock, hs, as, events}
+  var liveTimer = null;
+  var ESPN_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+  // ESPN 표기 → 앱 팀 id 보정(슬러그가 안 맞는 케이스만)
+  var ESPN_ALIAS = {
+    "czechia": "czech-republic", "turkiye": "turkey", "cabo-verde": "cape-verde",
+    "cote-divoire": "ivory-coast", "cotedivoire": "ivory-coast",
+    "usa": "united-states", "korea-republic": "south-korea",
+    "congo-dr": "dr-congo", "bosnia-herzegovina": "bosnia-and-herzegovina"
+  };
+  function espnSlug(s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/['.]/g, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+  function espnTeamId(name) {
+    var s = espnSlug(name); s = ESPN_ALIAS[s] || s;
+    return teamsById[s] ? s : null;
+  }
+  var fixByPair = {};
+  (DATA.fixtures || []).forEach(function (f) {
+    if (f.homeId && f.awayId) fixByPair[[f.homeId, f.awayId].sort().join("|")] = f.id;
+  });
+  function parseGoals(c) {
+    var out = [];
+    (c.details || []).forEach(function (d) {
+      var txt = (d.type && d.type.text) || "";
+      var isGoal = d.scoringPlay === true || (/goal/i.test(txt) && !/disallow|own goal/i.test(txt));
+      if (!isGoal) return;
+      var who = (d.athletesInvolved && d.athletesInvolved[0] && d.athletesInvolved[0].displayName) || "";
+      out.push({ who: who, clk: (d.clock && d.clock.displayValue) || "" });
+    });
+    return out;
+  }
+  function applyEspn(d) {
+    var changed = false, anyLive = false, anyToday = false;
+    (d.events || []).forEach(function (e) {
+      var c = (e.competitions || [])[0]; if (!c) return;
+      var comp = c.competitors || [];
+      var H = comp.filter(function (t) { return t.homeAway === "home"; })[0] || comp[0];
+      var A = comp.filter(function (t) { return t.homeAway === "away"; })[0] || comp[1];
+      if (!H || !A) return;
+      var hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName);
+      if (!hid || !aid) return;
+      var fid = fixByPair[[hid, aid].sort().join("|")]; if (!fid) return;
+      var fx = fixturesById[fid]; if (!fx) return;
+      var st = (e.status && e.status.type) || {}; var state = st.state;
+      if (state === "in") anyLive = true;
+      if (state === "in" || state === "post" || state === "pre") anyToday = true;
+      if (state === "pre") { if (LIVE[fid]) { delete LIVE[fid]; changed = true; } return; }
+      var hs = +H.score, as = +A.score;
+      var rec = {
+        state: state, clock: (e.status && e.status.displayClock) || "",
+        hs: (fx.homeId === hid) ? hs : as, as: (fx.homeId === hid) ? as : hs,
+        events: parseGoals(c)
+      };
+      if (JSON.stringify(LIVE[fid]) !== JSON.stringify(rec)) { LIVE[fid] = rec; changed = true; }
+    });
+    return { changed: changed, anyLive: anyLive, anyToday: anyToday };
+  }
+  function onHomeSchedule() {
+    return parseHash().name === "home" && !searchEl.value.trim() && homeTab === "schedule";
+  }
+  function scheduleLive(delay) {
+    if (liveTimer) clearTimeout(liveTimer);
+    if (delay) liveTimer = setTimeout(fetchLive, delay);
+  }
+  function fetchLive() {
+    if (!window.fetch) return;
+    fetch(ESPN_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+      var res = applyEspn(d);
+      if (res.changed && onHomeSchedule()) renderSchedule();
+      scheduleLive(res.anyLive ? 60000 : (res.anyToday ? 180000 : 0));  // 라이브 60초 / 임박 3분 / 없으면 중단
+    }).catch(function () { scheduleLive(180000); });
+  }
+
   // ===================== 라우터 =====================
   function setTabbar(active) {
     if (!tabbarEl) return;
@@ -830,4 +920,5 @@
 
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
+  fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분)
 })();
