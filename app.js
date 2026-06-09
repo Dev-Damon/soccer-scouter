@@ -427,13 +427,15 @@
     // 최신 뉴스 (있으면)
     if (t.news && t.news.length) {
       html += '<div class="block"><h3>최신 뉴스</h3><div class="news-list">';
-      t.news.slice(0, 5).forEach(function (nw) {
+      t.news.slice(0, 6).forEach(function (nw) {
         var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
         var tag = nw.url ? "a" : "div";
-        html += "<" + tag + ' class="news-item"' + (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
+        var foot = meta + (nw.url ? (meta ? " · " : "") + "원문 보기 ↗" : "");
+        html += "<" + tag + ' class="news-item' + (nw.url ? " ext" : "") + '"' +
+          (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
           '<div class="news-title">' + esc(nw.title) + "</div>" +
           (nw.summary ? '<div class="news-sum">' + esc(nw.summary) + "</div>" : "") +
-          (meta ? '<div class="news-meta">' + meta + "</div>" : "") +
+          (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
           "</" + tag + ">";
       });
       html += "</div></div>";
