@@ -118,13 +118,21 @@
   }
 
   // 메인 하단 '주요 소식' — 팀 뉴스를 재활용(최신순 상위 N)
+  function isKoreanSrc(nw) {
+    if (/[\uAC00-\uD7A3]/.test(nw.source || "")) return true;
+    return /\.kr(\/|$)|naver\.com|footballist|besteleven|interfootball|sportalkorea|spotvnews|yna\.co|sportschosun|sports\.donga/.test((nw.source || "") + " " + (nw.url || ""));
+  }
   function homeNews(limit) {
     var all = [];
     (DATA.teams || []).forEach(function (t) {
       (t.news || []).forEach(function (nw) { all.push({ t: t, nw: nw }); });
     });
-    all.sort(function (a, b) { var da = a.nw.date || "", db = b.nw.date || ""; return da < db ? 1 : da > db ? -1 : 0; });
-    return all.slice(0, limit || 6);
+    all.sort(function (a, b) {
+      var ka = isKoreanSrc(a.nw) ? 0 : 1, kb = isKoreanSrc(b.nw) ? 0 : 1;
+      if (ka !== kb) return ka - kb;
+      var da = a.nw.date || "", db = b.nw.date || ""; return da < db ? 1 : da > db ? -1 : 0;
+    });
+    return all.slice(0, limit || 8);
   }
 
   function renderSchedule() {
@@ -164,7 +172,7 @@
     dayFixtures.forEach(function (fx) { if (!hero || fx !== hero) listHtml += fixtureCard(fx); });
 
     // 주요 소식 (팀 뉴스가 있을 때만)
-    var hn = homeNews(6);
+    var hn = homeNews(8);
     if (hn.length) {
       listHtml += '<div class="sec-h">📰 주요 소식</div><div class="news-list">';
       hn.forEach(function (x) {
@@ -176,7 +184,7 @@
           (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
           '<div class="hn-head"><span class="hn-flag">' + esc(tt.flag) + '</span><span class="hn-team">' + esc(tt.name) + "</span></div>" +
           '<div class="news-title">' + esc(nw.title) + "</div>" +
-          (nw.summary ? '<div class="news-sum">' + esc(nw.summary) + "</div>" : "") +
+          (nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
           (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
           "</" + tag + ">";
       });
@@ -480,14 +488,14 @@
     // 최신 뉴스 (있으면)
     if (t.news && t.news.length) {
       html += '<div class="block"><h3>최신 뉴스</h3><div class="news-list">';
-      t.news.slice(0, 6).forEach(function (nw) {
+      t.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, 8).forEach(function (nw) {
         var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
         var tag = nw.url ? "a" : "div";
         var foot = meta + (nw.url ? (meta ? " · " : "") + "원문 보기 ↗" : "");
         html += "<" + tag + ' class="news-item' + (nw.url ? " ext" : "") + '"' +
           (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
           '<div class="news-title">' + esc(nw.title) + "</div>" +
-          (nw.summary ? '<div class="news-sum">' + esc(nw.summary) + "</div>" : "") +
+          (nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
           (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
           "</" + tag + ">";
       });
