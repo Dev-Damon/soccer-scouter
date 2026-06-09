@@ -135,6 +135,10 @@
     }
     if (!selectedDate || dates.indexOf(selectedDate) === -1) selectedDate = dates[0];
 
+    // 재렌더 전 스트립 가로 스크롤 위치 기억 (날짜 클릭해도 스트립이 안 튀게)
+    var prevStrip = viewEl.querySelector(".datestrip");
+    var prevScroll = prevStrip ? prevStrip.scrollLeft : null;
+
     // 날짜 스트립
     var strip = '<div class="datestrip">';
     dates.forEach(function (d) {
@@ -181,11 +185,15 @@
 
     viewEl.innerHTML = strip + heroHtml + listHtml;
 
-    // 선택한 날짜 칩이 보이도록 스트립을 가로 스크롤(매 렌더마다 맨 앞으로 튀는 문제 방지)
+    // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬
     var stripEl = viewEl.querySelector(".datestrip");
-    var onChip = stripEl && stripEl.querySelector(".dchip.on");
-    if (stripEl && onChip) {
-      stripEl.scrollLeft = Math.max(0, onChip.offsetLeft - stripEl.clientWidth / 2 + onChip.clientWidth / 2);
+    if (stripEl) {
+      if (prevScroll != null) {
+        stripEl.scrollLeft = prevScroll;
+      } else {
+        var onChip = stripEl.querySelector(".dchip.on");
+        if (onChip) stripEl.scrollLeft = Math.max(0, onChip.offsetLeft - stripEl.clientWidth / 2 + onChip.clientWidth / 2);
+      }
     }
   }
 

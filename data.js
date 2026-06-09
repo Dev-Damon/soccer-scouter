@@ -1679,7 +1679,51 @@ window.DATA = {
           "CONCACAF 챔피언스리그 우승 (2021, 몬테레이)",
           "리가 MX 인비에르노 우승 (1999, 파추카)"
         ]
-      }
+      },
+      "news": [
+        {
+          "title": "오초아, 역대 최다 6번째 월드컵 출전… 멕시코 최종 26인 명단 발표",
+          "summary": "아기레 감독이 발표한 멕시코 월드컵 최종 명단에 40세 골키퍼 오초아가 포함되며 메시·호날두와 함께 6회 월드컵 출전 기록에 도전한다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48924377/mexico-2026-world-cup-squad-guillermo-ochoa",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "멕시코 vs 남아공 개막전 프리뷰… 말라곤·루이스 부상 결장",
+          "summary": "6월 11일 아즈테카에서 열리는 개막전에서 멕시코는 부상으로 골키퍼 말라곤과 미드필더 마르셀 루이스 없이 라울 히메네스를 앞세워 나선다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/espn/story/_/id/48998339/mexico-vs-south-africa-kick-team-news-how-watch-fifa-world-cup-opener",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "아기레, 멕시코 월드컵 명단 확정… 경험과 유망주의 조화",
+          "summary": "FIFA 공식 발표로 아기레 감독이 베테랑과 17세 신예 길베르토 모라 등을 포함한 멕시코 월드컵 26인 명단을 최종 확정했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-squad-announced",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "멕시코 명단 승자와 패자… 오초아의 6번째 월드컵, 베르테라메 탈락",
+          "summary": "골닷컴은 명단 발표 분석에서 오초아의 역사적 선발을 승자로, 인터 마이애미 공격수 베르테라메의 의외의 탈락을 패자로 꼽았다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-us/lists/from-guillermo-ochoa-s-sixth-world-cup-to-inter-miami-star-german-berterame-s-snub-winners-and-losers-from-mexico-s-squad-announcement/blt448ecb1861dce7f7",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "추키 로사노, 멕시코 월드컵 예비명단서 제외",
+          "summary": "최근 두 번의 월드컵에 나섰던 로사노가 출전 시간 부족과 징계 문제로 아기레 감독의 55인 예비명단에서 빠졌다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48757812/chucky-lozano-omitted-mexico-provisional-world-cup-squad",
+          "date": ""
+        },
+        {
+          "title": "멕시코 vs 남아공 개막전 중계·시청 안내",
+          "summary": "골닷컴이 6월 11일 멕시코-남아공 개막전의 킥오프 시간, TV 채널 및 온라인 생중계 시청 방법을 정리했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-us/news/mexico-south-africa-world-cup-preview/bltbbc641c3e0e20e59",
+          "date": ""
+        }
+      ]
     },
     {
       "id": "south-africa",
@@ -1861,6 +1905,43 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "브로스 감독, 2026 월드컵 최종 26인 명단 발표",
+          "summary": "휴고 브로스 감독이 5월 27일 프리토리아에서 무관 2명을 포함한 최종 명단을 확정, 골키퍼 론웬 윌리엄스가 주장을 맡는다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/south-africa-hugo-broos-squad-announced",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "바파나 바파나, 무관 신예 2명 깜짝 발탁",
+          "summary": "필라델피아 유니언의 마카냐(22)와 카이저 치프스의 크로스(25)가 예선에 뛰지 않고도 최종 명단에 포함됐다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/28/bafana-bafana-world-cup-squad-south-africa-names-two-uncapped-players",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "남아공, 마지막 평가전서 자메이카와 1-1 무승부",
+          "summary": "비공개 경기에서 라일 포스터가 선제골을 넣었으나 앳킨슨에게 동점골을 허용, 월드컵 직전 5경기 연속 무승 행진이 이어졌다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-za/lists/jamaica-1-1-south-africa-confusion-reigns-after-bafana-bafana-s-behind-closed-doors-fifa-world-cup-warm-up/blt5b925bdb40e375d3",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "남아공-멕시코, 6월 11일 아즈테카서 월드컵 개막전",
+          "summary": "남아공은 개최국 멕시코와 멕시코시티 에스타디오 아즈테카에서 대회 개막전을 치른 뒤 체코, 한국과 A조 일정을 소화한다.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/mexico-vs-south-africa-watch-110000410.html",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "브로스의 문화 혁신, 16년 만의 월드컵 본선 결실",
+          "summary": "2021년 부임한 브로스 감독이 젊은 선수 중심의 정신력 강화로 팀을 변화시켜 르완다전 3-0 승리로 본선행을 확정했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/espn/story/_/id/46600100/fifa-world-cup-qualifying-hugo-broos-culture-shift-pays-dividends-south-africa",
+          "date": "2025-10-16"
+        }
       ]
     },
     {
@@ -2022,6 +2103,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "한국-체코 월드컵 개막전 프리뷰: 알아야 할 모든 것",
+          "summary": "고지대 과달라하라에서 열리는 A조 1차전, 홍명보의 전방 압박 대 코우베크의 수비적 실리주의 맞대결이 조 초반 흐름을 가른다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/south-korea-czech-republic-world-cup-preview/bltc5df400bcedf8307",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "손흥민, 4번째 월드컵 출전... 한국 26인 최종 명단 발표",
+          "summary": "홍명보 감독이 손흥민(LAFC)을 주축으로 한 26인 최종 명단을 발표, 이강인·김민재가 함께 승선했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48788433/son-heung-min-south-korea-world-cup-squad-lee-kang-kim-min-jae",
+          "date": "2026-05-16"
+        },
+        {
+          "title": "손흥민 외에 누가 한국 공격을 책임질까",
+          "summary": "33세 주장 손흥민 의존도를 낮추기 위해 이강인·황희찬 등 공격 옵션을 점검한 분석 기사.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48899380/who-step-south-korea-help-son-heung-min-fifa-world-cup",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "홍명보호, 16강 진출 시 2억 포상금... '성과 비례형' 제도 확정",
+          "summary": "대한축구협회가 기본 수당 5천만원에 16강 2억·8강 3억 등 단계별 보상을 강화한 포상금 제도를 확정했다.",
+          "source": "풋볼리스트",
+          "url": "https://www.footballist.co.kr/news/articleView.html?idxno=210549",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "홍명보호, 월드컵 로드맵 확정... 멕시코 입성 전 솔트레이크시티 사전캠프",
+          "summary": "대표팀은 격전지 과달라하라 이동에 앞서 미국 유타주 솔트레이크시티에서 약 2주간 사전 훈련캠프를 진행한다.",
+          "source": "풋볼리스트",
+          "url": "https://www.footballist.co.kr/news/articleView.html?idxno=208975",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "[오피셜] 한국 첫 상대 체코, 29인 명단 발표... '황희찬 동료' 크레이치 등 익숙한 이름",
+          "summary": "월드컵 개막전 상대 체코가 29인 명단을 공개, 황희찬의 소속팀 동료 크레이치 등 낯익은 선수들이 포함됐다.",
+          "source": "베스트일레븐",
+          "url": "https://www.besteleven.com/news/articleView.html?idxno=307094",
+          "date": ""
         }
       ]
     },
@@ -2205,7 +2330,44 @@ window.DATA = {
           "체코 2부리그 우승 (2005–06, SK 클라드노)",
           "체코 1부리그 올해의 감독 (2024)"
         ]
-      }
+      },
+      "news": [
+        {
+          "title": "한국 vs 체코 월드컵 2026 프리뷰… 손흥민과 시크의 대결",
+          "summary": "6월 12일 과달라하라에서 열리는 A조 1차전 프리뷰로, 손흥민의 한국과 20년 만에 본선에 복귀한 체코(시크 중심)가 맞붙는다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/south-korea-czech-republic-world-cup-preview/bltc5df400bcedf8307",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "월드컵 2026 A조 가이드: 멕시코·남아공·한국·체코 일정과 배당률",
+          "summary": "공동 개최국 멕시코와 남아공, 한국, FIFA 랭킹 41위 체코(코우베크 감독)가 속한 A조의 일정과 전망을 정리했다.",
+          "source": "스카이스포츠",
+          "url": "https://www.skysports.com/football/news/12098/13540670/world-cup-2026-group-a-guide-fixtures-schedule-standings-and-odds-for-mexico-south-africa-south-korea-and-czech-republic",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "체코 3-1 과테말라… 월드컵 직전 평가전 승리",
+          "summary": "6월 4일 뉴저지 레드불 아레나에서 열린 본선 직전 평가전에서 시크의 선제골 등으로 체코가 과테말라를 3-1로 꺾었다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401870095/guatemala-czechia",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "2026 월드컵 48개국 명단 총정리… 체코 5월 31일 최종 명단 확정",
+          "summary": "체코는 5월 31일 26인 최종 명단을 발표했으며, 시크(레버쿠젠)와 수첵(웨스트햄)이 핵심 자원으로 포함됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "체코의 월드컵 2026: 명단·일정·조편성·역사 총정리",
+          "summary": "UEFA가 정리한 체코 본선 가이드로, 플레이오프 승부차기 끝에 2006년 이후 첫 본선 진출에 성공한 과정과 A조 일정을 담았다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d15945d06d-c1587a40d2a4-1000--czechia-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": ""
+        }
+      ]
     },
     {
       "id": "canada",
@@ -2372,6 +2534,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "캐나다, 2026 월드컵 26인 최종 명단 발표… 다비드·데이비스 승선",
+          "summary": "제시 마쉬 감독이 골키퍼 3명, 수비수 9명, 미드필더 10명, 공격수 4명으로 구성된 26인 명단을 확정했고 부상 중인 알폰소 데이비스도 포함됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48914937/alphonso-davies-named-canada-world-cup-squad-injury-concerns",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "데이비스, 월드컵 캠프 합류했지만 출전 시기는 불투명",
+          "summary": "햄스트링 부상에서 회복 중인 주장 알폰소 데이비스가 대표팀 훈련에 합류했으나 6월 12일 개막전 출전 여부는 여전히 불확실하다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48944438/alphonso-davies-joins-canada-world-cup-prep-unclear-play",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "데이비스 '부상은 정신적으로 힘들었다'… 개막전 출전엔 신중한 기대",
+          "summary": "바이에른 뮌헨 측면 수비수 데이비스가 연이은 부상의 심리적 부담을 토로하면서도 보스니아전 출전 가능성에 조심스러운 기대를 내비쳤다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-us/lists/alphonso-davies-canada-world-cup-fitness-update-bayern-munich/bltbe266697cd19d80c",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "데이비스, 개막전 결장 유력… 마쉬 '대회 중 복귀할 것'",
+          "summary": "마쉬 감독은 데이비스가 6월 12일 보스니아전에는 뛰기 어렵지만 월드컵 도중 복귀해 출전할 것이라고 밝혔다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/alphonso-davies-canada-world-cup-injury-return-update/blt509473d1a2aca623",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "평가전 마친 캐나다, 월드컵 준비 완료… 봉비토 부상은 변수",
+          "summary": "캐나다는 우즈베키스탄 2-0 승리와 아일랜드 1-1 무승부로 월드컵 준비를 마쳤으나 수비수 모이즈 봉비토의 다리 부상이 개막을 앞둔 악재로 떠올랐다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-ca/lists/jesse-marsch-canada-world-cup-ready-after-uzbekistan-ireland-friendlies/blt16df97cdd55a0c0b",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "월드컵 2026 B조 가이드: 캐나다·보스니아·카타르·스위스",
+          "summary": "개최국 캐나다가 속한 B조의 일정과 전력, 전망을 정리한 프리뷰로 캐나다는 6월 12일 토론토에서 보스니아와 개막전을 치른다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
+          "date": ""
+        }
       ]
     },
     {
@@ -2506,7 +2712,37 @@ window.DATA = {
         "honours": [
           "2026 FIFA 월드컵 본선 진출 (보스니아 헤르체고비나)"
         ]
-      }
+      },
+      "news": [
+        {
+          "title": "보스니아, 26인 월드컵 최종 명단 발표… 제코가 이끈다",
+          "summary": "바르바레즈 감독이 가장 먼저 26인 최종 명단을 확정했고, 40세 주장 에딘 제코가 공격의 핵으로 선발됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/bosnia-and-herzegovina-sergej-barbarez-names-squad",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "보스니아, 2026 월드컵 복귀… 스쿼드·일정·B조 가이드",
+          "summary": "이탈리아를 승부차기로 꺾고 본선에 오른 보스니아가 캐나다, 스위스, 카타르와 B조에서 격돌한다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d1594a5469-659bdc40eca9-1000--bosnia-and-herzegovina-at-the-world-cup-2026-squad-fixtur/",
+          "date": "2026-05-21"
+        },
+        {
+          "title": "샬케 제코, 보스니아 소집 중 어깨 부상… 월드컵 출전 불투명",
+          "summary": "이탈리아전 막판 어깨를 다친 제코가 승부차기에 빠졌고, 바르바레즈 감독은 본선 출전을 기대한다고 밝혔다.",
+          "source": "Bundesliga.com",
+          "url": "https://www.bundesliga.com/en/2bundesliga/news/edin-dzeko-injury-bosnia-herzegovina-world-cup-schalke-36695",
+          "date": "2026-04-01"
+        },
+        {
+          "title": "월드컵 2026 B조 가이드: 캐나다·보스니아·스위스·카타르 일정과 전망",
+          "summary": "보스니아는 6월 12일 토론토에서 개최국 캐나다와 첫 경기를 치르며 2014년 이후 첫 본선 무대에 나선다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
+          "date": "2026-06-06"
+        }
+      ]
     },
     {
       "id": "qatar",
@@ -2681,6 +2917,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "로페테기 감독, 2026 월드컵 카타르 최종 26인 명단 발표",
+          "summary": "율렌 로페테기 감독이 6월 2일 카타르의 월드컵 최종 26인 명단을 확정했고, 아일랜드전(0-1 패) 이후 골키퍼 알 라이티와 미드필더 라얀 알 알리가 제외됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "아시아 챔피언 카타르, 16강 진출 가능할까",
+          "summary": "사상 첫 직행 본선에 오른 카타르는 B조에서 스위스·캐나다·보스니아와 맞붙으며, 30위 캐나다전 승리가 16강행 분수령이 될 전망이다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/6/3/fifa-world-cup-2026-qatar-squad-team-players-group-knockouts",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "카타르 vs 스위스, 6월 13일 조별리그 개막전 프리뷰",
+          "summary": "FIFA 55위 카타르가 6월 13일 산타클라라에서 19위 스위스와 첫 경기를 치르며, 아크람 아피프가 공격을 이끈다.",
+          "source": "골닷컴(Goal.com)",
+          "url": "https://www.goal.com/en-gb/news/qatar-switzerland-world-cup-preview/blt152850821751c25d",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "월드컵 2026 B조 가이드 - 카타르 일정·전력 분석",
+          "summary": "카타르는 6월 13일 스위스, 18일 캐나다, 24일 보스니아와 차례로 격돌하며, 로페테기 감독 아래 2022년 조별 탈락 설욕을 노린다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "아피프와 알모에즈 알리, 카타르 26인 명단의 핵심",
+          "summary": "FIFA 공식 자료에 따르면 카타르 명단 26인 중 25명이 자국 리그 소속이며, 아시아 예선 득점왕 알모에즈 알리와 아피프가 공격의 중심이다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar/team-news",
+          "date": "2026-06-02"
         }
       ]
     },
@@ -2861,6 +3134,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "샤카, 스위스 주장으로 2026 월드컵 최종 26인 명단 발표",
+          "summary": "무라트 야킨 감독이 그라니트 샤카를 주장으로 한 26인 명단을 확정했으며, 무릎 부상에서 복귀한 제키 암두니가 깜짝 포함됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48818354/granit-xhaka-captain-switzerland-world-cup-squad",
+          "date": "2026-05-19"
+        },
+        {
+          "title": "스위스 1-1 호주, 월드컵 직전 마지막 평가전서 무승부",
+          "summary": "은도예가 14분 선제골을 넣었으나 호주의 예지에게 동점골을 허용하며 1-1로 비겼고, 느린 경기 시작이 과제로 지적됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401869743",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "월드컵 2026 B조 가이드: 스위스가 캐나다·보스니아·카타르와 격돌",
+          "summary": "스위스는 FIFA 랭킹 19위, UEFA B조 1위로 통과해 B조 최강 후보로 평가받는다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "스위스 월드컵 2026 스쿼드 분석: 경험과 신예의 조화",
+          "summary": "샤카·아칸지·로드리게스·엠볼로 등 베테랑과 함께 프라이부르크의 신예 요한 만잠비가 주목받는다.",
+          "source": "Goal.com",
+          "url": "https://www.goal.com/en/lists/switzerland-squad-world-cup-2026/bltf2af984bafb74a30",
+          "date": ""
+        },
+        {
+          "title": "FIFA, 야킨 감독의 스위스 최종 명단 공식 발표",
+          "summary": "11월 본선 진출을 확정한 스위스가 6회 연속 월드컵 무대를 위한 26인 명단을 공식 확정했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-squad-announcement-murat-yakin",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "카타르 vs 스위스 월드컵 경기 프리뷰 및 중계 정보",
+          "summary": "스위스의 B조 일정 중 카타르전 중계 채널과 킥오프 시간 등 시청 정보를 정리했다.",
+          "source": "Goal.com",
+          "url": "https://www.goal.com/en-us/news/qatar-switzerland-world-cup-preview/blt152850821751c25d",
+          "date": ""
         }
       ]
     },
@@ -3062,6 +3379,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "네이마르 깜짝 발탁, 브라질 2026 월드컵 26인 최종 명단 발표",
+          "summary": "안첼로티 감독이 2년 7개월 만에 복귀한 네이마르를 포함해 26명 최종 명단을 확정, 통산 4번째 월드컵에 나선다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-squad-announcement-carlo-ancelotti",
+          "date": "2026-05-19"
+        },
+        {
+          "title": "브라질, 평가전 에데르송 추가 소집...웨슬리 부상으로 월드컵 낙마",
+          "summary": "이집트전에서 왼쪽 허벅지 부상을 입은 웨슬리가 월드컵에서 제외되고 아탈란타의 에데르송이 대체 발탁됐다.",
+          "source": "Football Italia",
+          "url": "https://football-italia.net/ederson-wesley-break-ancelotti-change-brazil/",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "브라질 2-1 이집트, 월드컵 직전 평가전 승리...웨슬리 부상 이탈",
+          "summary": "브루누 기마랑이스와 엔드릭의 골로 이집트를 꺾었으나 웨슬리가 전반 부상으로 교체돼 우려를 남겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401861998",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "월드컵 2026 브라질 스쿼드 리스트: 네이마르 포함 정리",
+          "summary": "스카이스포츠가 알리송, 비니시우스, 라피냐, 네이마르 등 안첼로티호 브라질 명단 전원을 포지션별로 정리했다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/11095/13543070/world-cup-2026-squad-lists-england-scotland-brazil-usa-spain-france-germany-netherlands-argentina-portugal-and-more",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "브라질 월드컵 명단 프리뷰: 누가 뽑혔고 누가 탈락했나",
+          "summary": "히샬리송, 호드리구, 조앙 페드루가 탈락하고 C조에서 모로코·아이티·스코틀랜드를 상대하는 명단을 분석했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/brazil-squad-world-cup-2026/blt08d5bff83176ff6a",
+          "date": "2026-05-19"
+        },
+        {
+          "title": "'돌아온 네이마르' 브라질, FIFA 월드컵 2026 26인 명단 발표",
+          "summary": "안첼로티 감독이 리우 기자회견에서 26명 명단을 발표하며 네이마르의 극적 복귀를 공식화했다.",
+          "source": "FIFA.com (한국어)",
+          "url": "https://www.fifa.com/ko/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-squad-announcement-carlo-ancelotti-ko",
+          "date": "2026-05-19"
+        }
       ]
     },
     {
@@ -3231,6 +3592,36 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "모로코, 2026 월드컵 26인 최종 명단 확정… 하키미가 주장",
+          "summary": "신임 감독 무함마드 우아비가 아슈라프 하키미를 주장으로 한 26인 명단을 발표했으며, 2022 카타르 대회 대비 16명이 새 얼굴이다.",
+          "source": "FourFourTwo",
+          "url": "https://www.fourfourtwo.com/team/morocco-world-cup-2026-squad",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "모로코 월드컵 프리뷰: 주목할 선수, 조 편성과 명단",
+          "summary": "브라질·스코틀랜드·아이티와 함께 C조에 편성된 모로코, 6월 13일 브라질과 첫 경기를 치르며 브라힘 디아스가 주목 선수로 꼽혔다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/6/3/morocco-world-cup-2026-preview-players-to-watch-group-and-squad-list",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "우아비, 레그라기 후임으로 모로코 대표팀 감독 선임",
+          "summary": "월드컵을 앞두고 발리드 레그라기가 사임하면서, U-20 월드컵 우승을 이끈 무함마드 우아비가 시니어 대표팀 사령탑에 올랐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/mohamed-ouahbi-replaces-walid-regragui-morocco",
+          "date": "2026-03-12"
+        },
+        {
+          "title": "브라질 vs 모로코 월드컵 프리뷰: 알아야 할 모든 것",
+          "summary": "6월 13일 뉴저지에서 열리는 개막 상대전, 모로코는 코소보전 2-1 승리로 큰 부상 없이 최정예 라인업을 가동할 전망이다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/brazil-morocco-world-cup-preview/bltdf80391584379c4e",
+          "date": ""
         }
       ]
     },
@@ -3405,6 +3796,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "월드컵 2026 C조 가이드: 아이티, 52년 만의 본선 복귀",
+          "summary": "아이티는 1974년 이후 처음으로 월드컵 본선에 올라 브라질, 모로코, 스코틀랜드와 C조에서 격돌하며 6월 13일 첫 경기를 치른다.",
+          "source": "스카이스포츠",
+          "url": "https://www.skysports.com/football/news/12098/13543087/world-cup-2026-group-c-guide-fixtures-schedule-standings-and-odds-for-scotland-brazil-morocco-and-haiti",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "세바스티앵 미녜 감독, 아이티 월드컵 최종 26인 명단 발표",
+          "summary": "미녜 감독이 유럽·북미·남미 등 해외파 위주로 구성된 최종 26인 명단을 공개했으며, 자국 리그 선수는 단 1명만 포함됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/haiti-squad-announcement-sebastien-migne",
+          "date": ""
+        },
+        {
+          "title": "아이티 2026 월드컵 스쿼드 (ESPN)",
+          "summary": "베테랑 골키퍼 조니 플라시드와 통산 최다 득점자 두켄스 나존 등 포지션별 26인 전체 명단이 정리돼 있다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/team/squad/_/id/2654/haiti",
+          "date": ""
+        },
+        {
+          "title": "아이티 대표팀 스쿼드 & 선수 명단 (Goal.com)",
+          "summary": "울버햄튼 미드필더 장-리크네르 벨가르드와 선덜랜드 공격수 윌슨 이시도르 등 전원 해외파로 구성된 아이티 명단을 소개한다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/team/haiti/squad/151psmk1h1c846f2lqmflkx75",
+          "date": ""
+        },
+        {
+          "title": "감독이 한 번도 입국 못한 채 월드컵 본선行 이뤄낸 아이티",
+          "summary": "치안 불안으로 아이티를 방문하지 못한 프랑스인 미녜 감독 체제로 니카라과를 2-0으로 꺾고 52년 만의 본선 진출을 확정했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/47019793/haiti-reach-2026-world-cup-manager-never-setting-foot-country",
+          "date": "2025-11-19"
         }
       ]
     },
@@ -3585,6 +4013,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "스코틀랜드 2026 월드컵 26인 최종 명단 발표",
+          "summary": "스티브 클라크 감독이 크레이그 고든, 핀들레이 커티스, 로스 스튜어트를 포함한 26인 명단을 확정했으며 앤디 로버트슨이 주장을 맡는다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12017/13545649/world-cup-2026-steve-clarke-names-craig-gordon-findlay-curtis-ross-stewart-in-scotlands-26-man-squad",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "빌리 길무어, 무릎 부상으로 월드컵 낙마",
+          "summary": "쿠라사오와의 친선전에서 무릎을 다친 나폴리 미드필더 길무어가 월드컵에서 제외됐고 맨유 유망주 타일러 플레처가 대체 발탁됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/football/story/_/id/48701669/scotland-world-cup-2026-schedule-fixtures-results-scores-group-c-how-watch-uk-news-analysis-injuries",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "스코틀랜드, 쿠라사오 4-1 격파하며 월드컵 출정식",
+          "summary": "10명이 된 쿠라사오를 상대로 핀들레이 커티스의 데뷔골과 섕클런드의 멀티골로 4-1 승리를 거뒀으나 길무어가 부상으로 이탈했다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12017/13549157/scotland-beat-10-man-curacao-4-1-in-world-cup-send-off-match-as-findlay-curtis-nets-first-international-goal",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "스코틀랜드, 볼리비아 4-0 완파하며 월드컵 준비 마무리",
+          "summary": "셰 아담스의 멀티골과 맥토미네이의 활약으로 볼리비아를 4-0으로 꺾으며 클라크 감독에게 '행복한 고민'을 안겼다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/11095/13551165/bolivia-0-4-scotland-che-adams-scores-twice-in-emphatic-world-cup-warm-up-win",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "스코틀랜드 월드컵 등번호 확정… 앵거스 건 1번",
+          "summary": "노팅엄 포레스트의 앵거스 건이 1번을 받았고 고든은 21번, 로버트슨 3번, 맥기니 7번 등 등번호가 공개됐다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12017/13550179/world-cup-2026-scotland-squad-numbers-revealed-with-angus-gunn-handed-no-1-jersey-ahead-of-craig-gordon",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "스코틀랜드, 1998년 이후 첫 월드컵… 14일 아이티전으로 개막",
+          "summary": "C조에 속한 스코틀랜드는 6월 14일 아이티, 19일 모로코, 24일 브라질과 차례로 맞붙으며 조별리그 첫 통과에 도전한다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/36621/13551871/scotland-at-world-cup-2026-steve-clarkes-side-look-to-progress-beyond-the-group-stage-for-first-time",
+          "date": "2026-06-08"
+        }
       ]
     },
     {
@@ -3745,6 +4217,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "포체티노, 2026 월드컵 미국 대표팀 26인 최종 명단 발표",
+          "summary": "풀리시치, 타일러 애덤스, 매케니가 이끄는 26인 명단 확정, 13명은 첫 월드컵 출전.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48882389/usa-2026-world-cup-roster-christian-pulisic-squad-mckennie-adams",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "주전 센터백 크리스 리처즈, 발목 인대 부상으로 독일전 결장",
+          "summary": "포체티노가 리처즈의 부상에 답답함 토로, 파라과이전 출전 여부도 불투명.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48976577/usa-world-cup-chris-richards-injury-mauricio-pochettino-germany",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "미국, 월드컵 직전 마지막 평가전서 독일에 1-2 패배",
+          "summary": "시카고 솔저필드 매진 속 독일에 역전패, 월드컵 준비 상태에 물음표.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48986237/is-usmnt-ready-world-cup-loss-germany-jury-out",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "풀리시치, 5개월 만에 골 침묵 깨고 세네갈전 1골 1도움",
+          "summary": "세네갈과의 평가전 3-2 승리에서 득점 포함 활약, '이제 그만 얘기됐으면' 소감.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48933034/usmnt-pulisic-breaks-goal-drought-people-stop-talking",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "미국 vs 파라과이 2026 월드컵 개막전 프리뷰",
+          "summary": "6월 13일 LA에서 열리는 D조 개막전, 포체티노의 공격 축구와 파라과이 수비 조직력 대결.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/usa-paraguay-world-cup-preview/blt6d2779c2ca4a708f",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "미국의 최종 월드컵 명단은 전형적 포체티노 스타일이자 큰 모험",
+          "summary": "8명의 MLS 선수와 유럽파를 섞은 명단 구성에 따른 위험 요소 분석.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48882849/usmnt-final-world-cup-roster-pochettino-taking-risks",
+          "date": "2026-05-26"
         }
       ]
     },
@@ -3946,6 +4462,22 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "미국 vs 파라과이 월드컵 개막전 프리뷰: 알아야 할 모든 것",
+          "summary": "16년 만에 본선에 복귀한 파라과이가 6월 12일 개최국 미국과 D조 개막전을 치르며, 예선서 18경기 단 10실점의 견고한 수비가 무기로 꼽힌다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/usa-paraguay-world-cup-preview/blt6d2779c2ca4a708f",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "엔시소가 이끄는 재능 넘치는 파라과이 스쿼드",
+          "summary": "FIFA는 알파로 감독이 큰 부상 우려 없이 26인을 확정했다며, 훌리오 엔시소와 미겔 알미론을 앞세운 빠른 역습이 파라과이의 강점이라 분석했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-squad-announcement-gustavo-alfaro",
+          "date": "2026-06-02"
+        }
       ]
     },
     {
@@ -4120,7 +4652,30 @@ window.DATA = {
           "2014 AFC 올해의 감독",
           "A리그 올해의 감독 (2012-13, 2018-19, 2021-22)"
         ]
-      }
+      },
+      "news": [
+        {
+          "title": "호주 1-1 스위스, 월드컵 직전 마지막 평가전 무승부",
+          "summary": "샌디에이고에서 열린 최종 점검 평가전에서 데뷔전을 치른 테테 옌기가 동점골을 넣으며 스위스와 1-1로 비겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401869743",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "볼파토, 이탈리아 버리고 호주 대표팀 선택",
+          "summary": "사수올로 소속 22세 볼파토가 이탈리아에서 호주로 국적을 변경해 월드컵 직전 호주 최종 명단에 합류했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48907497/world-cup-cristian-volpato-set-swap-italy-socceroos",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "볼파토 '마음이 시켰다'…호주行 이유 밝혀",
+          "summary": "볼파토가 시드니 태생으로서 느끼는 정체성과 월드컵 출전 기회가 호주를 택한 결정적 이유였다고 설명했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48980794/fifa-world-cup-socceroos-cristian-volpato-followed-heart-switch-italy-australia",
+          "date": "2026-06-06"
+        }
+      ]
     },
     {
       "id": "turkey",
@@ -4294,6 +4849,36 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "튀르키예, 2026 월드컵 최종 26인 명단 발표",
+          "summary": "몬텔라 감독이 35명 예비 명단에서 9명을 제외하고 최종 26인 명단을 확정했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/turkiye-football-tv-schedule/bltc8af3b5b7d869384",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "튀르키예, 평가전서 베네수엘라 2-1 격파",
+          "summary": "월드컵 직전 마지막 점검 평가전에서 바르스 알페르, 유누스 아큔의 골로 역전승을 거뒀다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401871361",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "호주 vs 튀르키예 월드컵 1차전 프리뷰",
+          "summary": "6월 14일 밴쿠버에서 열리는 D조 개막전, 24년 만의 월드컵 복귀전 관전 포인트를 정리했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-us/news/australia-turkiye-world-cup-preview/blt1190b9a0b445ce26",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "튀르키예의 2026 월드컵: 명단·일정·조편성 총정리",
+          "summary": "UEFA가 D조에 속한 튀르키예의 선수단, 경기 일정, 역대 기록을 한눈에 정리했다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d15969649d-c1471bfa3c52-1000--turkiye-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": "2026-06-02"
+        }
       ]
     },
     {
@@ -4454,6 +5039,36 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "나겔스만, 노이어 출전 확정… 16일 쿠라소전 선발",
+          "summary": "나겔스만 감독이 종아리 부상에서 회복한 노이어를 6월 14일 쿠라소와의 월드컵 개막전 선발 골키퍼로 기용한다고 확정했다.",
+          "source": "Bundesliga",
+          "url": "https://www.bundesliga.com/en/bundesliga/news/manuel-neuer-julian-nagelsmann-world-cup-opener-germany-curacao-oliver-baumann-37733",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "독일 2026 월드컵 프리뷰: 주목할 선수와 조 편성",
+          "summary": "2014년 우승팀 독일이 두 차례 조별리그 탈락 후 무지알라·비르츠 등 젊은 공격진과 노이어의 복귀로 명예 회복을 노린다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/31/germany-world-cup-2026-team-preview-players-to-watch-group-and-squad-list",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "독일, 부상당한 레나르트 카를 빼고 우에드라오고 발탁",
+          "summary": "18세 윙어 레나르트 카를이 훈련 중 허벅지 근육 부상으로 이탈하면서 RB라이프치히 미드필더 아산 우에드라오고가 대체 발탁됐다.",
+          "source": "Goal.com",
+          "url": "https://www.goal.com/en/lists/germany-squad-world-cup-2026/bltb0b26b83c2a59617",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "노이어, 독일 월드컵 명단 합류 공식 발표",
+          "summary": "FIFA가 노이어의 대표팀 복귀와 함께 독일의 2026 월드컵 최종 26인 명단 확정 소식을 전했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-squad-neuer-nagelsmann-named",
+          "date": "2026-05-21"
         }
       ]
     },
@@ -4642,6 +5257,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "스코틀랜드, 10명 싸운 퀴라소 4-1 격파… 월드컵 출정식 승리",
+          "summary": "월드컵 직전 평가전에서 퀴라소가 총 선제골을 넣었으나 로카디아 퇴장 후 스코틀랜드에 4-1로 패했다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12017/13549157/scotland-beat-10-man-curacao-4-1-in-world-cup-send-off-match-as-findlay-curtis-nets-first-international-goal",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "딕 아드보카트, 퀴라소 감독 복귀… 월드컵 최고령 감독 등극",
+          "summary": "78세 아드보카트가 퀴라소 사령탑으로 돌아오며 월드컵 역사상 최고령 감독이 된다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48757275/curacao-reinstate-dick-advocaat-deny-change-due-external-pressure",
+          "date": "2026-05-13"
+        },
+        {
+          "title": "아드보카트, 퀴라소 월드컵 최종 26인 명단 발표",
+          "summary": "퀴라소가 사상 첫 월드컵을 위해 유럽파 위주의 26인 명단을 확정했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/curacao-squad-world-cup-2026-which-players-have-made-it-to-the-showpiece-in-usa-mexico-and-canada/bltdff3555ed2b8ce24",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "퀴라소 월드컵 명단 공식 발표 (FIFA)",
+          "summary": "FIFA가 아드보카트 감독이 이끄는 퀴라소의 월드컵 최종 명단을 공식 공개했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/curacao-squad-announcement-dick-advocaat",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "월드컵 사상 최소 인구국 퀴라소 프리뷰… E조 독일·에콰도르·코트디부아르와 격돌",
+          "summary": "인구 15만의 카리브 섬나라 퀴라소가 사상 첫 월드컵에서 E조 강호들과 맞붙는다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13545528/world-cup-2026-curacao-caribbean-nations-historic-first-appearance",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "딕 아드보카트, 퀴라소 감독으로 깜짝 복귀",
+          "summary": "사임 후 약 한 달여 만에 아드보카트가 퀴라소 사령탑으로 전격 복귀했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/dick-advocaat-returns-curacao-coach",
+          "date": "2026-05-13"
+        }
       ]
     },
     {
@@ -4797,6 +5456,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "코트디부아르 월드컵 명단: 알레르 제외, 인터 봉니 발탁",
+          "summary": "에메르스 파에 감독이 2024 아프리카 네이션스컵 우승 주역 세바스티앵 알레르를 26인 명단에서 제외하고, 인터 밀란 공격수 앙주-요안 봉니를 깜짝 발탁했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48778996/ivory-coast-2026-world-cup-squad-sebastien-haller-ange-yoan-bonny",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "코트디부아르 2026 월드컵 최종 명단 발표",
+          "summary": "파에 감독이 26인 명단을 확정, 라이프치히 얀 디오망데와 호펜하임 바주마나 투레 등 신예를 포함했고 알레르는 부진 끝에 탈락했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/ivory-coast-squad-world-cup-2026/bltd60ba61f4582cc11",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "봉니, 프랑스 대신 코트디부아르 선택해 월드컵 출전",
+          "summary": "인터 밀란 공격수 봉니가 프랑스 데샹 감독의 구상에서 빠지자 코트디부아르 대표를 택했으며, 파에 감독이 치아 문제 회복을 위해 인터 잔류를 허용했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/inter-bonny-to-play-for-the-ivory-coast-at-the-world-cup-as-confirmed-by-the-manager-he-has-decided-to-play-for-us/blt622c7ffb2bca9e7b",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "독일전 티켓 안내: 6월 20일 토론토 BMO 필드 격돌",
+          "summary": "코트디부아르가 12년 만의 월드컵 복귀전에서 E조 강호 독일과 6월 20일 토론토에서 맞붙으며, 티켓 가격과 경기장 정보가 공개됐다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-us/news/germany-vs-ivory-coast-world-cup-tickets-how-to-buy/bltf59ce077b9b14067",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "코트디부아르 월드컵 명단 정리: 누가 포함되고 누가 빠졌나",
+          "summary": "케시에·산가레·아마드 디알로·페페 등 핵심 자원이 포함된 26인 명단을 위치별로 정리했으며, 알레르의 의외의 제외가 화제가 됐다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/ivory-coast-squad-world-cup-2026/blt9aedfc5d4aee5816",
+          "date": "2026-05-20"
         }
       ]
     },
@@ -4976,6 +5672,29 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "에콰도르, 과테말라 3-0 완파… 무패 행진 19경기로 월드컵 직전 점검",
+          "summary": "조르디 카이세도, 닐손 앙굴로, 페르비스 에스투피냔이 득점하며 월드컵 직전 마지막 평가전을 완승으로 마무리했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401870000/guatemala-ecuador",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "베카세세 감독, 에콰도르 월드컵 최종 26인 명단 발표",
+          "summary": "모이세스 카이세도, 윌리안 파초, 피에로 인카피에를 중심으로 한 2026 월드컵 26인 명단이 공식 발표됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/es/articles/convocatoria-ecuador-mundial-2026-lista-jugadores",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "에콰도르 월드컵 스쿼드 2026: 누가 미국·멕시코·캐나다 무대에 서나",
+          "summary": "카이세도, 파초, 인카피에, 신성 켄드리 파에스 등 에콰도르의 '황금세대'가 조별리그 E조에서 독일과 한 조에 편성됐다.",
+          "source": "골닷컴(Goal.com)",
+          "url": "https://www.goal.com/en-in/lists/ecuador-squad-world-cup-2026/blt0d6faa95026c07f5",
+          "date": ""
         }
       ]
     },
@@ -5169,6 +5888,43 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "네덜란드 vs 일본 월드컵 개막전 프리뷰 - 데파이 건강 복귀",
+          "summary": "F조 1차전 네덜란드-일본 맞대결 전망. 쿠만은 4-3-3, 데파이는 건강하게 복귀했고 일본은 미토마 부상으로 결장.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/news/netherlands-japan-world-cup-preview/blt48135779b5e280e4",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "네덜란드, 월드컵 26인 최종 명단 발표…데파이 부상 딛고 승선",
+          "summary": "쿠만 감독이 반 다이크 주장 체제로 26인 명단 확정, 햄스트링 부상에서 회복한 데파이도 포함.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/ko/articles/netherlands-ronald-koeman-squad-announced-ko",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "월드컵 F조 가이드 - 네덜란드·일본·스웨덴·튀니지 일정과 전력",
+          "summary": "네덜란드가 속한 F조 일정·순위·배당 정리, 6월 14일 일본전으로 대회 시작.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543097/world-cup-2026-group-f-guide-fixtures-schedule-standings-and-odds-for-netherlands-japan-sweden-and-tunisia",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "네덜란드 월드컵 팀 프리뷰 - 주목할 선수와 조 편성",
+          "summary": "예선 무패로 통과한 네덜란드의 핵심 선수, 조 편성, 우승 후보 평가 등 대회 전반 전망.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/29/netherlands-world-cup-2026-team-preview-players-to-watch-group-squad",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "네덜란드 스쿼드 분석 - 26인 로스터와 등번호 공개",
+          "summary": "월드컵 본선용 네덜란드 26인 전원의 포지션별 명단과 배번, 예상 라인업 정리.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/netherlands-squad-world-cup-2026/bltab8e400140133c06",
+          "date": "2026-05-28"
+        }
       ]
     },
     {
@@ -5322,6 +6078,36 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "미토마, 햄스트링 부상으로 월드컵 낙마…토미야스 복귀",
+          "summary": "브라이턴 윙어 미토마 가오루가 햄스트링 부상으로 26인 명단에서 제외됐고, 아약스 수비수 토미야스가 약 2년 만에 대표팀에 복귀했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/football/story/_/id/48775615/kaoru-mitoma-ruled-world-cup-injury-takehiro-tomiyasu-recalled-japan-squad",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "모리야스호 일본, 2026 월드컵 26인 최종 명단 발표",
+          "summary": "일본축구협회가 쿠보·도안 등이 포함된 26인 명단을 확정했으며, 나가토모는 아시아 선수 최초로 5회 연속 월드컵 출전을 앞두고 있다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/ko/news/articles/japan-squad-announcement-ko",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "유럽파 23명 일본, 월드컵 최종 명단 발표…미토마는 낙마",
+          "summary": "유럽파 23명이 포함된 일본 최종 명단이 공개됐으며, 5월 9일 울버햄튼전에서 햄스트링을 다친 미토마가 제외됐다.",
+          "source": "인터풋볼",
+          "url": "https://www.interfootball.co.kr/news/articleView.html?idxno=686552",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "일본 월드컵 프리뷰: 주목할 선수와 F조 전망",
+          "summary": "미토마 부상 공백 속 쿠보가 핵심으로 떠오르며, 역대 가장 재능 있는 스쿼드로 16강 징크스 돌파에 도전하는 일본을 분석했다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/22/japans-world-cup-2026-team-preview-players-to-watch-group-squad",
+          "date": "2026-05-22"
         }
       ]
     },
@@ -5483,6 +6269,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "포터 감독, 스웨덴 월드컵 26인 최종 명단 발표… 이사크·예케레스 선봉",
+          "summary": "그레이엄 포터 감독이 알렉산데르 이사크와 빅토르 예케레스를 앞세운 26인 최종 명단을 확정했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48754111/alexander-isak-headlines-final-sweden-world-cup-roster",
+          "date": "2026-05-12"
+        },
+        {
+          "title": "FIFA 공식: 스웨덴 월드컵 명단 공개",
+          "summary": "FIFA가 예케레스, 이사크 등이 포함된 스웨덴 대표팀 26인 월드컵 명단을 공식 발표했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/sweden-squad-announcement-world-cup-graham-potter",
+          "date": "2026-05-12"
+        },
+        {
+          "title": "쿨루셉스키, 1년 부상 끝에 월드컵 명단 탈락",
+          "summary": "무릎 부상으로 시즌을 통째로 날린 토트넘 쿨루셉스키가 끝내 스웨덴 월드컵 명단에서 제외됐다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en-us/lists/world-cup-dejan-kulusevski-injury-tottenham-sweden-viktor-gyokeres-alexander-isak/bltd56651aa57664624",
+          "date": "2026-05-13"
+        },
+        {
+          "title": "월드컵 2026 F조 가이드: 스웨덴 일정·전력 분석",
+          "summary": "스웨덴은 F조에서 튀니지, 네덜란드, 일본과 맞붙으며 6월 15일 튀니지전으로 조별리그를 시작한다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543097/world-cup-2026-group-f-guide-fixtures-schedule-standings-and-odds-for-netherlands-japan-sweden-and-tunisia",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "UEFA: 스웨덴의 2026 월드컵 명단·일정·조편성·역사 총정리",
+          "summary": "UEFA가 플레이오프로 본선에 오른 스웨덴의 명단, F조 일정, 대회 역사를 정리해 소개했다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d159618c27-fd6d64ccd5f6-1000--sweden-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": ""
+        },
+        {
+          "title": "포터 인터뷰: 첼시·웨스트햄 아픔 뒤 스웨덴에서 찾은 즐거움",
+          "summary": "포터 감독이 예케레스와 이사크의 공존을 풀어낼 구상과 월드컵 각오를 밝혔다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/11095/13550178/graham-potter-interview-finding-joy-with-sweden-after-chelsea-west-ham-woe-and-unlocking-viktor-gyokeres-and-alexander-isak-at-world-cup",
+          "date": ""
         }
       ]
     },
@@ -5659,6 +6489,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "라무시 감독, 대폭 물갈이한 튀니지 월드컵 명단 발표",
+          "summary": "사브리 라무시 감독이 사시, 메리아, 마알룰, 슬리티 등 베테랑들을 제외한 세대교체 명단을 확정했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/tunisia-squad-named-sabri-lamouchi",
+          "date": ""
+        },
+        {
+          "title": "튀니지, 2026 월드컵 공식 명단 발표",
+          "summary": "튀니지가 5월 15일 7번째 월드컵 본선을 위한 23인 공식 명단을 공개했다.",
+          "source": "beIN SPORTS",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/tunisia-s-official-squad-for-the-2026-fifa-world-cup-2026-05-15",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "벨기에, 튀니지 5-0 완파... 마지막 평가전서 참패",
+          "summary": "월드컵 직전 마지막 평가전에서 튀니지는 10명으로 줄어든 채 벨기에에 0-5로 대패했다.",
+          "source": "Brussels Times",
+          "url": "https://www.brusselstimes.com/belgium/2177122/belgium-leave-for-world-cup-after-five-star-triumph-over-tunisia/",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "쿠르투아, 벨기에의 튀니지 5-0 완승서 무실점 행진",
+          "summary": "벨기에가 트로사르·데 브라위너 등의 골로 튀니지를 5-0으로 꺾으며 월드컵 전 호조를 보였다.",
+          "source": "Real Madrid 공식",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/latest-news/5-0-courtois-imbatido-en-la-goleada-de-belgica-ante-tunez-06-06-2026",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "월드컵 2026 F조 가이드: 네덜란드·일본·스웨덴·튀니지",
+          "summary": "튀니지는 6월 15일 스웨덴전을 시작으로 일본, 네덜란드와 F조에서 16강 진출을 노린다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543097/world-cup-2026-group-f-guide-fixtures-schedule-standings-and-odds-for-netherlands-japan-sweden-and-tunisia",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "튀니지 월드컵 2026 스쿼드: 주장 스키리 중심의 전력 분석",
+          "summary": "에인트라흐트의 스키리가 주장으로 미드필더 아추리, 메즈브리와 함께 팀을 이끈다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/tunisia-squad-world-cup-2026/bltdea755c505c4ca25",
+          "date": ""
+        }
       ]
     },
     {
@@ -5834,6 +6708,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "벨기에, 2026 월드컵 26인 최종 명단 발표…루카쿠 깜짝 포함",
+          "summary": "루디 가르시아 감독이 부상에 시달린 루카쿠를 포함해 황금세대 핵심들을 담은 26인 명단을 확정했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/ko/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-squad-garcia-lukaku-named-ko",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "부상 악재에도 루카쿠, 벨기에 월드컵 명단 합류",
+          "summary": "올 시즌 나폴리에서 64분만 소화한 33세 루카쿠가 데브라위너, 쿠르투아와 함께 네 번째 월드컵에 나선다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48777814/romelu-lukaku-named-belgium-world-cup-squad-injury-troubles",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "벨기에 5-0 튀니지…월드컵 직전 평가전 대승",
+          "summary": "트로사르·드 케텔라에레·더 브라위너 등이 골을 터뜨리며 10명이 된 튀니지를 완파, 이집트전 대비를 마쳤다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401856622/tunisia-belgium",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "부상으로 얼룩진 시즌에도 루카쿠, 벨기에 월드컵 스쿼드 승선",
+          "summary": "릴의 21세 페르난데스-파르도가 첫 발탁된 반면 오펜다, 곳츠는 명단에서 제외됐다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/15/lukaku-included-in-belgiums-world-cup-squad-despite-injury-plagued-season",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "벨기에 월드컵 미리보기: 스쿼드·일정·조 편성 총정리",
+          "summary": "벨기에는 G조에서 이집트, 이란, 뉴질랜드와 맞붙으며 6월 15일 시애틀에서 이집트전으로 대회를 시작한다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d159584345-7c4009d41554-1000--belgium-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": "2026-05-16"
+        },
+        {
+          "title": "벨기에 5-0 튀니지…도쿠 활약 속 월드컵 전 완승",
+          "summary": "쿠르투아가 무실점을 지킨 가운데 벨기에가 무패 행진을 이어가며 대회 직전 자신감을 끌어올렸다.",
+          "source": "beIN Sports",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/belgium-5-0-tunisia-doku-stars-in-pre-world-cup-thrashing-2026-06-06",
+          "date": "2026-06-06"
         }
       ]
     },
@@ -6015,6 +6933,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "브라질 2-1 이집트, 월드컵 전 마지막 평가전 패배",
+          "summary": "이집트가 2026 월드컵 개막 전 마지막 평가전에서 브라질에 1-2로 패했으며, 살라는 후반 교체 투입돼 슈팅 1개에 그쳤다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401861998",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "살라, 이집트 2026 월드컵 명단 주장으로 선정",
+          "summary": "호삼 하산 감독이 발표한 26인 월드컵 명단에서 모하메드 살라가 주장을 맡고 마르무시가 공격을 함께 이끈다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/21/mohamed-salah-to-captain-egypt-as-squad-announced-for-fifa-world-cup-2026",
+          "date": "2026-05-21"
+        },
+        {
+          "title": "호삼 하산, 이집트 월드컵 예비 명단 발표",
+          "summary": "이집트 대표팀이 2026 월드컵을 앞두고 예비 소집 명단을 공개하며 본선 준비에 돌입했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/egypt-squad-named",
+          "date": "2026-05-21"
+        },
+        {
+          "title": "살라 주장 확정, 마르무시도 명단 포함",
+          "summary": "이집트가 살라를 주장으로 확정하고 맨시티 공격수 마르무시를 명단에 넣어 공격진을 강화했다.",
+          "source": "beIN SPORTS",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/salah-to-captain-egypt-at-world-cup-marmoush-also-included-in-squad-2026-05-30",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "살라가 이끄는 이집트, 하산 감독 예비 명단 공개로 월드컵 준비",
+          "summary": "아프리카축구연맹(CAF)이 살라를 중심으로 한 이집트의 월드컵 예비 명단과 준비 상황을 전했다.",
+          "source": "CAF",
+          "url": "https://www.cafonline.com/news/salah-headlines-egypt-s-world-cup-preparations-as-hossam-hassan-unveils-preliminary-squad/",
+          "date": "2026-05-22"
         }
       ]
     },
@@ -6212,6 +7167,22 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "이란 선수단, 2026 월드컵 미국 입국 비자 발급 받아",
+          "summary": "이란 대표팀 선수 전원이 미국 월드컵 출전을 위한 비자를 발급받았으나, 연맹 수뇌부 등 지원 스태프 일부는 비자를 받지 못했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48977850/iran-players-receive-us-visas-2026-world-cup",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "이란 2026 월드컵 최종 26인 명단 발표…아즈문 제외",
+          "summary": "갈레노에이 감독이 타레미를 주장으로 한 26인 최종 명단을 확정했으며, 스타 공격수 사르다르 아즈문은 명단에서 빠졌다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/iran-squad-world-cup-2026/blt67c2d5d938254c59",
+          "date": "2026-06-02"
+        }
       ]
     },
     {
@@ -6381,6 +7352,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "잉글랜드 1-0 뉴질랜드, 월드컵 직전 평가전 패배",
+          "summary": "플로리다 탬파에서 열린 월드컵 워밍업 평가전에서 해리 케인의 전반 추가시간 헤더 결승골로 뉴질랜드가 잉글랜드에 0-1로 패했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401860828/new-zealand-england",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "주장 크리스 우드, 부상 딛고 월드컵 출전 완전 회복",
+          "summary": "12월 왼쪽 무릎 수술 후 복귀한 34세 우드는 무릎이 완전히 회복돼 월드컵 출전 준비를 마쳤다고 밝혔다.",
+          "source": "Reuters",
+          "url": "https://www.flashscore.com/news/soccer-world-cup-new-zealand-captain-chris-wood-fully-fit-for-2026-world-cup-after-injury-battles/xj5tDLMN/",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "뉴질랜드, 2026 월드컵 26인 최종 명단 발표",
+          "summary": "다렌 베이즐리 감독이 오클랜드 에덴파크에서 26인 명단을 발표했으며 크리스 우드가 주장으로 확정됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-squad-named",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "올화이츠, 월드컵 26인 명단 공식 발표",
+          "summary": "뉴질랜드축구협회가 2010년 이후 첫 월드컵 본선에 나설 26인 명단을 공식 발표, 우드와 36세 베테랑 토미 스미스가 포함됐다.",
+          "source": "1News",
+          "url": "https://www.1news.co.nz/2026/05/14/all-whites-squad-for-fifa-world-cup-announced/",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "부상에 시달린 우드, 월드컵서 뉴질랜드 이끈다",
+          "summary": "부상으로 얼룩진 프리미어리그 시즌을 보낸 크리스 우드가 회복을 마치고 월드컵에서 뉴질랜드를 이끈다.",
+          "source": "FOX Sports",
+          "url": "https://www.foxsports.com/articles/soccer/chris-wood-to-lead-new-zealand-at-the-world-cup-after-an-injurytroubled-premier-league-campaign",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "우드, 월드컵 수주 앞두고 무릎 부상 재발 우려",
+          "summary": "4월 노팅엄 포레스트의 유로파리그 경기에서 우드가 무릎 충격으로 교체되며 월드컵 출전에 적신호가 켜졌었다.",
+          "source": "RNZ",
+          "url": "https://www.rnz.co.nz/news/alert-spt/592636/all-whites-captain-chris-wood-injured-again-weeks-out-from-world-cup",
+          "date": "2026-04-17"
         }
       ]
     },
@@ -6556,6 +7571,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "스페인, 라스트 평가전서 야말·니코 윌리엄스 제외",
+          "summary": "데 라 푸엔테 감독이 부상 회복을 위해 야말, 니코 윌리엄스, 빅토르 무뇨스를 페루전 명단에서 뺐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48993924/lamine-yamal-nico-williams-left-spain-last-world-cup-warmup",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "데 라 푸엔테 \"야말, 월드컵 개막전 출전 가능\"",
+          "summary": "스페인 의료진 보고서상 야말·윌리엄스·메리노가 6월 15일 카보베르데전에 가용하다고 감독이 밝혔다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48957472/spain-lamine-yamal-injury-2026-world-cup-cape-verde-de-la-fuente",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "스페인 월드컵 최종 명단 확정…야말 승선, 레알 선수 전무",
+          "summary": "데 라 푸엔테 감독이 26인 명단을 발표, 야말이 포함됐으나 레알 마드리드 소속 선수는 한 명도 뽑히지 않았다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48870392/spain-world-cup-2026-squad-confirmed-lamine-yamal-stars-no-real-madrid-players",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "스페인 1-1 이라크…월드컵 첫 워밍업서 무승부",
+          "summary": "페란 토레스가 선제골을 넣었으나 도스키에게 동점골을 허용하며 라리오하에서 비겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401871471/iraq-spain",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "월드컵 H조 가이드: 스페인·카보베르데·사우디·우루과이",
+          "summary": "스페인이 속한 H조의 일정·순위·배당 전망을 정리, 6월 15일 애틀랜타에서 카보베르데전으로 개막한다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543099/world-cup-2026-group-h-guide-fixtures-schedule-standings-and-odds-for-spain-cape-verde-saudi-arabia-and-uruguay",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "'햄스트링 부상' 야말, 월드컵서 풀타임 어렵다",
+          "summary": "야말이 풀타임 출전은 힘들지만 데 라 푸엔테 감독은 '슈퍼 조커'로 짧게 활용할 수 있다고 설명했다.",
+          "source": "인터풋볼",
+          "url": "https://www.interfootball.co.kr/news/articleView.html?idxno=685592",
+          "date": "2026-05-01"
+        }
       ]
     },
     {
@@ -6716,6 +7775,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "카보베르데, 평가전서 세르비아 3-0 완파",
+          "summary": "월드컵 첫 출전을 앞둔 카보베르데가 5월 31일 리스본에서 열린 친선전에서 케빈 피나, 라로스 두아르테, 질송 벵시몰의 골로 세르비아를 3-0으로 꺾었다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401871172/serbia-cape-verde",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "부비스타 감독, 역사적 첫 월드컵 최종 명단 발표",
+          "summary": "카보베르데가 사상 첫 월드컵 본선을 위한 26인 명단을 확정했으며, 비야레알의 로건 코스타가 유럽 5대 리그에서 뛰는 유일한 선수로 포함됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/cabo-verde-squad-announcement-world-cup-bubista",
+          "date": ""
+        },
+        {
+          "title": "2026 월드컵 데뷔국 카보베르데, 역사를 쓰다",
+          "summary": "ESPN이 카보베르데를 쿠라사오·요르단·우즈베키스탄과 함께 2026 월드컵 데뷔국으로 조명하며 인구 약 52만의 최소 규모 본선 진출국 스토리를 소개했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48322228/meet-2026-world-cup-debutants-cape-verde-curacao-jordan-uzbekistan",
+          "date": ""
+        },
+        {
+          "title": "월드컵 H조 프리뷰: 스페인·우루과이와 한 조",
+          "summary": "스카이스포츠가 카보베르데가 속한 H조(스페인·우루과이·사우디아라비아) 일정과 전력을 분석했으며, 6월 15일 애틀랜타에서 스페인과 첫 경기를 치른다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543099/world-cup-2026-group-h-guide-fixtures-schedule-standings-and-odds-for-spain-cape-verde-saudi-arabia-and-uruguay",
+          "date": ""
+        },
+        {
+          "title": "부비스타의 카보베르데 월드컵 최종 선택",
+          "summary": "포포투가 카보베르데의 월드컵 26인 최종 명단을 포지션별로 분석하며 로건 코스타, 라이언 멘데스, 자일론 리브라멘투 등 주축 선수들을 짚었다.",
+          "source": "FourFourTwo",
+          "url": "https://www.fourfourtwo.com/team/cape-verde-world-cup-2026-squad",
+          "date": ""
         }
       ]
     },
@@ -6906,6 +8002,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "사우디아라비아, 2026 월드컵 준비 위해 오스틴 입성",
+          "summary": "도니스 감독과 26인 명단이 6월 1일 텍사스 오스틴에 도착해 우루과이전(15일)을 앞두고 최종 준비에 돌입했다.",
+          "source": "The National",
+          "url": "https://www.thenationalnews.com/sport/football/2026/06/02/saudi-arabia-team-arrive-in-austin-ahead-of-2026-world-cup/",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "도니스 감독, 사우디 2026 월드컵 예비 명단 발표",
+          "summary": "그리스 출신 도니스 감독이 로샨 사우디리그 28명 등 30인 예비 명단을 발표하며 '카타르 같은 기적보다 조직력과 규율'을 강조했다.",
+          "source": "Saudi Pro League (SPL 공식)",
+          "url": "https://www.spl.com.sa/en/news/1069913/donis-announces-saudi-arabias-2026-fifa-world-cup-squad",
+          "date": "2026-05-23"
+        },
+        {
+          "title": "ESPN, 48개국 월드컵 명단 정리…사우디 26인 확정",
+          "summary": "골키퍼 알 오와이스, 주장 알 다우사리, 유일한 해외파 사우드 압둘하미드(RC 랑스) 등 사우디 최종 26인 명단이 6월 1일 마감됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "사우디 vs 세네갈, 월드컵 직전 마지막 평가전",
+          "summary": "사우디가 6월 9일 텍사스 샌안토니오 토요타필드에서 세네갈과 본선 전 최종 워밍업 평가전을 치른다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401871362/senegal-saudi-arabia",
+          "date": "2026-06-09"
+        },
+        {
+          "title": "사우디아라비아 2026 월드컵 팀 뉴스 (FIFA 공식)",
+          "summary": "FIFA 공식 페이지가 H조 사우디의 명단·일정·팀 소식을 제공하며, 우루과이·스페인·카보베르데와 격돌한다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia/team-news",
+          "date": ""
         }
       ]
     },
@@ -7107,6 +8240,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "아라우호 부상…월드컵 개막 앞두고 바르셀로나서 치료 위해 복귀",
+          "summary": "근육 부상을 입은 아라우호가 치료를 위해 바르셀로나로 복귀했으며, 6월 15일 사우디아라비아전 출전이 불투명하다.",
+          "source": "Sports Illustrated",
+          "url": "https://www.si.com/soccer/injured-barcelona-star-returns-club-urgent-treatment-before-world-cup-opener",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "비엘사, 우루과이 월드컵 명단서 수아레스 제외",
+          "summary": "비엘사 감독이 A매치 69골(143경기)의 역대 최다 득점자 수아레스를 26인 최종 명단에서 제외했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48929677/marcelo-bielsa-omits-luis-suarez-uruguay-world-cup-squad",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "[오피셜] 수아레스 없는 월드컵…우루과이 최종 명단 발표",
+          "summary": "발베르데·누녜스·벤탄쿠르가 포함된 우루과이 26인 최종 명단이 발표됐으며, 수아레스는 끝내 승선하지 못했다.",
+          "source": "베스트일레븐",
+          "url": "https://www.besteleven.com/news/articleView.html?idxno=307492",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "A매치 69골도 소용없었다…수아레스·난데스 충격 탈락",
+          "summary": "수아레스뿐 아니라 남미예선 주축이던 난데스까지 우루과이 최종 명단에서 빠졌고, 39세 무슬레라는 살아남았다.",
+          "source": "SPOTV News",
+          "url": "https://www.spotvnews.co.kr/news/articleView.html?idxno=819899",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "우루과이 2026 월드컵 명단 가이드: 비엘사의 선택",
+          "summary": "발베르데, 아라우호, 우가르테 등을 중심으로 한 우루과이의 월드컵 스쿼드 구성과 포지션별 전력을 정리했다.",
+          "source": "Goal.com",
+          "url": "https://www.goal.com/en-us/lists/uruguay-squad-world-cup-2026/blt1c90800c54756d7d",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "우루과이 2026 월드컵 최종 로스터 확정: 전체 명단",
+          "summary": "우루과이가 J조(스페인·카보베르데·사우디아라비아)에서 치를 월드컵 26인 명단을 확정했다.",
+          "source": "Sports Illustrated",
+          "url": "https://www.si.com/soccer/uruguay-2026-world-cup-roster-confirmed-full-list-players",
+          "date": "2026-06-01"
+        }
       ]
     },
     {
@@ -7265,7 +8442,51 @@ window.DATA = {
           "2018 더 베스트 FIFA 올해의 감독",
           "2004 리그앙 올해의 감독"
         ]
-      }
+      },
+      "news": [
+        {
+          "title": "프랑스, 2026 월드컵 최종 26인 명단 발표…카마빈가·콜로 무아니 탈락",
+          "summary": "데샹 감독이 5월 14일 26인 최종 명단을 확정했으며, 카마빈가·콜로 무아니·슈발리에가 제외됐다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48771039/france-2026-world-cup-squad-mbappe-camavinga-kolo-muani-dembele",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "코트디부아르에 1-2 충격패…아마드 결승골",
+          "summary": "6월 4일 낭트 평가전에서 셰르키 선제골에도 프랑스가 코트디부아르에 역전패했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401864934",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "데샹, 살리바 부상 우려 진화…월드컵 출전 가능",
+          "summary": "등 부상을 안은 살리바가 평가전엔 빠지지만 월드컵 본선엔 정상 가담한다고 데샹이 밝혔다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48957835/france-boss-didier-deschamps-eases-william-saliba-injury-fears-ahead-pre-world-cup-friendlies",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "프랑스-세네갈, 6월 16일 뉴욕서 개막전…2002년 리매치",
+          "summary": "프랑스가 16일 메트라이프 스타디움에서 세네갈과 조별리그 I조 첫 경기를 치른다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/france-senegal-preview-live-stream-team-news-tickets",
+          "date": ""
+        },
+        {
+          "title": "월드컵 2026 I조 가이드: 프랑스·세네갈·이라크·노르웨이",
+          "summary": "음바페가 이끄는 프랑스의 조별리그 일정·전력·우승 배당이 정리됐다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543102/world-cup-2026-group-i-guide-fixtures-schedule-standings-and-odds-for-france-senegal-iraq-and-norway",
+          "date": ""
+        },
+        {
+          "title": "프랑스 월드컵 명단·일정·역사 총정리",
+          "summary": "음바페 주장 체제의 프랑스 26인 명단과 조별리그 일정, 역대 성적을 UEFA가 정리했다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d159288012-ce02189d2504-1000--france-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": ""
+        }
+      ]
     },
     {
       "id": "senegal",
@@ -7410,6 +8631,36 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "세네갈, 2026 월드컵 최종 26인 명단 확정… 사디오 마네 승선",
+          "summary": "파페 티아우 감독이 28인 예비 명단에서 수비수 두 명을 제외해 마네·쿨리발리 등이 포함된 최종 26인을 확정했다.",
+          "source": "Goal.com",
+          "url": "https://www.goal.com/en/lists/senegal-squad-world-cup-2026/blt4eb393e65d867783",
+          "date": "2026-05-22"
+        },
+        {
+          "title": "세네갈 월드컵 프리뷰: I조서 프랑스·노르웨이·이라크와 격돌",
+          "summary": "AFCON 2025 우승팀 세네갈은 마네의 마지막 월드컵으로 6월 16일 프랑스를 시작으로 조별리그를 치른다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/5/30/senegals-world-cup-2026-team-preview-players-to-watch-group-squad-list",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "미국 3-2 세네갈… 월드컵 직전 평가전서 마네 멀티골에도 패배",
+          "summary": "샬럿에서 열린 평가전에서 마네가 두 골을 넣었지만 풀리시치·발로건의 활약에 세네갈이 3-2로 패했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/762592",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "세네갈, 6월 9일 사우디아라비아와 마지막 월드컵 워밍업 평가전",
+          "summary": "텍사스 샌안토니오 토요타 필드에서 사우디와 맞붙으며, 프랑스전을 앞두고 마네는 휴식이 유력하다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401871362/senegal-saudi-arabia",
+          "date": "2026-06-09"
         }
       ]
     },
@@ -7586,6 +8837,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "이라크, 볼리비아 2-1 격파하며 40년 만에 월드컵 본선 진출",
+          "summary": "대륙간 플레이오프에서 알하마디와 후세인의 골로 볼리비아를 꺾고 1986년 이후 40년 만에 본선행을 확정, 48번째 마지막 본선 진출국이 됐다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/4/1/iraq-defeat-bolivia-2-1-to-qualify-for-fifa-world-cup-2026",
+          "date": "2026-04-01"
+        },
+        {
+          "title": "스페인 1-1 이라크, 월드컵 준비 평가전서 강호 상대로 무승부",
+          "summary": "라코루냐 리아소르에서 열린 평가전에서 페란 토레스에게 선제골을 내줬으나 메르차스 도스키의 환상골로 따라붙어 세계 2위 스페인과 1-1로 비겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401871471",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "이라크 2-5 베네수엘라, 마지막 평가전서 수비 불안 노출",
+          "summary": "일리노이 브리지뷰에서 열린 본선 직전 마지막 워밍업 매치에서 베네수엘라에 5실점하며 2-5로 패해 과제를 남겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401873603/venezuela-iraq",
+          "date": "2026-06-09"
+        },
+        {
+          "title": "월드컵 2026 I조 가이드: 프랑스·노르웨이·세네갈과 한 조",
+          "summary": "이라크는 6월 16일 노르웨이(보스턴), 22일 프랑스(필라델피아), 26일 세네갈(토론토)과 차례로 맞붙으며 죽음의 조에서 생존을 노린다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543102/world-cup-2026-group-i-guide-fixtures-schedule-standings-and-odds-for-france-senegal-iraq-and-norway",
+          "date": ""
+        },
+        {
+          "title": "그레이엄 아놀드 감독, 이라크 월드컵 예비 명단 발표",
+          "summary": "아놀드 감독이 이끄는 이라크가 알하마디(입스위치), 지단 이크발(위트레흐트) 등을 포함한 본선 명단을 확정하며 대회를 준비한다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/iraq-preliminary-squad-announcement-graham-arnold",
+          "date": ""
+        },
+        {
+          "title": "이라크 2-1 볼리비아 경기 리포트 및 코멘트",
+          "summary": "FIFA 공식 매치 리포트로, 본선행을 확정한 플레이오프 경기의 골 장면과 아놀드 감독의 소감 등 상세 내용을 전한다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/iraq-bolivia-match-report-quotes",
+          "date": "2026-03-31"
+        }
       ]
     },
     {
@@ -7749,6 +9044,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "노르웨이, 출정식서 스웨덴 3-1 완파…홀란·외데고르 없이도 압도",
+          "summary": "오슬로 월드컵 출정식에서 라르센 멀티골과 누사 추가골로 스웨덴을 3-1로 제압하며 본선 기대감을 키웠다.",
+          "source": "네이트 스포츠",
+          "url": "https://sports.news.nate.com/view/20260602n13264",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "국왕이 발표한 월드컵 최종 26인 명단…홀란의 노르웨이 '바이킹 돌풍'",
+          "summary": "솔바켄 감독이 하랄 5세 국왕의 영상 발표로 26인 최종 명단을 공개, 홀란과 주장 외데고르가 중심에 섰다.",
+          "source": "서울경제",
+          "url": "https://www.sedaily.com/article/20047632",
+          "date": "2026-05-23"
+        },
+        {
+          "title": "[공식] 노르웨이 월드컵 최종 명단 발표…홀란·외데고르 승선",
+          "summary": "FIFA 공식 발표로 솔바켄 감독이 이끄는 노르웨이의 월드컵 26인 명단이 확정됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/ko/articles/norway-squad-announcement-stale-solbakken-ko",
+          "date": "2026-05-22"
+        },
+        {
+          "title": "노르웨이 월드컵 2026 프리뷰: 주목할 선수·조 편성·명단",
+          "summary": "28년 만의 본선 진출 노르웨이가 프랑스·세네갈·이라크와 죽음의 I조에 묶였으며 홀란이 팀을 이끈다.",
+          "source": "알자지라",
+          "url": "https://www.aljazeera.com/sports/2026/5/26/norway-world-cup-2026-preview-players-to-watch-group-matches-squad-list",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "노르웨이, 홀란 16골로 28년 만에 월드컵 본선 진출",
+          "summary": "유럽 예선 8전 전승·37골을 기록하며 이탈리아를 제치고 1998년 이후 처음 본선 직행 티켓을 따냈다.",
+          "source": "서울신문",
+          "url": "https://www.seoul.co.kr/news/sport/soccer/soccer-global/2025/11/18/20251118028003",
+          "date": "2025-11-18"
+        },
+        {
+          "title": "Norway at the World Cup 2026: Squad, fixtures, group and history",
+          "summary": "노르웨이의 월드컵 일정(6월 16일 이라크전 시작), I조 편성, 명단과 역사를 정리한 UEFA 공식 가이드.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d1592b3f90-2ef16e2c5255-1000--norway-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": "2026-05-22"
+        }
       ]
     },
     {
@@ -7902,6 +9241,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "스칼로니, 아이슬란드전서 메시 출전 확정… '리스크 관리' 강조",
+          "summary": "스칼로니 감독이 월드컵 직전 마지막 평가전인 아이슬란드전에 메시를 출전시키되 부상 방지를 위해 출전 시간을 제한하겠다고 밝혔다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/49004047/argentina-avoid-risks-messi-play-friendly",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "메시, 통산 6번째 월드컵 출전 위해 아르헨티나 최종 명단 합류",
+          "summary": "햄스트링 부상 우려에도 38세 메시가 26인 최종 명단에 포함되며 호날두와 함께 사상 첫 월드컵 6회 출전 기록에 도전한다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48904313/lionel-messi-argentina-2026-world-cup-squad",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "메시 벤치 대기 속 아르헨티나, 온두라스 2-0 완파",
+          "summary": "라우타로 마르티네스의 PK 골과 시메오네의 추가골로 아르헨티나가 월드컵 전 평가전에서 온두라스를 2-0으로 꺾었다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/report/_/gameId/401868047",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "메시 '6연속 월드컵' 출전… 디펜딩 챔피언 아르헨티나 최종 명단 발표",
+          "summary": "아르헨티나가 2022 우승 멤버 17명을 포함한 26인 최종 명단을 발표했으며 메시가 사상 첫 6회 연속 월드컵 출전에 나선다.",
+          "source": "뉴스1",
+          "url": "https://www.news1.kr/sports/overseas-soccer/6181219",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "스칼로니 '메시 컨디션 양호'… 월드컵 워밍업 평가전 출전 시사",
+          "summary": "스칼로니 감독이 메시의 회복 상태가 좋다며 월드컵 직전 평가전에서 일정 시간 출전할 수 있다고 밝혔다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48979047/scaloni-messi-doing-well-set-minutes-world-cup-warmups",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "메시 헤드라인 장식한 아르헨티나 월드컵 명단 공식 발표",
+          "summary": "FIFA가 아르헨티나의 26인 최종 명단을 공식 확정했으며 J조에서 알제리·오스트리아·요르단과 조별리그를 치른다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-squad-announced",
+          "date": "2026-05-29"
         }
       ]
     },
@@ -8088,6 +9471,29 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "페트코비치 감독, 알제리 2026 월드컵 26인 최종 명단 발표… 마레즈·루카 지단 승선",
+          "summary": "페트코비치 감독이 5월 31일 알제리의 12년 만의 월드컵 복귀를 위한 명단을 공개했으며, 베테랑 주장 리야드 마레즈와 지네딘 지단의 아들 골키퍼 루카 지단이 포함됐다.",
+          "source": "beIN Sports",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/vladimir-petkovi-s-official-algeria-squad-for-the-2026-fifa-world-cup-2026-05-31",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "아무라의 비상, 페트코비치의 안정감… 알제리 월드컵 관전 포인트",
+          "summary": "예선 10골로 득점왕에 오른 모하메드 아무라가 핵심으로 떠올랐고, 페트코비치 감독이 베테랑 마레즈와 신예를 조화시키며 알제리가 12년 만의 월드컵에 안정적으로 임한다.",
+          "source": "The National",
+          "url": "https://www.thenationalnews.com/sport/2026/06/06/amouras-ascent-petkovics-calming-influence-algeria-world-cup-talking-points/",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "월드컵 2026 J조 프리뷰: 예측, 팀, 랭킹, 핵심 경기, 스타 선수",
+          "summary": "알제리는 J조에서 둘째 자리를 두고 오스트리아와 경쟁할 전망이며, 마레즈와 아무라의 공격력이 조별리그 통과의 열쇠로 분석된다.",
+          "source": "Sports Mole",
+          "url": "https://www.sportsmole.co.uk/football/argentina/world-cup-2026/feature/world-cup-group-j-preview-predictions-key-fixture-star-players_598755.html",
+          "date": ""
+        }
       ]
     },
     {
@@ -8266,6 +9672,43 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "랑닉, 오스트리아 26인 월드컵 최종 명단 발표",
+          "summary": "랑닉 감독이 아펜그루버, 칼라이지치, 바너 등을 포함한 26인 명단을 확정했으며, 부상 복귀가 늦었던 뵈버와 트라우너는 제외됐다.",
+          "source": "kicker",
+          "url": "https://www.kicker.de/mit-affengruber-kalajdzic-und-wanner-oesterreichs-wm-kader-steht-1220709/artikel",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "오스트리아, 튀니지전 1-0 승리로 월드컵 최종 리허설 성공",
+          "summary": "라이머가 전반 퇴장당해 수적 열세를 겪었지만 자비처의 63분 결승골로 빈에서 열린 마지막 평가전에서 승리했다.",
+          "source": "Sky Sport (오스트리아)",
+          "url": "https://sport.sky.de/fussball/artikel/oesterreich-gewinnt-wm-testspiel-gegen-tunesien/13549944/34240",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "2026 월드컵 J조 가이드: 아르헨티나·알제리·오스트리아·요르단",
+          "summary": "28년 만에 본선에 복귀한 오스트리아는 알라바·자비처·아르나우토비치를 앞세워 J조 두 번째 진출권을 노린다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12098/13543105/world-cup-2026-group-j-guide-fixtures-schedule-standings-and-odds-for-argentina-algeria-austria-and-jordan",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "오스트리아 2026 월드컵: 명단·일정·조편성·역사 총정리",
+          "summary": "주장 알라바가 무릎 부상에서 복귀해 33세에 첫 월드컵을 치르며, 오스트리아는 J조에서 아르헨티나·알제리·요르단과 격돌한다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d159406296-f54718194327-1000--austria-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": ""
+        },
+        {
+          "title": "오스트리아 월드컵 2026 명단: 누가 본선에 합류했나",
+          "summary": "랑닉이 선택한 26명의 명단을 포지션별로 정리했으며, 14명이 독일 분데스리가 소속이다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/austria-squad-world-cup-2026/blt9697a808b9602c2c",
+          "date": ""
+        }
       ]
     },
     {
@@ -8443,6 +9886,43 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "요르단 월드컵 2026 프리뷰: 주목할 선수와 J조 일정",
+          "summary": "사상 첫 월드컵 본선에 나서는 요르단은 J조에서 오스트리아, 알제리, 아르헨티나와 맞붙으며 주장 무사 타마리가 공격을 이끈다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/6/6/jordan-world-cup-2026-preview-players-to-watch-group-matches-and-squad",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "콜롬비아, 샌디에이고 평가전서 요르단 2-0 격파",
+          "summary": "월드컵 직전 마지막 평가전에서 콜롬비아의 욘 아리아스가 멀티골을 터뜨려 요르단이 0-2로 패했다.",
+          "source": "Times of San Diego",
+          "url": "https://timesofsandiego.com/sports/2026/06/08/colombia-jordan-san-diego-world-cup-friendly/",
+          "date": "2026-06-08"
+        },
+        {
+          "title": "타마리, 요르단 월드컵 예비명단 헤드라인 장식",
+          "summary": "렌 소속 무사 타마리를 필두로 요르단이 2026 월드컵 예비 소집 명단을 발표했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/jordan-preliminary-squad",
+          "date": ""
+        },
+        {
+          "title": "요르단: 2026 월드컵 최종 명단·일정·스케줄",
+          "summary": "야잔 알네마트가 ACL 부상으로 본선에서 빠지고 알리 올완이 복귀하는 가운데 요르단의 26인 명단과 J조 일정이 정리됐다.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/jordan-2026-world-cup-squad-112500099.html",
+          "date": ""
+        },
+        {
+          "title": "요르단의 2026 월드컵: 명단·핵심 선수 총정리",
+          "summary": "주장 에산 하다드가 약 1년 만에 부상에서 복귀했고 '요르단의 메시' 타마리가 공격의 핵심으로 꼽힌다.",
+          "source": "beIN SPORTS",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/jordan-at-the-fifa-world-cup-2026-squad-key-players-and-everything-you-need-to-know-2026-05-18",
+          "date": "2026-05-18"
+        }
       ]
     },
     {
@@ -8599,6 +10079,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "[오피셜] 포르투갈 월드컵 최종 명단 발표… 호날두 6회 출전 금자탑",
+          "summary": "마르티네스 감독이 호날두를 포함한 27인 최종 명단을 공개했고, 故 디오구 조타의 이름을 포스터에 새겨 추모했다.",
+          "source": "풋볼리스트",
+          "url": "https://www.footballist.co.kr/news/articleView.html?idxno=210345",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "호날두, 역대 최초 6번째 월드컵 명단 합류",
+          "summary": "41세 호날두가 포르투갈 대표팀에 선발돼 메시와 함께 월드컵 6회 출전 기록에 도전한다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48816135/cristiano-ronaldo-named-record-sixth-world-cup-squad-portugal",
+          "date": "2026-05-19"
+        },
+        {
+          "title": "월드컵 K조 프리뷰: 포르투갈·콩고·우즈베키스탄·콜롬비아",
+          "summary": "FIFA 랭킹 5위 포르투갈이 조 1순위로 꼽혔고, 17일 콩고전을 시작으로 우즈베키스탄·콜롬비아와 맞붙는다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12040/13543106/world-cup-2026-group-k-guide-fixtures-schedule-standings-and-odds-for-portugal-dr-congo-uzbekistan-and-colombia",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "[오피셜] 호날두, 3월 소집 제외… 햄스트링 부상 우려",
+          "summary": "알 파이하전에서 햄스트링을 다친 호날두가 3월 A매치 명단에서 빠지며 월드컵 컨디션에 대한 우려가 제기됐다.",
+          "source": "인터풋볼",
+          "url": "https://www.interfootball.co.kr/news/articleView.html?idxno=682506",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "호날두 빠진 포르투갈, 아르메니아 9-1 대파하며 본선 확정",
+          "summary": "유럽 예선 F조 최종전에서 브루누 페르난데스 3골 등으로 7회 연속 월드컵 본선 진출을 확정했다.",
+          "source": "풋볼리스트",
+          "url": "https://www.footballist.co.kr/news/articleView.html?idxno=204024",
+          "date": "2025-11-17"
         }
       ]
     },
@@ -8789,6 +10306,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "콩고민주공화국, 자메이카 꺾고 52년 만에 월드컵 본선 진출",
+          "summary": "투안제베의 연장 후반 결승골로 자메이카를 1-0으로 꺾고 대륙간 플레이오프를 통과, 1974년 이후 첫 월드컵 본선에 올랐다.",
+          "source": "beIN SPORTS",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/dr-congo-beat-jamaica-to-become-the-47th-team-qualified-for-the-2026-world-cup-2026-03-31",
+          "date": "2026-03-31"
+        },
+        {
+          "title": "데사브르 감독, 26인 최종 명단 발표…유럽파 대거 승선",
+          "summary": "주장 음벰바를 중심으로 위사, 완비사카, 바캄부 등 디아스포라·프리미어리그 선수들을 앞세운 26인 월드컵 최종 명단이 확정됐다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/congo-dr-squad-announcement-sebastien-desabre",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "콩고민주공화국 0-0 덴마크, 월드컵 전 평가전 무승부",
+          "summary": "벨기에 리에주에서 열린 평가전에서 데사브르 감독은 수비적 5-3-2를 가동했고 양 팀 모두 득점 없이 비겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401871169/denmark-congo-dr",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "에볼라 우려에 칠레전 무관중 개최…훈련캠프도 벨기에로 이전",
+          "summary": "에볼라 발병으로 스페인에서 열릴 예정이던 칠레와의 평가전이 취소돼 무관중으로 재조정됐고, 대표팀은 훈련캠프를 벨기에로 옮겼다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/6/3/dr-congo-to-offset-ebola-threat-with-behind-closed-doors-world-cup-warm-up",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "부상 복귀 희소식·교체 차출…월드컵 앞둔 레오파드 전력 점검",
+          "summary": "위사·투안제베·마수아쿠가 부상에서 회복해 정상 컨디션을 되찾았으나, 부시리가 부상으로 빠지면서 치볼라가 뒤늦게 합류했다.",
+          "source": "Sports Illustrated",
+          "url": "https://www.si.com/soccer/dr-congo-2026-world-cup-preview",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "K조 프리뷰: 콩고민주공화국, 6월 17일 휴스턴에서 포르투갈과 개막전",
+          "summary": "포르투갈·콜롬비아·우즈베키스탄과 한 조에 묶인 콩고민주공화국은 6월 17일 휴스턴에서 호날두의 포르투갈을 상대로 본선 첫 경기를 치른다.",
+          "source": "MLSSoccer.com",
+          "url": "https://www.mlssoccer.com/competitions/fifa-world-cup/news/2026-fifa-world-cup-group-k-preview-portugal-dr-congo-uzbekistan-colombia",
+          "date": "2026-06-06"
+        }
       ]
     },
     {
@@ -8971,6 +10532,43 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "우즈베키스탄, 2026 월드컵 최종 26인 명단 확정",
+          "summary": "칸나바로 감독이 GK 3명·DF 10명·MF 10명·FW 3명으로 구성된 사상 첫 월드컵 최종 명단을 발표했다.",
+          "source": "Gazeta.uz",
+          "url": "https://www.gazeta.uz/en/2026/06/02/uzb-team-football/",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "칸나바로, 우즈베키스탄 월드컵 예비 명단 발표",
+          "summary": "2006 월드컵 우승 주역 파비오 칸나바로 감독이 본선을 앞두고 예비 소집 명단을 공개했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-cannavaro-preliminary-squad",
+          "date": ""
+        },
+        {
+          "title": "쇼무로도프 \"우리는 편견을 깨뜨리고 싶다\"",
+          "summary": "주장이자 역대 최다 득점자인 쇼무로도프가 데뷔 무대를 앞두고 팀의 각오를 밝혔다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/eldor-shomurodov-uzbekistan-interview",
+          "date": ""
+        },
+        {
+          "title": "캐나다 2-0 우즈베키스탄, 월드컵 전 평가전 패배",
+          "summary": "우즈베키스탄이 본선을 앞둔 워밍업 친선전에서 캐나다에 0-2로 졌다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401853575",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "우즈베키스탄 대 콜롬비아 월드컵 1차전 프리뷰",
+          "summary": "6월 18일 멕시코시티에서 열리는 K조 개막전 맞대결 미리보기와 팀 소식을 다뤘다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-colombia-preview-live-stream-team-news-tickets",
+          "date": ""
+        }
       ]
     },
     {
@@ -9141,6 +10739,36 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "콜롬비아, 2026 월드컵 26인 최종 명단 발표… 하메스·디아스 주축",
+          "summary": "네스토르 로렌소 감독이 하메스 로드리게스와 루이스 디아스를 중심으로 한 26인 최종 엔트리를 확정했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48873914/james-rodriguez-luis-diaz-colombia-world-cup-squad",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "콜롬비아, 요르단에 2-0 완승… 월드컵 전 마지막 평가전",
+          "summary": "혼 아리아스가 멀티골(41분·55분)을 터뜨리며 산디에이고 평가전에서 요르단을 2-0으로 제압했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/match/_/gameId/401862320/jordan-colombia",
+          "date": "2026-06-07"
+        },
+        {
+          "title": "월드컵 K조 집중 분석… 콜롬비아·포르투갈 같은 조",
+          "summary": "콜롬비아는 우즈베키스탄(6/17), DR콩고(6/23), 포르투갈(6/27)과 K조에 편성돼 16강 진출을 노린다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/group-k-focus-teams-fixtures-standings",
+          "date": ""
+        },
+        {
+          "title": "콜롬비아 2026 월드컵 명단 총정리: 누가 본선행 티켓을 잡았나",
+          "summary": "수비진 무뇨스·다빈손 산체스부터 공격진 루이스 수아레스·디아스까지 포지션별 최종 명단을 정리했다.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/colombia-squad-world-cup-2026/bltf252af4fae7c7b3e",
+          "date": ""
+        }
       ]
     },
     {
@@ -9308,6 +10936,50 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "투헬 감독, 잉글랜드 2026 월드컵 26인 최종 명단 발표",
+          "summary": "토마스 투헬 감독이 해리 케인을 주장으로 하는 26인 명단을 발표했으며 폴든, 파머, 트렌트 알렉산더-아놀드, 맥과이어 등 거물들이 제외됐다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/12016/13543455/england-world-cup-squad-announcement-ruthless-thomas-tuchel-leaves-big-names-out-of-26-man-squad",
+          "date": "2026-05-22"
+        },
+        {
+          "title": "잉글랜드 월드컵 등번호 공개… 케인 9번·벨링엄 10번",
+          "summary": "6월 11일 개막을 앞두고 등번호가 공개됐으며 케인이 9번, 벨링엄이 10번을 배정받았고 헨더슨은 4번째 월드컵 출전으로 보비 찰튼과 어깨를 나란히 했다.",
+          "source": "England Football",
+          "url": "https://www.englandfootball.com/articles/2026/Jun/02/england-men-fifa-world-cup-2026-squad-numbers-revealed-20260206",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "투헬이 뽑은 잉글랜드 26인 한 명씩 살펴보기",
+          "summary": "토니의 복귀와 콴사의 발탁 등 투헬의 과감한 선택을 포함해 잉글랜드 월드컵 명단 전원을 분석한 기사다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48823863/meet-england-2026-world-cup-squad-26-players-picked-thomas-tuchel-why",
+          "date": "2026-05-22"
+        },
+        {
+          "title": "잉글랜드 일정·부상 정보 총정리: C조 크로아티아전부터",
+          "summary": "잉글랜드는 6월 17일 댈러스에서 크로아티아와 조별리그 첫 경기를 치르며 리브라멘토, 마두에케 등의 부상 상황이 정리돼 있다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48701061/england-world-cup-2026-schedule-fixtures-results-scores-group-l-how-watch-uk-news-analysis-injuries",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "토니·왓킨스, 투헬의 잉글랜드 명단에 포함",
+          "summary": "FIFA 공식 발표로 알 아흘리의 이반 토니와 올리 왓킨스가 투헬의 26인 명단에 이름을 올렸다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/england-squad-named-thomas-tuchel",
+          "date": "2026-05-22"
+        },
+        {
+          "title": "잉글랜드 2026 월드컵 프리뷰: 주목할 선수와 조 편성",
+          "summary": "잉글랜드의 월드컵 조 편성, 주목해야 할 선수, 명단 등을 종합적으로 다룬 대회 프리뷰 기사다.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/6/1/england-world-cup-2026-team-preview-players-to-watch-group-and-squad-list",
+          "date": "2026-06-01"
         }
       ]
     },
@@ -9484,6 +11156,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "모드리치, 5번째 월드컵 출격… 크로아티아 26인 최종 명단 발표",
+          "summary": "달리치 감독이 40세 주장 모드리치를 포함한 26인 명단을 확정했으며, 모드리치는 통산 5번째 월드컵에 나선다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48807700/luka-modric-set-5th-world-cup-part-croatia-squad",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "크로아티아 월드컵 2026: 명단·일정·조편성·역사 총정리",
+          "summary": "2018 준우승·2022 3위의 크로아티아는 L조에서 잉글랜드, 가나, 파나마와 격돌하며 강호 위상을 이어간다.",
+          "source": "UEFA.com",
+          "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d159312e19-b662016c6c47-1000--croatia-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
+          "date": ""
+        },
+        {
+          "title": "크로아티아 월드컵 2026 명단: 누가 본선 무대를 밟나",
+          "summary": "리바코비치, 그바르디올, 코바치치, 페리시치 등 베테랑과 바투리나·수치치 등 신예가 어우러진 스쿼드 분석.",
+          "source": "골닷컴",
+          "url": "https://www.goal.com/en/lists/croatia-squad-world-cup-2026/blte475b4a9f48f3997",
+          "date": ""
+        },
+        {
+          "title": "40살 모드리치의 '진짜' 마지막 월드컵, 크로아티아 최종명단 포함",
+          "summary": "AC밀란 소속 모드리치가 안면 부상 회복 후 마스크 착용을 예고하며 5번째 월드컵 26인 명단에 들었다.",
+          "source": "인터풋볼",
+          "url": "https://www.interfootball.co.kr/news/articleView.html?idxno=687732",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "[오피셜] 모드리치의 마지막 불꽃, 크로아티아 북중미 월드컵 최종 엔트리 확정",
+          "summary": "크로아티아축구협회가 26인 명단을 공식 발표, 모드리치가 L조 잉글랜드와의 개막전부터 중원을 이끈다.",
+          "source": "베스트일레븐",
+          "url": "https://www.besteleven.com/news/articleView.html?idxno=307547",
+          "date": "2026-06-02"
         }
       ]
     },
@@ -9686,6 +11395,50 @@ window.DATA = {
           "x": 75,
           "y": 22
         }
+      ],
+      "news": [
+        {
+          "title": "케이로스호, 2026 월드컵 최종 명단 발표… 쿠두스 부상 제외",
+          "summary": "카를루스 케이로스 감독이 26인 최종 명단을 확정했으며, 토트넘 핵심 쿠두스는 허벅지 부상으로 끝내 탈락했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/espn/story/_/id/48878999/antoine-semenyo-thomas-partey-headline-ghana-provisional-fifa-world-cup-squad-injured-mohammed-kudus-out",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "케이로스, 2026 월드컵 최종 26인 엔트리 공식 발표",
+          "summary": "가나축구협회가 골키퍼 3명·수비수 9명·미드필더 6명·공격수 8명으로 구성된 월드컵 명단을 공식 확정했다.",
+          "source": "가나축구협회(GFA)",
+          "url": "https://www.ghanafa.org/carlos-queiroz-names-2026-fifa-world-cup-squad",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "가나, 웨일스와 1-1 무승부… 케이로스 데뷔전",
+          "summary": "카디프 평가전에서 이렌키의 선제골을 지켰으나 후반 추가시간 쿠마스에게 동점골을 내주며 비겼다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/espn/story/_/id/48946086/ghana-black-stars-draw-wales-friendly-fifa-world-cup",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "웨일스 1-1 가나: 쿠마스 첫 A매치 골로 막판 무승부",
+          "summary": "교체 투입된 쿠마스가 추가시간 헤더로 동점을 만들며 월드컵을 앞둔 가나와 비겼다.",
+          "source": "Sky Sports",
+          "url": "https://www.skysports.com/football/news/32461/13550231/wales-1-1-ghana-lewis-koumas-opens-wales-account-in-draw-with-ghana",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "케이로스, 웨일스전 파티 선발 기용 논리 옹호",
+          "summary": "경기 체력 논란에도 케이로스 감독이 토마스 파티의 명단 포함과 출전 결정을 적극 변호했다.",
+          "source": "ESPN",
+          "url": "https://www.espn.com/soccer/story/_/id/48939953/queiroz-defends-partey-inclusion-ghana-wales",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "FIFA, 가나 2026 월드컵 등번호 확정 발표",
+          "summary": "아티-지기 1번, 조던 아예우 9번, 토마스-아산테 10번, 세메뇨 11번 등 등번호가 공식 확정됐다.",
+          "source": "가나축구협회(GFA)",
+          "url": "https://www.ghanafa.org/black-stars-squad-numbers-confirmed-for-2026-fifa-world-cup",
+          "date": ""
+        }
       ]
     },
     {
@@ -9841,6 +11594,43 @@ window.DATA = {
           "pos": "FW",
           "x": 75,
           "y": 22
+        }
+      ],
+      "news": [
+        {
+          "title": "파나마, 2026 월드컵 최종 26인 명단 발표",
+          "summary": "토마스 크리스티안센 감독이 5월 26일 파나마시티에서 두 번째 월드컵에 나설 26명 최종 명단을 공개했다.",
+          "source": "FEPAFUT(파나마축구협회)",
+          "url": "https://www.fepafut.com/blog/2026/05/26/los-26-mundialistas-de-panama/",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "카라스키야, 부상에도 월드컵 명단 승선… 가나전 출전 가능",
+          "summary": "리가MX 결승에서 내전근 부상을 당한 핵심 미드필더 카라스키야가 명단에 포함됐고, 6월 17일 가나전 출전이 가능한 것으로 진단됐다.",
+          "source": "ESPN 데포르테스",
+          "url": "https://espndeportes.espn.com/futbol/mundial/nota/_/id/16761925/panama-jugadores-mundial-2026-elegidos",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "크리스티안센 감독, 파나마 월드컵 명단 공식 발표",
+          "summary": "2018년 데뷔 멤버 7명과 신예를 결합한 26인 명단을 FIFA가 공식 소개했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-squad-announcement-thomas-christiansen",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "파나마, L조서 잉글랜드·크로아티아·가나와 격돌",
+          "summary": "파나마는 6월 17일 가나, 23일 크로아티아, 27일 잉글랜드와 차례로 맞붙으며 월드컵 첫 승을 노린다.",
+          "source": "beIN SPORTS",
+          "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/panama-at-the-2026-fifa-world-cup-roster-key-players-and-everything-you-need-to-know-2026-05-26",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "파나마 대표팀 소개: 두 번째 월드컵 도전과 팀 역사",
+          "summary": "중미 최상위 랭킹 팀 파나마가 8년 만에 두 번째 월드컵 본선에 진출한 여정을 FIFA가 조명했다.",
+          "source": "FIFA.com",
+          "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-team-profile-history",
+          "date": ""
         }
       ]
     }
