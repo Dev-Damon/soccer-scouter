@@ -206,7 +206,13 @@
         stripEl.scrollLeft = prevScroll;
       } else {
         var onChip = stripEl.querySelector(".dchip.on");
-        if (onChip) stripEl.scrollLeft = Math.max(0, onChip.offsetLeft - stripEl.clientWidth / 2 + onChip.clientWidth / 2);
+        if (onChip) {
+          var doScroll = function () {
+            try { onChip.scrollIntoView({ inline: "center", block: "nearest" }); }
+            catch (e) { stripEl.scrollLeft = Math.max(0, onChip.offsetLeft - stripEl.clientWidth / 2 + onChip.clientWidth / 2); }
+          };
+          if (window.requestAnimationFrame) requestAnimationFrame(doScroll); else doScroll();
+        }
       }
     }
   }
