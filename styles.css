@@ -461,3 +461,8 @@ body { padding-bottom: 64px; } /* 하단 탭바 공간 */
 
 /* twemoji 이모지 이미지(국기 등) */
 img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0.12em; display: inline-block; }
+
+/* 메인 하단 주요 소식 */
+.home-news .hn-head { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.hn-flag { font-size: 16px; }
+.hn-team { font-size: 11.5px; color: var(--muted); font-weight: 700; }

@@ -117,6 +117,16 @@
     return Object.keys(set).sort();
   }
 
+  // 메인 하단 '주요 소식' — 팀 뉴스를 재활용(최신순 상위 N)
+  function homeNews(limit) {
+    var all = [];
+    (DATA.teams || []).forEach(function (t) {
+      (t.news || []).forEach(function (nw) { all.push({ t: t, nw: nw }); });
+    });
+    all.sort(function (a, b) { var da = a.nw.date || "", db = b.nw.date || ""; return da < db ? 1 : da > db ? -1 : 0; });
+    return all.slice(0, limit || 6);
+  }
+
   function renderSchedule() {
     var dates = fixtureDates();
     if (!dates.length) {
@@ -148,6 +158,26 @@
       (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
       ' · ' + dayFixtures.length + '경기</div>';
     dayFixtures.forEach(function (fx) { if (!hero || fx !== hero) listHtml += fixtureCard(fx); });
+
+    // 주요 소식 (팀 뉴스가 있을 때만)
+    var hn = homeNews(6);
+    if (hn.length) {
+      listHtml += '<div class="sec-h">📰 주요 소식</div><div class="news-list">';
+      hn.forEach(function (x) {
+        var nw = x.nw, tt = x.t;
+        var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
+        var foot = meta + (nw.url ? (meta ? " · " : "") + "원문 보기 ↗" : "");
+        var tag = nw.url ? "a" : "div";
+        listHtml += "<" + tag + ' class="news-item home-news' + (nw.url ? " ext" : "") + '"' +
+          (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
+          '<div class="hn-head"><span class="hn-flag">' + esc(tt.flag) + '</span><span class="hn-team">' + esc(tt.name) + "</span></div>" +
+          '<div class="news-title">' + esc(nw.title) + "</div>" +
+          (nw.summary ? '<div class="news-sum">' + esc(nw.summary) + "</div>" : "") +
+          (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
+          "</" + tag + ">";
+      });
+      listHtml += "</div>";
+    }
 
     viewEl.innerHTML = strip + heroHtml + listHtml;
   }
