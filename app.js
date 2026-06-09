@@ -34,6 +34,14 @@
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
+  // 이모지(특히 국기)를 이미지로 렌더 — Windows/PC 브라우저가 국기 이모지를 글자로 표시하는 문제 대응
+  function twem(el) {
+    try {
+      if (window.twemoji && el) {
+        window.twemoji.parse(el, { folder: "svg", ext: ".svg", base: "https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/" });
+      }
+    } catch (e) {}
+  }
   function initials(name) {
     var s = String(name || "").trim();
     return s ? s.slice(0, 1) : "?";
@@ -718,6 +726,11 @@
 
   window.addEventListener("hashchange", route);
 
+  // 동적 영역이 다시 그려질 때마다 이모지→이미지 변환(국기 포함)
+  if (window.MutationObserver) {
+    new MutationObserver(function () { twem(viewEl); }).observe(viewEl, { childList: true });
+  }
+
   // 서비스워커 (PWA, http(s)에서만)
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     window.addEventListener("load", function () {
@@ -726,4 +739,5 @@
   }
 
   route();
+  twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
 })();

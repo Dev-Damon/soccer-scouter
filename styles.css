@@ -458,3 +458,6 @@ body { padding-bottom: 64px; } /* 하단 탭바 공간 */
 
 /* 매치업 중앙 VS (예상 스코어 제거) */
 .vs-x { font-size: 24px; font-weight: 900; color: var(--muted); letter-spacing: 1px; }
+
+/* twemoji 이모지 이미지(국기 등) */
+img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0.12em; display: inline-block; }
