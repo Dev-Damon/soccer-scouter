@@ -848,12 +848,14 @@
     });
   }
 
+  function mountCmt(key) { if (window.KickComments) { try { window.KickComments.mount(viewEl, key); } catch (e) {} } }
+
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
-    if (r.name === "player") { setTabbar(""); return renderPlayer(r.id); }
-    if (r.name === "team") { setTabbar(""); return renderTeam(r.id); }
-    if (r.name === "match") { setTabbar(""); return renderMatch(r.id); }
+    if (r.name === "player") { setTabbar(""); renderPlayer(r.id); mountCmt("player:" + r.id); return; }
+    if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
+    if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;

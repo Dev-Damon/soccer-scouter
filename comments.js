@@ -29,7 +29,22 @@
   var user = null;
   var stylesInjected = false;
 
-  function configured() { return !!(CONFIG.url && CONFIG.anonKey && window.supabase); }
+  function configured() { return !!(CONFIG.url && CONFIG.anonKey); }
+
+  // supabase-js SDK 를 필요할 때(설정됨 + 마운트 시)만 동적 로드 — 미설정 시 로드 안 함
+  var sdkPromise = null;
+  function loadSDK() {
+    if (window.supabase) return Promise.resolve();
+    if (sdkPromise) return sdkPromise;
+    sdkPromise = new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
+      s.onload = function () { resolve(); };
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+    return sdkPromise;
+  }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -60,7 +75,8 @@
   }
 
   function client() {
-    if (sb || !configured()) return sb;
+    if (sb) return sb;
+    if (!configured() || !window.supabase) return null;
     sb = window.supabase.createClient(CONFIG.url, CONFIG.anonKey, {
       auth: { flowType: "pkce", detectSessionInUrl: true, persistSession: true, autoRefreshToken: true }
     });
@@ -76,16 +92,16 @@
   // ── 렌더 ──────────────────────────────────────────────────────────────
   function mount(parentEl, threadKey) {
     if (!parentEl || !threadKey) return;
+    if (!configured()) return;  // 키 미설정 → 아무것도 렌더 안 함(설정 입력 시 자동 활성화)
     injectStyles();
     var box = document.createElement("div");
     box.className = "cmt-box";
+    box.innerHTML = '<h3 class="cmt-h">댓글</h3><div class="cmt-soon">불러오는 중…</div>';
     parentEl.appendChild(box);
     var m = { el: box, key: threadKey };
-    if (!configured()) {
-      box.innerHTML = '<h3 class="cmt-h">댓글</h3><div class="cmt-soon">댓글 기능 준비 중입니다 — 로그인 설정 후 활성화됩니다.</div>';
-      return;
-    }
-    render(m);
+    loadSDK().then(function () { render(m); }).catch(function () {
+      box.innerHTML = '<h3 class="cmt-h">댓글</h3><div class="cmt-soon">댓글 모듈을 불러오지 못했습니다.</div>';
+    });
   }
 
   function render(m) {
