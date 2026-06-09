@@ -490,8 +490,10 @@
 
     // 최신 뉴스 (있으면)
     if (t.news && t.news.length) {
-      html += '<div class="block"><h3>최신 뉴스</h3><div class="news-list">';
-      t.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, 8).forEach(function (nw) {
+      var kn = t.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, 8);
+      var moreN = kn.length - 3;
+      html += '<div class="block"><h3>최신 뉴스</h3><div class="news-list' + (moreN > 0 ? " news-collapsed" : "") + '">';
+      kn.forEach(function (nw) {
         var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
         var tag = nw.url ? "a" : "div";
         var foot = meta + (nw.url ? (meta ? " · " : "") + "원문 보기 ↗" : "");
@@ -502,7 +504,7 @@
           (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
           "</" + tag + ">";
       });
-      html += "</div></div>";
+      html += "</div>" + (moreN > 0 ? '<button class="more-btn" data-expand="news">뉴스 더보기 (' + moreN + '개)</button>' : "") + "</div>";
     }
 
     // 전력 지표 (있으면)
@@ -737,6 +739,8 @@
     if (rc) { searchEl.value = rc.getAttribute("data-q"); renderSearchResults(rc.getAttribute("data-q").toLowerCase()); return; }
     var gb = e.target.closest("[data-grade]");
     if (gb) { renderGradeList(gb.getAttribute("data-grade")); return; }
+    var ex = e.target.closest("[data-expand]");
+    if (ex) { var elist = ex.parentNode.querySelector(".news-list"); if (elist) elist.classList.remove("news-collapsed"); ex.style.display = "none"; return; }
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");

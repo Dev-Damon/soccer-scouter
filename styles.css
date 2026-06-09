@@ -479,3 +479,8 @@ img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0
 .strat-box { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
 .strat-team { font-weight: 800; font-size: 13px; color: var(--accent); margin-bottom: 4px; }
 .strat-txt { font-size: 13.5px; line-height: 1.5; color: #dbe6fb; }
+
+/* 나라 뉴스 3개 + 더보기 */
+.news-collapsed .news-item:nth-child(n+4) { display: none; }
+.more-btn { width: 100%; margin-top: 8px; padding: 11px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; color: var(--accent); font-size: 13px; font-weight: 700; cursor: pointer; }
+.more-btn:hover { border-color: var(--accent); }
