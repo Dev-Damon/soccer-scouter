@@ -293,30 +293,32 @@
       viewEl.innerHTML = '<div class="empty">조 편성 데이터를 채우는 중입니다.</div>';
       return;
     }
-    var html = "";
+    fetchStandings();  // ESPN 순위 비동기 갱신(캐시 60초) → 도착 시 자동 재렌더
+    var hasData = Object.keys(STAND).length > 0;
+    var html = '<div class="stand-note">' +
+      (hasData ? "조별 순위 · 경기 결과 실시간 반영 · 상위 2팀 16강 직행" : "순위 불러오는 중… (개막 전이라 0)") +
+      "</div>";
     groups.forEach(function (g) {
-      html += '<div class="group-card"><h3><span class="group-letter">' +
-        esc(g.group) + "</span>" + esc(g.group) + "조</h3>";
-      var ids = g.teamIds || [];
-      if (ids.length) {
-        html += '<div class="group-teams">';
-        ids.forEach(function (id) {
-          var t = teamsById[id];
-          if (t) {
-            html += '<div class="group-team" data-team="' + esc(t.id) + '">' +
-              '<span class="team-flag">' + esc(t.flag) + "</span>" +
-              '<span class="gt-name">' + esc(t.name) + "</span>" +
-              '<span class="gt-rank">FIFA ' + esc(t.fifaRank) + "위</span></div>";
-          } else {
-            html += '<div class="group-team"><span class="team-flag">🏳️</span>' +
-              '<span class="gt-name">' + esc(id) + "</span></div>";
-          }
-        });
-        html += "</div>";
-      } else {
-        html += '<div class="group-empty">팀 미정 (조 추첨 대기)</div>';
-      }
-      html += "</div>";
+      var rows = (g.teamIds || []).map(function (id) {
+        return { id: id, t: teamsById[id], s: STAND[id] || { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 } };
+      });
+      rows.sort(function (a, b) {
+        return b.s.pts - a.s.pts || b.s.gd - a.s.gd || b.s.gf - a.s.gf ||
+          (((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999));
+      });
+      html += '<div class="group-card"><h3><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + "조</h3>" +
+        '<table class="stand"><thead><tr><th class="c">#</th><th>팀</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th></tr></thead><tbody>';
+      rows.forEach(function (r, i) {
+        var t = r.t, s = r.s;
+        var gd = (s.gd > 0 ? "+" : "") + s.gd;
+        html += '<tr class="' + (i < 2 ? "qual" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
+          '<td class="c rk">' + (i + 1) + "</td>" +
+          '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + "</span>" +
+            '<span class="tm-n">' + esc(t ? t.name : r.id) + "</span></td>" +
+          "<td>" + s.p + "</td><td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td>" +
+          "<td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
+      });
+      html += "</tbody></table></div>";
     });
     viewEl.innerHTML = html;
   }
@@ -805,8 +807,37 @@
     fetch(ESPN_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
       var res = applyEspn(d);
       if (res.changed && onHomeSchedule()) renderSchedule();
+      if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
       scheduleLive(res.anyLive ? 60000 : (res.anyToday ? 180000 : 0));  // 라이브 60초 / 임박 3분 / 없으면 중단
     }).catch(function () { scheduleLive(180000); });
+  }
+
+  // ===================== 조별 순위표 (ESPN standings · 실시간) =====================
+  var STAND = {};            // teamId -> {p,w,d,l,gf,ga,gd,pts}
+  var standAt = 0;
+  var ESPN_STAND_URL = "https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings";
+  function statVal(stats, type) {
+    for (var i = 0; i < (stats || []).length; i++) if (stats[i].type === type) return +stats[i].value || 0;
+    return 0;
+  }
+  function fetchStandings(force) {
+    if (!window.fetch) return;
+    if (!force && Date.now() - standAt < 60000 && Object.keys(STAND).length) return;  // 60초 캐시
+    fetch(ESPN_STAND_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+      (d.children || []).forEach(function (g) {
+        (((g.standings || {}).entries) || []).forEach(function (e) {
+          var id = espnTeamId(e.team && e.team.displayName); if (!id) return;
+          var s = e.stats || [];
+          STAND[id] = {
+            p: statVal(s, "gamesplayed"), w: statVal(s, "wins"), d: statVal(s, "ties"), l: statVal(s, "losses"),
+            gf: statVal(s, "pointsfor"), ga: statVal(s, "pointsagainst"),
+            gd: statVal(s, "pointdifferential"), pts: statVal(s, "points")
+          };
+        });
+      });
+      standAt = Date.now();
+      if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
+    }).catch(function () {});
   }
 
   // ===================== 라우터 =====================

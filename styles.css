@@ -143,6 +143,23 @@ html, body {
 .group-team .gt-name { font-weight: 600; font-size: 14px; }
 .group-team .gt-rank { color: var(--muted); font-size: 11.5px; margin-left: auto; }
 .group-empty { color: var(--muted); font-size: 12.5px; padding: 4px 2px; }
+/* 조별 순위표 */
+.stand-note { color: var(--muted); font-size: 12px; margin: 2px 0 12px; }
+table.stand { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.stand th { color: var(--muted); font-weight: 700; font-size: 11px; padding: 4px 3px; text-align: center; border-bottom: 1px solid var(--line); }
+table.stand th:nth-child(2) { text-align: left; }
+table.stand td { padding: 9px 3px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.05); font-variant-numeric: tabular-nums; }
+table.stand tr:last-child td { border-bottom: 0; }
+table.stand td.tm { text-align: left; }
+table.stand .tm { display: flex; align-items: center; gap: 8px; }
+table.stand .tm .team-flag { font-size: 20px; flex: none; }
+table.stand .tm-n { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+table.stand td.rk { color: var(--muted); font-weight: 800; width: 20px; }
+table.stand td.pts { font-weight: 900; color: #fff; }
+table.stand tr.qual td.rk { color: var(--accent); }
+table.stand tr.qual { background: rgba(46,230,166,.06); }
+table.stand tr[data-team] { cursor: pointer; }
+table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 
 /* Grids */
 .grid { display: grid; gap: 12px; }
