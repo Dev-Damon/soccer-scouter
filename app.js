@@ -144,7 +144,10 @@
       viewEl.innerHTML = '<div class="empty">경기 일정 데이터를 채우는 중입니다.</div>';
       return;
     }
-    if (!selectedDate || dates.indexOf(selectedDate) === -1) selectedDate = dates[0];
+    if (!selectedDate || dates.indexOf(selectedDate) === -1) {
+      var todayKST = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+      selectedDate = dates.find(function (d) { return d >= todayKST; }) || dates[dates.length - 1];
+    }
 
     // 재렌더 전 스트립 가로 스크롤 위치 기억 (날짜 클릭해도 스트립이 안 튀게)
     var prevStrip = viewEl.querySelector(".datestrip");
@@ -634,6 +637,7 @@
 
     viewEl.innerHTML =
       '<div class="detail match-view">' +
+        '<div class="var-title"><span class="var-tag">VAR</span> 경기 분석</div>' +
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
           '<div class="vs-team" data-team="' + esc(a.id) + '"><span class="vs-flag">' + esc(a.flag) + "</span>" +

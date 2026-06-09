@@ -484,3 +484,7 @@ img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0
 .news-collapsed .news-item:nth-child(n+4) { display: none; }
 .more-btn { width: 100%; margin-top: 8px; padding: 11px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; color: var(--accent); font-size: 13px; font-weight: 700; cursor: pointer; }
 .more-btn:hover { border-color: var(--accent); }
+
+/* VAR 경기분석 타이틀 */
+.var-title { display:flex; align-items:center; justify-content:center; gap:8px; font-size:13px; font-weight:800; color:var(--muted); margin-bottom:10px; }
+.var-tag { font-family: ui-monospace, Menlo, monospace; letter-spacing:1px; font-size:12px; font-weight:900; color:#0b1220; background:linear-gradient(135deg,var(--gold),#ffd34d); border-radius:5px; padding:2px 7px; }

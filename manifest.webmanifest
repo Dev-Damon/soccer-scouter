@@ -1,7 +1,7 @@
 {
-  "name": "축구 스카우터",
-  "short_name": "스카우터",
-  "description": "월드컵 보다가 '쟤 누구야?' 싶을 때. 선수·팀을 카드 한 장으로.",
+  "name": "킥톡 KickTalk",
+  "short_name": "킥톡",
+  "description": "축구 같이 보고 떠드는 곳 — 나라 전력·선수·매치 분석. KickTalk.",
   "lang": "ko",
   "start_url": "./index.html",
   "display": "standalone",
