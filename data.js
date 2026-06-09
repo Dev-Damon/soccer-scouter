@@ -1496,7 +1496,7 @@ window.DATA = {
         "attack": 76,
         "defense": 72,
         "organization": 73,
-        "experience": 57
+        "experience": 56
       },
       "formation": "4-3-3",
       "lineup": [
@@ -1883,9 +1883,9 @@ window.DATA = {
       ],
       "indices": {
         "attack": 76,
-        "defense": 71,
+        "defense": 73,
         "organization": 75,
-        "experience": 51
+        "experience": 48
       },
       "manager": {
         "name": "홍명보",
@@ -1952,24 +1952,24 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "seol-young-woo",
-          "name": "설영우",
+          "playerId": "jens-castrop",
+          "name": "옌스 카스트로프",
           "number": 3,
           "pos": "DF",
           "x": 40,
           "y": 72
         },
         {
-          "playerId": "lee-han-beom",
-          "name": "이한범",
+          "playerId": "seol-young-woo",
+          "name": "설영우",
           "number": 4,
           "pos": "DF",
           "x": 60,
           "y": 72
         },
         {
-          "playerId": "kim-moon-hwan",
-          "name": "김문환",
+          "playerId": "lee-han-beom",
+          "name": "이한범",
           "number": 5,
           "pos": "DF",
           "x": 80,
@@ -2530,7 +2530,7 @@ window.DATA = {
         "attack": 79,
         "defense": 68,
         "organization": 71,
-        "experience": 68
+        "experience": 64
       },
       "manager": {
         "name": "훌렌 로페테기",
@@ -2883,10 +2883,10 @@ window.DATA = {
         "alisson"
       ],
       "indices": {
-        "attack": 90,
+        "attack": 88,
         "defense": 83,
-        "organization": 85,
-        "experience": 51
+        "organization": 84,
+        "experience": 49
       },
       "manager": {
         "name": "카를로 안첼로티",
@@ -3055,8 +3055,8 @@ window.DATA = {
           "y": 22
         },
         {
-          "playerId": "rodrygo",
-          "name": "호드리구",
+          "playerId": "neymar",
+          "name": "네이마르",
           "number": 11,
           "pos": "FW",
           "x": 75,
@@ -3086,7 +3086,7 @@ window.DATA = {
         "attack": 78,
         "defense": 80,
         "organization": 78,
-        "experience": 46
+        "experience": 42
       },
       "manager": {
         "name": "모하메드 우아비",
@@ -3254,8 +3254,8 @@ window.DATA = {
       ],
       "indices": {
         "attack": 71,
-        "defense": 59,
-        "organization": 66,
+        "defense": 60,
+        "organization": 67,
         "experience": 40
       },
       "manager": {
@@ -3343,16 +3343,16 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "jean-kevin-duverne",
-          "name": "장케뱅 뒤베른",
+          "playerId": "josue-casimir",
+          "name": "조쥬에 카지미르",
           "number": 4,
           "pos": "DF",
           "x": 60,
           "y": 72
         },
         {
-          "playerId": "carlens-arcus",
-          "name": "카를랑스 아르퀴스",
+          "playerId": "jean-kevin-duverne",
+          "name": "장케뱅 뒤베른",
           "number": 5,
           "pos": "DF",
           "x": 80,
@@ -4318,7 +4318,7 @@ window.DATA = {
         "attack": 78,
         "defense": 81,
         "organization": 82,
-        "experience": 51
+        "experience": 46
       },
       "manager": {
         "name": "율리안 나겔스만",
@@ -4424,8 +4424,8 @@ window.DATA = {
           "y": 50
         },
         {
-          "playerId": "aleksandar-pavlovic",
-          "name": "알렉산다르 파블로비치",
+          "playerId": "leon-goretzka",
+          "name": "레온 고레츠카",
           "number": 8,
           "pos": "MF",
           "x": 75,
@@ -5193,7 +5193,7 @@ window.DATA = {
         "attack": 80,
         "defense": 72,
         "organization": 77,
-        "experience": 43
+        "experience": 41
       },
       "manager": {
         "name": "모리야스 하지메",
@@ -5507,7 +5507,7 @@ window.DATA = {
       "indices": {
         "attack": 65,
         "defense": 70,
-        "organization": 71,
+        "organization": 70,
         "experience": 40
       },
       "manager": {
@@ -5604,8 +5604,8 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "ali-maaloul",
-          "name": "알리 말룰",
+          "playerId": "yan-valery",
+          "name": "얀 발레리",
           "number": 5,
           "pos": "DF",
           "x": 80,
@@ -5859,7 +5859,7 @@ window.DATA = {
         "attack": 85,
         "defense": 70,
         "organization": 74,
-        "experience": 45
+        "experience": 44
       },
       "manager": {
         "name": "호삼 하산",
@@ -6040,7 +6040,7 @@ window.DATA = {
         "attack": 73,
         "defense": 67,
         "organization": 70,
-        "experience": 49
+        "experience": 48
       },
       "manager": {
         "name": "아미르 갈레노에이",
@@ -7289,7 +7289,7 @@ window.DATA = {
         "attack": 81,
         "defense": 76,
         "organization": 77,
-        "experience": 50
+        "experience": 49
       },
       "manager": {
         "name": "파페 티아우",
@@ -7435,7 +7435,7 @@ window.DATA = {
         "attack": 66,
         "defense": 65,
         "organization": 66,
-        "experience": 46
+        "experience": 44
       },
       "manager": {
         "name": "그레이엄 아놀드",
@@ -8290,7 +8290,7 @@ window.DATA = {
         "attack": 72,
         "defense": 67,
         "organization": 68,
-        "experience": 51
+        "experience": 50
       },
       "manager": {
         "name": "자말 셀라미",
@@ -8623,8 +8623,8 @@ window.DATA = {
       "indices": {
         "attack": 75,
         "defense": 73,
-        "organization": 72,
-        "experience": 43
+        "organization": 73,
+        "experience": 42
       },
       "manager": {
         "name": "세바스티앵 데사브르",
@@ -8742,24 +8742,24 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "noah-sadiki",
-          "name": "노아 사디키",
+          "playerId": "charles-pickel",
+          "name": "샤를 피켈",
           "number": 6,
           "pos": "MF",
           "x": 25,
           "y": 50
         },
         {
-          "playerId": "ngal-ayel-mukau",
-          "name": "은갈라옐 무카우",
+          "playerId": "noah-sadiki",
+          "name": "노아 사디키",
           "number": 7,
           "pos": "MF",
           "x": 50,
           "y": 50
         },
         {
-          "playerId": "edo-kayembe",
-          "name": "에도 카옘베",
+          "playerId": "ngal-ayel-mukau",
+          "name": "은갈라옐 무카우",
           "number": 8,
           "pos": "MF",
           "x": 75,
@@ -8811,9 +8811,9 @@ window.DATA = {
       ],
       "indices": {
         "attack": 76,
-        "defense": 68,
-        "organization": 72,
-        "experience": 48
+        "defense": 69,
+        "organization": 73,
+        "experience": 47
       },
       "manager": {
         "name": "파비오 칸나바로",
@@ -8900,24 +8900,24 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "khojiakbar-alijonov",
-          "name": "호지아크바르 알리조노프",
+          "playerId": "odiljon-hamrobekov",
+          "name": "오딜존 함로베코프",
           "number": 3,
           "pos": "DF",
           "x": 40,
           "y": 72
         },
         {
-          "playerId": "rustam-ashurmatov",
-          "name": "루스탐 아슈르마토프",
+          "playerId": "khojiakbar-alijonov",
+          "name": "호지아크바르 알리조노프",
           "number": 4,
           "pos": "DF",
           "x": 60,
           "y": 72
         },
         {
-          "playerId": "farrukh-sayfiev",
-          "name": "파룩 사이피예프",
+          "playerId": "rustam-ashurmatov",
+          "name": "루스탐 아슈르마토프",
           "number": 5,
           "pos": "DF",
           "x": 80,
@@ -8995,7 +8995,7 @@ window.DATA = {
         "attack": 78,
         "defense": 74,
         "organization": 76,
-        "experience": 55
+        "experience": 52
       },
       "manager": {
         "name": "네스토르 로렌소",
@@ -9165,7 +9165,7 @@ window.DATA = {
         "attack": 88,
         "defense": 79,
         "organization": 84,
-        "experience": 48
+        "experience": 47
       },
       "manager": {
         "name": "토마스 투헬",
@@ -9333,7 +9333,7 @@ window.DATA = {
         "attack": 71,
         "defense": 78,
         "organization": 79,
-        "experience": 61
+        "experience": 56
       },
       "manager": {
         "name": "즐라트코 달리치",
@@ -9710,7 +9710,7 @@ window.DATA = {
         "attack": 66,
         "defense": 68,
         "organization": 70,
-        "experience": 65
+        "experience": 64
       },
       "manager": {
         "name": "토마스 크리스티안센",
@@ -14853,41 +14853,6 @@ window.DATA = {
       }
     },
     {
-      "id": "diego-leon",
-      "name": "디에고 레온",
-      "nameEn": "Diego León",
-      "team": "파라과이",
-      "club": "맨체스터 유나이티드",
-      "league": "프리미어리그 (잉글랜드)",
-      "position": "왼쪽 풀백",
-      "age": 19,
-      "caps": 1,
-      "intlGoals": 0,
-      "grade": "유망주",
-      "gradeScore": 58,
-      "oneLiner": "18세에 맨유로 건너간 파라과이 차세대 왼쪽 풀백, 미래의 핵심 후보.",
-      "strengths": [
-        "어린 나이와 높은 천장",
-        "공격적인 오버래핑",
-        "빅클럽 환경에서의 성장"
-      ],
-      "weaknesses": [
-        "1군 경험 부족",
-        "본선 즉시 전력 여부 불투명"
-      ],
-      "honours": [
-        "세로 포르테뇨 데뷔전 결승골",
-        "맨유 영입 유망주"
-      ],
-      "notableTransfer": "2025년 세로 포르테뇨에서 맨체스터 유나이티드로 약 400만~600만 파운드에 이적",
-      "ovr": 58,
-      "scout": {
-        "skill": 58,
-        "value": 61,
-        "fame": 44
-      }
-    },
-    {
       "id": "mathew-ryan",
       "name": "맷 라이언",
       "nameEn": "Mathew Ryan",
@@ -18272,42 +18237,6 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 67
-      }
-    },
-    {
-      "id": "ali-maaloul",
-      "name": "알리 말룰",
-      "nameEn": "Ali Maaloul",
-      "team": "튀니지",
-      "club": "CS 스팍시엥",
-      "league": "튀니지 리그 프로페시오넬 1 (튀니지)",
-      "position": "레프트백",
-      "age": 36,
-      "caps": 91,
-      "intlGoals": 3,
-      "grade": "주전급",
-      "gradeScore": 70,
-      "oneLiner": "알 아흘리에서 CAF 챔스 4회 우승한 백전노장, 측면의 경험치 그 자체.",
-      "strengths": [
-        "정교한 크로스와 세트피스 키커",
-        "풍부한 빅매치 경험",
-        "꾸준한 출전과 리더십"
-      ],
-      "weaknesses": [
-        "나이에 따른 수비 복귀 속도 저하",
-        "현 소속 리그 수준이 유럽 대비 낮음"
-      ],
-      "honours": [
-        "CAF 챔피언스리그 4회 (2019-20·2020-21·2022-23·2023-24)",
-        "이집트 프리미어리그 7회",
-        "2023 FIFA 클럽월드컵 공동 득점왕"
-      ],
-      "notableTransfer": "2016년 알 아흘리로 이적해 9년간 활약 후 2025년 8월 친정 CS 스팍시엥 복귀.",
-      "ovr": 70,
-      "scout": {
-        "skill": 70,
-        "value": 62,
-        "fame": 70
       }
     },
     {
@@ -23927,41 +23856,6 @@ window.DATA = {
       }
     },
     {
-      "id": "gernot-trauner",
-      "name": "게르노트 트라우너",
-      "nameEn": "Gernot Trauner",
-      "team": "오스트리아",
-      "club": "페예노르트",
-      "league": "에레디비시 (네덜란드)",
-      "position": "수비수",
-      "age": 33,
-      "caps": 48,
-      "intlGoals": 1,
-      "grade": "로테이션",
-      "gradeScore": 67,
-      "oneLiner": "에레디비시 우승을 경험한 노련한 중앙 수비수.",
-      "strengths": [
-        "위치 선정과 경기 읽기",
-        "제공권과 일대일 안정감",
-        "리더십과 경험"
-      ],
-      "weaknesses": [
-        "스피드와 회복 속도",
-        "잦은 부상 이력"
-      ],
-      "honours": [
-        "에레디비시 우승(페예노르트)",
-        "KNVB컵 우승(페예노르트)"
-      ],
-      "notableTransfer": "2021년 LASK에서 페예노르트로 이적",
-      "ovr": 67,
-      "scout": {
-        "skill": 67,
-        "value": 60,
-        "fame": 59
-      }
-    },
-    {
       "id": "alexander-schlager",
       "name": "알렉산더 슐라거",
       "nameEn": "Alexander Schlager",
@@ -28243,39 +28137,6 @@ window.DATA = {
       }
     },
     {
-      "id": "cho-yu-min",
-      "name": "조유민",
-      "nameEn": "Cho Yu-min",
-      "team": "대한민국",
-      "club": "샤르자 (Sharjah)",
-      "league": "UAE 프로리그 (아랍에미리트)",
-      "position": "DF",
-      "age": 29,
-      "caps": 16,
-      "intlGoals": 1,
-      "grade": "로테이션",
-      "gradeScore": 62,
-      "oneLiner": "김민재의 센터백 파트너 후보 중 하나, 제공권과 투지가 강점인 수비수",
-      "strengths": [
-        "뛰어난 제공권과 헤더",
-        "강한 대인 수비와 몸싸움",
-        "세트피스 공격 가담"
-      ],
-      "weaknesses": [
-        "빌드업과 패스 정확도",
-        "빠른 공격수 상대 스피드 약점",
-        "리그 수준에 따른 경기력 검증"
-      ],
-      "honours": [],
-      "notableTransfer": "대전 하나시티즌을 거쳐 UAE 샤르자로 이적",
-      "ovr": 62,
-      "scout": {
-        "skill": 62,
-        "value": 62,
-        "fame": 46
-      }
-    },
-    {
       "id": "lee-han-beom",
       "name": "이한범",
       "nameEn": "Lee Han-beom",
@@ -29665,39 +29526,6 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
-    },
-    {
-      "id": "osman-hadzikic",
-      "name": "오스만 하지키치",
-      "nameEn": "Osman Hadzikic",
-      "team": "보스니아 헤르체고비나",
-      "club": "Slaven Belupo",
-      "league": "1. HNL (크로아티아)",
-      "position": "GK",
-      "age": 29,
-      "caps": null,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "gradeScore": 55,
-      "oneLiner": "경험을 갖춘 백업 옵션, 큰 무대 출전 기회는 제한적",
-      "strengths": [
-        "페널티 박스 안정성",
-        "여러 리그 경험",
-        "반사신경"
-      ],
-      "weaknesses": [
-        "주전 경쟁력 부족",
-        "롱킥 정확도",
-        "대표팀 출전 시간 적음"
-      ],
-      "honours": [],
-      "notableTransfer": "오스트리아 출신으로 아우스트리아 빈을 거쳐 크로아티아 슬라벤 벨루포에서 주전 수문장",
-      "ovr": 55,
-      "scout": {
-        "skill": 55,
-        "value": 55,
-        "fame": 39
       }
     },
     {
@@ -31608,35 +31436,6 @@ window.DATA = {
       }
     },
     {
-      "id": "joe-scally-placeholder",
-      "name": "조 스컬리",
-      "nameEn": "Joe Scally placeholder",
-      "team": "미국",
-      "club": "보루시아 묀헨글라트바흐",
-      "league": "분데스리가 (독일)",
-      "position": "DF",
-      "age": 23,
-      "caps": 24,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "gradeScore": 63,
-      "oneLiner": "중복 항목.",
-      "strengths": [
-        "중복"
-      ],
-      "weaknesses": [
-        "중복"
-      ],
-      "honours": [],
-      "notableTransfer": "중복",
-      "ovr": 63,
-      "scout": {
-        "skill": 63,
-        "value": 66,
-        "fame": 48
-      }
-    },
-    {
       "id": "ederson",
       "name": "에데르송",
       "nameEn": "Ederson",
@@ -31967,42 +31766,6 @@ window.DATA = {
       }
     },
     {
-      "id": "gerson",
-      "name": "제르송",
-      "nameEn": "Gerson",
-      "team": "브라질",
-      "club": "지엔다",
-      "league": "사우디 프로리그 (사우디아라비아)",
-      "position": "MF",
-      "age": 28,
-      "caps": 8,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "gradeScore": 72,
-      "oneLiner": "균형감과 볼 배급이 좋은 중앙 미드필더, 카세미루와 브루누 사이를 메우는 로테이션 옵션",
-      "strengths": [
-        "볼 배급과 경기 운영",
-        "체력과 박스 투 박스",
-        "리더십"
-      ],
-      "weaknesses": [
-        "국제무대 검증 부족",
-        "사우디 리그 경쟁력 의문",
-        "득점 생산성 낮음"
-      ],
-      "honours": [
-        "코파 리베르타도레스 (플라멩구)",
-        "브라질 세리이 A 우승"
-      ],
-      "notableTransfer": "플라멩구에서 사우디 클럽으로 이적",
-      "ovr": 72,
-      "scout": {
-        "skill": 72,
-        "value": 72,
-        "fame": 55
-      }
-    },
-    {
       "id": "fabinho",
       "name": "파비뉴",
       "nameEn": "Fabinho",
@@ -32040,44 +31803,6 @@ window.DATA = {
       }
     },
     {
-      "id": "rodrygo",
-      "name": "호드리구",
-      "nameEn": "Rodrygo",
-      "team": "브라질",
-      "club": "레알 마드리드",
-      "league": "라리가 (스페인)",
-      "position": "FW",
-      "age": 25,
-      "caps": 35,
-      "intlGoals": 8,
-      "grade": "월드클래스",
-      "gradeScore": 86,
-      "oneLiner": "빅매치에 강한 레알 마드리드 공격수, 양 측면과 중앙을 모두 소화하는 다재다능한 핵심 자원",
-      "strengths": [
-        "빅매치 클러치 능력",
-        "드리블과 위치 선정",
-        "양발 마무리",
-        "전술 유연성"
-      ],
-      "weaknesses": [
-        "기복 있는 득점 효율",
-        "주전 경쟁 치열로 폼 영향",
-        "피지컬 약점"
-      ],
-      "honours": [
-        "UEFA 챔피언스리그 다수 우승",
-        "라리가 우승",
-        "FIFA 클럽 월드컵"
-      ],
-      "notableTransfer": "산투스에서 레알 마드리드로 이적",
-      "ovr": 86,
-      "scout": {
-        "skill": 86,
-        "value": 86,
-        "fame": 71
-      }
-    },
-    {
       "id": "gabriel-martinelli",
       "name": "가브리에우 마르치넬리",
       "nameEn": "Gabriel Martinelli",
@@ -32110,42 +31835,6 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 60
-      }
-    },
-    {
-      "id": "est-v-o",
-      "name": "에스테바웅",
-      "nameEn": "Estêvão",
-      "team": "브라질",
-      "club": "첼시",
-      "league": "프리미어리그 (잉글랜드)",
-      "position": "FW",
-      "age": 18,
-      "caps": 8,
-      "intlGoals": 2,
-      "grade": "유망주",
-      "gradeScore": 80,
-      "oneLiner": "메시급 재능으로 불리는 18세 신성 윙어, 브라질 차세대 에이스로 떠오른 폭발적 드리블러",
-      "strengths": [
-        "탁월한 드리블과 1대1 돌파",
-        "어린 나이에 비해 성숙한 결정력",
-        "창의성과 발재간"
-      ],
-      "weaknesses": [
-        "18세 경험 부족",
-        "피지컬 보강 필요",
-        "큰 무대 압박 검증 미완"
-      ],
-      "honours": [
-        "FIFA 클럽 월드컵 우승 (첼시, 2025)",
-        "브라질 세리이 A 신인상"
-      ],
-      "notableTransfer": "2025년 팔메이라스에서 첼시로 이적",
-      "ovr": 80,
-      "scout": {
-        "skill": 80,
-        "value": 84,
-        "fame": 61
       }
     },
     {
@@ -50273,6 +49962,2502 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 40
+      }
+    },
+    {
+      "id": "guillermo-martinez",
+      "name": "기예르모 마르티네스",
+      "nameEn": "Guillermo Martínez",
+      "team": "멕시코",
+      "club": "푸마스 UNAM (Pumas UNAM)",
+      "league": "리가 MX (멕시코)",
+      "position": "FW (센터포워드/타깃맨)",
+      "age": 31,
+      "caps": 12,
+      "intlGoals": 3,
+      "grade": "로테이션",
+      "gradeScore": 62,
+      "oneLiner": "191cm 장신 타깃맨, 제공권 한 방을 위한 아기레 감독의 플랜B 카드",
+      "strengths": [
+        "압도적인 제공권과 헤더 결정력",
+        "191cm 신장을 활용한 포스트 플레이와 연결고리 역할",
+        "박스 안 위치선정과 마무리"
+      ],
+      "weaknesses": [
+        "스피드·기동력 부족으로 라인 침투 제한적",
+        "대표팀 출전 시간 부족(아기레 체제 이후 소수 카메오)",
+        "발밑 기술·연계 정교함은 평범한 수준"
+      ],
+      "honours": [],
+      "notableTransfer": "베라크루스·티후아나 등을 거쳐 푸마스 UNAM에 정착, 리가 MX 득점 상위권 활약으로 첫 대표팀 정착",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 59,
+        "fame": 46
+      }
+    },
+    {
+      "id": "olwethu-makhanya",
+      "name": "올웨투 마카냐",
+      "nameEn": "Olwethu Makhanya",
+      "team": "남아프리카공화국",
+      "club": "필라델피아 유니언",
+      "league": "MLS (미국)",
+      "position": "DF (CB, 중앙 수비수)",
+      "age": 22,
+      "caps": 0,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 58,
+      "oneLiner": "2025시즌 MLS 리그 최소 실점을 이끈 떠오르는 중앙 수비 유망주, 월드컵에서 A매치 데뷔를 노린다",
+      "strengths": [
+        "대인 방어와 공중볼 경합",
+        "젊은 나이 대비 안정적인 빌드업",
+        "MLS 정상급 수비 파트너십 경험(글레네스와 호흡)"
+      ],
+      "weaknesses": [
+        "A매치 무경험(데뷔전 부담)",
+        "월드컵급 빠른 공격수 상대 경험 부족",
+        "리그 수준 검증 한계"
+      ],
+      "honours": [
+        "MLS 서포터스 실드 우승 (2025, 필라델피아 유니언)"
+      ],
+      "notableTransfer": "2023년 7월 스텔렌보스 FC에서 필라델피아 유니언으로 이적 (구단 최초 U22 이니셔티브 영입)",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 61,
+        "fame": 42
+      }
+    },
+    {
+      "id": "thabang-matuludi",
+      "name": "타방 마툴루디",
+      "nameEn": "Thabang Matuludi",
+      "team": "남아프리카공화국",
+      "club": "폴로콰네 시티",
+      "league": "남아공 프리미어십 (남아프리카공화국)",
+      "position": "DF (RB, 라이트백)",
+      "age": 27,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 55,
+      "oneLiner": "무다우의 백업으로 선발된 폴로콰네 시티의 폭발적인 라이트백, 국내 리그에서 검증된 측면 수비 자원",
+      "strengths": [
+        "왕성한 활동량과 측면 스피드",
+        "적극적인 오버래핑 가담",
+        "꾸준한 PSL 출전으로 다진 폼"
+      ],
+      "weaknesses": [
+        "국제 경험 매우 부족(A매치 2경기)",
+        "수비 위치 선정 안정성",
+        "유럽 빅리그 미검증"
+      ],
+      "honours": [],
+      "notableTransfer": "ABC 모체페 리그 더 돌핀스에서 폴로콰네 시티로 입단, 이후 줄곧 폴로콰네 시티 소속 (오를란도 파이리츠 등 이적설)",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 55,
+        "fame": 39
+      }
+    },
+    {
+      "id": "lee-gi-hyuk",
+      "name": "이기혁",
+      "nameEn": "Lee Gi-hyuk",
+      "team": "대한민국",
+      "club": "강원 FC",
+      "league": "K리그1 (대한민국)",
+      "position": "MF (수비형 미드필더/중앙 미드필더)",
+      "age": 25,
+      "caps": 3,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 58,
+      "oneLiner": "강원에서의 호조로 월드컵 막차를 탄 K리그 출신 깜짝 발탁 자원",
+      "strengths": [
+        "넓은 활동량과 왕성한 압박",
+        "박스 투 박스 기동력",
+        "성실한 수비 가담"
+      ],
+      "weaknesses": [
+        "국가대표 경험 부족(3캡)",
+        "빅매치 검증 미흡",
+        "탈압박·전개의 안정성 보완 필요"
+      ],
+      "honours": [],
+      "notableTransfer": "성균관대 출신으로 2022년 강원 FC 입단, 꾸준한 K리그 활약으로 2026 월드컵 깜짝 발탁",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 58,
+        "fame": 41
+      }
+    },
+    {
+      "id": "cho-wi-je",
+      "name": "조위제",
+      "nameEn": "Cho Wi-je",
+      "team": "대한민국",
+      "club": "전북 현대 모터스",
+      "league": "K리그1 (대한민국)",
+      "position": "DF (센터백)",
+      "age": 24,
+      "caps": 1,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 55,
+      "oneLiner": "조유민의 부상 공백을 메우며 첫 월드컵 무대에 오른 젊은 센터백",
+      "strengths": [
+        "좋은 신체조건과 제공권",
+        "빌드업 시 안정적인 후방 전개",
+        "1대1 대인 수비"
+      ],
+      "weaknesses": [
+        "A매치 경험 전무에 가까움(1캡)",
+        "월드컵급 스피드 대응 검증 필요",
+        "경기 운영 노련함 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "부산 아이파크에서 성장 후 전북 현대로 이적, 조유민 부상 낙마로 6월 1일 대체 발탁되며 생애 첫 월드컵 승선",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 55,
+        "fame": 39
+      }
+    },
+    {
+      "id": "jens-castrop",
+      "name": "옌스 카스트로프",
+      "nameEn": "Jens Castrop",
+      "team": "대한민국",
+      "club": "보루시아 묀헨글라트바흐",
+      "league": "분데스리가 (독일)",
+      "position": "MF (수비형/중앙 미드필더)",
+      "age": 22,
+      "caps": 7,
+      "intlGoals": 0,
+      "grade": "주전급",
+      "gradeScore": 71,
+      "oneLiner": "분데스리가에서 검증된 독일 태생 혼혈 미드필더, 중원에 활력을 더할 새 옵션",
+      "strengths": [
+        "강한 볼 탈취와 압박 강도",
+        "분데스리가 수준의 전술 이해",
+        "기동력과 커버 범위"
+      ],
+      "weaknesses": [
+        "대표팀 호흡 적응 진행 중",
+        "득점 생산력 부족(무득점)",
+        "큰 무대 경험 제한적"
+      ],
+      "honours": [],
+      "notableTransfer": "1.FC 뇌른베르크에서 2025년 보루시아 묀헨글라트바흐로 이적, 한국 어머니를 둔 독일 태생으로 한국 대표 선택 후 첫 월드컵 발탁",
+      "ovr": 71,
+      "scout": {
+        "skill": 71,
+        "value": 75,
+        "fame": 51
+      }
+    },
+    {
+      "id": "kim-jin-gyu",
+      "name": "김진규",
+      "nameEn": "Kim Jin-gyu",
+      "team": "대한민국",
+      "club": "전북 현대 모터스",
+      "league": "K리그1 (대한민국)",
+      "position": "MF (중앙/수비형 미드필더)",
+      "age": 29,
+      "caps": 22,
+      "intlGoals": 3,
+      "grade": "로테이션",
+      "gradeScore": 66,
+      "oneLiner": "전북의 중원을 지탱하는 균형형 미드필더, 안정감 있는 백업 옵션",
+      "strengths": [
+        "볼 배급과 경기 템포 조율",
+        "성실한 수비 밸런스",
+        "K리그·J리그 다년 경험"
+      ],
+      "weaknesses": [
+        "폭발적 속도·전진 드리블 부족",
+        "유럽 무대 경험 없음",
+        "공격 임팩트 제한적"
+      ],
+      "honours": [],
+      "notableTransfer": "일본 J리그 사간 도스 등을 거쳐 전북 현대로 복귀, 안정적 활약으로 대표팀 중원 자원으로 정착",
+      "ovr": 66,
+      "scout": {
+        "skill": 66,
+        "value": 66,
+        "fame": 50
+      }
+    },
+    {
+      "id": "jacob-shaffelburg",
+      "name": "제이콥 섀펄버그",
+      "nameEn": "Jacob Shaffelburg",
+      "team": "캐나다",
+      "club": "LAFC (로스앤젤레스 FC)",
+      "league": "메이저 리그 사커 (MLS, 미국/캐나다)",
+      "position": "MF/FW (왼쪽 윙어)",
+      "age": 26,
+      "caps": 31,
+      "intlGoals": 6,
+      "grade": "로테이션",
+      "gradeScore": 64,
+      "oneLiner": "노바스코샤 출신의 폭발적인 왼쪽 윙어로, 코파 아메리카 무대에서 검증된 캐나다의 스피드 옵션이다.",
+      "strengths": [
+        "직선적인 폭발력과 1대1 돌파",
+        "측면을 무너뜨리는 가속과 침투",
+        "MLS·국제무대 모두에서 검증된 결정력(2025년 커리어 하이 시즌)"
+      ],
+      "weaknesses": [
+        "패스 정확도와 마무리 일관성의 기복",
+        "수비 가담·전술적 위치 선정이 다소 거침",
+        "빅리그 경험 부재로 인한 큰 무대 검증 필요"
+      ],
+      "honours": [
+        "2025 US 오픈컵 우승 (내슈빌 SC)",
+        "2024 코파 아메리카 4위 (캐나다)",
+        "2023 골드컵 준우승 (캐나다)"
+      ],
+      "notableTransfer": "2025년 12월 내슈빌 SC에서 LAFC로 이적(GAM 100만 달러 트레이드). 토론토 FC 홈그로운 출신.",
+      "ovr": 64,
+      "scout": {
+        "skill": 64,
+        "value": 64,
+        "fame": 55
+      }
+    },
+    {
+      "id": "mladen-jurkas",
+      "name": "믈라덴 유르카스",
+      "nameEn": "Mladen Jurkas",
+      "team": "보스니아 헤르체고비나",
+      "club": "보라츠 바냐루카 (FK Borac Banja Luka)",
+      "league": "프리미어리그 (보스니아 헤르체고비나)",
+      "position": "골키퍼(GK)",
+      "age": 18,
+      "caps": 0,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 42,
+      "oneLiner": "오스만 하지키치의 대회 직전 부상으로 깜짝 발탁된 18세 장신 GK, A대표팀 데뷔를 앞둔 미래 자원",
+      "strengths": [
+        "193cm 장신과 좋은 리치",
+        "어린 나이에 자국 리그 1군 경험",
+        "전 연령별 대표를 거친 검증된 유망주"
+      ],
+      "weaknesses": [
+        "A매치 경험 전무",
+        "최상위 리그 무대 미경험",
+        "발밑 빌드업 등 현대 GK 역량 검증 필요"
+      ],
+      "honours": [
+        "보스니아 프리미어리그 우승 (보라츠 바냐루카)"
+      ],
+      "notableTransfer": "보라츠 바냐루카 유스 출신, 1군 정착",
+      "ovr": 42,
+      "scout": {
+        "skill": 42,
+        "value": 44,
+        "fame": 35
+      }
+    },
+    {
+      "id": "ermin-mahmic",
+      "name": "에르민 마흐미치",
+      "nameEn": "Ermin Mahmic",
+      "team": "보스니아 헤르체고비나",
+      "club": "슬로반 리베레츠 (FC Slovan Liberec)",
+      "league": "체코 1.리가 (체코)",
+      "position": "공격형 미드필더(AM/CM)",
+      "age": 21,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 50,
+      "oneLiner": "오스트리아 유스 출신에서 2026년 FIFA 국적 변경으로 보스니아를 택한 공격형 미드필더, 라프니츠 시절 득점·도움 능력으로 주목받은 신예",
+      "strengths": [
+        "전진성과 공격 포인트 생산력(라프니츠서 4골 5도움)",
+        "라피드 빈·LASK 유스 거친 탄탄한 기본기",
+        "여러 미드필드 포지션 소화 가능한 활용도"
+      ],
+      "weaknesses": [
+        "A매치 경험 매우 적음",
+        "최상위 리그 검증 부족",
+        "대표팀 내 입지·경쟁력 아직 미확립"
+      ],
+      "honours": [],
+      "notableTransfer": "SV 라프니츠 → 슬로반 리베레츠 (2025)",
+      "ovr": 50,
+      "scout": {
+        "skill": 50,
+        "value": 53,
+        "fame": 35
+      }
+    },
+    {
+      "id": "ayoub-al-oui",
+      "name": "아유브 알우이",
+      "nameEn": "Ayoub Al-Oui",
+      "team": "카타르",
+      "club": "알가라파",
+      "league": "카타르 스타스 리그 (카타르)",
+      "position": "DF (RB/CB)",
+      "age": 21,
+      "caps": 6,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 58,
+      "oneLiner": "2025-26 알가라파에서 주전으로 올라선 21세 멀티 수비 유망주, 카타르 수비의 미래",
+      "strengths": [
+        "오른쪽과 중앙을 모두 소화하는 멀티 능력",
+        "나이 대비 성숙한 위치 선정",
+        "활동량과 스피드"
+      ],
+      "weaknesses": [
+        "A매치 경험 부족(6캡)",
+        "빅매치 대인 수비 검증 부족",
+        "공중볼 안정성"
+      ],
+      "honours": [
+        "2026 아미르컵 우승 (알가라파)",
+        "AFC 아시안컵 2023 우승 멤버 후보군"
+      ],
+      "notableTransfer": "알가라파 유스 출신, 1군 승격",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 61,
+        "fame": 45
+      }
+    },
+    {
+      "id": "al-hashmi-al-hussain",
+      "name": "알하슈미 알후사인",
+      "nameEn": "Al-Hashmi Al-Hussain",
+      "team": "카타르",
+      "club": "알아라비",
+      "league": "카타르 스타스 리그 (카타르)",
+      "position": "DF (CB)",
+      "age": 22,
+      "caps": 7,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 56,
+      "oneLiner": "스페인 하부 임대 경험을 거쳐 알아라비 주전으로 자리잡은 22세 센터백, 빌드업이 강점",
+      "strengths": [
+        "후방 빌드업과 패스 전개",
+        "스페인 무대에서 다진 전술 이해도",
+        "나이 대비 침착함"
+      ],
+      "weaknesses": [
+        "국제 경험 부족(7캡)",
+        "피지컬 대결 강도",
+        "부상 이력(2026년 4월 부상 결장)"
+      ],
+      "honours": [],
+      "notableTransfer": "알아라비 → 칼라오라B/알코르콘B(스페인) 임대 후 복귀",
+      "ovr": 56,
+      "scout": {
+        "skill": 56,
+        "value": 59,
+        "fame": 40
+      }
+    },
+    {
+      "id": "leo-pereira",
+      "name": "레오 페레이라",
+      "nameEn": "Léo Pereira",
+      "team": "브라질",
+      "club": "Flamengo",
+      "league": "캄페오나투 브라질레이루 세리이 A (브라질)",
+      "position": "DF (CB, 센터백)",
+      "age": 30,
+      "caps": 6,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 70,
+      "oneLiner": "안첼로티 체제에서 깜짝 발탁된 플라멩구의 좌족 센터백, 빌드업과 제공권을 겸비한 백업 자원",
+      "strengths": [
+        "왼발 빌드업과 롱패스 전개",
+        "제공권과 공중볼 경합",
+        "남미 무대에서의 풍부한 경험"
+      ],
+      "weaknesses": [
+        "유럽 톱리그 경험 부재로 검증 부족",
+        "스피드와 1대1 대인 수비의 기복",
+        "국제대회 출전 경험 적음"
+      ],
+      "honours": [
+        "코파 리베르타도레스 (2022)",
+        "코파 두 브라질 (2022, 2024)",
+        "캄페오나투 카리오카 다수"
+      ],
+      "notableTransfer": "2020년 아틀레치쿠 파라나엔시에서 플라멩구로 이적해 주전 센터백으로 자리매김",
+      "ovr": 70,
+      "scout": {
+        "skill": 70,
+        "value": 67,
+        "fame": 55
+      }
+    },
+    {
+      "id": "rayan",
+      "name": "라이안",
+      "nameEn": "Rayan",
+      "team": "브라질",
+      "club": "AFC Bournemouth",
+      "league": "프리미어리그 (잉글랜드)",
+      "position": "FW (RW/LW, 윙어)",
+      "age": 19,
+      "caps": 4,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 73,
+      "oneLiner": "바스쿠가 키운 폭발적인 드리블러, 부상 이탈자 호드리구·에스테바웅의 공백을 메울 브라질 차세대 윙어",
+      "strengths": [
+        "폭발적인 가속과 1대1 돌파",
+        "양발 활용과 컷인 슈팅",
+        "어린 나이 대비 대담한 결정력"
+      ],
+      "weaknesses": [
+        "프리미어리그 적응 초기 단계",
+        "수비 가담과 전술적 성숙도 부족",
+        "국제 경험 절대 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "2026년 초 바스쿠 다 가마에서 본머스로 거액 이적해 유럽 무대 진출",
+      "ovr": 73,
+      "scout": {
+        "skill": 73,
+        "value": 77,
+        "fame": 52
+      }
+    },
+    {
+      "id": "luiz-henrique",
+      "name": "루이스 엔히키",
+      "nameEn": "Luiz Henrique",
+      "team": "브라질",
+      "club": "Zenit Saint Petersburg",
+      "league": "러시아 프리미어리그 (러시아)",
+      "position": "FW (RW/LW, 윙어)",
+      "age": 25,
+      "caps": 5,
+      "intlGoals": 1,
+      "grade": "주전급",
+      "gradeScore": 78,
+      "oneLiner": "리베르타도레스 MVP 출신의 측면 자원, 직선적인 돌파와 크로스로 호드리구·에스테바웅 부재를 메우는 카드",
+      "strengths": [
+        "측면 1대1 돌파와 가속",
+        "정확한 크로스와 찬스 메이킹",
+        "남미·국제대회 우승 경험"
+      ],
+      "weaknesses": [
+        "러시아리그 무대로 인한 경기력 검증 논란",
+        "마무리 결정력 기복",
+        "수비 가담 시 위치선정 아쉬움"
+      ],
+      "honours": [
+        "코파 리베르타도레스 (2024, 보타포구)",
+        "러시아 프리미어리그",
+        "코파 아메리카 (2024) 멤버"
+      ],
+      "notableTransfer": "2024년 보타포구에서 제니트로 약 3천만 유로에 이적, 보타포구 리베르타도레스 우승 당시 남미 올해의 선수",
+      "ovr": 78,
+      "scout": {
+        "skill": 78,
+        "value": 78,
+        "fame": 60
+      }
+    },
+    {
+      "id": "youssef-belammari",
+      "name": "유세프 벨라마리",
+      "nameEn": "Youssef Belammari",
+      "team": "모로코",
+      "club": "알 아흘리 (Al Ahly SC)",
+      "league": "이집트 프리미어리그 (Egypt)",
+      "position": "DF (레프트백)",
+      "age": 27,
+      "caps": 5,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 62,
+      "oneLiner": "라자 무패우승·2025 AFCON 우승을 경험한 백업 레프트백, 하키미·아나스의 뒤를 받친다",
+      "strengths": [
+        "왼쪽 측면 커버 범위",
+        "신체적 강인함",
+        "우승 경험(AFCON·국내 트레블)"
+      ],
+      "weaknesses": [
+        "유럽 빅리그 경험 부재",
+        "이적 직후 부상 이력",
+        "주전 경쟁 열세"
+      ],
+      "honours": [
+        "2025 아프리카 네이션스컵 우승(모로코)",
+        "2024 아프리칸 네이션스 챔피언십 우승",
+        "보톨라 프로 2023-24(라자 무패 우승)",
+        "모로코 왕좌컵 2022-23"
+      ],
+      "notableTransfer": "2026년 1월 라자 카사블랑카 → 알 아흘리 이적",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 62,
+        "fame": 51
+      }
+    },
+    {
+      "id": "redouane-halhal",
+      "name": "르두안 할할",
+      "nameEn": "Redouane Halhal",
+      "team": "모로코",
+      "club": "KV 메헬렌 (K.V. Mechelen)",
+      "league": "벨기에 프로리그 (Belgium)",
+      "position": "DF (센터백)",
+      "age": 23,
+      "caps": 1,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 55,
+      "oneLiner": "메헬렌에서의 호성적으로 깜짝 발탁된 프랑스 출신 센터백, 1캡짜리 신예 옵션",
+      "strengths": [
+        "뛰어난 피지컬과 대인 수비",
+        "공중볼 경합",
+        "성장 곡선"
+      ],
+      "weaknesses": [
+        "국가대표 경험 전무(1캡)",
+        "빌드업·발밑 미숙",
+        "메이저 무대 검증 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "2024년 8월 메헬렌 합류(2024-25 헬몬트 스포르트 임대 후 복귀)",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 58,
+        "fame": 39
+      }
+    },
+    {
+      "id": "samir-el-mourabet",
+      "name": "사미르 엘 무라베트",
+      "nameEn": "Samir El Mourabet",
+      "team": "모로코",
+      "club": "스트라스부르 (RC Strasbourg)",
+      "league": "리그 1 (France)",
+      "position": "MF (중앙 미드필더)",
+      "age": 20,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 64,
+      "oneLiner": "리그1에서 2000분 넘게 뛴 우아한 패서, 모로코 미드필드의 차세대 자원",
+      "strengths": [
+        "넓은 패스 레인지와 시야",
+        "볼 다루는 우아함",
+        "거친 태클도 마다하지 않는 투지"
+      ],
+      "weaknesses": [
+        "국가대표 경험 부족(2캡)",
+        "수비 강도·피지컬",
+        "빅매치 검증 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "2024년 5월 스트라스부르 첫 프로 계약(2027년까지)",
+      "ovr": 64,
+      "scout": {
+        "skill": 64,
+        "value": 67,
+        "fame": 45
+      }
+    },
+    {
+      "id": "ayoube-amaimouni",
+      "name": "아유브 아마이무니",
+      "nameEn": "Ayoube Amaimouni",
+      "team": "모로코",
+      "club": "아인트라흐트 프랑크푸르트 (Eintracht Frankfurt)",
+      "league": "분데스리가 (Germany)",
+      "position": "FW (라이트윙)",
+      "age": 21,
+      "caps": null,
+      "intlGoals": null,
+      "grade": "유망주",
+      "gradeScore": 60,
+      "oneLiner": "26인 명단 최대 깜짝 발탁, 안쪽으로 파고드는 왼발잡이 라이트윙의 폭발력",
+      "strengths": [
+        "직선적 돌파와 드리블",
+        "안쪽 컷인 후 왼발 슈팅",
+        "다이내믹한 공격 옵션"
+      ],
+      "weaknesses": [
+        "성인 대표 경험 사실상 전무",
+        "분데스리가 적응 초기",
+        "전술적 완성도 미흡"
+      ],
+      "honours": [],
+      "notableTransfer": "2026년 1월 프랑크푸르트와 5년 반 장기계약 체결",
+      "ovr": 60,
+      "scout": {
+        "skill": 60,
+        "value": 63,
+        "fame": 42
+      }
+    },
+    {
+      "id": "yassine-gessime",
+      "name": "야신 게심",
+      "nameEn": "Yassine Gessime",
+      "team": "모로코",
+      "club": "스트라스부르 (RC Strasbourg)",
+      "league": "리그 1 (France)",
+      "position": "FW (라이트윙)",
+      "age": 20,
+      "caps": null,
+      "intlGoals": null,
+      "grade": "유망주",
+      "gradeScore": 61,
+      "oneLiner": "U20 월드챔피언 출신 윙어, 첫 성인 월드컵 발탁으로 감격한 스트라스부르 신예",
+      "strengths": [
+        "측면 스피드와 돌파",
+        "어린 나이의 우승 DNA",
+        "공격 다양성 제공"
+      ],
+      "weaknesses": [
+        "성인 대표 첫 발탁(경험 전무)",
+        "마무리 안정성",
+        "체격·피지컬 보강 필요"
+      ],
+      "honours": [
+        "FIFA U-20 월드컵 우승(모로코 U20)"
+      ],
+      "notableTransfer": "2026년 1월 스트라스부르와 4년 반 계약",
+      "ovr": 61,
+      "scout": {
+        "skill": 61,
+        "value": 64,
+        "fame": 44
+      }
+    },
+    {
+      "id": "yassin-fortune",
+      "name": "야신 포르튀네",
+      "nameEn": "Yassin Fortuné",
+      "team": "아이티",
+      "club": "FC Vizela",
+      "league": "리가 포르투갈 2부 (포르투갈)",
+      "position": "FW (공격형 미드필더/윙어)",
+      "age": 27,
+      "caps": 4,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 58,
+      "oneLiner": "아스널 유스 출신의 측면 공격수, 화려한 이력 대비 만개하지 못한 디아스포라 자원",
+      "strengths": [
+        "측면·중앙을 오가는 다재다능함",
+        "스위스·프랑스·우크라이나 리그를 거친 풍부한 유럽 경험",
+        "드리블과 전방 압박 가담"
+      ],
+      "weaknesses": [
+        "커리어 내내 잦은 부상으로 연속성 부족",
+        "득점 생산력이 기대에 못 미침",
+        "대표팀 경력이 짧아 손발 맞춤 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "2025년 8월 비젤라(포르투갈 2부)로 이적, FC 시옹에서 6시즌(2018-2024) 주전 경험",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 58,
+        "fame": 41
+      }
+    },
+    {
+      "id": "josue-casimir",
+      "name": "조쥬에 카지미르",
+      "nameEn": "Josué Casimir",
+      "team": "아이티",
+      "club": "AJ 옥세르",
+      "league": "리그 1 (프랑스)",
+      "position": "DF/FW (라이트백·윙백·스트라이커 멀티)",
+      "age": 24,
+      "caps": 7,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 62,
+      "oneLiner": "수비와 공격을 넘나드는 멀티 자원, 리그1 무대에서 검증 중인 과들루프 태생 그르나디에",
+      "strengths": [
+        "라이트백부터 스트라이커까지 소화하는 전술적 유연성",
+        "리그1·리그2 정상급 무대 경험",
+        "왕성한 활동량과 빠른 스피드"
+      ],
+      "weaknesses": [
+        "멀티 포지션 탓에 한 자리 전문성 부족",
+        "대표팀 득점 기여 전무",
+        "주포지션이 불명확해 기용 일관성 떨어짐"
+      ],
+      "honours": [],
+      "notableTransfer": "2025년 6월 르아브르에서 옥세르(리그 1)로 3년 계약 이적",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 62,
+        "fame": 45
+      }
+    },
+    {
+      "id": "braian-ojeda",
+      "name": "브라이안 오헤다",
+      "nameEn": "Braian Ojeda",
+      "team": "파라과이",
+      "club": "올랜도 시티 SC",
+      "league": "메이저 리그 사커 (미국)",
+      "position": "MF (중앙 미드필더/수비형 미드필더)",
+      "age": 25,
+      "caps": 17,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 64,
+      "oneLiner": "수비 라인을 보호하고 빌드업을 시작하는 딥라잉 플레이메이커, 알파로 체제에서 중원 밸런스를 잡는 살림꾼",
+      "strengths": [
+        "볼 배급과 전진 패스",
+        "수비 커버·인터셉트",
+        "체력과 활동량",
+        "포지션 다재다능성"
+      ],
+      "weaknesses": [
+        "골 생산력 전무(A매치 무득점)",
+        "득점 위협 부족",
+        "빅리그 주전 경험 제한적"
+      ],
+      "honours": [
+        "파라과이 프리메라 디비시온 2018 클라우수라 (올림피아)"
+      ],
+      "notableTransfer": "2021년 올림피아→노팅엄 포레스트 이적 후 리얼 솔트레이크 임대·완전이적, 2026년 1월 올랜도 시티로 약 130만 달러(GAM)에 이적",
+      "ovr": 64,
+      "scout": {
+        "skill": 64,
+        "value": 64,
+        "fame": 49
+      }
+    },
+    {
+      "id": "gustavo-caballero",
+      "name": "구스타보 카바예로",
+      "nameEn": "Gustavo Caballero",
+      "team": "파라과이",
+      "club": "포츠머스 (산투스 임대)",
+      "league": "EFL 챔피언십 (잉글랜드)",
+      "position": "FW (윙어/세컨 스트라이커)",
+      "age": 24,
+      "caps": 2,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 62,
+      "oneLiner": "데뷔 시즌 만에 월드컵 무대를 밟은 폭발적인 측면 자원, 빠른 발과 직선적 돌파가 무기인 알비로하의 차세대 윙어",
+      "strengths": [
+        "스피드와 1대1 돌파",
+        "측면 침투와 마무리 본능",
+        "성장세와 적응력",
+        "양 측면 소화"
+      ],
+      "weaknesses": [
+        "A매치 경험 극히 적음(2캡)",
+        "유럽 무대 검증 초기 단계",
+        "기복·결정력 안정성 미검증"
+      ],
+      "honours": [
+        "2025 아페르투라(파라과이) 득점왕 공동 수상"
+      ],
+      "notableTransfer": "2025년 7월 나시오날 아순시온→산투스(약 160만 달러), 2026년 2월 포츠머스 임대",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 62,
+        "fame": 45
+      }
+    },
+    {
+      "id": "leon-goretzka",
+      "name": "레온 고레츠카",
+      "nameEn": "Leon Goretzka",
+      "team": "독일",
+      "club": "바이에른 뮌헨",
+      "league": "분데스리가 (독일)",
+      "position": "MF (중앙 미드필더 / 박스투박스)",
+      "age": 31,
+      "caps": 69,
+      "intlGoals": 15,
+      "grade": "주전급",
+      "gradeScore": 78,
+      "oneLiner": "전성기를 지났지만 박스 침투와 경험으로 중원에 무게감을 더하는 베테랑",
+      "strengths": [
+        "강한 피지컬과 공중볼",
+        "후방 침투 및 득점 가담",
+        "경험과 빅매치 안정감"
+      ],
+      "weaknesses": [
+        "부상 이력과 폼 기복",
+        "발밑 속도 저하",
+        "주전 경쟁에서 밀린 입지"
+      ],
+      "honours": [
+        "분데스리가 다수 우승",
+        "DFB-포칼",
+        "UEFA 챔피언스리그 (2020)",
+        "2017 컨페더레이션스컵"
+      ],
+      "notableTransfer": "2018년 샬케 04에서 자유계약으로 바이에른 뮌헨 이적",
+      "ovr": 78,
+      "scout": {
+        "skill": 78,
+        "value": 74,
+        "fame": 73
+      }
+    },
+    {
+      "id": "felix-nmecha",
+      "name": "펠릭스 은메차",
+      "nameEn": "Felix Nmecha",
+      "team": "독일",
+      "club": "보루시아 도르트문트",
+      "league": "분데스리가 (독일)",
+      "position": "MF (중앙 미드필더)",
+      "age": 25,
+      "caps": 6,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "gradeScore": 70,
+      "oneLiner": "큰 체격에 양발을 쓰며 전진 드리블이 가능한 올라운드 미드필더",
+      "strengths": [
+        "볼 운반과 전진 드리블",
+        "양발 활용 능력",
+        "넓은 활동량"
+      ],
+      "weaknesses": [
+        "국가대표 경험 부족",
+        "결정적 패스의 정교함",
+        "수비 위치 선정 미숙"
+      ],
+      "honours": [
+        "맨체스터 시티 유스 육성"
+      ],
+      "notableTransfer": "2023년 맨체스터 시티 유스 출신, 볼프스부르크 거쳐 도르트문트 이적",
+      "ovr": 70,
+      "scout": {
+        "skill": 70,
+        "value": 70,
+        "fame": 52
+      }
+    },
+    {
+      "id": "pascal-gro",
+      "name": "파스칼 그로스",
+      "nameEn": "Pascal Groß",
+      "team": "독일",
+      "club": "브라이턴",
+      "league": "프리미어리그 (잉글랜드)",
+      "position": "MF (수비형/중앙 미드필더, 풀백 가능)",
+      "age": 34,
+      "caps": 8,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "gradeScore": 72,
+      "oneLiner": "뒤늦게 대표팀에 합류해 전술 다재다능함과 킥 정확도로 가치를 입증한 베테랑",
+      "strengths": [
+        "정확한 패스와 세트피스",
+        "전술 이해도와 포지션 다재다능",
+        "안정적 볼 배급"
+      ],
+      "weaknesses": [
+        "나이로 인한 속도 부족",
+        "1대1 수비 부담",
+        "월드컵 무대 경험 전무"
+      ],
+      "honours": [
+        "브라이턴 EPL 안착 핵심"
+      ],
+      "notableTransfer": "2026년 1월 도르트문트에서 친정팀 브라이턴으로 복귀",
+      "ovr": 72,
+      "scout": {
+        "skill": 72,
+        "value": 64,
+        "fame": 53
+      }
+    },
+    {
+      "id": "nadiem-amiri",
+      "name": "나디엠 아미리",
+      "nameEn": "Nadiem Amiri",
+      "team": "독일",
+      "club": "마인츠 05",
+      "league": "분데스리가 (독일)",
+      "position": "MF (공격형 미드필더)",
+      "age": 29,
+      "caps": 9,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "gradeScore": 71,
+      "oneLiner": "25/26 시즌 미드필더로 폭발적 득점력을 보이며 대표팀에 다시 이름을 올린 플레이메이커",
+      "strengths": [
+        "박스 외곽 슈팅과 득점 감각",
+        "창의적 패스와 연계",
+        "세트피스 처리"
+      ],
+      "weaknesses": [
+        "수비 가담 부족",
+        "기복 있는 폼",
+        "빅클럽 무대 경험 부족"
+      ],
+      "honours": [
+        "2025/26 마인츠 핵심 미드필더 활약"
+      ],
+      "notableTransfer": "레버쿠젠 거쳐 마인츠 05에 정착, 25/26 시즌 미드필더로 다수 득점",
+      "ovr": 71,
+      "scout": {
+        "skill": 71,
+        "value": 71,
+        "fame": 53
+      }
+    },
+    {
+      "id": "angelo-stiller",
+      "name": "안젤로 슈틸러",
+      "nameEn": "Angelo Stiller",
+      "team": "독일",
+      "club": "슈투트가르트",
+      "league": "분데스리가 (독일)",
+      "position": "MF (수비형 미드필더 / 딥라잉 플레이메이커)",
+      "age": 25,
+      "caps": 8,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 73,
+      "oneLiner": "후방에서 경기를 조율하는 영리한 패스 마스터, 키미히의 대안이자 동반자",
+      "strengths": [
+        "탈압박과 정교한 전진 패스",
+        "경기 템포 조율",
+        "수비 위치 선정"
+      ],
+      "weaknesses": [
+        "피지컬 대결의 한계",
+        "득점력 부족",
+        "대표팀 입지 변동성"
+      ],
+      "honours": [
+        "슈투트가르트 중원 핵심"
+      ],
+      "notableTransfer": "2023년 바이에른 뮌헨 유스/호펜하임 거쳐 슈투트가르트 이적",
+      "ovr": 73,
+      "scout": {
+        "skill": 73,
+        "value": 73,
+        "fame": 54
+      }
+    },
+    {
+      "id": "assan-ouedraogo",
+      "name": "아상 우에드라오고",
+      "nameEn": "Assan Ouédraogo",
+      "team": "독일",
+      "club": "RB 라이프치히",
+      "league": "분데스리가 (독일)",
+      "position": "MF (중앙 미드필더)",
+      "age": 20,
+      "caps": 1,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 68,
+      "oneLiner": "부상당한 레나르트 카를을 대체해 막판 합류한 차세대 중원 재능",
+      "strengths": [
+        "큰 체격과 볼 키핑",
+        "전진 드리블 잠재력",
+        "어린 나이 대비 성숙한 플레이"
+      ],
+      "weaknesses": [
+        "대표팀 경험 전무",
+        "기복과 부상 관리",
+        "전술 완성도 미흡"
+      ],
+      "honours": [
+        "U17 월드컵 우승 (독일)"
+      ],
+      "notableTransfer": "2024년 샬케 04에서 RB 라이프치히로 이적",
+      "ovr": 68,
+      "scout": {
+        "skill": 68,
+        "value": 71,
+        "fame": 49
+      }
+    },
+    {
+      "id": "jamie-leweling",
+      "name": "야미 레벨링",
+      "nameEn": "Jamie Leweling",
+      "team": "독일",
+      "club": "슈투트가르트",
+      "league": "분데스리가 (독일)",
+      "position": "MF/FW (윙어 / 공격형 미드필더)",
+      "age": 25,
+      "caps": 4,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "gradeScore": 69,
+      "oneLiner": "측면에서 속도와 직선성을 더하는 슈퍼서브 옵션, 25/26 시즌 활약으로 발탁",
+      "strengths": [
+        "빠른 스피드와 침투",
+        "직선적 드리블",
+        "다양한 공격 포지션 소화"
+      ],
+      "weaknesses": [
+        "마무리 정확도",
+        "대표팀 경험 부족",
+        "수비 기여도 낮음"
+      ],
+      "honours": [
+        "2025/26 슈투트가르트 공격 핵심"
+      ],
+      "notableTransfer": "우니온 베를린 거쳐 슈투트가르트 정착, 25/26 시즌 7골 9도움",
+      "ovr": 69,
+      "scout": {
+        "skill": 69,
+        "value": 69,
+        "fame": 51
+      }
+    },
+    {
+      "id": "brandley-kuwas",
+      "name": "브란들레이 쿠바스",
+      "nameEn": "Brandley Kuwas",
+      "team": "퀴라소",
+      "club": "FC Volendam",
+      "league": "에레디비시 (네덜란드)",
+      "position": "FW (라이트윙/윙어)",
+      "age": 33,
+      "caps": 31,
+      "intlGoals": 2,
+      "grade": "로테이션",
+      "gradeScore": 54,
+      "oneLiner": "네덜란드 하부·중동·튀르키예를 두루 거친 33세 베테랑 윙어로, 폴렌담 승격을 이끈 경험과 측면 변칙성으로 퀴라소의 조커 역할을 맡는다.",
+      "strengths": [
+        "풍부한 국제 경력과 다양한 리그 경험",
+        "측면 1대1 돌파와 컷인 슈팅",
+        "세트피스·중거리 한방 능력",
+        "베테랑다운 경기 운영과 멘탈"
+      ],
+      "weaknesses": [
+        "33세로 체력·스피드 하락 구간 진입",
+        "수비 가담·압박 기여도 부족",
+        "월드컵 본선급 상대에서는 폼 기복",
+        "최근 소속이 네덜란드 2부 수준으로 경쟁 강도 의문"
+      ],
+      "honours": [
+        "에이르스터 디비시(네덜란드 2부) 우승 2024-25 (FC 폴렌담)",
+        "UAE 프로리그 우승 2020-21 (알자지라)",
+        "UAE 리그컵 우승 2019-20 (알나스르)"
+      ],
+      "notableTransfer": "헤라클레스 알멜로(2016-19, 96경기 21골) → 알나스르(UAE) → 마카비 텔아비브(이스라엘) → 기레순스포르(튀르키예) → 2024년 페예노르트 시절 친정 폴렌담 복귀",
+      "ovr": 54,
+      "scout": {
+        "skill": 54,
+        "value": 48,
+        "fame": 48
+      }
+    },
+    {
+      "id": "parfait-guiagon",
+      "name": "파르페 기아공",
+      "nameEn": "Parfait Guiagon",
+      "team": "코트디부아르",
+      "club": "로열 샤를루아 (Royal Charleroi SC)",
+      "league": "벨기에 프로 리그 (벨기에)",
+      "position": "MF (공격형 미드필더/세컨드 스트라이커)",
+      "age": 25,
+      "caps": 4,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 62,
+      "oneLiner": "벨기에 리그에서 두 자릿수 공격 포인트를 찍는 키 작은 테크니션, 코트디부아르의 깜짝 카드",
+      "strengths": [
+        "좁은 공간 탈압박과 드리블",
+        "오프더볼 침투와 골 결정력",
+        "왼발 슈팅과 세트피스 위협",
+        "낮은 무게중심(169cm)에서 나오는 민첩성"
+      ],
+      "weaknesses": [
+        "수비 가담과 피지컬 경합",
+        "빅리그·국가대표 검증 부족(4캡)",
+        "작은 신장으로 인한 제공권 한계",
+        "월드컵 같은 큰 무대 경험 전무"
+      ],
+      "honours": [
+        "없음 (시니어 무관)"
+      ],
+      "notableTransfer": "마카비 텔아비브 → 샤를루아 (2023년 이적, 2028년까지 계약 연장)",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 62,
+        "fame": 46
+      }
+    },
+    {
+      "id": "junnosuke-suzuki",
+      "name": "스즈키 준노스케",
+      "nameEn": "Junnosuke Suzuki",
+      "team": "일본",
+      "club": "FC 코펜하겐",
+      "league": "수페르리가 (덴마크)",
+      "position": "DF (센터백)",
+      "age": 22,
+      "caps": 4,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 62,
+      "oneLiner": "빌드업 능력을 갖춘 2003년생 센터백으로, 한 시즌 만에 챔피언스리그 무대까지 밟은 일본 수비의 미래 자원.",
+      "strengths": [
+        "정확한 패스와 빌드업 가담",
+        "경기 읽는 능력과 포지셔닝",
+        "수비형 미드필더 출신의 발밑 기술"
+      ],
+      "weaknesses": [
+        "A매치 경험 부족(소집 1년 미만)",
+        "유럽 최상위 무대 검증 미완",
+        "제공권·피지컬 안정감 미흡"
+      ],
+      "honours": [
+        "덴마크 수페르리가 (코펜하겐, 2025-26)"
+      ],
+      "notableTransfer": "2025년 7월 쇼난 벨마레 → FC 코펜하겐 (5년 계약)",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 65,
+        "fame": 46
+      }
+    },
+    {
+      "id": "keisuke-goto",
+      "name": "고토 케이스케",
+      "nameEn": "Keisuke Goto",
+      "team": "일본",
+      "club": "신트트라위던 (안데를레흐트 임대)",
+      "league": "주필러 프로리그 (벨기에)",
+      "position": "FW (센터포워드/타깃맨)",
+      "age": 21,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 68,
+      "oneLiner": "191cm 장신 타깃맨으로 2025-26 벨기에 리그서 11골 7도움을 폭발시키며 우에다의 백업으로 급부상한 신성.",
+      "strengths": [
+        "압도적 제공권과 헤더 결정력",
+        "박스 안 효율적이고 간결한 마무리",
+        "양발 슈팅과 피지컬"
+      ],
+      "weaknesses": [
+        "A매치 경험 절대 부족",
+        "연계 플레이·포스트업 정교함",
+        "빅리그·월드컵급 수비 상대 검증 미완"
+      ],
+      "honours": [],
+      "notableTransfer": "2025년 8월 안데를레흐트 → 신트트라위던 임대",
+      "ovr": 68,
+      "scout": {
+        "skill": 68,
+        "value": 71,
+        "fame": 48
+      }
+    },
+    {
+      "id": "kento-shiogai",
+      "name": "시오가이 켄토",
+      "nameEn": "Kento Shiogai",
+      "team": "일본",
+      "club": "VfL 볼프스부르크",
+      "league": "분데스리가 (독일)",
+      "position": "FW (스트라이커)",
+      "age": 21,
+      "caps": 0,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 58,
+      "oneLiner": "A매치 데뷔 없이 발탁된 깜짝 카드로, 스피드와 강한 압박으로 라인을 끌고 가는 분데스리가 신예 공격수.",
+      "strengths": [
+        "빠른 스피드와 침투",
+        "강한 전방 압박과 활동량",
+        "수비 라인을 늘리는 침투 움직임"
+      ],
+      "weaknesses": [
+        "A매치 무경험(0캡)",
+        "분데스리가 득점력 미미(1골)",
+        "연계·포스트업 등 마무리 외 완성도"
+      ],
+      "honours": [],
+      "notableTransfer": "2026년 1월 NEC 네이메헌 → 볼프스부르크 (4년 반 계약)",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 61,
+        "fame": 41
+      }
+    },
+    {
+      "id": "elliot-stroud",
+      "name": "엘리오트 스트로우드",
+      "nameEn": "Elliot Stroud",
+      "team": "스웨덴",
+      "club": "Mjällby AIF (멜뷔 AIF)",
+      "league": "알스벤스칸 (스웨덴 1부)",
+      "position": "센터백(DF)",
+      "age": 23,
+      "caps": 0,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 58,
+      "oneLiner": "2025 스웨덴 리그 우승 돌풍의 주역, A매치 무캡으로 월드컵에 깜짝 합류한 신성 센터백",
+      "strengths": [
+        "뛰어난 제공권과 신체조건",
+        "수비 라인 빌드업 시 침착한 발밑",
+        "우승 경험으로 다져진 정신력"
+      ],
+      "weaknesses": [
+        "A매치 경험 전무 (0캡)",
+        "빅리그·국제 무대 검증 부족",
+        "스피드와 대인 마크 안정성 미검증"
+      ],
+      "honours": [
+        "알스벤스칸 우승 (2025, 멜뷔 AIF)"
+      ],
+      "notableTransfer": "멜뷔 AIF 유스 출신, 2025 알스벤스칸 우승 주역으로 깜짝 발탁",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 61,
+        "fame": 42
+      }
+    },
+    {
+      "id": "herman-johansson",
+      "name": "헤르만 요한손",
+      "nameEn": "Herman Johansson",
+      "team": "스웨덴",
+      "club": "FC Dallas (FC 댈러스)",
+      "league": "메이저 리그 사커 (미국)",
+      "position": "라이트백/센터백(DF)",
+      "age": 28,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 55,
+      "oneLiner": "멜뷔 우승 후 MLS로 건너간 장신 멀티 수비수, 에밀 홀름 부상 공백을 메운 백업 자원",
+      "strengths": [
+        "193cm 장신에서 나오는 제공권",
+        "측면과 중앙을 모두 소화하는 멀티 능력",
+        "꾸준한 출전으로 다진 경기 체력"
+      ],
+      "weaknesses": [
+        "A매치 경험 부족 (단 2캡)",
+        "MLS 수준의 경쟁력 검증 단계",
+        "공격 가담·크로스 생산성 평범"
+      ],
+      "honours": [
+        "알스벤스칸 우승 (2025, 멜뷔 AIF)"
+      ],
+      "notableTransfer": "2025년 12월 멜뷔 AIF에서 FC 댈러스로 이적 (2028-29까지 계약), 에밀 홀름 부상 대체로 월드컵 합류",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 55,
+        "fame": 40
+      }
+    },
+    {
+      "id": "mortadha-ben-ouanes",
+      "name": "모르타다 벤 우아네스",
+      "nameEn": "Mortadha Ben Ouanes",
+      "team": "튀니지",
+      "club": "카슴파샤",
+      "league": "쉬페르리그 (터키)",
+      "position": "DF (레프트백/풀백)",
+      "age": 31,
+      "caps": 22,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 62,
+      "oneLiner": "터키 쉬페르리그에서 꾸준히 뛰는 베테랑 좌우 풀백, 알리 말룰 이탈 후 측면 수비 뎁스를 메우는 경험 자원",
+      "strengths": [
+        "좌우 풀백 모두 소화하는 다재다능함",
+        "유럽 1부 리그 장기 경험",
+        "안정적인 1대1 수비"
+      ],
+      "weaknesses": [
+        "공격 가담 시 결정력 부족",
+        "31세로 스피드 정점은 지난 편",
+        "주전 경쟁에서 밀리는 백업 포지션"
+      ],
+      "honours": [
+        "아랍 클럽 챔피언스컵 2018-19 (에투알 뒤 사헬)",
+        "튀니지 컵 (에투알 뒤 사헬)"
+      ],
+      "notableTransfer": "에투알 뒤 사헬 → 카슴파샤 (2021)",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 59,
+        "fame": 51
+      }
+    },
+    {
+      "id": "mohamed-hadj-mahmoud",
+      "name": "무함마드 하지 마흐무드",
+      "nameEn": "Mohamed Hadj-Mahmoud",
+      "team": "튀니지",
+      "club": "FC 루가노",
+      "league": "수페르리가 (스위스)",
+      "position": "MF (수비형 미드필더)",
+      "age": 26,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 55,
+      "oneLiner": "스위스 수페르리가 루가노의 수비형 미드필더, A매치 경험은 적지만 라무시 감독이 중원 뎁스로 발탁한 신예",
+      "strengths": [
+        "볼 회수와 중원 커버 범위",
+        "스위스 1부 리그 정기 출전 경험",
+        "빌드업 시 안정적인 패스 전개"
+      ],
+      "weaknesses": [
+        "국가대표 경험 절대 부족 (캡 2회)",
+        "공격적 임팩트·득점 기여 적음",
+        "빅매치 검증 미흡"
+      ],
+      "honours": [],
+      "notableTransfer": "에투알 뒤 사헬 → FC 루가노 (2021, 4년 계약)",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 55,
+        "fame": 39
+      }
+    },
+    {
+      "id": "mostafa-abdel-raouf-ziko",
+      "name": "모스타파 압델라우프 (지코)",
+      "nameEn": "Mostafa Abdel Raouf (Ziko)",
+      "team": "이집트",
+      "club": "Pyramids FC",
+      "league": "이집트 프리미어리그 (이집트)",
+      "position": "MF (LW, 좌측 윙어)",
+      "age": 29,
+      "caps": 1,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 62,
+      "oneLiner": "월드컵 직전 러시아전 데뷔골로 단숨에 최종 명단에 합류한 이집트 국내리그의 깜짝 좌측 윙어",
+      "strengths": [
+        "박스 안 침투 타이밍과 헤더 마무리",
+        "이집트 프리미어리그에서 검증된 득점력 (2024-25 ZED 팀 내 최다 6골)",
+        "측면과 중앙을 오가는 활동량과 직접성"
+      ],
+      "weaknesses": [
+        "국가대표 경험이 사실상 전무 (1캡)",
+        "유럽 무대 경험 부재로 빅매치 검증 미흡",
+        "29세 늦은 대표팀 데뷔로 발탁 안정성 불확실"
+      ],
+      "honours": [
+        "CAF 슈퍼컵 2025-26 (피라미즈)",
+        "이집트컵 2025-26 (피라미즈)"
+      ],
+      "notableTransfer": "2025년 8월 ZED FC에서 피라미즈 FC로 이적 (2029년까지 계약)",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 62,
+        "fame": 47
+      }
+    },
+    {
+      "id": "aria-yousefi",
+      "name": "아리아 유세피",
+      "nameEn": "Aria Yousefi",
+      "team": "이란",
+      "club": "세파한 (Sepahan)",
+      "league": "페르시안 걸프 프로리그 (이란)",
+      "position": "DF (라이트백/풀백)",
+      "age": 24,
+      "caps": 10,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 58,
+      "oneLiner": "꾸준한 국내 리그 폼으로 발탁된 세파한의 측면 수비 옵션, 월드컵 데뷔를 노리는 신예",
+      "strengths": [
+        "우측 측면 전 영역 커버 가능한 다재다능함",
+        "안정적인 수비 위치 선정",
+        "젊은 나이에 비해 차분한 경기 운영"
+      ],
+      "weaknesses": [
+        "국제 경험 부족 (캡 10회)",
+        "유럽 무대 검증 미흡",
+        "공격 가담 시 결정적 마무리 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "나프트 아흐바즈 유스 출신, 2021년 세파한에서 페르시안 걸프 프로리그 데뷔 후 줄곧 세파한 소속",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 58,
+        "fame": 42
+      }
+    },
+    {
+      "id": "bamba-dieng",
+      "name": "밤바 디엥",
+      "nameEn": "Bamba Dieng",
+      "team": "세네갈",
+      "club": "FC 로리앙 (계약 만료 임박, FA 신분)",
+      "league": "리그 1 (프랑스)",
+      "position": "FW (센터포워드/세컨드 스트라이커)",
+      "age": 26,
+      "caps": 21,
+      "intlGoals": 2,
+      "grade": "로테이션",
+      "gradeScore": 62,
+      "oneLiner": "2년 공백을 깨고 부활 시즌으로 월드컵 명단에 복귀한 폭발적인 마무리형 스트라이커",
+      "strengths": [
+        "박스 안 침투와 마무리 본능",
+        "빠른 스피드와 다이렉트한 전진 드리블",
+        "2025/26 리그1에서 7골 등 살아난 골 결정력",
+        "왼발·오른발 모두 활용 가능한 슈팅"
+      ],
+      "weaknesses": [
+        "기복이 심한 폼과 부상 이력",
+        "연계 플레이·포스트 플레이 부족",
+        "소속팀 미정(FA)으로 인한 경기 리듬 불확실성",
+        "빅매치 경험 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "마르세유(OM) 유스 출신 → 로리앙 임대 후 완전 이적, 2025/26 시즌 종료 후 자유계약 신분으로 팀 이탈 예정",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 62,
+        "fame": 47
+      }
+    },
+    {
+      "id": "cherif-ndiaye",
+      "name": "셰리프 은디아예",
+      "nameEn": "Cherif Ndiaye",
+      "team": "세네갈",
+      "club": "삼순스포르",
+      "league": "쉬페르리그 (튀르키예)",
+      "position": "FW (타깃형 센터포워드)",
+      "age": 30,
+      "caps": 18,
+      "intlGoals": 4,
+      "grade": "로테이션",
+      "gradeScore": 60,
+      "oneLiner": "제공권과 포스트 플레이가 강점인 뒤늦게 만개한 베테랑 타깃맨",
+      "strengths": [
+        "강한 피지컬과 제공권 장악",
+        "페널티킥 등 세트피스 마무리 능력",
+        "박스 안 위치 선정과 결정력",
+        "우승 경험이 풍부한 멘탈리티"
+      ],
+      "weaknesses": [
+        "기동성과 스피드 부족",
+        "넓은 활동량을 요구하는 전술에 부적합",
+        "뒤늦은 국가대표 데뷔로 국제 무대 경험 적음",
+        "30세로 폭발적 성장 여지는 제한적"
+      ],
+      "honours": [
+        "세르비아 수페르리가 우승 2회 (2023/24, 2024/25, 츠르베나 즈베즈다)",
+        "세르비아 컵 우승 2회 (츠르베나 즈베즈다)",
+        "아레나컵 우승 (2020, HNK 고리차)"
+      ],
+      "notableTransfer": "즈베즈다(츠르베나 즈베즈다)에서 세르비아 리그 2연패 후 아다나 데미르스포르·삼순스포르로 이적하며 쉬페르리그 정착",
+      "ovr": 60,
+      "scout": {
+        "skill": 60,
+        "value": 57,
+        "fame": 50
+      }
+    },
+    {
+      "id": "akam-hashim",
+      "name": "아캄 하심",
+      "nameEn": "Akam Hashim",
+      "team": "이라크",
+      "club": "Al-Zawraa",
+      "league": "이라크 스타스 리그 (Iraq Stars League)",
+      "position": "DF (센터백/수비형MF)",
+      "age": 27,
+      "caps": 6,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "gradeScore": 48,
+      "oneLiner": "왼발 빌드업이 가능한 멀티 수비수로, 볼리비아와의 플레이오프 결승전 선발 출전한 검증된 백업 옵션",
+      "strengths": [
+        "왼발 패스 및 빌드업",
+        "센터백·수비형 미드필더 겸업 가능한 멀티 능력",
+        "공중볼 경합"
+      ],
+      "weaknesses": [
+        "A매치 경험 부족(6캡)",
+        "국내 리그 위주로 검증된 활동 무대",
+        "스피드 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "2025년 8월 알자우라(Al-Zawraa) 입단",
+      "ovr": 48,
+      "scout": {
+        "skill": 48,
+        "value": 48,
+        "fame": 35
+      }
+    },
+    {
+      "id": "zaid-ismail",
+      "name": "자이드 이스마일",
+      "nameEn": "Zaid Ismail",
+      "team": "이라크",
+      "club": "Al-Talaba",
+      "league": "이라크 스타스 리그 (Iraq Stars League)",
+      "position": "DF (센터백/풀백)",
+      "age": 24,
+      "caps": null,
+      "intlGoals": null,
+      "grade": "유망주",
+      "gradeScore": 42,
+      "oneLiner": "185cm 신장에 U23 대표를 거친 젊은 수비수로, 월드컵 명단에 깜짝 발탁된 미래 자원",
+      "strengths": [
+        "185cm 좋은 피지컬과 제공권",
+        "젊은 나이와 성장 잠재력",
+        "여러 수비 포지션 소화"
+      ],
+      "weaknesses": [
+        "A대표 경험 매우 부족",
+        "국제 무대 검증 미흡",
+        "국내 리그 한정 활동"
+      ],
+      "honours": [],
+      "notableTransfer": "알탈라바(Al-Talaba) 소속",
+      "ovr": 42,
+      "scout": {
+        "skill": 42,
+        "value": 42,
+        "fame": 35
+      }
+    },
+    {
+      "id": "alessandro-schopf",
+      "name": "알레산드로 쇠프",
+      "nameEn": "Alessandro Schöpf",
+      "team": "오스트리아",
+      "club": "볼프스베르거 AC",
+      "league": "분데스리가 (오스트리아)",
+      "position": "MF (중앙/공격형 미드필더)",
+      "age": 32,
+      "caps": 35,
+      "intlGoals": 6,
+      "grade": "로테이션",
+      "gradeScore": 55,
+      "oneLiner": "유로 2016 아이슬란드전 골의 주인공, 산전수전 다 겪은 베테랑 미드필더로 깊이를 더하는 로테이션 자원",
+      "strengths": [
+        "박스 침투와 마무리 능력",
+        "다양한 리그(분데스리가·MLS) 경험",
+        "전술 이해도와 멀티 포지션 소화"
+      ],
+      "weaknesses": [
+        "전성기 대비 떨어진 활동량·속도",
+        "주전 경쟁에서는 한 발 밀리는 입지",
+        "최근 빅리그 무대와 거리가 있음"
+      ],
+      "honours": [
+        "UEFA 유로 2016 본선 출전(아이슬란드전 득점)",
+        "UEFA 유로 2020 26인 명단",
+        "레기오날리가 바이에른 우승(2013-14, 바이에른 뮌헨 II)"
+      ],
+      "notableTransfer": "샬케 04 → 아르미니아 빌레펠트 → 밴쿠버 화이트캡스(MLS) → 볼프스베르거 AC(2025) 복귀",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 52,
+        "fame": 50
+      }
+    },
+    {
+      "id": "mohammad-taha",
+      "name": "모하마드 타하",
+      "nameEn": "Mohammad Taha",
+      "team": "요르단",
+      "club": "알후세인 이르비드 (샤바브 알오르돈 임대)",
+      "league": "요르단 프로리그 (요르단)",
+      "position": "DF (LB/좌측 풀백)",
+      "age": 20,
+      "caps": 2,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 52,
+      "oneLiner": "부상으로 빠진 이브라힘 사브라의 대체로 합류한 20세 공격형 좌측 풀백 유망주.",
+      "strengths": [
+        "공격 가담 능력(2025-26시즌 5개 공격 포인트)",
+        "나이에 비한 측면 침투와 크로스",
+        "연령별 대표 풍부한 경험(U20·U23)"
+      ],
+      "weaknesses": [
+        "성인 대표팀 경험 부족(단 2캡)",
+        "수비 안정감과 1대1 대인 방어 검증 필요",
+        "월드컵 무대 첫 경험으로 인한 압박 적응"
+      ],
+      "honours": [
+        "2024 WAFF U-23 챔피언십 (요르단 U23)"
+      ],
+      "notableTransfer": "2025년 1월 샤바브 알오르돈에서 알후세인으로 임대",
+      "ovr": 52,
+      "scout": {
+        "skill": 52,
+        "value": 55,
+        "fame": 38
+      }
+    },
+    {
+      "id": "goncalo-guedes",
+      "name": "곤살루 게드스",
+      "nameEn": "Gonçalo Guedes",
+      "team": "포르투갈",
+      "club": "레알 소시에다드",
+      "league": "라리가 (스페인)",
+      "position": "FW (윙어/세컨드 스트라이커)",
+      "age": 29,
+      "caps": 34,
+      "intlGoals": 8,
+      "grade": "로테이션",
+      "gradeScore": 68,
+      "oneLiner": "한때 유럽 최고 유망주로 꼽혔던 베테랑 윙어, 라리가 복귀 후 폼을 되찾으며 마르티네스의 측면 옵션으로 재발탁됐다.",
+      "strengths": [
+        "양발 슈팅과 강력한 중거리포",
+        "측면·중앙을 오가는 위치 다양성",
+        "30경기 넘는 A매치 경험과 빅매치 검증"
+      ],
+      "weaknesses": [
+        "기복과 꾸준함 부족이 커리어 내내 발목",
+        "전성기 대비 폭발적인 1대1 돌파력 감소",
+        "주전 경쟁이 치열해 출전 시간 보장 어려움"
+      ],
+      "honours": [
+        "UEFA 네이션스리그 2018-19 (포르투갈)",
+        "코파 델 레이 2018-19 (발렌시아)",
+        "코파 델 레이 2025-26 (레알 소시에다드)",
+        "쿠프 드 프랑스 2016-17 (PSG)",
+        "쿠프 드 라 리그 2016-17 (PSG)",
+        "프리메이라리가 다수 (벤피카)"
+      ],
+      "notableTransfer": "벤피카 → PSG(€30m, 2017) → 발렌시아(€40m, 2018) → 울버햄튼(£27.5m, 2022) → 레알 소시에다드(2025)",
+      "ovr": 68,
+      "scout": {
+        "skill": 68,
+        "value": 68,
+        "fame": 63
+      }
+    },
+    {
+      "id": "meschak-elia",
+      "name": "메샤크 엘리아",
+      "nameEn": "Meschak Elia",
+      "team": "콩고민주공화국",
+      "club": "알라냐스포르 (Alanyaspor)",
+      "league": "쉬페르리그 (튀르키예)",
+      "position": "FW/우측 윙어",
+      "age": 28,
+      "caps": 59,
+      "intlGoals": 11,
+      "grade": "주전급",
+      "gradeScore": 70,
+      "oneLiner": "영 보이즈에서 200경기를 뛰며 성장한 측면 자원, 대표팀 최다 경험치 중 한 명",
+      "strengths": [
+        "빠른 스피드와 직선적 돌파",
+        "양 측면 및 최전방 모두 소화하는 전술 유연성",
+        "59캡 11골의 풍부한 대표팀 경험"
+      ],
+      "weaknesses": [
+        "빅리그 검증 부족(스위스·튀르키예 중심 커리어)",
+        "기복 있는 마무리",
+        "30대 진입으로 폭발력 하락 우려"
+      ],
+      "honours": [
+        "스위스 슈퍼리그 우승 (영 보이즈)",
+        "리나풋(콩고리그) 우승 (TP 마젬베)",
+        "2016 CHAN 우승 및 대회 MVP"
+      ],
+      "notableTransfer": "TP 마젬베 → 영 보이즈(2020, 약 100만유로) → 알라냐스포르(2025)",
+      "ovr": 70,
+      "scout": {
+        "skill": 70,
+        "value": 70,
+        "fame": 64
+      }
+    },
+    {
+      "id": "charles-pickel",
+      "name": "샤를 피켈",
+      "nameEn": "Charles Pickel",
+      "team": "콩고민주공화국",
+      "club": "에스파뇰 (Espanyol)",
+      "league": "라리가 (스페인)",
+      "position": "MF/수비형 미드필더",
+      "age": 29,
+      "caps": 33,
+      "intlGoals": 1,
+      "grade": "주전급",
+      "gradeScore": 71,
+      "oneLiner": "스위스 출생의 라리가급 6번, 중원 안정감을 책임지는 살림꾼",
+      "strengths": [
+        "볼 탈취와 인터셉트 능력",
+        "라리가·세리에A 등 5대 리그 경험",
+        "전진 패스로 빌드업 연결"
+      ],
+      "weaknesses": [
+        "공격 생산성(골·도움) 부족",
+        "경고 누적 잦은 거친 태클",
+        "에스파뇰에서 출전 시간 변동"
+      ],
+      "honours": [
+        "세리에B 승격 (크레모네세)"
+      ],
+      "notableTransfer": "크레모네세(세리에A, 2022) → 에스파뇰(2025)",
+      "ovr": 71,
+      "scout": {
+        "skill": 71,
+        "value": 71,
+        "fame": 57
+      }
+    },
+    {
+      "id": "nathanael-mbuku",
+      "name": "나타나엘 음부쿠",
+      "nameEn": "Nathanael Mbuku",
+      "team": "콩고민주공화국",
+      "club": "몽펠리에 (Montpellier, 아우크스부르크 임대)",
+      "league": "리그2 (프랑스)",
+      "position": "FW/윙어",
+      "age": 24,
+      "caps": 6,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 64,
+      "oneLiner": "프랑스 유스 출신의 폭발적 측면 드리블러, 2024년 콩고 대표팀 전향",
+      "strengths": [
+        "빠른 발과 1대1 돌파",
+        "왼발 슈팅과 측면 침투",
+        "젊은 나이의 성장 잠재력"
+      ],
+      "weaknesses": [
+        "분데스리가 정착 실패 후 리그2 임대",
+        "기복과 일관성 부족",
+        "대표팀 경험 매우 적음(6캡)"
+      ],
+      "honours": [
+        "2019 U-17 월드컵 실버부트(6경기 5골)"
+      ],
+      "notableTransfer": "스타드 랭스 → 아우크스부르크(분데스리가) → 몽펠리에 임대(2025)",
+      "ovr": 64,
+      "scout": {
+        "skill": 64,
+        "value": 64,
+        "fame": 47
+      }
+    },
+    {
+      "id": "aaron-tshibola",
+      "name": "에런 치볼라",
+      "nameEn": "Aaron Tshibola",
+      "team": "콩고민주공화국",
+      "club": "킬마녹 (Kilmarnock)",
+      "league": "스코티시 프리미어십 (스코틀랜드)",
+      "position": "MF/수비형 미드필더",
+      "age": 31,
+      "caps": 3,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 55,
+      "oneLiner": "잉글랜드 출생 베테랑 수비형 미드필더, 부상당한 부시리를 대체한 막판 콜업",
+      "strengths": [
+        "피지컬과 활동량 기반의 중원 차단",
+        "잉글랜드·스코틀랜드 풍부한 경기 경험",
+        "후방 안정성을 더하는 백업 옵션"
+      ],
+      "weaknesses": [
+        "대표팀 경험 거의 전무(3캡)",
+        "리그 레벨이 낮음(스코티시 프리미어십)",
+        "빌드업·창의성 제한적"
+      ],
+      "honours": [],
+      "notableTransfer": "레딩 → 애스턴 빌라(2016) → 여러 임대 후 킬마녹",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 52,
+        "fame": 39
+      }
+    },
+    {
+      "id": "brian-cipenga",
+      "name": "브리안 시펜가",
+      "nameEn": "Brian Cipenga",
+      "team": "콩고민주공화국",
+      "club": "카스테욘 (CD Castellon)",
+      "league": "라리가2 (스페인)",
+      "position": "MF/좌측 미드필더",
+      "age": 28,
+      "caps": null,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 58,
+      "oneLiner": "카메룬과의 플레이오프 준결승에서 음벰바 결승골을 어시스트한 깜짝 카드",
+      "strengths": [
+        "측면에서의 크로스와 어시스트 능력",
+        "교체 투입 시 임팩트(준결승 결정적 도움)",
+        "왼쪽 미드 전 지역 활동"
+      ],
+      "weaknesses": [
+        "라리가2 레벨로 검증 제한적",
+        "대표팀 경험 극히 적음",
+        "수비 가담·피지컬 약점"
+      ],
+      "honours": [],
+      "notableTransfer": "파수스 드 페헤이라(포르투갈) → 카스테욘(2024)",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 58,
+        "fame": 41
+      }
+    },
+    {
+      "id": "bekhruz-karimov",
+      "name": "베흐루즈 카리모프",
+      "nameEn": "Bekhruz Karimov",
+      "team": "우즈베키스탄",
+      "club": "Surkhon Termez",
+      "league": "우즈베키스탄 슈퍼리그 (Uzbekistan)",
+      "position": "DF (라이트백)",
+      "age": 18,
+      "caps": 3,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 55,
+      "oneLiner": "2007년생 폭발적 라이트백 신성, 2026년 5월 다리 골절 수술이 변수",
+      "strengths": [
+        "수비 진영을 폭넓게 커버하는 활동량",
+        "어린 나이에 비해 성숙한 1대1 대인 수비",
+        "측면 오버래핑 속도"
+      ],
+      "weaknesses": [
+        "5월 다리 골절 부상으로 컨디션·출전 불확실",
+        "A매치 경험 극소수",
+        "최종 수비 판단력 미성숙"
+      ],
+      "honours": [],
+      "notableTransfer": "Olympic Tashkent → Surkhon Termez (2025)",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 58,
+        "fame": 39
+      }
+    },
+    {
+      "id": "odiljon-hamrobekov",
+      "name": "오딜존 함로베코프",
+      "nameEn": "Odiljon Hamrobekov",
+      "team": "우즈베키스탄",
+      "club": "Tractor SC",
+      "league": "페르시안 걸프 프로리그 (Iran)",
+      "position": "MF (수비형/중앙 미드필더)",
+      "age": 30,
+      "caps": 71,
+      "intlGoals": 1,
+      "grade": "주전급",
+      "gradeScore": 71,
+      "oneLiner": "70캡 베테랑 앵커맨, 중원 균형과 수비 차단의 핵심 살림꾼",
+      "strengths": [
+        "풍부한 A매치 경험과 리더십",
+        "후방 빌드업 연결과 볼 배급",
+        "공수 전환 시 위치선정과 인터셉트"
+      ],
+      "weaknesses": [
+        "폭발적 스피드 부족",
+        "공격 생산성(득점·도움) 낮음",
+        "30대로 체력 내구성 관리 필요"
+      ],
+      "honours": [
+        "AFC U-23 챔피언십 우승·MVP (2018)",
+        "우즈베키스탄 슈퍼리그 우승 4회 (2019~2022, Pakhtakor)",
+        "이란 슈퍼컵 (2025)",
+        "CAFA 네이션스컵 (2025)"
+      ],
+      "notableTransfer": "Pakhtakor → Tractor SC (이란, 이란 슈퍼컵 2025 우승)",
+      "ovr": 71,
+      "scout": {
+        "skill": 71,
+        "value": 67,
+        "fame": 69
+      }
+    },
+    {
+      "id": "azizjon-ganiev",
+      "name": "아지즈존 가니예프",
+      "nameEn": "Azizjon Ganiev",
+      "team": "우즈베키스탄",
+      "club": "Al Bataeh",
+      "league": "UAE 프로리그 (United Arab Emirates)",
+      "position": "MF (중앙 미드필더)",
+      "age": 28,
+      "caps": 18,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 64,
+      "oneLiner": "UAE 무대에서 다수 우승을 경험한 안정적 중원 로테이션 자원",
+      "strengths": [
+        "볼 간수와 패스 안정성",
+        "다양한 우승 경험에서 오는 큰 경기 침착함",
+        "중원 양면 커버 가능"
+      ],
+      "weaknesses": [
+        "주전 경쟁에서 임팩트 부족",
+        "득점·창의성 기여도 제한적",
+        "월드컵 수준 템포 적응 미검증"
+      ],
+      "honours": [
+        "UAE 프로리그 (2022-23, Shabab Al-Ahli)",
+        "UAE 리그컵·슈퍼컵·프레지던츠컵",
+        "AFC U-23 챔피언십 (2018)",
+        "CAFA 네이션스컵 (2025)"
+      ],
+      "notableTransfer": "Nasaf → Shabab Al-Ahli (UAE, 2020) → Al Bataeh",
+      "ovr": 64,
+      "scout": {
+        "skill": 64,
+        "value": 64,
+        "fame": 54
+      }
+    },
+    {
+      "id": "sherzod-esanov",
+      "name": "셰르조드 에사노프",
+      "nameEn": "Sherzod Esanov",
+      "team": "우즈베키스탄",
+      "club": "FC Bukhara",
+      "league": "우즈베키스탄 슈퍼리그 (Uzbekistan)",
+      "position": "MF (중앙 미드필더)",
+      "age": 23,
+      "caps": 1,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 52,
+      "oneLiner": "190cm 장신 중앙 미드필더, 러시아 무대 경험 갖춘 신예 깜짝 발탁",
+      "strengths": [
+        "190cm 신장 활용한 공중볼·박스 침투",
+        "러시아 프리미어리그 경험",
+        "체격 대비 준수한 볼 컨트롤"
+      ],
+      "weaknesses": [
+        "A매치 1캡으로 국제 경험 거의 전무",
+        "기동성·민첩성 다소 부족",
+        "수비 가담 시 압박 적응 미흡"
+      ],
+      "honours": [],
+      "notableTransfer": "Akron Tolyatti (러시아 프리미어리그) → FC Bukhara (2026.1)",
+      "ovr": 52,
+      "scout": {
+        "skill": 52,
+        "value": 55,
+        "fame": 37
+      }
+    },
+    {
+      "id": "gustavo-puerta",
+      "name": "구스타보 푸에르타",
+      "nameEn": "Gustavo Puerta",
+      "team": "콜롬비아",
+      "club": "라싱 산탄데르",
+      "league": "세군다 디비시온 (스페인 2부)",
+      "position": "MF (중앙/수비형 미드필더)",
+      "age": 22,
+      "caps": 3,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 62,
+      "oneLiner": "콜롬비아 중원의 미래로 꼽히는 U-20 주장 출신, A대표 데뷔골을 신고한 박스-투-박스 유망주",
+      "strengths": [
+        "넓은 활동량과 박스-투-박스 커버리지",
+        "왕성한 체력과 전진 패스 시도",
+        "데뷔전 득점으로 입증한 침투 감각",
+        "젊은 나이의 성장 잠재력"
+      ],
+      "weaknesses": [
+        "A대표 경험 절대 부족(소집 초기 단계)",
+        "스페인 2부 무대 경쟁력 검증 필요",
+        "월드컵 본선 압박 무대 미경험",
+        "기복과 수비 위치 선정 안정화 과제"
+      ],
+      "honours": [
+        "분데스리가 우승 (2023-24, 바이엘 레버쿠젠)",
+        "남미 U-20 챔피언십 3위 및 주장 (2023)"
+      ],
+      "notableTransfer": "2023년 보타포고 출신으로 바이엘 레버쿠젠 이적(2023-24 분데스리가 우승 멤버), 2025년 9월 라싱 산탄데르로 완전 이적",
+      "ovr": 62,
+      "scout": {
+        "skill": 62,
+        "value": 65,
+        "fame": 47
+      }
+    },
+    {
+      "id": "juan-camilo-portilla",
+      "name": "후안 카밀로 포르티야",
+      "nameEn": "Juan Camilo Portilla",
+      "team": "콜롬비아",
+      "club": "아틀레치쿠 파라나엔시",
+      "league": "캄페오나투 브라질레이루 세리에 A (브라질)",
+      "position": "MF (수비형 미드필더)",
+      "age": 27,
+      "caps": 8,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 60,
+      "oneLiner": "거친 수비와 볼 회수에 특화된 콜롬비아 중원의 살림꾼형 6번 자원",
+      "strengths": [
+        "볼 탈취와 인터셉트 등 수비형 미드필더 본연의 임무",
+        "중원 균형 유지와 커버 플레이",
+        "남미 무대(아르헨티나·브라질) 경험치",
+        "전술 이해도와 포지셔닝"
+      ],
+      "weaknesses": [
+        "공격 기여도와 득점력 부족(A대표 0골)",
+        "빌드업 창의성·전진 패스의 임팩트 제한",
+        "8캡으로 본선 경험 미미",
+        "주전 경쟁에서의 입지(로테이션 성격)"
+      ],
+      "honours": [],
+      "notableTransfer": "아르헨티나 탈레레스에서 활약 후 2026년 1월 아틀레치쿠 파라나엔시로 완전 이적(2028년까지 계약)",
+      "ovr": 60,
+      "scout": {
+        "skill": 60,
+        "value": 60,
+        "fame": 43
+      }
+    },
+    {
+      "id": "jaminton-campaz",
+      "name": "하민톤 캄파스",
+      "nameEn": "Jáminton Campaz",
+      "team": "콜롬비아",
+      "club": "로사리오 센트랄",
+      "league": "리가 프로페시오날 (아르헨티나)",
+      "position": "FW (왼쪽 윙어/공격형 미드필더)",
+      "age": 26,
+      "caps": 8,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 58,
+      "oneLiner": "왼발 드리블과 측면 파괴력을 갖춘 콜롬비아의 슈퍼서브형 공격 옵션",
+      "strengths": [
+        "왼발 드리블 돌파와 측면 1대1 능력",
+        "공격형 미드필더와 윙어 겸업 가능한 다재다능함",
+        "세트피스 키커 역량",
+        "교체 투입 시 변화구 카드"
+      ],
+      "weaknesses": [
+        "A대표 득점·결정력 미흡(8캡 0골)",
+        "빅리그 무대 검증 부족",
+        "수비 가담과 활동량 기복",
+        "주전급으로 도약하기엔 임팩트 안정성 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "데포르티보 칼리·톨리마 등 콜롬비아 무대를 거쳐 2024년 1월 아르헨티나 로사리오 센트랄로 이적",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 58,
+        "fame": 42
+      }
+    },
+    {
+      "id": "nico-o-reilly",
+      "name": "니코 오라일리",
+      "nameEn": "Nico O'Reilly",
+      "team": "잉글랜드",
+      "club": "맨체스터 시티",
+      "league": "프리미어리그 (잉글랜드)",
+      "position": "DF/MF (좌측 풀백/인버티드 윙백, 멀티 포지션)",
+      "age": 21,
+      "caps": 3,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "gradeScore": 71,
+      "oneLiner": "2025-26 PL 영플레이어이자 맨시티 올해의 선수, 첫 메이저 대회에 깜짝 발탁된 멀티 풀백",
+      "strengths": [
+        "좌측 풀백·인버티드 윙백·미드필더를 오가는 포지션 유연성",
+        "왕성한 볼 캐리와 전진 능력",
+        "양발 활용과 공격 가담 시 득점력(PL 5골)",
+        "21세 답지 않은 빅매치 침착함"
+      ],
+      "weaknesses": [
+        "국가대표 경험 3캡으로 절대적 부족",
+        "월드컵 본선 무대 검증 전무",
+        "전문 풀백 대비 1대1 수비 안정감 미완성"
+      ],
+      "honours": [
+        "FA컵 (2025-26)",
+        "EFL컵 (2025-26)",
+        "FA 커뮤니티 실드 (2024)"
+      ],
+      "notableTransfer": "맨시티 아카데미 순혈(2013년 8세 입단), 2024년 1군 데뷔 후 2025년 9월 2030년까지 재계약",
+      "ovr": 71,
+      "scout": {
+        "skill": 71,
+        "value": 75,
+        "fame": 55
+      }
+    },
+    {
+      "id": "noni-madueke",
+      "name": "노니 마두에케",
+      "nameEn": "Noni Madueke",
+      "team": "잉글랜드",
+      "club": "아스널",
+      "league": "프리미어리그 (잉글랜드)",
+      "position": "FW (우측 윙어, 좌우 측면 모두 가능)",
+      "age": 24,
+      "caps": 10,
+      "intlGoals": 1,
+      "grade": "주전급",
+      "gradeScore": 78,
+      "oneLiner": "폭발적인 드리블과 컷인 슈팅을 갖춘 양 측면 윙어, 아스널 PL 우승 멤버이자 잉글랜드 회전 카드",
+      "strengths": [
+        "빠른 가속과 1대1 돌파",
+        "안쪽으로 파고드는 컷인 후 강한 오른발 슈팅",
+        "양 측면 소화 가능한 범용성",
+        "직선적이고 공격적인 전개"
+      ],
+      "weaknesses": [
+        "슈팅·패스 선택의 기복",
+        "수비 가담과 전술 규율의 일관성 부족",
+        "국가대표 1골로 결정력 검증 미완"
+      ],
+      "honours": [
+        "프리미어리그 (2025-26, 아스널)",
+        "FA 유스컵",
+        "에레디비시 우승 (PSV)"
+      ],
+      "notableTransfer": "2025년 7월 첼시에서 아스널로 초기 이적료 약 4,850만 파운드에 이적, 이적 첫 시즌 PL 우승",
+      "ovr": 78,
+      "scout": {
+        "skill": 78,
+        "value": 78,
+        "fame": 61
+      }
+    },
+    {
+      "id": "kristijan-jakic",
+      "name": "크리스티얀 야키치",
+      "nameEn": "Kristijan Jakic",
+      "team": "크로아티아",
+      "club": "FC 아우크스부르크",
+      "league": "분데스리가 (독일)",
+      "position": "MF (수비형 미드필더)",
+      "age": 29,
+      "caps": 12,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 64,
+      "oneLiner": "거친 태클과 활동량으로 중원을 받치는 박스투박스형 수비 미드필더, 디나모와 프랑크푸르트에서 우승 경험을 쌓은 백업 자원.",
+      "strengths": [
+        "왕성한 활동량과 압박",
+        "수비 가담 및 볼 탈취",
+        "포지션 유연성 (수비형 MF/풀백)"
+      ],
+      "weaknesses": [
+        "창의적 전진 패스 부족",
+        "주전급 클럽에서의 꾸준함 부족",
+        "공격 생산성 미미"
+      ],
+      "honours": [
+        "UEFA 유로파리그 우승 2021-22 (프랑크푸르트)",
+        "크로아티아 1부리그(HNL) 우승 2020-21 (디나모 자그레브)",
+        "크로아티아컵 우승 2020-21"
+      ],
+      "notableTransfer": "2024년 아인트라흐트 프랑크푸르트 임대 후 아우크스부르크 완전 이적 (4년 계약)",
+      "ovr": 64,
+      "scout": {
+        "skill": 64,
+        "value": 64,
+        "fame": 52
+      }
+    },
+    {
+      "id": "nikola-moro",
+      "name": "니콜라 모로",
+      "nameEn": "Nikola Moro",
+      "team": "크로아티아",
+      "club": "볼로냐 FC",
+      "league": "세리에 A (이탈리아)",
+      "position": "MF (수비형/중앙 미드필더)",
+      "age": 28,
+      "caps": 9,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 65,
+      "oneLiner": "볼로냐 코파 이탈리아 우승 멤버로 안정적인 볼 배급과 수비 균형을 제공하는 중원 회전 자원.",
+      "strengths": [
+        "안정적인 볼 순환과 패스",
+        "수비 위치선정",
+        "세리에 A 검증된 피지컬"
+      ],
+      "weaknesses": [
+        "폭발적 전개력 부족",
+        "득점/도움 생산성 낮음",
+        "스피드 부족"
+      ],
+      "honours": [
+        "크로아티아 1부리그(HNL) 우승 (디나모 자그레브)",
+        "코파 이탈리아 우승 2024-25 (볼로냐)"
+      ],
+      "notableTransfer": "2022년 디나모 모스크바에서 볼로냐 임대 후 2023년 완전 이적",
+      "ovr": 65,
+      "scout": {
+        "skill": 65,
+        "value": 65,
+        "fame": 50
+      }
+    },
+    {
+      "id": "toni-fruk",
+      "name": "토니 프루크",
+      "nameEn": "Toni Fruk",
+      "team": "크로아티아",
+      "club": "HNK 리예카",
+      "league": "크로아티아 1부리그 HNL (크로아티아)",
+      "position": "MF (공격형 미드필더 / 윙어)",
+      "age": 25,
+      "caps": 4,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 60,
+      "oneLiner": "리예카 더블 우승을 이끈 왼발잡이 공격형 미드필더, 2024-25시즌 15골로 팀 득점 1위에 오른 국내 리그 상승세 자원.",
+      "strengths": [
+        "왼발 슈팅과 마무리 능력",
+        "공격 2선 침투와 연계",
+        "세트피스 위협"
+      ],
+      "weaknesses": [
+        "빅리그 경험 전무",
+        "국가대표 경험 부족",
+        "수비 기여도 낮음"
+      ],
+      "honours": [
+        "크로아티아 1부리그(HNL) 우승 2024-25 (리예카)",
+        "크로아티아컵 우승 2024-25"
+      ],
+      "notableTransfer": "2023년 피오렌티나 유스 거쳐 리예카로 이적 (2027년까지 계약)",
+      "ovr": 60,
+      "scout": {
+        "skill": 60,
+        "value": 60,
+        "fame": 46
+      }
+    },
+    {
+      "id": "marco-pasalic",
+      "name": "마르코 파샬리치",
+      "nameEn": "Marco Pasalic",
+      "team": "크로아티아",
+      "club": "올랜도 시티 SC",
+      "league": "메이저리그사커 MLS (미국)",
+      "position": "FW (오른쪽 윙어)",
+      "age": 25,
+      "caps": 11,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "gradeScore": 63,
+      "oneLiner": "리예카 더블 우승 후 올랜도 시티 지정선수로 활약 중인 폭발적 드리블의 오른쪽 윙어, 2024년 데뷔골을 신고한 측면 옵션.",
+      "strengths": [
+        "빠른 스피드와 1대1 돌파",
+        "측면 침투와 컷인 슈팅",
+        "왕성한 활동량과 압박"
+      ],
+      "weaknesses": [
+        "마무리 결정력 기복",
+        "유럽 빅리그 주전 경험 부족",
+        "패스 정확도 개선 필요"
+      ],
+      "honours": [
+        "크로아티아 1부리그(HNL) 우승 2024-25 (리예카)",
+        "크로아티아컵 우승 2024-25"
+      ],
+      "notableTransfer": "2025년 2월 리예카에서 올랜도 시티로 지정선수(DP) 이적 (3년 계약)",
+      "ovr": 63,
+      "scout": {
+        "skill": 63,
+        "value": 63,
+        "fame": 49
+      }
+    },
+    {
+      "id": "cristian-martinez",
+      "name": "크리스티안 마르티네스",
+      "nameEn": "Cristian Martínez",
+      "team": "파나마",
+      "club": "이로니 키르야트 시모나 (Ironi Kiryat Shmona)",
+      "league": "이스라엘 프리미어리그 (Israel)",
+      "position": "MF (중앙/공격형 미드필더)",
+      "age": 29,
+      "caps": 60,
+      "intlGoals": 5,
+      "grade": "로테이션",
+      "gradeScore": 58,
+      "oneLiner": "60캡의 베테랑 미드필더로, 활동량과 경기 운영으로 중원에 안정감을 더하는 로테이션 자원.",
+      "strengths": [
+        "풍부한 A매치 경험(60캡)",
+        "넓은 활동 범위와 체력",
+        "양발 활용과 전술 이해도"
+      ],
+      "weaknesses": [
+        "약한 리그 무대(이스라엘) 한계",
+        "폭발적 득점력 부족",
+        "주전 경쟁에서 입지가 유동적"
+      ],
+      "honours": [
+        "2023 CONCACAF 네이션스리그 준우승"
+      ],
+      "notableTransfer": "2024년 7월 이스라엘 이로니 키르야트 시모나 이적",
+      "ovr": 58,
+      "scout": {
+        "skill": 58,
+        "value": 58,
+        "fame": 53
+      }
+    },
+    {
+      "id": "cesar-yanis",
+      "name": "세사르 야니스",
+      "nameEn": "César Yanis",
+      "team": "파나마",
+      "club": "코브레살 (Cobresal)",
+      "league": "칠레 프리메라 디비시온 (Chile)",
+      "position": "FW (윙어 / 와이드 포워드)",
+      "age": 30,
+      "caps": 54,
+      "intlGoals": 5,
+      "grade": "로테이션",
+      "gradeScore": 60,
+      "oneLiner": "측면을 폭넓게 쓰는 30세 윙어로, 칠레 무대 경험과 54캡을 갖춘 알찬 백업 공격 옵션.",
+      "strengths": [
+        "측면 돌파와 스피드",
+        "꾸준한 대표팀 소집 경험",
+        "양 측면 소화 가능한 유연성"
+      ],
+      "weaknesses": [
+        "기복 있는 결정력",
+        "주전급 폭발력 부족",
+        "다소 늦은 전성기(30세)"
+      ],
+      "honours": [
+        "2023 CONCACAF 골드컵 준우승"
+      ],
+      "notableTransfer": "칠레 코브레살에서 측면 공격수로 활약",
+      "ovr": 60,
+      "scout": {
+        "skill": 60,
+        "value": 57,
+        "fame": 53
+      }
+    },
+    {
+      "id": "azarias-londono",
+      "name": "아사리아스 론도뇨",
+      "nameEn": "Azarías Londoño",
+      "team": "파나마",
+      "club": "우니베르시닷 카톨리카 (Universidad Católica, 알리안사서 임대)",
+      "league": "에콰도르 세리에 A (Ecuador)",
+      "position": "FW (공격수)",
+      "age": 24,
+      "caps": 11,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "gradeScore": 55,
+      "oneLiner": "에콰도르 무대에서 꾸준히 골을 넣으며 떠오른 24세 공격수, 파나마의 미래형 옵션.",
+      "strengths": [
+        "나이 대비 안정된 골 결정력",
+        "에콰도르 리그서 검증된 폼",
+        "성장 잠재력과 다관왕 경험"
+      ],
+      "weaknesses": [
+        "적은 A매치 경험(11캡)",
+        "톱레벨 빅리그 검증 부족",
+        "임대 신분으로 불안정한 소속 환경"
+      ],
+      "honours": [
+        "2022 리가 파나메냐 데 풋볼 우승(알리안사)",
+        "2023 리가 과테말라 우승(코무니카시오네스)",
+        "2025 코파 에콰도르 우승(우니베르시닷 카톨리카)"
+      ],
+      "notableTransfer": "2025년 1월 알리안사(파나마)서 에콰도르 우니베르시닷 카톨리카로 임대",
+      "ovr": 55,
+      "scout": {
+        "skill": 55,
+        "value": 55,
+        "fame": 45
+      }
+    },
+    {
+      "id": "danilo-br",
+      "name": "다닐루 (보타포구)",
+      "nameEn": "Danilo",
+      "team": "브라질",
+      "club": "Botafogo",
+      "league": "캄페오나투 브라질레이루 세리이 A (브라질)",
+      "position": "MF (DM/CM, 수비형/중앙 미드필더)",
+      "age": 24,
+      "caps": 7,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "gradeScore": 71,
+      "oneLiner": "보타포구의 리베르타도레스 우승을 이끈 박스투박스 미드필더, 활동량과 회수 능력이 강점인 중원 백업",
+      "strengths": [
+        "넓은 활동 범위와 왕성한 체력",
+        "볼 탈취와 인터셉트",
+        "전후방을 잇는 전진 패스"
+      ],
+      "weaknesses": [
+        "유럽 빅리그 적응 실패 이력",
+        "결정적 공격 생산성 부족",
+        "경기 기복과 집중력 유지 과제"
+      ],
+      "honours": [
+        "코파 리베르타도레스 (2024)",
+        "캄페오나투 브라질레이루 (2024)"
+      ],
+      "notableTransfer": "2022년 팔메이라스에서 노팅엄 포레스트로 이적했으나 부진, 2024년 보타포구로 복귀해 리베르타도레스 우승 주역",
+      "ovr": 71,
+      "scout": {
+        "skill": 71,
+        "value": 71,
+        "fame": 54
       }
     }
   ],
