@@ -180,6 +180,13 @@
     }
 
     viewEl.innerHTML = strip + heroHtml + listHtml;
+
+    // 선택한 날짜 칩이 보이도록 스트립을 가로 스크롤(매 렌더마다 맨 앞으로 튀는 문제 방지)
+    var stripEl = viewEl.querySelector(".datestrip");
+    var onChip = stripEl && stripEl.querySelector(".dchip.on");
+    if (stripEl && onChip) {
+      stripEl.scrollLeft = Math.max(0, onChip.offsetLeft - stripEl.clientWidth / 2 + onChip.clientWidth / 2);
+    }
   }
 
   function pickBigMatch(list) {
