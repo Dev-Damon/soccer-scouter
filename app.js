@@ -47,9 +47,9 @@
     return s ? s.slice(0, 1) : "?";
   }
   function gradeClass(g) { return "g-" + esc(g); }
-  function badge(p) {
+  function badge(p, hideScore) {
     return '<span class="badge ' + gradeClass(p.grade) + '">' + esc(p.grade) +
-      ' <span class="score">' + (p.gradeScore || "") + "</span></span>";
+      (hideScore ? "" : ' <span class="score">' + (p.gradeScore || "") + "</span>") + "</span>";
   }
   // 이름 첫글자 대신 '포지션 배지'(GK/DF/MF/FW 색상) — 의미 있는 시각 요소
   function shortPos(pos) {
@@ -85,6 +85,11 @@
     if (/\bDF\b|CB|LB|RB|WB/.test(p) || /센터백|레프트백|라이트백|풀백|윙백|수비수/.test(s) || (s.indexOf("수비") !== -1 && s.indexOf("수비형 미") === -1)) return "df";
     if (/\bFW\b|ST|CF|LW|RW/.test(p) || /스트라이커|공격수|윙어|포워드/.test(s)) return "fw";
     return "mf";
+  }
+  // 포메이션 순서(공격→미드필더→수비→GK). 나라 상세 선수단의 1차 정렬키.
+  function posRank(p) {
+    var c = posClass(p && p.position);
+    return c === "fw" ? 0 : c === "mf" ? 1 : c === "df" ? 2 : 3;
   }
 
   // ---- 라우팅(해시 기반) ----
@@ -303,12 +308,12 @@
   }
 
   // ===================== 공통: 선수 행 =====================
-  function playerRow(p) {
+  function playerRow(p, hideScore) {
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
       posBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
       '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + " · " + esc(p.position) + "</div></div>" +
-      badge(p) + "</div>";
+      badge(p, hideScore) + "</div>";
   }
 
   // ===================== 검색 =====================
@@ -484,8 +489,14 @@
     backBtn.hidden = false;
     tabsEl.hidden = true;
 
+    // 주 정렬: 포메이션 순서(공격→미드→수비→GK), 같은 포지션 안에서는 점수 높은순.
+    // gradeScore는 정렬용으로만 내부 유지하고 UI 배지에는 노출하지 않는다.
     var roster = DATA.players.filter(function (p) { return p.team === t.name; })
-      .sort(function (a, b) { return (b.gradeScore || 0) - (a.gradeScore || 0); });
+      .sort(function (a, b) {
+        var ra = posRank(a), rb = posRank(b);
+        if (ra !== rb) return ra - rb;
+        return (b.gradeScore || 0) - (a.gradeScore || 0);
+      });
 
     // 컨트리 히어로
     var html = '<div class="detail">' +
@@ -574,7 +585,7 @@
 
     // 전체 선수단
     var rosterHtml = roster.length
-      ? '<div class="grid">' + roster.map(playerRow).join("") + "</div>"
+      ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, true); }).join("") + "</div>"
       : '<div class="empty">선수 데이터를 채우는 중입니다.</div>';
     html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
 
