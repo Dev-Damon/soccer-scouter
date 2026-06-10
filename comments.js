@@ -392,6 +392,48 @@
     if (!user) return Promise.reject(new Error("login"));
     return sb.from("player_ratings").upsert({ player_id: pid, user_id: user.id, score: score, updated_at: new Date().toISOString() }, { onConflict: "player_id,user_id" });
   }
+  // ── 게시판 ──
+  function listPosts(category) {
+    if (!client()) return Promise.resolve({ posts: [], stats: {} });
+    var qy = sb.from("board_posts").select("*").eq("hidden", false);
+    if (category && category !== "전체") qy = qy.eq("category", category);
+    return qy.order("created_at", { ascending: false }).limit(100).then(function (r) {
+      var posts = r.data || [];
+      if (!posts.length) return { posts: posts, stats: {} };
+      var ids = posts.map(function (p) { return p.id; });
+      return sb.from("board_post_stats").select("*").in("post_id", ids).then(function (rr) {
+        var st = {}; (rr.data || []).forEach(function (x) { st[x.post_id] = { likes: x.likes || 0, comments: x.comments || 0 }; });
+        return { posts: posts, stats: st };
+      }).catch(function () { return { posts: posts, stats: {} }; });
+    }).catch(function () { return { posts: [], stats: {} }; });
+  }
+  function getPost(id) {
+    if (!client()) return Promise.resolve(null);
+    return Promise.all([
+      sb.from("board_posts").select("*").eq("id", id).maybeSingle(),
+      sb.from("board_post_stats").select("*").eq("post_id", id).maybeSingle(),
+      user ? sb.from("board_post_likes").select("post_id").eq("post_id", id).eq("user_id", user.id).maybeSingle() : Promise.resolve({ data: null })
+    ]).then(function (res) {
+      var p = res[0] && res[0].data; if (!p) return null;
+      var st = (res[1] && res[1].data) || {};
+      p._likes = st.likes || 0; p._comments = st.comments || 0;
+      p._liked = !!(res[2] && res[2].data);
+      return p;
+    }).catch(function () { return null; });
+  }
+  function bumpView(id) { if (sb) { try { sb.rpc("increment_post_view", { pid: id }); } catch (e) {} } }
+  function createPost(category, title, body) {
+    if (!user) return Promise.reject(new Error("login"));
+    return sb.from("board_posts").insert({ category: category || "자유", title: (title || "").trim().slice(0, 100), body: mask((body || "").trim()).slice(0, 2000), user_id: user.id, name: uname(user) }).select("id").maybeSingle();
+  }
+  function deletePost(id) { return sb.from("board_posts").delete().eq("id", id); }
+  function togglePostLike(id, liked) {
+    if (!user) return Promise.reject(new Error("login"));
+    return liked ? sb.from("board_post_likes").delete().eq("post_id", id).eq("user_id", user.id)
+                 : sb.from("board_post_likes").insert({ post_id: id, user_id: user.id });
+  }
+  function listAllPostsAdmin() { if (!isAdmin()) return Promise.resolve([]); return sb.from("board_posts").select("*").order("created_at", { ascending: false }).limit(200).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
+  function adminHidePost(id, hide) { return sb.from("board_posts").update({ hidden: hide }).eq("id", id); }
 
   function inAppBrowser() {
     var ua = (navigator.userAgent || "").toLowerCase();
@@ -487,6 +529,9 @@
     isAdmin: isAdmin, listReports: listReports, listAllComments: listAllComments,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
-    ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer
+    ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
+    listPosts: listPosts, getPost: getPost, bumpView: bumpView, createPost: createPost,
+    deletePost: deletePost, togglePostLike: togglePostLike,
+    listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost
   };
 })();

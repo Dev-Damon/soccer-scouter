@@ -138,6 +138,9 @@
     if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "manager") return { name: "manager", id: parts[1] };
     if (parts[0] === "search") return { name: "search" };
+    if (parts[0] === "board") return { name: "board" };
+    if (parts[0] === "post") return { name: "post", id: parts[1] };
+    if (parts[0] === "write") return { name: "write" };
     if (parts[0] === "saved") return { name: "saved" };
     if (parts[0] === "my") return { name: "my" };
     if (parts[0] === "admin") return { name: "admin" };
@@ -1256,6 +1259,80 @@
     });
   }
 
+  // ===================== 게시판(커뮤니티) =====================
+  var boardCat = "전체", boardSort = "new", boardCache = null;
+  function agoShort(iso) {
+    try { var s = (Date.now() - new Date(iso).getTime()) / 1000;
+      if (s < 60) return "방금"; if (s < 3600) return Math.floor(s / 60) + "분 전";
+      if (s < 86400) return Math.floor(s / 3600) + "시간 전"; return Math.floor(s / 86400) + "일 전";
+    } catch (e) { return ""; }
+  }
+  function boardItem(p) {
+    var st = boardCache.stats[p.id] || { likes: 0, comments: 0 };
+    return '<div class="bd-item" data-go="post/' + esc(p.id) + '">' +
+      '<span class="bd-cat-tag">' + esc(p.category) + "</span>" +
+      '<div class="bd-title">' + esc(p.title) + "</div>" +
+      (p.body ? '<div class="bd-prev">' + esc(p.body.slice(0, 60)) + "</div>" : "") +
+      '<div class="bd-meta">' + esc(p.name) + " · " + agoShort(p.created_at) +
+        ' <span class="bd-mc">❤ ' + st.likes + " · 💬 " + st.comments + "</span></div></div>";
+  }
+  function paintBoard() {
+    if (!boardCache) return;
+    var cats = ["전체", "자유", "경기예측", "응원", "정보"];
+    var catUi = '<div class="bd-cats">' + cats.map(function (c) { return '<button class="bd-cat' + (boardCat === c ? " on" : "") + '" data-bcat="' + c + '">' + c + "</button>"; }).join("") + "</div>";
+    var sortUi = '<div class="bd-sorts"><button class="bd-sort' + (boardSort === "new" ? " on" : "") + '" data-bsort="new">최신순</button><button class="bd-sort' + (boardSort === "hot" ? " on" : "") + '" data-bsort="hot">인기순</button></div>';
+    var posts = boardCache.posts.slice();
+    if (boardSort === "hot") posts.sort(function (a, b) { return ((boardCache.stats[b.id] || {}).likes || 0) - ((boardCache.stats[a.id] || {}).likes || 0); });
+    var listHtml = posts.length ? posts.map(boardItem).join("") : '<div class="empty">아직 글이 없어요. 첫 글을 남겨보세요!</div>';
+    viewEl.innerHTML = '<div class="bd"><h2 class="bd-h">📋 게시판</h2>' + catUi + sortUi +
+      '<div class="bd-list">' + listHtml + "</div></div>" +
+      '<button class="bd-fab" data-go="write">✏️ 글쓰기</button>';
+    twem(viewEl);
+  }
+  function renderBoard() {
+    backBtn.hidden = true; tabsEl.hidden = true;
+    if (!window.KickComments || !KickComments.configured()) { viewEl.innerHTML = '<div class="empty">게시판 준비 중입니다.</div>'; return; }
+    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
+    KickComments.ready().then(function () { return KickComments.listPosts(boardCat); }).then(function (d) {
+      if (parseHash().name !== "board") return;
+      boardCache = d; paintBoard();
+    }).catch(function () { viewEl.innerHTML = '<div class="empty">게시판을 불러오지 못했어요.</div>'; });
+  }
+  function renderPost(id) {
+    backBtn.hidden = false; tabsEl.hidden = true;
+    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
+    KickComments.ready().then(function () { KickComments.bumpView(id); return KickComments.getPost(id); }).then(function (p) {
+      if (parseHash().name !== "post") return;
+      if (!p) { viewEl.innerHTML = '<div class="empty">삭제되었거나 없는 글이에요.</div>'; return; }
+      var u = KickComments.user(), mine = u && u.id === p.user_id, adm = KickComments.isAdmin && KickComments.isAdmin();
+      viewEl.innerHTML = '<div class="post">' +
+        '<span class="post-cat">' + esc(p.category) + "</span>" +
+        '<h2 class="post-title">' + esc(p.title) + "</h2>" +
+        '<div class="post-meta">' + esc(p.name) + " · " + agoShort(p.created_at) + " · 조회 " + ((p.views || 0)) + "</div>" +
+        '<div class="post-body">' + esc(p.body) + "</div>" +
+        '<div class="post-act"><button class="post-like' + (p._liked ? " on" : "") + '" data-pid="' + esc(p.id) + '" data-liked="' + (p._liked ? "1" : "") + '">❤ <span>' + p._likes + "</span></button>" +
+          ((mine || adm) ? '<button class="post-del" data-pid="' + esc(p.id) + '">삭제</button>' : "") + "</div>" +
+        '<div class="post-cmt"></div></div>';
+      var slot = viewEl.querySelector(".post-cmt");
+      if (slot && window.KickComments) KickComments.mount(slot, "post:" + id);
+      twem(viewEl);
+    });
+  }
+  function renderWrite() {
+    backBtn.hidden = false; tabsEl.hidden = true;
+    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
+    KickComments.ready().then(function () {
+      if (parseHash().name !== "write") return;
+      if (!KickComments.user()) { viewEl.innerHTML = '<div class="empty">글쓰기는 로그인 후 가능해요.<br><br>하단 MY 탭에서 로그인해주세요.</div>'; return; }
+      var cats = ["자유", "경기예측", "응원", "정보"];
+      viewEl.innerHTML = '<div class="write"><h2 class="bd-h">✏️ 글쓰기</h2>' +
+        '<select class="wr-cat">' + cats.map(function (c) { return '<option value="' + c + '">' + c + "</option>"; }).join("") + "</select>" +
+        '<input class="wr-title" maxlength="100" placeholder="제목 (100자)">' +
+        '<textarea class="wr-body" maxlength="2000" placeholder="내용을 입력하세요 (2000자)"></textarea>' +
+        '<button class="wr-submit">등록</button></div>';
+    });
+  }
+
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
@@ -1267,6 +1344,9 @@
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;
       return renderSearch(searchEl.value);
     }
+    if (r.name === "board") { setTabbar("board"); return renderBoard(); }
+    if (r.name === "post") { setTabbar("board"); return renderPost(r.id); }
+    if (r.name === "write") { setTabbar("board"); return renderWrite(); }
     if (r.name === "saved") { setTabbar("saved"); return renderPlaceholder("저장", "찜한 선수·나라를 모아보는 공간 (준비 중)"); }
     if (r.name === "my") { setTabbar("my"); return renderMy(); }
     if (r.name === "admin") { setTabbar(""); return renderAdmin(); }
@@ -1304,6 +1384,39 @@
     if ((my = e.target.closest(".rank-sb"))) { rankSort = my.getAttribute("data-rsort"); rankLimit = 30; paintRanking(); return; }
     if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
     if (e.target.closest(".rank-more")) { rankLimit += 30; paintRanking(); return; }
+    if ((my = e.target.closest(".bd-cat"))) { boardCat = my.getAttribute("data-bcat"); renderBoard(); return; }
+    if ((my = e.target.closest(".bd-sort"))) { boardSort = my.getAttribute("data-bsort"); paintBoard(); return; }
+    if ((my = e.target.closest(".bd-item, .bd-fab"))) { go(my.getAttribute("data-go")); return; }
+    if ((my = e.target.closest(".post-like"))) {
+      if (!window.KickComments || !KickComments.user()) { alert("로그인 후 좋아요를 누를 수 있어요. (MY 탭에서 로그인)"); return; }
+      var lid = my.getAttribute("data-pid"), wasLiked = my.getAttribute("data-liked") === "1";
+      my.disabled = true;
+      KickComments.togglePostLike(lid, wasLiked).then(function () { renderPost(lid); }).catch(function () { my.disabled = false; });
+      return;
+    }
+    if ((my = e.target.closest(".post-del"))) {
+      if (!confirm("이 글을 삭제할까요?")) return;
+      var did = my.getAttribute("data-pid"); my.disabled = true;
+      KickComments.deletePost(did).then(function () { go("board"); });
+      return;
+    }
+    if ((my = e.target.closest(".wr-submit"))) {
+      var cat = viewEl.querySelector(".wr-cat") ? viewEl.querySelector(".wr-cat").value : "자유";
+      var ti = viewEl.querySelector(".wr-title"), bo = viewEl.querySelector(".wr-body");
+      var tv = ti ? ti.value.trim() : "", bv = bo ? bo.value.trim() : "";
+      if (!tv || !bv) { alert("제목과 내용을 입력해주세요."); return; }
+      my.disabled = true;
+      KickComments.createPost(cat, tv, bv).then(function (r) {
+        if (r && r.error) {
+          var em = String(r.error.message || "");
+          alert(/banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." : /has_link/.test(em) ? "링크는 작성할 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." : "등록 실패: " + em);
+          my.disabled = false; return;
+        }
+        var pid = r && r.data && r.data.id;
+        go(pid ? "post/" + pid : "board");
+      }).catch(function () { my.disabled = false; alert("등록 실패"); });
+      return;
+    }
     if ((ad = e.target.closest(".mgr-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
     if ((ad = e.target.closest(".mgr-del"))) {
@@ -1377,6 +1490,7 @@
       searchEl.value = "";
       if (nav === "home") { homeTab = "schedule"; go(""); }
       else if (nav === "search") { go("search"); setTimeout(function () { searchEl.focus(); }, 30); }
+      else if (nav === "board") { go("board"); }
       else if (nav === "saved") { go("saved"); }
       else if (nav === "my") { go("my"); }
     });
