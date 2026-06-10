@@ -392,8 +392,11 @@
         var la = wrap.querySelector(".ds-arrow.l"), ra = wrap.querySelector(".ds-arrow.r");
         var updArrows = function () {
           var max = stripEl.scrollWidth - stripEl.clientWidth - 2;
-          if (la) la.classList.toggle("hide", stripEl.scrollLeft <= 2);
-          if (ra) ra.classList.toggle("hide", stripEl.scrollLeft >= max || max <= 0);
+          var atStart = stripEl.scrollLeft <= 2, atEnd = stripEl.scrollLeft >= max || max <= 0;
+          if (la) la.classList.toggle("hide", atStart);
+          if (ra) ra.classList.toggle("hide", atEnd);
+          wrap.classList.toggle("at-start", atStart);
+          wrap.classList.toggle("at-end", atEnd);
         };
         if (la) la.addEventListener("click", function () { stripEl.scrollBy({ left: -stripEl.clientWidth * 0.6, behavior: "smooth" }); });
         if (ra) ra.addEventListener("click", function () { stripEl.scrollBy({ left: stripEl.clientWidth * 0.6, behavior: "smooth" }); });
