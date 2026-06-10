@@ -185,7 +185,17 @@
     "전문성? 그런 거 없습니다",
     "분석이라 쓰고 뇌피셜이라 읽는다",
     "맞으면 실력, 틀리면 모른 척",
-    "정확도는 보장 못 합니다 (재미는 보장)"
+    "정확도는 보장 못 합니다 (재미는 보장)",
+    "근거 없는 자신감의 집결지",
+    "팩트는 거들 뿐, 우기면 진실",
+    "축잘알은 조용히 뒤로가기 눌러주세요",
+    "비전문가의, 비전문가를 위한 축구 사이트",
+    "응원은 셀프, 비판은 풀파워",
+    "여긴 분석 사이트가 아니라 우김 사이트",
+    "신랄함은 기본, 팩트는 옵션",
+    "맞히면 예언자, 틀리면 그냥 팬",
+    "어차피 우승은 내 최애팀 (정신승리)",
+    "객관적인 척, 사실은 제일 주관적"
   ];
   function isKoreaFx(f) { return f.homeName === "대한민국" || f.awayName === "대한민국" || f.homeId === "south-korea" || f.awayId === "south-korea"; }
   function ddayCount(targetKst, todayKst) { return Math.round((Date.parse(targetKst + "T00:00:00Z") - Date.parse(todayKst + "T00:00:00Z")) / 86400000); }
