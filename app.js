@@ -285,7 +285,7 @@
       if (next) { var d2 = ddayCount(next, today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
       else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
     }
-    var witty = topBanner._w || (topBanner._w = WITTY[Math.floor(Math.random() * WITTY.length)]);  // 세션당 1회 고정(날짜 클릭해도 안 바뀜)
+    var witty = WITTY[wittyIdx];  // 현재 회전 중인 문구(렌더돼도 끊김 없이 이어짐)
     return '<div class="hero-banner">' +
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
@@ -293,20 +293,14 @@
       '<div class="hb-dday">' + dday + "</div></div>";
   }
 
-  // 위트 문구 2초마다 슬라이드 전환(위→아래)
-  var wittyTimer = null;
+  // 위트 문구 3초마다 슬라이드 전환 — 렌더(날짜 클릭)와 '독립적'으로 타이머 1개만 돈다(클릭해도 리셋 X)
+  var wittyTimer = null, wittyIdx = Math.floor(Math.random() * WITTY.length);
   function startWittyTicker() {
-    if (wittyTimer) { clearInterval(wittyTimer); wittyTimer = null; }
-    return;  // 서브문구 고정 — 자동 회전(3초마다) 끔(사용자 요청)
-    var el = viewEl.querySelector(".hb-sub");
-    if (!el) return;
-    var i = Math.max(0, WITTY.indexOf(el.textContent));
+    if (wittyTimer) return;  // 이미 돌고 있으면 재시작 안 함
     wittyTimer = setInterval(function () {
-      if (!document.body.contains(el)) { clearInterval(wittyTimer); wittyTimer = null; return; }
-      i = (i + 1) % WITTY.length;
-      el.classList.remove("anim"); void el.offsetWidth;  // 애니메이션 재생용 리플로우
-      el.textContent = WITTY[i];
-      el.classList.add("anim");
+      wittyIdx = (wittyIdx + 1) % WITTY.length;
+      var el = document.querySelector(".hb-sub");  // 매 틱 현재 요소 조회(재렌더돼도 끊김 없음)
+      if (el) { el.classList.remove("anim"); void el.offsetWidth; el.textContent = WITTY[wittyIdx]; el.classList.add("anim"); }
     }, 3000);
   }
 
