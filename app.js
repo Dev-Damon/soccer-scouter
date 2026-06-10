@@ -304,6 +304,18 @@
     }, 3000);
   }
 
+  // 카카오 애드핏 배너 삽입 (SPA: 영역+스크립트를 매번 새로 넣어 렌더 트리거)
+  function insertAdFit(el) {
+    if (!el || el.getAttribute("data-done")) return;
+    el.setAttribute("data-done", "1");
+    el.innerHTML = '<div class="ad-label">광고</div>';
+    var ins = document.createElement("ins"); ins.className = "kakao_ad_area"; ins.style.display = "none";
+    ins.setAttribute("data-ad-unit", "DAN-SWWhds5NegoTMohB");
+    ins.setAttribute("data-ad-width", "320"); ins.setAttribute("data-ad-height", "50");
+    el.appendChild(ins);
+    var s = document.createElement("script"); s.async = true; s.src = "//t1.kakaocdn.net/kas/static/ba.min.js";
+    el.appendChild(s);
+  }
   function renderSchedule() {
     var dates = fixtureDates();
     if (!dates.length) {
@@ -876,7 +888,9 @@
         (timeline ? '<div class="block"><h3>커리어</h3><div class="tl">' + timeline + "</div></div>" : "") +
         '<div class="block"><h3>이적</h3><div class="transfer">' + esc(p.notableTransfer || "-") + "</div></div>" +
         (team ? '<div class="team-link" data-team="' + esc(team.id) + '">' + esc(team.flag) + " " + esc(team.name) + " 전력 보기 →</div>" : "") +
+        '<div class="adslot"></div>' +
       "</div>";
+    insertAdFit(viewEl.querySelector(".adslot"));
   }
 
   function teamIdByName(name) {

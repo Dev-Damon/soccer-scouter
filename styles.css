@@ -827,6 +827,9 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .vs-clock { font-size: 11px; font-weight: 800; color: var(--muted); margin-top: 2px; }
 .vs-clock.live { color: #ff5e63; }
 .vs-clock.live::before { content: "● "; }
+.adslot { text-align: center; margin: 18px 0 4px; min-height: 54px; }
+.ad-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; letter-spacing: 1px; }
+.kakao_ad_area { margin: 0 auto; }
 
 /* twemoji 이모지 이미지(국기 등) */
 img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0.12em; display: inline-block; }
