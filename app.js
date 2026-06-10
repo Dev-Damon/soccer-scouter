@@ -1010,6 +1010,62 @@
 
   function mountCmt(key, container) { if (window.KickComments) { try { window.KickComments.mount(container || viewEl, key); } catch (e) {} } }
 
+  // ===================== 마이페이지(MY 탭) =====================
+  var myTab = "mine", myCache = null;
+  function threadInfo(key) {
+    var parts = String(key || "").split(":"), kind = parts[0], id = parts.slice(1).join(":");
+    if (kind === "player") { var p = playersById[id]; return { label: "👤 " + (p ? p.name : "선수"), hash: "player/" + id }; }
+    if (kind === "team") { var t = teamsById[id]; return { label: (t ? t.flag + " " : "") + (t ? t.name : "나라"), hash: "team/" + id }; }
+    if (kind === "match") { var f = fixturesById[id]; return { label: "⚽ " + (f ? (f.homeName || "") + " vs " + (f.awayName || "") : "경기"), hash: "match/" + id }; }
+    return { label: key, hash: "" };
+  }
+  function myItem(c) {
+    var ti = threadInfo(c.thread_key);
+    return '<div class="my-item"' + (ti.hash ? ' data-go="' + esc(ti.hash) + '"' : "") + ">" +
+      '<div class="my-iw">' + esc(ti.label) + "</div>" +
+      '<div class="my-ib">' + esc(c.body) + "</div></div>";
+  }
+  function paintMy() {
+    if (!myCache) return;
+    var nick = (window.KickComments && KickComments.nick()) || "익명";
+    var av = window.KickComments && KickComments.avatar();
+    var avH = av ? '<img class="my-av" src="' + esc(av) + '" alt="">' : '<span class="my-av ph">' + esc(nick.slice(0, 1)) + "</span>";
+    var list = myTab === "mine" ? myCache.mine : myCache.tagged;
+    var listH = list.length ? list.map(myItem).join("") : '<div class="empty">' + (myTab === "mine" ? "작성한 댓글이 없어요." : "나를 태그한 댓글이 없어요.") + "</div>";
+    viewEl.innerHTML = '<div class="my">' +
+      '<div class="my-profile">' + avH +
+        '<div class="my-meta"><div class="my-nick">' + esc(nick) + "</div>" +
+          '<button class="my-edit">닉네임 수정</button></div>' +
+        '<button class="my-out">로그아웃</button></div>' +
+      '<div class="my-editbox"></div>' +
+      '<div class="my-tabs">' +
+        '<button class="my-tabbtn' + (myTab === "mine" ? " on" : "") + '" data-mytab="mine">내가 쓴 댓글 ' + myCache.mine.length + "</button>" +
+        '<button class="my-tabbtn' + (myTab === "tagged" ? " on" : "") + '" data-mytab="tagged">나를 태그한 댓글 ' + myCache.tagged.length + "</button></div>" +
+      '<div class="my-list">' + listH + "</div></div>";
+  }
+  function renderMyLogin() {
+    return KickComments.providers().then(function (P) {
+      P = P || {};
+      var btns = (P.google ? '<button class="my-in g" data-p="google">Google로 로그인</button>' : "") +
+        (P.kakao ? '<button class="my-in kakao" data-p="kakao">카카오로 로그인</button>' : "");
+      viewEl.innerHTML = '<div class="my-login"><div class="my-login-t">로그인하면 닉네임 설정 + 내 댓글·태그 모아보기를 쓸 수 있어요.</div>' + btns + "</div>";
+    });
+  }
+  function renderMy() {
+    backBtn.hidden = true; tabsEl.hidden = true;
+    if (!window.KickComments || !KickComments.configured()) { viewEl.innerHTML = '<div class="empty">로그인 기능 준비 중입니다.</div>'; return; }
+    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
+    KickComments.ready().then(function (user) {
+      if (parseHash().name !== "my") return;
+      if (!user) return renderMyLogin();
+      Promise.all([KickComments.myComments(), KickComments.taggedComments()]).then(function (res) {
+        if (parseHash().name !== "my") return;
+        myCache = { mine: res[0] || [], tagged: res[1] || [] };
+        paintMy();
+      });
+    });
+  }
+
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
@@ -1022,7 +1078,7 @@
       return renderSearch(searchEl.value);
     }
     if (r.name === "saved") { setTabbar("saved"); return renderPlaceholder("저장", "찜한 선수·나라를 모아보는 공간 (준비 중)"); }
-    if (r.name === "my") { setTabbar("my"); return renderPlaceholder("MY", "로그인하면 내 정보·찜·설정을 볼 수 있어요 (준비 중)"); }
+    if (r.name === "my") { setTabbar("my"); return renderMy(); }
     // 홈
     setTabbar("home");
     if (searchEl.value.trim()) { tabsEl.hidden = true; return renderSearchResults(searchEl.value.trim().toLowerCase()); }
@@ -1037,6 +1093,28 @@
 
   // ===================== 이벤트 =====================
   viewEl.addEventListener("click", function (e) {
+    var my;
+    if ((my = e.target.closest(".my-in"))) { if (window.KickComments) KickComments.signIn(my.getAttribute("data-p")); return; }
+    if (e.target.closest(".my-out")) { if (window.KickComments) KickComments.signOut().then(function () { renderMy(); }); return; }
+    if (e.target.closest(".my-edit")) {
+      var ebox = viewEl.querySelector(".my-editbox");
+      if (ebox) {
+        if (ebox.innerHTML) { ebox.innerHTML = ""; return; }
+        var curn = (window.KickComments && KickComments.nick()) || "";
+        ebox.innerHTML = '<input class="my-nickin" maxlength="20" value="' + esc(curn) + '" placeholder="닉네임"><button class="my-save">저장</button>';
+        var ip = ebox.querySelector(".my-nickin"); if (ip) ip.focus();
+      }
+      return;
+    }
+    if ((my = e.target.closest(".my-save"))) {
+      var ip2 = viewEl.querySelector(".my-nickin"); var v = ip2 ? ip2.value.trim() : "";
+      if (!v) return;
+      my.disabled = true;
+      KickComments.setNickname(v).then(function () { renderMy(); }).catch(function () { my.disabled = false; alert("닉네임 저장 실패"); });
+      return;
+    }
+    if ((my = e.target.closest(".my-tabbtn"))) { myTab = my.getAttribute("data-mytab"); paintMy(); return; }
+    if ((my = e.target.closest(".my-item[data-go]"))) { go(my.getAttribute("data-go")); return; }
     var dc = e.target.closest("[data-date]");
     if (dc) { selectedDate = dc.getAttribute("data-date"); renderSchedule(); return; }
     var rc = e.target.closest(".rchip");

@@ -29,6 +29,7 @@
   var user = null;
   var stylesInjected = false;
   var sortMode = "likes";  // 'likes'(기본) | 'latest'
+  var GICON = '<svg class="gico" width="15" height="15" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>';
 
   function configured() { return !!(CONFIG.url && CONFIG.anonKey); }
 
@@ -79,10 +80,13 @@
       return Math.floor(s / 86400) + "일 전";
     } catch (e) { return ""; }
   }
+  var profile = null;  // {nickname}
   function uname(u) {
+    if (profile && profile.nickname) return profile.nickname;
     var m = (u && u.user_metadata) || {};
     return m.name || m.full_name || m.nickname || (u && u.email) || "익명";
   }
+  function avatarOf(u) { var m = (u && u.user_metadata) || {}; return m.avatar_url || m.picture || null; }
 
   var mounts = [];
   function client() {
@@ -103,7 +107,13 @@
     if (!client()) return Promise.resolve(null);
     return sb.auth.getUser()
       .then(function (r) { user = (r && r.data && r.data.user) || null; return user; })
-      .catch(function () { user = null; return null; });
+      .then(function (u) {
+        if (!u) { profile = null; return u; }
+        return sb.from("profiles").select("nickname").eq("user_id", u.id).maybeSingle()
+          .then(function (pr) { profile = (pr && pr.data) || null; return u; })
+          .catch(function () { return u; });
+      })
+      .catch(function () { user = null; profile = null; return null; });
   }
 
   // ── 렌더 ──────────────────────────────────────────────────────────────
@@ -175,7 +185,7 @@
     var root = isReply ? (c.parent_id || c.id) : c.id;
     var react = '<button class="cmt-rx up' + (rr.mine === 1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="1">▲ ' + rr.like + "</button>" +
       '<button class="cmt-rx down' + (rr.mine === -1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="-1">▼ ' + rr.dislike + "</button>";
-    return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(c.name || "익명") + '" data-root="' + esc(root) + '">' +
+    return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(c.name || "익명") + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
       '<div class="cmt-top"><span class="cmt-name">' + esc(c.name || "익명") + "</span>" +
         '<span class="cmt-time">' + timeago(c.created_at) + "</span></div>" +
       '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
@@ -202,7 +212,7 @@
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' +
         '<div class="cmt-form"><textarea class="cmt-ta" maxlength="1000" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div>'
       : '<div class="cmt-login"><span class="cmt-login-t">로그인하고 댓글 남기기</span>' +
-        ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in" data-p="google">Google</button>' : "") +
+        ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in g" data-p="google">' + GICON + "Google</button>" : "") +
         ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
     return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" + head +
       (roots.length ? sortUi : "") +
@@ -222,7 +232,7 @@
       if ((t = e.target.closest(".cmt-reply"))) { return toggleReply(m, t); }
       if ((t = e.target.closest(".cmt-del"))) { return del(m, t.getAttribute("data-id")); }
       if ((t = e.target.closest(".cmt-rsend"))) {
-        return send(m, t.getAttribute("data-root"), t.parentNode.querySelector(".cmt-ta"));
+        return send(m, t.getAttribute("data-root"), t.parentNode.querySelector(".cmt-ta"), t.getAttribute("data-replyuid"));
       }
     };
   }
@@ -236,20 +246,20 @@
     var isReply = cmt.classList.contains("reply");
     var prefill = isReply ? "@" + cmt.getAttribute("data-name") + " " : "";
     node.innerHTML = '<textarea class="cmt-ta" maxlength="1000" placeholder="답글">' + esc(prefill) + "</textarea>" +
-      '<button class="cmt-rsend" data-root="' + esc(cmt.getAttribute("data-root")) + '">답글 등록</button>';
+      '<button class="cmt-rsend" data-root="' + esc(cmt.getAttribute("data-root")) + '" data-replyuid="' + esc(cmt.getAttribute("data-uid")) + '">답글 등록</button>';
     var ta = node.querySelector(".cmt-ta");
     if (ta) { ta.focus(); try { ta.setSelectionRange(ta.value.length, ta.value.length); } catch (e2) {} }
   }
 
-  function send(m, parentId, ta) {
+  function send(m, parentId, ta, replyToUser) {
     if (!ta) return;
     var body = (ta.value || "").trim();
     if (!body) return;
     if (!user) { alert("로그인이 필요합니다."); return; }
-    var md = user.user_metadata || {};
     var rec = {
       thread_key: m.key, parent_id: parentId || null, user_id: user.id,
-      name: uname(user), avatar: md.avatar_url || md.picture || null,
+      reply_to_user: replyToUser || null,
+      name: uname(user), avatar: avatarOf(user),
       body: mask(body).slice(0, 1000)
     };
     ta.disabled = true;
@@ -271,6 +281,30 @@
       : sb.from("comment_reactions").upsert({ comment_id: commentId, user_id: user.id, value: value }, { onConflict: "comment_id,user_id" });
     op.then(function () { render(m); });
   }
+
+  // ── 마이페이지용 (app.js renderMy 에서 사용) ──
+  function setNickname(nick) {
+    nick = (nick || "").trim();
+    if (!user || !nick) return Promise.reject(new Error("invalid"));
+    nick = mask(nick).slice(0, 30);
+    return sb.from("profiles").upsert({ user_id: user.id, nickname: nick, updated_at: new Date().toISOString() }, { onConflict: "user_id" })
+      .then(function (r) {
+        if (r.error) throw r.error;
+        profile = { nickname: nick };
+        return sb.from("comments").update({ name: nick }).eq("user_id", user.id);  // 기존 댓글 표시이름 일괄 갱신
+      });
+  }
+  function myComments() {
+    if (!user) return Promise.resolve([]);
+    return sb.from("comments").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).limit(100)
+      .then(function (r) { return r.data || []; }).catch(function () { return []; });
+  }
+  function taggedComments() {
+    if (!user) return Promise.resolve([]);
+    return sb.from("comments").select("*").eq("reply_to_user", user.id).order("created_at", { ascending: false }).limit(100)
+      .then(function (r) { return r.data || []; }).catch(function () { return []; });
+  }
+  function ready() { if (!configured()) return Promise.resolve(null); return loadSDK().then(function () { return refreshUser(); }); }
 
   function signIn(provider) {
     if (!client()) return;
@@ -315,7 +349,9 @@
       ".cmt-rx{background:none;border:1px solid var(--line,#1e2a3a);color:var(--muted,#9fb0c3);font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;cursor:pointer}",
       ".cmt-rx.up.on{color:#2ee6a6;border-color:#2ee6a6}",
       ".cmt-rx.down.on{color:#e5484d;border-color:#e5484d}",
-      ".cmt-at{color:var(--accent,#2ee6a6);font-weight:700}"
+      ".cmt-at{color:var(--accent,#2ee6a6);font-weight:700}",
+      ".cmt-in.g{display:inline-flex;align-items:center;gap:7px}",
+      ".gico{flex:none;display:block}"
     ].join("");
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   }
@@ -331,5 +367,14 @@
     loadSDK().then(function () { client(); });  // detectSessionInUrl 가 ?code= → 세션, onAuthStateChange 가 박스 갱신
   })();
 
-  window.KickComments = { mount: mount, configured: configured };
+  window.KickComments = {
+    mount: mount, configured: configured, ready: ready,
+    user: function () { return user; },
+    nick: function () { return user ? uname(user) : null; },
+    avatar: function () { return avatarOf(user); },
+    signIn: signIn,
+    signOut: function () { return sb ? sb.auth.signOut() : Promise.resolve(); },
+    setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
+    providers: function () { return loadProviders(); }
+  };
 })();

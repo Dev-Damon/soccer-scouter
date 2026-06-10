@@ -195,6 +195,29 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .mn-team + .mn-team { margin-top: 18px; }
 .mn-h { display: flex; align-items: center; gap: 7px; font-weight: 800; font-size: 14px; margin: 2px 0 8px; }
 .mn-flag { font-size: 20px; }
+/* 마이페이지 */
+.my-login { padding: 28px 4px; text-align: center; }
+.my-login-t { color: var(--muted); font-size: 13.5px; margin-bottom: 18px; line-height: 1.7; }
+.my-in { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: #fff; color: #222; font-weight: 700; font-size: 14px; padding: 11px 18px; border-radius: 12px; cursor: pointer; margin: 5px; }
+.my-in.kakao { background: #FEE500; color: #3c1e1e; border-color: #FEE500; }
+.my-profile { display: flex; align-items: center; gap: 12px; padding: 6px 2px 16px; border-bottom: 1px solid var(--line); }
+.my-av { width: 48px; height: 48px; border-radius: 50%; flex: none; object-fit: cover; }
+.my-av.ph { display: grid; place-items: center; background: var(--bg-soft); color: var(--accent); font-weight: 800; font-size: 20px; }
+.my-meta { flex: 1; min-width: 0; }
+.my-nick { font-weight: 800; font-size: 17px; }
+.my-edit { background: none; border: 0; color: var(--accent); font-size: 12.5px; cursor: pointer; padding: 2px 0; }
+.my-out { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 12px; padding: 6px 12px; border-radius: 999px; cursor: pointer; flex: none; }
+.my-editbox:not(:empty) { display: flex; gap: 8px; margin: 12px 0 0; }
+.my-nickin { flex: 1; min-width: 0; background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; font-size: 14px; }
+.my-save { background: var(--accent); color: #06281d; font-weight: 800; border: 0; border-radius: 10px; padding: 0 16px; cursor: pointer; flex: none; }
+.my-tabs { display: flex; gap: 8px; margin: 16px 0 12px; }
+.my-tabbtn { flex: 1; background: none; border: 1px solid var(--line); color: var(--muted); font-size: 13px; font-weight: 700; padding: 9px; border-radius: 10px; cursor: pointer; }
+.my-tabbtn.on { background: var(--accent); color: #06281d; border-color: var(--accent); }
+.my-list { display: flex; flex-direction: column; gap: 10px; }
+.my-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; cursor: pointer; }
+.my-item:active { transform: scale(0.99); }
+.my-iw { color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+.my-ib { font-size: 14px; line-height: 1.5; color: #cdd8e6; white-space: pre-wrap; word-break: break-word; }
 
 /* Player list row */
 .player-row {
