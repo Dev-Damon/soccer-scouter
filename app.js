@@ -233,7 +233,7 @@
       el.classList.remove("anim"); void el.offsetWidth;  // 애니메이션 재생용 리플로우
       el.textContent = WITTY[i];
       el.classList.add("anim");
-    }, 2000);
+    }, 3000);
   }
 
   function renderSchedule() {

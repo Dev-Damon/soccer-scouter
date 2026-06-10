@@ -215,7 +215,7 @@
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' +
-        '<div class="cmt-form"><textarea class="cmt-ta" maxlength="1000" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div>'
+        '<div class="cmt-form"><textarea class="cmt-ta" maxlength="500" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/500</div>'
       : '<div class="cmt-login"><span class="cmt-login-t">로그인하고 댓글 남기기</span>' +
         ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in g" data-p="google">' + GICON + "Google</button>" : "") +
         ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
@@ -253,6 +253,13 @@
         return send(m, t.getAttribute("data-root"), t.parentNode.querySelector(".cmt-ta"), t.getAttribute("data-replyuid"));
       }
     };
+    m.el.oninput = function (e) {
+      var ta = e.target;
+      if (ta && ta.classList && ta.classList.contains("cmt-ta") && ta.closest(".cmt-form")) {
+        var cnt = m.el.querySelector(".cmt-count span");
+        if (cnt) cnt.textContent = ta.value.length;
+      }
+    };
   }
 
   function toggleReply(m, btn) {
@@ -263,7 +270,7 @@
     if (!user) { alert("로그인 후 답글을 남길 수 있어요."); return; }
     var isReply = cmt.classList.contains("reply");
     var prefill = isReply ? "@" + cmt.getAttribute("data-name") + " " : "";
-    node.innerHTML = '<textarea class="cmt-ta" maxlength="1000" placeholder="답글">' + esc(prefill) + "</textarea>" +
+    node.innerHTML = '<textarea class="cmt-ta" maxlength="500" placeholder="답글">' + esc(prefill) + "</textarea>" +
       '<button class="cmt-rsend" data-root="' + esc(cmt.getAttribute("data-root")) + '" data-replyuid="' + esc(cmt.getAttribute("data-uid")) + '">답글 등록</button>';
     var ta = node.querySelector(".cmt-ta");
     if (ta) { ta.focus(); try { ta.setSelectionRange(ta.value.length, ta.value.length); } catch (e2) {} }
@@ -278,7 +285,7 @@
       thread_key: m.key, parent_id: parentId || null, user_id: user.id,
       reply_to_user: replyToUser || null,
       name: uname(user), avatar: avatarOf(user),
-      body: mask(body).slice(0, 1000)
+      body: mask(body).slice(0, 500)
     };
     ta.disabled = true;
     sb.from("comments").insert(rec).then(function (r) {
@@ -414,7 +421,8 @@
       ".cmt-menu{position:absolute;right:0;top:100%;margin-top:4px;background:var(--card,#18233a);border:1px solid var(--line,#2a3a5c);border-radius:10px;padding:4px;z-index:5;box-shadow:0 6px 20px rgba(0,0,0,.4);min-width:96px}",
       ".cmt-menu[hidden]{display:none}",
       ".cmt-menu button{display:block;width:100%;text-align:left;padding:8px 12px;font-size:13px;white-space:nowrap}",
-      ".cmt-guide{background:var(--bg-soft,#131c2e);border:1px solid var(--line,#2a3a5c);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--muted,#9fb0cc);margin-bottom:12px}"
+      ".cmt-guide{background:var(--bg-soft,#131c2e);border:1px solid var(--line,#2a3a5c);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--muted,#9fb0cc);margin-bottom:12px}",
+      ".cmt-count{text-align:right;font-size:11.5px;color:var(--muted,#9fb0cc);margin:-6px 2px 12px}"
     ].join("");
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   }
