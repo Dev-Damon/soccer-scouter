@@ -166,25 +166,35 @@
     var m = /^([12])([A-L])$/.exec(s);
     if (m) return m[2] + "조 " + (m[1] === "1" ? "1위" : "2위");
     var t = /3rd\s+([A-L/]+)/.exec(s);
-    if (t) return "3위 (" + t[1].replace(/\//g, "·") + ")";
+    if (t) return t[1].replace(/\//g, "·") + " 3위";
     return s;
   }
-  function brkMatch(mt, kind) {
-    var a, b, tag = "";
-    if (kind === "r32") { a = brkSlot(mt.a); b = brkSlot(mt.b); }
-    else if (kind === "final") { a = mt.from[0] + "경기 승자"; b = mt.from[1] + "경기 승자"; tag = "결승"; }
-    else if (kind === "third") { a = mt.from[0] + "경기 패자"; b = mt.from[1] + "경기 패자"; tag = "3·4위전"; }
-    else { a = mt.from[0] + "경기 승자"; b = mt.from[1] + "경기 승자"; }
-    return '<div class="brk-m"><span class="brk-mn">' + mt.m + "경기</span><div class=\"brk-pair\"><span class=\"brk-s\">" + a + '</span><span class="brk-vs">vs</span><span class="brk-s">' + b + "</span></div>" + (tag ? '<span class="brk-tag">' + tag + "</span>" : "") + "</div>";
+  var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
+  var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
+  function bM(mn, side) {
+    var m = R32M[mn];
+    return '<div class="match m32 ' + side + '"><div class="tm">' + brkSlot(m.a) + '</div><div class="tm">' + brkSlot(m.b) + "</div></div>";
   }
+  function bC(l, side) { return '<div class="match mcon ' + side + '">' + l + "</div>"; }
+  function fillN(n, fn) { var o = ""; for (var i = 0; i < n; i++) o += fn(); return o; }
   function renderBracket() {
-    var h = '<div class="brk"><div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다. 지금은 자리표시(○조 순위)이며, 경기번호는 FIFA 공식 일정 기준이에요.</div>';
-    h += '<div class="brk-round"><h3 class="brk-rt">🏟️ 32강 <span>16경기</span></h3>' + BRACKET.r32.map(function (m) { return brkMatch(m, "r32"); }).join("") + "</div>";
-    h += '<div class="brk-round"><h3 class="brk-rt">16강 <span>8경기</span></h3>' + BRACKET.r16.map(function (m) { return brkMatch(m, "r16"); }).join("") + "</div>";
-    h += '<div class="brk-round"><h3 class="brk-rt">8강 <span>4경기</span></h3>' + BRACKET.qf.map(function (m) { return brkMatch(m, "qf"); }).join("") + "</div>";
-    h += '<div class="brk-round"><h3 class="brk-rt">4강 <span>2경기</span></h3>' + BRACKET.sf.map(function (m) { return brkMatch(m, "sf"); }).join("") + "</div>";
-    h += '<div class="brk-round"><h3 class="brk-rt">🏆 결승 · 3·4위전</h3>' + brkMatch(BRACKET.third, "third") + brkMatch(BRACKET.final, "final") + "</div>";
-    viewEl.innerHTML = h + "</div>";
+    var L = '<div class="half left"><div class="round r32">' + BL_R32.map(function (n) { return bM(n, "l"); }).join("") +
+      '</div><div class="round c16">' + fillN(4, function () { return bC("16강", "l"); }) +
+      '</div><div class="round c8">' + fillN(2, function () { return bC("8강", "l"); }) + "</div></div>";
+    var R = '<div class="half right"><div class="round c8">' + fillN(2, function () { return bC("8강", "r"); }) +
+      '</div><div class="round c16">' + fillN(4, function () { return bC("16강", "r"); }) +
+      '</div><div class="round r32">' + BR_R32.map(function (n) { return bM(n, "r"); }).join("") + "</div></div>";
+    var C = '<div class="center"><div class="round csfcol"><div class="csf">4강</div><div class="csf">4강</div></div>' +
+      '<div class="cmid"><div class="cfinal">🏆<br>결승</div><div class="cthird">3·4위전</div></div></div>';
+    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다. 지금은 자리표시(○조 순위)예요. 손가락으로 확대하면 자세히 볼 수 있어요.</div>' +
+      '<div class="brk2-fit"><div class="brk2">' + L + C + R + "</div></div>";
+    var fit = viewEl.querySelector(".brk2-fit"), inner = viewEl.querySelector(".brk2");
+    if (fit && inner) {
+      var sc = Math.min(1, fit.clientWidth / inner.scrollWidth);
+      inner.style.transform = "scale(" + sc + ")";
+      inner.style.transformOrigin = "top left";
+      fit.style.height = Math.ceil(inner.scrollHeight * sc) + "px";
+    }
     twem(viewEl);
   }
 
