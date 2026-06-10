@@ -180,6 +180,12 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .team-name { font-weight: 700; font-size: 16px; }
 .team-rank { color: var(--muted); font-size: 12px; }
 .team-wc { margin-top: 5px; font-size: 12.5px; font-weight: 700; color: var(--accent); }
+/* 역대 상대전적 */
+.h2h-rec { font-size: 14.5px; margin-bottom: 10px; }
+.h2h-rec .h2h-w { color: #2ee6a6; } .h2h-rec .h2h-d { color: var(--muted); } .h2h-rec .h2h-l { color: #e5484d; }
+.h2h-list { color: var(--muted); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.h2h-g { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; font-variant-numeric: tabular-nums; }
+.h2h-loading { color: var(--muted); font-size: 12.5px; }
 
 /* Player list row */
 .player-row {

@@ -735,11 +735,13 @@
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
+        '<div class="block h2h-slot"></div>' +
         '<div class="match-cta">' +
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
         "</div>" +
       "</div>";
+    loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
   }
 
   // ===================== 감독 상세 =====================
@@ -884,6 +886,60 @@
       standAt = Date.now();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
     }).catch(function () {});
+  }
+
+  // ===================== 역대 상대전적(H2H) — ESPN 경기상세(실시간, 사전수집 0) =====================
+  var ESPN_SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=";
+  var espnIdCache = {};
+  function resolveEspnId(fx) {
+    if (espnIdCache[fx.id] !== undefined) return Promise.resolve(espnIdCache[fx.id]);
+    var dt = (fx.date || "").replace(/-/g, "");
+    if (!dt || !window.fetch) return Promise.resolve(null);
+    var key = [fx.homeId, fx.awayId].sort().join("|");
+    return fetch(ESPN_URL + "?dates=" + dt, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+      var found = null;
+      (d.events || []).forEach(function (e) {
+        var c = (e.competitions || [])[0]; if (!c) return;
+        var comp = c.competitors || [];
+        var H = comp.filter(function (t) { return t.homeAway === "home"; })[0] || comp[0];
+        var A = comp.filter(function (t) { return t.homeAway === "away"; })[0] || comp[1];
+        if (!H || !A) return;
+        var hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName);
+        if (hid && aid && [hid, aid].sort().join("|") === key) found = e.id;
+      });
+      espnIdCache[fx.id] = found;
+      return found;
+    }).catch(function () { return null; });
+  }
+  function loadH2H(slot, fx, a, b) {
+    if (!slot || !window.fetch) return;
+    slot.innerHTML = '<h3>역대 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';
+    resolveEspnId(fx).then(function (eid) {
+      if (!eid) { slot.style.display = "none"; return; }
+      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { renderH2H(slot, d, fx, a); });
+    }).catch(function () { slot.style.display = "none"; });
+  }
+  function renderH2H(slot, d, fx, a) {
+    var blk = (d.headToHeadGames || [])[0];
+    if (!blk || !(blk.events || []).length) { slot.style.display = "none"; return; }
+    var blkAppId = espnTeamId(blk.team && blk.team.displayName);
+    var blkEspnId = String(blk.team && blk.team.id);
+    var w = 0, dr = 0, l = 0, meetings = [];
+    blk.events.forEach(function (e) {
+      var m = /^(\d+)\D+(\d+)$/.exec(e.score || "");
+      if (m) {
+        var hs = +m[1], as = +m[2];
+        var home = String(e.homeTeamId) === blkEspnId;
+        var bs = home ? hs : as, os = home ? as : hs;
+        if (bs > os) w++; else if (bs < os) l++; else dr++;
+      }
+      meetings.push({ yr: (e.gameDate || "").slice(0, 4), score: (e.score || "").replace(/\s/g, "") });
+    });
+    var rec = (blkAppId === fx.homeId) ? { w: w, d: dr, l: l } : { w: l, d: dr, l: w };
+    var recent = meetings.slice(0, 6).map(function (g) { return '<span class="h2h-g">' + esc(g.yr) + "·" + esc(g.score) + "</span>"; }).join("");
+    slot.innerHTML = '<h3>역대 상대전적 <span class="muted-note">' + blk.events.length + "경기</span></h3>" +
+      '<div class="h2h-rec">' + esc(a.name) + ' 기준 <b class="h2h-w">' + rec.w + '승</b> <b class="h2h-d">' + rec.d + '무</b> <b class="h2h-l">' + rec.l + "패</b></div>" +
+      '<div class="h2h-list">최근 맞대결: ' + recent + "</div>";
   }
 
   // ===================== 라우터 =====================
