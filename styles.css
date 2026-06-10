@@ -264,6 +264,14 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .rank-sub { color: var(--muted); font-size: 12px; }
 .rank-score { font-weight: 900; font-size: 16px; color: var(--accent); flex: none; min-width: 40px; text-align: right; }
 .rank-more { width: 100%; margin-top: 10px; background: var(--bg-soft); border: 1px solid var(--line); color: var(--text); font-weight: 700; padding: 11px; border-radius: 12px; cursor: pointer; }
+/* 선수 능력치 레이더 */
+.pw-radarwrap { display: flex; justify-content: center; margin: 2px 0 8px; }
+.pw-radar { width: 100%; max-width: 300px; height: auto; }
+.pw-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.pw-bn { width: 52px; font-size: 12.5px; font-weight: 700; color: #cdd8e6; flex: none; }
+.pw-bt { flex: 1; height: 9px; background: var(--bg-soft); border-radius: 6px; overflow: hidden; }
+.pw-bf { height: 100%; border-radius: 6px; }
+.pw-bv { width: 24px; text-align: right; font-size: 13px; font-weight: 800; flex: none; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }
 .bd-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
