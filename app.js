@@ -1677,28 +1677,39 @@
       '<div class="chat-msgs"></div>' +
       '<div class="chat-inbar"><input class="chat-in" maxlength="300" placeholder="메시지 입력…"><button class="chat-send" type="button">전송</button></div>';
     document.body.appendChild(panel); document.body.appendChild(fab); twem(fab);
-    var ch = null, open = false;
+    var ch = null, open = false, pollT = null, lastSig = "";
     function msgsEl() { return panel.querySelector(".chat-msgs"); }
+    function ncolor(name) { var cols = ["#5b9dff", "#e5748a", "#5bbf8a", "#f0a93b", "#b18cff", "#46c2d6", "#e0739e"], h = 0, i; for (i = 0; i < (name || "").length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0; return cols[h % cols.length]; }
     function bubble(m) {
-      var me = KickComments.user && KickComments.user() && KickComments.user().id === m.user_id;
-      return '<div class="chat-msg' + (me ? " me" : "") + '">' + (me ? "" : bdAvatar(m.name)) +
-        '<div class="chat-bub"><div class="chat-nm">' + esc(m.name) + '</div><div class="chat-tx">' + esc(m.body) + "</div></div></div>";
+      var col = ncolor(m.name), ch0 = (m.name || "?").trim().charAt(0).toUpperCase() || "?";
+      return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
+        '<span class="yc-name" style="color:' + col + '">' + esc(m.name) + "</span>" +
+        '<span class="yc-msg">' + esc(m.body) + '</span><span class="yc-tm">' + agoShort(m.created_at) + "</span></div>";
+    }
+    function loadRender(forceBottom) {
+      var m = msgsEl(); if (!m) return;
+      var atBottom = forceBottom || (m.scrollHeight - m.scrollTop - m.clientHeight < 70);
+      KickComments.chatRecent(100).then(function (list) {
+        if (!open) return;
+        var sig = list.map(function (x) { return x.id; }).join(",");
+        if (sig === lastSig && !forceBottom) return;  // 변동 없으면 재렌더 생략
+        lastSig = sig;
+        m.innerHTML = list.length ? list.map(bubble).join("") : '<div class="chat-empty">아직 메시지가 없어요.<br>첫 메시지를 남겨보세요!</div>';
+        twem(m);
+        if (atBottom) m.scrollTop = m.scrollHeight;
+      }).catch(function () {});
     }
     function toggle() {
       open = !open; panel.hidden = !open; fab.classList.toggle("open", open); fab.innerHTML = open ? "✕" : "💬"; twem(fab);
       if (open) {
-        var m = msgsEl(); m.innerHTML = '<div class="chat-empty">불러오는 중…</div>';
-        KickComments.ready().then(function () { return KickComments.chatRecent(100); }).then(function (list) {
-          m.innerHTML = list.length ? list.map(bubble).join("") : '<div class="chat-empty">아직 메시지가 없어요.<br>첫 메시지를 남겨보세요!</div>';
-          twem(m); m.scrollTop = m.scrollHeight;
-        });
-        ch = KickComments.chatSubscribe(function (nm) {
-          var m = msgsEl(); var atBottom = m.scrollHeight - m.scrollTop - m.clientHeight < 50;
-          var emp = m.querySelector(".chat-empty"); if (emp) emp.remove();
-          m.insertAdjacentHTML("beforeend", bubble(nm)); twem(m);
-          if (atBottom) m.scrollTop = m.scrollHeight;
-        });
-      } else if (ch) { KickComments.chatUnsubscribe(ch); ch = null; }
+        lastSig = ""; msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>';
+        KickComments.ready().then(function () { loadRender(true); });
+        ch = KickComments.chatSubscribe(function () { loadRender(false); });  // 실시간 신호 → 최신 재조회
+        pollT = setInterval(function () { loadRender(false); }, 6000);        // 백업 폴링(실시간 누락 방지)
+      } else {
+        if (ch) { KickComments.chatUnsubscribe(ch); ch = null; }
+        if (pollT) { clearInterval(pollT); pollT = null; }
+      }
     }
     function send() {
       if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; }

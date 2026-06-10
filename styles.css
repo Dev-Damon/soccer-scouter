@@ -318,7 +318,12 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .chat-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: 14.5px; }
 .chat-head img { width: 18px; height: 18px; vertical-align: -3px; }
 .chat-close { background: none; border: 0; color: var(--muted); font-size: 15px; cursor: pointer; }
-.chat-msgs { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 9px; }
+.chat-msgs { flex: 1; overflow-y: auto; padding: 8px 10px; }
+.yc-row { padding: 5px 2px; font-size: 13.5px; line-height: 1.5; word-break: break-word; }
+.yc-av { display: inline-flex; width: 19px; height: 19px; border-radius: 50%; color: #fff; font-size: 10px; font-weight: 800; align-items: center; justify-content: center; vertical-align: -4px; margin-right: 6px; }
+.yc-name { font-weight: 700; margin-right: 6px; }
+.yc-msg { color: #d8e0ee; }
+.yc-tm { color: var(--muted); font-size: 10.5px; margin-left: 7px; white-space: nowrap; }
 .chat-empty { color: var(--muted); text-align: center; margin: auto; font-size: 13px; line-height: 1.6; }
 .chat-msg { display: flex; gap: 7px; align-items: flex-start; }
 .chat-msg.me { flex-direction: row-reverse; }
