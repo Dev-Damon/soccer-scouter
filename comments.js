@@ -441,7 +441,7 @@
 
   function inAppBrowser() {
     var ua = (navigator.userAgent || "").toLowerCase();
-    return /kakaotalk|instagram|fban|fbav|fb_iab|line\/|naver\(inapp|daumapps|everytimeapp|whale/.test(ua);
+    return /kakaotalk|instagram|fban|fbav|fb_iab|line\/|naver\(inapp|daumapps|everytimeapp/.test(ua);
   }
   function confirmLogin() {
     if (confirm("로그인 후 작성할 수 있어요.\n구글로 로그인하시겠습니까?")) signIn("google");
