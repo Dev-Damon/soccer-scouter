@@ -1571,7 +1571,7 @@
       var ip2 = viewEl.querySelector(".my-nickin"); var v = ip2 ? ip2.value.trim() : "";
       if (!v) return;
       my.disabled = true;
-      KickComments.setNickname(v).then(function () { renderMy(); }).catch(function () { my.disabled = false; alert("닉네임 저장 실패"); });
+      KickComments.setNickname(v).then(function () { renderMy(); }).catch(function (er) { my.disabled = false; var em = String(er && er.message || ""); alert(/chars/.test(em) ? "닉네임은 한글·영문·숫자만 쓸 수 있어요 (특수문자 불가)." : /len/.test(em) ? "닉네임은 2~16자로 해주세요." : /badword/.test(em) ? "사용할 수 없는 단어가 포함돼 있어요." : "닉네임 저장 실패"); });
       return;
     }
     if ((my = e.target.closest(".my-tabbtn"))) { myTab = my.getAttribute("data-mytab"); paintMy(); return; }

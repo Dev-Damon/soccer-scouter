@@ -319,7 +319,10 @@
   function setNickname(nick) {
     nick = (nick || "").trim();
     if (!user || !nick) return Promise.reject(new Error("invalid"));
-    nick = mask(nick).slice(0, 30);
+    if (nick.length < 2 || nick.length > 16) return Promise.reject(new Error("len"));
+    if (!/^[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9 _]+$/.test(nick)) return Promise.reject(new Error("chars"));
+    if (/(씨발|시발|씨바|시바|쌍놈|병신|븅신|개새|개색|좆|좇|존나|보지|자지|씹|섹스|sex|f.?u.?c.?k|shit|bitch|asshole|nigger|썅|꺼져|닥쳐|운영자|관리자|어드민|admin|야동|도박|토토|카지노)/i.test(nick.replace(/\s/g, ""))) return Promise.reject(new Error("badword"));
+    nick = mask(nick).slice(0, 16);
     return sb.from("profiles").upsert({ user_id: user.id, nickname: nick, updated_at: new Date().toISOString() }, { onConflict: "user_id" })
       .then(function (r) {
         if (r.error) throw r.error;
