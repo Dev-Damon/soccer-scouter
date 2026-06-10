@@ -484,7 +484,7 @@
       '<span class="rank-no">' + rank + "</span>" +
       '<span class="rank-flag">' + esc(flag) + "</span>" +
       '<div class="rank-main"><div class="rank-name">' + esc(p.name) + "</div>" +
-      '<div class="rank-sub">' + esc(posAbbr(p.position)) + " · " + esc(p.team) + "</div></div>" +
+      '<div class="rank-sub">' + esc(posClass(p.position).toUpperCase()) + " · " + esc(p.team) + "</div></div>" +
       '<span class="rank-score">' + esc(sc) + "</span></div>";
   }
   function paintRanking() {
