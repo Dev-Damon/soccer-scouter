@@ -297,6 +297,7 @@
   var wittyTimer = null;
   function startWittyTicker() {
     if (wittyTimer) { clearInterval(wittyTimer); wittyTimer = null; }
+    return;  // 서브문구 고정 — 자동 회전(3초마다) 끔(사용자 요청)
     var el = viewEl.querySelector(".hb-sub");
     if (!el) return;
     var i = Math.max(0, WITTY.indexOf(el.textContent));
