@@ -295,6 +295,25 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .cmp-row .cmp-v:first-child.win { color: #4f8cff; }
 .cmp-row .cmp-v:last-child.win { color: #f0a93b; }
 .cmp-change { width: 100%; margin-top: 18px; background: var(--bg-soft); border: 1px solid var(--line); color: var(--text); font-weight: 700; padding: 11px; border-radius: 12px; cursor: pointer; }
+/* 관리자 대시보드 */
+.dash { margin-bottom: 22px; }
+.dash-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+.dash-card { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 13px 6px; text-align: center; }
+.dash-card.acc { border-color: #4f8cff; }
+.dash-v { font-size: 24px; font-weight: 900; }
+.dash-l { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.dash-today { background: rgba(245,179,1,.1); border: 1px solid rgba(245,179,1,.3); border-radius: 10px; padding: 10px 12px; font-size: 13.5px; }
+.dash-today b { color: #f5b301; }
+.dash-h { font-weight: 800; font-size: 14px; margin: 16px 2px 8px; }
+.dash-graph { display: flex; align-items: flex-end; gap: 6px; height: 76px; padding: 0 4px; }
+.dash-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.dash-bars { display: flex; align-items: flex-end; gap: 3px; height: 58px; }
+.db { width: 9px; border-radius: 2px 2px 0 0; }
+.db.s { background: #4f8cff; } .db.a { background: #5bbf8a; }
+.dash-day { font-size: 10px; color: var(--muted); }
+.dash-leg { display: flex; gap: 16px; justify-content: center; font-size: 11px; color: var(--muted); margin-top: 8px; }
+.dash-leg i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; }
+.dash-rm { display: flex; justify-content: space-between; padding: 8px 4px; border-bottom: 1px solid var(--line); font-size: 13.5px; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }
 .bd-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }

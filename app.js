@@ -1403,6 +1403,18 @@
         '<button class="mgr-del" data-cid="' + esc(c.id) + '">댓글 삭제</button>' +
       "</div></div>";
   }
+  function adminDashHtml(d) {
+    if (!d) return "";
+    function card(label, val, acc) { return '<div class="dash-card' + (acc ? " acc" : "") + '"><div class="dash-v">' + (val != null ? val : "–") + '</div><div class="dash-l">' + label + "</div></div>"; }
+    var cards = card("가입자", d.members, true) + card("닉네임설정", d.profiles) + card("댓글", d.comments) + card("게시글", d.posts) + card("채팅", d.chats) + card("평점", d.ratings);
+    var today = '<div class="dash-today">🔥 오늘 — 신규 <b>' + (d.new_today || 0) + '</b> · 댓글 <b>' + (d.comments_today || 0) + '</b> · 게시글 <b>' + (d.posts_today || 0) + '</b> · 채팅 <b>' + (d.chats_today || 0) + "</b></div>";
+    var daily = d.daily || [], maxv = 1;
+    daily.forEach(function (x) { maxv = Math.max(maxv, x.signups || 0, x.acts || 0); });
+    var bars = '<div class="dash-graph">' + daily.map(function (x) { var sh = Math.round((x.signups || 0) / maxv * 58), ah = Math.round((x.acts || 0) / maxv * 58); return '<div class="dash-col"><div class="dash-bars"><div class="db s" style="height:' + sh + 'px"></div><div class="db a" style="height:' + ah + 'px"></div></div><div class="dash-day">' + esc(x.day) + "</div></div>"; }).join("") + "</div>";
+    var legend = '<div class="dash-leg"><span><i class="db s"></i>가입</span> <span><i class="db a"></i>활동(댓글+글+채팅)</span></div>';
+    var recent = (d.recent_members || []).map(function (m) { return '<div class="dash-rm"><span>' + esc(m.nickname || "(닉네임 미설정)") + '</span><span class="muted-note">' + (m.created_at ? agoShort(m.created_at) : "") + "</span></div>"; }).join("");
+    return '<div class="dash"><div class="dash-cards">' + cards + "</div>" + today + '<div class="dash-h">최근 7일</div>' + bars + legend + (recent ? '<div class="dash-h">최근 가입</div>' + recent : "") + "</div>";
+  }
   function paintAdmin() {
     if (!adminCache) return;
     var html;
@@ -1418,7 +1430,7 @@
       if (adminQ) { var q = adminQ.toLowerCase(); cs = cs.filter(function (c) { return (c.body || "").toLowerCase().indexOf(q) >= 0 || (c.name || "").toLowerCase().indexOf(q) >= 0; }); }
       html = cs.length ? cs.map(function (c) { return adminItem(c); }).join("") : '<div class="empty">댓글이 없습니다.</div>';
     }
-    viewEl.innerHTML = '<div class="mgr"><h2 class="mgr-h">🛠 관리자</h2>' +
+    viewEl.innerHTML = '<div class="mgr"><h2 class="mgr-h">🛠 관리자</h2>' + adminDashHtml(adminCache.dash) +
       '<div class="my-tabs">' +
         '<button class="mgr-tab my-tabbtn' + (adminTab === "reports" ? " on" : "") + '" data-adtab="reports">신고 내역 ' + adminCache.reports.length + "</button>" +
         '<button class="mgr-tab my-tabbtn' + (adminTab === "all" ? " on" : "") + '" data-adtab="all">전체 댓글 ' + adminCache.comments.length + "</button></div>" +
@@ -1432,9 +1444,9 @@
     KickComments.ready().then(function () {
       if (parseHash().name !== "admin") return;
       if (!KickComments.isAdmin()) { viewEl.innerHTML = '<div class="empty">접근 권한이 없습니다.</div>'; return; }
-      Promise.all([KickComments.listReports(), KickComments.listAllComments("")]).then(function (res) {
+      Promise.all([KickComments.listReports(), KickComments.listAllComments(""), KickComments.adminDashboard()]).then(function (res) {
         if (parseHash().name !== "admin") return;
-        adminCache = { reports: res[0] || [], comments: res[1] || [] };
+        adminCache = { reports: res[0] || [], comments: res[1] || [], dash: res[2] || null };
         paintAdmin();
       });
     });
