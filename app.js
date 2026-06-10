@@ -149,6 +149,45 @@
   }
 
   // ===================== 홈: 일정 / 조별 =====================
+  // ===== 토너먼트 대진표 (2026 월드컵 공식 구조, 경기번호 FIFA 기준) =====
+  var BRACKET = {
+    r32: [
+      { m: 73, a: "2A", b: "2B" }, { m: 74, a: "1E", b: "3rd A/B/C/D/F" }, { m: 75, a: "1F", b: "2C" }, { m: 76, a: "1C", b: "2F" },
+      { m: 77, a: "1I", b: "3rd C/D/F/G/H" }, { m: 78, a: "2E", b: "2I" }, { m: 79, a: "1A", b: "3rd C/E/F/H/I" }, { m: 80, a: "1L", b: "3rd E/H/I/J/K" },
+      { m: 81, a: "1D", b: "3rd B/E/F/I/J" }, { m: 82, a: "1G", b: "3rd A/E/H/I/J" }, { m: 83, a: "2K", b: "2L" }, { m: 84, a: "1H", b: "2J" },
+      { m: 85, a: "1B", b: "3rd E/F/G/I/J" }, { m: 86, a: "1J", b: "2H" }, { m: 87, a: "1K", b: "3rd D/E/I/J/L" }, { m: 88, a: "2D", b: "2G" }
+    ],
+    r16: [{ m: 89, from: [74, 77] }, { m: 90, from: [73, 75] }, { m: 91, from: [76, 78] }, { m: 92, from: [79, 80] }, { m: 93, from: [83, 84] }, { m: 94, from: [81, 82] }, { m: 95, from: [86, 88] }, { m: 96, from: [85, 87] }],
+    qf: [{ m: 97, from: [89, 90] }, { m: 98, from: [93, 94] }, { m: 99, from: [91, 92] }, { m: 100, from: [95, 96] }],
+    sf: [{ m: 101, from: [97, 98] }, { m: 102, from: [99, 100] }],
+    third: { m: 103, from: [101, 102] }, final: { m: 104, from: [101, 102] }
+  };
+  function brkSlot(s) {
+    var m = /^([12])([A-L])$/.exec(s);
+    if (m) return m[2] + "조 " + (m[1] === "1" ? "1위" : "2위");
+    var t = /3rd\s+([A-L/]+)/.exec(s);
+    if (t) return "3위 (" + t[1].replace(/\//g, "·") + ")";
+    return s;
+  }
+  function brkMatch(mt, kind) {
+    var a, b, tag = "";
+    if (kind === "r32") { a = brkSlot(mt.a); b = brkSlot(mt.b); }
+    else if (kind === "final") { a = mt.from[0] + "경기 승자"; b = mt.from[1] + "경기 승자"; tag = "결승"; }
+    else if (kind === "third") { a = mt.from[0] + "경기 패자"; b = mt.from[1] + "경기 패자"; tag = "3·4위전"; }
+    else { a = mt.from[0] + "경기 승자"; b = mt.from[1] + "경기 승자"; }
+    return '<div class="brk-m"><span class="brk-mn">' + mt.m + "경기</span><div class=\"brk-pair\"><span class=\"brk-s\">" + a + '</span><span class="brk-vs">vs</span><span class="brk-s">' + b + "</span></div>" + (tag ? '<span class="brk-tag">' + tag + "</span>" : "") + "</div>";
+  }
+  function renderBracket() {
+    var h = '<div class="brk"><div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다. 지금은 자리표시(○조 순위)이며, 경기번호는 FIFA 공식 일정 기준이에요.</div>';
+    h += '<div class="brk-round"><h3 class="brk-rt">🏟️ 32강 <span>16경기</span></h3>' + BRACKET.r32.map(function (m) { return brkMatch(m, "r32"); }).join("") + "</div>";
+    h += '<div class="brk-round"><h3 class="brk-rt">16강 <span>8경기</span></h3>' + BRACKET.r16.map(function (m) { return brkMatch(m, "r16"); }).join("") + "</div>";
+    h += '<div class="brk-round"><h3 class="brk-rt">8강 <span>4경기</span></h3>' + BRACKET.qf.map(function (m) { return brkMatch(m, "qf"); }).join("") + "</div>";
+    h += '<div class="brk-round"><h3 class="brk-rt">4강 <span>2경기</span></h3>' + BRACKET.sf.map(function (m) { return brkMatch(m, "sf"); }).join("") + "</div>";
+    h += '<div class="brk-round"><h3 class="brk-rt">🏆 결승 · 3·4위전</h3>' + brkMatch(BRACKET.third, "third") + brkMatch(BRACKET.final, "final") + "</div>";
+    viewEl.innerHTML = h + "</div>";
+    twem(viewEl);
+  }
+
   function renderHome() {
     backBtn.hidden = true;
     tabsEl.hidden = false;
@@ -156,6 +195,7 @@
       b.classList.toggle("active", b.getAttribute("data-tab") === homeTab);
     });
     if (homeTab === "groups") return renderGroups();
+    if (homeTab === "bracket") return renderBracket();
     return renderSchedule();
   }
 
