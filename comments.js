@@ -294,6 +294,9 @@
         alert(/banned/.test(em) ? "이용이 제한된 계정입니다." :
               /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." :
               /duplicate/.test(em) ? "방금 같은 내용을 작성했어요. (도배 방지)" :
+              /has_link/.test(em) ? "링크는 작성할 수 없어요." :
+              /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." :
+              /spam_campaign/.test(em) ? "스팸으로 감지되어 차단되었어요." :
               "등록 실패: " + em);
         ta.disabled = false; return;
       }
