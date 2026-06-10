@@ -1393,7 +1393,7 @@
     return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
       '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
       '<div class="mr-pts">' + pts + "</div>" +
-      '<div class="mr-avg">' + (my ? '<b>내 ' + my + '점</b> · ' : "") + (cnt ? "평균 " + avg + "/10 (" + cnt + "명)" : '<span class="muted-note">아직 평점 없음 · 별점 탭</span>') + "</div></div>";
+      '<div class="mr-avg">' + (my ? '<b>내 ' + my + '점</b> · ' : "") + (cnt ? "평균 " + avg + "/10 (" + cnt + "명)" : '<span class="muted-note">아직 평점 없음 · 탭해서 평가</span>') + "</div></div>";
   }
   function renderMatchRate(matchId) {
     backBtn.hidden = false; tabsEl.hidden = true;
@@ -1420,7 +1420,7 @@
     idsA.concat(idsB).forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
     var html = '<div class="detail"><div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
     if (leader && lead > 0 && playersById[leader]) html += '<div class="mr-lead">🏆 현재 MVP <b>' + esc(playersById[leader].name) + "</b> · " + lead + '표 <span class="muted-note">(총 ' + md.total + "표)</span></div>";
-    html += '<div class="mr-hint muted-note">별 = 선수 평점 · 🏆 = MVP 투표(경기당 1명)</div>';
+    html += '<div class="mr-hint muted-note">숫자 탭 = 선수 평점(10점) · 🏆 = MVP 투표(경기당 1명)</div>';
     html += '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="mr-list">' + idsA.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
     html += '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="mr-list">' + idsB.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div></div>";
     viewEl.innerHTML = html; twem(viewEl);
