@@ -52,13 +52,35 @@
       (hideScore ? "" : ' <span class="score">' + (p.gradeScore || "") + "</span>") + "</span>";
   }
   // 이름 첫글자 대신 '포지션 배지'(GK/DF/MF/FW 색상) — 의미 있는 시각 요소
-  function shortPos(pos) {
-    var m = /\(([^)]+)\)/.exec(pos || "");
-    if (m) return m[1].split("/")[0].trim().toUpperCase().slice(0, 3);
-    return posClass(pos).toUpperCase();
+  // 포지션 표기를 영문 약어로 통일 (한글/혼합 → GK/CB/LB/.../CF). 배지·선수정보 공용. 데이터는 그대로.
+  function posAbbr(pos) {
+    var s = String(pos || "");
+    var T = [
+      [/골키퍼|goalkeeper/i, "GK"],
+      [/왼쪽\s*윙백|좌측\s*윙백|left.?wing.?back/i, "LWB"],
+      [/오른쪽\s*윙백|우측\s*윙백|right.?wing.?back/i, "RWB"],
+      [/윙백|wing.?back/i, "WB"],
+      [/왼쪽\s*풀백|레프트백|left.?back/i, "LB"],
+      [/오른쪽\s*풀백|라이트백|right.?back/i, "RB"],
+      [/풀백|full.?back/i, "FB"],
+      [/센터백|중앙\s*수비|centre.?back|center.?back|sweeper/i, "CB"],
+      [/수비형\s*미드필더|defensive\s*mid/i, "DM"],
+      [/공격형\s*미드필더|attacking\s*mid/i, "AM"],
+      [/왼쪽\s*윙어|left\s*wing/i, "LW"],
+      [/오른쪽\s*윙어|right\s*wing/i, "RW"],
+      [/윙어|winger/i, "W"],
+      [/중앙\s*미드필더|중원|미드필더|midfielder/i, "CM"],
+      [/센터\s*포워드|centre.?forward|center.?forward/i, "CF"],
+      [/스트라이커|striker/i, "ST"],
+      [/공격수|forward/i, "ST"],
+      [/수비수|defender/i, "DF"]
+    ];
+    for (var i = 0; i < T.length; i++) if (T[i][0].test(s)) return T[i][1];
+    var m = s.match(/\b(GK|RWB|LWB|WB|RB|LB|FB|CB|CDM|DM|CAM|AM|CM|RM|LM|RW|LW|CF|ST|FW|DF|MF)\b/i);
+    return m ? m[1].toUpperCase() : s;
   }
   function posBadge(p, lg) {
-    return '<span class="posb ' + posClass(p.position) + (lg ? " lg" : "") + '">' + esc(shortPos(p.position)) + "</span>";
+    return '<span class="posb ' + posClass(p.position) + (lg ? " lg" : "") + '">' + esc(posAbbr(p.position)) + "</span>";
   }
   function flagOf(teamId) {
     var t = teamId ? teamsById[teamId] : null;
@@ -328,7 +350,7 @@
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
       posBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
-      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + " · " + esc(p.position) + "</div></div>" +
+      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + " · " + esc(posAbbr(p.position)) + "</div></div>" +
       badge(p, hideScore) + "</div>";
   }
 
@@ -438,7 +460,7 @@
     var team = teamsById[teamIdByName(p.team)];
 
     var facts = [
-      ["포지션", p.position],
+      ["포지션", posAbbr(p.position)],
       ["나이", (p.age != null ? p.age + "세" : "-")],
       ["대표팀", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
     ];
