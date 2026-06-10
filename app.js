@@ -1632,4 +1632,52 @@
     }).catch(function () {});
   }
   loadNews();
+
+  // ===== 실시간 채팅(플로팅 버튼 + 오버레이, Supabase Realtime) =====
+  (function initChat() {
+    if (!window.KickComments || !KickComments.configured || !KickComments.configured()) return;
+    var fab = document.createElement("button"); fab.className = "chat-fab"; fab.type = "button"; fab.innerHTML = "💬"; fab.setAttribute("aria-label", "실시간 채팅");
+    var panel = document.createElement("div"); panel.className = "chat-panel"; panel.hidden = true;
+    panel.innerHTML = '<div class="chat-head"><span>💬 실시간 채팅</span><button class="chat-close" type="button">✕</button></div>' +
+      '<div class="chat-msgs"></div>' +
+      '<div class="chat-inbar"><input class="chat-in" maxlength="300" placeholder="메시지 입력…"><button class="chat-send" type="button">전송</button></div>';
+    document.body.appendChild(panel); document.body.appendChild(fab); twem(fab);
+    var ch = null, open = false;
+    function msgsEl() { return panel.querySelector(".chat-msgs"); }
+    function bubble(m) {
+      var me = KickComments.user && KickComments.user() && KickComments.user().id === m.user_id;
+      return '<div class="chat-msg' + (me ? " me" : "") + '">' + (me ? "" : bdAvatar(m.name)) +
+        '<div class="chat-bub"><div class="chat-nm">' + esc(m.name) + '</div><div class="chat-tx">' + esc(m.body) + "</div></div></div>";
+    }
+    function toggle() {
+      open = !open; panel.hidden = !open; fab.classList.toggle("open", open); fab.innerHTML = open ? "✕" : "💬"; twem(fab);
+      if (open) {
+        var m = msgsEl(); m.innerHTML = '<div class="chat-empty">불러오는 중…</div>';
+        KickComments.ready().then(function () { return KickComments.chatRecent(100); }).then(function (list) {
+          m.innerHTML = list.length ? list.map(bubble).join("") : '<div class="chat-empty">아직 메시지가 없어요.<br>첫 메시지를 남겨보세요!</div>';
+          twem(m); m.scrollTop = m.scrollHeight;
+        });
+        ch = KickComments.chatSubscribe(function (nm) {
+          var m = msgsEl(); var atBottom = m.scrollHeight - m.scrollTop - m.clientHeight < 50;
+          var emp = m.querySelector(".chat-empty"); if (emp) emp.remove();
+          m.insertAdjacentHTML("beforeend", bubble(nm)); twem(m);
+          if (atBottom) m.scrollTop = m.scrollHeight;
+        });
+      } else if (ch) { KickComments.chatUnsubscribe(ch); ch = null; }
+    }
+    function send() {
+      if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; }
+      var inp = panel.querySelector(".chat-in"); var v = (inp.value || "").trim(); if (!v) return;
+      inp.disabled = true;
+      KickComments.chatSend(v).then(function (r) {
+        inp.disabled = false;
+        if (r && r.error) { var em = String(r.error.message || ""); alert(/banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 보내고 있어요. 잠시 후." : /has_link/.test(em) ? "링크는 보낼 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이에요." : "전송 실패"); return; }
+        inp.value = ""; inp.focus();
+      }).catch(function () { inp.disabled = false; alert("전송 실패"); });
+    }
+    fab.addEventListener("click", toggle);
+    panel.querySelector(".chat-close").addEventListener("click", toggle);
+    panel.querySelector(".chat-send").addEventListener("click", send);
+    panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
+  })();
 })();

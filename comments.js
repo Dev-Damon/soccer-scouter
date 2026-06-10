@@ -526,6 +526,26 @@
     loadSDK().then(function () { client(); });  // detectSessionInUrl 가 ?code= → 세션, onAuthStateChange 가 박스 갱신
   })();
 
+  // ── 실시간 채팅(통합 채팅방, Supabase Realtime) ──
+  function chatRecent(limit) {
+    if (!client()) return Promise.resolve([]);
+    return sb.from("chat_messages").select("*").order("created_at", { ascending: false }).limit(limit || 100)
+      .then(function (r) { return (r.data || []).slice().reverse(); }).catch(function () { return []; });
+  }
+  function chatSend(body) {
+    if (!user) return Promise.reject(new Error("login"));
+    var b = mask((body || "").trim()).slice(0, 300);
+    if (!b) return Promise.resolve({ skip: true });
+    return sb.from("chat_messages").insert({ body: b, user_id: user.id, name: uname(user) });
+  }
+  function chatSubscribe(onMsg) {
+    if (!sb) return null;
+    try {
+      return sb.channel("kc_chat_room").on("postgres_changes", { event: "INSERT", schema: "public", table: "chat_messages" }, function (p) { if (p && p.new) onMsg(p.new); }).subscribe();
+    } catch (e) { return null; }
+  }
+  function chatUnsubscribe(ch) { try { if (ch && sb) sb.removeChannel(ch); } catch (e) {} }
+
   window.KickComments = {
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
@@ -541,6 +561,7 @@
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
     listPosts: listPosts, getPost: getPost, bumpView: bumpView, createPost: createPost,
     deletePost: deletePost, updatePost: updatePost, togglePostLike: togglePostLike,
-    listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost
+    listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost,
+    chatRecent: chatRecent, chatSend: chatSend, chatSubscribe: chatSubscribe, chatUnsubscribe: chatUnsubscribe
   };
 })();
