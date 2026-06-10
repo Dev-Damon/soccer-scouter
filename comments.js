@@ -192,7 +192,11 @@
       '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
       '<div class="cmt-act">' + react +
         '<button class="cmt-reply" data-id="' + esc(c.id) + '">답글</button>' +
-        (mine ? '<button class="cmt-del" data-id="' + esc(c.id) + '">삭제</button>' : '<button class="cmt-report" data-id="' + esc(c.id) + '" title="신고">🚩</button>') +
+        '<span class="cmt-more-wrap"><button class="cmt-more" aria-label="더보기">⋯</button>' +
+          '<div class="cmt-menu" hidden>' +
+          (mine ? '<button class="cmt-del" data-id="' + esc(c.id) + '">삭제</button>'
+                : '<button class="cmt-report" data-id="' + esc(c.id) + '">🚩 신고</button>') +
+          "</div></span>" +
       "</div>" +
       '<div class="cmt-replybox"></div>' +
       (c._ch && c._ch.length ? '<div class="cmt-children">' + c._ch.map(function (r) { return cHtml(r, true, rx); }).join("") + "</div>" : "") +
@@ -225,6 +229,17 @@
   function bind(m) {
     m.el.onclick = function (e) {
       var t;
+      // 다른 곳 클릭 시 열린 더보기 메뉴 닫기
+      if (!e.target.closest(".cmt-more") && !e.target.closest(".cmt-menu")) {
+        Array.prototype.forEach.call(m.el.querySelectorAll(".cmt-menu:not([hidden])"), function (x) { x.hidden = true; });
+      }
+      if ((t = e.target.closest(".cmt-more"))) {
+        var menu = t.parentNode.querySelector(".cmt-menu");
+        var willShow = menu && menu.hidden;
+        Array.prototype.forEach.call(m.el.querySelectorAll(".cmt-menu"), function (x) { x.hidden = true; });
+        if (menu) menu.hidden = !willShow;
+        return;
+      }
       if ((t = e.target.closest(".cmt-in"))) { return signIn(t.getAttribute("data-p")); }
       if (e.target.closest(".cmt-out")) { return sb.auth.signOut().then(function () { render(m); }); }
       if ((t = e.target.closest(".cmt-sortbtn"))) { sortMode = t.getAttribute("data-sort"); return paint(m); }
@@ -392,7 +407,12 @@
       ".cmt-rx.down.on{color:#e5484d;border-color:#e5484d}",
       ".cmt-at{color:var(--accent,#2ee6a6);font-weight:700}",
       ".cmt-in.g{display:inline-flex;align-items:center;gap:7px}",
-      ".gico{flex:none;display:block}"
+      ".gico{flex:none;display:block}",
+      ".cmt-more-wrap{position:relative;display:inline-block}",
+      ".cmt-more{font-size:16px;line-height:1;letter-spacing:1px;padding:0 4px}",
+      ".cmt-menu{position:absolute;right:0;top:100%;margin-top:4px;background:var(--card,#18233a);border:1px solid var(--line,#2a3a5c);border-radius:10px;padding:4px;z-index:5;box-shadow:0 6px 20px rgba(0,0,0,.4);min-width:96px}",
+      ".cmt-menu[hidden]{display:none}",
+      ".cmt-menu button{display:block;width:100%;text-align:left;padding:8px 12px;font-size:13px;white-space:nowrap}"
     ].join("");
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   }
