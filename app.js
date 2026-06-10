@@ -135,6 +135,7 @@
     if (parts[0] === "search") return { name: "search" };
     if (parts[0] === "saved") return { name: "saved" };
     if (parts[0] === "my") return { name: "my" };
+    if (parts[0] === "admin") return { name: "admin" };
     return { name: "home" };
   }
 
