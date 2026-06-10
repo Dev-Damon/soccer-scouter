@@ -1,5 +1,5 @@
 // 축구 스카우터 — 서비스워커 (오프라인 캐시)
-var CACHE = "scouter-v0.32";
+var CACHE = "scouter-v0.33";
 var ASSETS = [
   "./",
   "./index.html",
@@ -29,6 +29,9 @@ self.addEventListener("activate", function (e) {
 self.addEventListener("fetch", function (e) {
   if (e.request.method !== "GET") return;
   var url = new URL(e.request.url);
+  // 외부 도메인(Supabase API·ESPN·CDN 등)은 SW가 절대 개입하지 않음 → 항상 최신(캐시 안 함).
+  // (이전엔 cache-first로 잡혀서 댓글/좋아요가 즉시 반영 안 되던 버그)
+  if (url.origin !== self.location.origin) return;
   // 앱 셸/데이터(html/css/js)는 네트워크 우선 → 배포 즉시 반영. 오프라인이면 캐시.
   var shell = e.request.mode === "navigate" || /\.(html|css|js)$/.test(url.pathname) ||
     url.pathname === "/" || url.pathname.slice(-1) === "/";
