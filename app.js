@@ -80,7 +80,8 @@
     return m ? m[1].toUpperCase() : s;
   }
   function posBadge(p, lg) {
-    return '<span class="posb ' + posClass(p.position) + (lg ? " lg" : "") + '">' + esc(posAbbr(p.position)) + "</span>";
+    // 배지는 기존처럼 코스(GK/DF/MF/FW)로 통일 — 한글로 새던 것만 자연히 영문 코스로 교정됨
+    return '<span class="posb ' + posClass(p.position) + (lg ? " lg" : "") + '">' + posClass(p.position).toUpperCase() + "</span>";
   }
   function flagOf(teamId) {
     var t = teamId ? teamsById[teamId] : null;
