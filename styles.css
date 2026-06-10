@@ -687,7 +687,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 /* 선수단 카드 큰 등번호 배지 */
 .numb { width: 46px; height: 46px; border-radius: 12px; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid transparent; }
 .numb-n { font-size: 20px; font-weight: 900; line-height: 1; }
-.numb-p { font-size: 10px; font-weight: 800; opacity: .92; margin-top: 2px; letter-spacing: .3px; }
+.numb-p { font-size: 11px; font-weight: 800; opacity: .92; margin-top: 2px; letter-spacing: .3px; }
 .numb.gk { background: rgba(229,147,58,.16); color: #e5933a; border-color: rgba(229,147,58,.35); }
 .numb.df { background: rgba(63,140,255,.16); color: #5b9bff; border-color: rgba(63,140,255,.35); }
 .numb.mf { background: rgba(46,204,113,.16); color: var(--green); border-color: rgba(46,204,113,.32); }
