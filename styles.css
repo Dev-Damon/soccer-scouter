@@ -368,6 +368,10 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .mr-mvp.on { background: rgba(245,179,1,.18); border-color: #f5b301; color: #f5b301; }
 .rate-go { width: 100%; background: rgba(245,179,1,.13); border: 1px solid rgba(245,179,1,.4); color: #f5b301; font-weight: 800; padding: 13px; border-radius: 12px; cursor: pointer; font-size: 15px; }
 .mr-match { text-align: center; font-weight: 700; color: var(--muted); font-size: 13px; margin: -2px 0 12px; }
+.ts-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 11px 4px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.ts-row:last-child { border-bottom: 0; }
+.ts-opp { font-weight: 700; font-size: 14px; }
+.ts-when { font-size: 12px; color: var(--muted); text-align: right; white-space: nowrap; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }
 .bd-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }

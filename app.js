@@ -873,6 +873,23 @@
   }
 
   // ===================== 나라 상세 =====================
+  function teamSchedule(t) {
+    var now = Date.now();
+    var fxs = (DATA.fixtures || []).filter(function (f) {
+      if (f.homeId !== t.id && f.awayId !== t.id) return false;
+      var ko = matchKickoff(f); return !ko || ko > now;
+    });
+    fxs.sort(function (a, b) { return (matchKickoff(a) || 0) - (matchKickoff(b) || 0); });
+    if (!fxs.length) return "";
+    var rows = fxs.map(function (f) {
+      var opp = teamsById[f.homeId === t.id ? f.awayId : f.homeId];
+      var oppNm = opp ? (esc(opp.flag) + " " + esc(opp.name)) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
+      var when = esc((fxDate(f) || "") + (fxTime(f) ? " " + fxTime(f) : ""));
+      var stage = f.group ? esc(f.group + "조") : esc(f.stage || "");
+      return '<div class="ts-row" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
+    }).join("");
+    return '<div class="block"><h3>📅 남은 경기 일정</h3><div class="ts-list">' + rows + "</div></div>";
+  }
   function renderTeam(id) {
     var t = teamsById[id];
     if (!t) { viewEl.innerHTML = '<div class="empty">팀을 찾을 수 없어요.</div>'; return; }
@@ -979,6 +996,7 @@
         (t.manager.nationality ? ' <span class="mgr-nat">' + esc(t.manager.nationality) + "</span>" : "") + "</div>" +
         (t.manager.note ? '<div class="mgr-note">' + esc(t.manager.note) + "</div>" : "") + '</div><span class="mgr-chev">›</span></div></div>';
     }
+    html += teamSchedule(t);
 
     html += "</div>";
 
