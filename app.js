@@ -180,11 +180,11 @@
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
   function renderBracket() {
-    var H = 470, SW = 640, i, CY = H / 2;
+    var H = 470, SW = 760, i, CY = H / 2;
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
     var Wm = 112, Hm = 46, Wp = 42, Hp = 25, Wf = 56, Hf = 56, Wt = 64, Ht = 24;
-    var XL = 58, X16 = 164, X8 = 230, X4 = 278, XF = 320, XR4 = 362, XR8 = 410, XR16 = 476, XR = 582;
+    var XL = 62, X16 = 176, X8 = 250, X4 = 315, XF = 380, XR4 = 445, XR8 = 510, XR16 = 584, XR = 698;
     var boxes = [], BX = {}, P = [];
     function add(id, cx, cy, w, h, cls, html) { BX[id] = { cx: cx, cy: cy, w: w }; boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
     function m32html(mn) { var m = R32M[mn]; return '<div class="tm">' + brkSlot(m.a) + '</div><div class="tm">' + brkSlot(m.b) + "</div>"; }
