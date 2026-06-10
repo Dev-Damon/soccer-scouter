@@ -150,7 +150,7 @@
   function mentionize(s) { return s.replace(/(^|[\s(])@([^\s@]{1,30})/g, '$1<span class="cmt-at">@$2</span>'); }
 
   function load(key) {
-    return sb.from("comments").select("*").eq("thread_key", key)
+    return sb.from("comments").select("*").eq("thread_key", key).eq("hidden", false)
       .then(function (r) {
         if (r.error) throw r.error;
         var list = r.data || [];
@@ -289,7 +289,14 @@
     };
     ta.disabled = true;
     sb.from("comments").insert(rec).then(function (r) {
-      if (r.error) { alert("등록 실패: " + r.error.message); ta.disabled = false; return; }
+      if (r.error) {
+        var em = String(r.error.message || "");
+        alert(/banned/.test(em) ? "이용이 제한된 계정입니다." :
+              /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." :
+              /duplicate/.test(em) ? "방금 같은 내용을 작성했어요. (도배 방지)" :
+              "등록 실패: " + em);
+        ta.disabled = false; return;
+      }
       render(m);
     });
   }
@@ -335,7 +342,10 @@
     var reason = prompt("신고 사유를 적어주세요 (예: 욕설/스팸/혐오/기타)");
     if (reason == null) return;
     sb.from("comment_reports").insert({ comment_id: commentId, reporter: user.id, reason: (reason || "").slice(0, 200) })
-      .then(function (r) { alert(r.error ? "신고 처리 중 오류가 발생했어요." : "신고되었습니다. 감사합니다."); });
+      .then(function (r) {
+        if (r.error) { alert(/duplicate|unique|23505/i.test(String(r.error.message || r.error.code || "")) ? "이미 신고한 댓글이에요." : "신고 처리 중 오류가 발생했어요."); return; }
+        alert("신고되었습니다. 감사합니다.");
+      });
   }
   // ── 관리자용 ──
   function isAdmin() { return !!(user && user.id === ADMIN_UID); }
@@ -355,6 +365,9 @@
   }
   function adminDeleteComment(id) { return sb.from("comments").delete().eq("id", id); }
   function ignoreReport(id) { return sb.from("comment_reports").delete().eq("id", id); }
+  function banUser(userId, reason) { if (!isAdmin() || !userId) return Promise.resolve(); return sb.from("banned_users").upsert({ user_id: userId, reason: reason || null, banned_by: user.id }, { onConflict: "user_id" }); }
+  function unbanUser(userId) { if (!isAdmin()) return Promise.resolve(); return sb.from("banned_users").delete().eq("user_id", userId); }
+  function unhideComment(id) { if (!isAdmin()) return Promise.resolve(); return sb.from("comments").update({ hidden: false }).eq("id", id); }
 
   function inAppBrowser() {
     var ua = (navigator.userAgent || "").toLowerCase();
@@ -448,6 +461,7 @@
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },
     isAdmin: isAdmin, listReports: listReports, listAllComments: listAllComments,
-    adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport
+    adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
+    banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment
   };
 })();

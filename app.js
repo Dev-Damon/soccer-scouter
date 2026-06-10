@@ -1135,11 +1135,13 @@
   var adminCache = null, adminTab = "reports", adminQ = "";
   function adminItem(c, extra) {
     var ti = threadInfo(c.thread_key);
-    return '<div class="mgr-item">' +
-      '<div class="mgr-iw">' + esc(ti.label) + " · " + esc(c.name || "익명") + "</div>" +
+    return '<div class="mgr-item' + (c.hidden ? " mgr-hidden" : "") + '">' +
+      '<div class="mgr-iw">' + esc(ti.label) + " · " + esc(c.name || "익명") + (c.hidden ? ' <span class="mgr-badge">자동숨김</span>' : "") + "</div>" +
       '<div class="mgr-ib">' + esc(c.body) + "</div>" + (extra || "") +
       '<div class="mgr-act">' +
         (ti.hash ? '<button class="mgr-go" data-go="' + esc(ti.hash) + '">위치</button>' : "") +
+        (c.hidden ? '<button class="mgr-unhide" data-cid="' + esc(c.id) + '">숨김해제</button>' : "") +
+        '<button class="mgr-ban" data-uid="' + esc(c.user_id) + '">작성자 차단</button>' +
         '<button class="mgr-del" data-cid="' + esc(c.id) + '">댓글 삭제</button>' +
       "</div></div>";
   }
@@ -1227,6 +1229,13 @@
     }
     if ((ad = e.target.closest(".mgr-ign"))) {
       ad.disabled = true; KickComments.ignoreReport(ad.getAttribute("data-rid")).then(function () { renderAdmin(); }); return;
+    }
+    if ((ad = e.target.closest(".mgr-ban"))) {
+      if (!confirm("이 작성자를 차단할까요? (이후 댓글 작성 불가)")) return;
+      ad.disabled = true; KickComments.banUser(ad.getAttribute("data-uid"), "관리자 차단").then(function () { alert("차단되었습니다."); renderAdmin(); }); return;
+    }
+    if ((ad = e.target.closest(".mgr-unhide"))) {
+      ad.disabled = true; KickComments.unhideComment(ad.getAttribute("data-cid")).then(function () { renderAdmin(); }); return;
     }
     if ((my = e.target.closest(".my-in"))) { if (window.KickComments) KickComments.signIn(my.getAttribute("data-p")); return; }
     if (e.target.closest(".my-out")) { if (window.KickComments) KickComments.signOut().then(function () { renderMy(); }); return; }
