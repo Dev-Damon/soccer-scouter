@@ -765,6 +765,7 @@
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
+        '<div class="cmt-slot"></div>' +
         ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
         '<div class="match-cta">' +
@@ -1007,14 +1008,14 @@
     });
   }
 
-  function mountCmt(key) { if (window.KickComments) { try { window.KickComments.mount(viewEl, key); } catch (e) {} } }
+  function mountCmt(key, container) { if (window.KickComments) { try { window.KickComments.mount(container || viewEl, key); } catch (e) {} } }
 
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); mountCmt("player:" + r.id); return; }
     if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
-    if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id); return; }
+    if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;

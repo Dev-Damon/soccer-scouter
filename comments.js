@@ -83,11 +83,18 @@
     return m.name || m.full_name || m.nickname || (u && u.email) || "익명";
   }
 
+  var mounts = [];
   function client() {
     if (sb) return sb;
     if (!configured() || !window.supabase) return null;
     sb = window.supabase.createClient(CONFIG.url, CONFIG.anonKey, {
       auth: { flowType: "pkce", detectSessionInUrl: true, persistSession: true, autoRefreshToken: true }
+    });
+    // 로그인/로그아웃·OAuth 코드교환 완료 시 마운트된 댓글창 자동 갱신
+    sb.auth.onAuthStateChange(function () {
+      refreshUser().then(function () {
+        mounts.forEach(function (m) { if (document.body.contains(m.el)) render(m); });
+      });
     });
     return sb;
   }
@@ -108,6 +115,7 @@
     box.innerHTML = '<h3 class="cmt-h">댓글</h3><div class="cmt-soon">불러오는 중…</div>';
     parentEl.appendChild(box);
     var m = { el: box, key: threadKey };
+    mounts.push(m);
     loadSDK().then(function () { render(m); }).catch(function () {
       box.innerHTML = '<h3 class="cmt-h">댓글</h3><div class="cmt-soon">댓글 모듈을 불러오지 못했습니다.</div>';
     });
@@ -215,7 +223,8 @@
 
   function signIn(provider) {
     if (!client()) return;
-    sb.auth.signInWithOAuth({ provider: provider, options: { redirectTo: location.href.split("#")[0] } });
+    try { localStorage.setItem("kc_return", location.hash || ""); } catch (e) {}  // 로그인 후 돌아올 페이지 저장
+    sb.auth.signInWithOAuth({ provider: provider, options: { redirectTo: location.origin + location.pathname } });
   }
 
   // ── 스타일(자체 주입) ───────────────────────────────────────────────────
@@ -251,6 +260,17 @@
     ].join("");
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   }
+
+  // OAuth 복귀 처리: ①원래 페이지(해시)로 즉시 복원 ②코드 교환(세션 생성)
+  (function handleOAuthReturn() {
+    if (!configured() || !/[?&]code=/.test(location.search)) return;
+    try {
+      var rh = localStorage.getItem("kc_return");
+      localStorage.removeItem("kc_return");
+      if (rh && location.hash !== rh) location.hash = rh;  // app.js route() 전에 복원
+    } catch (e) {}
+    loadSDK().then(function () { client(); });  // detectSessionInUrl 가 ?code= → 세션, onAuthStateChange 가 박스 갱신
+  })();
 
   window.KickComments = { mount: mount, configured: configured };
 })();

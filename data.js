@@ -13545,7 +13545,7 @@ window.DATA = {
         "value": 90,
         "fame": 80
       },
-      "number": 3
+      "number": 4
     },
     {
       "id": "lee-kang-in",
@@ -13582,7 +13582,7 @@ window.DATA = {
         "value": 85,
         "fame": 73
       },
-      "number": 18
+      "number": 19
     },
     {
       "id": "hwang-hee-chan",
@@ -13654,7 +13654,7 @@ window.DATA = {
         "value": 64,
         "fame": 73
       },
-      "number": 17
+      "number": 10
     },
     {
       "id": "hwang-in-beom",
@@ -13725,7 +13725,7 @@ window.DATA = {
         "value": 59,
         "fame": 58
       },
-      "number": 1
+      "number": 21
     },
     {
       "id": "cho-gue-sung",
@@ -13795,7 +13795,7 @@ window.DATA = {
         "value": 58,
         "fame": 47
       },
-      "number": 10
+      "number": 18
     },
     {
       "id": "bae-jun-ho",
@@ -13828,7 +13828,7 @@ window.DATA = {
         "value": 58,
         "fame": 41
       },
-      "number": 14
+      "number": 17
     },
     {
       "id": "patrik-schick",
@@ -31037,7 +31037,7 @@ window.DATA = {
         "value": 61,
         "fame": 65
       },
-      "number": 21
+      "number": 1
     },
     {
       "id": "song-bum-keun",
@@ -31109,7 +31109,7 @@ window.DATA = {
         "value": 67,
         "fame": 46
       },
-      "number": 20
+      "number": 2
     },
     {
       "id": "kim-tae-hyeon",
@@ -31143,7 +31143,7 @@ window.DATA = {
         "value": 60,
         "fame": 42
       },
-      "number": 13
+      "number": 5
     },
     {
       "id": "lee-tae-seok",
@@ -31177,7 +31177,7 @@ window.DATA = {
         "value": 61,
         "fame": 41
       },
-      "number": 2
+      "number": 13
     },
     {
       "id": "seol-young-woo",
@@ -31213,7 +31213,7 @@ window.DATA = {
         "value": 70,
         "fame": 55
       },
-      "number": 15
+      "number": 22
     },
     {
       "id": "kim-moon-hwan",
@@ -31249,7 +31249,7 @@ window.DATA = {
         "value": 60,
         "fame": 52
       },
-      "number": 22
+      "number": 15
     },
     {
       "id": "park-jin-seop",
@@ -31283,7 +31283,7 @@ window.DATA = {
         "value": 56,
         "fame": 41
       },
-      "number": 20
+      "number": 16
     },
     {
       "id": "yang-hyun-jun",
@@ -31320,7 +31320,7 @@ window.DATA = {
         "value": 65,
         "fame": 50
       },
-      "number": 16
+      "number": 20
     },
     {
       "id": "paik-seung-ho",
@@ -31390,7 +31390,7 @@ window.DATA = {
         "value": 65,
         "fame": 45
       },
-      "number": 26
+      "number": 25
     },
     {
       "id": "lee-dong-gyeong",
@@ -31426,7 +31426,7 @@ window.DATA = {
         "value": 63,
         "fame": 46
       },
-      "number": 19
+      "number": 26
     },
     {
       "id": "jind-ich-stan-k",
@@ -53093,7 +53093,7 @@ window.DATA = {
         "value": 58,
         "fame": 41
       },
-      "number": 24
+      "number": 3
     },
     {
       "id": "cho-wi-je",
@@ -53127,7 +53127,7 @@ window.DATA = {
         "value": 55,
         "fame": 39
       },
-      "number": 5
+      "number": 14
     },
     {
       "id": "jens-castrop",
@@ -53195,7 +53195,7 @@ window.DATA = {
         "value": 66,
         "fame": 50
       },
-      "number": 4
+      "number": 24
     },
     {
       "id": "jacob-shaffelburg",
