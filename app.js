@@ -1393,7 +1393,7 @@
     return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
       '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
       '<div class="mr-pts">' + pts + "</div>" +
-      '<div class="mr-avg">' + (my ? '<b>내 ' + my + '점</b> · ' : "") + (cnt ? "평균 " + avg + "/10 (" + cnt + "명)" : '<span class="muted-note">아직 평점 없음 · 탭해서 평가</span>') + "</div></div>";
+      '<div class="mr-avg">' + (my ? '<b>내 평점 ' + my + '</b> · ' : "") + (cnt ? "평균 " + avg + "/10 (" + cnt + "명)" : '<span class="muted-note">아직 평점 없음 · 탭해서 평가</span>') + "</div></div>";
   }
   function renderMatchRate(matchId) {
     backBtn.hidden = false; tabsEl.hidden = true;
