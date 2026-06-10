@@ -306,6 +306,7 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .chat-fab img { width: 26px; height: 26px; }
 .chat-fab.open { background: #34467a; }
 .chat-panel { position: fixed; right: 14px; bottom: 140px; z-index: 60; width: min(360px, calc(100vw - 28px)); height: min(62vh, 480px); background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 34px rgba(0,0,0,.55); }
+.chat-panel[hidden] { display: none; }
 .chat-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: 14.5px; }
 .chat-head img { width: 18px; height: 18px; vertical-align: -3px; }
 .chat-close { background: none; border: 0; color: var(--muted); font-size: 15px; cursor: pointer; }
