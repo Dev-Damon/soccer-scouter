@@ -673,7 +673,7 @@
   }
 
   function powerRadar(pw) {
-    var dims = [["공격력", pw["공격력"]], ["골결정력", pw["골결정력"]], ["스피드", pw["스피드"]], ["피지컬", pw["피지컬"]], ["테크닉", pw["테크닉"]], ["수비력", pw["수비력"]];
+    var dims = [["공격력", pw["공격력"]], ["골결정력", pw["골결정력"]], ["스피드", pw["스피드"]], ["피지컬", pw["피지컬"]], ["테크닉", pw["테크닉"]], ["수비력", pw["수비력"]]];
     var cx = 150, cy = 145, R = 100, angs = [-90, -30, 30, 90, 150, 210];
     function pt(v, i) { var a = angs[i] * Math.PI / 180; return [cx + (v / 100) * R * Math.cos(a), cy + (v / 100) * R * Math.sin(a)]; }
     function ring(f) { return angs.map(function (a) { var r = a * Math.PI / 180; return (cx + f * R * Math.cos(r)).toFixed(1) + "," + (cy + f * R * Math.sin(r)).toFixed(1); }).join(" "); }
