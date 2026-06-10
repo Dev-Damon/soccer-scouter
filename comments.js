@@ -213,12 +213,10 @@
     var sortUi = '<div class="cmt-sort">' +
       '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
+    var form = '<div class="cmt-form"><textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
-      ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' +
-        '<div class="cmt-form"><textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>'
-      : '<div class="cmt-login"><span class="cmt-login-t">로그인하고 댓글 남기기</span>' +
-        ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in g" data-p="google">' + GICON + "Google</button>" : "") +
-        ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
+      ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
+      : form;  // 로그아웃 상태에서도 입력창 표시, 등록/답글 시 로그인 유도
     return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" +
       '<div class="cmt-guide">댓글로 좋아하는 선수를 응원해보세요! ⚽</div>' + head +
       (roots.length ? sortUi : "") +
@@ -267,7 +265,7 @@
     var node = cmt && cmt.querySelector(":scope > .cmt-replybox");
     if (!node) return;
     if (node.innerHTML) { node.innerHTML = ""; return; }
-    if (!user) { alert("로그인 후 답글을 남길 수 있어요."); return; }
+    if (!user) { confirmLogin(); return; }
     var isReply = cmt.classList.contains("reply");
     var prefill = isReply ? "@" + cmt.getAttribute("data-name") + " " : "";
     node.innerHTML = '<textarea class="cmt-ta" maxlength="300" placeholder="답글">' + esc(prefill) + "</textarea>" +
@@ -280,7 +278,7 @@
     if (!ta) return;
     var body = (ta.value || "").trim();
     if (!body) return;
-    if (!user) { alert("로그인이 필요합니다."); return; }
+    if (!user) { confirmLogin(); return; }
     var rec = {
       thread_key: m.key, parent_id: parentId || null, user_id: user.id,
       reply_to_user: replyToUser || null,
@@ -309,7 +307,7 @@
     sb.from("comments").delete().eq("id", id).then(function () { render(m); });
   }
   function react(m, commentId, value) {
-    if (!user) { alert("로그인이 필요합니다."); return; }
+    if (!user) { confirmLogin(); return; }
     var cur = (m._data && m._data.rx[commentId]) ? m._data.rx[commentId].mine : 0;
     var op = (cur === value)
       ? sb.from("comment_reactions").delete().eq("comment_id", commentId).eq("user_id", user.id)
@@ -341,7 +339,7 @@
   }
   function ready() { if (!configured()) return Promise.resolve(null); return loadSDK().then(function () { return refreshUser(); }); }
   function report(commentId) {
-    if (!user) { alert("로그인이 필요합니다."); return; }
+    if (!user) { confirmLogin(); return; }
     var reason = prompt("신고 사유를 적어주세요 (예: 욕설/스팸/혐오/기타)");
     if (reason == null) return;
     sb.from("comment_reports").insert({ comment_id: commentId, reporter: user.id, reason: (reason || "").slice(0, 200) })
@@ -445,6 +443,9 @@
     var ua = (navigator.userAgent || "").toLowerCase();
     return /kakaotalk|instagram|fban|fbav|fb_iab|line\/|naver\(inapp|daumapps|everytimeapp|whale/.test(ua);
   }
+  function confirmLogin() {
+    if (confirm("로그인 후 작성할 수 있어요.\n구글로 로그인하시겠습니까?")) signIn("google");
+  }
   function signIn(provider) {
     if (!client()) return;
     // 구글은 인앱 브라우저(카카오톡 등)에서 OAuth 차단(disallowed_useragent) → 외부 브라우저로 유도
@@ -528,7 +529,7 @@
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },
     avatar: function () { return avatarOf(user); },
-    signIn: signIn,
+    signIn: signIn, promptLogin: confirmLogin,
     signOut: function () { return sb ? sb.auth.signOut() : Promise.resolve(); },
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },

@@ -1389,7 +1389,7 @@
     var my, ad;
     if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
     if ((my = e.target.closest(".rate-star"))) {
-      if (!window.KickComments || !KickComments.user()) { alert("로그인 후 평점을 남길 수 있어요. (하단 MY 탭에서 로그인)"); return; }
+      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); else alert("로그인이 필요해요."); return; }
       var rpid = my.getAttribute("data-pid"), rsc = parseInt(my.getAttribute("data-s"), 10);
       KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
       return;
@@ -1401,7 +1401,7 @@
     if ((my = e.target.closest(".bd-sort"))) { boardSort = my.getAttribute("data-bsort"); paintBoard(); return; }
     if ((my = e.target.closest(".bd-item, .bd-fab"))) { go(my.getAttribute("data-go")); return; }
     if ((my = e.target.closest(".post-like"))) {
-      if (!window.KickComments || !KickComments.user()) { alert("로그인 후 좋아요를 누를 수 있어요. (MY 탭에서 로그인)"); return; }
+      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); else alert("로그인이 필요해요."); return; }
       var lid = my.getAttribute("data-pid"), wasLiked = my.getAttribute("data-liked") === "1";
       my.disabled = true;
       KickComments.togglePostLike(lid, wasLiked).then(function () { renderPost(lid); }).catch(function () { my.disabled = false; });
