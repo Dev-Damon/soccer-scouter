@@ -2880,95 +2880,62 @@ window.DATA = {
           "2010 광저우 아시안게임 동메달 (U-23)"
         ]
       },
-      "formation": "4-2-3-1",
+      "formation": "3-4-3",
       "lineup": [
         {
-          "playerId": "jo-hyeon-woo",
-          "name": "조현우",
-          "number": null,
-          "pos": "GK",
+          "playerId": "kim-seung-gyu",
           "x": 50,
-          "y": 90
+          "y": 92
         },
         {
-          "playerId": "seol-young-woo",
-          "name": "설영우",
-          "number": 4,
-          "pos": "DF",
-          "x": 17,
-          "y": 74
+          "playerId": "kim-tae-hyeon",
+          "x": 25,
+          "y": 75
         },
         {
           "playerId": "kim-min-jae",
-          "name": "김민재",
-          "number": 2,
-          "pos": "DF",
-          "x": 39,
-          "y": 74
+          "x": 50,
+          "y": 75
         },
         {
-          "playerId": "cho-wi-je",
-          "name": "조위제",
-          "number": null,
-          "pos": "DF",
-          "x": 61,
-          "y": 74
+          "playerId": "lee-han-beom",
+          "x": 75,
+          "y": 75
         },
         {
-          "playerId": "jens-castrop",
-          "name": "옌스 카스트로프",
-          "number": 3,
-          "pos": "DF",
-          "x": 83,
-          "y": 74
-        },
-        {
-          "playerId": "hwang-in-beom",
-          "name": "황인범",
-          "number": null,
-          "pos": "MF",
-          "x": 39,
-          "y": 56
-        },
-        {
-          "playerId": "paik-seung-ho",
-          "name": "백승호",
-          "number": 8,
-          "pos": "MF",
-          "x": 61,
-          "y": 56
-        },
-        {
-          "playerId": "son-heung-min",
-          "name": "손흥민",
-          "number": 9,
-          "pos": "FW",
-          "x": 28,
-          "y": 38
+          "playerId": "lee-tae-seok",
+          "x": 12,
+          "y": 53
         },
         {
           "playerId": "lee-jae-sung",
-          "name": "이재성",
-          "number": 7,
-          "pos": "MF",
+          "x": 40,
+          "y": 55
+        },
+        {
+          "playerId": "hwang-in-beom",
+          "x": 60,
+          "y": 55
+        },
+        {
+          "playerId": "seol-young-woo",
+          "x": 88,
+          "y": 53
+        },
+        {
+          "playerId": "hwang-hee-chan",
+          "x": 25,
+          "y": 24
+        },
+        {
+          "playerId": "son-heung-min",
           "x": 50,
-          "y": 38
+          "y": 20
         },
         {
           "playerId": "lee-kang-in",
-          "name": "이강인",
-          "number": 6,
-          "pos": "MF",
-          "x": 72,
-          "y": 38
-        },
-        {
-          "playerId": "oh-hyeon-gyu",
-          "name": "오현규",
-          "number": null,
-          "pos": "FW",
-          "x": 50,
-          "y": 20
+          "x": 75,
+          "y": 24
         }
       ],
       "news": [
@@ -3045,95 +3012,62 @@ window.DATA = {
         "organization": 72,
         "experience": 44
       },
-      "formation": "4-3-3",
+      "formation": "3-4-2-1",
       "lineup": [
         {
-          "playerId": "jind-ich-stan-k",
-          "name": "인드르지흐 스타녜크",
-          "number": 1,
-          "pos": "GK",
+          "playerId": "matej-kovar",
           "x": 50,
-          "y": 90
+          "y": 92
         },
         {
-          "playerId": "ladislav-krejci",
-          "name": "라디슬라프 크레이치",
-          "number": 2,
-          "pos": "DF",
-          "x": 20,
-          "y": 72
-        },
-        {
-          "playerId": "david-zima",
-          "name": "다비드 지마",
-          "number": 3,
-          "pos": "DF",
-          "x": 40,
-          "y": 72
+          "playerId": "t-p-n-chaloupek",
+          "x": 25,
+          "y": 75
         },
         {
           "playerId": "robin-hran",
-          "name": "로빈 흐라나치",
-          "number": 4,
-          "pos": "DF",
-          "x": 60,
-          "y": 72
+          "x": 50,
+          "y": 75
         },
         {
-          "playerId": "david-jur-sek",
-          "name": "다비드 유라세크",
-          "number": 5,
-          "pos": "DF",
-          "x": 80,
-          "y": 72
+          "playerId": "ladislav-krejci",
+          "x": 75,
+          "y": 75
+        },
+        {
+          "playerId": "vladimir-coufal",
+          "x": 12,
+          "y": 56
         },
         {
           "playerId": "tomas-soucek",
-          "name": "토마시 소우첵",
-          "number": 6,
-          "pos": "MF",
-          "x": 25,
-          "y": 50
+          "x": 40,
+          "y": 56
+        },
+        {
+          "playerId": "lukas-provod",
+          "x": 60,
+          "y": 56
+        },
+        {
+          "playerId": "david-jur-sek",
+          "x": 88,
+          "y": 56
         },
         {
           "playerId": "pavel-sulc",
-          "name": "파벨 슐츠",
-          "number": 7,
-          "pos": "MF",
-          "x": 50,
-          "y": 50
+          "x": 35,
+          "y": 37
         },
         {
-          "playerId": "luk-erv",
-          "name": "루카시 체르프",
-          "number": 8,
-          "pos": "MF",
-          "x": 75,
-          "y": 50
+          "playerId": "vladim-r-darida",
+          "x": 65,
+          "y": 37
         },
         {
           "playerId": "patrik-schick",
-          "name": "파트리크 슈크",
-          "number": 9,
-          "pos": "FW",
-          "x": 25,
-          "y": 22
-        },
-        {
-          "playerId": "adam-hlozek",
-          "name": "아담 흘로제크",
-          "number": 10,
-          "pos": "FW",
           "x": 50,
-          "y": 22
-        },
-        {
-          "playerId": "jan-kuchta",
-          "name": "얀 쿠흐타",
-          "number": 11,
-          "pos": "FW",
-          "x": 75,
-          "y": 22
+          "y": 20
         }
       ],
       "manager": {

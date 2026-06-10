@@ -1037,6 +1037,7 @@
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
+    if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
     var where = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var top = (fx.group ? esc(fx.group) + "조" : esc(fx.stage || "")) + " · " + when + (where ? " · " + where : "");
