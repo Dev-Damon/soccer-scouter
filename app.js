@@ -916,10 +916,10 @@
     slot.innerHTML = '<h3>역대 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';
     resolveEspnId(fx).then(function (eid) {
       if (!eid) { slot.style.display = "none"; return; }
-      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { renderH2H(slot, d, fx, a); });
+      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { renderH2H(slot, d, fx, a, b); });
     }).catch(function () { slot.style.display = "none"; });
   }
-  function renderH2H(slot, d, fx, a) {
+  function renderH2H(slot, d, fx, a, b) {
     var blk = (d.headToHeadGames || [])[0];
     if (!blk || !(blk.events || []).length) { slot.style.display = "none"; return; }
     var blkAppId = espnTeamId(blk.team && blk.team.displayName);
@@ -935,10 +935,13 @@
       }
       meetings.push({ yr: (e.gameDate || "").slice(0, 4), score: (e.score || "").replace(/\s/g, "") });
     });
-    var rec = (blkAppId === fx.homeId) ? { w: w, d: dr, l: l } : { w: l, d: dr, l: w };
+    // 대한민국이 낀 경기는 홈/원정 무관 '대한민국 기준', 그 외엔 홈팀 기준
+    var perspId = (fx.homeId === "south-korea" || fx.awayId === "south-korea") ? "south-korea" : fx.homeId;
+    var perspName = (perspId === fx.awayId) ? b.name : a.name;
+    var rec = (blkAppId === perspId) ? { w: w, d: dr, l: l } : { w: l, d: dr, l: w };
     var recent = meetings.slice(0, 6).map(function (g) { return '<span class="h2h-g">' + esc(g.yr) + "·" + esc(g.score) + "</span>"; }).join("");
     slot.innerHTML = '<h3>역대 상대전적 <span class="muted-note">' + blk.events.length + "경기</span></h3>" +
-      '<div class="h2h-rec">' + esc(a.name) + ' 기준 <b class="h2h-w">' + rec.w + '승</b> <b class="h2h-d">' + rec.d + '무</b> <b class="h2h-l">' + rec.l + "패</b></div>" +
+      '<div class="h2h-rec">' + esc(perspName) + ' 기준 <b class="h2h-w">' + rec.w + '승</b> <b class="h2h-d">' + rec.d + '무</b> <b class="h2h-l">' + rec.l + "패</b></div>" +
       '<div class="h2h-list">최근 맞대결: ' + recent + "</div>";
   }
 
