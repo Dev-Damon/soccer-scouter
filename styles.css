@@ -822,6 +822,11 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 
 /* 매치업 중앙 VS (예상 스코어 제거) */
 .vs-x { font-size: 24px; font-weight: 900; color: var(--muted); letter-spacing: 1px; }
+.vs-score { font-size: 30px; font-weight: 900; color: var(--text); letter-spacing: 1px; }
+.vs-score span { color: var(--muted); margin: 0 2px; }
+.vs-clock { font-size: 11px; font-weight: 800; color: var(--muted); margin-top: 2px; }
+.vs-clock.live { color: #ff5e63; }
+.vs-clock.live::before { content: "● "; }
 
 /* twemoji 이모지 이미지(국기 등) */
 img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0.12em; display: inline-block; }

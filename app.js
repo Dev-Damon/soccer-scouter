@@ -1161,6 +1161,34 @@
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
+
+    // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
+    var aIsHome = (a.id === fx.homeId);
+    function updScore() {
+      var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
+      if (lv && (lv.state === "in" || lv.state === "post")) {
+        var as_ = aIsHome ? lv.hs : lv.as, bs_ = aIsHome ? lv.as : lv.hs;
+        c.innerHTML = '<div class="vs-score">' + (as_ | 0) + ' <span>-</span> ' + (bs_ | 0) + "</div>" +
+          '<div class="vs-clock' + (lv.state === "in" ? " live" : "") + '">' + (lv.state === "post" ? "경기 종료" : esc(lv.clock || "LIVE")) + "</div>";
+      }
+    }
+    function refreshLineup() {
+      var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
+      var eid = espnIdCache[fx.id]; if (eid) delete summaryCache[eid];
+      fetchSummary(fx).then(function (d) { if (d && parseHash().name === "match") renderLineup(slot, d, a, b); });
+    }
+    updScore();
+    var lvNow = LIVE[fx.id], ko = matchKickoff(fx);
+    if ((lvNow && lvNow.state === "in") || (ko && Date.now() >= ko - 600000 && Date.now() < ko + 8400000)) {
+      if (window.fetch) fetchLive();  // 전역 스코어 폴링 시동
+      matchLiveTimer = setInterval(function () {
+        if (parseHash().name !== "match") { stopMatchLive(); return; }
+        updScore();
+        var lv = LIVE[fx.id];
+        if (lv && lv.state === "in") refreshLineup();
+        else if (lv && lv.state === "post") { refreshLineup(); stopMatchLive(); }
+      }, 20000);
+    }
   }
 
   // ===================== 감독 상세 =====================
@@ -1736,9 +1764,12 @@
     });
   }
 
+  var matchLiveTimer = null;
+  function stopMatchLive() { if (matchLiveTimer) { clearInterval(matchLiveTimer); matchLiveTimer = null; } }
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
+    stopMatchLive();
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
     if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
     if (r.name === "rate") { setTabbar(""); renderMatchRate(r.id); return; }
