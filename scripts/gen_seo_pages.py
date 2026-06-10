@@ -10,6 +10,8 @@ CSS="body{margin:0;background:#070d18;color:#eaf0fb;font-family:-apple-system,'A
 def page(title,desc,canonical,ld,bodyhtml,ogt):
     return ("<!DOCTYPE html><html lang=ko><head><meta charset=UTF-8>"
       "<meta name=viewport content='width=device-width,initial-scale=1'>"
+      "<script async src='https://www.googletagmanager.com/gtag/js?id=G-KNLJ29Y409'></script>"
+      "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KNLJ29Y409');</script>"
       f"<title>{e(title)}</title><meta name=description content='{e(desc)}'>"
       f"<link rel=canonical href='{canonical}'><meta name=robots content='index,follow'>"
       f"<meta property=og:type content=website><meta property=og:title content='{e(ogt)}'>"
