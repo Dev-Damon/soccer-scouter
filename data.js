@@ -15167,40 +15167,6 @@ window.DATA = {
       "number": 8
     },
     {
-      "id": "tarek-salman",
-      "name": "타레크 살만",
-      "nameEn": "Tarek Salman",
-      "team": "카타르",
-      "club": "알 사드",
-      "league": "카타르 스타스 리그 (카타르)",
-      "position": "CB",
-      "age": 28,
-      "caps": 80,
-      "intlGoals": 0,
-      "grade": "주전급",
-      "oneLiner": "스페인 유스를 경험한 전성기 연령대의 중앙 수비수.",
-      "strengths": [
-        "전성기 연령대(28세)와 활동량",
-        "빌드업 가담과 발 기술",
-        "아시안컵 2연패 주력 경험"
-      ],
-      "weaknesses": [
-        "국제무대 득점·공격 기여 전무",
-        "강한 피지컬 공격수 상대 약점"
-      ],
-      "honours": [
-        "AFC 아시안컵 우승 2019·2023",
-        "카타르 스타스 리그 우승 3회"
-      ],
-      "notableTransfer": "아스파이어 아카데미 출신으로 레알 소시에다드·알라베스에서 훈련 후 2018년 알 사드 합류.",
-      "ovr": 67,
-      "scout": {
-        "skill": 67,
-        "value": 67,
-        "fame": 65
-      }
-    },
-    {
       "id": "assim-madibo",
       "name": "아심 마디보",
       "nameEn": "Assim Madibo",
@@ -20137,41 +20103,6 @@ window.DATA = {
       "number": 22
     },
     {
-      "id": "jurrien-timber",
-      "name": "유리언 팀버",
-      "nameEn": "Jurrien Timber",
-      "team": "네덜란드",
-      "club": "아스널",
-      "league": "프리미어리그 (잉글랜드)",
-      "position": "라이트백 / 센터백",
-      "age": 24,
-      "caps": 23,
-      "intlGoals": 0,
-      "grade": "주전급",
-      "oneLiner": "측면과 중앙을 모두 소화하는 차세대 수비수, 침착함과 운동능력의 결합.",
-      "strengths": [
-        "다재다능한 수비 포지션 소화",
-        "침착한 빌드업",
-        "1대1 대인 수비"
-      ],
-      "weaknesses": [
-        "신장 대비 제공권 한계",
-        "장기 부상 이력"
-      ],
-      "honours": [
-        "프리미어리그 우승 (2025-26)",
-        "에레디비시 우승 (2020-21, 2021-22, 아약스)",
-        "에레디비시 올해의 선수 (2021-22)"
-      ],
-      "notableTransfer": "2023년 7월 아약스에서 아스널로 초기 이적료 3,400만 파운드에 이적",
-      "ovr": 78,
-      "scout": {
-        "skill": 78,
-        "value": 78,
-        "fame": 64
-      }
-    },
-    {
       "id": "ryan-gravenberch",
       "name": "라윈 흐라번베르흐",
       "nameEn": "Ryan Gravenberch",
@@ -21916,41 +21847,6 @@ window.DATA = {
         "fame": 49
       },
       "number": 20
-    },
-    {
-      "id": "hamdi-fathi",
-      "name": "함디 파티",
-      "nameEn": "Hamdi Fathi",
-      "team": "이집트",
-      "club": "알 와크라",
-      "league": "카타르 스타스 리그 (카타르)",
-      "position": "DM",
-      "age": 31,
-      "caps": 53,
-      "intlGoals": 4,
-      "grade": "로테이션",
-      "oneLiner": "중원을 단단히 받치는 수비형 미드필더, 카타르 리그에서 뛰는 베테랑.",
-      "strengths": [
-        "볼 차단과 중원 커버 범위",
-        "경험에서 나오는 위치 선정",
-        "공수 밸런스 유지"
-      ],
-      "weaknesses": [
-        "부상 이력(발 부상)",
-        "공격 전개 시 창의성 부족",
-        "느린 스피드"
-      ],
-      "honours": [
-        "CAF 챔피언스리그 우승(알 아흘리)",
-        "이집트 프리미어리그 우승(알 아흘리)"
-      ],
-      "notableTransfer": "2023년 알 아흘리 → 알 와크라(카타르) 이적",
-      "ovr": 58,
-      "scout": {
-        "skill": 58,
-        "value": 55,
-        "fame": 53
-      }
     },
     {
       "id": "mostafa-shobeir",
@@ -33132,36 +33028,6 @@ window.DATA = {
       "number": 24
     },
     {
-      "id": "tahsin-jamshid",
-      "name": "타흐신 잠시드",
-      "nameEn": "Tahsin Jamshid",
-      "team": "카타르",
-      "club": "알 두하일 (Al-Duhail)",
-      "league": "카타르 스타스 리그 (Qatar Stars League, 카타르)",
-      "position": "MF",
-      "age": 19,
-      "caps": null,
-      "intlGoals": null,
-      "grade": "유망주",
-      "oneLiner": "19세의 차세대 중원 유망주로 기술과 창의성에서 가능성을 보인다",
-      "strengths": [
-        "탈압박과 볼 컨트롤",
-        "어린 나이"
-      ],
-      "weaknesses": [
-        "피지컬과 경험 부족",
-        "주전 경쟁력 미검증"
-      ],
-      "honours": [],
-      "notableTransfer": "알 두하일 유스 출신 신예",
-      "ovr": 53,
-      "scout": {
-        "skill": 53,
-        "value": 56,
-        "fame": 37
-      }
-    },
-    {
       "id": "yusuf-abdurisag",
       "name": "야수프 압두리사그",
       "nameEn": "Yusuf Abdurisag",
@@ -34755,39 +34621,6 @@ window.DATA = {
       "number": 25
     },
     {
-      "id": "munir-mohamedi",
-      "name": "무니르 모하메디",
-      "nameEn": "Munir Mohamedi",
-      "team": "모로코",
-      "club": "RS Berkane",
-      "league": "보톨라 프로 (모로코)",
-      "position": "GK",
-      "age": 37,
-      "caps": null,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "oneLiner": "경험 풍부한 베테랑 수문장, 백업 옵션으로 안정감을 더하는 노장 골키퍼",
-      "strengths": [
-        "풍부한 메이저 대회 경험",
-        "선방 안정감",
-        "리더십"
-      ],
-      "weaknesses": [
-        "나이로 인한 순발력 저하",
-        "빌드업 관여도 낮음"
-      ],
-      "honours": [
-        "2025년 모로코 국제축구 최다 연승 세계기록 행진 멤버"
-      ],
-      "notableTransfer": "2024년 RS 베르칸과 2년 계약 (2025년 8월 주장 선임)",
-      "ovr": 62,
-      "scout": {
-        "skill": 62,
-        "value": 55,
-        "fame": 45
-      }
-    },
-    {
       "id": "ahmed-reda-tagnaouti",
       "name": "아메드 레다 타그나우티",
       "nameEn": "Ahmed Reda Tagnaouti",
@@ -34855,37 +34688,6 @@ window.DATA = {
         "fame": 51
       },
       "number": 18
-    },
-    {
-      "id": "anass-salah-eddine",
-      "name": "아나스 살라흐에딘",
-      "nameEn": "Anass Salah-Eddine",
-      "team": "모로코",
-      "club": "PSV Eindhoven (로마 임대)",
-      "league": "에레디비시 (네덜란드)",
-      "position": "DF",
-      "age": 24,
-      "caps": null,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "oneLiner": "네덜란드 U21 출신의 공격적 왼쪽 풀백, 모로코 좌측 수비 뎁스 보강",
-      "strengths": [
-        "오버래핑과 공격 가담",
-        "왼발 크로스",
-        "체력"
-      ],
-      "weaknesses": [
-        "수비 위치선정 불안정",
-        "모로코 A대표 적응 초기"
-      ],
-      "honours": [],
-      "notableTransfer": "2025년 트벤테에서 AS 로마 이적, 2025-26 PSV 임대 (2025년 10월 네덜란드→모로코 국적 변경 승인)",
-      "ovr": 66,
-      "scout": {
-        "skill": 66,
-        "value": 66,
-        "fame": 46
-      }
     },
     {
       "id": "issa-diop",
@@ -36319,7 +36121,7 @@ window.DATA = {
         "value": 60,
         "fame": 42
       },
-      "number": 17
+      "number": 26
     },
     {
       "id": "lex-arce",
@@ -36448,38 +36250,6 @@ window.DATA = {
         "fame": 55
       },
       "number": 7
-    },
-    {
-      "id": "kaku",
-      "name": "카쿠",
-      "nameEn": "Kaku",
-      "team": "파라과이",
-      "club": "Al Ain",
-      "league": "Pro League (UAE)",
-      "position": "FW",
-      "age": 31,
-      "caps": 33,
-      "intlGoals": 5,
-      "grade": "주전급",
-      "oneLiner": "공격형 미드필더 겸 윙어로 창의적인 키패스를 뿌리는 파라과이 공격의 연결 고리",
-      "strengths": [
-        "창의적 패스와 킥",
-        "세트피스 키커",
-        "공격 전개력"
-      ],
-      "weaknesses": [
-        "기복",
-        "수비 기여도 낮음",
-        "UAE 리그 수준 한계"
-      ],
-      "honours": [],
-      "notableTransfer": "MLS(NY Red Bulls) 등을 거쳐 UAE Al Ain으로 이적",
-      "ovr": 69,
-      "scout": {
-        "skill": 69,
-        "value": 66,
-        "fame": 54
-      }
     },
     {
       "id": "maur-cio",
@@ -41968,40 +41738,6 @@ window.DATA = {
       "number": 4
     },
     {
-      "id": "ahmed-abou-el-fotouh",
-      "name": "아흐메드 아부 엘 포투",
-      "nameEn": "Ahmed Abou El Fotouh",
-      "team": "이집트",
-      "club": "자말렉 (Zamalek)",
-      "league": "이집트 프리미어리그 (이집트)",
-      "position": "DF",
-      "age": 28,
-      "caps": 21,
-      "intlGoals": 1,
-      "grade": "주전급",
-      "oneLiner": "공격 가담이 활발한 왼쪽 풀백으로, 측면을 넓게 쓰는 윙백 역할에 강점이 있다.",
-      "strengths": [
-        "활발한 측면 오버래핑",
-        "왼쪽 크로스와 세트피스 가담"
-      ],
-      "weaknesses": [
-        "수비 집중력의 기복",
-        "1대1 마크 시 위치 이탈"
-      ],
-      "honours": [
-        "이집트 프리미어리그 우승",
-        "이집트 컵 우승",
-        "CAF 컨페더레이션컵 우승"
-      ],
-      "notableTransfer": "자말렉 주전 왼쪽 풀백/윙백, 2021 아프리카 네이션스컵 결승 출전",
-      "ovr": 67,
-      "scout": {
-        "skill": 67,
-        "value": 67,
-        "fame": 55
-      }
-    },
-    {
       "id": "karim-hafez",
       "name": "카림 하페즈",
       "nameEn": "Karim Hafez",
@@ -42197,36 +41933,6 @@ window.DATA = {
         "fame": 41
       },
       "number": 21
-    },
-    {
-      "id": "donga",
-      "name": "동가",
-      "nameEn": "Donga",
-      "team": "이집트",
-      "club": "알 나즈마 (Al Najma)",
-      "league": "사우디 프로리그 (사우디아라비아)",
-      "position": "MF",
-      "age": 28,
-      "caps": 4,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "oneLiner": "걸프 무대로 진출한 수비형 미드필더로, 중원에 물리적 단단함을 더하는 옵션이다.",
-      "strengths": [
-        "강한 대인 압박과 볼 차단",
-        "전투적인 중원 커버"
-      ],
-      "weaknesses": [
-        "빌드업 정밀도 부족",
-        "대표팀 검증 데이터 적음"
-      ],
-      "honours": [],
-      "notableTransfer": "이집트 리그에서 사우디 알 나즈마로 이적한 수비형 미드필더",
-      "ovr": 59,
-      "scout": {
-        "skill": 59,
-        "value": 59,
-        "fame": 42
-      }
     },
     {
       "id": "haissem-hassan",
@@ -43212,38 +42918,6 @@ window.DATA = {
       "number": 20
     },
     {
-      "id": "eli-just",
-      "name": "엘리 저스트",
-      "nameEn": "Eli Just",
-      "team": "뉴질랜드",
-      "club": "마더웰",
-      "league": "스코티시 프리미어십 (스코틀랜드)",
-      "position": "FW",
-      "age": 25,
-      "caps": null,
-      "intlGoals": null,
-      "grade": "로테이션",
-      "oneLiner": "스코틀랜드 1부에서 뛰는 직선적인 공격수, 측면 침투와 드리블이 강점.",
-      "strengths": [
-        "직선적인 드리블 돌파",
-        "측면 침투",
-        "스코틀랜드 1부 경험"
-      ],
-      "weaknesses": [
-        "마무리 정확도",
-        "수비 가담",
-        "대표팀 검증 부족"
-      ],
-      "honours": [],
-      "notableTransfer": "덴마크 무대를 거쳐 스코틀랜드 마더웰로 이적한 공격형 자원",
-      "ovr": 56,
-      "scout": {
-        "skill": 56,
-        "value": 56,
-        "fame": 39
-      }
-    },
-    {
       "id": "jesse-randall",
       "name": "제시 랜들",
       "nameEn": "Jesse Randall",
@@ -44081,36 +43755,6 @@ window.DATA = {
         "fame": 46
       },
       "number": 13
-    },
-    {
-      "id": "diney",
-      "name": "디니",
-      "nameEn": "Diney",
-      "team": "카보베르데",
-      "club": "Al-Bataeh",
-      "league": "UAE 프로리그 (UAE)",
-      "position": "DF",
-      "age": 31,
-      "caps": 30,
-      "intlGoals": 2,
-      "grade": "로테이션",
-      "oneLiner": "중동 무대에서 활약 중인 베테랑 수비수, 백라인 뎁스를 책임진다.",
-      "strengths": [
-        "수비 경험",
-        "다재다능한 수비 운용"
-      ],
-      "weaknesses": [
-        "리그 경쟁력 한계",
-        "기동력"
-      ],
-      "honours": [],
-      "notableTransfer": "",
-      "ovr": 59,
-      "scout": {
-        "skill": 59,
-        "value": 56,
-        "fame": 47
-      }
     },
     {
       "id": "kelvin-pires",
@@ -46385,39 +46029,6 @@ window.DATA = {
       "number": 22
     },
     {
-      "id": "manaf-younis",
-      "name": "마나프 유니스",
-      "nameEn": "Manaf Younis",
-      "team": "이라크",
-      "club": "Al-Shorta",
-      "league": "이라크 스타스 리그 (이라크)",
-      "position": "DF",
-      "age": 29,
-      "caps": 20,
-      "intlGoals": 1,
-      "grade": "주전급",
-      "oneLiner": "리그 우승을 이끈 알 쇼르타의 안정적인 중앙 수비수",
-      "strengths": [
-        "대인 수비",
-        "위치 선정",
-        "꾸준함"
-      ],
-      "weaknesses": [
-        "스피드",
-        "빌드업 전개력"
-      ],
-      "honours": [
-        "이라크 스타스 리그 우승"
-      ],
-      "notableTransfer": "2022-23시즌 앞두고 알 쇼르타 복귀 후 재계약",
-      "ovr": 66,
-      "scout": {
-        "skill": 66,
-        "value": 66,
-        "fame": 51
-      }
-    },
-    {
       "id": "zaid-tahseen",
       "name": "자이드 타흐신",
       "nameEn": "Zaid Tahseen",
@@ -46512,39 +46123,6 @@ window.DATA = {
         "fame": 46
       },
       "number": 26
-    },
-    {
-      "id": "ahmed-yahya",
-      "name": "아흐메드 야흐야",
-      "nameEn": "Ahmed Yahya",
-      "team": "이라크",
-      "club": "Al-Shorta",
-      "league": "이라크 스타스 리그 (이라크)",
-      "position": "DF",
-      "age": 30,
-      "caps": 17,
-      "intlGoals": 0,
-      "grade": "주전급",
-      "oneLiner": "187cm 장신을 활용하는 알 쇼르타의 주전 좌측 풀백",
-      "strengths": [
-        "제공권",
-        "측면 수비",
-        "리그 우승 경험"
-      ],
-      "weaknesses": [
-        "공격 가담시 마무리",
-        "민첩성"
-      ],
-      "honours": [
-        "이라크 스타스 리그 우승 (2022-23, 2023-24, 2024-25)"
-      ],
-      "notableTransfer": "2022년 알 쇼르타 합류 후 리그 3연패 주역",
-      "ovr": 64,
-      "scout": {
-        "skill": 64,
-        "value": 61,
-        "fame": 49
-      }
     },
     {
       "id": "mustafa-saadoon",
@@ -48829,40 +48407,6 @@ window.DATA = {
         "fame": 48
       },
       "number": 22
-    },
-    {
-      "id": "noor-bani-attiah",
-      "name": "누르 바니 아티아",
-      "nameEn": "Noor Bani Attiah",
-      "team": "요르단",
-      "club": "Al-Faisaly SC",
-      "league": "요르단 프로 리그 (요르단)",
-      "position": "GK",
-      "age": 33,
-      "caps": 5,
-      "intlGoals": 0,
-      "grade": "로테이션",
-      "oneLiner": "경험 많은 제3 골키퍼. 라커룸 안정감을 주는 베테랑 옵션이다.",
-      "strengths": [
-        "풍부한 국내 리그 경험",
-        "안정적 위치 선정",
-        "리더십"
-      ],
-      "weaknesses": [
-        "A매치 경험 적음",
-        "민첩성 하락",
-        "출전 기회 제한"
-      ],
-      "honours": [
-        "요르단 프로 리그 우승(알파이살리)"
-      ],
-      "notableTransfer": "알파이살리 장수 골키퍼, 베테랑 제3 GK로 합류",
-      "ovr": 52,
-      "scout": {
-        "skill": 52,
-        "value": 46,
-        "fame": 39
-      }
     },
     {
       "id": "abdallah-nasib",
@@ -54471,40 +54015,6 @@ window.DATA = {
       "number": 26
     },
     {
-      "id": "mohammad-taha",
-      "name": "모하마드 타하",
-      "nameEn": "Mohammad Taha",
-      "team": "요르단",
-      "club": "알후세인 이르비드 (샤바브 알오르돈 임대)",
-      "league": "요르단 프로리그 (요르단)",
-      "position": "DF (LB/좌측 풀백)",
-      "age": 20,
-      "caps": 2,
-      "intlGoals": 0,
-      "grade": "유망주",
-      "oneLiner": "부상으로 빠진 이브라힘 사브라의 대체로 합류한 20세 공격형 좌측 풀백 유망주.",
-      "strengths": [
-        "공격 가담 능력(2025-26시즌 5개 공격 포인트)",
-        "나이에 비한 측면 침투와 크로스",
-        "연령별 대표 풍부한 경험(U20·U23)"
-      ],
-      "weaknesses": [
-        "성인 대표팀 경험 부족(단 2캡)",
-        "수비 안정감과 1대1 대인 방어 검증 필요",
-        "월드컵 무대 첫 경험으로 인한 압박 적응"
-      ],
-      "honours": [
-        "2024 WAFF U-23 챔피언십 (요르단 U23)"
-      ],
-      "notableTransfer": "2025년 1월 샤바브 알오르돈에서 알후세인으로 임대",
-      "ovr": 52,
-      "scout": {
-        "skill": 52,
-        "value": 55,
-        "fame": 38
-      }
-    },
-    {
       "id": "goncalo-guedes",
       "name": "곤살루 게드스",
       "nameEn": "Gonçalo Guedes",
@@ -55330,6 +54840,461 @@ window.DATA = {
         "fame": 54
       },
       "number": 18
+    },
+    {
+      "id": "ahmed-fatouh",
+      "name": "아흐메드 파토우",
+      "nameEn": "Ahmed Fatouh",
+      "team": "이집트",
+      "club": "자말렉 SC",
+      "league": "이집트 프리미어리그 (이집트)",
+      "position": "풀백",
+      "age": 29,
+      "caps": 20,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "왕성한 활동량을 자랑하는 자말렉의 왼쪽 풀백",
+      "strengths": [
+        "오버래핑",
+        "체력"
+      ],
+      "weaknesses": [
+        "수비 집중력"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 66,
+      "scout": {
+        "skill": 65,
+        "value": 58,
+        "fame": 52
+      },
+      "number": 13
+    },
+    {
+      "id": "hamdy-fathy",
+      "name": "함디 파티",
+      "nameEn": "Hamdy Fathy",
+      "team": "이집트",
+      "club": "알 와크라 SC",
+      "league": "카타르 스타스 리그 (카타르)",
+      "position": "수비형 미드필더",
+      "age": 28,
+      "caps": 25,
+      "intlGoals": 1,
+      "grade": "주전급",
+      "oneLiner": "중원을 단단히 보호하는 이집트의 수비형 미드필더",
+      "strengths": [
+        "볼 차단",
+        "위치 선정"
+      ],
+      "weaknesses": [
+        "공격 전개"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 70,
+      "scout": {
+        "skill": 69,
+        "value": 62,
+        "fame": 58
+      },
+      "number": 14
+    },
+    {
+      "id": "nabil-donga",
+      "name": "나빌 동가",
+      "nameEn": "Nabil Donga",
+      "team": "이집트",
+      "club": "알 나즈마 SC",
+      "league": "사우디 프로 리그 (사우디아라비아)",
+      "position": "중앙 미드필더",
+      "age": 26,
+      "caps": 8,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "성실한 박스-투-박스 능력을 갖춘 이집트의 미드필더",
+      "strengths": [
+        "활동량",
+        "박스 투 박스"
+      ],
+      "weaknesses": [
+        "국제 경험 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 62,
+      "scout": {
+        "skill": 61,
+        "value": 55,
+        "fame": 48
+      },
+      "number": 18
+    },
+    {
+      "id": "munaf-younus",
+      "name": "무나프 유누스",
+      "nameEn": "Munaf Younus",
+      "team": "이라크",
+      "club": "알 쇼르타 SC",
+      "league": "이라크 스타스 리그 (이라크)",
+      "position": "센터백",
+      "age": 25,
+      "caps": 12,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "제공권에 강점을 보이는 이라크의 젊은 센터백",
+      "strengths": [
+        "제공권",
+        "대인 수비"
+      ],
+      "weaknesses": [
+        "빌드업"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 63,
+      "scout": {
+        "skill": 62,
+        "value": 56,
+        "fame": 47
+      },
+      "number": 6
+    },
+    {
+      "id": "ahmed-maknazi",
+      "name": "아흐메드 마크나지",
+      "nameEn": "Ahmed Maknazi",
+      "team": "이라크",
+      "club": "알 카르마 SC",
+      "league": "이라크 스타스 리그 (이라크)",
+      "position": "풀백",
+      "age": 24,
+      "caps": 6,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "oneLiner": "빠른 발과 잠재력을 갖춘 이라크의 측면 수비수",
+      "strengths": [
+        "스피드",
+        "측면 커버"
+      ],
+      "weaknesses": [
+        "경험 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 60,
+      "scout": {
+        "skill": 59,
+        "value": 54,
+        "fame": 44
+      },
+      "number": 15
+    },
+    {
+      "id": "nour-baniateyah",
+      "name": "누르 바니아테야",
+      "nameEn": "Nour Baniateyah",
+      "team": "요르단",
+      "club": "알 파이살리 SC",
+      "league": "요르단 프로 리그 (요르단)",
+      "position": "골키퍼",
+      "age": 27,
+      "caps": 4,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "요르단 국가대표 백업 골키퍼",
+      "strengths": [
+        "반사신경",
+        "공중볼 처리"
+      ],
+      "weaknesses": [
+        "국제 경험 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 62,
+      "scout": {
+        "skill": 61,
+        "value": 55,
+        "fame": 40
+      },
+      "number": 12
+    },
+    {
+      "id": "mohammad-abughoush",
+      "name": "모하마드 아부구쉬",
+      "nameEn": "Mohammad Abughoush",
+      "team": "요르단",
+      "club": "알 후세인 SC",
+      "league": "요르단 프로 리그 (요르단)",
+      "position": "중앙 미드필더",
+      "age": 25,
+      "caps": 8,
+      "intlGoals": 1,
+      "grade": "로테이션",
+      "oneLiner": "활동량 좋은 요르단 중원 자원",
+      "strengths": [
+        "활동량",
+        "박스-투-박스 가담"
+      ],
+      "weaknesses": [
+        "빌드업 정교함"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 64,
+      "scout": {
+        "skill": 63,
+        "value": 58,
+        "fame": 42
+      },
+      "number": 18
+    },
+    {
+      "id": "munir-el-kajoui",
+      "name": "무니르 엘 카주이",
+      "nameEn": "Munir El Kajoui",
+      "team": "모로코",
+      "club": "RS 베르칸",
+      "league": "보톨라 프로 (모로코)",
+      "position": "골키퍼",
+      "age": 35,
+      "caps": 11,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "풍부한 경험을 갖춘 모로코 베테랑 골키퍼",
+      "strengths": [
+        "위치 선정",
+        "리더십",
+        "페널티킥 대응"
+      ],
+      "weaknesses": [
+        "나이로 인한 순발력 저하"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 71,
+      "scout": {
+        "skill": 70,
+        "value": 58,
+        "fame": 56
+      },
+      "number": 12
+    },
+    {
+      "id": "anass-salah-eddine",
+      "name": "아나스 살라흐에딘",
+      "nameEn": "Anass Salah-Eddine",
+      "team": "모로코",
+      "club": "PSV 에인트호번",
+      "league": "에레디비시 (네덜란드)",
+      "position": "풀백",
+      "age": 23,
+      "caps": 5,
+      "intlGoals": 0,
+      "grade": "유망주",
+      "oneLiner": "공격 가담이 뛰어난 PSV 측면 수비수",
+      "strengths": [
+        "오버래핑",
+        "크로스",
+        "스피드"
+      ],
+      "weaknesses": [
+        "수비 위치 선정"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 72,
+      "scout": {
+        "skill": 71,
+        "value": 70,
+        "fame": 58
+      },
+      "number": 26
+    },
+    {
+      "id": "ahmed-alganehi",
+      "name": "아흐메드 알가네히",
+      "nameEn": "Ahmed Alganehi",
+      "team": "카타르",
+      "club": "알 가라파 SC",
+      "league": "카타르 스타스 리그 (카타르)",
+      "position": "중앙 미드필더",
+      "age": 24,
+      "caps": 8,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "활동량을 앞세운 카타르 대표팀의 중원 자원",
+      "strengths": [
+        "넓은 활동 범위",
+        "적극적인 압박"
+      ],
+      "weaknesses": [
+        "국제 경험 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 63,
+      "scout": {
+        "skill": 63,
+        "value": 58,
+        "fame": 48
+      },
+      "number": 17
+    },
+    {
+      "id": "mohamed-manai",
+      "name": "모하메드 마나이",
+      "nameEn": "Mohamed Manai",
+      "team": "카타르",
+      "club": "알 샤말 SC",
+      "league": "카타르 스타스 리그 (카타르)",
+      "position": "스트라이커",
+      "age": 22,
+      "caps": 4,
+      "intlGoals": 1,
+      "grade": "유망주",
+      "oneLiner": "성장 잠재력을 지닌 카타르의 젊은 공격수",
+      "strengths": [
+        "골 결정력",
+        "박스 안 침투"
+      ],
+      "weaknesses": [
+        "연계 플레이"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 60,
+      "scout": {
+        "skill": 60,
+        "value": 58,
+        "fame": 45
+      },
+      "number": 26
+    },
+    {
+      "id": "diney-borges",
+      "name": "디네이 보르게스",
+      "nameEn": "Diney Borges",
+      "team": "카보베르데",
+      "club": "알 바타이 클럽",
+      "league": "UAE 프로 리그 (아랍에미리트)",
+      "position": "센터백",
+      "age": 27,
+      "caps": 15,
+      "intlGoals": 0,
+      "grade": "주전급",
+      "oneLiner": "안정적인 수비를 책임지는 카보베르데의 중앙 수비수",
+      "strengths": [
+        "제공권",
+        "대인 수비"
+      ],
+      "weaknesses": [
+        "빌드업 정확도"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 66,
+      "scout": {
+        "skill": 66,
+        "value": 60,
+        "fame": 50
+      },
+      "number": 3
+    },
+    {
+      "id": "lutsharel-geertruida",
+      "name": "루차렐 헤이르트라위다",
+      "nameEn": "Lutsharel Geertruida",
+      "team": "네덜란드",
+      "club": "선덜랜드 AFC",
+      "league": "프리미어리그 (잉글랜드)",
+      "position": "풀백",
+      "age": 25,
+      "caps": 12,
+      "intlGoals": 0,
+      "grade": "로테이션",
+      "oneLiner": "오른쪽 풀백과 센터백을 모두 소화하는 다재다능한 수비 자원",
+      "strengths": [
+        "다포지션 소화 능력",
+        "빌드업 가담"
+      ],
+      "weaknesses": [
+        "국가대표 경험 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 75,
+      "scout": {
+        "skill": 74,
+        "value": 68,
+        "fame": 55
+      },
+      "number": 2
+    },
+    {
+      "id": "elijah-just",
+      "name": "일라이저 저스트",
+      "nameEn": "Elijah Just",
+      "team": "뉴질랜드",
+      "club": "머더웰 FC",
+      "league": "스코티시 프리미어십 (스코틀랜드)",
+      "position": "공격형 미드필더",
+      "age": 25,
+      "caps": 24,
+      "intlGoals": 4,
+      "grade": "주전급",
+      "oneLiner": "측면과 중앙을 오가며 공격을 풀어가는 뉴질랜드의 창의적 미드필더",
+      "strengths": [
+        "드리블 돌파",
+        "공격 전개"
+      ],
+      "weaknesses": [
+        "수비 가담 부족"
+      ],
+      "honours": [],
+      "notableTransfer": "",
+      "ovr": 68,
+      "scout": {
+        "skill": 66,
+        "value": 58,
+        "fame": 48
+      },
+      "number": 11
+    },
+    {
+      "id": "kaku",
+      "name": "카쿠",
+      "nameEn": "Kaku",
+      "team": "파라과이",
+      "club": "Al Ain",
+      "league": "Pro League (UAE)",
+      "position": "FW",
+      "age": 31,
+      "caps": 33,
+      "intlGoals": 5,
+      "grade": "주전급",
+      "oneLiner": "공격형 미드필더 겸 윙어로 창의적인 키패스를 뿌리는 파라과이 공격의 연결 고리",
+      "strengths": [
+        "창의적 패스와 킥",
+        "세트피스 키커",
+        "공격 전개력"
+      ],
+      "weaknesses": [
+        "기복",
+        "수비 기여도 낮음",
+        "UAE 리그 수준 한계"
+      ],
+      "honours": [],
+      "notableTransfer": "MLS(NY Red Bulls) 등을 거쳐 UAE Al Ain으로 이적",
+      "ovr": 69,
+      "scout": {
+        "skill": 69,
+        "value": 66,
+        "fame": 54
+      },
+      "number": 17
     }
   ],
   "standings": {
