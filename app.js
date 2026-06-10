@@ -1414,8 +1414,8 @@
   }
   function adminDashHtml(d) {
     if (!d) return "";
-    function card(label, val, acc) { return '<div class="dash-card' + (acc ? " acc" : "") + '"><div class="dash-v">' + (val != null ? val : "–") + '</div><div class="dash-l">' + label + "</div></div>"; }
-    var cards = card("가입자", d.members, true) + card("댓글", d.comments) + card("게시글", d.posts) + card("채팅", d.chats) + card("평점", d.ratings);
+    function card(label, val, acc, tab) { return '<div class="dash-card' + (acc ? " acc" : "") + (tab ? " clk" : "") + '"' + (tab ? ' data-adtab="' + tab + '"' : "") + '><div class="dash-v">' + (val != null ? val : "–") + '</div><div class="dash-l">' + label + "</div></div>"; }
+    var cards = card("가입자 ›", d.members, true, "members") + card("댓글", d.comments) + card("게시글", d.posts) + card("채팅", d.chats) + card("평점", d.ratings);
     var today = '<div class="dash-today">🔥 오늘 — 신규 <b>' + (d.new_today || 0) + '</b> · 댓글 <b>' + (d.comments_today || 0) + '</b> · 게시글 <b>' + (d.posts_today || 0) + '</b> · 채팅 <b>' + (d.chats_today || 0) + "</b></div>";
     var daily = d.daily || [], maxv = 1;
     daily.forEach(function (x) { maxv = Math.max(maxv, x.signups || 0, x.acts || 0); });
@@ -1670,7 +1670,7 @@
       return;
     }
     if ((ad = e.target.closest(".mb-sort"))) { memberSort = ad.getAttribute("data-msort"); paintAdmin(); return; }
-    if ((ad = e.target.closest(".mgr-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }
+    if ((ad = e.target.closest("[data-adtab]"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); window.scrollTo(0, 0); return; }
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
     if ((ad = e.target.closest(".mgr-del"))) {
       if (!confirm("이 댓글을 삭제할까요? (관리자 강제삭제)")) return;
