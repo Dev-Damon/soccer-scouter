@@ -83,6 +83,12 @@
     // 배지는 기존처럼 코스(GK/DF/MF/FW)로 통일 — 한글로 새던 것만 자연히 영문 코스로 교정됨
     return '<span class="posb ' + posClass(p.position) + (lg ? " lg" : "") + '">' + posClass(p.position).toUpperCase() + "</span>";
   }
+  // 선수단 카드용: 큰 등번호 + 작은 포지션(번호 없으면 기존 포지션 배지)
+  function numBadge(p) {
+    var pc = posClass(p.position);
+    if (p.number == null) return posBadge(p);
+    return '<span class="numb ' + pc + '"><span class="numb-n">' + p.number + '</span><span class="numb-p">' + pc.toUpperCase() + "</span></span>";
+  }
   function flagOf(teamId) {
     var t = teamId ? teamsById[teamId] : null;
     return t ? t.flag : "🏳️";
@@ -504,7 +510,7 @@
   // ===================== 공통: 선수 행 =====================
   function playerRow(p, hideScore) {
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
-      posBadge(p) +
+      numBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
       '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + "</div></div>" +
       badge(p, hideScore) + "</div>";
