@@ -533,14 +533,15 @@
   function saveGet() { try { return JSON.parse(localStorage.getItem("ss_saved") || "[]"); } catch (e) { return []; } }
   function saveHas(key) { return saveGet().indexOf(key) !== -1; }
   function saveToggle(key) { var l = saveGet(), i = l.indexOf(key); if (i < 0) l.unshift(key); else l.splice(i, 1); try { localStorage.setItem("ss_saved", JSON.stringify(l)); } catch (e) {} return i < 0; }
-  function saveBtnHtml(key) { var on = saveHas(key); return '<button class="save-btn' + (on ? " on" : "") + '" data-save="' + esc(key) + '" aria-label="저장">' + (on ? "★" : "☆") + "</button>"; }
+  function saveBtnHtml(key) { return '<button class="save-btn' + (saveHas(key) ? " on" : "") + '" data-save="' + esc(key) + '" aria-label="저장">⭐</button>'; }
   function renderSaved() {
     backBtn.hidden = true; tabsEl.hidden = true;
-    var keys = saveGet(), players = [], teams = [];
-    keys.forEach(function (k) { var pr = k.split(":"); if (pr[0] === "player" && playersById[pr[1]]) players.push(playersById[pr[1]]); else if (pr[0] === "team" && teamsById[pr[1]]) teams.push(teamsById[pr[1]]); });
+    var keys = saveGet(), players = [], teams = [], matches = [];
+    keys.forEach(function (k) { var pr = k.split(":"); if (pr[0] === "player" && playersById[pr[1]]) players.push(playersById[pr[1]]); else if (pr[0] === "team" && teamsById[pr[1]]) teams.push(teamsById[pr[1]]); else if (pr[0] === "match" && fixturesById[pr[1]]) matches.push(fixturesById[pr[1]]); });
     var html = '<div class="sec-h">⭐ 저장</div>';
-    if (!players.length && !teams.length) { viewEl.innerHTML = html + '<div class="empty">아직 저장한 선수·나라가 없어요.<br>선수/나라 상세에서 ☆ 를 눌러 찜해보세요!</div>'; return; }
+    if (!players.length && !teams.length && !matches.length) { viewEl.innerHTML = html + '<div class="empty">아직 저장한 항목이 없어요.<br>선수·나라·경기 상세에서 ⭐ 를 눌러 찜해보세요!</div>'; return; }
     if (teams.length) html += '<div class="sv-sub">나라</div><div class="grid">' + teams.map(function (t) { return '<div class="player-row" data-team="' + esc(t.id) + '"><span class="rank-flag" style="font-size:24px">' + esc(t.flag || "🏳") + '</span><div class="player-main"><div class="player-name">' + esc(t.name) + '</div><div class="player-sub">대표팀</div></div></div>'; }).join("") + "</div>";
+    if (matches.length) html += '<div class="sv-sub">경기</div><div class="grid">' + matches.map(function (fx) { var ta = teamsById[fx.homeId], tb = teamsById[fx.awayId]; var nm = (ta ? ta.flag + " " + ta.name : "?") + " vs " + (tb ? tb.flag + " " + tb.name : "?"); return '<div class="player-row" data-match="' + esc(fx.id) + '"><div class="player-main"><div class="player-name">' + esc(nm) + '</div><div class="player-sub">' + esc((fmtDate(fxDate(fx)) || {}).d || fx.date || "") + "</div></div></div>"; }).join("") + "</div>";
     if (players.length) html += '<div class="sv-sub">선수</div><div class="grid">' + players.map(function (p) { return playerRow(p, true); }).join("") + "</div>";
     viewEl.innerHTML = html; twem(viewEl);
   }
@@ -847,8 +848,9 @@
           '<div class="pl-meta"><div class="pl-sub">' + esc(p.club) + " · " + esc(p.league) + "</div>" +
             '<div class="pl-name">' + esc(p.name) + "</div>" +
             '<div class="detail-name-en">' + esc(p.nameEn) + "</div>" +
-            '<div class="pl-badges">' + badge(p) + saveBtnHtml("player:" + p.id) + "</div></div>" +
+            '<div class="pl-badges">' + badge(p) + "</div></div>" +
           '<div class="ovr"><span class="ovr-l">OVR</span><span class="ovr-v">' + ovr + "</span></div>" +
+          saveBtnHtml("player:" + p.id) +
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
@@ -1035,7 +1037,7 @@
   // 경기 예상 라인업 피치(두 팀 마주보기) — 자체 t.lineup 기반(경기 전에도 항상)
   function matchFormation(a, b) {
     if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
-    var W = 720, H = 440, padX = 0.05, span = 0.40;
+    var W = 720, H = 440, padX = 0.08, span = 0.38;
     function side(t, left, col) {
       return (t.lineup || []).map(function (d) {
         var p = playersById[d.playerId] || {};
@@ -1095,6 +1097,7 @@
 
     viewEl.innerHTML =
       '<div class="detail match-view">' +
+        saveBtnHtml("match:" + fx.id) +
         '<div class="var-title"><span class="var-tag">VAR</span> 경기 분석</div>' +
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
@@ -1107,6 +1110,7 @@
         '<div class="block h2h-slot"></div>' +
         (mf ? '<div class="block">' + mf + "</div>" : "") +
         '<div class="block lineup-slot"></div>' +
+        '<div class="block mratings-slot"></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
@@ -1127,6 +1131,7 @@
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
+    renderMatchRatings(viewEl.querySelector(".mratings-slot"), fx.id, a, b);
   }
 
   // ===================== 감독 상세 =====================
@@ -1144,7 +1149,7 @@
       return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
     }).join("");
 
-    var career = (m.career || []).map(function (c) {
+    var career = (m.career || []).slice().reverse().map(function (c) {  // 최신이 맨 위
       return '<div class="tl-item"><span class="tl-year">' + esc(c.period || "") + '</span><span class="tl-dot"></span>' +
         '<span class="tl-text">' + esc(c.team || "") + (c.note ? ' <span class="muted-note">' + esc(c.note) + "</span>" : "") + "</span></div>";
     }).join("");
@@ -1357,6 +1362,44 @@
     if (events.length) html += '<div class="lu-events"><h3>⚽ 주요 이벤트</h3>' + events.map(luEvent).join("") + "</div>";
     slot.innerHTML = html;
     twem(slot);
+  }
+  // ===== 경기 평점·MVP =====
+  var mrCtx = null;
+  function renderMatchRatings(slot, matchId, a, b) {
+    if (!slot) return;
+    var ids = [];
+    (a.lineup || []).concat(b.lineup || []).forEach(function (d) { if (playersById[d.playerId] && ids.indexOf(d.playerId) < 0) ids.push(d.playerId); });
+    if (!ids.length || !window.KickComments || !KickComments.configured()) { slot.style.display = "none"; return; }
+    mrCtx = { matchId: matchId, ids: ids };
+    slot.innerHTML = '<h3>⭐ 선수 평점 · MVP</h3><div class="h2h-loading">불러오는 중…</div>';
+    KickComments.ready().then(function () {
+      return Promise.all([KickComments.matchRatings(matchId), KickComments.matchMvp(matchId)]);
+    }).then(function (res) { if (parseHash().name === "match") paintMatchRatings(slot, res[0], res[1]); }).catch(function () { slot.style.display = "none"; });
+  }
+  function paintMatchRatings(slot, rd, md) {
+    if (!mrCtx) return;
+    var ids = mrCtx.ids, leader = null, lead = 0;
+    ids.forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
+    var head = "<h3>⭐ 선수 평점 · MVP</h3>";
+    if (leader && lead > 0 && playersById[leader]) head += '<div class="mr-lead">🏆 현재 MVP <b>' + esc(playersById[leader].name) + "</b> · " + lead + '표 <span class="muted-note">(총 ' + md.total + "표)</span></div>";
+    head += '<div class="mr-hint muted-note">별 = 선수 평점 · 🏆 = MVP 투표(경기당 1명)</div>';
+    var rows = ids.map(function (pid) {
+      var p = playersById[pid]; if (!p) return "";
+      var r = rd.byPlayer[pid], my = rd.mine[pid] || 0, cnt = r ? r.cnt : 0, avg = r ? r.avg.toFixed(1) : "";
+      var stars = ""; for (var s = 1; s <= 5; s++) stars += '<span class="mr-star' + (s <= my ? " on" : "") + '" data-rate-pid="' + esc(pid) + '" data-star="' + s + '">★</span>';
+      var votes = md.votes[pid] || 0;
+      return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
+        '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
+        '<div class="mr-bot"><span class="mr-stars">' + stars + "</span>" +
+        '<span class="mr-avg">' + (cnt ? "평균 ⭐" + avg + " (" + cnt + ")" : '<span class="muted-note">평점 없음</span>') + "</span></div></div>";
+    }).join("");
+    slot.innerHTML = head + '<div class="mr-list">' + rows + "</div>";
+    twem(slot);
+  }
+  function refreshMatchRatings() {
+    if (!mrCtx) return;
+    var slot = viewEl.querySelector(".mratings-slot"); if (!slot) return;
+    Promise.all([KickComments.matchRatings(mrCtx.matchId), KickComments.matchMvp(mrCtx.matchId)]).then(function (res) { paintMatchRatings(slot, res[0], res[1]); });
   }
   function compLabel(e) {
     var ln = e.leagueName || e.competitionName || "";
@@ -1802,7 +1845,11 @@
     var ex = e.target.closest("[data-expand]");
     if (ex) { var elist = ex.parentNode.querySelector(".news-list"); if (elist) elist.classList.remove("news-collapsed"); ex.style.display = "none"; return; }
     var sbtn = e.target.closest(".save-btn");
-    if (sbtn) { var son = saveToggle(sbtn.getAttribute("data-save")); sbtn.classList.toggle("on", son); sbtn.textContent = son ? "★" : "☆"; return; }
+    if (sbtn) { sbtn.classList.toggle("on", saveToggle(sbtn.getAttribute("data-save"))); return; }
+    var rst = e.target.closest(".mr-star");
+    if (rst) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } KickComments.rateMatchPlayer(mrCtx.matchId, rst.getAttribute("data-rate-pid"), +rst.getAttribute("data-star")).then(refreshMatchRatings); return; }
+    var mvb = e.target.closest(".mr-mvp");
+    if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } KickComments.voteMvp(mrCtx.matchId, mvb.getAttribute("data-mvp-pid")).then(refreshMatchRatings); return; }
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }

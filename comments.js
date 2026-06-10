@@ -355,6 +355,24 @@
   function isAdmin() { return !!(user && user.id === ADMIN_UID); }
   function adminDashboard() { if (!isAdmin()) return Promise.resolve(null); return sb.rpc("admin_dashboard").then(function (r) { return r.data || null; }).catch(function () { return null; }); }
   function adminUsers() { if (!isAdmin()) return Promise.resolve([]); return sb.rpc("admin_users").then(function (r) { return r.data || []; }).catch(function () { return []; }); }
+  // 경기 평점·MVP (match_id = fixture id)
+  function matchRatings(matchId) {
+    return sb.from("match_player_ratings").select("player_id,score,user_id").eq("match_id", matchId).then(function (r) {
+      var rows = r.data || [], by = {}, mine = {};
+      rows.forEach(function (x) { var b = by[x.player_id] || (by[x.player_id] = { sum: 0, cnt: 0 }); b.sum += x.score; b.cnt++; if (user && x.user_id === user.id) mine[x.player_id] = x.score; });
+      var out = {}; Object.keys(by).forEach(function (pid) { out[pid] = { avg: by[pid].sum / by[pid].cnt, cnt: by[pid].cnt }; });
+      return { byPlayer: out, mine: mine };
+    }).catch(function () { return { byPlayer: {}, mine: {} }; });
+  }
+  function rateMatchPlayer(matchId, playerId, score) { if (!user) return Promise.resolve(null); return sb.from("match_player_ratings").upsert({ match_id: matchId, player_id: playerId, user_id: user.id, score: score }, { onConflict: "match_id,player_id,user_id" }); }
+  function matchMvp(matchId) {
+    return sb.from("match_mvp_votes").select("player_id,user_id").eq("match_id", matchId).then(function (r) {
+      var rows = r.data || [], votes = {}, mine = null;
+      rows.forEach(function (x) { votes[x.player_id] = (votes[x.player_id] || 0) + 1; if (user && x.user_id === user.id) mine = x.player_id; });
+      return { votes: votes, mine: mine, total: rows.length };
+    }).catch(function () { return { votes: {}, mine: null, total: 0 }; });
+  }
+  function voteMvp(matchId, playerId) { if (!user) return Promise.resolve(null); return sb.from("match_mvp_votes").upsert({ match_id: matchId, player_id: playerId, user_id: user.id }, { onConflict: "match_id,user_id" }); }
   function listReports() {
     if (!isAdmin()) return Promise.resolve([]);
     return sb.from("comment_reports").select("*,comments(*)").order("created_at", { ascending: false }).limit(300)
@@ -570,6 +588,7 @@
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },
     isAdmin: isAdmin, adminDashboard: adminDashboard, adminUsers: adminUsers, listReports: listReports, listAllComments: listAllComments,
+    matchRatings: matchRatings, rateMatchPlayer: rateMatchPlayer, matchMvp: matchMvp, voteMvp: voteMvp,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
