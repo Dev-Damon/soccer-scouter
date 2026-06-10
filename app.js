@@ -1026,7 +1026,7 @@
       var res = applyEspn(d);
       if (res.changed && onHomeSchedule()) renderSchedule();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
-      scheduleLive(res.anyLive ? 60000 : (res.anyToday ? 180000 : 0));  // 라이브 60초 / 임박 3분 / 없으면 중단
+      scheduleLive(res.anyLive ? 15000 : (res.anyToday ? 180000 : 0));  // 라이브 15초 / 임박 3분 / 없으면 중단
     }).catch(function () { scheduleLive(180000); });
   }
 
