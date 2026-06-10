@@ -2579,7 +2579,12 @@ window.DATA = {
           "url": "https://www.goal.com/en-us/news/mexico-south-africa-world-cup-preview/bltbbc641c3e0e20e59",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "south-africa",
@@ -2798,7 +2803,12 @@ window.DATA = {
           "url": "https://www.espn.com/espn/story/_/id/46600100/fifa-world-cup-qualifying-hugo-broos-culture-shift-pays-dividends-south-africa",
           "date": "2025-10-16"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2010",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "south-korea",
@@ -3004,7 +3014,12 @@ window.DATA = {
           "url": "https://www.besteleven.com/news/articleView.html?idxno=307094",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "czech-republic",
@@ -3223,7 +3238,12 @@ window.DATA = {
           "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d15945d06d-c1587a40d2a4-1000--czechia-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2006",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "canada",
@@ -3434,7 +3454,12 @@ window.DATA = {
           "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "bosnia-and-herzegovina",
@@ -3598,7 +3623,12 @@ window.DATA = {
           "url": "https://www.skysports.com/football/news/12098/13543085/world-cup-2026-group-b-guide-fixtures-schedule-standings-and-odds-for-canada-bosnia-herzegovina-qatar-and-switzerland",
           "date": "2026-06-06"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2014",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "qatar",
@@ -3811,7 +3841,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar/team-news",
           "date": "2026-06-02"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "switzerland",
@@ -4035,7 +4070,12 @@ window.DATA = {
           "url": "https://www.goal.com/en-us/news/qatar-switzerland-world-cup-preview/blt152850821751c25d",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "brazil",
@@ -4279,7 +4319,12 @@ window.DATA = {
           "url": "https://www.fifa.com/ko/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-squad-announcement-carlo-ancelotti-ko",
           "date": "2026-05-19"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "8강",
+        "inLast2022": true
+      }
     },
     {
       "id": "morocco",
@@ -4479,7 +4524,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/news/brazil-morocco-world-cup-preview/bltdf80391584379c4e",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "4강",
+        "inLast2022": true
+      }
     },
     {
       "id": "haiti",
@@ -4690,7 +4740,12 @@ window.DATA = {
           "url": "https://www.espn.com/soccer/story/_/id/47019793/haiti-reach-2026-world-cup-manager-never-setting-foot-country",
           "date": "2025-11-19"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "1974",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "scotland",
@@ -4913,7 +4968,12 @@ window.DATA = {
           "url": "https://www.skysports.com/football/news/36621/13551871/scotland-at-world-cup-2026-steve-clarkes-side-look-to-progress-beyond-the-group-stage-for-first-time",
           "date": "2026-06-08"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "1998",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "united-states",
@@ -5118,7 +5178,12 @@ window.DATA = {
           "url": "https://www.espn.com/soccer/story/_/id/48882849/usmnt-final-world-cup-roster-pochettino-taking-risks",
           "date": "2026-05-26"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "paraguay",
@@ -5334,7 +5399,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-squad-announcement-gustavo-alfaro",
           "date": "2026-06-02"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2010",
+        "stage": "8강",
+        "inLast2022": false
+      }
     },
     {
       "id": "australia",
@@ -5531,7 +5601,12 @@ window.DATA = {
           "url": "https://www.espn.com/soccer/story/_/id/48980794/fifa-world-cup-socceroos-cristian-volpato-followed-heart-switch-italy-australia",
           "date": "2026-06-06"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "turkey",
@@ -5735,7 +5810,12 @@ window.DATA = {
           "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d15969649d-c1471bfa3c52-1000--turkiye-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
           "date": "2026-06-02"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2002",
+        "stage": "4강",
+        "inLast2022": false
+      }
     },
     {
       "id": "germany",
@@ -5926,7 +6006,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-squad-neuer-nagelsmann-named",
           "date": "2026-05-21"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "curacao",
@@ -6157,7 +6242,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/dick-advocaat-returns-curacao-coach",
           "date": "2026-05-13"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "",
+        "stage": "첫 본선",
+        "inLast2022": false
+      }
     },
     {
       "id": "ivory-coast",
@@ -6350,7 +6440,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/lists/ivory-coast-squad-world-cup-2026/blt9aedfc5d4aee5816",
           "date": "2026-05-20"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2014",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "ecuador",
@@ -6552,7 +6647,12 @@ window.DATA = {
           "url": "https://www.goal.com/en-in/lists/ecuador-squad-world-cup-2026/blt0d6faa95026c07f5",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "netherlands",
@@ -6781,7 +6881,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/lists/netherlands-squad-world-cup-2026/bltab8e400140133c06",
           "date": "2026-05-28"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "8강",
+        "inLast2022": true
+      }
     },
     {
       "id": "japan",
@@ -6965,7 +7070,12 @@ window.DATA = {
           "url": "https://www.aljazeera.com/sports/2026/5/22/japans-world-cup-2026-team-preview-players-to-watch-group-squad",
           "date": "2026-05-22"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "sweden",
@@ -7170,7 +7280,12 @@ window.DATA = {
           "url": "https://www.skysports.com/football/news/11095/13550178/graham-potter-interview-finding-joy-with-sweden-after-chelsea-west-ham-woe-and-unlocking-viktor-gyokeres-and-alexander-isak-at-world-cup",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2018",
+        "stage": "8강",
+        "inLast2022": false
+      }
     },
     {
       "id": "tunisia",
@@ -7389,7 +7504,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/lists/tunisia-squad-world-cup-2026/bltdea755c505c4ca25",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "belgium",
@@ -7609,7 +7729,12 @@ window.DATA = {
           "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/belgium-5-0-tunisia-doku-stars-in-pre-world-cup-thrashing-2026-06-06",
           "date": "2026-06-06"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "egypt",
@@ -7827,7 +7952,12 @@ window.DATA = {
           "url": "https://www.cafonline.com/news/salah-headlines-egypt-s-world-cup-preparations-as-hossam-hassan-unveils-preliminary-squad/",
           "date": "2026-05-22"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2018",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "iran",
@@ -8039,7 +8169,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/lists/iran-squad-world-cup-2026/blt67c2d5d938254c59",
           "date": "2026-06-02"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "new-zealand",
@@ -8253,7 +8388,12 @@ window.DATA = {
           "url": "https://www.rnz.co.nz/news/alert-spt/592636/all-whites-captain-chris-wood-injured-again-weeks-out-from-world-cup",
           "date": "2026-04-17"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2010",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "spain",
@@ -8471,7 +8611,12 @@ window.DATA = {
           "url": "https://www.interfootball.co.kr/news/articleView.html?idxno=685592",
           "date": "2026-05-01"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "cape-verde",
@@ -8669,7 +8814,12 @@ window.DATA = {
           "url": "https://www.fourfourtwo.com/team/cape-verde-world-cup-2026-squad",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "",
+        "stage": "첫 본선",
+        "inLast2022": false
+      }
     },
     {
       "id": "saudi-arabia",
@@ -8896,7 +9046,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia/team-news",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "uruguay",
@@ -9140,7 +9295,12 @@ window.DATA = {
           "url": "https://www.si.com/soccer/uruguay-2026-world-cup-roster-confirmed-full-list-players",
           "date": "2026-06-01"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "france",
@@ -9342,7 +9502,12 @@ window.DATA = {
           "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d159288012-ce02189d2504-1000--france-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "준우승",
+        "inLast2022": true
+      }
     },
     {
       "id": "senegal",
@@ -9518,7 +9683,12 @@ window.DATA = {
           "url": "https://www.espn.com/soccer/match/_/gameId/401871362/senegal-saudi-arabia",
           "date": "2026-06-09"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "16강",
+        "inLast2022": true
+      }
     },
     {
       "id": "iraq",
@@ -9737,7 +9907,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/iraq-bolivia-match-report-quotes",
           "date": "2026-03-31"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "1986",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "norway",
@@ -9944,7 +10119,12 @@ window.DATA = {
           "url": "https://www.uefa.com/european-qualifiers/news/02a6-20d1592b3f90-2ef16e2c5255-1000--norway-at-the-world-cup-2026-squad-fixtures-group-and-hi/",
           "date": "2026-05-22"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "1998",
+        "stage": "16강",
+        "inLast2022": false
+      }
     },
     {
       "id": "argentina",
@@ -10142,7 +10322,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-squad-announced",
           "date": "2026-05-29"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "우승",
+        "inLast2022": true
+      }
     },
     {
       "id": "algeria",
@@ -10350,7 +10535,12 @@ window.DATA = {
           "url": "https://www.sportsmole.co.uk/football/argentina/world-cup-2026/feature/world-cup-group-j-preview-predictions-key-fixture-star-players_598755.html",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2014",
+        "stage": "16강",
+        "inLast2022": false
+      }
     },
     {
       "id": "austria",
@@ -10565,7 +10755,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/lists/austria-squad-world-cup-2026/blt9697a808b9602c2c",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "1998",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "jordan",
@@ -10779,7 +10974,12 @@ window.DATA = {
           "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/jordan-at-the-fifa-world-cup-2026-squad-key-players-and-everything-you-need-to-know-2026-05-18",
           "date": "2026-05-18"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "",
+        "stage": "첫 본선",
+        "inLast2022": false
+      }
     },
     {
       "id": "portugal",
@@ -10973,7 +11173,12 @@ window.DATA = {
           "url": "https://www.footballist.co.kr/news/articleView.html?idxno=204024",
           "date": "2025-11-17"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "8강",
+        "inLast2022": true
+      }
     },
     {
       "id": "dr-congo",
@@ -11206,7 +11411,12 @@ window.DATA = {
           "url": "https://www.mlssoccer.com/competitions/fifa-world-cup/news/2026-fifa-world-cup-group-k-preview-portugal-dr-congo-uzbekistan-colombia",
           "date": "2026-06-06"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "1974",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     },
     {
       "id": "uzbekistan",
@@ -11425,7 +11635,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-colombia-preview-live-stream-team-news-tickets",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "",
+        "stage": "첫 본선",
+        "inLast2022": false
+      }
     },
     {
       "id": "colombia",
@@ -11625,7 +11840,12 @@ window.DATA = {
           "url": "https://www.goal.com/en/lists/colombia-squad-world-cup-2026/bltf252af4fae7c7b3e",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2018",
+        "stage": "16강",
+        "inLast2022": false
+      }
     },
     {
       "id": "england",
@@ -11837,7 +12057,12 @@ window.DATA = {
           "url": "https://www.aljazeera.com/sports/2026/6/1/england-world-cup-2026-team-preview-players-to-watch-group-and-squad-list",
           "date": "2026-06-01"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "8강",
+        "inLast2022": true
+      }
     },
     {
       "id": "croatia",
@@ -12050,7 +12275,12 @@ window.DATA = {
           "url": "https://www.besteleven.com/news/articleView.html?idxno=307547",
           "date": "2026-06-02"
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "4강",
+        "inLast2022": true
+      }
     },
     {
       "id": "ghana",
@@ -12295,7 +12525,12 @@ window.DATA = {
           "url": "https://www.ghanafa.org/black-stars-squad-numbers-confirmed-for-2026-fifa-world-cup",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2022",
+        "stage": "조별리그",
+        "inLast2022": true
+      }
     },
     {
       "id": "panama",
@@ -12488,7 +12723,12 @@ window.DATA = {
           "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-team-profile-history",
           "date": ""
         }
-      ]
+      ],
+      "lastWc": {
+        "year": "2018",
+        "stage": "조별리그",
+        "inLast2022": false
+      }
     }
   ],
   "players": [

@@ -179,6 +179,7 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .team-flag { font-size: 30px; }
 .team-name { font-weight: 700; font-size: 16px; }
 .team-rank { color: var(--muted); font-size: 12px; }
+.team-wc { margin-top: 5px; font-size: 12.5px; font-weight: 700; color: var(--accent); }
 
 /* Player list row */
 .player-row {

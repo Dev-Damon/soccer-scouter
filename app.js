@@ -562,7 +562,11 @@
         '<div class="ch-grid"></div>' +
         '<span class="team-flag lg">' + esc(t.flag) + "</span>" +
         '<div class="ch-meta"><h2>' + esc(t.name) + "</h2>" +
-        '<div class="team-rank">FIFA 랭킹 ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div></div>" +
+        '<div class="team-rank">FIFA 랭킹 ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div>" +
+        (t.lastWc ? '<div class="team-wc">🏆 ' + (t.lastWc.inLast2022
+          ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
+          : (t.lastWc.year ? "최근 월드컵 " + esc(t.lastWc.year) + " · " + esc(t.lastWc.stage) : "2026 첫 본선 진출")) + "</div>" : "") +
+        "</div>" +
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
 
