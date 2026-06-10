@@ -301,7 +301,7 @@
       ".cmt-empty{color:var(--muted,#9fb0c3);font-size:13px;padding:8px 0}",
       ".cmt{}",
       ".cmt-top{display:flex;align-items:baseline;gap:8px}",
-      ".cmt-name{font-weight:700;font-size:13.5px}",
+      ".cmt-name{font-weight:500;font-size:13.5px}",
       ".cmt-time{color:var(--muted,#9fb0c3);font-size:11.5px}",
       ".cmt-body{font-size:14px;line-height:1.5;margin:3px 0;white-space:pre-wrap;word-break:break-word}",
       ".cmt-act{display:flex;gap:12px}",
