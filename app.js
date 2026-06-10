@@ -548,6 +548,25 @@
       '<span class="idx-v">' + v + "</span></div>";
   }
 
+  // 선수 평점(별점) 위젯 — 상세 페이지의 .rate-slot 에 마운트
+  function renderRating(pid) {
+    var slot = viewEl.querySelector(".rate-slot");
+    if (!slot || !window.KickComments || !KickComments.configured()) return;
+    KickComments.ready().then(function () { return KickComments.playerRating(pid); }).then(function (r) {
+      var h = parseHash();
+      if (h.name !== "player" || h.id !== pid) return;
+      paintRating(slot, pid, r);
+    }).catch(function () {});
+  }
+  function paintRating(slot, pid, r) {
+    var mine = r.mine || 0, stars = "";
+    for (var i = 1; i <= 5; i++) stars += '<button class="rate-star' + (i <= mine ? " on" : "") + '" data-pid="' + esc(pid) + '" data-s="' + i + '" aria-label="' + i + '점">★</button>';
+    var avg = r.cnt ? "⭐ " + r.avg.toFixed(1) + " · " + r.cnt + "명 평가" : "아직 평점이 없어요 — 첫 평가를 남겨보세요!";
+    slot.innerHTML = '<div class="block rate-box"><h3>선수 평점 <span class="muted-note">유저 평가</span></h3>' +
+      '<div class="rate-stars">' + stars + "</div>" +
+      '<div class="rate-avg">' + avg + (mine ? ' · 내 평점 ' + mine + "★" : "") + "</div></div>";
+  }
+
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -603,6 +622,7 @@
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
         scoutHtml +
+        '<div class="rate-slot" data-pid="' + esc(p.id) + '"></div>' +
         '<div class="sw">' +
           '<div class="swbox pos"><h4>강점</h4><div class="tags">' + (strengths || '<span class="tag">-</span>') + "</div></div>" +
           '<div class="swbox neg"><h4>약점</h4><div class="tags">' + (weaknesses || '<span class="tag weak">-</span>') + "</div></div>" +
@@ -1192,7 +1212,7 @@
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
-    if (r.name === "player") { setTabbar(""); renderPlayer(r.id); mountCmt("player:" + r.id); return; }
+    if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
     if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
     if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
@@ -1228,6 +1248,12 @@
   viewEl.addEventListener("click", function (e) {
     var my, ad;
     if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
+    if ((my = e.target.closest(".rate-star"))) {
+      if (!window.KickComments || !KickComments.user()) { alert("로그인 후 평점을 남길 수 있어요. (하단 MY 탭에서 로그인)"); return; }
+      var rpid = my.getAttribute("data-pid"), rsc = parseInt(my.getAttribute("data-s"), 10);
+      KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
+      return;
+    }
     if ((ad = e.target.closest(".mgr-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
     if ((ad = e.target.closest(".mgr-del"))) {

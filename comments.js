@@ -371,6 +371,27 @@
   function banUser(userId, reason) { if (!isAdmin() || !userId) return Promise.resolve(); return sb.from("banned_users").upsert({ user_id: userId, reason: reason || null, banned_by: user.id }, { onConflict: "user_id" }); }
   function unbanUser(userId) { if (!isAdmin()) return Promise.resolve(); return sb.from("banned_users").delete().eq("user_id", userId); }
   function unhideComment(id) { if (!isAdmin()) return Promise.resolve(); return sb.from("comments").update({ hidden: false }).eq("id", id); }
+  // ── 선수 평점(별점 1~5) ──
+  function ratingStats() {
+    if (!client()) return Promise.resolve({});
+    return sb.from("player_rating_stats").select("*").then(function (r) {
+      var m = {}; (r.data || []).forEach(function (x) { m[x.player_id] = { avg: Number(x.avg) || 0, cnt: x.cnt || 0 }; }); return m;
+    }).catch(function () { return {}; });
+  }
+  function playerRating(pid) {
+    if (!client()) return Promise.resolve({ avg: 0, cnt: 0, mine: 0 });
+    return Promise.all([
+      sb.from("player_rating_stats").select("avg,cnt").eq("player_id", pid).maybeSingle(),
+      user ? sb.from("player_ratings").select("score").eq("player_id", pid).eq("user_id", user.id).maybeSingle() : Promise.resolve({ data: null })
+    ]).then(function (res) {
+      var s = (res[0] && res[0].data) || null, mn = (res[1] && res[1].data) || null;
+      return { avg: s ? Number(s.avg) : 0, cnt: s ? s.cnt : 0, mine: mn ? mn.score : 0 };
+    }).catch(function () { return { avg: 0, cnt: 0, mine: 0 }; });
+  }
+  function ratePlayer(pid, score) {
+    if (!user) return Promise.reject(new Error("login"));
+    return sb.from("player_ratings").upsert({ player_id: pid, user_id: user.id, score: score, updated_at: new Date().toISOString() }, { onConflict: "player_id,user_id" });
+  }
 
   function inAppBrowser() {
     var ua = (navigator.userAgent || "").toLowerCase();
@@ -465,6 +486,7 @@
     providers: function () { return loadProviders(); },
     isAdmin: isAdmin, listReports: listReports, listAllComments: listAllComments,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
-    banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment
+    banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
+    ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer
   };
 })();
