@@ -140,6 +140,7 @@
     if (!h) return { name: "home" };
     var parts = h.split("/");
     if (parts[0] === "player") return { name: "player", id: parts[1] };
+    if (parts[0] === "compare") return { name: "compare", a: parts[1], b: parts[2] };
     if (parts[0] === "team") return { name: "team", id: parts[1] };
     if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "manager") return { name: "manager", id: parts[1] };
@@ -710,25 +711,34 @@
     }).join("");
     return '<div class="block"><h3>⚡ 능력치 <span class="muted-note">자체 지수</span></h3><div class="pw-radarwrap">' + radar + "</div>" + bars + "</div>";
   }
-  // 능력치 카드 이미지(공유용) — 캔버스로 그려서 Web Share / 다운로드
+  // 능력치 카드 이미지(공유용) — 캔버스로 임팩트 있게 그려서 Web Share / 다운로드
+  function hexA(hex, a) { var n = parseInt(hex.slice(1), 16); return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + a + ")"; }
+  function rr(c, x, y, w, h, r) { c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
+  function gradeColor(grade) { return grade === "월드클래스" ? "#f5b301" : grade === "주전급" ? "#5bbf8a" : grade === "유망주" ? "#36c2d6" : "#4f8cff"; }
   function playerCardCanvas(p) {
-    var W = 720, H = 720, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
-    var c = cv.getContext("2d");
-    var g = c.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#101b30"); g.addColorStop(1, "#070d18"); c.fillStyle = g; c.fillRect(0, 0, W, H);
-    c.textAlign = "left"; c.fillStyle = "#4f8cff"; c.font = "bold 26px -apple-system,sans-serif"; c.fillText("킥톡 · 2026 월드컵", 40, 58);
-    c.fillStyle = "#eaf0fb"; c.font = "bold 46px -apple-system,sans-serif"; c.fillText(p.name, 40, 122);
-    c.fillStyle = "#9fb0cc"; c.font = "500 21px -apple-system,sans-serif"; c.fillText(((p.position || "") + " · " + (p.club || "")).slice(0, 40), 40, 154);
-    c.textAlign = "right"; c.fillStyle = "#4f8cff"; c.font = "bold 60px -apple-system,sans-serif"; c.fillText(String(p.ovr || ""), W - 40, 112); c.fillStyle = "#9fb0cc"; c.font = "bold 18px sans-serif"; c.fillText("OVR", W - 40, 138);
-    var pw = p.power, dims = [["공격력", pw["공격력"]], ["골결정력", pw["골결정력"]], ["스피드", pw["스피드"]], ["수비력", pw["수비력"]], ["피지컬", pw["피지컬"]], ["테크닉", pw["테크닉"]]];
-    var cx = W / 2, cy = 410, R = 175, angs = [-90, -30, 30, 90, 150, 210].map(function (a) { return a * Math.PI / 180; });
-    c.strokeStyle = "#2a3a5c"; c.lineWidth = 1.5;
+    var W = 720, H = 760, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    var c = cv.getContext("2d"), ac = gradeColor(p.grade);
+    var g = c.createLinearGradient(0, 0, W, H); g.addColorStop(0, "#1b2d60"); g.addColorStop(.55, "#0c1530"); g.addColorStop(1, "#070d18"); c.fillStyle = g; c.fillRect(0, 0, W, H);
+    var rgl = c.createRadialGradient(W / 2, 450, 20, W / 2, 450, 300); rgl.addColorStop(0, hexA(ac, .16)); rgl.addColorStop(1, "rgba(0,0,0,0)"); c.fillStyle = rgl; c.fillRect(0, 200, W, 480);
+    c.textAlign = "left"; c.fillStyle = "#fff"; c.font = "900 30px -apple-system,sans-serif"; c.fillText("KICKTALK", 40, 62); c.fillStyle = ac; c.font = "bold 19px -apple-system,sans-serif"; c.fillText("2026 월드컵 능력치 분석", 205, 60);
+    c.fillStyle = "#fff"; c.font = "bold 50px -apple-system,sans-serif"; c.fillText(String(p.name).slice(0, 14), 40, 146);
+    c.fillStyle = "#aeb8cc"; c.font = "500 22px -apple-system,sans-serif"; c.fillText(((p.position || "") + " · " + (p.club || "")).slice(0, 36), 40, 180);
+    c.font = "bold 22px -apple-system,sans-serif"; var gtxt = p.grade || "", gw = c.measureText(gtxt).width + 34;
+    rr(c, 40, 200, gw, 38, 19); c.fillStyle = hexA(ac, .18); c.fill(); c.strokeStyle = ac; c.lineWidth = 1.5; c.stroke(); c.fillStyle = ac; c.fillText(gtxt, 57, 226);
+    c.beginPath(); c.arc(W - 80, 116, 56, 0, 7); c.fillStyle = hexA(ac, .15); c.fill(); c.strokeStyle = ac; c.lineWidth = 3; c.stroke();
+    c.textAlign = "center"; c.fillStyle = "#fff"; c.font = "900 50px -apple-system,sans-serif"; c.fillText(String(p.ovr || ""), W - 80, 128); c.fillStyle = ac; c.font = "bold 16px sans-serif"; c.fillText("OVR", W - 80, 156);
+    var pw = p.power, K = ["공격력", "골결정력", "스피드", "수비력", "피지컬", "테크닉"], dims = K.map(function (k) { return [k, (pw[k] || 0)]; });
+    var cx = W / 2, cy = 450, R = 168, angs = [-90, -30, 30, 90, 150, 210].map(function (a) { return a * Math.PI / 180; });
+    c.strokeStyle = "rgba(130,148,186,.32)"; c.lineWidth = 1.5;
     [0.25, 0.5, 0.75, 1].forEach(function (f) { c.beginPath(); angs.forEach(function (a, i) { var x = cx + f * R * Math.cos(a), y = cy + f * R * Math.sin(a); if (i) c.lineTo(x, y); else c.moveTo(x, y); }); c.closePath(); c.stroke(); });
     angs.forEach(function (a) { c.beginPath(); c.moveTo(cx, cy); c.lineTo(cx + R * Math.cos(a), cy + R * Math.sin(a)); c.stroke(); });
-    c.beginPath(); dims.forEach(function (d, i) { var v = (d[1] || 0) / 100, x = cx + v * R * Math.cos(angs[i]), y = cy + v * R * Math.sin(angs[i]); if (i) c.lineTo(x, y); else c.moveTo(x, y); }); c.closePath();
-    c.fillStyle = "rgba(79,140,255,.30)"; c.fill(); c.strokeStyle = "#4f8cff"; c.lineWidth = 3; c.stroke();
-    c.font = "bold 21px -apple-system,sans-serif";
-    dims.forEach(function (d, i) { var v = (d[1] || 0) / 100, x = cx + v * R * Math.cos(angs[i]), y = cy + v * R * Math.sin(angs[i]); c.fillStyle = "#4f8cff"; c.beginPath(); c.arc(x, y, 5, 0, 7); c.fill(); var lx = cx + (R + 34) * Math.cos(angs[i]), ly = cy + (R + 34) * Math.sin(angs[i]), ca = Math.cos(angs[i]); c.fillStyle = "#cdd8e6"; c.textAlign = Math.abs(ca) < 0.3 ? "center" : (ca > 0 ? "left" : "right"); c.fillText(d[0] + " " + (d[1] || 0), lx, ly + 7); });
-    c.textAlign = "center"; c.fillStyle = "#6f7d96"; c.font = "600 22px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 자체 능력치 지수", W / 2, H - 38);
+    c.save(); c.shadowColor = ac; c.shadowBlur = 24;
+    c.beginPath(); dims.forEach(function (d, i) { var v = d[1] / 100, x = cx + v * R * Math.cos(angs[i]), y = cy + v * R * Math.sin(angs[i]); if (i) c.lineTo(x, y); else c.moveTo(x, y); }); c.closePath();
+    c.fillStyle = hexA(ac, .40); c.fill(); c.strokeStyle = ac; c.lineWidth = 3.5; c.stroke(); c.restore();
+    c.font = "bold 22px -apple-system,sans-serif";
+    dims.forEach(function (d, i) { var v = d[1] / 100, x = cx + v * R * Math.cos(angs[i]), y = cy + v * R * Math.sin(angs[i]); c.fillStyle = ac; c.beginPath(); c.arc(x, y, 5, 0, 7); c.fill(); var lx = cx + (R + 34) * Math.cos(angs[i]), ly = cy + (R + 34) * Math.sin(angs[i]), ca = Math.cos(angs[i]); c.fillStyle = "#e6edf8"; c.textAlign = Math.abs(ca) < 0.3 ? "center" : (ca > 0 ? "left" : "right"); c.fillText(d[0] + " " + d[1], lx, ly + 7); });
+    rr(c, 40, H - 80, W - 80, 52, 26); c.fillStyle = ac; c.fill();
+    c.textAlign = "center"; c.fillStyle = "#0a1020"; c.font = "900 25px -apple-system,sans-serif"; c.fillText("kicktalk.xyz  ·  전 선수 능력치 무료 분석", W / 2, H - 46);
     return cv;
   }
   function sharePlayerCard(p) {
@@ -745,6 +755,45 @@
       } catch (e) {}
       var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
     }, "image/png");
+  }
+  // ===== 선수 비교(레이더 겹쳐보기) =====
+  var CMP_KEYS = ["공격력", "골결정력", "스피드", "수비력", "피지컬", "테크닉"];
+  var cmpA = null;
+  function compareRadar(pwA, pwB) {
+    var cx = 170, cy = 160, R = 105, angs = [-90, -30, 30, 90, 150, 210];
+    function rpf(f) { return angs.map(function (a) { var r = a * Math.PI / 180; return (cx + f * R * Math.cos(r)).toFixed(1) + "," + (cy + f * R * Math.sin(r)).toFixed(1); }).join(" "); }
+    var grid = [0.25, 0.5, 0.75, 1].map(function (f) { return '<polygon points="' + rpf(f) + '" fill="none" stroke="#2a3a5c" stroke-width="1"/>'; }).join("") +
+      angs.map(function (a) { var r = a * Math.PI / 180; return '<line x1="' + cx + '" y1="' + cy + '" x2="' + (cx + R * Math.cos(r)).toFixed(1) + '" y2="' + (cy + R * Math.sin(r)).toFixed(1) + '" stroke="#2a3a5c"/>'; }).join("");
+    function poly(pw, col, fl) { var pts = CMP_KEYS.map(function (k, i) { var a = angs[i] * Math.PI / 180, v = (pw[k] || 0) / 100; return (cx + v * R * Math.cos(a)).toFixed(1) + "," + (cy + v * R * Math.sin(a)).toFixed(1); }).join(" "); return '<polygon points="' + pts + '" fill="' + fl + '" stroke="' + col + '" stroke-width="2.5"/>'; }
+    var labels = CMP_KEYS.map(function (k, i) { var r = angs[i] * Math.PI / 180, lx = cx + (R + 26) * Math.cos(r), ly = cy + (R + 26) * Math.sin(r), anc = Math.abs(Math.cos(r)) < 0.3 ? "middle" : (Math.cos(r) > 0 ? "start" : "end"); return '<text x="' + lx.toFixed(0) + '" y="' + (ly + 4).toFixed(0) + '" fill="#cdd8e6" font-size="14" font-weight="700" text-anchor="' + anc + '">' + k + "</text>"; }).join("");
+    return '<svg viewBox="-25 0 390 315" class="pw-radar">' + grid + poly(pwA, "#4f8cff", "rgba(79,140,255,.22)") + poly(pwB, "#f0a93b", "rgba(240,169,59,.20)") + labels + "</svg>";
+  }
+  function paintCmpResults(q) {
+    var box = viewEl.querySelector(".cmp-results"); if (!box) return;
+    var nq = (q || "").trim().toLowerCase();
+    var list = DATA.players.filter(function (p) { return p.id !== cmpA && (!nq || (p.name + " " + (p.nameEn || "")).toLowerCase().indexOf(nq) !== -1); });
+    list.sort(function (a, b) { return (b.ovr || 0) - (a.ovr || 0); });
+    box.innerHTML = list.slice(0, 40).map(function (p) { return '<div class="player-row" data-cmp-pick="' + esc(p.id) + '">' + numBadge(p) + '<div class="player-main"><div class="player-name">' + esc(p.name) + '</div><div class="player-sub">' + esc(p.team) + "</div></div></div>"; }).join("");
+    twem(box);
+  }
+  function renderCompare(aId, bId) {
+    backBtn.hidden = false; tabsEl.hidden = true;
+    var A = playersById[aId];
+    if (!A) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
+    cmpA = aId;
+    var B = bId ? playersById[bId] : null;
+    if (!B) {
+      viewEl.innerHTML = '<div class="sec-h">⚖️ 선수 비교</div><div class="cmp-pick-a"><b>' + esc(A.name) + '</b> <span class="muted-note">와 비교할 선수를 골라주세요</span></div><input class="cmp-search" placeholder="선수 검색 (예: 음바페, 케인)"><div class="cmp-results"></div>';
+      paintCmpResults("");
+      var si = viewEl.querySelector(".cmp-search"); if (si) si.addEventListener("input", function () { paintCmpResults(this.value); });
+      return;
+    }
+    var rows = ["공격력", "수비력", "스피드", "테크닉", "피지컬", "골결정력"].map(function (k) { var va = (A.power && A.power[k]) || 0, vb = (B.power && B.power[k]) || 0; return '<div class="cmp-row"><span class="cmp-v' + (va > vb ? " win" : "") + '">' + va + '</span><span class="cmp-k">' + k + '</span><span class="cmp-v' + (vb > va ? " win" : "") + '">' + vb + "</span></div>"; }).join("");
+    var radar = (A.power && B.power) ? compareRadar(A.power, B.power) : '<div class="empty">능력치 데이터가 없어요.</div>';
+    viewEl.innerHTML = '<div class="cmp"><div class="cmp-head"><div class="cmp-hp" data-player="' + esc(A.id) + '"><span class="lg-dot a"></span>' + esc(A.name) + '<small>OVR ' + (A.ovr || "") + '</small></div><span class="cmp-vs">VS</span><div class="cmp-hp" data-player="' + esc(B.id) + '"><span class="lg-dot b"></span>' + esc(B.name) + '<small>OVR ' + (B.ovr || "") + '</small></div></div>' +
+      '<div class="pw-radarwrap">' + radar + '</div><div class="cmp-rows">' + rows + '</div>' +
+      '<button class="cmp-change" data-cmp-change="' + esc(A.id) + '">↺ 다른 선수와 비교</button></div>';
+    twem(viewEl);
   }
   function renderPlayer(id) {
     var p = playersById[id];
@@ -774,7 +823,7 @@
         '<div class="score-bar"><div class="score-fill" style="width:' + ovr + '%"></div></div></div>';
     }
 
-    var powerHtml = p.power ? (powerRadar(p.power) + '<button class="share-card" data-share-card="' + esc(p.id) + '">📤 능력치 카드 이미지로 공유</button>') : "";
+    var powerHtml = p.power ? (powerRadar(p.power) + '<button class="share-card" data-share-card="' + esc(p.id) + '">📤 능력치 카드 이미지로 공유</button><button class="cmp-go" data-cmp-go="' + esc(p.id) + '">⚖️ 다른 선수와 능력치 비교</button>') : "";
     var strengths = (p.strengths || []).map(function (s) { return '<span class="tag">' + esc(s) + "</span>"; }).join("");
     var weaknesses = (p.weaknesses || []).map(function (s) { return '<span class="tag weak">' + esc(s) + "</span>"; }).join("");
 
@@ -798,9 +847,8 @@
           '<div class="pl-meta"><div class="pl-sub">' + esc(p.club) + " · " + esc(p.league) + "</div>" +
             '<div class="pl-name">' + esc(p.name) + "</div>" +
             '<div class="detail-name-en">' + esc(p.nameEn) + "</div>" +
-            '<div class="pl-badges">' + badge(p) + "</div></div>" +
+            '<div class="pl-badges">' + badge(p) + saveBtnHtml("player:" + p.id) + "</div></div>" +
           '<div class="ovr"><span class="ovr-l">OVR</span><span class="ovr-v">' + ovr + "</span></div>" +
-          saveBtnHtml("player:" + p.id) +
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
@@ -842,13 +890,12 @@
       '<div class="country-hero">' +
         '<div class="ch-grid"></div>' +
         '<span class="team-flag lg">' + esc(t.flag) + "</span>" +
-        '<div class="ch-meta"><h2>' + esc(t.name) + "</h2>" +
+        '<div class="ch-meta"><h2>' + esc(t.name) + saveBtnHtml("team:" + t.id) + "</h2>" +
         '<div class="team-rank">FIFA 랭킹 ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div>" +
         (t.lastWc ? '<div class="team-wc">🏆 ' + (t.lastWc.inLast2022
           ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
           : (t.lastWc.year ? "최근 월드컵 " + esc(t.lastWc.year) + " · " + esc(t.lastWc.stage) : "2026 첫 본선 진출")) + "</div>" : "") +
         "</div>" +
-        saveBtnHtml("team:" + t.id) +
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
 
@@ -1500,6 +1547,7 @@
     var r = parseHash();
     window.scrollTo(0, 0);
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
+    if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
     if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
     if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
@@ -1646,6 +1694,9 @@
     if (sbtn) { var son = saveToggle(sbtn.getAttribute("data-save")); sbtn.classList.toggle("on", son); sbtn.textContent = son ? "★" : "☆"; return; }
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
+    var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
+    var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
+    var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");
