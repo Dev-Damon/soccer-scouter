@@ -13486,7 +13486,7 @@ window.DATA = {
       "caps": 144,
       "intlGoals": 56,
       "grade": "월드클래스",
-      "gradeScore": 92,
+      "gradeScore": 85,
       "oneLiner": "A매치 144경기 56골의 살아있는 전설이자 팀의 심장인 주장",
       "strengths": [
         "폭발적인 양발 슈팅",
