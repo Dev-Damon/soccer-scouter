@@ -1042,7 +1042,7 @@
     function side(t, left, col) {
       return (t.lineup || []).map(function (d) {
         var p = playersById[d.playerId] || {};
-        var num = (p.number != null ? p.number : ""), nm = (p.name || "").trim().split(" ").pop();
+        var num = (p.number != null ? p.number : ""), nm = (p.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
         var fx = (90 - d.y) / 70;
         var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
         var py = (d.x / 100) * 0.80 * H + 0.10 * H;
