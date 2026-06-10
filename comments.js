@@ -333,8 +333,22 @@
   function adminDeleteComment(id) { return sb.from("comments").delete().eq("id", id); }
   function ignoreReport(id) { return sb.from("comment_reports").delete().eq("id", id); }
 
+  function inAppBrowser() {
+    var ua = (navigator.userAgent || "").toLowerCase();
+    return /kakaotalk|instagram|fban|fbav|fb_iab|line\/|naver\(inapp|daumapps|everytimeapp|whale/.test(ua);
+  }
   function signIn(provider) {
     if (!client()) return;
+    // 구글은 인앱 브라우저(카카오톡 등)에서 OAuth 차단(disallowed_useragent) → 외부 브라우저로 유도
+    var ua = (navigator.userAgent || "").toLowerCase();
+    if (provider === "google" && inAppBrowser()) {
+      if (ua.indexOf("kakaotalk") >= 0) {
+        location.href = "kakaotalk://web/openExternal?url=" + encodeURIComponent(location.href);
+        return;
+      }
+      alert("인앱 브라우저에서는 구글 로그인이 제한됩니다.\n우측 상단 메뉴에서 '다른 브라우저로 열기'(크롬/사파리)를 선택한 뒤 로그인해 주세요.");
+      return;
+    }
     try { localStorage.setItem("kc_return", location.hash || ""); } catch (e) {}  // 로그인 후 돌아올 페이지 저장
     sb.auth.signInWithOAuth({ provider: provider, options: { redirectTo: location.origin + location.pathname } });
   }
