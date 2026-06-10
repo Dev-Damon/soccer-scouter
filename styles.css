@@ -590,19 +590,10 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 
 /* 날짜 스트립 */
 .datestrip-wrap { position: relative; }
-/* 가장자리 페이드(더 있음 암시) — 모바일 포함 전부 */
-.datestrip-wrap::before, .datestrip-wrap::after { content: ""; position: absolute; top: 0; bottom: 10px; width: 40px; pointer-events: none; z-index: 2; opacity: 1; transition: opacity .25s ease; }
-.datestrip-wrap::before { left: 0; background: linear-gradient(90deg, #070d18 35%, transparent); }
-.datestrip-wrap::after { right: 0; background: linear-gradient(270deg, #070d18 35%, transparent); }
-.datestrip-wrap.at-start::before { opacity: 0; }
-.datestrip-wrap.at-end::after { opacity: 0; }
-/* 클릭 화살표 — 데스크탑(마우스)만 */
-.ds-arrow { display: none; }
-@media (hover: hover) and (pointer: fine) {
-  .ds-arrow { display: flex; position: absolute; top: calc(50% - 3px); transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: #162133; border: 1px solid #2a3a5c; color: #eaf0fb; font-size: 18px; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 9px rgba(0,0,0,.5); z-index: 3; opacity: 1; transition: opacity .25s ease; }
-  .ds-arrow.l { left: -3px; } .ds-arrow.r { right: -3px; }
-  .ds-arrow.hide { opacity: 0; pointer-events: none; }
-}
+/* 좌우 화살표 — 모바일·데스크탑 동일 표시 (그라데이션 없음) */
+.ds-arrow { display: flex; position: absolute; top: calc(50% - 3px); transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: #162133; border: 1px solid #2a3a5c; color: #eaf0fb; font-size: 18px; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 9px rgba(0,0,0,.5); z-index: 3; opacity: 1; transition: opacity .25s ease; }
+.ds-arrow.l { left: -3px; } .ds-arrow.r { right: -3px; }
+.ds-arrow.hide { opacity: 0; pointer-events: none; }
 .datestrip { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .datestrip::-webkit-scrollbar { display: none; }
 .dchip {
