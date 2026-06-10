@@ -270,6 +270,10 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 /* Footer */
 .foot { max-width: 720px; margin: 0 auto; padding: 0 16px 28px; color: #6f80a0; font-size: 11.5px; text-align: center; }
 .foot b { color: var(--muted); }
+.foot-links { margin-top: 4px; }
+.foot-links a { color: var(--muted); text-decoration: none; }
+.foot-links a:hover, .foot-links a:active { color: var(--accent); }
+.foot-copy { margin-top: 5px; color: #5b6b80; }
 
 /* ===== 와이어프레임 컴포넌트 (색상은 기존 변수 사용) ===== */
 body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가로 오버플로 방지 */
