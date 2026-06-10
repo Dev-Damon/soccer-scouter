@@ -167,8 +167,15 @@
     return /\.kr(\/|$)|naver\.com|footballist|besteleven|interfootball|sportalkorea|spotvnews|yna\.co|sportschosun|sports\.donga/.test((nw.source || "") + " " + (nw.url || ""));
   }
   function homeNews(limit) {
+    // 선택한 날짜에 경기가 있는 나라들의 뉴스만 (없으면 전체 폴백)
+    var dayIds = {};
+    (DATA.fixtures || []).forEach(function (f) {
+      if (fxDate(f) === selectedDate) { if (f.homeId) dayIds[f.homeId] = 1; if (f.awayId) dayIds[f.awayId] = 1; }
+    });
+    var teams = Object.keys(dayIds).map(function (id) { return teamsById[id]; }).filter(Boolean);
+    if (!teams.length) teams = DATA.teams || [];
     var all = [];
-    (DATA.teams || []).forEach(function (t) {
+    teams.forEach(function (t) {
       (t.news || []).forEach(function (nw) { all.push({ t: t, nw: nw }); });
     });
     all.sort(function (a, b) {
@@ -278,7 +285,7 @@
     // 주요 소식 (팀 뉴스가 있을 때만)
     var hn = homeNews(8);
     if (hn.length) {
-      listHtml += '<div class="sec-h">📰 주요 소식</div><div class="news-list">';
+      listHtml += '<div class="sec-h">📰 이 날 경기 나라 소식</div><div class="news-list">';
       hn.forEach(function (x) {
         var nw = x.nw, tt = x.t;
         var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
