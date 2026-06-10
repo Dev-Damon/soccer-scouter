@@ -1035,7 +1035,8 @@
     viewEl.innerHTML = '<div class="my">' +
       '<div class="my-profile">' + avH +
         '<div class="my-meta"><div class="my-nick">' + esc(nick) + "</div>" +
-          '<button class="my-edit">닉네임 수정</button></div>' +
+          '<button class="my-edit">닉네임 수정</button>' +
+          ((window.KickComments && KickComments.isAdmin && KickComments.isAdmin()) ? ' <button class="my-admin">🛠 관리자</button>' : "") + "</div>" +
         '<button class="my-out">로그아웃</button></div>' +
       '<div class="my-editbox"></div>' +
       '<div class="my-tabs">' +
@@ -1066,6 +1067,55 @@
     });
   }
 
+  // ===================== 관리자 페이지 (#admin) =====================
+  var adminCache = null, adminTab = "reports", adminQ = "";
+  function adminItem(c, extra) {
+    var ti = threadInfo(c.thread_key);
+    return '<div class="ad-item">' +
+      '<div class="ad-iw">' + esc(ti.label) + " · " + esc(c.name || "익명") + "</div>" +
+      '<div class="ad-ib">' + esc(c.body) + "</div>" + (extra || "") +
+      '<div class="ad-act">' +
+        (ti.hash ? '<button class="ad-go" data-go="' + esc(ti.hash) + '">위치</button>' : "") +
+        '<button class="ad-del" data-cid="' + esc(c.id) + '">댓글 삭제</button>' +
+      "</div></div>";
+  }
+  function paintAdmin() {
+    if (!adminCache) return;
+    var html;
+    if (adminTab === "reports") {
+      html = adminCache.reports.length ? adminCache.reports.map(function (rp) {
+        var c = rp.comments;
+        var ign = '<button class="ad-ign" data-rid="' + esc(rp.id) + '">신고 무시</button>';
+        if (!c) return '<div class="ad-item"><div class="ad-ib">(삭제된 댓글) · 사유: ' + esc(rp.reason || "-") + '</div><div class="ad-act">' + ign + "</div></div>";
+        return adminItem(c, '<div class="ad-reason">🚩 ' + esc(rp.reason || "(사유 없음)") + "</div>" + ign);
+      }).join("") : '<div class="empty">신고된 댓글이 없습니다.</div>';
+    } else {
+      var cs = adminCache.comments;
+      if (adminQ) { var q = adminQ.toLowerCase(); cs = cs.filter(function (c) { return (c.body || "").toLowerCase().indexOf(q) >= 0 || (c.name || "").toLowerCase().indexOf(q) >= 0; }); }
+      html = cs.length ? cs.map(function (c) { return adminItem(c); }).join("") : '<div class="empty">댓글이 없습니다.</div>';
+    }
+    viewEl.innerHTML = '<div class="ad"><h2 class="ad-h">🛠 관리자</h2>' +
+      '<div class="my-tabs">' +
+        '<button class="ad-tab my-tabbtn' + (adminTab === "reports" ? " on" : "") + '" data-adtab="reports">신고 내역 ' + adminCache.reports.length + "</button>" +
+        '<button class="ad-tab my-tabbtn' + (adminTab === "all" ? " on" : "") + '" data-adtab="all">전체 댓글 ' + adminCache.comments.length + "</button></div>" +
+      (adminTab === "all" ? '<input class="ad-search" placeholder="댓글·작성자 검색" value="' + esc(adminQ) + '">' : "") +
+      '<div class="ad-list">' + html + "</div></div>";
+  }
+  function renderAdmin() {
+    backBtn.hidden = true; tabsEl.hidden = true;
+    if (!window.KickComments || !KickComments.configured()) { viewEl.innerHTML = '<div class="empty">준비 중입니다.</div>'; return; }
+    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
+    KickComments.ready().then(function () {
+      if (parseHash().name !== "admin") return;
+      if (!KickComments.isAdmin()) { viewEl.innerHTML = '<div class="empty">접근 권한이 없습니다.</div>'; return; }
+      Promise.all([KickComments.listReports(), KickComments.listAllComments("")]).then(function (res) {
+        if (parseHash().name !== "admin") return;
+        adminCache = { reports: res[0] || [], comments: res[1] || [] };
+        paintAdmin();
+      });
+    });
+  }
+
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
@@ -1079,6 +1129,7 @@
     }
     if (r.name === "saved") { setTabbar("saved"); return renderPlaceholder("저장", "찜한 선수·나라를 모아보는 공간 (준비 중)"); }
     if (r.name === "my") { setTabbar("my"); return renderMy(); }
+    if (r.name === "admin") { setTabbar(""); return renderAdmin(); }
     // 홈
     setTabbar("home");
     if (searchEl.value.trim()) { tabsEl.hidden = true; return renderSearchResults(searchEl.value.trim().toLowerCase()); }
@@ -1092,8 +1143,27 @@
   }
 
   // ===================== 이벤트 =====================
+  viewEl.addEventListener("input", function (e) {
+    if (e.target.closest(".ad-search") && adminCache) {
+      adminQ = e.target.value;
+      var q = adminQ.toLowerCase();
+      var cs = adminCache.comments.filter(function (c) { return (c.body || "").toLowerCase().indexOf(q) >= 0 || (c.name || "").toLowerCase().indexOf(q) >= 0; });
+      var le = viewEl.querySelector(".ad-list");
+      if (le) le.innerHTML = cs.length ? cs.map(function (c) { return adminItem(c); }).join("") : '<div class="empty">검색 결과가 없습니다.</div>';
+    }
+  });
   viewEl.addEventListener("click", function (e) {
-    var my;
+    var my, ad;
+    if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
+    if ((ad = e.target.closest(".ad-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }
+    if ((ad = e.target.closest(".ad-go"))) { go(ad.getAttribute("data-go")); return; }
+    if ((ad = e.target.closest(".ad-del"))) {
+      if (!confirm("이 댓글을 삭제할까요? (관리자 강제삭제)")) return;
+      ad.disabled = true; KickComments.adminDeleteComment(ad.getAttribute("data-cid")).then(function () { renderAdmin(); }); return;
+    }
+    if ((ad = e.target.closest(".ad-ign"))) {
+      ad.disabled = true; KickComments.ignoreReport(ad.getAttribute("data-rid")).then(function () { renderAdmin(); }); return;
+    }
     if ((my = e.target.closest(".my-in"))) { if (window.KickComments) KickComments.signIn(my.getAttribute("data-p")); return; }
     if (e.target.closest(".my-out")) { if (window.KickComments) KickComments.signOut().then(function () { renderMy(); }); return; }
     if (e.target.closest(".my-edit")) {

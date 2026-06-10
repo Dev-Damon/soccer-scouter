@@ -28,6 +28,7 @@
   var sb = null;
   var user = null;
   var stylesInjected = false;
+  var ADMIN_UID = "257f98fc-fc1f-4701-b310-ecc4b7fdb6be";  // 관리자(실제 권한은 서버 RLS가 강제, id 노출 안전)
   var sortMode = "likes";  // 'likes'(기본) | 'latest'
   var GICON = '<svg class="gico" width="15" height="15" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>';
 
@@ -191,7 +192,7 @@
       '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
       '<div class="cmt-act">' + react +
         '<button class="cmt-reply" data-id="' + esc(c.id) + '">답글</button>' +
-        (mine ? '<button class="cmt-del" data-id="' + esc(c.id) + '">삭제</button>' : "") +
+        (mine ? '<button class="cmt-del" data-id="' + esc(c.id) + '">삭제</button>' : '<button class="cmt-report" data-id="' + esc(c.id) + '" title="신고">🚩</button>') +
       "</div>" +
       '<div class="cmt-replybox"></div>' +
       (c._ch && c._ch.length ? '<div class="cmt-children">' + c._ch.map(function (r) { return cHtml(r, true, rx); }).join("") + "</div>" : "") +
@@ -231,6 +232,7 @@
       if (e.target.closest(".cmt-send")) { return send(m, null, m.el.querySelector(".cmt-form .cmt-ta")); }
       if ((t = e.target.closest(".cmt-reply"))) { return toggleReply(m, t); }
       if ((t = e.target.closest(".cmt-del"))) { return del(m, t.getAttribute("data-id")); }
+      if ((t = e.target.closest(".cmt-report"))) { return report(t.getAttribute("data-id")); }
       if ((t = e.target.closest(".cmt-rsend"))) {
         return send(m, t.getAttribute("data-root"), t.parentNode.querySelector(".cmt-ta"), t.getAttribute("data-replyuid"));
       }
@@ -305,6 +307,31 @@
       .then(function (r) { return r.data || []; }).catch(function () { return []; });
   }
   function ready() { if (!configured()) return Promise.resolve(null); return loadSDK().then(function () { return refreshUser(); }); }
+  function report(commentId) {
+    if (!user) { alert("로그인이 필요합니다."); return; }
+    var reason = prompt("신고 사유를 적어주세요 (예: 욕설/스팸/혐오/기타)");
+    if (reason == null) return;
+    sb.from("comment_reports").insert({ comment_id: commentId, reporter: user.id, reason: (reason || "").slice(0, 200) })
+      .then(function (r) { alert(r.error ? "신고 처리 중 오류가 발생했어요." : "신고되었습니다. 감사합니다."); });
+  }
+  // ── 관리자용 ──
+  function isAdmin() { return !!(user && user.id === ADMIN_UID); }
+  function listReports() {
+    if (!isAdmin()) return Promise.resolve([]);
+    return sb.from("comment_reports").select("*,comments(*)").order("created_at", { ascending: false }).limit(300)
+      .then(function (r) { return r.data || []; }).catch(function () { return []; });
+  }
+  function listAllComments(q) {
+    if (!isAdmin()) return Promise.resolve([]);
+    return sb.from("comments").select("*").order("created_at", { ascending: false }).limit(300)
+      .then(function (r) {
+        var d = r.data || [];
+        if (q) { q = q.toLowerCase(); d = d.filter(function (c) { return (c.body || "").toLowerCase().indexOf(q) >= 0 || (c.name || "").toLowerCase().indexOf(q) >= 0; }); }
+        return d;
+      }).catch(function () { return []; });
+  }
+  function adminDeleteComment(id) { return sb.from("comments").delete().eq("id", id); }
+  function ignoreReport(id) { return sb.from("comment_reports").delete().eq("id", id); }
 
   function signIn(provider) {
     if (!client()) return;
@@ -375,6 +402,8 @@
     signIn: signIn,
     signOut: function () { return sb ? sb.auth.signOut() : Promise.resolve(); },
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
-    providers: function () { return loadProviders(); }
+    providers: function () { return loadProviders(); },
+    isAdmin: isAdmin, listReports: listReports, listAllComments: listAllComments,
+    adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport
   };
 })();
