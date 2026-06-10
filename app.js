@@ -121,6 +121,11 @@
     var c = posClass(p && p.position);
     return c === "fw" ? 0 : c === "mf" ? 1 : c === "df" ? 2 : 3;
   }
+  // 한글 코스 포지션(선수 상세용): 공격수/미드필더/수비수/골키퍼
+  function posKo(pos) {
+    var c = posClass(pos);
+    return c === "gk" ? "골키퍼" : c === "df" ? "수비수" : c === "mf" ? "미드필더" : "공격수";
+  }
 
   // ---- 라우팅(해시 기반) ----
   function go(hash) { window.location.hash = hash; }
@@ -488,7 +493,7 @@
     var team = teamsById[teamIdByName(p.team)];
 
     var facts = [
-      ["포지션", posAbbr(p.position)],
+      ["포지션", posKo(p.position)],
       ["나이", (p.age != null ? p.age + "세" : "-")],
       ["대표팀", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
     ];
