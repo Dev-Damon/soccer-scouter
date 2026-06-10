@@ -45,6 +45,15 @@
     });
     return sdkPromise;
   }
+  // 실제로 Supabase에서 켜진 로그인 제공자만 버튼 표시(미설정 제공자 버튼 숨김)
+  var PROVIDERS = null;
+  function loadProviders() {
+    if (PROVIDERS) return Promise.resolve(PROVIDERS);
+    return fetch(CONFIG.url + "/auth/v1/settings", { headers: { apikey: CONFIG.anonKey } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { PROVIDERS = (d && d.external) || {}; return PROVIDERS; })
+      .catch(function () { PROVIDERS = { google: true }; return PROVIDERS; });
+  }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -106,7 +115,7 @@
 
   function render(m) {
     if (!client()) return;
-    refreshUser()
+    Promise.all([refreshUser(), loadProviders()])
       .then(function () { return load(m.key); })
       .then(function (list) { m.el.innerHTML = boxHtml(list); bind(m); })
       .catch(function () { m.el.style.display = "none"; });  // 테이블 미생성/일시오류 → 조용히 숨김
@@ -149,8 +158,8 @@
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' +
         '<div class="cmt-form"><textarea class="cmt-ta" maxlength="1000" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div>'
       : '<div class="cmt-login"><span class="cmt-login-t">로그인하고 댓글 남기기</span>' +
-        '<button class="cmt-in" data-p="google">Google</button>' +
-        '<button class="cmt-in kakao" data-p="kakao">카카오</button></div>';
+        ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in" data-p="google">Google</button>' : "") +
+        ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
     return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" + head +
       '<div class="cmt-list">' +
       (roots.length ? roots.map(function (c) { return cHtml(c, false); }).join("") : '<div class="cmt-empty">첫 댓글을 남겨보세요!</div>') +
