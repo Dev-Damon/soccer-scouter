@@ -1,5 +1,5 @@
 // 축구 스카우터 — 서비스워커 (오프라인 캐시)
-var CACHE = "scouter-v1.10";
+var CACHE = "scouter-v1.11";
 var ASSETS = [
   "./",
   "./index.html",
@@ -37,7 +37,7 @@ self.addEventListener("fetch", function (e) {
     url.pathname === "/" || url.pathname.slice(-1) === "/";
   if (shell) {
     e.respondWith(
-      fetch(e.request).then(function (res) {
+      fetch(e.request, { cache: "no-store" }).then(function (res) {
         var copy = res.clone();
         caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
         return res;
