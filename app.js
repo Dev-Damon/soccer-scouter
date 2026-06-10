@@ -1335,4 +1335,17 @@
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
   fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분)
+
+  // 자동수집 뉴스(news.json, GitHub Actions 4시간 크론) 로드 → 팀별 news 최신화 후 현재 화면 다시 렌더
+  function loadNews() {
+    fetch("news.json?ts=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.byTeam) return;
+      DATA.teams.forEach(function (t) {
+        var items = d.byTeam[t.name];
+        if (items && items.length) t.news = items;  // 신선한 RSS 헤드라인으로 교체(없으면 기존 유지)
+      });
+      route();
+    }).catch(function () {});
+  }
+  loadNews();
 })();

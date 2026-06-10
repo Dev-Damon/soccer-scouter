@@ -1,5 +1,5 @@
 // 축구 스카우터 — 서비스워커 (오프라인 캐시)
-var CACHE = "scouter-v0.47";
+var CACHE = "scouter-v0.48";
 var ASSETS = [
   "./",
   "./index.html",
@@ -33,7 +33,7 @@ self.addEventListener("fetch", function (e) {
   // (이전엔 cache-first로 잡혀서 댓글/좋아요가 즉시 반영 안 되던 버그)
   if (url.origin !== self.location.origin) return;
   // 앱 셸/데이터(html/css/js)는 네트워크 우선 → 배포 즉시 반영. 오프라인이면 캐시.
-  var shell = e.request.mode === "navigate" || /\.(html|css|js)$/.test(url.pathname) ||
+  var shell = e.request.mode === "navigate" || /\.(html|css|js|json)$/.test(url.pathname) ||
     url.pathname === "/" || url.pathname.slice(-1) === "/";
   if (shell) {
     e.respondWith(
