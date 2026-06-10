@@ -12764,7 +12764,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 68
-      }
+      },
+      "number": 11
     },
     {
       "id": "edson-alvarez",
@@ -12799,7 +12800,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 78
-      }
+      },
+      "number": 4
     },
     {
       "id": "raul-jimenez",
@@ -12834,7 +12836,8 @@ window.DATA = {
         "skill": 76,
         "value": 68,
         "fame": 80
-      }
+      },
+      "number": 9
     },
     {
       "id": "gilberto-mora",
@@ -12867,7 +12870,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 51
-      }
+      },
+      "number": 19
     },
     {
       "id": "johan-vasquez",
@@ -12901,7 +12905,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 62
-      }
+      },
+      "number": 5
     },
     {
       "id": "cesar-montes",
@@ -12935,7 +12940,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 64
-      }
+      },
+      "number": 3
     },
     {
       "id": "orbelin-pineda",
@@ -12970,7 +12976,8 @@ window.DATA = {
         "skill": 71,
         "value": 67,
         "fame": 71
-      }
+      },
+      "number": 17
     },
     {
       "id": "jesus-gallardo",
@@ -13005,7 +13012,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 73
-      }
+      },
+      "number": 23
     },
     {
       "id": "guillermo-ochoa",
@@ -13040,7 +13048,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 70
-      }
+      },
+      "number": 13
     },
     {
       "id": "luis-romo",
@@ -13074,7 +13083,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 59
-      }
+      },
+      "number": 7
     },
     {
       "id": "alexis-vega",
@@ -13108,7 +13118,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 58
-      }
+      },
+      "number": 10
     },
     {
       "id": "ronwen-williams",
@@ -13144,7 +13155,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 72
-      }
+      },
+      "number": 1
     },
     {
       "id": "lyle-foster",
@@ -13177,7 +13189,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 59
-      }
+      },
+      "number": 9
     },
     {
       "id": "teboho-mokoena",
@@ -13212,7 +13225,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 66
-      }
+      },
+      "number": 4
     },
     {
       "id": "themba-zwane",
@@ -13249,7 +13263,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 62
-      }
+      },
+      "number": 11
     },
     {
       "id": "khuliso-mudau",
@@ -13284,7 +13299,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 59
-      }
+      },
+      "number": 20
     },
     {
       "id": "relebohile-mofokeng",
@@ -13317,7 +13333,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 51
-      }
+      },
+      "number": 10
     },
     {
       "id": "oswin-appollis",
@@ -13348,7 +13365,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 53
-      }
+      },
+      "number": 7
     },
     {
       "id": "iqraam-rayners",
@@ -13382,7 +13400,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 51
-      }
+      },
+      "number": 15
     },
     {
       "id": "mbekezeli-mbokazi",
@@ -13417,7 +13436,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 47
-      }
+      },
+      "number": 14
     },
     {
       "id": "aubrey-modiba",
@@ -13451,7 +13471,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 58
-      }
+      },
+      "number": 6
     },
     {
       "id": "son-heung-min",
@@ -13832,7 +13853,8 @@ window.DATA = {
         "skill": 86,
         "value": 82,
         "fame": 75
-      }
+      },
+      "number": 10
     },
     {
       "id": "tomas-soucek",
@@ -13866,7 +13888,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 75
-      }
+      },
+      "number": 22
     },
     {
       "id": "ladislav-krejci",
@@ -13900,7 +13923,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 61
-      }
+      },
+      "number": 7
     },
     {
       "id": "pavel-sulc",
@@ -13933,7 +13957,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 56
-      }
+      },
+      "number": 15
     },
     {
       "id": "adam-hlozek",
@@ -13967,7 +13992,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 60
-      }
+      },
+      "number": 9
     },
     {
       "id": "matej-kovar",
@@ -14001,7 +14027,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 53
-      }
+      },
+      "number": 1
     },
     {
       "id": "vladimir-coufal",
@@ -14034,7 +14061,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 57
-      }
+      },
+      "number": 5
     },
     {
       "id": "lukas-provod",
@@ -14067,7 +14095,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 52
-      }
+      },
+      "number": 17
     },
     {
       "id": "tomas-holes",
@@ -14100,7 +14129,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 49
-      }
+      },
+      "number": 3
     },
     {
       "id": "mojmir-chytil",
@@ -14133,7 +14163,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 44
-      }
+      },
+      "number": 13
     },
     {
       "id": "tomas-chory",
@@ -14166,7 +14197,8 @@ window.DATA = {
         "skill": 54,
         "value": 51,
         "fame": 43
-      }
+      },
+      "number": 19
     },
     {
       "id": "alphonso-davies",
@@ -14202,7 +14234,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 80
-      }
+      },
+      "number": 19
     },
     {
       "id": "jonathan-david",
@@ -14236,7 +14269,8 @@ window.DATA = {
         "skill": 87,
         "value": 87,
         "fame": 78
-      }
+      },
+      "number": 10
     },
     {
       "id": "cyle-larin",
@@ -14270,7 +14304,8 @@ window.DATA = {
         "skill": 72,
         "value": 68,
         "fame": 70
-      }
+      },
+      "number": 9
     },
     {
       "id": "stephen-eustaquio",
@@ -14305,7 +14340,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 66
-      }
+      },
+      "number": 7
     },
     {
       "id": "alistair-johnston",
@@ -14339,7 +14375,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 63
-      }
+      },
+      "number": 2
     },
     {
       "id": "derek-cornelius",
@@ -14370,7 +14407,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 50
-      }
+      },
+      "number": 13
     },
     {
       "id": "tajon-buchanan",
@@ -14404,7 +14442,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 62
-      }
+      },
+      "number": 17
     },
     {
       "id": "ismael-kone",
@@ -14435,7 +14474,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 51
-      }
+      },
+      "number": 8
     },
     {
       "id": "tani-oluwaseyi",
@@ -14466,7 +14506,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 45
-      }
+      },
+      "number": 12
     },
     {
       "id": "edin-dzeko",
@@ -14502,7 +14543,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 84
-      }
+      },
+      "number": 11
     },
     {
       "id": "sead-kolasinac",
@@ -14536,7 +14578,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 67
-      }
+      },
+      "number": 5
     },
     {
       "id": "amar-dedic",
@@ -14569,7 +14612,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 56
-      }
+      },
+      "number": 7
     },
     {
       "id": "ermedin-demirovic",
@@ -14600,7 +14644,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 58
-      }
+      },
+      "number": 10
     },
     {
       "id": "esmir-bajraktarevic",
@@ -14631,7 +14676,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 48
-      }
+      },
+      "number": 20
     },
     {
       "id": "benjamin-tahirovic",
@@ -14662,7 +14708,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 48
-      }
+      },
+      "number": 6
     },
     {
       "id": "nikola-vasilj",
@@ -14695,7 +14742,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 52
-      }
+      },
+      "number": 1
     },
     {
       "id": "nikola-katic",
@@ -14726,7 +14774,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 18
     },
     {
       "id": "amir-hadziahmetovic",
@@ -14757,7 +14806,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 47
-      }
+      },
+      "number": 16
     },
     {
       "id": "armin-gigovic",
@@ -14788,7 +14838,8 @@ window.DATA = {
         "skill": 59,
         "value": 59,
         "fame": 45
-      }
+      },
+      "number": 8
     },
     {
       "id": "haris-tabakovic",
@@ -14821,7 +14872,8 @@ window.DATA = {
         "skill": 57,
         "value": 54,
         "fame": 43
-      }
+      },
+      "number": 23
     },
     {
       "id": "akram-afif",
@@ -14857,7 +14909,8 @@ window.DATA = {
         "skill": 84,
         "value": 84,
         "fame": 89
-      }
+      },
+      "number": 11
     },
     {
       "id": "almoez-ali",
@@ -14893,7 +14946,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 85
-      }
+      },
+      "number": 19
     },
     {
       "id": "hassan-al-haydos",
@@ -14929,7 +14983,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 82
-      }
+      },
+      "number": 10
     },
     {
       "id": "boualem-khoukhi",
@@ -14964,7 +15019,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 74
-      }
+      },
+      "number": 16
     },
     {
       "id": "meshaal-barsham",
@@ -14999,7 +15055,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 65
-      }
+      },
+      "number": 22
     },
     {
       "id": "karim-boudiaf",
@@ -15034,7 +15091,8 @@ window.DATA = {
         "skill": 65,
         "value": 58,
         "fame": 72
-      }
+      },
+      "number": 12
     },
     {
       "id": "pedro-miguel",
@@ -15069,7 +15127,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 68
-      }
+      },
+      "number": 2
     },
     {
       "id": "edmilson-junior",
@@ -15104,7 +15163,8 @@ window.DATA = {
         "skill": 63,
         "value": 60,
         "fame": 50
-      }
+      },
+      "number": 8
     },
     {
       "id": "tarek-salman",
@@ -15173,7 +15233,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 57
-      }
+      },
+      "number": 23
     },
     {
       "id": "granit-xhaka",
@@ -15207,7 +15268,8 @@ window.DATA = {
         "skill": 84,
         "value": 75,
         "fame": 85
-      }
+      },
+      "number": 10
     },
     {
       "id": "manuel-akanji",
@@ -15242,7 +15304,8 @@ window.DATA = {
         "skill": 88,
         "value": 84,
         "fame": 81
-      }
+      },
+      "number": 5
     },
     {
       "id": "breel-embolo",
@@ -15276,7 +15339,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 75
-      }
+      },
+      "number": 7
     },
     {
       "id": "gregor-kobel",
@@ -15309,7 +15373,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 63
-      }
+      },
+      "number": 1
     },
     {
       "id": "dan-ndoye",
@@ -15342,7 +15407,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 62
-      }
+      },
+      "number": 11
     },
     {
       "id": "ricardo-rodriguez",
@@ -15375,7 +15441,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 77
-      }
+      },
+      "number": 13
     },
     {
       "id": "remo-freuler",
@@ -15408,7 +15475,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 66
-      }
+      },
+      "number": 8
     },
     {
       "id": "ruben-vargas",
@@ -15441,7 +15509,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 63
-      }
+      },
+      "number": 17
     },
     {
       "id": "denis-zakaria",
@@ -15474,7 +15543,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 66
-      }
+      },
+      "number": 6
     },
     {
       "id": "fabian-rieder",
@@ -15507,7 +15577,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 51
-      }
+      },
+      "number": 22
     },
     {
       "id": "vinicius-junior",
@@ -15618,8 +15689,7 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 86
-      },
-      "number": 10
+      }
     },
     {
       "id": "bruno-guimaraes",
@@ -15841,7 +15911,7 @@ window.DATA = {
         "value": 70,
         "fame": 58
       },
-      "number": 19
+      "number": 9
     },
     {
       "id": "endrick",
@@ -15878,7 +15948,7 @@ window.DATA = {
         "value": 71,
         "fame": 57
       },
-      "number": 9
+      "number": 19
     },
     {
       "id": "achraf-hakimi",
@@ -15915,7 +15985,8 @@ window.DATA = {
         "skill": 93,
         "value": 93,
         "fame": 90
-      }
+      },
+      "number": 2
     },
     {
       "id": "brahim-diaz",
@@ -15950,7 +16021,8 @@ window.DATA = {
         "skill": 86,
         "value": 86,
         "fame": 70
-      }
+      },
+      "number": 10
     },
     {
       "id": "yassine-bounou",
@@ -15986,7 +16058,8 @@ window.DATA = {
         "skill": 84,
         "value": 75,
         "fame": 81
-      }
+      },
+      "number": 1
     },
     {
       "id": "noussair-mazraoui",
@@ -16022,7 +16095,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 69
-      }
+      },
+      "number": 3
     },
     {
       "id": "bilal-el-khannouss",
@@ -16058,7 +16132,8 @@ window.DATA = {
         "skill": 75,
         "value": 79,
         "fame": 66
-      }
+      },
+      "number": 23
     },
     {
       "id": "sofyan-amrabat",
@@ -16094,7 +16169,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 71
-      }
+      },
+      "number": 4
     },
     {
       "id": "nayef-aguerd",
@@ -16130,7 +16206,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 69
-      }
+      },
+      "number": 5
     },
     {
       "id": "ayoub-el-kaabi",
@@ -16166,7 +16243,8 @@ window.DATA = {
         "skill": 71,
         "value": 67,
         "fame": 69
-      }
+      },
+      "number": 20
     },
     {
       "id": "azzedine-ounahi",
@@ -16201,7 +16279,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 63
-      }
+      },
+      "number": 8
     },
     {
       "id": "ayyoub-bouaddi",
@@ -16235,7 +16314,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 6
     },
     {
       "id": "wilson-isidor",
@@ -16266,7 +16346,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 50
-      }
+      },
+      "number": 18
     },
     {
       "id": "jean-ricner-bellegarde",
@@ -16297,7 +16378,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 51
-      }
+      },
+      "number": 10
     },
     {
       "id": "duckens-nazon",
@@ -16330,7 +16412,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 64
-      }
+      },
+      "number": 9
     },
     {
       "id": "frantzdy-pierrot",
@@ -16361,7 +16444,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 57
-      }
+      },
+      "number": 20
     },
     {
       "id": "hannes-delcroix",
@@ -16392,7 +16476,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 5
     },
     {
       "id": "jean-kevin-duverne",
@@ -16423,7 +16508,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 22
     },
     {
       "id": "derrick-etienne-jr",
@@ -16456,7 +16542,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 52
-      }
+      },
+      "number": 7
     },
     {
       "id": "carlens-arcus",
@@ -16487,7 +16574,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 2
     },
     {
       "id": "johny-placide",
@@ -16518,7 +16606,8 @@ window.DATA = {
         "skill": 52,
         "value": 46,
         "fame": 36
-      }
+      },
+      "number": 1
     },
     {
       "id": "ruben-providence",
@@ -16549,7 +16638,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 38
-      }
+      },
+      "number": 15
     },
     {
       "id": "scott-mctominay",
@@ -16584,7 +16674,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 79
-      }
+      },
+      "number": 4
     },
     {
       "id": "andy-robertson",
@@ -16621,7 +16712,8 @@ window.DATA = {
         "skill": 82,
         "value": 78,
         "fame": 82
-      }
+      },
+      "number": 3
     },
     {
       "id": "john-mcginn",
@@ -16655,7 +16747,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 75
-      }
+      },
+      "number": 7
     },
     {
       "id": "kieran-tierney",
@@ -16690,7 +16783,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 67
-      }
+      },
+      "number": 6
     },
     {
       "id": "lewis-ferguson",
@@ -16723,7 +16817,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 57
-      }
+      },
+      "number": 19
     },
     {
       "id": "che-adams",
@@ -16754,7 +16849,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 56
-      }
+      },
+      "number": 10
     },
     {
       "id": "lawrence-shankland",
@@ -16785,7 +16881,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 46
-      }
+      },
+      "number": 20
     },
     {
       "id": "kenny-mclean",
@@ -16818,7 +16915,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 53
-      }
+      },
+      "number": 23
     },
     {
       "id": "ryan-christie",
@@ -16851,7 +16949,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 57
-      }
+      },
+      "number": 11
     },
     {
       "id": "craig-gordon",
@@ -16885,7 +16984,8 @@ window.DATA = {
         "skill": 55,
         "value": 49,
         "fame": 57
-      }
+      },
+      "number": 21
     },
     {
       "id": "nathan-patterson",
@@ -16918,7 +17018,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 46
-      }
+      },
+      "number": 22
     },
     {
       "id": "christian-pulisic",
@@ -16954,7 +17055,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 83
-      }
+      },
+      "number": 10
     },
     {
       "id": "weston-mckennie",
@@ -16990,7 +17092,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 74
-      }
+      },
+      "number": 8
     },
     {
       "id": "tyler-adams",
@@ -17026,7 +17129,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 71
-      }
+      },
+      "number": 4
     },
     {
       "id": "folarin-balogun",
@@ -17061,7 +17165,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 63
-      }
+      },
+      "number": 20
     },
     {
       "id": "antonee-robinson",
@@ -17096,7 +17201,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 69
-      }
+      },
+      "number": 5
     },
     {
       "id": "timothy-weah",
@@ -17132,7 +17238,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 67
-      }
+      },
+      "number": 21
     },
     {
       "id": "sergino-dest",
@@ -17167,7 +17274,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 63
-      }
+      },
+      "number": 2
     },
     {
       "id": "malik-tillman",
@@ -17203,7 +17311,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 64
-      }
+      },
+      "number": 17
     },
     {
       "id": "chris-richards",
@@ -17239,7 +17348,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 65
-      }
+      },
+      "number": 3
     },
     {
       "id": "giovanni-reyna",
@@ -17274,7 +17384,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 59
-      }
+      },
+      "number": 7
     },
     {
       "id": "matt-turner",
@@ -17310,7 +17421,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 62
-      }
+      },
+      "number": 1
     },
     {
       "id": "gustavo-gomez",
@@ -17344,7 +17456,8 @@ window.DATA = {
         "skill": 82,
         "value": 73,
         "fame": 76
-      }
+      },
+      "number": 15
     },
     {
       "id": "miguel-almiron",
@@ -17378,7 +17491,8 @@ window.DATA = {
         "skill": 78,
         "value": 74,
         "fame": 71
-      }
+      },
+      "number": 10
     },
     {
       "id": "julio-enciso",
@@ -17412,7 +17526,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 59
-      }
+      },
+      "number": 19
     },
     {
       "id": "omar-alderete",
@@ -17446,7 +17561,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 62
-      }
+      },
+      "number": 3
     },
     {
       "id": "antonio-sanabria",
@@ -17479,7 +17595,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 59
-      }
+      },
+      "number": 9
     },
     {
       "id": "diego-gomez",
@@ -17513,7 +17630,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 55
-      }
+      },
+      "number": 8
     },
     {
       "id": "junior-alonso",
@@ -17547,7 +17665,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 62
-      }
+      },
+      "number": 6
     },
     {
       "id": "andres-cubas",
@@ -17580,7 +17699,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 52
-      }
+      },
+      "number": 14
     },
     {
       "id": "damian-bobadilla",
@@ -17613,7 +17733,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 47
-      }
+      },
+      "number": 16
     },
     {
       "id": "mathew-ryan",
@@ -17648,7 +17769,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 78
-      }
+      },
+      "number": 1
     },
     {
       "id": "jackson-irvine",
@@ -17682,7 +17804,8 @@ window.DATA = {
         "skill": 76,
         "value": 68,
         "fame": 71
-      }
+      },
+      "number": 22
     },
     {
       "id": "harry-souttar",
@@ -17716,7 +17839,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 57
-      }
+      },
+      "number": 19
     },
     {
       "id": "jordan-bos",
@@ -17749,7 +17873,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 54
-      }
+      },
+      "number": 5
     },
     {
       "id": "nestory-irankunda",
@@ -17783,7 +17908,8 @@ window.DATA = {
         "skill": 65,
         "value": 68,
         "fame": 50
-      }
+      },
+      "number": 17
     },
     {
       "id": "mathew-leckie",
@@ -17817,7 +17943,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 60
-      }
+      },
+      "number": 7
     },
     {
       "id": "alessandro-circati",
@@ -17851,7 +17978,8 @@ window.DATA = {
         "skill": 67,
         "value": 70,
         "fame": 52
-      }
+      },
+      "number": 3
     },
     {
       "id": "cristian-volpato",
@@ -17884,7 +18012,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 45
-      }
+      },
+      "number": 20
     },
     {
       "id": "connor-metcalfe",
@@ -17918,7 +18047,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 50
-      }
+      },
+      "number": 8
     },
     {
       "id": "aiden-oneill",
@@ -17985,7 +18115,8 @@ window.DATA = {
         "skill": 55,
         "value": 49,
         "fame": 57
-      }
+      },
+      "number": 16
     },
     {
       "id": "hakan-calhanoglu",
@@ -18020,7 +18151,8 @@ window.DATA = {
         "skill": 90,
         "value": 86,
         "fame": 87
-      }
+      },
+      "number": 10
     },
     {
       "id": "arda-guler",
@@ -18056,7 +18188,8 @@ window.DATA = {
         "skill": 88,
         "value": 92,
         "fame": 73
-      }
+      },
+      "number": 8
     },
     {
       "id": "kenan-yildiz",
@@ -18126,7 +18259,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 69
-      }
+      },
+      "number": 7
     },
     {
       "id": "merih-demiral",
@@ -18161,7 +18295,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 69
-      }
+      },
+      "number": 3
     },
     {
       "id": "ferdi-kadioglu",
@@ -18230,7 +18365,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 67
-      }
+      },
+      "number": 4
     },
     {
       "id": "orkun-kokcu",
@@ -18265,7 +18401,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 65
-      }
+      },
+      "number": 6
     },
     {
       "id": "ugurcan-cakir",
@@ -18373,7 +18510,8 @@ window.DATA = {
         "skill": 93,
         "value": 98,
         "fame": 81
-      }
+      },
+      "number": 10
     },
     {
       "id": "florian-wirtz",
@@ -18411,7 +18549,8 @@ window.DATA = {
         "skill": 91,
         "value": 96,
         "fame": 79
-      }
+      },
+      "number": 17
     },
     {
       "id": "joshua-kimmich",
@@ -18449,7 +18588,8 @@ window.DATA = {
         "skill": 88,
         "value": 84,
         "fame": 89
-      }
+      },
+      "number": 6
     },
     {
       "id": "antonio-rudiger",
@@ -18524,7 +18664,8 @@ window.DATA = {
         "skill": 81,
         "value": 81,
         "fame": 74
-      }
+      },
+      "number": 7
     },
     {
       "id": "leroy-sane",
@@ -18561,7 +18702,8 @@ window.DATA = {
         "skill": 76,
         "value": 72,
         "fame": 73
-      }
+      },
+      "number": 19
     },
     {
       "id": "manuel-neuer",
@@ -18598,7 +18740,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 83
-      }
+      },
+      "number": 1
     },
     {
       "id": "jonathan-tah",
@@ -18634,7 +18777,8 @@ window.DATA = {
         "skill": 77,
         "value": 73,
         "fame": 67
-      }
+      },
+      "number": 4
     },
     {
       "id": "nico-schlotterbeck",
@@ -18670,7 +18814,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 61
-      }
+      },
+      "number": 15
     },
     {
       "id": "nick-woltemade",
@@ -18707,7 +18852,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 54
-      }
+      },
+      "number": 11
     },
     {
       "id": "aleksandar-pavlovic",
@@ -18742,7 +18888,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 50
-      }
+      },
+      "number": 5
     },
     {
       "id": "leandro-bacuna",
@@ -18775,7 +18922,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 62
-      }
+      },
+      "number": 10
     },
     {
       "id": "tahith-chong",
@@ -18806,7 +18954,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 50
-      }
+      },
+      "number": 21
     },
     {
       "id": "armando-obispo",
@@ -18839,7 +18988,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 53
-      }
+      },
+      "number": 18
     },
     {
       "id": "riechedly-bazoer",
@@ -18873,7 +19023,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 48
-      }
+      },
+      "number": 23
     },
     {
       "id": "eloy-room",
@@ -18906,7 +19057,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 59
-      }
+      },
+      "number": 1
     },
     {
       "id": "sontje-hansen",
@@ -18940,7 +19092,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 50
-      }
+      },
+      "number": 12
     },
     {
       "id": "juninho-bacuna",
@@ -18973,7 +19126,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 57
-      }
+      },
+      "number": 7
     },
     {
       "id": "jurgen-locadia",
@@ -19037,7 +19191,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 47
-      }
+      },
+      "number": 14
     },
     {
       "id": "jearl-margaritha",
@@ -19068,7 +19223,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 42
-      }
+      },
+      "number": 16
     },
     {
       "id": "franck-kessie",
@@ -19103,7 +19259,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 85
-      }
+      },
+      "number": 8
     },
     {
       "id": "amad-diallo",
@@ -19137,7 +19294,8 @@ window.DATA = {
         "skill": 80,
         "value": 84,
         "fame": 63
-      }
+      },
+      "number": 15
     },
     {
       "id": "evan-ndicka",
@@ -19171,7 +19329,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 63
-      }
+      },
+      "number": 21
     },
     {
       "id": "wilfried-singo",
@@ -19205,7 +19364,8 @@ window.DATA = {
         "skill": 77,
         "value": 77,
         "fame": 63
-      }
+      },
+      "number": 5
     },
     {
       "id": "odilon-kossounou",
@@ -19239,7 +19399,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 61
-      }
+      },
+      "number": 7
     },
     {
       "id": "ousmane-diomande",
@@ -19273,7 +19434,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 56
-      }
+      },
+      "number": 2
     },
     {
       "id": "ibrahim-sangare",
@@ -19307,7 +19469,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 65
-      }
+      },
+      "number": 18
     },
     {
       "id": "simon-adingra",
@@ -19340,7 +19503,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 57
-      }
+      },
+      "number": 10
     },
     {
       "id": "evann-guessand",
@@ -19373,7 +19537,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 52
-      }
+      },
+      "number": 22
     },
     {
       "id": "nicolas-pepe",
@@ -19407,7 +19572,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 61
-      }
+      },
+      "number": 19
     },
     {
       "id": "yan-diomande",
@@ -19441,7 +19607,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 50
-      }
+      },
+      "number": 11
     },
     {
       "id": "moises-caicedo",
@@ -19474,7 +19641,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 76
-      }
+      },
+      "number": 23
     },
     {
       "id": "willian-pacho",
@@ -19510,7 +19678,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 74
-      }
+      },
+      "number": 6
     },
     {
       "id": "piero-hincapie",
@@ -19544,7 +19713,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 70
-      }
+      },
+      "number": 3
     },
     {
       "id": "enner-valencia",
@@ -19577,7 +19747,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 71
-      }
+      },
+      "number": 13
     },
     {
       "id": "pervis-estupinan",
@@ -19608,7 +19779,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 64
-      }
+      },
+      "number": 7
     },
     {
       "id": "gonzalo-plata",
@@ -19641,7 +19813,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 62
-      }
+      },
+      "number": 19
     },
     {
       "id": "angelo-preciado",
@@ -19672,7 +19845,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 55
-      }
+      },
+      "number": 17
     },
     {
       "id": "kendry-paez",
@@ -19703,7 +19877,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 54
-      }
+      },
+      "number": 10
     },
     {
       "id": "kevin-rodriguez",
@@ -19736,7 +19911,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 50
-      }
+      },
+      "number": 11
     },
     {
       "id": "hernan-galindez",
@@ -19767,7 +19943,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 47
-      }
+      },
+      "number": 1
     },
     {
       "id": "virgil-van-dijk",
@@ -19803,7 +19980,8 @@ window.DATA = {
         "skill": 92,
         "value": 82,
         "fame": 87
-      }
+      },
+      "number": 4
     },
     {
       "id": "frenkie-de-jong",
@@ -19838,7 +20016,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 78
-      }
+      },
+      "number": 21
     },
     {
       "id": "cody-gakpo",
@@ -19873,7 +20052,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 71
-      }
+      },
+      "number": 11
     },
     {
       "id": "tijjani-reijnders",
@@ -19909,7 +20089,8 @@ window.DATA = {
         "skill": 81,
         "value": 81,
         "fame": 69
-      }
+      },
+      "number": 14
     },
     {
       "id": "denzel-dumfries",
@@ -19944,7 +20125,8 @@ window.DATA = {
         "skill": 79,
         "value": 75,
         "fame": 73
-      }
+      },
+      "number": 22
     },
     {
       "id": "jurrien-timber",
@@ -20014,7 +20196,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 65
-      }
+      },
+      "number": 8
     },
     {
       "id": "memphis-depay",
@@ -20049,7 +20232,8 @@ window.DATA = {
         "skill": 77,
         "value": 73,
         "fame": 78
-      }
+      },
+      "number": 10
     },
     {
       "id": "bart-verbruggen",
@@ -20083,7 +20267,8 @@ window.DATA = {
         "skill": 73,
         "value": 77,
         "fame": 59
-      }
+      },
+      "number": 1
     },
     {
       "id": "micky-van-de-ven",
@@ -20117,7 +20302,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 59
-      }
+      },
+      "number": 15
     },
     {
       "id": "donyell-malen",
@@ -20152,7 +20338,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 63
-      }
+      },
+      "number": 18
     },
     {
       "id": "takefusa-kubo",
@@ -20188,7 +20375,8 @@ window.DATA = {
         "skill": 86,
         "value": 86,
         "fame": 75
-      }
+      },
+      "number": 8
     },
     {
       "id": "wataru-endo",
@@ -20224,7 +20412,8 @@ window.DATA = {
         "skill": 80,
         "value": 71,
         "fame": 76
-      }
+      },
+      "number": 6
     },
     {
       "id": "ritsu-doan",
@@ -20260,7 +20449,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 73
-      }
+      },
+      "number": 10
     },
     {
       "id": "daichi-kamada",
@@ -20296,7 +20486,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 70
-      }
+      },
+      "number": 15
     },
     {
       "id": "ayase-ueda",
@@ -20332,7 +20523,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 66
-      }
+      },
+      "number": 18
     },
     {
       "id": "daizen-maeda",
@@ -20368,7 +20560,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 62
-      }
+      },
+      "number": 11
     },
     {
       "id": "hiroki-ito",
@@ -20403,7 +20596,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 61
-      }
+      },
+      "number": 21
     },
     {
       "id": "takehiro-tomiyasu",
@@ -20439,7 +20633,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 62
-      }
+      },
+      "number": 22
     },
     {
       "id": "zion-suzuki",
@@ -20475,7 +20670,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 61
-      }
+      },
+      "number": 1
     },
     {
       "id": "alexander-isak",
@@ -20512,7 +20708,8 @@ window.DATA = {
         "skill": 92,
         "value": 92,
         "fame": 83
-      }
+      },
+      "number": 9
     },
     {
       "id": "viktor-gyokeres",
@@ -20546,7 +20743,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 71
-      }
+      },
+      "number": 17
     },
     {
       "id": "anthony-elanga",
@@ -20577,7 +20775,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 60
-      }
+      },
+      "number": 11
     },
     {
       "id": "victor-lindelof",
@@ -20612,7 +20811,8 @@ window.DATA = {
         "skill": 76,
         "value": 72,
         "fame": 72
-      }
+      },
+      "number": 3
     },
     {
       "id": "lucas-bergvall",
@@ -20645,7 +20845,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 54
-      }
+      },
+      "number": 7
     },
     {
       "id": "isak-hien",
@@ -20678,7 +20879,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 56
-      }
+      },
+      "number": 4
     },
     {
       "id": "mattias-svanberg",
@@ -20709,7 +20911,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 56
-      }
+      },
+      "number": 19
     },
     {
       "id": "yasin-ayari",
@@ -20740,7 +20943,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 50
-      }
+      },
+      "number": 18
     },
     {
       "id": "gabriel-gudmundsson",
@@ -20771,7 +20975,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 49
-      }
+      },
+      "number": 5
     },
     {
       "id": "viktor-johansson",
@@ -20801,7 +21006,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 43
-      }
+      },
+      "number": 12
     },
     {
       "id": "ellyes-skhiri",
@@ -20835,7 +21041,8 @@ window.DATA = {
         "skill": 82,
         "value": 78,
         "fame": 75
-      }
+      },
+      "number": 17
     },
     {
       "id": "hannibal-mejbri",
@@ -20869,7 +21076,8 @@ window.DATA = {
         "skill": 75,
         "value": 79,
         "fame": 64
-      }
+      },
+      "number": 10
     },
     {
       "id": "montassar-talbi",
@@ -20904,7 +21112,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 67
-      }
+      },
+      "number": 3
     },
     {
       "id": "elias-achouri",
@@ -20938,7 +21147,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 56
-      }
+      },
+      "number": 7
     },
     {
       "id": "sebastian-tounekti",
@@ -20972,7 +21182,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 49
-      }
+      },
+      "number": 26
     },
     {
       "id": "anis-ben-slimane",
@@ -21006,7 +21217,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 51
-      }
+      },
+      "number": 25
     },
     {
       "id": "aymen-dahmen",
@@ -21040,7 +21252,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 54
-      }
+      },
+      "number": 16
     },
     {
       "id": "hazem-mastouri",
@@ -21071,7 +21284,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 41
-      }
+      },
+      "number": 9
     },
     {
       "id": "thibaut-courtois",
@@ -21219,7 +21433,7 @@ window.DATA = {
         "value": 80,
         "fame": 70
       },
-      "number": 22
+      "number": 11
     },
     {
       "id": "leandro-trossard",
@@ -21255,7 +21469,7 @@ window.DATA = {
         "value": 71,
         "fame": 66
       },
-      "number": 11
+      "number": 10
     },
     {
       "id": "youri-tielemans",
@@ -21325,7 +21539,7 @@ window.DATA = {
         "value": 74,
         "fame": 58
       },
-      "number": 15
+      "number": 24
     },
     {
       "id": "charles-de-ketelaere",
@@ -21360,7 +21574,7 @@ window.DATA = {
         "value": 72,
         "fame": 59
       },
-      "number": 10
+      "number": 17
     },
     {
       "id": "zeno-debast",
@@ -21395,7 +21609,7 @@ window.DATA = {
         "value": 71,
         "fame": 55
       },
-      "number": 4
+      "number": 2
     },
     {
       "id": "maxim-de-cuyper",
@@ -21431,7 +21645,7 @@ window.DATA = {
         "value": 60,
         "fame": 50
       },
-      "number": 3
+      "number": 5
     },
     {
       "id": "mohamed-salah",
@@ -21470,7 +21684,8 @@ window.DATA = {
         "skill": 95,
         "value": 85,
         "fame": 97
-      }
+      },
+      "number": 10
     },
     {
       "id": "omar-marmoush",
@@ -21507,7 +21722,8 @@ window.DATA = {
         "skill": 84,
         "value": 84,
         "fame": 74
-      }
+      },
+      "number": 22
     },
     {
       "id": "trezeguet",
@@ -21544,7 +21760,8 @@ window.DATA = {
         "skill": 75,
         "value": 71,
         "fame": 76
-      }
+      },
+      "number": 7
     },
     {
       "id": "mohamed-abdelmonem",
@@ -21651,7 +21868,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 57
-      }
+      },
+      "number": 8
     },
     {
       "id": "ibrahim-adel",
@@ -21686,7 +21904,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 49
-      }
+      },
+      "number": 20
     },
     {
       "id": "hamdi-fathi",
@@ -21793,7 +22012,8 @@ window.DATA = {
         "skill": 88,
         "value": 78,
         "fame": 89
-      }
+      },
+      "number": 9
     },
     {
       "id": "alireza-jahanbakhsh",
@@ -21830,7 +22050,8 @@ window.DATA = {
         "skill": 76,
         "value": 72,
         "fame": 79
-      }
+      },
+      "number": 7
     },
     {
       "id": "alireza-beiranvand",
@@ -21864,7 +22085,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 68
-      }
+      },
+      "number": 1
     },
     {
       "id": "saman-ghoddos",
@@ -21899,7 +22121,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 65
-      }
+      },
+      "number": 14
     },
     {
       "id": "ehsan-hajsafi",
@@ -21969,7 +22192,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 60
-      }
+      },
+      "number": 23
     },
     {
       "id": "milad-mohammadi",
@@ -22003,7 +22227,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 60
-      }
+      },
+      "number": 5
     },
     {
       "id": "hossein-kanaanizadegan",
@@ -22073,7 +22298,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 65
-      }
+      },
+      "number": 6
     },
     {
       "id": "mohammad-mohebi",
@@ -22143,7 +22369,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 77
-      }
+      },
+      "number": 9
     },
     {
       "id": "marko-stamenic",
@@ -22178,7 +22405,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 60
-      }
+      },
+      "number": 8
     },
     {
       "id": "liberato-cacace",
@@ -22213,7 +22441,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 58
-      }
+      },
+      "number": 13
     },
     {
       "id": "tyler-bindon",
@@ -22248,7 +22477,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 53
-      }
+      },
+      "number": 4
     },
     {
       "id": "ben-old",
@@ -22282,7 +22512,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 51
-      }
+      },
+      "number": 19
     },
     {
       "id": "sarpreet-singh",
@@ -22316,7 +22547,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 48
-      }
+      },
+      "number": 10
     },
     {
       "id": "joe-bell",
@@ -22350,7 +22582,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 51
-      }
+      },
+      "number": 6
     },
     {
       "id": "finn-surman",
@@ -22384,7 +22617,8 @@ window.DATA = {
         "skill": 56,
         "value": 59,
         "fame": 45
-      }
+      },
+      "number": 16
     },
     {
       "id": "matthew-garbett",
@@ -22418,7 +22652,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 49
-      }
+      },
+      "number": 7
     },
     {
       "id": "max-crocombe",
@@ -22451,7 +22686,8 @@ window.DATA = {
         "skill": 59,
         "value": 56,
         "fame": 47
-      }
+      },
+      "number": 1
     },
     {
       "id": "lamine-yamal",
@@ -22529,7 +22765,7 @@ window.DATA = {
         "value": 95,
         "fame": 80
       },
-      "number": 8
+      "number": 20
     },
     {
       "id": "rodri",
@@ -22677,7 +22913,7 @@ window.DATA = {
         "value": 79,
         "fame": 72
       },
-      "number": 14
+      "number": 8
     },
     {
       "id": "dani-olmo",
@@ -22788,7 +23024,7 @@ window.DATA = {
         "value": 78,
         "fame": 66
       },
-      "number": 13
+      "number": 1
     },
     {
       "id": "pau-cubarsi",
@@ -22824,7 +23060,7 @@ window.DATA = {
         "value": 78,
         "fame": 59
       },
-      "number": 5
+      "number": 22
     },
     {
       "id": "ryan-mendes",
@@ -22857,7 +23093,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 68
-      }
+      },
+      "number": 20
     },
     {
       "id": "logan-costa",
@@ -22889,7 +23126,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 61
-      }
+      },
+      "number": 5
     },
     {
       "id": "jamiro-monteiro",
@@ -22922,7 +23160,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 61
-      }
+      },
+      "number": 10
     },
     {
       "id": "garry-rodrigues",
@@ -22955,7 +23194,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 59
-      }
+      },
+      "number": 11
     },
     {
       "id": "roberto-lopes",
@@ -23020,7 +23260,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 59
-      }
+      },
+      "number": 1
     },
     {
       "id": "dailon-livramento",
@@ -23052,7 +23293,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 49
-      }
+      },
+      "number": 19
     },
     {
       "id": "kevin-pina",
@@ -23084,7 +23326,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 48
-      }
+      },
+      "number": 6
     },
     {
       "id": "deroy-duarte",
@@ -23116,7 +23359,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 46
-      }
+      },
+      "number": 14
     },
     {
       "id": "jovane-cabral",
@@ -23148,7 +23392,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 46
-      }
+      },
+      "number": 7
     },
     {
       "id": "benchimol",
@@ -23216,7 +23461,8 @@ window.DATA = {
         "skill": 84,
         "value": 75,
         "fame": 85
-      }
+      },
+      "number": 10
     },
     {
       "id": "firas-al-buraikan",
@@ -23286,7 +23532,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 64
-      }
+      },
+      "number": 12
     },
     {
       "id": "mohammed-al-owais",
@@ -23321,7 +23568,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 61
-      }
+      },
+      "number": 21
     },
     {
       "id": "hassan-al-tambakti",
@@ -23357,7 +23605,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 65
-      }
+      },
+      "number": 5
     },
     {
       "id": "mohamed-kanno",
@@ -23393,7 +23642,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 68
-      }
+      },
+      "number": 23
     },
     {
       "id": "saleh-al-shehri",
@@ -23428,7 +23678,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 62
-      }
+      },
+      "number": 11
     },
     {
       "id": "abdulelah-al-amri",
@@ -23463,7 +23714,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 57
-      }
+      },
+      "number": 4
     },
     {
       "id": "abdullah-al-hamdan",
@@ -23533,7 +23785,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 55
-      }
+      },
+      "number": 6
     },
     {
       "id": "federico-valverde",
@@ -23569,7 +23822,8 @@ window.DATA = {
         "skill": 93,
         "value": 93,
         "fame": 83
-      }
+      },
+      "number": 8
     },
     {
       "id": "darwin-nunez",
@@ -23604,7 +23858,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 69
-      }
+      },
+      "number": 9
     },
     {
       "id": "ronald-araujo",
@@ -23639,7 +23894,8 @@ window.DATA = {
         "skill": 86,
         "value": 86,
         "fame": 70
-      }
+      },
+      "number": 4
     },
     {
       "id": "jose-maria-gimenez",
@@ -23674,7 +23930,8 @@ window.DATA = {
         "skill": 83,
         "value": 79,
         "fame": 81
-      }
+      },
+      "number": 2
     },
     {
       "id": "rodrigo-bentancur",
@@ -23709,7 +23966,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 74
-      }
+      },
+      "number": 6
     },
     {
       "id": "manuel-ugarte",
@@ -23744,7 +24002,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 66
-      }
+      },
+      "number": 5
     },
     {
       "id": "giorgian-de-arrascaeta",
@@ -23779,7 +24038,8 @@ window.DATA = {
         "skill": 81,
         "value": 77,
         "fame": 72
-      }
+      },
+      "number": 10
     },
     {
       "id": "nicolas-de-la-cruz",
@@ -23814,7 +24074,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 62
-      }
+      },
+      "number": 7
     },
     {
       "id": "mathias-olivera",
@@ -23848,7 +24109,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 63
-      }
+      },
+      "number": 16
     },
     {
       "id": "facundo-pellistri",
@@ -23882,7 +24144,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 58
-      }
+      },
+      "number": 11
     },
     {
       "id": "sergio-rochet",
@@ -23916,7 +24179,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 59
-      }
+      },
+      "number": 1
     },
     {
       "id": "kylian-mbappe",
@@ -23953,7 +24217,8 @@ window.DATA = {
         "skill": 97,
         "value": 97,
         "fame": 93
-      }
+      },
+      "number": 10
     },
     {
       "id": "ousmane-dembele",
@@ -23990,7 +24255,8 @@ window.DATA = {
         "skill": 94,
         "value": 94,
         "fame": 84
-      }
+      },
+      "number": 7
     },
     {
       "id": "michael-olise",
@@ -24025,7 +24291,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 69
-      }
+      },
+      "number": 11
     },
     {
       "id": "william-saliba",
@@ -24060,7 +24327,8 @@ window.DATA = {
         "skill": 86,
         "value": 86,
         "fame": 71
-      }
+      },
+      "number": 17
     },
     {
       "id": "dayot-upamecano",
@@ -24095,7 +24363,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 69
-      }
+      },
+      "number": 4
     },
     {
       "id": "jules-kounde",
@@ -24130,7 +24399,8 @@ window.DATA = {
         "skill": 81,
         "value": 81,
         "fame": 70
-      }
+      },
+      "number": 5
     },
     {
       "id": "aurelien-tchouameni",
@@ -24166,7 +24436,8 @@ window.DATA = {
         "skill": 84,
         "value": 84,
         "fame": 73
-      }
+      },
+      "number": 8
     },
     {
       "id": "adrien-rabiot",
@@ -24202,7 +24473,8 @@ window.DATA = {
         "skill": 79,
         "value": 75,
         "fame": 72
-      }
+      },
+      "number": 14
     },
     {
       "id": "rayan-cherki",
@@ -24237,7 +24509,8 @@ window.DATA = {
         "skill": 74,
         "value": 78,
         "fame": 58
-      }
+      },
+      "number": 24
     },
     {
       "id": "marcus-thuram",
@@ -24272,7 +24545,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 67
-      }
+      },
+      "number": 9
     },
     {
       "id": "mike-maignan",
@@ -24308,7 +24582,8 @@ window.DATA = {
         "skill": 85,
         "value": 81,
         "fame": 73
-      }
+      },
+      "number": 16
     },
     {
       "id": "sadio-mane",
@@ -24344,7 +24619,8 @@ window.DATA = {
         "skill": 90,
         "value": 80,
         "fame": 92
-      }
+      },
+      "number": 10
     },
     {
       "id": "kalidou-koulibaly",
@@ -24379,7 +24655,8 @@ window.DATA = {
         "skill": 80,
         "value": 71,
         "fame": 79
-      }
+      },
+      "number": 3
     },
     {
       "id": "edouard-mendy",
@@ -24415,7 +24692,8 @@ window.DATA = {
         "skill": 85,
         "value": 76,
         "fame": 76
-      }
+      },
+      "number": 16
     },
     {
       "id": "idrissa-gana-gueye",
@@ -24450,7 +24728,8 @@ window.DATA = {
         "skill": 75,
         "value": 67,
         "fame": 81
-      }
+      },
+      "number": 5
     },
     {
       "id": "ismaila-sarr",
@@ -24485,7 +24764,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 74
-      }
+      },
+      "number": 18
     },
     {
       "id": "nicolas-jackson",
@@ -24520,7 +24800,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 62
-      }
+      },
+      "number": 11
     },
     {
       "id": "iliman-ndiaye",
@@ -24553,7 +24834,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 58
-      }
+      },
+      "number": 13
     },
     {
       "id": "pape-matar-sarr",
@@ -24587,7 +24869,8 @@ window.DATA = {
         "skill": 73,
         "value": 77,
         "fame": 61
-      }
+      },
+      "number": 17
     },
     {
       "id": "lamine-camara",
@@ -24621,7 +24904,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 58
-      }
+      },
+      "number": 8
     },
     {
       "id": "habib-diarra",
@@ -24654,7 +24938,8 @@ window.DATA = {
         "skill": 65,
         "value": 68,
         "fame": 51
-      }
+      },
+      "number": 21
     },
     {
       "id": "krepin-diatta",
@@ -24687,7 +24972,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 56
-      }
+      },
+      "number": 15
     },
     {
       "id": "aymen-hussein",
@@ -24723,7 +25009,8 @@ window.DATA = {
         "skill": 72,
         "value": 68,
         "fame": 74
-      }
+      },
+      "number": 18
     },
     {
       "id": "ali-al-hamadi",
@@ -24757,7 +25044,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 51
-      }
+      },
+      "number": 9
     },
     {
       "id": "zidane-iqbal",
@@ -24790,7 +25078,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 52
-      }
+      },
+      "number": 14
     },
     {
       "id": "jalal-hassan",
@@ -24826,7 +25115,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 66
-      }
+      },
+      "number": 12
     },
     {
       "id": "amir-al-ammari",
@@ -24859,7 +25149,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 53
-      }
+      },
+      "number": 16
     },
     {
       "id": "mohanad-ali",
@@ -24894,7 +25185,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 61
-      }
+      },
+      "number": 10
     },
     {
       "id": "ali-jasim",
@@ -24928,7 +25220,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 47
-      }
+      },
+      "number": 17
     },
     {
       "id": "merchas-doski",
@@ -24961,7 +25254,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 45
-      }
+      },
+      "number": 23
     },
     {
       "id": "hussein-ali",
@@ -24992,7 +25286,8 @@ window.DATA = {
         "skill": 53,
         "value": 53,
         "fame": 42
-      }
+      },
+      "number": 3
     },
     {
       "id": "ahmed-qasem",
@@ -25060,7 +25355,8 @@ window.DATA = {
         "skill": 97,
         "value": 97,
         "fame": 85
-      }
+      },
+      "number": 9
     },
     {
       "id": "martin-odegaard",
@@ -25095,7 +25391,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 80
-      }
+      },
+      "number": 10
     },
     {
       "id": "alexander-sorloth",
@@ -25128,7 +25425,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 71
-      }
+      },
+      "number": 7
     },
     {
       "id": "antonio-nusa",
@@ -25159,7 +25457,8 @@ window.DATA = {
         "skill": 74,
         "value": 78,
         "fame": 56
-      }
+      },
+      "number": 20
     },
     {
       "id": "oscar-bobb",
@@ -25194,7 +25493,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 57
-      }
+      },
+      "number": 22
     },
     {
       "id": "jorgen-strand-larsen",
@@ -25225,7 +25525,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 56
-      }
+      },
+      "number": 11
     },
     {
       "id": "kristoffer-ajer",
@@ -25258,7 +25559,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 61
-      }
+      },
+      "number": 3
     },
     {
       "id": "sander-berge",
@@ -25291,7 +25593,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 64
-      }
+      },
+      "number": 8
     },
     {
       "id": "fredrik-aursnes",
@@ -25326,7 +25629,8 @@ window.DATA = {
         "skill": 69,
         "value": 66,
         "fame": 57
-      }
+      },
+      "number": 14
     },
     {
       "id": "leo-ostigard",
@@ -25357,7 +25661,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 49
-      }
+      },
+      "number": 4
     },
     {
       "id": "orjan-nyland",
@@ -25388,7 +25693,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 58
-      }
+      },
+      "number": 1
     },
     {
       "id": "lionel-messi",
@@ -25424,7 +25730,8 @@ window.DATA = {
         "skill": 98,
         "value": 87,
         "fame": 98
-      }
+      },
+      "number": 10
     },
     {
       "id": "lautaro-martinez",
@@ -25460,7 +25767,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 83
-      }
+      },
+      "number": 22
     },
     {
       "id": "julian-alvarez",
@@ -25496,7 +25804,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 77
-      }
+      },
+      "number": 9
     },
     {
       "id": "emiliano-martinez",
@@ -25532,7 +25841,8 @@ window.DATA = {
         "skill": 89,
         "value": 79,
         "fame": 79
-      }
+      },
+      "number": 23
     },
     {
       "id": "enzo-fernandez",
@@ -25568,7 +25878,8 @@ window.DATA = {
         "skill": 84,
         "value": 84,
         "fame": 73
-      }
+      },
+      "number": 24
     },
     {
       "id": "alexis-mac-allister",
@@ -25604,7 +25915,8 @@ window.DATA = {
         "skill": 85,
         "value": 85,
         "fame": 74
-      }
+      },
+      "number": 20
     },
     {
       "id": "cristian-romero",
@@ -25639,7 +25951,8 @@ window.DATA = {
         "skill": 86,
         "value": 86,
         "fame": 74
-      }
+      },
+      "number": 13
     },
     {
       "id": "lisandro-martinez",
@@ -25675,7 +25988,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 67
-      }
+      },
+      "number": 6
     },
     {
       "id": "rodrigo-de-paul",
@@ -25709,7 +26023,8 @@ window.DATA = {
         "skill": 78,
         "value": 74,
         "fame": 73
-      }
+      },
+      "number": 7
     },
     {
       "id": "nicolas-otamendi",
@@ -25743,7 +26058,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 78
-      }
+      },
+      "number": 19
     },
     {
       "id": "riyad-mahrez",
@@ -25780,7 +26096,8 @@ window.DATA = {
         "skill": 88,
         "value": 78,
         "fame": 90
-      }
+      },
+      "number": 7
     },
     {
       "id": "mohamed-amoura",
@@ -25813,7 +26130,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 66
-      }
+      },
+      "number": 18
     },
     {
       "id": "rayan-ait-nouri",
@@ -25844,7 +26162,8 @@ window.DATA = {
         "skill": 84,
         "value": 84,
         "fame": 64
-      }
+      },
+      "number": 15
     },
     {
       "id": "amine-gouiri",
@@ -25878,7 +26197,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 60
-      }
+      },
+      "number": 9
     },
     {
       "id": "ramy-bensebaini",
@@ -25913,7 +26233,8 @@ window.DATA = {
         "skill": 75,
         "value": 71,
         "fame": 72
-      }
+      },
+      "number": 21
     },
     {
       "id": "houssem-aouar",
@@ -25947,7 +26268,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 56
-      }
+      },
+      "number": 8
     },
     {
       "id": "fares-chaibi",
@@ -25980,7 +26302,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 54
-      }
+      },
+      "number": 10
     },
     {
       "id": "ibrahim-maza",
@@ -26011,7 +26334,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 48
-      }
+      },
+      "number": 22
     },
     {
       "id": "aissa-mandi",
@@ -26045,7 +26369,8 @@ window.DATA = {
         "skill": 67,
         "value": 60,
         "fame": 71
-      }
+      },
+      "number": 2
     },
     {
       "id": "anis-hadj-moussa",
@@ -26079,7 +26404,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 48
-      }
+      },
+      "number": 11
     },
     {
       "id": "luca-zidane",
@@ -26110,7 +26436,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 41
-      }
+      },
+      "number": 23
     },
     {
       "id": "david-alaba",
@@ -26145,7 +26472,8 @@ window.DATA = {
         "skill": 88,
         "value": 78,
         "fame": 87
-      }
+      },
+      "number": 8
     },
     {
       "id": "marcel-sabitzer",
@@ -26179,7 +26507,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 77
-      }
+      },
+      "number": 9
     },
     {
       "id": "konrad-laimer",
@@ -26213,7 +26542,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 69
-      }
+      },
+      "number": 20
     },
     {
       "id": "christoph-baumgartner",
@@ -26247,7 +26577,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 68
-      }
+      },
+      "number": 19
     },
     {
       "id": "kevin-danso",
@@ -26280,7 +26611,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 58
-      }
+      },
+      "number": 3
     },
     {
       "id": "marko-arnautovic",
@@ -26314,7 +26646,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 73
-      }
+      },
+      "number": 7
     },
     {
       "id": "michael-gregoritsch",
@@ -26348,7 +26681,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 64
-      }
+      },
+      "number": 11
     },
     {
       "id": "nicolas-seiwald",
@@ -26382,7 +26716,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 62
-      }
+      },
+      "number": 6
     },
     {
       "id": "alexander-schlager",
@@ -26416,7 +26751,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 53
-      }
+      },
+      "number": 1
     },
     {
       "id": "mousa-al-tamari",
@@ -26450,7 +26786,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 78
-      }
+      },
+      "number": 10
     },
     {
       "id": "ali-olwan",
@@ -26484,7 +26821,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 66
-      }
+      },
+      "number": 9
     },
     {
       "id": "yazan-al-arab",
@@ -26518,7 +26856,8 @@ window.DATA = {
         "skill": 71,
         "value": 67,
         "fame": 67
-      }
+      },
+      "number": 5
     },
     {
       "id": "ehsan-haddad",
@@ -26552,7 +26891,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 66
-      }
+      },
+      "number": 23
     },
     {
       "id": "noor-al-rawabdeh",
@@ -26620,7 +26960,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 51
-      }
+      },
+      "number": 21
     },
     {
       "id": "mohammad-abu-zrayq",
@@ -26685,7 +27026,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 57
-      }
+      },
+      "number": 1
     },
     {
       "id": "mohammad-abu-hasheesh",
@@ -26752,7 +27094,8 @@ window.DATA = {
         "skill": 88,
         "value": 78,
         "fame": 90
-      }
+      },
+      "number": 7
     },
     {
       "id": "bruno-fernandes",
@@ -26787,7 +27130,8 @@ window.DATA = {
         "skill": 86,
         "value": 82,
         "fame": 81
-      }
+      },
+      "number": 8
     },
     {
       "id": "vitinha",
@@ -26822,7 +27166,8 @@ window.DATA = {
         "skill": 84,
         "value": 84,
         "fame": 70
-      }
+      },
+      "number": 23
     },
     {
       "id": "ruben-dias",
@@ -26857,7 +27202,8 @@ window.DATA = {
         "skill": 85,
         "value": 85,
         "fame": 78
-      }
+      },
+      "number": 3
     },
     {
       "id": "nuno-mendes",
@@ -26892,7 +27238,8 @@ window.DATA = {
         "skill": 82,
         "value": 86,
         "fame": 70
-      }
+      },
+      "number": 25
     },
     {
       "id": "joao-neves",
@@ -26927,7 +27274,8 @@ window.DATA = {
         "skill": 80,
         "value": 84,
         "fame": 65
-      }
+      },
+      "number": 15
     },
     {
       "id": "rafael-leao",
@@ -26963,7 +27311,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 67
-      }
+      },
+      "number": 17
     },
     {
       "id": "diogo-costa",
@@ -26998,7 +27347,8 @@ window.DATA = {
         "skill": 77,
         "value": 77,
         "fame": 66
-      }
+      },
+      "number": 1
     },
     {
       "id": "bernardo-silva",
@@ -27033,7 +27383,8 @@ window.DATA = {
         "skill": 83,
         "value": 79,
         "fame": 82
-      }
+      },
+      "number": 10
     },
     {
       "id": "goncalo-ramos",
@@ -27068,7 +27419,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 61
-      }
+      },
+      "number": 9
     },
     {
       "id": "chancel-mbemba",
@@ -27104,7 +27456,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 82
-      }
+      },
+      "number": 22
     },
     {
       "id": "yoane-wissa",
@@ -27137,7 +27490,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 63
-      }
+      },
+      "number": 20
     },
     {
       "id": "cedric-bakambu",
@@ -27172,7 +27526,8 @@ window.DATA = {
         "skill": 76,
         "value": 68,
         "fame": 70
-      }
+      },
+      "number": 17
     },
     {
       "id": "fiston-mayele",
@@ -27207,7 +27562,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 58
-      }
+      },
+      "number": 19
     },
     {
       "id": "noah-sadiki",
@@ -27240,7 +27596,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 54
-      }
+      },
+      "number": 14
     },
     {
       "id": "aaron-wan-bissaka",
@@ -27274,7 +27631,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 57
-      }
+      },
+      "number": 2
     },
     {
       "id": "arthur-masuaku",
@@ -27308,7 +27666,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 59
-      }
+      },
+      "number": 26
     },
     {
       "id": "theo-bongonda",
@@ -27342,7 +27701,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 55
-      }
+      },
+      "number": 10
     },
     {
       "id": "edo-kayembe",
@@ -27375,7 +27735,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 53
-      }
+      },
+      "number": 25
     },
     {
       "id": "gael-kakuta",
@@ -27409,7 +27770,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 52
-      }
+      },
+      "number": 11
     },
     {
       "id": "abdukodir-khusanov",
@@ -27446,7 +27808,8 @@ window.DATA = {
         "skill": 88,
         "value": 92,
         "fame": 73
-      }
+      },
+      "number": 2
     },
     {
       "id": "eldor-shomurodov",
@@ -27482,7 +27845,8 @@ window.DATA = {
         "skill": 86,
         "value": 82,
         "fame": 81
-      }
+      },
+      "number": 14
     },
     {
       "id": "abbosbek-fayzullaev",
@@ -27519,7 +27883,8 @@ window.DATA = {
         "skill": 80,
         "value": 84,
         "fame": 68
-      }
+      },
+      "number": 22
     },
     {
       "id": "igor-sergeev",
@@ -27555,7 +27920,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 70
-      }
+      },
+      "number": 21
     },
     {
       "id": "jaloliddin-masharipov",
@@ -27592,7 +27958,8 @@ window.DATA = {
         "skill": 71,
         "value": 67,
         "fame": 69
-      }
+      },
+      "number": 10
     },
     {
       "id": "otabek-shukurov",
@@ -27628,7 +27995,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 69
-      }
+      },
+      "number": 7
     },
     {
       "id": "oston-urunov",
@@ -27663,7 +28031,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 59
-      }
+      },
+      "number": 11
     },
     {
       "id": "khojiakbar-alijonov",
@@ -27699,7 +28068,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 58
-      }
+      },
+      "number": 3
     },
     {
       "id": "dostonbek-khamdamov",
@@ -27735,7 +28105,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 53
-      }
+      },
+      "number": 17
     },
     {
       "id": "utkir-yusupov",
@@ -27770,7 +28141,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 51
-      }
+      },
+      "number": 1
     },
     {
       "id": "luis-diaz",
@@ -27806,7 +28178,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 83
-      }
+      },
+      "number": 7
     },
     {
       "id": "james-rodriguez",
@@ -27841,7 +28214,8 @@ window.DATA = {
         "skill": 80,
         "value": 71,
         "fame": 83
-      }
+      },
+      "number": 10
     },
     {
       "id": "daniel-munoz",
@@ -27875,7 +28249,8 @@ window.DATA = {
         "skill": 76,
         "value": 72,
         "fame": 64
-      }
+      },
+      "number": 2
     },
     {
       "id": "davinson-sanchez",
@@ -27910,7 +28285,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 71
-      }
+      },
+      "number": 23
     },
     {
       "id": "jhon-lucumi",
@@ -27944,7 +28320,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 60
-      }
+      },
+      "number": 3
     },
     {
       "id": "richard-rios",
@@ -27979,7 +28356,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 62
-      }
+      },
+      "number": 6
     },
     {
       "id": "jhon-arias",
@@ -28014,7 +28392,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 63
-      }
+      },
+      "number": 11
     },
     {
       "id": "jefferson-lerma",
@@ -28049,7 +28428,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 65
-      }
+      },
+      "number": 16
     },
     {
       "id": "luis-suarez",
@@ -28084,7 +28464,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 56
-      }
+      },
+      "number": 25
     },
     {
       "id": "harry-kane",
@@ -28421,7 +28802,7 @@ window.DATA = {
         "value": 78,
         "fame": 64
       },
-      "number": 24
+      "number": 21
     },
     {
       "id": "anthony-gordon",
@@ -28458,7 +28839,7 @@ window.DATA = {
         "value": 76,
         "fame": 63
       },
-      "number": 15
+      "number": 18
     },
     {
       "id": "morgan-rogers",
@@ -28494,7 +28875,7 @@ window.DATA = {
         "value": 76,
         "fame": 58
       },
-      "number": 26
+      "number": 17
     },
     {
       "id": "luka-modric",
@@ -28531,7 +28912,8 @@ window.DATA = {
         "skill": 92,
         "value": 82,
         "fame": 96
-      }
+      },
+      "number": 10
     },
     {
       "id": "josko-gvardiol",
@@ -28567,7 +28949,8 @@ window.DATA = {
         "skill": 88,
         "value": 88,
         "fame": 76
-      }
+      },
+      "number": 4
     },
     {
       "id": "mateo-kovacic",
@@ -28603,7 +28986,8 @@ window.DATA = {
         "skill": 85,
         "value": 81,
         "fame": 86
-      }
+      },
+      "number": 8
     },
     {
       "id": "ivan-perisic",
@@ -28639,7 +29023,8 @@ window.DATA = {
         "skill": 80,
         "value": 71,
         "fame": 86
-      }
+      },
+      "number": 14
     },
     {
       "id": "andrej-kramaric",
@@ -28675,7 +29060,8 @@ window.DATA = {
         "skill": 76,
         "value": 68,
         "fame": 80
-      }
+      },
+      "number": 9
     },
     {
       "id": "luka-sucic",
@@ -28711,7 +29097,8 @@ window.DATA = {
         "skill": 74,
         "value": 78,
         "fame": 62
-      }
+      },
+      "number": 21
     },
     {
       "id": "josip-sutalo",
@@ -28747,7 +29134,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 63
-      }
+      },
+      "number": 6
     },
     {
       "id": "dominik-livakovic",
@@ -28783,7 +29171,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 71
-      }
+      },
+      "number": 1
     },
     {
       "id": "josip-stanisic",
@@ -28819,7 +29208,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 64
-      }
+      },
+      "number": 2
     },
     {
       "id": "martin-baturina",
@@ -28855,7 +29245,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 57
-      }
+      },
+      "number": 16
     },
     {
       "id": "petar-musa",
@@ -28891,7 +29282,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 53
-      }
+      },
+      "number": 26
     },
     {
       "id": "antoine-semenyo",
@@ -28926,7 +29318,8 @@ window.DATA = {
         "skill": 86,
         "value": 86,
         "fame": 71
-      }
+      },
+      "number": 11
     },
     {
       "id": "thomas-partey",
@@ -28961,7 +29354,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 71
-      }
+      },
+      "number": 5
     },
     {
       "id": "inaki-williams",
@@ -28996,7 +29390,8 @@ window.DATA = {
         "skill": 79,
         "value": 75,
         "fame": 65
-      }
+      },
+      "number": 19
     },
     {
       "id": "jordan-ayew",
@@ -29031,7 +29426,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 78
-      }
+      },
+      "number": 9
     },
     {
       "id": "kamaldeen-sulemana",
@@ -29064,7 +29460,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 54
-      }
+      },
+      "number": 22
     },
     {
       "id": "abdul-fatawu-issahaku",
@@ -29098,7 +29495,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 54
-      }
+      },
+      "number": 7
     },
     {
       "id": "ernest-nuamah",
@@ -29131,7 +29529,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 49
-      }
+      },
+      "number": 24
     },
     {
       "id": "alidu-seidu",
@@ -29162,7 +29561,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 45
-      }
+      },
+      "number": 2
     },
     {
       "id": "lawrence-ati-zigi",
@@ -29229,7 +29629,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 43
-      }
+      },
+      "number": 6
     },
     {
       "id": "anibal-godoy",
@@ -29263,7 +29664,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 78
-      }
+      },
+      "number": 20
     },
     {
       "id": "adalberto-carrasquilla",
@@ -29298,7 +29700,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 73
-      }
+      },
+      "number": 8
     },
     {
       "id": "michael-amir-murillo",
@@ -29332,7 +29735,8 @@ window.DATA = {
         "skill": 75,
         "value": 71,
         "fame": 73
-      }
+      },
+      "number": 23
     },
     {
       "id": "jose-cordoba",
@@ -29363,7 +29767,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 53
-      }
+      },
+      "number": 3
     },
     {
       "id": "ismael-diaz",
@@ -29394,7 +29799,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 59
-      }
+      },
+      "number": 10
     },
     {
       "id": "jose-fajardo",
@@ -29427,7 +29833,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 60
-      }
+      },
+      "number": 17
     },
     {
       "id": "cecilio-waterman",
@@ -29462,7 +29869,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 56
-      }
+      },
+      "number": 18
     },
     {
       "id": "carlos-harvey",
@@ -29493,7 +29901,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 45
-      }
+      },
+      "number": 14
     },
     {
       "id": "luis-mejia",
@@ -29524,7 +29933,8 @@ window.DATA = {
         "skill": 63,
         "value": 56,
         "fame": 54
-      }
+      },
+      "number": 1
     },
     {
       "id": "orlando-mosquera",
@@ -29555,7 +29965,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 49
-      }
+      },
+      "number": 22
     },
     {
       "id": "cesar-blackman",
@@ -29588,7 +29999,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 50
-      }
+      },
+      "number": 2
     },
     {
       "id": "ra-l-rangel",
@@ -29619,7 +30031,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 50
-      }
+      },
+      "number": 1
     },
     {
       "id": "carlos-acevedo",
@@ -29649,7 +30062,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 43
-      }
+      },
+      "number": 12
     },
     {
       "id": "jorge-s-nchez",
@@ -29683,7 +30097,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 62
-      }
+      },
+      "number": 2
     },
     {
       "id": "israel-reyes",
@@ -29714,7 +30129,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 47
-      }
+      },
+      "number": 15
     },
     {
       "id": "mateo-ch-vez",
@@ -29747,7 +30163,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 48
-      }
+      },
+      "number": 20
     },
     {
       "id": "rik-lira",
@@ -29778,7 +30195,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 52
-      }
+      },
+      "number": 6
     },
     {
       "id": "obed-vargas",
@@ -29809,7 +30227,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 46
-      }
+      },
+      "number": 18
     },
     {
       "id": "lvaro-fidalgo",
@@ -29840,7 +30259,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 49
-      }
+      },
+      "number": 8
     },
     {
       "id": "luis-ch-vez",
@@ -29871,7 +30291,8 @@ window.DATA = {
         "skill": 65,
         "value": 62,
         "fame": 50
-      }
+      },
+      "number": 24
     },
     {
       "id": "brian-guti-rrez",
@@ -29902,7 +30323,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 43
-      }
+      },
+      "number": 26
     },
     {
       "id": "roberto-alvarado",
@@ -29936,7 +30358,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 64
-      }
+      },
+      "number": 25
     },
     {
       "id": "c-sar-huerta",
@@ -29967,7 +30390,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 53
-      }
+      },
+      "number": 21
     },
     {
       "id": "juli-n-qui-ones",
@@ -30000,7 +30424,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 53
-      }
+      },
+      "number": 16
     },
     {
       "id": "armando-gonz-lez",
@@ -30031,7 +30456,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 45
-      }
+      },
+      "number": 14
     },
     {
       "id": "sipho-chaine",
@@ -30065,7 +30491,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 47
-      }
+      },
+      "number": 16
     },
     {
       "id": "ricardo-goss",
@@ -30095,7 +30522,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 41
-      }
+      },
+      "number": 22
     },
     {
       "id": "nkosinathi-sibisi",
@@ -30162,7 +30590,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 46
-      }
+      },
+      "number": 3
     },
     {
       "id": "ime-okon",
@@ -30193,7 +30622,8 @@ window.DATA = {
         "skill": 65,
         "value": 68,
         "fame": 46
-      }
+      },
+      "number": 21
     },
     {
       "id": "bradley-cross",
@@ -30223,7 +30653,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 26
     },
     {
       "id": "samukele-kabini",
@@ -30254,7 +30685,8 @@ window.DATA = {
         "skill": 61,
         "value": 64,
         "fame": 43
-      }
+      },
+      "number": 18
     },
     {
       "id": "thalente-mbatha",
@@ -30288,7 +30720,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 53
-      }
+      },
+      "number": 5
     },
     {
       "id": "sphephelo-sithole",
@@ -30319,7 +30752,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 53
-      }
+      },
+      "number": 13
     },
     {
       "id": "jayden-adams",
@@ -30352,7 +30786,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 23
     },
     {
       "id": "kamogelo-sebelebele",
@@ -30385,7 +30820,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 25
     },
     {
       "id": "evidence-makgopa",
@@ -30419,7 +30855,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 54
-      }
+      },
+      "number": 17
     },
     {
       "id": "tshepang-moremi",
@@ -30450,7 +30887,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 8
     },
     {
       "id": "thapelo-maseko",
@@ -30483,7 +30921,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 46
-      }
+      },
+      "number": 12
     },
     {
       "id": "kim-seung-gyu",
@@ -30757,8 +31196,7 @@ window.DATA = {
         "skill": 59,
         "value": 56,
         "fame": 41
-      },
-      "number": 16
+      }
     },
     {
       "id": "yang-hyun-jun",
@@ -30930,7 +31368,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 53
-      }
+      },
+      "number": 16
     },
     {
       "id": "luk-horn-ek",
@@ -30961,7 +31400,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 23
     },
     {
       "id": "david-zima",
@@ -30994,7 +31434,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 56
-      }
+      },
+      "number": 2
     },
     {
       "id": "robin-hran",
@@ -31025,7 +31466,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 51
-      }
+      },
+      "number": 4
     },
     {
       "id": "t-p-n-chaloupek",
@@ -31058,7 +31500,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 45
-      }
+      },
+      "number": 6
     },
     {
       "id": "david-jur-sek",
@@ -31091,7 +31534,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 52
-      }
+      },
+      "number": 14
     },
     {
       "id": "jaroslav-zelen",
@@ -31124,7 +31568,8 @@ window.DATA = {
         "skill": 63,
         "value": 56,
         "fame": 50
-      }
+      },
+      "number": 20
     },
     {
       "id": "david-doud-ra",
@@ -31157,7 +31602,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 49
-      }
+      },
+      "number": 21
     },
     {
       "id": "vladim-r-darida",
@@ -31188,7 +31634,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 60
-      }
+      },
+      "number": 8
     },
     {
       "id": "luk-erv",
@@ -31219,7 +31666,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 51
-      }
+      },
+      "number": 12
     },
     {
       "id": "michal-sad-lek",
@@ -31252,7 +31700,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 55
-      }
+      },
+      "number": 18
     },
     {
       "id": "alexandr-sojka",
@@ -31283,7 +31732,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 40
-      }
+      },
+      "number": 24
     },
     {
       "id": "hugo-soch-rek",
@@ -31314,7 +31764,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 39
-      }
+      },
+      "number": 25
     },
     {
       "id": "jan-kuchta",
@@ -31347,7 +31798,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 52
-      }
+      },
+      "number": 11
     },
     {
       "id": "denis-vi-insk",
@@ -31378,7 +31830,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 26
     },
     {
       "id": "maxime-cr-peau",
@@ -31411,7 +31864,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 55
-      }
+      },
+      "number": 16
     },
     {
       "id": "dayne-st-clair",
@@ -31442,7 +31896,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 49
-      }
+      },
+      "number": 1
     },
     {
       "id": "owen-goodman",
@@ -31473,7 +31928,8 @@ window.DATA = {
         "skill": 52,
         "value": 55,
         "fame": 36
-      }
+      },
+      "number": 18
     },
     {
       "id": "mo-se-bombito",
@@ -31504,7 +31960,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 49
-      }
+      },
+      "number": 15
     },
     {
       "id": "luc-de-fougerolles",
@@ -31535,7 +31992,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 39
-      }
+      },
+      "number": 4
     },
     {
       "id": "alfie-jones",
@@ -31597,7 +32055,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 43
-      }
+      },
+      "number": 22
     },
     {
       "id": "niko-sigur",
@@ -31628,7 +32087,8 @@ window.DATA = {
         "skill": 56,
         "value": 59,
         "fame": 39
-      }
+      },
+      "number": 23
     },
     {
       "id": "joel-waterman",
@@ -31659,7 +32119,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 5
     },
     {
       "id": "promise-david",
@@ -31692,7 +32153,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 48
-      }
+      },
+      "number": 24
     },
     {
       "id": "ali-ahmed",
@@ -31723,7 +32185,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 20
     },
     {
       "id": "mathieu-choini-re",
@@ -31754,7 +32217,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 6
     },
     {
       "id": "marcelo-flores",
@@ -31785,7 +32249,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 40
-      }
+      },
+      "number": 26
     },
     {
       "id": "liam-millar",
@@ -31816,7 +32281,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 11
     },
     {
       "id": "jonathan-osorio",
@@ -31849,7 +32315,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 44
-      }
+      },
+      "number": 21
     },
     {
       "id": "nathan-saliba",
@@ -31880,7 +32347,8 @@ window.DATA = {
         "skill": 56,
         "value": 59,
         "fame": 39
-      }
+      },
+      "number": 25
     },
     {
       "id": "martin-zlomislic",
@@ -31914,7 +32382,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 22
     },
     {
       "id": "dennis-hadzikadunic",
@@ -31946,7 +32415,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 50
-      }
+      },
+      "number": 3
     },
     {
       "id": "tarik-muharemovic",
@@ -31978,7 +32448,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 53
-      }
+      },
+      "number": 4
     },
     {
       "id": "nihad-mujakic",
@@ -32010,7 +32481,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 2
     },
     {
       "id": "stjepan-radeljic",
@@ -32044,7 +32516,8 @@ window.DATA = {
         "skill": 59,
         "value": 59,
         "fame": 43
-      }
+      },
+      "number": 21
     },
     {
       "id": "nidal-celik",
@@ -32076,7 +32549,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 40
-      }
+      },
+      "number": 24
     },
     {
       "id": "ivan-sunjic",
@@ -32110,7 +32584,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 14
     },
     {
       "id": "kerim-alajbegovic",
@@ -32142,7 +32617,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 43
-      }
+      },
+      "number": 19
     },
     {
       "id": "dzenis-burnic",
@@ -32174,7 +32650,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 17
     },
     {
       "id": "ivan-basic",
@@ -32206,7 +32683,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 38
-      }
+      },
+      "number": 13
     },
     {
       "id": "amar-memic",
@@ -32238,7 +32716,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 39
-      }
+      },
+      "number": 15
     },
     {
       "id": "samed-bazdar",
@@ -32270,7 +32749,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 9
     },
     {
       "id": "jovo-lukic",
@@ -32302,7 +32782,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 36
-      }
+      },
+      "number": 25
     },
     {
       "id": "salah-zakaria",
@@ -32334,7 +32815,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 44
-      }
+      },
+      "number": 21
     },
     {
       "id": "mahmoud-abunada",
@@ -32364,7 +32846,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 37
-      }
+      },
+      "number": 1
     },
     {
       "id": "lucas-mendes",
@@ -32396,7 +32879,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 50
-      }
+      },
+      "number": 3
     },
     {
       "id": "sultan-al-brake",
@@ -32428,7 +32912,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 44
-      }
+      },
+      "number": 18
     },
     {
       "id": "homam-ahmed",
@@ -32460,7 +32945,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 63
-      }
+      },
+      "number": 14
     },
     {
       "id": "issa-laye",
@@ -32490,7 +32976,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 40
-      }
+      },
+      "number": 4
     },
     {
       "id": "jassem-gaber",
@@ -32520,7 +33007,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 48
-      }
+      },
+      "number": 5
     },
     {
       "id": "abdulaziz-hatem",
@@ -32552,7 +33040,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 70
-      }
+      },
+      "number": 6
     },
     {
       "id": "ahmed-fathy",
@@ -32582,7 +33071,8 @@ window.DATA = {
         "skill": 59,
         "value": 53,
         "fame": 41
-      }
+      },
+      "number": 20
     },
     {
       "id": "mohamed-al-mannai",
@@ -32674,7 +33164,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 15
     },
     {
       "id": "mohammed-muntari",
@@ -32706,7 +33197,8 @@ window.DATA = {
         "skill": 63,
         "value": 60,
         "fame": 58
-      }
+      },
+      "number": 9
     },
     {
       "id": "ahmed-alaaeldin",
@@ -32738,7 +33230,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 56
-      }
+      },
+      "number": 7
     },
     {
       "id": "yvon-mvogo",
@@ -32771,7 +33264,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 47
-      }
+      },
+      "number": 12
     },
     {
       "id": "marvin-keller",
@@ -32804,7 +33298,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 40
-      }
+      },
+      "number": 21
     },
     {
       "id": "nico-elvedi",
@@ -32835,7 +33330,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 64
-      }
+      },
+      "number": 4
     },
     {
       "id": "silvan-widmer",
@@ -32868,7 +33364,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 61
-      }
+      },
+      "number": 3
     },
     {
       "id": "miro-muheim",
@@ -32901,7 +33398,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 47
-      }
+      },
+      "number": 2
     },
     {
       "id": "aur-le-amenda",
@@ -32934,7 +33432,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 45
-      }
+      },
+      "number": 24
     },
     {
       "id": "eray-c-mert",
@@ -32998,7 +33497,8 @@ window.DATA = {
         "skill": 56,
         "value": 59,
         "fame": 40
-      }
+      },
+      "number": 25
     },
     {
       "id": "djibril-sow",
@@ -33031,7 +33531,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 60
-      }
+      },
+      "number": 15
     },
     {
       "id": "michel-aebischer",
@@ -33064,7 +33565,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 55
-      }
+      },
+      "number": 20
     },
     {
       "id": "ardon-jashari",
@@ -33097,7 +33599,8 @@ window.DATA = {
         "skill": 65,
         "value": 68,
         "fame": 48
-      }
+      },
+      "number": 14
     },
     {
       "id": "johan-manzambi",
@@ -33128,7 +33631,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 9
     },
     {
       "id": "christian-fassnacht",
@@ -33161,7 +33665,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 48
-      }
+      },
+      "number": 16
     },
     {
       "id": "noah-okafor",
@@ -33195,7 +33700,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 58
-      }
+      },
+      "number": 19
     },
     {
       "id": "zeki-amdouni",
@@ -33228,7 +33734,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 55
-      }
+      },
+      "number": 23
     },
     {
       "id": "cedric-itten",
@@ -33261,7 +33768,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 45
-      }
+      },
+      "number": 26
     },
     {
       "id": "matt-freese",
@@ -33295,7 +33803,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 53
-      }
+      },
+      "number": 24
     },
     {
       "id": "chris-brady",
@@ -33327,7 +33836,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 39
-      }
+      },
+      "number": 25
     },
     {
       "id": "tim-ream",
@@ -33359,7 +33869,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 62
-      }
+      },
+      "number": 13
     },
     {
       "id": "miles-robinson",
@@ -33394,7 +33905,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 57
-      }
+      },
+      "number": 12
     },
     {
       "id": "mark-mckenzie",
@@ -33428,7 +33940,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 50
-      }
+      },
+      "number": 22
     },
     {
       "id": "joe-scally",
@@ -33460,7 +33973,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 48
-      }
+      },
+      "number": 23
     },
     {
       "id": "alex-freeman",
@@ -33495,7 +34009,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 51
-      }
+      },
+      "number": 16
     },
     {
       "id": "auston-trusty",
@@ -33530,7 +34045,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 46
-      }
+      },
+      "number": 6
     },
     {
       "id": "max-arfsten",
@@ -33562,7 +34078,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 44
-      }
+      },
+      "number": 18
     },
     {
       "id": "ricardo-pepi",
@@ -33597,7 +34114,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 59
-      }
+      },
+      "number": 9
     },
     {
       "id": "brenden-aaronson",
@@ -33631,7 +34149,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 60
-      }
+      },
+      "number": 11
     },
     {
       "id": "haji-wright",
@@ -33663,7 +34182,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 47
-      }
+      },
+      "number": 19
     },
     {
       "id": "alejandro-zendejas",
@@ -33732,7 +34252,8 @@ window.DATA = {
         "skill": 59,
         "value": 56,
         "fame": 53
-      }
+      },
+      "number": 15
     },
     {
       "id": "sebastian-berhalter",
@@ -33764,7 +34285,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 43
-      }
+      },
+      "number": 14
     },
     {
       "id": "ederson",
@@ -33878,7 +34400,7 @@ window.DATA = {
         "value": 69,
         "fame": 73
       },
-      "number": 2
+      "number": 13
     },
     {
       "id": "alex-sandro",
@@ -33986,7 +34508,7 @@ window.DATA = {
         "value": 71,
         "fame": 52
       },
-      "number": 15
+      "number": 24
     },
     {
       "id": "douglas-santos",
@@ -34056,8 +34578,7 @@ window.DATA = {
         "skill": 77,
         "value": 77,
         "fame": 56
-      },
-      "number": 17
+      }
     },
     {
       "id": "lucas-paquet",
@@ -34094,7 +34615,7 @@ window.DATA = {
         "value": 79,
         "fame": 69
       },
-      "number": 7
+      "number": 20
     },
     {
       "id": "fabinho",
@@ -34166,7 +34687,7 @@ window.DATA = {
         "value": 78,
         "fame": 60
       },
-      "number": 18
+      "number": 22
     },
     {
       "id": "igor-thiago",
@@ -34200,7 +34721,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 52
-      }
+      },
+      "number": 25
     },
     {
       "id": "munir-mohamedi",
@@ -34267,7 +34789,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 49
-      }
+      },
+      "number": 22
     },
     {
       "id": "chadi-riad",
@@ -34300,7 +34823,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 51
-      }
+      },
+      "number": 18
     },
     {
       "id": "anass-salah-eddine",
@@ -34364,7 +34888,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 49
-      }
+      },
+      "number": 14
     },
     {
       "id": "zakaria-el-ouahdi",
@@ -34397,7 +34922,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 50
-      }
+      },
+      "number": 13
     },
     {
       "id": "soufiane-rahimi",
@@ -34461,7 +34987,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 59
-      }
+      },
+      "number": 17
     },
     {
       "id": "chemsdine-talbi",
@@ -34492,7 +35019,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 47
-      }
+      },
+      "number": 7
     },
     {
       "id": "ismael-saibari",
@@ -34525,7 +35053,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 56
-      }
+      },
+      "number": 11
     },
     {
       "id": "neil-el-aynaoui",
@@ -34556,7 +35085,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 48
-      }
+      },
+      "number": 24
     },
     {
       "id": "alexandre-pierre",
@@ -34587,7 +35117,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 36
-      }
+      },
+      "number": 12
     },
     {
       "id": "josu-duverger",
@@ -34617,7 +35148,8 @@ window.DATA = {
         "skill": 42,
         "value": 42,
         "fame": 35
-      }
+      },
+      "number": 23
     },
     {
       "id": "ricardo-ad",
@@ -34650,7 +35182,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 56
-      }
+      },
+      "number": 4
     },
     {
       "id": "martin-exp-rience",
@@ -34681,7 +35214,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 38
-      }
+      },
+      "number": 8
     },
     {
       "id": "duke-lacroix",
@@ -34743,7 +35277,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 24
     },
     {
       "id": "keeto-thermoncy",
@@ -34774,7 +35309,8 @@ window.DATA = {
         "skill": 45,
         "value": 47,
         "fame": 35
-      }
+      },
+      "number": 3
     },
     {
       "id": "leverton-pierre",
@@ -34805,7 +35341,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 14
     },
     {
       "id": "danley-jean-jacques",
@@ -34836,7 +35373,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 52
-      }
+      },
+      "number": 17
     },
     {
       "id": "carl-saint",
@@ -34867,7 +35405,8 @@ window.DATA = {
         "skill": 50,
         "value": 53,
         "fame": 35
-      }
+      },
+      "number": 6
     },
     {
       "id": "woodensky-pierre",
@@ -34898,7 +35437,8 @@ window.DATA = {
         "skill": 46,
         "value": 48,
         "fame": 35
-      }
+      },
+      "number": 26
     },
     {
       "id": "dominique-simon",
@@ -34928,7 +35468,8 @@ window.DATA = {
         "skill": 49,
         "value": 49,
         "fame": 35
-      }
+      },
+      "number": 25
     },
     {
       "id": "louicius-deedson",
@@ -34959,7 +35500,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 54
-      }
+      },
+      "number": 11
     },
     {
       "id": "lenny-joseph",
@@ -34992,7 +35534,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 16
     },
     {
       "id": "angus-gunn",
@@ -35023,7 +35566,8 @@ window.DATA = {
         "skill": 71,
         "value": 67,
         "fame": 53
-      }
+      },
+      "number": 1
     },
     {
       "id": "liam-kelly",
@@ -35053,7 +35597,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 41
-      }
+      },
+      "number": 12
     },
     {
       "id": "grant-hanley",
@@ -35084,7 +35629,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 55
-      }
+      },
+      "number": 5
     },
     {
       "id": "jack-hendry",
@@ -35117,7 +35663,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 57
-      }
+      },
+      "number": 13
     },
     {
       "id": "aaron-hickey",
@@ -35148,7 +35695,8 @@ window.DATA = {
         "skill": 73,
         "value": 77,
         "fame": 55
-      }
+      },
+      "number": 2
     },
     {
       "id": "dominic-hyam",
@@ -35179,7 +35727,8 @@ window.DATA = {
         "skill": 59,
         "value": 56,
         "fame": 42
-      }
+      },
+      "number": 16
     },
     {
       "id": "scott-mckenna",
@@ -35213,7 +35762,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 60
-      }
+      },
+      "number": 26
     },
     {
       "id": "anthony-ralston",
@@ -35247,7 +35797,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 52
-      }
+      },
+      "number": 24
     },
     {
       "id": "john-souttar",
@@ -35280,7 +35831,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 45
-      }
+      },
+      "number": 15
     },
     {
       "id": "finlay-curtis",
@@ -35342,7 +35894,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 17
     },
     {
       "id": "tyler-fletcher",
@@ -35373,7 +35926,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 40
-      }
+      },
+      "number": 8
     },
     {
       "id": "lyndon-dykes",
@@ -35404,7 +35958,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 54
-      }
+      },
+      "number": 9
     },
     {
       "id": "george-hirst",
@@ -35435,7 +35990,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 44
-      }
+      },
+      "number": 18
     },
     {
       "id": "ross-stewart",
@@ -35466,7 +36022,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 14
     },
     {
       "id": "gatito-fern-ndez",
@@ -35499,7 +36056,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 51
-      }
+      },
+      "number": 1
     },
     {
       "id": "orlando-gill",
@@ -35530,7 +36088,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 12
     },
     {
       "id": "gast-n-olveira",
@@ -35561,7 +36120,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 42
-      }
+      },
+      "number": 22
     },
     {
       "id": "fabi-n-balbuena",
@@ -35596,7 +36156,8 @@ window.DATA = {
         "skill": 73,
         "value": 65,
         "fame": 56
-      }
+      },
+      "number": 5
     },
     {
       "id": "gustavo-vel-zquez",
@@ -35628,7 +36189,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 43
-      }
+      },
+      "number": 2
     },
     {
       "id": "juan-jos-c-ceres",
@@ -35659,7 +36221,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 4
     },
     {
       "id": "jos-canale",
@@ -35690,7 +36253,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 13
     },
     {
       "id": "alexandro-maidana",
@@ -35721,7 +36285,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 26
     },
     {
       "id": "lex-arce",
@@ -35752,7 +36317,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 48
-      }
+      },
+      "number": 18
     },
     {
       "id": "gabriel-valos",
@@ -35783,7 +36349,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 43
-      }
+      },
+      "number": 21
     },
     {
       "id": "isidro-pitta",
@@ -35814,7 +36381,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 45
-      }
+      },
+      "number": 25
     },
     {
       "id": "ram-n-sosa",
@@ -35845,7 +36413,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 55
-      }
+      },
+      "number": 7
     },
     {
       "id": "kaku",
@@ -35908,7 +36477,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 46
-      }
+      },
+      "number": 11
     },
     {
       "id": "mat-as-galarza",
@@ -35939,7 +36509,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 23
     },
     {
       "id": "paul-izzo",
@@ -35974,7 +36545,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 47
-      }
+      },
+      "number": 12
     },
     {
       "id": "kai-trewin",
@@ -36006,7 +36578,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 46
-      }
+      },
+      "number": 15
     },
     {
       "id": "cameron-burgess",
@@ -36038,7 +36611,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 54
-      }
+      },
+      "number": 21
     },
     {
       "id": "milos-degenek",
@@ -36072,7 +36646,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 61
-      }
+      },
+      "number": 2
     },
     {
       "id": "jason-geria",
@@ -36106,7 +36681,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 46
-      }
+      },
+      "number": 6
     },
     {
       "id": "jacob-italiano",
@@ -36138,7 +36714,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 4
     },
     {
       "id": "cameron-devlin",
@@ -36170,7 +36747,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 45
-      }
+      },
+      "number": 14
     },
     {
       "id": "ajdin-hrustic",
@@ -36204,7 +36782,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 55
-      }
+      },
+      "number": 10
     },
     {
       "id": "lucas-herrington",
@@ -36236,7 +36815,8 @@ window.DATA = {
         "skill": 52,
         "value": 55,
         "fame": 36
-      }
+      },
+      "number": 25
     },
     {
       "id": "patrick-beach",
@@ -36268,7 +36848,8 @@ window.DATA = {
         "skill": 50,
         "value": 53,
         "fame": 35
-      }
+      },
+      "number": 18
     },
     {
       "id": "paul-okon-engstler",
@@ -36300,7 +36881,8 @@ window.DATA = {
         "skill": 51,
         "value": 54,
         "fame": 36
-      }
+      },
+      "number": 24
     },
     {
       "id": "awer-mabil",
@@ -36334,7 +36916,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 55
-      }
+      },
+      "number": 11
     },
     {
       "id": "mohamed-toure",
@@ -36366,7 +36949,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 52
-      }
+      },
+      "number": 9
     },
     {
       "id": "nishan-velupillay",
@@ -36398,7 +36982,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 23
     },
     {
       "id": "tete-yengi",
@@ -36430,7 +37015,8 @@ window.DATA = {
         "skill": 53,
         "value": 53,
         "fame": 37
-      }
+      },
+      "number": 26
     },
     {
       "id": "mert-g-nok",
@@ -36463,7 +37049,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 52
-      }
+      },
+      "number": 1
     },
     {
       "id": "altay-bay-nd-r",
@@ -36525,7 +37112,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 61
-      }
+      },
+      "number": 2
     },
     {
       "id": "ozan-kabak",
@@ -36556,7 +37144,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 55
-      }
+      },
+      "number": 15
     },
     {
       "id": "mert-m-ld-r",
@@ -36587,7 +37176,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 47
-      }
+      },
+      "number": 18
     },
     {
       "id": "eren-elmal",
@@ -36684,7 +37274,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 45
-      }
+      },
+      "number": 25
     },
     {
       "id": "kaan-ayhan",
@@ -36717,7 +37308,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 64
-      }
+      },
+      "number": 22
     },
     {
       "id": "salih-zcan",
@@ -36750,7 +37342,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 56
-      }
+      },
+      "number": 5
     },
     {
       "id": "i-smail-y-ksek",
@@ -36781,7 +37374,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 51
-      }
+      },
+      "number": 16
     },
     {
       "id": "can-uzun",
@@ -36812,7 +37406,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 48
-      }
+      },
+      "number": 26
     },
     {
       "id": "deniz-g-l",
@@ -36843,7 +37438,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 9
     },
     {
       "id": "i-rfan-can-kahveci",
@@ -36874,7 +37470,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 55
-      }
+      },
+      "number": 17
     },
     {
       "id": "yunus-akg-n",
@@ -36907,7 +37504,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 51
-      }
+      },
+      "number": 19
     },
     {
       "id": "o-uz-ayd-n",
@@ -36970,7 +37568,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 53
-      }
+      },
+      "number": 12
     },
     {
       "id": "alexander-n-bel",
@@ -37034,7 +37633,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 54
-      }
+      },
+      "number": 24
     },
     {
       "id": "waldemar-anton",
@@ -37066,7 +37666,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 51
-      }
+      },
+      "number": 3
     },
     {
       "id": "david-raum",
@@ -37098,7 +37699,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 59
-      }
+      },
+      "number": 22
     },
     {
       "id": "nathaniel-brown",
@@ -37130,7 +37732,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 18
     },
     {
       "id": "deniz-undav",
@@ -37162,7 +37765,8 @@ window.DATA = {
         "skill": 77,
         "value": 77,
         "fame": 54
-      }
+      },
+      "number": 26
     },
     {
       "id": "maximilian-beier",
@@ -37194,7 +37798,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 49
-      }
+      },
+      "number": 14
     },
     {
       "id": "trevor-doornbusch",
@@ -37224,7 +37829,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 38
-      }
+      },
+      "number": 26
     },
     {
       "id": "tyrick-bodak",
@@ -37254,7 +37860,8 @@ window.DATA = {
         "skill": 47,
         "value": 47,
         "fame": 35
-      }
+      },
+      "number": 25
     },
     {
       "id": "joshua-brenet",
@@ -37288,7 +37895,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 54
-      }
+      },
+      "number": 20
     },
     {
       "id": "juri-n-gaari",
@@ -37319,7 +37927,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 56
-      }
+      },
+      "number": 3
     },
     {
       "id": "sherel-floranus",
@@ -37349,7 +37958,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 48
-      }
+      },
+      "number": 5
     },
     {
       "id": "roshon-van-eijma",
@@ -37379,7 +37989,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 47
-      }
+      },
+      "number": 4
     },
     {
       "id": "shurandy-sambo",
@@ -37409,7 +38020,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 40
-      }
+      },
+      "number": 2
     },
     {
       "id": "deveron-fonville",
@@ -37439,7 +38051,8 @@ window.DATA = {
         "skill": 49,
         "value": 51,
         "fame": 35
-      }
+      },
+      "number": 24
     },
     {
       "id": "livano-comenencia",
@@ -37470,7 +38083,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 48
-      }
+      },
+      "number": 8
     },
     {
       "id": "godfried-roemeratoe",
@@ -37501,7 +38115,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 47
-      }
+      },
+      "number": 6
     },
     {
       "id": "kevin-felida",
@@ -37531,7 +38146,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 41
-      }
+      },
+      "number": 22
     },
     {
       "id": "ar-jany-martha",
@@ -37592,7 +38208,8 @@ window.DATA = {
         "skill": 50,
         "value": 53,
         "fame": 36
-      }
+      },
+      "number": 13
     },
     {
       "id": "gervane-kastaneer",
@@ -37623,7 +38240,8 @@ window.DATA = {
         "skill": 61,
         "value": 58,
         "fame": 48
-      }
+      },
+      "number": 19
     },
     {
       "id": "jeremy-antonisse",
@@ -37654,7 +38272,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 44
-      }
+      },
+      "number": 11
     },
     {
       "id": "yahia-fofana",
@@ -37685,7 +38304,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 55
-      }
+      },
+      "number": 1
     },
     {
       "id": "alban-lafont",
@@ -37716,7 +38336,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 46
-      }
+      },
+      "number": 23
     },
     {
       "id": "mohamed-kon",
@@ -37746,7 +38367,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 16
     },
     {
       "id": "emmanuel-agbadou",
@@ -37777,7 +38399,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 53
-      }
+      },
+      "number": 20
     },
     {
       "id": "gu-la-dou",
@@ -37808,7 +38431,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 49
-      }
+      },
+      "number": 17
     },
     {
       "id": "ghislain-konan",
@@ -37839,7 +38463,8 @@ window.DATA = {
         "skill": 63,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 3
     },
     {
       "id": "christopher-op-ri",
@@ -37870,7 +38495,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 13
     },
     {
       "id": "ange-yoan-bonny",
@@ -37901,7 +38527,8 @@ window.DATA = {
         "skill": 74,
         "value": 78,
         "fame": 52
-      }
+      },
+      "number": 9
     },
     {
       "id": "elye-wahi",
@@ -37932,7 +38559,8 @@ window.DATA = {
         "skill": 67,
         "value": 70,
         "fame": 47
-      }
+      },
+      "number": 12
     },
     {
       "id": "bazoumana-tour",
@@ -37963,7 +38591,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 24
     },
     {
       "id": "oumar-diakit",
@@ -37994,7 +38623,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 14
     },
     {
       "id": "seko-fofana",
@@ -38025,7 +38655,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 51
-      }
+      },
+      "number": 6
     },
     {
       "id": "christ-inao-oulai",
@@ -38056,7 +38687,8 @@ window.DATA = {
         "skill": 61,
         "value": 64,
         "fame": 43
-      }
+      },
+      "number": 26
     },
     {
       "id": "jean-micha-l-seri",
@@ -38121,7 +38753,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 46
-      }
+      },
+      "number": 12
     },
     {
       "id": "gonzalo-valle",
@@ -38188,7 +38821,8 @@ window.DATA = {
         "skill": 78,
         "value": 82,
         "fame": 56
-      }
+      },
+      "number": 4
     },
     {
       "id": "f-lix-torres",
@@ -38220,7 +38854,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 61
-      }
+      },
+      "number": 2
     },
     {
       "id": "yaimar-medina",
@@ -38252,7 +38887,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 26
     },
     {
       "id": "jackson-porozo",
@@ -38284,7 +38920,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 47
-      }
+      },
+      "number": 25
     },
     {
       "id": "alan-franco",
@@ -38316,7 +38953,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 49
-      }
+      },
+      "number": 21
     },
     {
       "id": "pedro-vite",
@@ -38348,7 +38986,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 15
     },
     {
       "id": "nilson-angulo",
@@ -38380,7 +39019,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 44
-      }
+      },
+      "number": 20
     },
     {
       "id": "alan-minda",
@@ -38446,7 +39086,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 5
     },
     {
       "id": "denil-castillo",
@@ -38478,7 +39119,8 @@ window.DATA = {
         "skill": 59,
         "value": 62,
         "fame": 41
-      }
+      },
+      "number": 18
     },
     {
       "id": "john-yeboah",
@@ -38510,7 +39152,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 9
     },
     {
       "id": "anthony-valencia",
@@ -38542,7 +39185,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 8
     },
     {
       "id": "jordy-caicedo",
@@ -38574,7 +39218,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 16
     },
     {
       "id": "jeremy-ar-valo",
@@ -38606,7 +39251,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 24
     },
     {
       "id": "mark-flekken",
@@ -38639,7 +39285,8 @@ window.DATA = {
         "skill": 72,
         "value": 68,
         "fame": 54
-      }
+      },
+      "number": 23
     },
     {
       "id": "robin-roefs",
@@ -38672,7 +39319,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 13
     },
     {
       "id": "nathan-ak",
@@ -38707,7 +39355,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 71
-      }
+      },
+      "number": 5
     },
     {
       "id": "jorrel-hato",
@@ -38740,7 +39389,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 52
-      }
+      },
+      "number": 25
     },
     {
       "id": "jan-paul-van-hecke",
@@ -38771,7 +39421,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 52
-      }
+      },
+      "number": 6
     },
     {
       "id": "mats-wieffer",
@@ -38804,7 +39455,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 50
-      }
+      },
+      "number": 12
     },
     {
       "id": "marten-de-roon",
@@ -38838,7 +39490,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 58
-      }
+      },
+      "number": 3
     },
     {
       "id": "teun-koopmeiners",
@@ -38871,7 +39524,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 60
-      }
+      },
+      "number": 20
     },
     {
       "id": "guus-til",
@@ -38905,7 +39559,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 50
-      }
+      },
+      "number": 16
     },
     {
       "id": "quinten-timber",
@@ -38938,7 +39593,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 50
-      }
+      },
+      "number": 26
     },
     {
       "id": "justin-kluivert",
@@ -38970,7 +39626,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 48
-      }
+      },
+      "number": 7
     },
     {
       "id": "brian-brobbey",
@@ -39003,7 +39660,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 49
-      }
+      },
+      "number": 19
     },
     {
       "id": "noa-lang",
@@ -39038,7 +39696,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 51
-      }
+      },
+      "number": 17
     },
     {
       "id": "crysencio-summerville",
@@ -39072,7 +39731,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 24
     },
     {
       "id": "wout-weghorst",
@@ -39106,7 +39766,8 @@ window.DATA = {
         "skill": 67,
         "value": 60,
         "fame": 59
-      }
+      },
+      "number": 9
     },
     {
       "id": "keisuke-osako",
@@ -39139,7 +39800,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 46
-      }
+      },
+      "number": 12
     },
     {
       "id": "tomoki-hayakawa",
@@ -39169,7 +39831,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 23
     },
     {
       "id": "ko-itakura",
@@ -39231,7 +39894,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 49
-      }
+      },
+      "number": 16
     },
     {
       "id": "yuto-nagatomo",
@@ -39265,7 +39929,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 71
-      }
+      },
+      "number": 5
     },
     {
       "id": "ayumu-seko",
@@ -39296,7 +39961,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 20
     },
     {
       "id": "yukinari-sugawara",
@@ -39327,7 +39993,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 46
-      }
+      },
+      "number": 2
     },
     {
       "id": "shogo-taniguchi",
@@ -39360,7 +40027,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 45
-      }
+      },
+      "number": 3
     },
     {
       "id": "kaishu-sano",
@@ -39391,7 +40059,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 48
-      }
+      },
+      "number": 24
     },
     {
       "id": "ao-tanaka",
@@ -39424,7 +40093,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 52
-      }
+      },
+      "number": 7
     },
     {
       "id": "yuito-suzuki",
@@ -39455,7 +40125,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 17
     },
     {
       "id": "keito-nakamura",
@@ -39486,7 +40157,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 56
-      }
+      },
+      "number": 13
     },
     {
       "id": "junya-ito",
@@ -39517,7 +40189,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 52
-      }
+      },
+      "number": 14
     },
     {
       "id": "koki-ogawa",
@@ -39548,7 +40221,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 46
-      }
+      },
+      "number": 19
     },
     {
       "id": "kristoffer-nordfeldt",
@@ -39580,7 +40254,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 43
-      }
+      },
+      "number": 23
     },
     {
       "id": "jacob-widell-zetterstr-m",
@@ -39612,7 +40287,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 1
     },
     {
       "id": "carl-starfelt",
@@ -39647,7 +40323,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 55
-      }
+      },
+      "number": 15
     },
     {
       "id": "hjalmar-ekdal",
@@ -39679,7 +40356,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 47
-      }
+      },
+      "number": 14
     },
     {
       "id": "daniel-svensson",
@@ -39711,7 +40389,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 52
-      }
+      },
+      "number": 8
     },
     {
       "id": "gustaf-lagerbielke",
@@ -39743,7 +40422,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 2
     },
     {
       "id": "eric-smith",
@@ -39775,7 +40455,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 20
     },
     {
       "id": "jesper-karlstr-m",
@@ -39807,7 +40488,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 52
-      }
+      },
+      "number": 16
     },
     {
       "id": "ken-sema",
@@ -39839,7 +40521,8 @@ window.DATA = {
         "skill": 63,
         "value": 60,
         "fame": 50
-      }
+      },
+      "number": 13
     },
     {
       "id": "besfort-zeneli",
@@ -39871,7 +40554,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 22
     },
     {
       "id": "taha-ali",
@@ -39903,7 +40587,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 26
     },
     {
       "id": "benjamin-nygren",
@@ -39939,7 +40624,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 55
-      }
+      },
+      "number": 10
     },
     {
       "id": "gustaf-nilsson",
@@ -39971,7 +40657,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 25
     },
     {
       "id": "alexander-bernhardsson",
@@ -40003,7 +40690,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 21
     },
     {
       "id": "sabri-ben-hessen",
@@ -40034,7 +40722,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 22
     },
     {
       "id": "abdelmouhib-chamakh",
@@ -40095,7 +40784,8 @@ window.DATA = {
         "skill": 72,
         "value": 68,
         "fame": 60
-      }
+      },
+      "number": 6
     },
     {
       "id": "ali-abdi",
@@ -40128,7 +40818,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 61
-      }
+      },
+      "number": 2
     },
     {
       "id": "yan-valery",
@@ -40159,7 +40850,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 51
-      }
+      },
+      "number": 20
     },
     {
       "id": "omar-rekik",
@@ -40190,7 +40882,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 44
-      }
+      },
+      "number": 4
     },
     {
       "id": "mohamed-amine-ben-hamida",
@@ -40222,7 +40915,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 21
     },
     {
       "id": "moutaz-neffati",
@@ -40252,7 +40946,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 23
     },
     {
       "id": "adem-arous",
@@ -40312,7 +41007,8 @@ window.DATA = {
         "skill": 53,
         "value": 53,
         "fame": 37
-      }
+      },
+      "number": 24
     },
     {
       "id": "isma-l-gharbi",
@@ -40343,7 +41039,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 47
-      }
+      },
+      "number": 11
     },
     {
       "id": "rani-khedira",
@@ -40374,7 +41071,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 49
-      }
+      },
+      "number": 13
     },
     {
       "id": "elias-saad",
@@ -40407,7 +41105,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 8
     },
     {
       "id": "firas-chaouat",
@@ -40438,7 +41137,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 45
-      }
+      },
+      "number": 19
     },
     {
       "id": "khalil-ayari",
@@ -40469,7 +41169,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 14
     },
     {
       "id": "rayan-elloumi",
@@ -40499,7 +41200,8 @@ window.DATA = {
         "skill": 52,
         "value": 55,
         "fame": 36
-      }
+      },
+      "number": 18
     },
     {
       "id": "senne-lammens",
@@ -40564,7 +41266,7 @@ window.DATA = {
         "value": 63,
         "fame": 42
       },
-      "number": 16
+      "number": 13
     },
     {
       "id": "timothy-castagne",
@@ -40632,7 +41334,7 @@ window.DATA = {
         "value": 59,
         "fame": 49
       },
-      "number": 2
+      "number": 15
     },
     {
       "id": "arthur-theate",
@@ -40664,7 +41366,7 @@ window.DATA = {
         "value": 73,
         "fame": 51
       },
-      "number": 5
+      "number": 3
     },
     {
       "id": "koni-de-winter",
@@ -40696,7 +41398,7 @@ window.DATA = {
         "value": 75,
         "fame": 50
       },
-      "number": 24
+      "number": 16
     },
     {
       "id": "nathan-ngoy",
@@ -40726,7 +41428,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 44
-      }
+      },
+      "number": 25
     },
     {
       "id": "brandon-mechele",
@@ -40758,7 +41461,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 46
-      }
+      },
+      "number": 4
     },
     {
       "id": "joaquin-seys",
@@ -40788,7 +41492,8 @@ window.DATA = {
         "skill": 61,
         "value": 64,
         "fame": 43
-      }
+      },
+      "number": 18
     },
     {
       "id": "nicolas-raskin",
@@ -40819,7 +41524,7 @@ window.DATA = {
         "value": 67,
         "fame": 47
       },
-      "number": 18
+      "number": 23
     },
     {
       "id": "hans-vanaken",
@@ -40917,7 +41622,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 43
-      }
+      },
+      "number": 19
     },
     {
       "id": "alexis-saelemaekers",
@@ -40951,7 +41657,7 @@ window.DATA = {
         "value": 70,
         "fame": 51
       },
-      "number": 14
+      "number": 22
     },
     {
       "id": "dodi-lukebakio",
@@ -40982,7 +41688,7 @@ window.DATA = {
         "value": 71,
         "fame": 50
       },
-      "number": 17
+      "number": 14
     },
     {
       "id": "matias-fernandez-pardo",
@@ -41012,7 +41718,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 26
     },
     {
       "id": "mohamed-alaa",
@@ -41042,7 +41749,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 49
-      }
+      },
+      "number": 26
     },
     {
       "id": "el-mahdy-soliman",
@@ -41072,7 +41780,8 @@ window.DATA = {
         "skill": 55,
         "value": 49,
         "fame": 39
-      }
+      },
+      "number": 16
     },
     {
       "id": "mohamed-hany",
@@ -41106,7 +41815,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 58
-      }
+      },
+      "number": 3
     },
     {
       "id": "yasser-ibrahim",
@@ -41140,7 +41850,8 @@ window.DATA = {
         "skill": 69,
         "value": 61,
         "fame": 56
-      }
+      },
+      "number": 2
     },
     {
       "id": "ramy-rabia",
@@ -41174,7 +41885,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 60
-      }
+      },
+      "number": 5
     },
     {
       "id": "hossam-abdelmaguid",
@@ -41207,7 +41919,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 49
-      }
+      },
+      "number": 4
     },
     {
       "id": "ahmed-abou-el-fotouh",
@@ -41273,7 +41986,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 45
-      }
+      },
+      "number": 15
     },
     {
       "id": "tarek-alaa",
@@ -41303,7 +42017,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 40
-      }
+      },
+      "number": 24
     },
     {
       "id": "zizo",
@@ -41337,7 +42052,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 61
-      }
+      },
+      "number": 25
     },
     {
       "id": "marwan-attia",
@@ -41432,7 +42148,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 21
     },
     {
       "id": "donga",
@@ -41492,7 +42209,8 @@ window.DATA = {
         "skill": 61,
         "value": 64,
         "fame": 44
-      }
+      },
+      "number": 12
     },
     {
       "id": "hamza-abdelkarim",
@@ -41522,7 +42240,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 40
-      }
+      },
+      "number": 9
     },
     {
       "id": "hossein-hosseini",
@@ -41554,7 +42273,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 42
-      }
+      },
+      "number": 22
     },
     {
       "id": "payam-niazmand",
@@ -41584,7 +42304,8 @@ window.DATA = {
         "skill": 55,
         "value": 52,
         "fame": 39
-      }
+      },
+      "number": 12
     },
     {
       "id": "shojae-khalilzadeh",
@@ -41646,7 +42367,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 42
-      }
+      },
+      "number": 19
     },
     {
       "id": "saleh-hardani",
@@ -41678,7 +42400,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 49
-      }
+      },
+      "number": 2
     },
     {
       "id": "danial-iri",
@@ -41708,7 +42431,8 @@ window.DATA = {
         "skill": 50,
         "value": 53,
         "fame": 35
-      }
+      },
+      "number": 25
     },
     {
       "id": "mehdi-torabi",
@@ -41740,7 +42464,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 48
-      }
+      },
+      "number": 16
     },
     {
       "id": "rouzbeh-cheshmi",
@@ -41802,7 +42527,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 21
     },
     {
       "id": "amirmohammad-razaghnian",
@@ -41864,7 +42590,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 49
-      }
+      },
+      "number": 10
     },
     {
       "id": "ali-alipour",
@@ -41897,7 +42624,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 48
-      }
+      },
+      "number": 11
     },
     {
       "id": "shahriar-moghanlou",
@@ -41959,7 +42687,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 18
     },
     {
       "id": "denis-dargahi",
@@ -42023,7 +42752,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 48
-      }
+      },
+      "number": 12
     },
     {
       "id": "michael-woud",
@@ -42055,7 +42785,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 40
-      }
+      },
+      "number": 22
     },
     {
       "id": "michael-boxall",
@@ -42087,7 +42818,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 60
-      }
+      },
+      "number": 5
     },
     {
       "id": "tim-payne",
@@ -42119,7 +42851,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 57
-      }
+      },
+      "number": 2
     },
     {
       "id": "francis-de-vries",
@@ -42153,7 +42886,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 47
-      }
+      },
+      "number": 3
     },
     {
       "id": "nando-pijnaker",
@@ -42187,7 +42921,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 51
-      }
+      },
+      "number": 15
     },
     {
       "id": "callan-elliot",
@@ -42221,7 +42956,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 43
-      }
+      },
+      "number": 24
     },
     {
       "id": "tommy-smith",
@@ -42253,7 +42989,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 51
-      }
+      },
+      "number": 26
     },
     {
       "id": "alex-rufer",
@@ -42285,7 +43022,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 48
-      }
+      },
+      "number": 14
     },
     {
       "id": "ryan-thomas",
@@ -42317,7 +43055,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 51
-      }
+      },
+      "number": 23
     },
     {
       "id": "kosta-barbarouses",
@@ -42351,7 +43090,8 @@ window.DATA = {
         "skill": 64,
         "value": 57,
         "fame": 59
-      }
+      },
+      "number": 17
     },
     {
       "id": "ben-waine",
@@ -42383,7 +43123,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 18
     },
     {
       "id": "callum-mccowatt",
@@ -42415,7 +43156,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 40
-      }
+      },
+      "number": 20
     },
     {
       "id": "eli-just",
@@ -42481,7 +43223,8 @@ window.DATA = {
         "skill": 53,
         "value": 53,
         "fame": 39
-      }
+      },
+      "number": 21
     },
     {
       "id": "lachlan-bayliss",
@@ -42513,7 +43256,8 @@ window.DATA = {
         "skill": 52,
         "value": 55,
         "fame": 36
-      }
+      },
+      "number": 25
     },
     {
       "id": "unai-simon",
@@ -42582,7 +43326,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 52
-      }
+      },
+      "number": 13
     },
     {
       "id": "pedro-porro",
@@ -42615,8 +43360,7 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 58
-      },
-      "number": 2
+      }
     },
     {
       "id": "eric-garcia",
@@ -42650,7 +43394,7 @@ window.DATA = {
         "value": 74,
         "fame": 57
       },
-      "number": 12
+      "number": 4
     },
     {
       "id": "alejandro-grimaldo",
@@ -42684,8 +43428,7 @@ window.DATA = {
         "skill": 77,
         "value": 73,
         "fame": 59
-      },
-      "number": 18
+      }
     },
     {
       "id": "marcos-llorente",
@@ -42719,7 +43462,7 @@ window.DATA = {
         "value": 68,
         "fame": 56
       },
-      "number": 3
+      "number": 5
     },
     {
       "id": "aymeric-laporte",
@@ -42754,7 +43497,7 @@ window.DATA = {
         "value": 74,
         "fame": 66
       },
-      "number": 15
+      "number": 14
     },
     {
       "id": "marc-pubill",
@@ -42787,7 +43530,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 49
-      }
+      },
+      "number": 2
     },
     {
       "id": "gavi",
@@ -42856,7 +43600,7 @@ window.DATA = {
         "value": 80,
         "fame": 61
       },
-      "number": 6
+      "number": 18
     },
     {
       "id": "mikel-merino",
@@ -42890,7 +43634,7 @@ window.DATA = {
         "value": 79,
         "fame": 64
       },
-      "number": 20
+      "number": 6
     },
     {
       "id": "alex-baena",
@@ -42925,7 +43669,7 @@ window.DATA = {
         "value": 74,
         "fame": 57
       },
-      "number": 7
+      "number": 15
     },
     {
       "id": "ferran-torres",
@@ -42961,7 +43705,7 @@ window.DATA = {
         "value": 78,
         "fame": 69
       },
-      "number": 11
+      "number": 7
     },
     {
       "id": "yeremy-pino",
@@ -42995,7 +43739,7 @@ window.DATA = {
         "value": 75,
         "fame": 54
       },
-      "number": 22
+      "number": 11
     },
     {
       "id": "borja-iglesias",
@@ -43028,7 +43772,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 49
-      }
+      },
+      "number": 26
     },
     {
       "id": "victor-munoz",
@@ -43059,7 +43804,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 46
-      }
+      },
+      "number": 25
     },
     {
       "id": "m-rcio-rosa",
@@ -43089,7 +43835,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 43
-      }
+      },
+      "number": 12
     },
     {
       "id": "cj-dos-santos",
@@ -43119,7 +43866,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 37
-      }
+      },
+      "number": 23
     },
     {
       "id": "stopira",
@@ -43149,7 +43897,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 57
-      }
+      },
+      "number": 2
     },
     {
       "id": "steven-moreira",
@@ -43181,7 +43930,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 53
-      }
+      },
+      "number": 22
     },
     {
       "id": "wagner-pina",
@@ -43211,7 +43961,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 24
     },
     {
       "id": "jo-o-paulo",
@@ -43243,7 +43994,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 56
-      }
+      },
+      "number": 8
     },
     {
       "id": "sidny-lopes-cabral",
@@ -43273,7 +44025,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 46
-      }
+      },
+      "number": 13
     },
     {
       "id": "diney",
@@ -43333,7 +44086,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 39
-      }
+      },
+      "number": 25
     },
     {
       "id": "telmo-arcanjo",
@@ -43363,7 +44117,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 48
-      }
+      },
+      "number": 18
     },
     {
       "id": "laros-duarte",
@@ -43393,7 +44148,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 15
     },
     {
       "id": "yannick-semedo",
@@ -43423,7 +44179,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 42
-      }
+      },
+      "number": 16
     },
     {
       "id": "willy-semedo",
@@ -43453,7 +44210,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 49
-      }
+      },
+      "number": 17
     },
     {
       "id": "nuno-da-costa",
@@ -43483,7 +44241,8 @@ window.DATA = {
         "skill": 59,
         "value": 53,
         "fame": 43
-      }
+      },
+      "number": 21
     },
     {
       "id": "h-lio-varela",
@@ -43513,7 +44272,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 44
-      }
+      },
+      "number": 26
     },
     {
       "id": "nawaf-al-aqidi",
@@ -43546,7 +44306,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 50
-      }
+      },
+      "number": 1
     },
     {
       "id": "ahmed-al-kassar",
@@ -43575,7 +44336,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 36
-      }
+      },
+      "number": 22
     },
     {
       "id": "jehad-thikri",
@@ -43606,7 +44368,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 43
-      }
+      },
+      "number": 25
     },
     {
       "id": "ali-lajami",
@@ -43640,7 +44403,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 49
-      }
+      },
+      "number": 3
     },
     {
       "id": "hassan-kadesh",
@@ -43702,7 +44466,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 26
     },
     {
       "id": "ali-majrashi",
@@ -43732,7 +44497,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 2
     },
     {
       "id": "moteb-al-harbi",
@@ -43764,7 +44530,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 42
-      }
+      },
+      "number": 24
     },
     {
       "id": "nawaf-boushal",
@@ -43827,7 +44594,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 46
-      }
+      },
+      "number": 15
     },
     {
       "id": "ziyad-al-johani",
@@ -43857,7 +44625,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 16
     },
     {
       "id": "musab-al-juwayr",
@@ -43888,7 +44657,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 7
     },
     {
       "id": "khalid-al-ghannam",
@@ -43919,7 +44689,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 43
-      }
+      },
+      "number": 17
     },
     {
       "id": "ayman-yahya",
@@ -43983,7 +44754,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 20
     },
     {
       "id": "alaa-al-hajji",
@@ -44047,7 +44819,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 78
-      }
+      },
+      "number": 23
     },
     {
       "id": "santiago-mele",
@@ -44077,7 +44850,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 46
-      }
+      },
+      "number": 12
     },
     {
       "id": "guillermo-varela",
@@ -44112,7 +44886,8 @@ window.DATA = {
         "skill": 73,
         "value": 65,
         "fame": 56
-      }
+      },
+      "number": 13
     },
     {
       "id": "santiago-bueno",
@@ -44143,7 +44918,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 49
-      }
+      },
+      "number": 24
     },
     {
       "id": "sebasti-n-c-ceres",
@@ -44176,7 +44952,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 55
-      }
+      },
+      "number": 3
     },
     {
       "id": "joaqu-n-piquerez",
@@ -44211,7 +44988,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 59
-      }
+      },
+      "number": 22
     },
     {
       "id": "mat-as-vi-a",
@@ -44244,7 +45022,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 59
-      }
+      },
+      "number": 17
     },
     {
       "id": "juan-manuel-sanabria",
@@ -44274,7 +45053,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 25
     },
     {
       "id": "rodrigo-aguirre",
@@ -44307,7 +45087,8 @@ window.DATA = {
         "skill": 65,
         "value": 62,
         "fame": 49
-      }
+      },
+      "number": 19
     },
     {
       "id": "federico-vi-as",
@@ -44338,7 +45119,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 46
-      }
+      },
+      "number": 21
     },
     {
       "id": "maximiliano-ara-jo",
@@ -44404,7 +45186,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 56
-      }
+      },
+      "number": 18
     },
     {
       "id": "agust-n-canobbio",
@@ -44435,7 +45218,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 47
-      }
+      },
+      "number": 14
     },
     {
       "id": "emiliano-mart-nez",
@@ -44468,7 +45252,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 49
-      }
+      },
+      "number": 15
     },
     {
       "id": "rodrigo-zalazar",
@@ -44499,7 +45284,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 46
-      }
+      },
+      "number": 26
     },
     {
       "id": "brice-samba",
@@ -44532,7 +45318,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 50
-      }
+      },
+      "number": 1
     },
     {
       "id": "robin-risser",
@@ -44566,7 +45353,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 48
-      }
+      },
+      "number": 23
     },
     {
       "id": "ibrahima-konat",
@@ -44600,7 +45388,8 @@ window.DATA = {
         "skill": 87,
         "value": 87,
         "fame": 69
-      }
+      },
+      "number": 15
     },
     {
       "id": "th-o-hernandez",
@@ -44635,7 +45424,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 68
-      }
+      },
+      "number": 19
     },
     {
       "id": "lucas-hernandez",
@@ -44670,7 +45460,8 @@ window.DATA = {
         "skill": 78,
         "value": 74,
         "fame": 67
-      }
+      },
+      "number": 21
     },
     {
       "id": "lucas-digne",
@@ -44704,7 +45495,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 64
-      }
+      },
+      "number": 3
     },
     {
       "id": "malo-gusto",
@@ -44738,7 +45530,8 @@ window.DATA = {
         "skill": 75,
         "value": 79,
         "fame": 57
-      }
+      },
+      "number": 2
     },
     {
       "id": "maxence-lacroix",
@@ -44771,7 +45564,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 51
-      }
+      },
+      "number": 26
     },
     {
       "id": "n-golo-kant",
@@ -44837,7 +45631,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 50
-      }
+      },
+      "number": 6
     },
     {
       "id": "warren-za-re-emery",
@@ -44871,7 +45666,8 @@ window.DATA = {
         "skill": 76,
         "value": 80,
         "fame": 58
-      }
+      },
+      "number": 18
     },
     {
       "id": "bradley-barcola",
@@ -44905,7 +45701,8 @@ window.DATA = {
         "skill": 78,
         "value": 82,
         "fame": 61
-      }
+      },
+      "number": 12
     },
     {
       "id": "d-sir-dou",
@@ -44939,7 +45736,8 @@ window.DATA = {
         "skill": 79,
         "value": 83,
         "fame": 59
-      }
+      },
+      "number": 20
     },
     {
       "id": "maghn-s-akliouche",
@@ -44970,7 +45768,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 49
-      }
+      },
+      "number": 25
     },
     {
       "id": "jean-philippe-mateta",
@@ -45004,7 +45803,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 53
-      }
+      },
+      "number": 22
     },
     {
       "id": "mory-diaw",
@@ -45038,7 +45838,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 45
-      }
+      },
+      "number": 23
     },
     {
       "id": "yehvann-diouf",
@@ -45072,7 +45873,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 1
     },
     {
       "id": "moussa-niakhate",
@@ -45106,7 +45908,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 55
-      }
+      },
+      "number": 19
     },
     {
       "id": "el-hadji-malick-diouf",
@@ -45140,7 +45943,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 55
-      }
+      },
+      "number": 25
     },
     {
       "id": "mamadou-sarr",
@@ -45174,7 +45978,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 49
-      }
+      },
+      "number": 2
     },
     {
       "id": "ismail-jakobs",
@@ -45209,7 +46014,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 50
-      }
+      },
+      "number": 14
     },
     {
       "id": "abdoulaye-seck",
@@ -45243,7 +46049,8 @@ window.DATA = {
         "skill": 60,
         "value": 53,
         "fame": 44
-      }
+      },
+      "number": 4
     },
     {
       "id": "antoine-mendy",
@@ -45275,7 +46082,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 24
     },
     {
       "id": "pape-gueye",
@@ -45310,7 +46118,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 63
-      }
+      },
+      "number": 26
     },
     {
       "id": "pathe-ciss",
@@ -45344,7 +46153,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 53
-      }
+      },
+      "number": 6
     },
     {
       "id": "bara-sapoko-ndiaye",
@@ -45376,7 +46186,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 40
-      }
+      },
+      "number": 22
     },
     {
       "id": "assane-diao",
@@ -45408,7 +46219,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 7
     },
     {
       "id": "ibrahim-mbaye",
@@ -45440,7 +46252,8 @@ window.DATA = {
         "skill": 63,
         "value": 66,
         "fame": 46
-      }
+      },
+      "number": 20
     },
     {
       "id": "fahad-talib",
@@ -45475,7 +46288,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 58
-      }
+      },
+      "number": 1
     },
     {
       "id": "ahmed-basil",
@@ -45507,7 +46321,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 46
-      }
+      },
+      "number": 22
     },
     {
       "id": "manaf-younis",
@@ -45571,7 +46386,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 51
-      }
+      },
+      "number": 4
     },
     {
       "id": "rebin-sulaka",
@@ -45602,7 +46418,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 49
-      }
+      },
+      "number": 2
     },
     {
       "id": "frans-putros",
@@ -45633,7 +46450,8 @@ window.DATA = {
         "skill": 61,
         "value": 58,
         "fame": 46
-      }
+      },
+      "number": 26
     },
     {
       "id": "ahmed-yahya",
@@ -45697,7 +46515,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 25
     },
     {
       "id": "kevin-yakob",
@@ -45728,7 +46547,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 19
     },
     {
       "id": "aimar-sher",
@@ -45759,7 +46579,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 44
-      }
+      },
+      "number": 20
     },
     {
       "id": "ibrahim-bayesh",
@@ -45790,7 +46611,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 60
-      }
+      },
+      "number": 8
     },
     {
       "id": "youssef-amyn",
@@ -45821,7 +46643,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 51
-      }
+      },
+      "number": 7
     },
     {
       "id": "marko-farji",
@@ -45852,7 +46675,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 43
-      }
+      },
+      "number": 21
     },
     {
       "id": "ali-yousef",
@@ -45915,7 +46739,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 13
     },
     {
       "id": "sander-tangvik",
@@ -45945,7 +46770,8 @@ window.DATA = {
         "skill": 50,
         "value": 53,
         "fame": 35
-      }
+      },
+      "number": 12
     },
     {
       "id": "julian-ryerson",
@@ -45976,7 +46802,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 61
-      }
+      },
+      "number": 26
     },
     {
       "id": "marcus-holmgren-pedersen",
@@ -46009,7 +46836,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 56
-      }
+      },
+      "number": 16
     },
     {
       "id": "david-m-ller-wolfe",
@@ -46040,7 +46868,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 52
-      }
+      },
+      "number": 5
     },
     {
       "id": "fredrik-andr-bj-rkan",
@@ -46072,7 +46901,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 49
-      }
+      },
+      "number": 15
     },
     {
       "id": "torbj-rn-heggem",
@@ -46133,7 +46963,8 @@ window.DATA = {
         "skill": 53,
         "value": 53,
         "fame": 38
-      }
+      },
+      "number": 24
     },
     {
       "id": "patrick-berg",
@@ -46166,7 +46997,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 58
-      }
+      },
+      "number": 6
     },
     {
       "id": "kristian-thorstvedt",
@@ -46197,7 +47029,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 54
-      }
+      },
+      "number": 18
     },
     {
       "id": "andreas-schjelderup",
@@ -46228,7 +47061,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 47
-      }
+      },
+      "number": 21
     },
     {
       "id": "thelo-aasgaard",
@@ -46259,7 +47093,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 19
     },
     {
       "id": "morten-thorsby",
@@ -46290,7 +47125,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 48
-      }
+      },
+      "number": 2
     },
     {
       "id": "jens-petter-hauge",
@@ -46323,7 +47159,8 @@ window.DATA = {
         "skill": 61,
         "value": 61,
         "fame": 47
-      }
+      },
+      "number": 23
     },
     {
       "id": "henrik-falchener",
@@ -46353,7 +47190,8 @@ window.DATA = {
         "skill": 48,
         "value": 50,
         "fame": 35
-      }
+      },
+      "number": 25
     },
     {
       "id": "geronimo-rulli",
@@ -46387,7 +47225,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 55
-      }
+      },
+      "number": 12
     },
     {
       "id": "juan-musso",
@@ -46419,7 +47258,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 48
-      }
+      },
+      "number": 1
     },
     {
       "id": "nahuel-molina",
@@ -46454,7 +47294,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 68
-      }
+      },
+      "number": 26
     },
     {
       "id": "nicolas-tagliafico",
@@ -46489,7 +47330,8 @@ window.DATA = {
         "skill": 76,
         "value": 68,
         "fame": 69
-      }
+      },
+      "number": 3
     },
     {
       "id": "gonzalo-montiel",
@@ -46524,7 +47366,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 62
-      }
+      },
+      "number": 4
     },
     {
       "id": "leonardo-balerdi",
@@ -46555,7 +47398,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 50
-      }
+      },
+      "number": 2
     },
     {
       "id": "facundo-medina",
@@ -46586,7 +47430,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 50
-      }
+      },
+      "number": 25
     },
     {
       "id": "leandro-paredes",
@@ -46621,7 +47466,8 @@ window.DATA = {
         "skill": 75,
         "value": 71,
         "fame": 70
-      }
+      },
+      "number": 5
     },
     {
       "id": "exequiel-palacios",
@@ -46656,7 +47502,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 64
-      }
+      },
+      "number": 14
     },
     {
       "id": "giovani-lo-celso",
@@ -46691,7 +47538,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 68
-      }
+      },
+      "number": 11
     },
     {
       "id": "valentin-barco",
@@ -46722,7 +47570,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 8
     },
     {
       "id": "thiago-almada",
@@ -46756,7 +47605,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 59
-      }
+      },
+      "number": 16
     },
     {
       "id": "nico-paz",
@@ -46787,7 +47637,8 @@ window.DATA = {
         "skill": 73,
         "value": 77,
         "fame": 52
-      }
+      },
+      "number": 18
     },
     {
       "id": "nicolas-gonzalez",
@@ -46852,7 +47703,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 49
-      }
+      },
+      "number": 17
     },
     {
       "id": "jose-manuel-lopez",
@@ -46885,7 +47737,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 48
-      }
+      },
+      "number": 21
     },
     {
       "id": "oussama-benbot",
@@ -46917,7 +47770,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 42
-      }
+      },
+      "number": 16
     },
     {
       "id": "melvin-mastil",
@@ -46947,7 +47801,8 @@ window.DATA = {
         "skill": 45,
         "value": 45,
         "fame": 35
-      }
+      },
+      "number": 1
     },
     {
       "id": "mohamed-amine-tougai",
@@ -46981,7 +47836,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 52
-      }
+      },
+      "number": 4
     },
     {
       "id": "rafik-belghali",
@@ -47045,7 +47901,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 49
-      }
+      },
+      "number": 13
     },
     {
       "id": "zineddine-belaid",
@@ -47075,7 +47932,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 36
-      }
+      },
+      "number": 5
     },
     {
       "id": "samir-chergui",
@@ -47105,7 +47963,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 39
-      }
+      },
+      "number": 26
     },
     {
       "id": "achref-abada",
@@ -47135,7 +47994,8 @@ window.DATA = {
         "skill": 50,
         "value": 50,
         "fame": 35
-      }
+      },
+      "number": 3
     },
     {
       "id": "nabil-bentaleb",
@@ -47166,7 +48026,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 62
-      }
+      },
+      "number": 19
     },
     {
       "id": "ramiz-zerrouki",
@@ -47199,7 +48060,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 48
-      }
+      },
+      "number": 6
     },
     {
       "id": "hicham-boudaoui",
@@ -47230,7 +48092,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 54
-      }
+      },
+      "number": 14
     },
     {
       "id": "yassine-titraoui",
@@ -47260,7 +48123,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 24
     },
     {
       "id": "nadir-benbouali",
@@ -47322,7 +48186,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 42
-      }
+      },
+      "number": 20
     },
     {
       "id": "fares-ghedjemis",
@@ -47352,7 +48217,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 38
-      }
+      },
+      "number": 25
     },
     {
       "id": "patrick-pentz",
@@ -47383,7 +48249,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 47
-      }
+      },
+      "number": 13
     },
     {
       "id": "florian-wiegele",
@@ -47413,7 +48280,8 @@ window.DATA = {
         "skill": 50,
         "value": 50,
         "fame": 35
-      }
+      },
+      "number": 12
     },
     {
       "id": "marco-friedl",
@@ -47444,7 +48312,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 52
-      }
+      },
+      "number": 23
     },
     {
       "id": "philipp-lienhart",
@@ -47475,7 +48344,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 58
-      }
+      },
+      "number": 15
     },
     {
       "id": "stefan-posch",
@@ -47506,7 +48376,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 49
-      }
+      },
+      "number": 5
     },
     {
       "id": "phillipp-mwene",
@@ -47568,7 +48439,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 2
     },
     {
       "id": "alexander-prass",
@@ -47599,7 +48471,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 22
     },
     {
       "id": "michael-svoboda",
@@ -47630,7 +48503,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 25
     },
     {
       "id": "xaver-schlager",
@@ -47661,7 +48535,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 52
-      }
+      },
+      "number": 4
     },
     {
       "id": "florian-grillitsch",
@@ -47692,7 +48567,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 46
-      }
+      },
+      "number": 10
     },
     {
       "id": "romano-schmid",
@@ -47723,7 +48599,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 46
-      }
+      },
+      "number": 18
     },
     {
       "id": "patrick-wimmer",
@@ -47754,7 +48631,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 46
-      }
+      },
+      "number": 21
     },
     {
       "id": "carney-chukwuemeka",
@@ -47785,7 +48663,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 47
-      }
+      },
+      "number": 17
     },
     {
       "id": "paul-wanner",
@@ -47816,7 +48695,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 48
-      }
+      },
+      "number": 24
     },
     {
       "id": "sasa-kalajdzic",
@@ -47847,7 +48727,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 44
-      }
+      },
+      "number": 14
     },
     {
       "id": "abdullah-al-fakhouri",
@@ -47947,7 +48828,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 62
-      }
+      },
+      "number": 3
     },
     {
       "id": "saed-al-rosan",
@@ -47980,7 +48862,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 52
-      }
+      },
+      "number": 19
     },
     {
       "id": "saleem-obaid",
@@ -48014,7 +48897,8 @@ window.DATA = {
         "skill": 55,
         "value": 49,
         "fame": 42
-      }
+      },
+      "number": 17
     },
     {
       "id": "mohammad-abualnadi",
@@ -48045,7 +48929,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 47
-      }
+      },
+      "number": 16
     },
     {
       "id": "husam-abu-dahab",
@@ -48175,7 +49060,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 61
-      }
+      },
+      "number": 14
     },
     {
       "id": "mahmoud-al-mardi",
@@ -48205,7 +49091,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 38
-      }
+      },
+      "number": 13
     },
     {
       "id": "amer-jamous",
@@ -48236,7 +49123,8 @@ window.DATA = {
         "skill": 57,
         "value": 60,
         "fame": 43
-      }
+      },
+      "number": 6
     },
     {
       "id": "mohammad-al-dawoud",
@@ -48366,7 +49254,8 @@ window.DATA = {
         "skill": 59,
         "value": 62,
         "fame": 43
-      }
+      },
+      "number": 24
     },
     {
       "id": "jos-s",
@@ -48399,7 +49288,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 46
-      }
+      },
+      "number": 12
     },
     {
       "id": "rui-silva",
@@ -48432,7 +49322,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 42
-      }
+      },
+      "number": 22
     },
     {
       "id": "gon-alo-in-cio",
@@ -48467,7 +49358,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 65
-      }
+      },
+      "number": 14
     },
     {
       "id": "jo-o-cancelo",
@@ -48500,7 +49392,8 @@ window.DATA = {
         "skill": 79,
         "value": 75,
         "fame": 69
-      }
+      },
+      "number": 20
     },
     {
       "id": "diogo-dalot",
@@ -48534,7 +49427,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 62
-      }
+      },
+      "number": 5
     },
     {
       "id": "n-lson-semedo",
@@ -48567,7 +49461,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 49
-      }
+      },
+      "number": 2
     },
     {
       "id": "renato-veiga",
@@ -48598,7 +49493,8 @@ window.DATA = {
         "skill": 66,
         "value": 69,
         "fame": 46
-      }
+      },
+      "number": 13
     },
     {
       "id": "tom-s-ara-jo",
@@ -48629,7 +49525,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 45
-      }
+      },
+      "number": 4
     },
     {
       "id": "r-ben-neves",
@@ -48662,7 +49559,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 53
-      }
+      },
+      "number": 21
     },
     {
       "id": "matheus-nunes",
@@ -48695,7 +49593,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 51
-      }
+      },
+      "number": 6
     },
     {
       "id": "samu-costa",
@@ -48726,7 +49625,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 43
-      }
+      },
+      "number": 24
     },
     {
       "id": "pedro-neto",
@@ -48760,7 +49660,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 55
-      }
+      },
+      "number": 18
     },
     {
       "id": "jo-o-f-lix",
@@ -48793,7 +49694,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 50
-      }
+      },
+      "number": 11
     },
     {
       "id": "francisco-concei-o",
@@ -48826,7 +49728,8 @@ window.DATA = {
         "skill": 67,
         "value": 70,
         "fame": 49
-      }
+      },
+      "number": 26
     },
     {
       "id": "francisco-trinc-o",
@@ -48860,7 +49763,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 49
-      }
+      },
+      "number": 16
     },
     {
       "id": "lionel-mpasi",
@@ -48894,7 +49798,8 @@ window.DATA = {
         "skill": 71,
         "value": 67,
         "fame": 56
-      }
+      },
+      "number": 1
     },
     {
       "id": "timothy-fayulu",
@@ -48926,7 +49831,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 37
-      }
+      },
+      "number": 16
     },
     {
       "id": "matthieu-epolo",
@@ -48958,7 +49864,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 21
     },
     {
       "id": "axel-tuanzebe",
@@ -48993,7 +49900,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 56
-      }
+      },
+      "number": 4
     },
     {
       "id": "steve-kapuadi",
@@ -49027,7 +49935,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 3
     },
     {
       "id": "dylan-batubinsika",
@@ -49061,7 +49970,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 52
-      }
+      },
+      "number": 5
     },
     {
       "id": "joris-kayembe",
@@ -49095,7 +50005,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 51
-      }
+      },
+      "number": 12
     },
     {
       "id": "g-d-on-kalulu",
@@ -49129,7 +50040,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 54
-      }
+      },
+      "number": 24
     },
     {
       "id": "simon-banza",
@@ -49164,7 +50076,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 54
-      }
+      },
+      "number": 23
     },
     {
       "id": "ngal-ayel-mukau",
@@ -49230,7 +50143,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 44
-      }
+      },
+      "number": 8
     },
     {
       "id": "abduvohid-nematov",
@@ -49264,7 +50178,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 41
-      }
+      },
+      "number": 12
     },
     {
       "id": "botirali-ergashev",
@@ -49296,7 +50211,8 @@ window.DATA = {
         "skill": 50,
         "value": 48,
         "fame": 36
-      }
+      },
+      "number": 16
     },
     {
       "id": "rustam-ashurmatov",
@@ -49328,7 +50244,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 47
-      }
+      },
+      "number": 5
     },
     {
       "id": "farrukh-sayfiev",
@@ -49362,7 +50279,8 @@ window.DATA = {
         "skill": 62,
         "value": 55,
         "fame": 57
-      }
+      },
+      "number": 4
     },
     {
       "id": "sherzod-nasrullaev",
@@ -49396,7 +50314,8 @@ window.DATA = {
         "skill": 56,
         "value": 56,
         "fame": 41
-      }
+      },
+      "number": 13
     },
     {
       "id": "umar-eshmurodov",
@@ -49428,7 +50347,8 @@ window.DATA = {
         "skill": 54,
         "value": 48,
         "fame": 38
-      }
+      },
+      "number": 15
     },
     {
       "id": "abdulla-abdullaev",
@@ -49460,7 +50380,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 47
-      }
+      },
+      "number": 18
     },
     {
       "id": "jakhongir-urozov",
@@ -49492,7 +50413,8 @@ window.DATA = {
         "skill": 52,
         "value": 55,
         "fame": 36
-      }
+      },
+      "number": 26
     },
     {
       "id": "avazbek-ulmasaliev",
@@ -49556,7 +50478,8 @@ window.DATA = {
         "skill": 50,
         "value": 50,
         "fame": 35
-      }
+      },
+      "number": 20
     },
     {
       "id": "jamshid-iskanderov",
@@ -49588,7 +50511,8 @@ window.DATA = {
         "skill": 61,
         "value": 58,
         "fame": 50
-      }
+      },
+      "number": 8
     },
     {
       "id": "akmal-mozgovoy",
@@ -49622,7 +50546,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 46
-      }
+      },
+      "number": 6
     },
     {
       "id": "camilo-vargas",
@@ -49657,7 +50582,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 63
-      }
+      },
+      "number": 12
     },
     {
       "id": "david-ospina",
@@ -49693,7 +50619,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 79
-      }
+      },
+      "number": 1
     },
     {
       "id": "lvaro-montero",
@@ -49724,7 +50651,8 @@ window.DATA = {
         "skill": 64,
         "value": 61,
         "fame": 47
-      }
+      },
+      "number": 24
     },
     {
       "id": "yerry-mina",
@@ -49759,7 +50687,8 @@ window.DATA = {
         "skill": 73,
         "value": 69,
         "fame": 65
-      }
+      },
+      "number": 13
     },
     {
       "id": "johan-mojica",
@@ -49790,7 +50719,8 @@ window.DATA = {
         "skill": 69,
         "value": 61,
         "fame": 56
-      }
+      },
+      "number": 17
     },
     {
       "id": "santiago-arias",
@@ -49823,7 +50753,8 @@ window.DATA = {
         "skill": 65,
         "value": 58,
         "fame": 59
-      }
+      },
+      "number": 4
     },
     {
       "id": "willer-ditta",
@@ -49854,7 +50785,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 43
-      }
+      },
+      "number": 18
     },
     {
       "id": "deiver-machado",
@@ -49885,7 +50817,8 @@ window.DATA = {
         "skill": 63,
         "value": 60,
         "fame": 47
-      }
+      },
+      "number": 22
     },
     {
       "id": "juan-fernando-quintero",
@@ -49919,7 +50852,8 @@ window.DATA = {
         "skill": 74,
         "value": 66,
         "fame": 61
-      }
+      },
+      "number": 20
     },
     {
       "id": "jorge-carrascal",
@@ -49950,7 +50884,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 52
-      }
+      },
+      "number": 8
     },
     {
       "id": "kevin-casta-o",
@@ -49984,7 +50919,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 57
-      }
+      },
+      "number": 5
     },
     {
       "id": "jhon-c-rdoba",
@@ -50019,7 +50955,8 @@ window.DATA = {
         "skill": 71,
         "value": 63,
         "fame": 57
-      }
+      },
+      "number": 9
     },
     {
       "id": "cucho-hern-ndez",
@@ -50053,7 +50990,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 55
-      }
+      },
+      "number": 19
     },
     {
       "id": "carlos-andr-s-g-mez",
@@ -50084,7 +51022,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 26
     },
     {
       "id": "dean-henderson",
@@ -50190,7 +51129,7 @@ window.DATA = {
         "value": 80,
         "fame": 66
       },
-      "number": 2
+      "number": 24
     },
     {
       "id": "ezri-konsa",
@@ -50222,7 +51161,7 @@ window.DATA = {
         "value": 74,
         "fame": 55
       },
-      "number": 14
+      "number": 2
     },
     {
       "id": "dan-burn",
@@ -50256,7 +51195,7 @@ window.DATA = {
         "value": 61,
         "fame": 50
       },
-      "number": 3
+      "number": 15
     },
     {
       "id": "jarell-quansah",
@@ -50291,7 +51230,7 @@ window.DATA = {
         "value": 70,
         "fame": 50
       },
-      "number": 22
+      "number": 26
     },
     {
       "id": "tino-livramento",
@@ -50359,7 +51298,7 @@ window.DATA = {
         "value": 67,
         "fame": 49
       },
-      "number": 21
+      "number": 25
     },
     {
       "id": "kobbie-mainoo",
@@ -50393,7 +51332,7 @@ window.DATA = {
         "value": 80,
         "fame": 57
       },
-      "number": 18
+      "number": 16
     },
     {
       "id": "elliot-anderson",
@@ -50461,7 +51400,7 @@ window.DATA = {
         "value": 58,
         "fame": 66
       },
-      "number": 16
+      "number": 14
     },
     {
       "id": "ollie-watkins",
@@ -50527,7 +51466,7 @@ window.DATA = {
         "value": 65,
         "fame": 50
       },
-      "number": 17
+      "number": 22
     },
     {
       "id": "dominik-kotarski",
@@ -50559,7 +51498,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 44
-      }
+      },
+      "number": 23
     },
     {
       "id": "ivor-pandur",
@@ -50591,7 +51531,8 @@ window.DATA = {
         "skill": 52,
         "value": 52,
         "fame": 36
-      }
+      },
+      "number": 12
     },
     {
       "id": "duje-caleta-car",
@@ -50625,7 +51566,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 59
-      }
+      },
+      "number": 5
     },
     {
       "id": "marin-pongracic",
@@ -50657,7 +51599,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 53
-      }
+      },
+      "number": 3
     },
     {
       "id": "luka-vuskovic",
@@ -50691,7 +51634,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 50
-      }
+      },
+      "number": 22
     },
     {
       "id": "martin-erlic",
@@ -50725,7 +51669,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 48
-      }
+      },
+      "number": 25
     },
     {
       "id": "mario-pasalic",
@@ -50761,7 +51706,8 @@ window.DATA = {
         "skill": 78,
         "value": 74,
         "fame": 74
-      }
+      },
+      "number": 15
     },
     {
       "id": "nikola-vlasic",
@@ -50796,7 +51742,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 66
-      }
+      },
+      "number": 13
     },
     {
       "id": "petar-sucic",
@@ -50828,7 +51775,8 @@ window.DATA = {
         "skill": 67,
         "value": 70,
         "fame": 48
-      }
+      },
+      "number": 17
     },
     {
       "id": "ante-budimir",
@@ -50860,7 +51808,8 @@ window.DATA = {
         "skill": 73,
         "value": 65,
         "fame": 58
-      }
+      },
+      "number": 11
     },
     {
       "id": "igor-matanovic",
@@ -50892,7 +51841,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 43
-      }
+      },
+      "number": 20
     },
     {
       "id": "benjamin-asare",
@@ -50927,7 +51877,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 45
-      }
+      },
+      "number": 16
     },
     {
       "id": "joseph-anang",
@@ -50959,7 +51910,8 @@ window.DATA = {
         "skill": 48,
         "value": 48,
         "fame": 35
-      }
+      },
+      "number": 12
     },
     {
       "id": "abdul-rahman-baba",
@@ -50993,7 +51945,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 60
-      }
+      },
+      "number": 17
     },
     {
       "id": "gideon-mensah",
@@ -51025,7 +51978,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 55
-      }
+      },
+      "number": 14
     },
     {
       "id": "marvin-senaya",
@@ -51057,7 +52011,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 26
     },
     {
       "id": "jerome-opoku",
@@ -51089,7 +52044,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 44
-      }
+      },
+      "number": 18
     },
     {
       "id": "jonas-adjetey",
@@ -51121,7 +52077,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 46
-      }
+      },
+      "number": 4
     },
     {
       "id": "kojo-peprah-oppong",
@@ -51153,7 +52110,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 39
-      }
+      },
+      "number": 21
     },
     {
       "id": "derrick-luckassen",
@@ -51185,7 +52143,8 @@ window.DATA = {
         "skill": 58,
         "value": 55,
         "fame": 41
-      }
+      },
+      "number": 23
     },
     {
       "id": "elisha-owusu",
@@ -51217,7 +52176,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 50
-      }
+      },
+      "number": 15
     },
     {
       "id": "kwasi-sibo",
@@ -51249,7 +52209,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 8
     },
     {
       "id": "augustine-boakye",
@@ -51281,7 +52242,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 20
     },
     {
       "id": "caleb-yirenkyi",
@@ -51316,7 +52278,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 47
-      }
+      },
+      "number": 3
     },
     {
       "id": "christopher-bonsu-baah",
@@ -51348,7 +52311,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 43
-      }
+      },
+      "number": 13
     },
     {
       "id": "brandon-thomas-asante",
@@ -51380,7 +52344,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 44
-      }
+      },
+      "number": 10
     },
     {
       "id": "prince-kwabena-adu",
@@ -51412,7 +52377,8 @@ window.DATA = {
         "skill": 54,
         "value": 57,
         "fame": 38
-      }
+      },
+      "number": 25
     },
     {
       "id": "c-sar-samudio",
@@ -51442,7 +52408,8 @@ window.DATA = {
         "skill": 52,
         "value": 49,
         "fame": 37
-      }
+      },
+      "number": 12
     },
     {
       "id": "fidel-escobar",
@@ -51473,7 +52440,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 66
-      }
+      },
+      "number": 4
     },
     {
       "id": "eric-davis",
@@ -51504,7 +52472,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 60
-      }
+      },
+      "number": 15
     },
     {
       "id": "roderick-miller",
@@ -51535,7 +52504,8 @@ window.DATA = {
         "skill": 58,
         "value": 52,
         "fame": 48
-      }
+      },
+      "number": 25
     },
     {
       "id": "andr-s-andrade",
@@ -51566,7 +52536,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 53
-      }
+      },
+      "number": 16
     },
     {
       "id": "jiovany-ramos",
@@ -51596,7 +52567,8 @@ window.DATA = {
         "skill": 54,
         "value": 54,
         "fame": 38
-      }
+      },
+      "number": 13
     },
     {
       "id": "jorge-guti-rrez",
@@ -51626,7 +52598,8 @@ window.DATA = {
         "skill": 50,
         "value": 50,
         "fame": 35
-      }
+      },
+      "number": 26
     },
     {
       "id": "edgardo-fari-a",
@@ -51657,7 +52630,8 @@ window.DATA = {
         "skill": 53,
         "value": 53,
         "fame": 37
-      }
+      },
+      "number": 5
     },
     {
       "id": "yoel-b-rcenas",
@@ -51688,7 +52662,8 @@ window.DATA = {
         "skill": 67,
         "value": 64,
         "fame": 65
-      }
+      },
+      "number": 11
     },
     {
       "id": "jos-luis-puma-rodr-guez",
@@ -51719,7 +52694,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 58
-      }
+      },
+      "number": 7
     },
     {
       "id": "alberto-quintero",
@@ -51750,7 +52726,8 @@ window.DATA = {
         "skill": 56,
         "value": 50,
         "fame": 63
-      }
+      },
+      "number": 19
     },
     {
       "id": "tom-s-rodr-guez",
@@ -51781,7 +52758,8 @@ window.DATA = {
         "skill": 57,
         "value": 57,
         "fame": 40
-      }
+      },
+      "number": 9
     },
     {
       "id": "guillermo-martinez",
@@ -51813,7 +52791,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 46
-      }
+      },
+      "number": 22
     },
     {
       "id": "olwethu-makhanya",
@@ -51847,7 +52826,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 42
-      }
+      },
+      "number": 24
     },
     {
       "id": "thabang-matuludi",
@@ -51879,7 +52859,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 2
     },
     {
       "id": "lee-gi-hyuk",
@@ -52047,7 +53028,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 55
-      }
+      },
+      "number": 14
     },
     {
       "id": "mladen-jurkas",
@@ -52081,7 +53063,8 @@ window.DATA = {
         "skill": 42,
         "value": 44,
         "fame": 35
-      }
+      },
+      "number": 12
     },
     {
       "id": "ermin-mahmic",
@@ -52113,7 +53096,8 @@ window.DATA = {
         "skill": 50,
         "value": 53,
         "fame": 35
-      }
+      },
+      "number": 26
     },
     {
       "id": "ayoub-al-oui",
@@ -52148,7 +53132,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 45
-      }
+      },
+      "number": 13
     },
     {
       "id": "al-hashmi-al-hussain",
@@ -52216,7 +53201,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 55
-      }
+      },
+      "number": 15
     },
     {
       "id": "rayan",
@@ -52248,7 +53234,8 @@ window.DATA = {
         "skill": 73,
         "value": 77,
         "fame": 52
-      }
+      },
+      "number": 26
     },
     {
       "id": "luiz-henrique",
@@ -52322,7 +53309,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 51
-      }
+      },
+      "number": 19
     },
     {
       "id": "redouane-halhal",
@@ -52354,7 +53342,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 39
-      }
+      },
+      "number": 25
     },
     {
       "id": "samir-el-mourabet",
@@ -52386,7 +53375,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 45
-      }
+      },
+      "number": 15
     },
     {
       "id": "ayoube-amaimouni",
@@ -52418,7 +53408,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 21
     },
     {
       "id": "yassine-gessime",
@@ -52452,7 +53443,8 @@ window.DATA = {
         "skill": 61,
         "value": 64,
         "fame": 44
-      }
+      },
+      "number": 16
     },
     {
       "id": "yassin-fortune",
@@ -52484,7 +53476,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 19
     },
     {
       "id": "josue-casimir",
@@ -52516,7 +53509,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 21
     },
     {
       "id": "braian-ojeda",
@@ -52551,7 +53545,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 49
-      }
+      },
+      "number": 20
     },
     {
       "id": "gustavo-caballero",
@@ -52586,7 +53581,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 45
-      }
+      },
+      "number": 24
     },
     {
       "id": "leon-goretzka",
@@ -52623,7 +53619,8 @@ window.DATA = {
         "skill": 78,
         "value": 74,
         "fame": 73
-      }
+      },
+      "number": 8
     },
     {
       "id": "felix-nmecha",
@@ -52657,7 +53654,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 52
-      }
+      },
+      "number": 23
     },
     {
       "id": "pascal-gro",
@@ -52725,7 +53723,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 53
-      }
+      },
+      "number": 20
     },
     {
       "id": "angelo-stiller",
@@ -52759,7 +53758,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 54
-      }
+      },
+      "number": 16
     },
     {
       "id": "assan-ouedraogo",
@@ -52793,7 +53793,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 49
-      }
+      },
+      "number": 25
     },
     {
       "id": "jamie-leweling",
@@ -52827,7 +53828,8 @@ window.DATA = {
         "skill": 69,
         "value": 69,
         "fame": 51
-      }
+      },
+      "number": 9
     },
     {
       "id": "brandley-kuwas",
@@ -52865,7 +53867,8 @@ window.DATA = {
         "skill": 54,
         "value": 48,
         "fame": 48
-      }
+      },
+      "number": 17
     },
     {
       "id": "parfait-guiagon",
@@ -52901,7 +53904,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 46
-      }
+      },
+      "number": 25
     },
     {
       "id": "junnosuke-suzuki",
@@ -52935,7 +53939,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 46
-      }
+      },
+      "number": 25
     },
     {
       "id": "keisuke-goto",
@@ -52967,7 +53972,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 48
-      }
+      },
+      "number": 9
     },
     {
       "id": "kento-shiogai",
@@ -52999,7 +54005,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 26
     },
     {
       "id": "elliot-stroud",
@@ -53033,7 +54040,8 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 42
-      }
+      },
+      "number": 24
     },
     {
       "id": "herman-johansson",
@@ -53067,7 +54075,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 40
-      }
+      },
+      "number": 6
     },
     {
       "id": "mortadha-ben-ouanes",
@@ -53102,7 +54111,8 @@ window.DATA = {
         "skill": 62,
         "value": 59,
         "fame": 51
-      }
+      },
+      "number": 12
     },
     {
       "id": "mohamed-hadj-mahmoud",
@@ -53235,7 +54245,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 47
-      }
+      },
+      "number": 9
     },
     {
       "id": "cherif-ndiaye",
@@ -53273,7 +54284,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 50
-      }
+      },
+      "number": 12
     },
     {
       "id": "akam-hashim",
@@ -53305,7 +54317,8 @@ window.DATA = {
         "skill": 48,
         "value": 48,
         "fame": 35
-      }
+      },
+      "number": 5
     },
     {
       "id": "zaid-ismail",
@@ -53446,7 +54459,8 @@ window.DATA = {
         "skill": 68,
         "value": 68,
         "fame": 63
-      }
+      },
+      "number": 19
     },
     {
       "id": "meschak-elia",
@@ -53516,7 +54530,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 57
-      }
+      },
+      "number": 18
     },
     {
       "id": "nathanael-mbuku",
@@ -53550,7 +54565,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 47
-      }
+      },
+      "number": 7
     },
     {
       "id": "aaron-tshibola",
@@ -53582,7 +54598,8 @@ window.DATA = {
         "skill": 55,
         "value": 52,
         "fame": 39
-      }
+      },
+      "number": 15
     },
     {
       "id": "brian-cipenga",
@@ -53614,7 +54631,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 9
     },
     {
       "id": "bekhruz-karimov",
@@ -53720,7 +54738,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 54
-      }
+      },
+      "number": 19
     },
     {
       "id": "sherzod-esanov",
@@ -53752,7 +54771,8 @@ window.DATA = {
         "skill": 52,
         "value": 55,
         "fame": 37
-      }
+      },
+      "number": 23
     },
     {
       "id": "gustavo-puerta",
@@ -53789,7 +54809,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 47
-      }
+      },
+      "number": 14
     },
     {
       "id": "juan-camilo-portilla",
@@ -53823,7 +54844,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 43
-      }
+      },
+      "number": 15
     },
     {
       "id": "jaminton-campaz",
@@ -53857,7 +54879,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 21
     },
     {
       "id": "nico-o-reilly",
@@ -53894,8 +54917,7 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 55
-      },
-      "number": 20
+      }
     },
     {
       "id": "noni-madueke",
@@ -53933,7 +54955,7 @@ window.DATA = {
         "value": 78,
         "fame": 61
       },
-      "number": 25
+      "number": 20
     },
     {
       "id": "kristijan-jakic",
@@ -53969,7 +54991,8 @@ window.DATA = {
         "skill": 64,
         "value": 64,
         "fame": 52
-      }
+      },
+      "number": 18
     },
     {
       "id": "nikola-moro",
@@ -54004,7 +55027,8 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 50
-      }
+      },
+      "number": 7
     },
     {
       "id": "toni-fruk",
@@ -54039,7 +55063,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 46
-      }
+      },
+      "number": 19
     },
     {
       "id": "marco-pasalic",
@@ -54108,7 +55133,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 53
-      }
+      },
+      "number": 6
     },
     {
       "id": "cesar-yanis",
@@ -54142,7 +55168,8 @@ window.DATA = {
         "skill": 60,
         "value": 57,
         "fame": 53
-      }
+      },
+      "number": 21
     },
     {
       "id": "azarias-londono",
@@ -54178,7 +55205,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 45
-      }
+      },
+      "number": 24
     },
     {
       "id": "danilo-br",
