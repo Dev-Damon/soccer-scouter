@@ -16,7 +16,7 @@
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html { zoom: 1.06; }  /* 전체 글자·요소 크기 ~+6% (15px 기준) */
+html { zoom: 1.13; }  /* 전체 글자·요소 크기 ~+13% (16px 기준) */
 
 html, body {
   margin: 0;
