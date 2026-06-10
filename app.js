@@ -525,18 +525,17 @@
 
   // ===================== 선수 랭킹 (검색 탭 기본 화면) =====================
   var rankSort = "ovr", rankPos = "all", rankLimit = 30, RANK_STATS = null;
+  var RDIMS = ["공격력", "수비력", "스피드", "테크닉", "피지컬", "골결정력"];
   function rankMetric(p) {
     if (rankSort === "rating") { var s = RANK_STATS && RANK_STATS[p.id]; return s ? s.avg : -1; }
-    if (rankSort === "value") return (p.scout && p.scout.value) || 0;
-    if (rankSort === "fame") return (p.scout && p.scout.fame) || 0;
+    if (RDIMS.indexOf(rankSort) >= 0) return (p.power && p.power[rankSort] != null) ? p.power[rankSort] : -1;
     return p.ovr || 0;
   }
   function rankCard(p, rank) {
     var t = teamsById[teamIdByName(p.team)], flag = t ? t.flag : "🏳";
     var sc;
     if (rankSort === "rating") { var s = RANK_STATS && RANK_STATS[p.id]; sc = s ? "⭐" + s.avg.toFixed(1) : "–"; }
-    else if (rankSort === "value") sc = (p.scout && p.scout.value) || "–";
-    else if (rankSort === "fame") sc = (p.scout && p.scout.fame) || "–";
+    else if (RDIMS.indexOf(rankSort) >= 0) sc = (p.power && p.power[rankSort] != null) ? p.power[rankSort] : "–";
     else sc = p.ovr || "–";
     return '<div class="rank-card" data-player="' + esc(p.id) + '">' +
       '<span class="rank-no">' + rank + "</span>" +
@@ -550,11 +549,12 @@
     if (!wrap) return;
     var list = DATA.players.slice();
     if (rankPos !== "all") list = list.filter(function (p) { return posClass(p.position) === rankPos; });
+    if (RDIMS.indexOf(rankSort) >= 0) list = list.filter(function (p) { return p.power; });  // 지수 정렬은 레이더 보유 선수만
     list.sort(function (a, b) { var d = rankMetric(b) - rankMetric(a); return d || (b.ovr || 0) - (a.ovr || 0); });
     var shown = list.slice(0, rankLimit);
-    var sorts = [["ovr", "종합"], ["rating", "유저평점"], ["value", "가치"], ["fame", "유명도"]];
+    var sorts = [["ovr", "종합"], ["공격력", "공격"], ["골결정력", "골결정"], ["스피드", "스피드"], ["테크닉", "테크닉"], ["피지컬", "피지컬"], ["수비력", "수비"], ["rating", "평점"]];
     var sortUi = '<div class="rank-sorts">' + sorts.map(function (s) { return '<button class="rank-sb' + (rankSort === s[0] ? " on" : "") + '" data-rsort="' + s[0] + '">' + s[1] + "</button>"; }).join("") + "</div>";
-    var posF = [["all", "전체"], ["fw", "공격"], ["mf", "미드"], ["df", "수비"], ["gk", "GK"]];
+    var posF = [["all", "전체"], ["fw", "FW"], ["mf", "MF"], ["df", "DF"], ["gk", "GK"]];
     var posUi = '<div class="rank-pos">' + posF.map(function (s) { return '<button class="rank-pb' + (rankPos === s[0] ? " on" : "") + '" data-rpos="' + s[0] + '">' + s[1] + "</button>"; }).join("") + "</div>";
     var more = (list.length > rankLimit) ? '<button class="rank-more">더보기 (' + (list.length - rankLimit) + "명)</button>" : "";
     wrap.innerHTML = '<div class="sec-h">⚡ 선수 랭킹</div>' + sortUi + posUi +
@@ -682,7 +682,7 @@
     var poly = dims.map(function (d, i) { var q = pt(d[1] || 0, i); return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" ");
     var dots = dims.map(function (d, i) { var q = pt(d[1] || 0, i); return '<circle cx="' + q[0].toFixed(1) + '" cy="' + q[1].toFixed(1) + '" r="3" fill="#4f8cff"/>'; }).join("");
     var labels = dims.map(function (d, i) { var r = angs[i] * Math.PI / 180, lx = cx + (R + 24) * Math.cos(r), ly = cy + (R + 24) * Math.sin(r), anc = Math.abs(Math.cos(r)) < 0.3 ? "middle" : (Math.cos(r) > 0 ? "start" : "end"); return '<text x="' + lx.toFixed(0) + '" y="' + (ly + 4).toFixed(0) + '" fill="#cdd8e6" font-size="11.5" font-weight="700" text-anchor="' + anc + '">' + d[0] + " " + (d[1] || 0) + "</text>"; }).join("");
-    var radar = '<svg viewBox="0 0 300 300" class="pw-radar">' + grid + '<polygon points="' + poly + '" fill="rgba(79,140,255,.28)" stroke="#4f8cff" stroke-width="2"/>' + dots + labels + "</svg>";
+    var radar = '<svg viewBox="-44 0 388 300" class="pw-radar">' + grid + '<polygon points="' + poly + '" fill="rgba(79,140,255,.28)" stroke="#4f8cff" stroke-width="2"/>' + dots + labels + "</svg>";
     var bars = dims.slice().sort(function (a, b) { return (b[1] || 0) - (a[1] || 0); }).map(function (d) {
       var v = d[1] || 0, col = v >= 85 ? "#4f8cff" : v >= 70 ? "#5bbf8a" : v >= 55 ? "#f0a93b" : "#e5748a";
       return '<div class="pw-bar"><span class="pw-bn">' + d[0] + '</span><div class="pw-bt"><div class="pw-bf" style="width:' + v + "%;background:" + col + '"></div></div><span class="pw-bv">' + v + "</span></div>";
@@ -746,8 +746,7 @@
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
-        powerHtml +
-        scoutHtml +
+        (p.power ? powerHtml : scoutHtml) +
         '<div class="rate-slot" data-pid="' + esc(p.id) + '"></div>' +
         '<div class="sw">' +
           '<div class="swbox pos"><h4>강점</h4><div class="tags">' + (strengths || '<span class="tag">-</span>') + "</div></div>" +
