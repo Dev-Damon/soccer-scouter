@@ -220,16 +220,16 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .my-ib { font-size: 14px; line-height: 1.5; color: #cdd8e6; white-space: pre-wrap; word-break: break-word; }
 .my-admin { background: none; border: 0; color: var(--accent); font-size: 12.5px; cursor: pointer; margin-left: 8px; }
 /* 관리자 페이지 */
-.ad-h { font-size: 18px; margin: 4px 0 14px; }
-.ad-search { width: 100%; box-sizing: border-box; background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; font-size: 14px; margin-bottom: 12px; }
-.ad-list { display: flex; flex-direction: column; gap: 10px; }
-.ad-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; }
-.ad-iw { color: var(--muted); font-size: 12px; margin-bottom: 4px; }
-.ad-ib { font-size: 14px; line-height: 1.5; color: #e8eef6; white-space: pre-wrap; word-break: break-word; }
-.ad-reason { color: #e5a23d; font-size: 12.5px; margin: 6px 0; }
-.ad-act { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-.ad-act button { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 12px; padding: 5px 11px; border-radius: 999px; cursor: pointer; }
-.ad-del { color: #e5484d; border-color: #e5484d; }
+.mgr-h { font-size: 18px; margin: 4px 0 14px; }
+.mgr-search { width: 100%; box-sizing: border-box; background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; font-size: 14px; margin-bottom: 12px; }
+.mgr-list { display: flex; flex-direction: column; gap: 10px; }
+.mgr-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; }
+.mgr-iw { color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+.mgr-ib { font-size: 14px; line-height: 1.5; color: #e8eef6; white-space: pre-wrap; word-break: break-word; }
+.mgr-reason { color: #e5a23d; font-size: 12.5px; margin: 6px 0; }
+.mgr-act { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.mgr-act button { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 12px; padding: 5px 11px; border-radius: 999px; cursor: pointer; }
+.mgr-del { color: #e5484d; border-color: #e5484d; }
 
 /* Player list row */
 .player-row {
