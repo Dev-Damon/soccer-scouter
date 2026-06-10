@@ -928,6 +928,13 @@
     for (var i = 0; i < M.length; i++) if (M[i][0].test(ln)) return M[i][1];
     return ln || "기타";
   }
+  function roundLabel(rn) {
+    var s = String(rn || "");
+    var M = [[/group/i, "조별리그"], [/round of 32|last 32/i, "32강"], [/round of 16|last 16/i, "16강"],
+      [/quarter/i, "8강"], [/semi/i, "4강"], [/third|3rd/i, "3·4위전"], [/final/i, "결승"]];
+    for (var i = 0; i < M.length; i++) if (M[i][0].test(s)) return M[i][1];
+    return "";
+  }
   function renderH2H(slot, d, fx, a, b) {
     var blk = (d.headToHeadGames || [])[0];
     if (!blk || !(blk.events || []).length) { slot.style.display = "none"; return; }
@@ -950,12 +957,14 @@
       var rk = res === "W" ? "win" : res === "L" ? "lose" : "draw";
       var rl = res === "W" ? "승" : res === "L" ? "패" : "무";
       var sc = (isNaN(pScore) ? "-" : pScore) + " : " + (isNaN(pOpp) ? "-" : pOpp);
+      var cmp = compLabel(e), rnd = roundLabel(e.roundName);
+      var meta = (e.gameDate || "").slice(0, 4) + " · " + cmp + (rnd && cmp !== "친선" ? " " + rnd : "");
       rows += '<div class="h2h-row"><span class="h2h-res ' + rk + '">' + rl + "</span>" +
         '<div class="h2h-line"><span class="h2h-score"><b>' + esc(perspName) + "</b> " + sc + " " + esc(oppName) + "</span>" +
-        '<span class="h2h-meta">' + esc((e.gameDate || "").slice(0, 4)) + " · " + esc(compLabel(e)) + "</span></div></div>";
+        '<span class="h2h-meta">' + esc(meta) + "</span></div></div>";
     });
     slot.style.display = "";
-    slot.innerHTML = '<h3>역대 상대전적 <span class="muted-note">' + esc(perspName) + " 기준 " + w + "승 " + dr + "무 " + l + "패</span></h3>" +
+    slot.innerHTML = '<h3>최근 상대전적 <span class="muted-note">최근 ' + blk.events.length + "경기 · " + esc(perspName) + " 기준 " + w + "승 " + dr + "무 " + l + "패</span></h3>" +
       '<div class="h2h-list">' + rows + "</div>";
   }
 
