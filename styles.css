@@ -341,6 +341,12 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .lu-ec { width: 34px; font-weight: 800; color: var(--accent, #4f8cff); flex: none; }
 .lu-ei { flex: none; }
 .lu-et { flex: 1; line-height: 1.4; }
+/* 경기 예상 라인업 피치 */
+.mf-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; margin: 6px 0 8px; gap: 8px; }
+.mf-head b { font-weight: 800; }
+.mf-a { color: #4f8cff; } .mf-b { color: #e5566a; text-align: right; }
+.mf-pitch { width: 100%; height: auto; display: block; border-radius: 10px; }
+.mf-p { cursor: pointer; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }
 .bd-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }

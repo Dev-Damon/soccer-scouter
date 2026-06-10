@@ -1032,6 +1032,32 @@
     return '<div class="mn-team"><div class="mn-h"><span class="mn-flag">' + esc(team.flag) + "</span>" + esc(team.name) + " 주요 소식</div>" +
       '<div class="news-list">' + kn.map(newsItemHtml).join("") + "</div></div>";
   }
+  // 경기 예상 라인업 피치(두 팀 마주보기) — 자체 t.lineup 기반(경기 전에도 항상)
+  function matchFormation(a, b) {
+    if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
+    var W = 720, H = 440, padX = 0.05, span = 0.40;
+    function side(t, left, col) {
+      return (t.lineup || []).map(function (d) {
+        var p = playersById[d.playerId] || {};
+        var num = (p.number != null ? p.number : ""), nm = (p.name || "").trim();
+        var fx = (90 - d.y) / 70;
+        var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
+        var py = (d.x / 100) * 0.80 * H + 0.10 * H;
+        var pd = p.id ? ' data-player="' + esc(p.id) + '"' : "";
+        return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="16" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
+          '<text x="' + px.toFixed(0) + '" y="' + (py + 5).toFixed(0) + '" fill="#fff" font-size="15" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
+          '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#e6edf8" font-size="14" font-weight="700" text-anchor="middle">' + esc(nm) + "</text></g>";
+      }).join("");
+    }
+    var pitch = '<rect width="' + W + '" height="' + H + '" fill="#13351f"/>' +
+      '<rect x="6" y="6" width="' + (W - 12) + '" height="' + (H - 12) + '" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
+      '<line x1="' + (W / 2) + '" y1="6" x2="' + (W / 2) + '" y2="' + (H - 6) + '" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
+      '<circle cx="' + (W / 2) + '" cy="' + (H / 2) + '" r="54" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
+      '<rect x="6" y="' + (H / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>' +
+      '<rect x="' + (W - 84) + '" y="' + (H / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>';
+    var head = '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + " <b>" + esc(a.formation || "") + '</b></span><span class="mf-b"><b>' + esc(b.formation || "") + "</b> " + esc(b.name) + " " + esc(b.flag) + "</span></div>";
+    return '<h3>📋 예상 라인업 <span class="muted-note">탭하면 선수 상세</span></h3>' + head + '<div class="mf-wrap"><svg viewBox="0 0 ' + W + " " + H + '" class="mf-pitch">' + pitch + side(a, true, "#4f8cff") + side(b, false, "#e5566a") + "</svg></div>";
+  }
   function renderMatch(id) {
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
@@ -1053,6 +1079,7 @@
     }
 
     var pr = predict(a, b);
+    var mf = matchFormation(a, b);
     var ia = a.indices || {}, ib = b.indices || {};
     var cmp = cmpRow("공격력", ia.attack, ib.attack) + cmpRow("수비력", ia.defense, ib.defense) +
       cmpRow("조직력", ia.organization, ib.organization) + cmpRow("경험치", ia.experience, ib.experience) +
@@ -1078,6 +1105,7 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
         '<div class="block h2h-slot"></div>' +
+        (mf ? '<div class="block">' + mf + "</div>" : "") +
         '<div class="block lineup-slot"></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
