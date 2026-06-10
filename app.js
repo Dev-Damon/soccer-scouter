@@ -285,7 +285,7 @@
       if (next) { var d2 = ddayCount(next, today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
       else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
     }
-    var witty = WITTY[Math.floor(Math.random() * WITTY.length)];
+    var witty = topBanner._w || (topBanner._w = WITTY[Math.floor(Math.random() * WITTY.length)]);  // 세션당 1회 고정(날짜 클릭해도 안 바뀜)
     return '<div class="hero-banner">' +
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
