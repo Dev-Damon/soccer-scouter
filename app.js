@@ -325,7 +325,7 @@
     var prevScroll = prevStrip ? prevStrip.scrollLeft : null;
 
     // 날짜 스트립
-    var strip = '<div class="datestrip">';
+    var strip = '<div class="datestrip-wrap"><button class="ds-arrow l" aria-label="이전 날짜">‹</button><div class="datestrip">';
     dates.forEach(function (d) {
       var f = fmtDate(d);
       strip += '<button class="dchip' + (d === selectedDate ? " on" : "") + '" data-date="' + esc(d) + '">' +
@@ -333,7 +333,7 @@
         '<span class="dchip-day">' + f.day + "</span>" +
         '<span class="dchip-mo">' + f.mo + "월</span></button>";
     });
-    strip += "</div>";
+    strip += '</div><button class="ds-arrow r" aria-label="다음 날짜">›</button></div>';
 
     var dayFixtures = (DATA.fixtures || []).filter(function (f) { return fxDate(f) === selectedDate; })
       .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
@@ -385,6 +385,20 @@
           };
           if (window.requestAnimationFrame) requestAnimationFrame(doScroll); else doScroll();
         }
+      }
+      // 데스크탑 좌우 이동 버튼
+      var wrap = viewEl.querySelector(".datestrip-wrap");
+      if (wrap) {
+        var la = wrap.querySelector(".ds-arrow.l"), ra = wrap.querySelector(".ds-arrow.r");
+        var updArrows = function () {
+          var max = stripEl.scrollWidth - stripEl.clientWidth - 2;
+          if (la) la.classList.toggle("hide", stripEl.scrollLeft <= 2);
+          if (ra) ra.classList.toggle("hide", stripEl.scrollLeft >= max || max <= 0);
+        };
+        if (la) la.addEventListener("click", function () { stripEl.scrollBy({ left: -stripEl.clientWidth * 0.6, behavior: "smooth" }); });
+        if (ra) ra.addEventListener("click", function () { stripEl.scrollBy({ left: stripEl.clientWidth * 0.6, behavior: "smooth" }); });
+        stripEl.addEventListener("scroll", updArrows);
+        (window.requestAnimationFrame || setTimeout)(updArrows);
       }
     }
   }
@@ -1946,8 +1960,15 @@
     function tossLink(amt) { return "supertoss://send?amount=" + amt + "&bank=%ED%86%A0%EC%8A%A4%EB%B1%85%ED%81%AC&accountNo=" + ACCT + "&origin=qr"; }
     var ov = null;
     function close() { if (ov) ov.classList.remove("on"); }
-    function toast(msg) { if (!ov) return; var t = document.createElement("div"); t.className = "ds-toast"; t.textContent = msg; ov.querySelector(".donate-sheet").appendChild(t); twem(t); setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 5000); }
+    var tossBusy = false, toastTimer = null;
+    function toast(msg) {
+      if (!ov) return;
+      var sheet = ov.querySelector(".donate-sheet"), ex = sheet.querySelector(".ds-toast"); if (ex) ex.parentNode.removeChild(ex);
+      var t = document.createElement("div"); t.className = "ds-toast"; t.textContent = msg; sheet.appendChild(t); twem(t);
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 5000);
+    }
     function tryToss(amt) {
+      if (tossBusy) return; tossBusy = true; setTimeout(function () { tossBusy = false; }, 1600);
       var start = Date.now();
       window.location.href = tossLink(amt);
       setTimeout(function () {
