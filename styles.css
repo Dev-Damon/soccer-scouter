@@ -319,7 +319,9 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .mb-sort { background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted); border-radius: 8px; padding: 6px 14px; font-weight: 700; font-size: 13px; cursor: pointer; }
 .mb-sort.on { background: #4f8cff; color: #fff; border-color: #4f8cff; }
 .mb-table { font-size: 13px; }
-.mb-row { display: grid; grid-template-columns: 1fr 50px 40px 40px 40px 34px; gap: 4px; align-items: center; padding: 9px 2px; border-bottom: 1px solid var(--line); }
+.mb-row { display: grid; grid-template-columns: minmax(0,1fr) 92px 30px 30px 30px 26px; gap: 4px; align-items: center; padding: 9px 2px; border-bottom: 1px solid var(--line); }
+.mb-j { display: flex; flex-direction: column; line-height: 1.25; }
+.mb-d { font-size: 11.5px; } .mb-t { font-size: 10.5px; color: var(--muted); }
 .mb-row span { text-align: center; }
 .mb-row .mb-n { text-align: left; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mb-head { color: var(--muted); font-weight: 700; font-size: 11.5px; border-bottom: 2px solid var(--line); }

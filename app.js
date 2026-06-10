@@ -1391,13 +1391,14 @@
 
   // ===================== 관리자 페이지 (#admin) =====================
   var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act";
+  function fmtJoin(iso) { try { var d = new Date(iso); function z(n) { return (n < 10 ? "0" : "") + n; } return '<span class="mb-d">' + d.getFullYear() + "." + z(d.getMonth() + 1) + "." + z(d.getDate()) + '</span><span class="mb-t">' + z(d.getHours()) + ":" + z(d.getMinutes()) + ":" + z(d.getSeconds()) + "</span>"; } catch (e) { return ""; } }
   function membersTableHtml() {
     var us = (adminCache.users || []).slice();
     if (memberSort === "join") us.sort(function (a, b) { return (b.joined || "").localeCompare(a.joined || ""); });
     else us.sort(function (a, b) { return (b.comments + b.chats + b.ratings + b.posts) - (a.comments + a.chats + a.ratings + a.posts); });
     var sorts = '<div class="mb-sorts"><button class="mb-sort' + (memberSort === "act" ? " on" : "") + '" data-msort="act">활동순</button><button class="mb-sort' + (memberSort === "join" ? " on" : "") + '" data-msort="join">가입순</button></div>';
     var head = '<div class="mb-row mb-head"><span class="mb-n">이름</span><span>가입</span><span>댓글</span><span>채팅</span><span>평점</span><span>글</span></div>';
-    var rows = us.length ? us.map(function (u) { return '<div class="mb-row"><span class="mb-n">' + esc(u.name) + '</span><span>' + (u.joined ? agoShort(u.joined) : "") + '</span><span>' + u.comments + '</span><span>' + u.chats + '</span><span>' + u.ratings + '</span><span>' + u.posts + "</span></div>"; }).join("") : '<div class="empty">회원이 없습니다.</div>';
+    var rows = us.length ? us.map(function (u) { return '<div class="mb-row"><span class="mb-n">' + esc(u.name) + '</span><span class="mb-j">' + (u.joined ? fmtJoin(u.joined) : "") + '</span><span>' + u.comments + '</span><span>' + u.chats + '</span><span>' + u.ratings + '</span><span>' + u.posts + "</span></div>"; }).join("") : '<div class="empty">회원이 없습니다.</div>';
     return sorts + '<div class="mb-table">' + head + rows + "</div>";
   }
   function adminItem(c, extra) {
