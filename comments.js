@@ -28,6 +28,7 @@
   var sb = null;
   var user = null;
   var stylesInjected = false;
+  var sortMode = "likes";  // 'likes'(기본) | 'latest'
 
   function configured() { return !!(CONFIG.url && CONFIG.anonKey); }
 
@@ -125,14 +126,37 @@
     if (!client()) return;
     Promise.all([refreshUser(), loadProviders()])
       .then(function () { return load(m.key); })
-      .then(function (list) { m.el.innerHTML = boxHtml(list); bind(m); })
+      .then(function (data) { m._data = data; paint(m); })
       .catch(function () { m.el.style.display = "none"; });  // 테이블 미생성/일시오류 → 조용히 숨김
   }
+  function paint(m) {
+    var d = m._data || { list: [], rx: {} };
+    m.el.style.display = "";
+    m.el.innerHTML = boxHtml(d.list, d.rx);
+    bind(m);
+  }
+  function score(e) { return e ? e.like : 0; }
+  function mentionize(s) { return s.replace(/(^|[\s(])@([^\s@]{1,30})/g, '$1<span class="cmt-at">@$2</span>'); }
 
   function load(key) {
     return sb.from("comments").select("*").eq("thread_key", key)
-      .order("created_at", { ascending: true })
-      .then(function (r) { if (r.error) throw r.error; return r.data || []; });
+      .then(function (r) {
+        if (r.error) throw r.error;
+        var list = r.data || [];
+        if (!list.length) return { list: list, rx: {} };
+        var ids = list.map(function (c) { return c.id; });
+        return sb.from("comment_reactions").select("comment_id,user_id,value").in("comment_id", ids)
+          .then(function (rr) {
+            var rx = {};
+            (rr.data || []).forEach(function (x) {
+              var e = rx[x.comment_id] || (rx[x.comment_id] = { like: 0, dislike: 0, mine: 0 });
+              if (x.value === 1) e.like++; else e.dislike++;
+              if (user && x.user_id === user.id) e.mine = x.value;
+            });
+            return { list: list, rx: rx };
+          })
+          .catch(function () { return { list: list, rx: {} }; });
+      });
   }
 
   function toTree(list) {
@@ -145,23 +169,35 @@
     return roots;
   }
 
-  function cHtml(c, isReply) {
+  function cHtml(c, isReply, rx) {
     var mine = user && user.id === c.user_id;
-    return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '">' +
+    var rr = rx[c.id] || { like: 0, dislike: 0, mine: 0 };
+    var root = isReply ? (c.parent_id || c.id) : c.id;
+    var react = '<button class="cmt-rx up' + (rr.mine === 1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="1">▲ ' + rr.like + "</button>" +
+      '<button class="cmt-rx down' + (rr.mine === -1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="-1">▼ ' + rr.dislike + "</button>";
+    return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(c.name || "익명") + '" data-root="' + esc(root) + '">' +
       '<div class="cmt-top"><span class="cmt-name">' + esc(c.name || "익명") + "</span>" +
         '<span class="cmt-time">' + timeago(c.created_at) + "</span></div>" +
-      '<div class="cmt-body">' + esc(c.body) + "</div>" +
-      '<div class="cmt-act">' +
-        (!isReply ? '<button class="cmt-reply" data-id="' + esc(c.id) + '">답글</button>' : "") +
+      '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
+      '<div class="cmt-act">' + react +
+        '<button class="cmt-reply" data-id="' + esc(c.id) + '">답글</button>' +
         (mine ? '<button class="cmt-del" data-id="' + esc(c.id) + '">삭제</button>' : "") +
       "</div>" +
       '<div class="cmt-replybox"></div>' +
-      (c._ch && c._ch.length ? '<div class="cmt-children">' + c._ch.map(function (r) { return cHtml(r, true); }).join("") + "</div>" : "") +
+      (c._ch && c._ch.length ? '<div class="cmt-children">' + c._ch.map(function (r) { return cHtml(r, true, rx); }).join("") + "</div>" : "") +
       "</div>";
   }
 
-  function boxHtml(list) {
+  function boxHtml(list, rx) {
     var roots = toTree(list);
+    roots.sort(function (a, b) {
+      if (sortMode === "likes") { var d = score(rx[b.id]) - score(rx[a.id]); if (d) return d; }
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
+    roots.forEach(function (c) { (c._ch || []).sort(function (x, y) { return new Date(x.created_at) - new Date(y.created_at); }); });
+    var sortUi = '<div class="cmt-sort">' +
+      '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
+      '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' +
         '<div class="cmt-form"><textarea class="cmt-ta" maxlength="1000" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div>'
@@ -169,8 +205,9 @@
         ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in" data-p="google">Google</button>' : "") +
         ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
     return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" + head +
+      (roots.length ? sortUi : "") +
       '<div class="cmt-list">' +
-      (roots.length ? roots.map(function (c) { return cHtml(c, false); }).join("") : '<div class="cmt-empty">첫 댓글을 남겨보세요!</div>') +
+      (roots.length ? roots.map(function (c) { return cHtml(c, false, rx); }).join("") : '<div class="cmt-empty">첫 댓글을 남겨보세요!</div>') +
       "</div>";
   }
 
@@ -179,23 +216,29 @@
       var t;
       if ((t = e.target.closest(".cmt-in"))) { return signIn(t.getAttribute("data-p")); }
       if (e.target.closest(".cmt-out")) { return sb.auth.signOut().then(function () { render(m); }); }
+      if ((t = e.target.closest(".cmt-sortbtn"))) { sortMode = t.getAttribute("data-sort"); return paint(m); }
+      if ((t = e.target.closest(".cmt-rx"))) { return react(m, t.getAttribute("data-id"), parseInt(t.getAttribute("data-v"), 10)); }
       if (e.target.closest(".cmt-send")) { return send(m, null, m.el.querySelector(".cmt-form .cmt-ta")); }
-      if ((t = e.target.closest(".cmt-reply"))) { return toggleReply(m, t.getAttribute("data-id")); }
+      if ((t = e.target.closest(".cmt-reply"))) { return toggleReply(m, t); }
       if ((t = e.target.closest(".cmt-del"))) { return del(m, t.getAttribute("data-id")); }
       if ((t = e.target.closest(".cmt-rsend"))) {
-        var id = t.getAttribute("data-id");
-        return send(m, id, t.parentNode.querySelector(".cmt-ta"));
+        return send(m, t.getAttribute("data-root"), t.parentNode.querySelector(".cmt-ta"));
       }
     };
   }
 
-  function toggleReply(m, parentId) {
-    var node = m.el.querySelector('.cmt[data-id="' + (window.CSS && CSS.escape ? CSS.escape(parentId) : parentId) + '"] > .cmt-replybox');
+  function toggleReply(m, btn) {
+    var cmt = btn.closest(".cmt");
+    var node = cmt && cmt.querySelector(":scope > .cmt-replybox");
     if (!node) return;
     if (node.innerHTML) { node.innerHTML = ""; return; }
     if (!user) { alert("로그인 후 답글을 남길 수 있어요."); return; }
-    node.innerHTML = '<textarea class="cmt-ta" maxlength="1000" placeholder="답글"></textarea>' +
-      '<button class="cmt-rsend" data-id="' + esc(parentId) + '">답글 등록</button>';
+    var isReply = cmt.classList.contains("reply");
+    var prefill = isReply ? "@" + cmt.getAttribute("data-name") + " " : "";
+    node.innerHTML = '<textarea class="cmt-ta" maxlength="1000" placeholder="답글">' + esc(prefill) + "</textarea>" +
+      '<button class="cmt-rsend" data-root="' + esc(cmt.getAttribute("data-root")) + '">답글 등록</button>';
+    var ta = node.querySelector(".cmt-ta");
+    if (ta) { ta.focus(); try { ta.setSelectionRange(ta.value.length, ta.value.length); } catch (e2) {} }
   }
 
   function send(m, parentId, ta) {
@@ -219,6 +262,14 @@
   function del(m, id) {
     if (!confirm("댓글을 삭제할까요?")) return;
     sb.from("comments").delete().eq("id", id).then(function () { render(m); });
+  }
+  function react(m, commentId, value) {
+    if (!user) { alert("로그인이 필요합니다."); return; }
+    var cur = (m._data && m._data.rx[commentId]) ? m._data.rx[commentId].mine : 0;
+    var op = (cur === value)
+      ? sb.from("comment_reactions").delete().eq("comment_id", commentId).eq("user_id", user.id)
+      : sb.from("comment_reactions").upsert({ comment_id: commentId, user_id: user.id, value: value }, { onConflict: "comment_id,user_id" });
+    op.then(function () { render(m); });
   }
 
   function signIn(provider) {
@@ -256,7 +307,15 @@
       ".cmt-act{display:flex;gap:12px}",
       ".cmt-act button{background:none;border:0;color:var(--muted,#9fb0c3);font-size:12px;cursor:pointer;padding:0}",
       ".cmt-children{margin:10px 0 0 16px;padding-left:12px;border-left:2px solid var(--line,#1e2a3a);display:flex;flex-direction:column;gap:12px}",
-      ".cmt.reply .cmt-body{font-size:13.5px}"
+      ".cmt.reply .cmt-body{font-size:13.5px}",
+      ".cmt-sort{display:flex;gap:6px;margin-bottom:12px}",
+      ".cmt-sortbtn{background:none;border:1px solid var(--line,#1e2a3a);color:var(--muted,#9fb0c3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;cursor:pointer}",
+      ".cmt-sortbtn.on{background:var(--accent,#2ee6a6);color:#06281d;border-color:var(--accent,#2ee6a6)}",
+      ".cmt-act{flex-wrap:wrap;align-items:center;gap:10px}",
+      ".cmt-rx{background:none;border:1px solid var(--line,#1e2a3a);color:var(--muted,#9fb0c3);font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;cursor:pointer}",
+      ".cmt-rx.up.on{color:#2ee6a6;border-color:#2ee6a6}",
+      ".cmt-rx.down.on{color:#e5484d;border-color:#e5484d}",
+      ".cmt-at{color:var(--accent,#2ee6a6);font-weight:700}"
     ].join("");
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   }
