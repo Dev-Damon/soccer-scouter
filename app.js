@@ -1366,7 +1366,7 @@
   // ===== 경기 평점·MVP =====
   var mrCtx = null;
   function matchKickoff(fx) { try { var ms = Date.parse(fxDate(fx) + "T" + (fxTime(fx) || "00:00") + ":00+09:00"); return isNaN(ms) ? null : ms; } catch (e) { return null; } }
-  function matchEnded(fx) { var lv = LIVE[fx.id]; if (lv && lv.state === "post") return true; var ko = matchKickoff(fx); return ko ? Date.now() > ko + 130 * 60000 : false; }
+  function matchEnded(fx) { if (fx.id === "match-2") return true; /* 테스트용: 한국 vs 체코 */ var lv = LIVE[fx.id]; if (lv && lv.state === "post") return true; var ko = matchKickoff(fx); return ko ? Date.now() > ko + 130 * 60000 : false; }
   function teamIds(t) { var ids = []; (t.lineup || []).forEach(function (d) { if (playersById[d.playerId] && ids.indexOf(d.playerId) < 0) ids.push(d.playerId); }); return ids; }
   function mrRow(pid, rd, md) {
     var p = playersById[pid]; if (!p) return "";
@@ -1398,6 +1398,7 @@
   }
   function paintMatchRate(rd, md) {
     if (!mrCtx) return;
+    mrCtx.mvpMine = md.mine;
     var a = mrCtx.a, b = mrCtx.b, idsA = teamIds(a), idsB = teamIds(b), leader = null, lead = 0;
     idsA.concat(idsB).forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
     var html = '<div class="detail"><div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
@@ -1860,7 +1861,7 @@
     var rst = e.target.closest(".mr-star");
     if (rst) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } KickComments.rateMatchPlayer(mrCtx.matchId, rst.getAttribute("data-rate-pid"), +rst.getAttribute("data-star")).then(refreshMatchRatings); return; }
     var mvb = e.target.closest(".mr-mvp");
-    if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } KickComments.voteMvp(mrCtx.matchId, mvb.getAttribute("data-mvp-pid")).then(refreshMatchRatings); return; }
+    if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var mpid = mvb.getAttribute("data-mvp-pid"); (mrCtx.mvpMine === mpid ? KickComments.unvoteMvp(mrCtx.matchId) : KickComments.voteMvp(mrCtx.matchId, mpid)).then(refreshMatchRatings); return; }
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
