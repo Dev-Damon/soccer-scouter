@@ -465,6 +465,44 @@
     try { localStorage.setItem("ss_recent", JSON.stringify(list)); } catch (e) {}
   }
 
+  // ===================== 선수 랭킹 (검색 탭 기본 화면) =====================
+  var rankSort = "ovr", rankPos = "all", rankLimit = 30, RANK_STATS = null;
+  function rankMetric(p) {
+    if (rankSort === "rating") { var s = RANK_STATS && RANK_STATS[p.id]; return s ? s.avg : -1; }
+    if (rankSort === "value") return (p.scout && p.scout.value) || 0;
+    if (rankSort === "fame") return (p.scout && p.scout.fame) || 0;
+    return p.ovr || 0;
+  }
+  function rankCard(p, rank) {
+    var t = teamsById[teamIdByName(p.team)], flag = t ? t.flag : "🏳";
+    var sc;
+    if (rankSort === "rating") { var s = RANK_STATS && RANK_STATS[p.id]; sc = s ? "⭐" + s.avg.toFixed(1) : "–"; }
+    else if (rankSort === "value") sc = (p.scout && p.scout.value) || "–";
+    else if (rankSort === "fame") sc = (p.scout && p.scout.fame) || "–";
+    else sc = p.ovr || "–";
+    return '<div class="rank-card" data-player="' + esc(p.id) + '">' +
+      '<span class="rank-no">' + rank + "</span>" +
+      '<span class="rank-flag">' + esc(flag) + "</span>" +
+      '<div class="rank-main"><div class="rank-name">' + esc(p.name) + "</div>" +
+      '<div class="rank-sub">' + esc(posAbbr(p.position)) + " · " + esc(p.team) + "</div></div>" +
+      '<span class="rank-score">' + esc(sc) + "</span></div>";
+  }
+  function paintRanking() {
+    var wrap = viewEl.querySelector(".rank-wrap");
+    if (!wrap) return;
+    var list = DATA.players.slice();
+    if (rankPos !== "all") list = list.filter(function (p) { return posClass(p.position) === rankPos; });
+    list.sort(function (a, b) { var d = rankMetric(b) - rankMetric(a); return d || (b.ovr || 0) - (a.ovr || 0); });
+    var shown = list.slice(0, rankLimit);
+    var sorts = [["ovr", "종합"], ["rating", "유저평점"], ["value", "가치"], ["fame", "유명도"]];
+    var sortUi = '<div class="rank-sorts">' + sorts.map(function (s) { return '<button class="rank-sb' + (rankSort === s[0] ? " on" : "") + '" data-rsort="' + s[0] + '">' + s[1] + "</button>"; }).join("") + "</div>";
+    var posF = [["all", "전체"], ["fw", "공격"], ["mf", "미드"], ["df", "수비"], ["gk", "GK"]];
+    var posUi = '<div class="rank-pos">' + posF.map(function (s) { return '<button class="rank-pb' + (rankPos === s[0] ? " on" : "") + '" data-rpos="' + s[0] + '">' + s[1] + "</button>"; }).join("") + "</div>";
+    var more = (list.length > rankLimit) ? '<button class="rank-more">더보기 (' + (list.length - rankLimit) + "명)</button>" : "";
+    wrap.innerHTML = '<div class="sec-h">⚡ 선수 랭킹</div>' + sortUi + posUi +
+      '<div class="rank-list">' + shown.map(function (p, i) { return rankCard(p, i + 1); }).join("") + "</div>" + more;
+  }
+
   function renderSearch(q) {
     backBtn.hidden = true;
     tabsEl.hidden = true;
@@ -479,7 +517,8 @@
         recent.forEach(function (r) { html += '<button class="chip rchip" data-q="' + esc(r) + '">' + esc(r) + "</button>"; });
         html += "</div>";
       }
-      // 등급별 둘러보기
+      html += '<div class="rank-wrap"></div>';
+      // 등급별 둘러보기 (보조)
       var grades = ["월드클래스", "주전급", "로테이션", "유망주"];
       var counts = {};
       DATA.players.forEach(function (p) { counts[p.grade] = (counts[p.grade] || 0) + 1; });
@@ -491,8 +530,14 @@
           '<span class="grade-count">' + counts[g] + "명 →</span></button>";
       });
       html += "</div>";
-      html += '<div class="search-hint">선수·나라·소속 클럽을 검색해보세요.</div>';
       viewEl.innerHTML = html;
+      paintRanking();
+      if (window.KickComments && KickComments.configured()) {
+        KickComments.ready().then(function () { return KickComments.ratingStats(); }).then(function (m) {
+          RANK_STATS = m || {};
+          if (parseHash().name === "search" && !searchEl.value.trim()) paintRanking();
+        }).catch(function () {});
+      }
       return;
     }
 
@@ -1254,6 +1299,9 @@
       KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
       return;
     }
+    if ((my = e.target.closest(".rank-sb"))) { rankSort = my.getAttribute("data-rsort"); rankLimit = 30; paintRanking(); return; }
+    if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
+    if (e.target.closest(".rank-more")) { rankLimit += 30; paintRanking(); return; }
     if ((ad = e.target.closest(".mgr-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
     if ((ad = e.target.closest(".mgr-del"))) {

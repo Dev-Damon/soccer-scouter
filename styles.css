@@ -248,6 +248,21 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .rate-star.on { color: var(--gold, #f5b301); }
 .rate-star:active { transform: scale(1.18); }
 .rate-avg { color: var(--muted, #9fb0cc); font-size: 13px; }
+/* 선수 랭킹 (검색 탭) */
+.rank-sorts, .rank-pos { display: flex; gap: 6px; margin: 2px 0 8px; flex-wrap: wrap; }
+.rank-sb, .rank-pb { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; font-weight: 700; padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.rank-sb.on, .rank-pb.on { background: var(--accent); color: #06122a; border-color: var(--accent); }
+.rank-list { display: flex; flex-direction: column; gap: 7px; }
+.rank-card { display: flex; align-items: center; gap: 11px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; cursor: pointer; }
+.rank-card:active { transform: scale(0.99); }
+.rank-no { width: 26px; text-align: center; font-weight: 900; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.rank-card:nth-child(-n+3) .rank-no { color: var(--gold, #f5b301); }
+.rank-flag { font-size: 24px; flex: none; }
+.rank-main { flex: 1; min-width: 0; }
+.rank-name { font-weight: 700; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rank-sub { color: var(--muted); font-size: 12px; }
+.rank-score { font-weight: 900; font-size: 16px; color: var(--accent); flex: none; min-width: 40px; text-align: right; }
+.rank-more { width: 100%; margin-top: 10px; background: var(--bg-soft); border: 1px solid var(--line); color: var(--text); font-weight: 700; padding: 11px; border-radius: 12px; cursor: pointer; }
 
 /* Player list row */
 .player-row {
