@@ -48,7 +48,7 @@ html, body {
 /* Search */
 .search-wrap { position: relative; padding: 6px 0 16px; }
 .search {
-  width: 100%; padding: 14px 44px 14px 16px; font-size: 16px;
+  width: 100%; padding: 14px 44px 14px 16px; font-size: 14px;
   background: var(--bg-soft); color: var(--text);
   border: 1px solid var(--line); border-radius: 14px; outline: none;
 }
@@ -83,9 +83,9 @@ html, body {
 .section-title { color: var(--muted); font-size: 13px; font-weight: 600; margin: 18px 4px 10px; letter-spacing: 0.3px; }
 /* 메인 히어로 배너 — 시안 B (센터 히어로) */
 .hero-banner { padding: 14px 2px 16px; margin: 0 0 6px; text-align: center; }
-.hb-kicker { font-size: 15px; font-weight: 800; color: var(--accent, #4f8cff); letter-spacing: 1px; }
-.hb-title { font-size: 25px; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; color: var(--text); margin-top: 7px; }
-.hb-sub { margin-top: 9px; font-size: 13px; color: var(--muted); min-height: 17px; }
+.hb-kicker { font-size: 18px; font-weight: 800; color: var(--accent, #4f8cff); letter-spacing: 1px; }
+.hb-title { font-size: 17px; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; color: var(--muted); margin-top: 7px; }
+.hb-sub { margin-top: 9px; font-weight: 900; font-size: 22px; color: var(--text); min-height: 17px; }
 @keyframes wittySlide { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
 .hb-sub.anim { animation: wittySlide 0.45s ease; }
 .hb-dday { margin-top: 13px; display: inline-block; font-size: 13px; font-weight: 800; color: #0b1220; background: var(--accent, #4f8cff); border-radius: 999px; padding: 7px 18px; }
