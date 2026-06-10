@@ -219,7 +219,8 @@
       : '<div class="cmt-login"><span class="cmt-login-t">로그인하고 댓글 남기기</span>' +
         ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in g" data-p="google">' + GICON + "Google</button>" : "") +
         ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
-    return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" + head +
+    return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" +
+      '<div class="cmt-guide">댓글로 좋아하는 선수를 응원해보세요! ⚽</div>' + head +
       (roots.length ? sortUi : "") +
       '<div class="cmt-list">' +
       (roots.length ? roots.map(function (c) { return cHtml(c, false, rx); }).join("") : '<div class="cmt-empty">첫 댓글을 남겨보세요!</div>') +
@@ -412,7 +413,8 @@
       ".cmt-more{font-size:16px;line-height:1;letter-spacing:1px;padding:0 4px}",
       ".cmt-menu{position:absolute;right:0;top:100%;margin-top:4px;background:var(--card,#18233a);border:1px solid var(--line,#2a3a5c);border-radius:10px;padding:4px;z-index:5;box-shadow:0 6px 20px rgba(0,0,0,.4);min-width:96px}",
       ".cmt-menu[hidden]{display:none}",
-      ".cmt-menu button{display:block;width:100%;text-align:left;padding:8px 12px;font-size:13px;white-space:nowrap}"
+      ".cmt-menu button{display:block;width:100%;text-align:left;padding:8px 12px;font-size:13px;white-space:nowrap}",
+      ".cmt-guide{background:var(--bg-soft,#131c2e);border:1px solid var(--line,#2a3a5c);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--muted,#9fb0cc);margin-bottom:12px}"
     ].join("");
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   }
