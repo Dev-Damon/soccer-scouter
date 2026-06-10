@@ -213,9 +213,27 @@
       else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
     }
     var witty = WITTY[Math.floor(Math.random() * WITTY.length)];
-    return '<div class="hero-banner"><div class="hb-title">2026 월드컵,<br>국가와 선수를 한눈에</div>' +
+    return '<div class="hero-banner">' +
+      '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
+      '<div class="hb-title">국가와 선수를 한눈에</div>' +
       '<div class="hb-sub">' + esc(witty) + "</div>" +
       '<div class="hb-dday">' + dday + "</div></div>";
+  }
+
+  // 위트 문구 2초마다 슬라이드 전환(위→아래)
+  var wittyTimer = null;
+  function startWittyTicker() {
+    if (wittyTimer) { clearInterval(wittyTimer); wittyTimer = null; }
+    var el = viewEl.querySelector(".hb-sub");
+    if (!el) return;
+    var i = Math.max(0, WITTY.indexOf(el.textContent));
+    wittyTimer = setInterval(function () {
+      if (!document.body.contains(el)) { clearInterval(wittyTimer); wittyTimer = null; return; }
+      i = (i + 1) % WITTY.length;
+      el.classList.remove("anim"); void el.offsetWidth;  // 애니메이션 재생용 리플로우
+      el.textContent = WITTY[i];
+      el.classList.add("anim");
+    }, 2000);
   }
 
   function renderSchedule() {
@@ -278,6 +296,7 @@
     }
 
     viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
+    startWittyTicker();
 
     // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬
     var stripEl = viewEl.querySelector(".datestrip");
