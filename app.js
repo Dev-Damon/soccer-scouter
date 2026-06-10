@@ -1390,7 +1390,16 @@
   }
 
   // ===================== 관리자 페이지 (#admin) =====================
-  var adminCache = null, adminTab = "reports", adminQ = "";
+  var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act";
+  function membersTableHtml() {
+    var us = (adminCache.users || []).slice();
+    if (memberSort === "join") us.sort(function (a, b) { return (b.joined || "").localeCompare(a.joined || ""); });
+    else us.sort(function (a, b) { return (b.comments + b.chats + b.ratings + b.posts) - (a.comments + a.chats + a.ratings + a.posts); });
+    var sorts = '<div class="mb-sorts"><button class="mb-sort' + (memberSort === "act" ? " on" : "") + '" data-msort="act">활동순</button><button class="mb-sort' + (memberSort === "join" ? " on" : "") + '" data-msort="join">가입순</button></div>';
+    var head = '<div class="mb-row mb-head"><span class="mb-n">이름</span><span>가입</span><span>댓글</span><span>채팅</span><span>평점</span><span>글</span></div>';
+    var rows = us.length ? us.map(function (u) { return '<div class="mb-row"><span class="mb-n">' + esc(u.name) + '</span><span>' + (u.joined ? agoShort(u.joined) : "") + '</span><span>' + u.comments + '</span><span>' + u.chats + '</span><span>' + u.ratings + '</span><span>' + u.posts + "</span></div>"; }).join("") : '<div class="empty">회원이 없습니다.</div>';
+    return sorts + '<div class="mb-table">' + head + rows + "</div>";
+  }
   function adminItem(c, extra) {
     var ti = threadInfo(c.thread_key);
     return '<div class="mgr-item' + (c.hidden ? " mgr-hidden" : "") + '">' +
@@ -1425,6 +1434,8 @@
         if (!c) return '<div class="mgr-item"><div class="mgr-ib">(삭제된 댓글) · 사유: ' + esc(rp.reason || "-") + '</div><div class="mgr-act">' + ign + "</div></div>";
         return adminItem(c, '<div class="mgr-reason">🚩 ' + esc(rp.reason || "(사유 없음)") + "</div>" + ign);
       }).join("") : '<div class="empty">신고된 댓글이 없습니다.</div>';
+    } else if (adminTab === "members") {
+      html = membersTableHtml();
     } else {
       var cs = adminCache.comments;
       if (adminQ) { var q = adminQ.toLowerCase(); cs = cs.filter(function (c) { return (c.body || "").toLowerCase().indexOf(q) >= 0 || (c.name || "").toLowerCase().indexOf(q) >= 0; }); }
@@ -1433,7 +1444,8 @@
     viewEl.innerHTML = '<div class="mgr"><h2 class="mgr-h">🛠 관리자</h2>' + adminDashHtml(adminCache.dash) +
       '<div class="my-tabs">' +
         '<button class="mgr-tab my-tabbtn' + (adminTab === "reports" ? " on" : "") + '" data-adtab="reports">신고 내역 ' + adminCache.reports.length + "</button>" +
-        '<button class="mgr-tab my-tabbtn' + (adminTab === "all" ? " on" : "") + '" data-adtab="all">전체 댓글 ' + adminCache.comments.length + "</button></div>" +
+        '<button class="mgr-tab my-tabbtn' + (adminTab === "all" ? " on" : "") + '" data-adtab="all">전체 댓글 ' + adminCache.comments.length + "</button>" +
+        '<button class="mgr-tab my-tabbtn' + (adminTab === "members" ? " on" : "") + '" data-adtab="members">회원 ' + ((adminCache.users || []).length) + "</button></div>" +
       (adminTab === "all" ? '<input class="mgr-search" placeholder="댓글·작성자 검색" value="' + esc(adminQ) + '">' : "") +
       '<div class="mgr-list">' + html + "</div></div>";
   }
@@ -1444,9 +1456,9 @@
     KickComments.ready().then(function () {
       if (parseHash().name !== "admin") return;
       if (!KickComments.isAdmin()) { viewEl.innerHTML = '<div class="empty">접근 권한이 없습니다.</div>'; return; }
-      Promise.all([KickComments.listReports(), KickComments.listAllComments(""), KickComments.adminDashboard()]).then(function (res) {
+      Promise.all([KickComments.listReports(), KickComments.listAllComments(""), KickComments.adminDashboard(), KickComments.adminUsers()]).then(function (res) {
         if (parseHash().name !== "admin") return;
-        adminCache = { reports: res[0] || [], comments: res[1] || [], dash: res[2] || null };
+        adminCache = { reports: res[0] || [], comments: res[1] || [], dash: res[2] || null, users: res[3] || [] };
         paintAdmin();
       });
     });
@@ -1657,6 +1669,7 @@
       KickComments.updatePost(sitem.getAttribute("data-pid"), spost ? spost.category : "자유", snb, spost ? spost.pinned : false).then(function () { renderBoard(); });
       return;
     }
+    if ((ad = e.target.closest(".mb-sort"))) { memberSort = ad.getAttribute("data-msort"); paintAdmin(); return; }
     if ((ad = e.target.closest(".mgr-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
     if ((ad = e.target.closest(".mgr-del"))) {

@@ -354,6 +354,7 @@
   // ── 관리자용 ──
   function isAdmin() { return !!(user && user.id === ADMIN_UID); }
   function adminDashboard() { if (!isAdmin()) return Promise.resolve(null); return sb.rpc("admin_dashboard").then(function (r) { return r.data || null; }).catch(function () { return null; }); }
+  function adminUsers() { if (!isAdmin()) return Promise.resolve([]); return sb.rpc("admin_users").then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function listReports() {
     if (!isAdmin()) return Promise.resolve([]);
     return sb.from("comment_reports").select("*,comments(*)").order("created_at", { ascending: false }).limit(300)
@@ -568,7 +569,7 @@
     signOut: function () { return sb ? sb.auth.signOut() : Promise.resolve(); },
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },
-    isAdmin: isAdmin, adminDashboard: adminDashboard, listReports: listReports, listAllComments: listAllComments,
+    isAdmin: isAdmin, adminDashboard: adminDashboard, adminUsers: adminUsers, listReports: listReports, listAllComments: listAllComments,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
