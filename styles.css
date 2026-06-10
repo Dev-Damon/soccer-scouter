@@ -377,6 +377,21 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .mr-pt { flex: 1; min-width: 0; height: 22px; border-radius: 4px; background: #1c2740; color: #6f7d96; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .mr-pt.on { background: #f5b301; color: #0b1020; }
 .mr-avg b { color: #f5b301; }
+/* 후원(응원하기) */
+.donate-btn { margin-left: auto; background: linear-gradient(135deg, #f5b301, #ffcf4d); color: #1a1205; border: 0; font-weight: 800; font-size: 13px; border-radius: 999px; padding: 7px 14px; cursor: pointer; white-space: nowrap; }
+.donate-ov { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: flex-end; justify-content: center; z-index: 200; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.donate-ov.on { opacity: 1; pointer-events: auto; }
+.donate-sheet { background: #0b1220; border: 1px solid var(--line); border-radius: 18px 18px 0 0; width: 100%; max-width: 480px; padding: 22px 18px 28px; position: relative; }
+.ds-x { position: absolute; top: 14px; right: 14px; background: none; border: 0; color: var(--muted); font-size: 18px; cursor: pointer; }
+.ds-title { font-size: 19px; font-weight: 900; }
+.ds-sub { color: var(--muted); font-size: 13px; margin: 5px 0 16px; }
+.ds-tier { display: flex; align-items: center; justify-content: space-between; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 9px; font-size: 15px; font-weight: 700; color: var(--text); text-decoration: none; }
+.ds-tier b { color: #f5b301; }
+.ds-tier:active { background: #15294e; }
+.ds-fall { font-size: 13px; color: var(--muted); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.ds-fall b { color: var(--text); }
+.ds-copy { background: var(--bg-soft); border: 1px solid var(--line); color: var(--text); border-radius: 7px; padding: 3px 10px; font-size: 12px; font-weight: 700; cursor: pointer; margin-left: 4px; }
+.ds-note { margin-top: 14px; font-size: 11.5px; line-height: 1.5; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }
 .bd-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }

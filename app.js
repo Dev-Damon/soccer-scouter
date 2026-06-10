@@ -1938,6 +1938,35 @@
     searchEl.value = ""; homeTab = "schedule"; go("");
   });
 
+  // ===== 후원(응원하기) =====
+  (function () {
+    var btn = document.getElementById("donateBtn"); if (!btn) return;
+    var ACCT = "100004130027", BANK = "토스뱅크";
+    var TIERS = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
+    function tossLink(amt) { return "supertoss://send?amount=" + amt + "&bank=%ED%86%A0%EC%8A%A4%EB%B1%85%ED%81%AC&accountNo=" + ACCT + "&origin=qr"; }
+    var ov = null;
+    function close() { if (ov) ov.classList.remove("on"); }
+    function open() {
+      if (!ov) {
+        ov = document.createElement("div"); ov.className = "donate-ov";
+        var tiers = TIERS.map(function (t) { return '<a class="ds-tier" href="' + tossLink(t[1]) + '"><span>' + t[0] + "</span><b>" + t[1].toLocaleString() + "원</b></a>"; }).join("");
+        ov.innerHTML = '<div class="donate-sheet"><button class="ds-x" aria-label="닫기">✕</button>' +
+          '<div class="ds-title">⚽ 개발자에게 한 골!</div>' +
+          '<div class="ds-sub">여러분의 응원이 킥톡을 계속 뛰게 합니다 🙌</div>' + tiers +
+          '<div class="ds-fall">토스가 없다면 계좌로 — <b>' + BANK + " " + ACCT + '</b> <button class="ds-copy" data-acct="' + ACCT + '">복사</button></div>' +
+          '<div class="ds-note muted-note">탭하면 토스 송금창이 열려요(토스 앱 필요). 보내주신 마음은 서버비·개선에 쓰입니다. 감사합니다 💙</div></div>';
+        document.body.appendChild(ov);
+        ov.addEventListener("click", function (e) {
+          if (e.target === ov || e.target.closest(".ds-x")) { close(); return; }
+          var cp = e.target.closest(".ds-copy");
+          if (cp) { try { navigator.clipboard.writeText(cp.getAttribute("data-acct")); cp.textContent = "복사됨!"; setTimeout(function () { cp.textContent = "복사"; }, 1500); } catch (e2) {} return; }
+        });
+      }
+      ov.classList.add("on"); twem(ov);
+    }
+    btn.addEventListener("click", open);
+  })();
+
   window.addEventListener("hashchange", route);
 
   // 동적 영역이 다시 그려질 때마다 이모지→이미지 변환(국기 포함)
