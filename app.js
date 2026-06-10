@@ -179,6 +179,25 @@
     return all.slice(0, limit || 8);
   }
 
+  function isKoreaFx(f) { return f.homeName === "대한민국" || f.awayName === "대한민국" || f.homeId === "south-korea" || f.awayId === "south-korea"; }
+  function ddayCount(targetKst, todayKst) { return Math.round((Date.parse(targetKst + "T00:00:00Z") - Date.parse(todayKst + "T00:00:00Z")) / 86400000); }
+  function topBanner() {
+    var today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+    var fxs = DATA.fixtures || [];
+    var opening = fxs.map(fxDate).filter(Boolean).sort()[0], dday;
+    if (opening && today < opening) {
+      var d = ddayCount(opening, today);
+      dday = "🏆 2026 월드컵 개막 " + (d <= 0 ? "D-DAY" : "D-" + d);
+    } else {
+      var krDates = fxs.filter(isKoreaFx).map(fxDate).filter(Boolean).sort(), next = null;
+      for (var i = 0; i < krDates.length; i++) { if (krDates[i] >= today) { next = krDates[i]; break; } }
+      if (next) { var d2 = ddayCount(next, today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
+      else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
+    }
+    return '<div class="hero-banner"><div class="hb-title">2026 월드컵, 국가와 선수를 한눈에</div>' +
+      '<div class="hb-dday">' + dday + "</div></div>";
+  }
+
   function renderSchedule() {
     var dates = fixtureDates();
     if (!dates.length) {
@@ -238,7 +257,7 @@
       listHtml += "</div>";
     }
 
-    viewEl.innerHTML = strip + heroHtml + listHtml;
+    viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
 
     // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬
     var stripEl = viewEl.querySelector(".datestrip");

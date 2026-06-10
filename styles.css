@@ -80,6 +80,10 @@ html, body {
 
 /* Section titles */
 .section-title { color: var(--muted); font-size: 13px; font-weight: 600; margin: 18px 4px 10px; letter-spacing: 0.3px; }
+/* 메인 히어로 배너 */
+.hero-banner { background: linear-gradient(135deg, var(--card-2, #1e2c47), var(--card, #18233a)); border: 1px solid var(--line, #2a3a5c); border-radius: 16px; padding: 16px 16px 14px; margin: 2px 0 14px; text-align: center; }
+.hb-title { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; }
+.hb-dday { margin-top: 9px; display: inline-block; font-size: 13px; font-weight: 800; color: var(--accent, #4f8cff); background: rgba(79, 140, 255, 0.12); border: 1px solid rgba(79, 140, 255, 0.3); border-radius: 999px; padding: 5px 14px; }
 
 /* Date section header (일정) */
 .date-head {
