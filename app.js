@@ -190,7 +190,7 @@
       '<div class="brk2-fit"><div class="brk2">' + L + C + R + "</div></div>";
     var fit = viewEl.querySelector(".brk2-fit"), inner = viewEl.querySelector(".brk2");
     if (fit && inner) {
-      var sc = Math.min(1, fit.clientWidth / inner.scrollWidth);
+      var sc = Math.min(2.4, fit.clientWidth / inner.scrollWidth);
       inner.style.transform = "scale(" + sc + ")";
       inner.style.transformOrigin = "top left";
       fit.style.height = Math.ceil(inner.scrollHeight * sc) + "px";
