@@ -875,10 +875,7 @@
   // ===================== 나라 상세 =====================
   function teamSchedule(t) {
     var now = Date.now();
-    var fxs = (DATA.fixtures || []).filter(function (f) {
-      if (f.homeId !== t.id && f.awayId !== t.id) return false;
-      var ko = matchKickoff(f); return !ko || ko > now;
-    });
+    var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === t.id || f.awayId === t.id; });
     fxs.sort(function (a, b) { return (matchKickoff(a) || 0) - (matchKickoff(b) || 0); });
     if (!fxs.length) return "";
     var rows = fxs.map(function (f) {
@@ -886,9 +883,10 @@
       var oppNm = opp ? (esc(opp.flag) + " " + esc(opp.name)) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
       var when = esc((fxDate(f) || "") + (fxTime(f) ? " " + fxTime(f) : ""));
       var stage = f.group ? esc(f.group + "조") : esc(f.stage || "");
-      return '<div class="ts-row" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
+      var ko = matchKickoff(f), past = ko && ko < now;
+      return '<div class="ts-row' + (past ? " past" : "") + '" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + (past ? ' <span class="ts-done">종료</span>' : "") + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
     }).join("");
-    return '<div class="block"><h3>📅 남은 경기 일정</h3><div class="ts-list">' + rows + "</div></div>";
+    return '<div class="block"><h3>📅 경기 일정</h3><div class="ts-list">' + rows + "</div></div>";
   }
   function renderTeam(id) {
     var t = teamsById[id];
@@ -909,8 +907,9 @@
     var html = '<div class="detail">' +
       '<div class="country-hero">' +
         '<div class="ch-grid"></div>' +
+        saveBtnHtml("team:" + t.id) +
         '<span class="team-flag lg">' + esc(t.flag) + "</span>" +
-        '<div class="ch-meta"><h2>' + esc(t.name) + saveBtnHtml("team:" + t.id) + "</h2>" +
+        '<div class="ch-meta"><h2>' + esc(t.name) + "</h2>" +
         '<div class="team-rank">FIFA 랭킹 ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div>" +
         (t.lastWc ? '<div class="team-wc">🏆 ' + (t.lastWc.inLast2022
           ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
@@ -1389,12 +1388,12 @@
   function mrRow(pid, rd, md) {
     var p = playersById[pid]; if (!p) return "";
     var r = rd.byPlayer[pid], my = rd.mine[pid] || 0, cnt = r ? r.cnt : 0, avg = r ? r.avg.toFixed(1) : "";
-    var stars = ""; for (var s = 1; s <= 5; s++) stars += '<span class="mr-star' + (s <= my ? " on" : "") + '" data-rate-pid="' + esc(pid) + '" data-star="' + s + '">★</span>';
+    var pts = ""; for (var s = 1; s <= 10; s++) pts += '<span class="mr-pt' + (s <= my ? " on" : "") + '" data-rate-pid="' + esc(pid) + '" data-score="' + s + '">' + s + "</span>";
     var votes = md.votes[pid] || 0;
     return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
       '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
-      '<div class="mr-bot"><span class="mr-stars">' + stars + "</span>" +
-      '<span class="mr-avg">' + (cnt ? "평균 ⭐" + avg + " (" + cnt + ")" : '<span class="muted-note">평점 없음</span>') + "</span></div></div>";
+      '<div class="mr-pts">' + pts + "</div>" +
+      '<div class="mr-avg">' + (my ? '<b>내 ' + my + '점</b> · ' : "") + (cnt ? "평균 " + avg + "/10 (" + cnt + "명)" : '<span class="muted-note">아직 평점 없음 · 별점 탭</span>') + "</div></div>";
   }
   function renderMatchRate(matchId) {
     backBtn.hidden = false; tabsEl.hidden = true;
@@ -1416,7 +1415,7 @@
   }
   function paintMatchRate(rd, md) {
     if (!mrCtx) return;
-    mrCtx.mvpMine = md.mine;
+    mrCtx.mvpMine = md.mine; mrCtx.mine = rd.mine || {};
     var a = mrCtx.a, b = mrCtx.b, idsA = teamIds(a), idsB = teamIds(b), leader = null, lead = 0;
     idsA.concat(idsB).forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
     var html = '<div class="detail"><div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
@@ -1876,8 +1875,8 @@
     if (ex) { var elist = ex.parentNode.querySelector(".news-list"); if (elist) elist.classList.remove("news-collapsed"); ex.style.display = "none"; return; }
     var sbtn = e.target.closest(".save-btn");
     if (sbtn) { sbtn.classList.toggle("on", saveToggle(sbtn.getAttribute("data-save"))); return; }
-    var rst = e.target.closest(".mr-star");
-    if (rst) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } KickComments.rateMatchPlayer(mrCtx.matchId, rst.getAttribute("data-rate-pid"), +rst.getAttribute("data-star")).then(refreshMatchRatings); return; }
+    var rst = e.target.closest(".mr-pt");
+    if (rst) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var rpid = rst.getAttribute("data-rate-pid"), sc = +rst.getAttribute("data-score"); ((mrCtx.mine && mrCtx.mine[rpid] === sc) ? KickComments.unrateMatchPlayer(mrCtx.matchId, rpid) : KickComments.rateMatchPlayer(mrCtx.matchId, rpid, sc)).then(refreshMatchRatings); return; }
     var mvb = e.target.closest(".mr-mvp");
     if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var mpid = mvb.getAttribute("data-mvp-pid"); (mrCtx.mvpMine === mpid ? KickComments.unvoteMvp(mrCtx.matchId) : KickComments.voteMvp(mrCtx.matchId, mpid)).then(refreshMatchRatings); return; }
     var shc = e.target.closest(".share-card");

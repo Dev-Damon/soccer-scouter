@@ -365,6 +365,7 @@
     }).catch(function () { return { byPlayer: {}, mine: {} }; });
   }
   function rateMatchPlayer(matchId, playerId, score) { if (!user) return Promise.resolve(null); return sb.from("match_player_ratings").upsert({ match_id: matchId, player_id: playerId, user_id: user.id, score: score }, { onConflict: "match_id,player_id,user_id" }); }
+  function unrateMatchPlayer(matchId, playerId) { if (!user) return Promise.resolve(null); return sb.from("match_player_ratings").delete().eq("match_id", matchId).eq("player_id", playerId).eq("user_id", user.id); }
   function matchMvp(matchId) {
     return sb.from("match_mvp_votes").select("player_id,user_id").eq("match_id", matchId).then(function (r) {
       var rows = r.data || [], votes = {}, mine = null;
@@ -589,7 +590,7 @@
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },
     isAdmin: isAdmin, adminDashboard: adminDashboard, adminUsers: adminUsers, listReports: listReports, listAllComments: listAllComments,
-    matchRatings: matchRatings, rateMatchPlayer: rateMatchPlayer, matchMvp: matchMvp, voteMvp: voteMvp, unvoteMvp: unvoteMvp,
+    matchRatings: matchRatings, rateMatchPlayer: rateMatchPlayer, unrateMatchPlayer: unrateMatchPlayer, matchMvp: matchMvp, voteMvp: voteMvp, unvoteMvp: unvoteMvp,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
