@@ -528,6 +528,21 @@
     list = list.slice(0, 8);
     try { localStorage.setItem("ss_recent", JSON.stringify(list)); } catch (e) {}
   }
+  // 저장(찜) — localStorage. key: "player:{id}" / "team:{id}"
+  function saveGet() { try { return JSON.parse(localStorage.getItem("ss_saved") || "[]"); } catch (e) { return []; } }
+  function saveHas(key) { return saveGet().indexOf(key) !== -1; }
+  function saveToggle(key) { var l = saveGet(), i = l.indexOf(key); if (i < 0) l.unshift(key); else l.splice(i, 1); try { localStorage.setItem("ss_saved", JSON.stringify(l)); } catch (e) {} return i < 0; }
+  function saveBtnHtml(key) { var on = saveHas(key); return '<button class="save-btn' + (on ? " on" : "") + '" data-save="' + esc(key) + '" aria-label="저장">' + (on ? "★" : "☆") + "</button>"; }
+  function renderSaved() {
+    backBtn.hidden = true; tabsEl.hidden = true;
+    var keys = saveGet(), players = [], teams = [];
+    keys.forEach(function (k) { var pr = k.split(":"); if (pr[0] === "player" && playersById[pr[1]]) players.push(playersById[pr[1]]); else if (pr[0] === "team" && teamsById[pr[1]]) teams.push(teamsById[pr[1]]); });
+    var html = '<div class="sec-h">⭐ 저장</div>';
+    if (!players.length && !teams.length) { viewEl.innerHTML = html + '<div class="empty">아직 저장한 선수·나라가 없어요.<br>선수/나라 상세에서 ☆ 를 눌러 찜해보세요!</div>'; return; }
+    if (teams.length) html += '<div class="sv-sub">나라</div><div class="grid">' + teams.map(function (t) { return '<div class="player-row" data-team="' + esc(t.id) + '"><span class="rank-flag" style="font-size:24px">' + esc(t.flag || "🏳") + '</span><div class="player-main"><div class="player-name">' + esc(t.name) + '</div><div class="player-sub">대표팀</div></div></div>'; }).join("") + "</div>";
+    if (players.length) html += '<div class="sv-sub">선수</div><div class="grid">' + players.map(function (p) { return playerRow(p, true); }).join("") + "</div>";
+    viewEl.innerHTML = html; twem(viewEl);
+  }
 
   // ===================== 선수 랭킹 (검색 탭 기본 화면) =====================
   var rankSort = "ovr", rankPos = "all", rankLimit = 30, RANK_STATS = null;
@@ -749,6 +764,7 @@
             '<div class="detail-name-en">' + esc(p.nameEn) + "</div>" +
             '<div class="pl-badges">' + badge(p) + "</div></div>" +
           '<div class="ovr"><span class="ovr-l">OVR</span><span class="ovr-v">' + ovr + "</span></div>" +
+          saveBtnHtml("player:" + p.id) +
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
@@ -796,6 +812,7 @@
           ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
           : (t.lastWc.year ? "최근 월드컵 " + esc(t.lastWc.year) + " · " + esc(t.lastWc.stage) : "2026 첫 본선 진출")) + "</div>" : "") +
         "</div>" +
+        saveBtnHtml("team:" + t.id) +
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
 
@@ -1458,7 +1475,7 @@
     if (r.name === "post") { setTabbar("board"); return renderPost(r.id); }
     if (r.name === "write") { setTabbar("board"); return renderWrite(); }
     if (r.name === "edit") { setTabbar("board"); return renderWrite(r.id); }
-    if (r.name === "saved") { setTabbar("saved"); return renderPlaceholder("저장", "찜한 선수·나라를 모아보는 공간 (준비 중)"); }
+    if (r.name === "saved") { setTabbar("saved"); return renderSaved(); }
     if (r.name === "my") { setTabbar("my"); return renderMy(); }
     if (r.name === "admin") { setTabbar(""); return renderAdmin(); }
     // 홈
@@ -1589,6 +1606,8 @@
     if (gb) { renderGradeList(gb.getAttribute("data-grade")); return; }
     var ex = e.target.closest("[data-expand]");
     if (ex) { var elist = ex.parentNode.querySelector(".news-list"); if (elist) elist.classList.remove("news-collapsed"); ex.style.display = "none"; return; }
+    var sbtn = e.target.closest(".save-btn");
+    if (sbtn) { var son = saveToggle(sbtn.getAttribute("data-save")); sbtn.classList.toggle("on", son); sbtn.textContent = son ? "★" : "☆"; return; }
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");
