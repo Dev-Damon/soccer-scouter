@@ -87,6 +87,13 @@
     var t = teamId ? teamsById[teamId] : null;
     return t ? t.flag : "🏳️";
   }
+  // 2026 월드컵 공동개최국(미국/캐나다/멕시코) — 경기장 도시·구장명으로 판별. 멕·캐만 지정, 나머지 개최도시는 전부 미국.
+  function hostCountry(fx) {
+    var c = ((fx && fx.city) || "") + " " + ((fx && fx.venue) || "");
+    if (/mexico city|zapopan|guadalajara|guadalupe|nuevo le|monterrey|azteca|akron|bbva/i.test(c)) return "🇲🇽 멕시코";
+    if (/toronto|vancouver|bc place|bmo field/i.test(c)) return "🇨🇦 캐나다";
+    return "🇺🇸 미국";
+  }
   var DOW = ["일", "월", "화", "수", "목", "금", "토"];
   function parseDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
@@ -259,7 +266,7 @@
 
   function heroCard(fx) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
-    var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
+    var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var heroAttr = (fx.homeId && fx.awayId) ? ' data-match="' + esc(fx.id) + '"'
       : ' data-team="' + esc(fx.homeId || fx.awayId) + '"';
     return '<div class="hero"' + heroAttr + ">" +
@@ -284,7 +291,7 @@
       : (clickable ? ' data-team="' + esc(fx.homeId || fx.awayId) + '"' : "");
     var timeLabel = fxTime(fx) ? esc(fxTime(fx)) : "시간 미정";
     var groupLabel = fx.group ? esc(fx.group) + "조" : esc(fx.stage || "");
-    var meta = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
+    var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var lv = LIVE[fx.id];
     var live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
     var mid;
@@ -687,7 +694,7 @@
     backBtn.hidden = false; tabsEl.hidden = true;
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
-    var where = [fx.venue, fx.city].filter(Boolean).map(esc).join(" · ");
+    var where = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var top = (fx.group ? esc(fx.group) + "조" : esc(fx.stage || "")) + " · " + when + (where ? " · " + where : "");
 
     // 한쪽만 정해진 경우(토너먼트 미정 등)
