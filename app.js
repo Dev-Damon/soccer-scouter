@@ -141,6 +141,7 @@
     var parts = h.split("/");
     if (parts[0] === "player") return { name: "player", id: parts[1] };
     if (parts[0] === "compare") return { name: "compare", a: parts[1], b: parts[2] };
+    if (parts[0] === "rate") return { name: "rate", id: parts[1] };
     if (parts[0] === "team") return { name: "team", id: parts[1] };
     if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "manager") return { name: "manager", id: parts[1] };
@@ -1041,14 +1042,14 @@
     function side(t, left, col) {
       return (t.lineup || []).map(function (d) {
         var p = playersById[d.playerId] || {};
-        var num = (p.number != null ? p.number : ""), nm = (p.name || "").trim();
+        var num = (p.number != null ? p.number : ""), nm = (p.name || "").trim().split(" ").pop();
         var fx = (90 - d.y) / 70;
         var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
         var py = (d.x / 100) * 0.80 * H + 0.10 * H;
         var pd = p.id ? ' data-player="' + esc(p.id) + '"' : "";
         return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="16" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
           '<text x="' + px.toFixed(0) + '" y="' + (py + 5).toFixed(0) + '" fill="#fff" font-size="15" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-          '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#e6edf8" font-size="14" font-weight="700" text-anchor="middle">' + esc(nm) + "</text></g>";
+          '<text x="' + px.toFixed(0) + '" y="' + (py + 30).toFixed(0) + '" fill="#e6edf8" font-size="12" font-weight="400" text-anchor="middle">' + esc(nm) + "</text></g>";
       }).join("");
     }
     var pitch = '<rect width="' + W + '" height="' + H + '" fill="#13351f"/>' +
@@ -1110,7 +1111,7 @@
         '<div class="block h2h-slot"></div>' +
         (mf ? '<div class="block">' + mf + "</div>" : "") +
         '<div class="block lineup-slot"></div>' +
-        '<div class="block mratings-slot"></div>' +
+        '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
@@ -1131,7 +1132,6 @@
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
-    renderMatchRatings(viewEl.querySelector(".mratings-slot"), fx.id, a, b);
   }
 
   // ===================== 감독 상세 =====================
@@ -1365,41 +1365,51 @@
   }
   // ===== 경기 평점·MVP =====
   var mrCtx = null;
-  function renderMatchRatings(slot, matchId, a, b) {
-    if (!slot) return;
-    var ids = [];
-    (a.lineup || []).concat(b.lineup || []).forEach(function (d) { if (playersById[d.playerId] && ids.indexOf(d.playerId) < 0) ids.push(d.playerId); });
-    if (!ids.length || !window.KickComments || !KickComments.configured()) { slot.style.display = "none"; return; }
-    mrCtx = { matchId: matchId, ids: ids };
-    slot.innerHTML = '<h3>⭐ 선수 평점 · MVP</h3><div class="h2h-loading">불러오는 중…</div>';
-    KickComments.ready().then(function () {
-      return Promise.all([KickComments.matchRatings(matchId), KickComments.matchMvp(matchId)]);
-    }).then(function (res) { if (parseHash().name === "match") paintMatchRatings(slot, res[0], res[1]); }).catch(function () { slot.style.display = "none"; });
+  function matchKickoff(fx) { try { var ms = Date.parse(fxDate(fx) + "T" + (fxTime(fx) || "00:00") + ":00+09:00"); return isNaN(ms) ? null : ms; } catch (e) { return null; } }
+  function matchEnded(fx) { var lv = LIVE[fx.id]; if (lv && lv.state === "post") return true; var ko = matchKickoff(fx); return ko ? Date.now() > ko + 130 * 60000 : false; }
+  function teamIds(t) { var ids = []; (t.lineup || []).forEach(function (d) { if (playersById[d.playerId] && ids.indexOf(d.playerId) < 0) ids.push(d.playerId); }); return ids; }
+  function mrRow(pid, rd, md) {
+    var p = playersById[pid]; if (!p) return "";
+    var r = rd.byPlayer[pid], my = rd.mine[pid] || 0, cnt = r ? r.cnt : 0, avg = r ? r.avg.toFixed(1) : "";
+    var stars = ""; for (var s = 1; s <= 5; s++) stars += '<span class="mr-star' + (s <= my ? " on" : "") + '" data-rate-pid="' + esc(pid) + '" data-star="' + s + '">★</span>';
+    var votes = md.votes[pid] || 0;
+    return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
+      '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
+      '<div class="mr-bot"><span class="mr-stars">' + stars + "</span>" +
+      '<span class="mr-avg">' + (cnt ? "평균 ⭐" + avg + " (" + cnt + ")" : '<span class="muted-note">평점 없음</span>') + "</span></div></div>";
   }
-  function paintMatchRatings(slot, rd, md) {
+  function renderMatchRate(matchId) {
+    backBtn.hidden = false; tabsEl.hidden = true;
+    var fx = fixturesById[matchId];
+    if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
+    var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
+    if (fx.awayId === "south-korea" && a && b) { var sw = a; a = b; b = sw; }
+    if (!a || !b) { viewEl.innerHTML = '<div class="empty">아직 팀이 확정되지 않은 경기예요.</div>'; return; }
+    var title = '<div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
+    if (!matchEnded(fx)) {
+      viewEl.innerHTML = '<div class="detail">' + title + '<div class="empty">⏱ 경기가 끝난 뒤 평점·MVP 투표가 열려요.<br>킥오프: ' + esc(fxDate(fx)) + " " + esc(fxTime(fx) || "") + '<br><br><button class="mbtn" data-match="' + esc(fx.id) + '">경기 분석으로 돌아가기</button></div></div>';
+      return;
+    }
+    mrCtx = { matchId: matchId, a: a, b: b };
+    viewEl.innerHTML = '<div class="detail">' + title + '<div class="h2h-loading">불러오는 중…</div></div>';
+    KickComments.ready().then(function () { return Promise.all([KickComments.matchRatings(matchId), KickComments.matchMvp(matchId)]); })
+      .then(function (res) { if (parseHash().name === "rate") paintMatchRate(res[0], res[1]); })
+      .catch(function () { viewEl.innerHTML = '<div class="detail">' + title + '<div class="empty">평점을 불러오지 못했어요.</div></div>'; });
+  }
+  function paintMatchRate(rd, md) {
     if (!mrCtx) return;
-    var ids = mrCtx.ids, leader = null, lead = 0;
-    ids.forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
-    var head = "<h3>⭐ 선수 평점 · MVP</h3>";
-    if (leader && lead > 0 && playersById[leader]) head += '<div class="mr-lead">🏆 현재 MVP <b>' + esc(playersById[leader].name) + "</b> · " + lead + '표 <span class="muted-note">(총 ' + md.total + "표)</span></div>";
-    head += '<div class="mr-hint muted-note">별 = 선수 평점 · 🏆 = MVP 투표(경기당 1명)</div>';
-    var rows = ids.map(function (pid) {
-      var p = playersById[pid]; if (!p) return "";
-      var r = rd.byPlayer[pid], my = rd.mine[pid] || 0, cnt = r ? r.cnt : 0, avg = r ? r.avg.toFixed(1) : "";
-      var stars = ""; for (var s = 1; s <= 5; s++) stars += '<span class="mr-star' + (s <= my ? " on" : "") + '" data-rate-pid="' + esc(pid) + '" data-star="' + s + '">★</span>';
-      var votes = md.votes[pid] || 0;
-      return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
-        '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
-        '<div class="mr-bot"><span class="mr-stars">' + stars + "</span>" +
-        '<span class="mr-avg">' + (cnt ? "평균 ⭐" + avg + " (" + cnt + ")" : '<span class="muted-note">평점 없음</span>') + "</span></div></div>";
-    }).join("");
-    slot.innerHTML = head + '<div class="mr-list">' + rows + "</div>";
-    twem(slot);
+    var a = mrCtx.a, b = mrCtx.b, idsA = teamIds(a), idsB = teamIds(b), leader = null, lead = 0;
+    idsA.concat(idsB).forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
+    var html = '<div class="detail"><div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
+    if (leader && lead > 0 && playersById[leader]) html += '<div class="mr-lead">🏆 현재 MVP <b>' + esc(playersById[leader].name) + "</b> · " + lead + '표 <span class="muted-note">(총 ' + md.total + "표)</span></div>";
+    html += '<div class="mr-hint muted-note">별 = 선수 평점 · 🏆 = MVP 투표(경기당 1명)</div>';
+    html += '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="mr-list">' + idsA.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
+    html += '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="mr-list">' + idsB.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div></div>";
+    viewEl.innerHTML = html; twem(viewEl);
   }
   function refreshMatchRatings() {
     if (!mrCtx) return;
-    var slot = viewEl.querySelector(".mratings-slot"); if (!slot) return;
-    Promise.all([KickComments.matchRatings(mrCtx.matchId), KickComments.matchMvp(mrCtx.matchId)]).then(function (res) { paintMatchRatings(slot, res[0], res[1]); });
+    Promise.all([KickComments.matchRatings(mrCtx.matchId), KickComments.matchMvp(mrCtx.matchId)]).then(function (res) { paintMatchRate(res[0], res[1]); });
   }
   function compLabel(e) {
     var ln = e.leagueName || e.competitionName || "";
@@ -1701,6 +1711,7 @@
     window.scrollTo(0, 0);
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
     if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
+    if (r.name === "rate") { setTabbar(""); renderMatchRate(r.id); return; }
     if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
     if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
@@ -1853,6 +1864,7 @@
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
+    var rgo = e.target.closest(".rate-go"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
     var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
     var mt = e.target.closest("[data-match]");
