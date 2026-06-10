@@ -448,7 +448,7 @@
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
       posBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
-      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + " · " + esc(posAbbr(p.position)) + "</div></div>" +
+      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + "</div></div>" +
       badge(p, hideScore) + "</div>";
   }
 
@@ -624,7 +624,7 @@
     var team = teamsById[teamIdByName(p.team)];
 
     var facts = [
-      ["포지션", posKo(p.position)],
+      ["포지션", posClass(p.position).toUpperCase()],
       ["나이", (p.age != null ? p.age + "세" : "-")],
       ["대표팀", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
     ];
