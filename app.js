@@ -1322,29 +1322,43 @@
       if (s < 86400) return Math.floor(s / 3600) + "시간 전"; return Math.floor(s / 86400) + "일 전";
     } catch (e) { return ""; }
   }
-  function boardItem(p) {
-    var st = boardCache.stats[p.id] || { likes: 0, comments: 0 };
-    return '<div class="bd-item' + (p.pinned ? " pinned" : "") + '" data-go="post/' + esc(p.id) + '">' +
-      (p.pinned ? '<span class="bd-cat-tag pin">📌 공지</span>' : '<span class="bd-cat-tag">' + esc(p.category) + "</span>") +
-      '<div class="bd-title">' + esc(p.title) + "</div>" +
-      (p.body ? '<div class="bd-prev">' + esc(p.body.slice(0, 60)) + "</div>" : "") +
-      '<div class="bd-meta">' + esc(p.name) + " · " + agoShort(p.created_at) +
-        ' <span class="bd-mc">❤ ' + st.likes + " · 💬 " + st.comments + "</span></div></div>";
+  function bdAvatar(name) {
+    var n = (name || "?").trim(), ch = n.charAt(0).toUpperCase() || "?";
+    var cols = ["#4f8cff", "#e5748a", "#5bbf8a", "#f0a93b", "#a986ff", "#46b9c9", "#e0739e"];
+    var h = 0, i; for (i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0;
+    return '<div class="pf-av" style="background:' + cols[h % cols.length] + '">' + esc(ch) + "</div>";
+  }
+  function postItem(p) {
+    var u = KickComments.user && KickComments.user();
+    var canMod = (u && u.id === p.user_id) || !!(KickComments.isAdmin && KickComments.isAdmin());
+    return '<div class="pf-item" data-pid="' + esc(p.id) + '">' + bdAvatar(p.name) +
+      '<div class="pf-main"><div class="pf-top"><span class="pf-nick">' + esc(p.name) + "</span>" +
+      (p.pinned ? '<span class="pf-tag pin">📌 공지</span>' : '<span class="pf-tag">' + esc(p.category) + "</span>") +
+      (canMod ? '<span class="pf-mod"><button class="pf-edit">수정</button><button class="pf-del">삭제</button></span>' : "") +
+      '</div><div class="pf-date">' + agoShort(p.created_at) + "</div>" +
+      '<div class="pf-content">' + esc(p.body).replace(/\n/g, "<br>") + "</div></div></div>";
   }
   function paintBoard() {
     if (!boardCache) return;
     var cats = ["전체", "자유", "경기예측", "응원", "정보"];
-    var catUi = '<div class="bd-cats">' + cats.map(function (c) { return '<button class="bd-cat' + (boardCat === c ? " on" : "") + '" data-bcat="' + c + '">' + c + "</button>"; }).join("") + "</div>";
-    var sortUi = '<div class="bd-sorts"><button class="bd-sort' + (boardSort === "new" ? " on" : "") + '" data-bsort="new">최신순</button><button class="bd-sort' + (boardSort === "hot" ? " on" : "") + '" data-bsort="hot">인기순</button></div>';
+    var chips = '<div class="bd-cats">' + cats.map(function (c) { return '<button class="bd-cat' + (boardCat === c ? " on" : "") + '" data-bcat="' + c + '">' + c + "</button>"; }).join("") + "</div>";
+    var fcats = ["자유", "경기예측", "응원", "정보"];
+    var adm = !!(KickComments.isAdmin && KickComments.isAdmin());
+    var loggedIn = !!(KickComments.user && KickComments.user());
+    var form = '<div class="pf-write"><div class="pf-wrow"><select class="pf-wcat">' +
+      fcats.map(function (c) { return '<option value="' + c + '"' + (boardCat === c ? " selected" : "") + ">" + c + "</option>"; }).join("") + "</select>" +
+      (adm ? '<label class="pf-wpin"><input type="checkbox" class="pf-wpinned"> 📌공지</label>' : "") + "</div>" +
+      '<div class="pf-wmain"><textarea class="pf-wbody" maxlength="2000" placeholder="' +
+      (loggedIn ? "내용을 입력해 주세요." : "로그인 후 글을 남길 수 있어요 (입력 후 완료 누르면 로그인)") + '"></textarea>' +
+      '<button class="pf-submit">완료</button></div></div>';
+    var sortUi = '<div class="pf-sort"><button class="pf-s' + (boardSort === "new" ? " on" : "") + '" data-bsort="new">최신순</button><button class="pf-s' + (boardSort === "old" ? " on" : "") + '" data-bsort="old">오래된순</button></div>';
     var all = boardCache.posts.slice();
     var pin = all.filter(function (p) { return p.pinned; });
-    var posts = all.filter(function (p) { return !p.pinned; });
-    if (boardSort === "hot") posts.sort(function (a, b) { return ((boardCache.stats[b.id] || {}).likes || 0) - ((boardCache.stats[a.id] || {}).likes || 0); });
-    posts = pin.concat(posts);
-    var listHtml = posts.length ? posts.map(boardItem).join("") : '<div class="empty">아직 글이 없어요. 첫 글을 남겨보세요!</div>';
-    viewEl.innerHTML = '<div class="bd"><h2 class="bd-h">📋 게시판</h2>' + catUi + sortUi +
-      '<div class="bd-list">' + listHtml + "</div></div>" +
-      '<button class="bd-fab" data-go="write">✏️ 글쓰기</button>';
+    var rest = all.filter(function (p) { return !p.pinned; });
+    if (boardSort === "old") rest.reverse();
+    var posts = pin.concat(rest);
+    var listHtml = posts.length ? posts.map(postItem).join("") : '<div class="empty">아직 글이 없어요. 첫 글을 남겨보세요!</div>';
+    viewEl.innerHTML = '<div class="bd"><h2 class="bd-h">📋 게시판</h2>' + chips + form + sortUi + '<div class="pf-list">' + listHtml + "</div></div>";
     twem(viewEl);
   }
   function renderBoard() {
@@ -1452,40 +1466,42 @@
     if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
     if (e.target.closest(".rank-more")) { rankLimit += 30; paintRanking(); return; }
     if ((my = e.target.closest(".bd-cat"))) { boardCat = my.getAttribute("data-bcat"); renderBoard(); return; }
-    if ((my = e.target.closest(".bd-sort"))) { boardSort = my.getAttribute("data-bsort"); paintBoard(); return; }
-    if ((my = e.target.closest(".bd-item, .bd-fab"))) { go(my.getAttribute("data-go")); return; }
-    if ((my = e.target.closest(".post-like"))) {
-      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); else alert("로그인이 필요해요."); return; }
-      var lid = my.getAttribute("data-pid"), wasLiked = my.getAttribute("data-liked") === "1";
+    if ((my = e.target.closest(".pf-s"))) { boardSort = my.getAttribute("data-bsort"); paintBoard(); return; }
+    if ((my = e.target.closest(".pf-submit"))) {
+      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+      var pfcat = viewEl.querySelector(".pf-wcat") ? viewEl.querySelector(".pf-wcat").value : "자유";
+      var pfta = viewEl.querySelector(".pf-wbody"), pfbody = pfta ? pfta.value.trim() : "";
+      if (!pfbody) { alert("내용을 입력해주세요."); return; }
+      var pfpin = viewEl.querySelector(".pf-wpinned") ? viewEl.querySelector(".pf-wpinned").checked : false;
       my.disabled = true;
-      KickComments.togglePostLike(lid, wasLiked).then(function () { renderPost(lid); }).catch(function () { my.disabled = false; });
-      return;
-    }
-    if ((my = e.target.closest(".post-edit"))) { go("edit/" + my.getAttribute("data-pid")); return; }
-    if ((my = e.target.closest(".post-del"))) {
-      if (!confirm("이 글을 삭제할까요?")) return;
-      var did = my.getAttribute("data-pid"); my.disabled = true;
-      KickComments.deletePost(did).then(function () { go("board"); });
-      return;
-    }
-    if ((my = e.target.closest(".wr-submit"))) {
-      var cat = viewEl.querySelector(".wr-cat") ? viewEl.querySelector(".wr-cat").value : "자유";
-      var ti = viewEl.querySelector(".wr-title"), bo = viewEl.querySelector(".wr-body");
-      var tv = ti ? ti.value.trim() : "", bv = bo ? bo.value.trim() : "";
-      if (!tv || !bv) { alert("제목과 내용을 입력해주세요."); return; }
-      var eid = my.getAttribute("data-edit");
-      var pinned = viewEl.querySelector(".wr-pinned") ? viewEl.querySelector(".wr-pinned").checked : false;
-      my.disabled = true;
-      var op = eid ? KickComments.updatePost(eid, cat, tv, bv, pinned) : KickComments.createPost(cat, tv, bv, pinned);
-      op.then(function (r) {
-        if (r && r.error) {
-          var em = String(r.error.message || "");
-          alert(/banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." : /has_link/.test(em) ? "링크는 작성할 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." : /row-level|policy/.test(em) ? "권한이 없어요 (공지사항은 관리자만 작성·수정)." : "등록 실패: " + em);
-          my.disabled = false; return;
-        }
-        var pid = eid || (r && r.data && r.data.id);
-        go(pid ? "post/" + pid : "board");
+      KickComments.createPost(pfcat, pfbody, pfpin).then(function (r) {
+        if (r && r.error) { var em = String(r.error.message || ""); alert(/banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시." : /has_link/.test(em) ? "링크는 작성할 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." : /row-level|policy/.test(em) ? "권한이 없어요 (공지는 관리자만)." : "등록 실패: " + em); my.disabled = false; return; }
+        renderBoard();
       }).catch(function () { my.disabled = false; alert("등록 실패"); });
+      return;
+    }
+    if ((my = e.target.closest(".pf-del"))) {
+      if (!confirm("이 글을 삭제할까요?")) return;
+      var ditem = my.closest(".pf-item"); if (!ditem) return;
+      my.disabled = true;
+      KickComments.deletePost(ditem.getAttribute("data-pid")).then(function () { renderBoard(); });
+      return;
+    }
+    if ((my = e.target.closest(".pf-edit"))) {
+      var eitem = my.closest(".pf-item"); if (!eitem) return;
+      var epost = (boardCache && boardCache.posts || []).filter(function (p) { return p.id === eitem.getAttribute("data-pid"); })[0];
+      var ec = eitem.querySelector(".pf-content");
+      if (epost && ec) ec.innerHTML = '<textarea class="pf-ebody" maxlength="2000">' + esc(epost.body) + '</textarea><div class="pf-eact"><button class="pf-save">저장</button><button class="pf-cancel">취소</button></div>';
+      return;
+    }
+    if (e.target.closest(".pf-cancel")) { paintBoard(); return; }
+    if ((my = e.target.closest(".pf-save"))) {
+      var sitem = my.closest(".pf-item"); if (!sitem) return;
+      var spost = (boardCache && boardCache.posts || []).filter(function (p) { return p.id === sitem.getAttribute("data-pid"); })[0];
+      var sta = sitem.querySelector(".pf-ebody"), snb = sta ? sta.value.trim() : "";
+      if (!snb) { alert("내용을 입력해주세요."); return; }
+      my.disabled = true;
+      KickComments.updatePost(sitem.getAttribute("data-pid"), spost ? spost.category : "자유", snb, spost ? spost.pinned : false).then(function () { renderBoard(); });
       return;
     }
     if ((ad = e.target.closest(".mgr-tab"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }

@@ -420,15 +420,17 @@
     }).catch(function () { return null; });
   }
   function bumpView(id) { if (sb) { try { sb.rpc("increment_post_view", { pid: id }); } catch (e) {} } }
-  function createPost(category, title, body, pinned) {
+  function createPost(category, body, pinned) {
     if (!user) return Promise.reject(new Error("login"));
-    var rec = { category: pinned ? "공지" : (category || "자유"), title: (title || "").trim().slice(0, 100), body: mask((body || "").trim()).slice(0, 2000), user_id: user.id, name: uname(user) };
+    var b = mask((body || "").trim()).slice(0, 2000);
+    var rec = { category: pinned ? "공지" : (category || "자유"), title: (b.slice(0, 50) || "(내용)"), body: b, user_id: user.id, name: uname(user) };
     if (pinned) rec.pinned = true;
     return sb.from("board_posts").insert(rec).select("id").maybeSingle();
   }
-  function updatePost(id, category, title, body, pinned) {
+  function updatePost(id, category, body, pinned) {
     if (!user) return Promise.reject(new Error("login"));
-    return sb.from("board_posts").update({ category: pinned ? "공지" : (category || "자유"), title: (title || "").trim().slice(0, 100), body: mask((body || "").trim()).slice(0, 2000), pinned: !!pinned }).eq("id", id);
+    var b = mask((body || "").trim()).slice(0, 2000);
+    return sb.from("board_posts").update({ category: pinned ? "공지" : (category || "자유"), title: (b.slice(0, 50) || "(내용)"), body: b, pinned: !!pinned }).eq("id", id);
   }
   function deletePost(id) { return sb.from("board_posts").delete().eq("id", id); }
   function togglePostLike(id, liked) {
