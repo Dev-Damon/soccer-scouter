@@ -710,6 +710,42 @@
     }).join("");
     return '<div class="block"><h3>⚡ 능력치 <span class="muted-note">자체 지수</span></h3><div class="pw-radarwrap">' + radar + "</div>" + bars + "</div>";
   }
+  // 능력치 카드 이미지(공유용) — 캔버스로 그려서 Web Share / 다운로드
+  function playerCardCanvas(p) {
+    var W = 720, H = 720, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    var c = cv.getContext("2d");
+    var g = c.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#101b30"); g.addColorStop(1, "#070d18"); c.fillStyle = g; c.fillRect(0, 0, W, H);
+    c.textAlign = "left"; c.fillStyle = "#4f8cff"; c.font = "bold 26px -apple-system,sans-serif"; c.fillText("킥톡 · 2026 월드컵", 40, 58);
+    c.fillStyle = "#eaf0fb"; c.font = "bold 46px -apple-system,sans-serif"; c.fillText(p.name, 40, 122);
+    c.fillStyle = "#9fb0cc"; c.font = "500 21px -apple-system,sans-serif"; c.fillText(((p.position || "") + " · " + (p.club || "")).slice(0, 40), 40, 154);
+    c.textAlign = "right"; c.fillStyle = "#4f8cff"; c.font = "bold 60px -apple-system,sans-serif"; c.fillText(String(p.ovr || ""), W - 40, 112); c.fillStyle = "#9fb0cc"; c.font = "bold 18px sans-serif"; c.fillText("OVR", W - 40, 138);
+    var pw = p.power, dims = [["공격력", pw["공격력"]], ["골결정력", pw["골결정력"]], ["스피드", pw["스피드"]], ["수비력", pw["수비력"]], ["피지컬", pw["피지컬"]], ["테크닉", pw["테크닉"]]];
+    var cx = W / 2, cy = 410, R = 175, angs = [-90, -30, 30, 90, 150, 210].map(function (a) { return a * Math.PI / 180; });
+    c.strokeStyle = "#2a3a5c"; c.lineWidth = 1.5;
+    [0.25, 0.5, 0.75, 1].forEach(function (f) { c.beginPath(); angs.forEach(function (a, i) { var x = cx + f * R * Math.cos(a), y = cy + f * R * Math.sin(a); if (i) c.lineTo(x, y); else c.moveTo(x, y); }); c.closePath(); c.stroke(); });
+    angs.forEach(function (a) { c.beginPath(); c.moveTo(cx, cy); c.lineTo(cx + R * Math.cos(a), cy + R * Math.sin(a)); c.stroke(); });
+    c.beginPath(); dims.forEach(function (d, i) { var v = (d[1] || 0) / 100, x = cx + v * R * Math.cos(angs[i]), y = cy + v * R * Math.sin(angs[i]); if (i) c.lineTo(x, y); else c.moveTo(x, y); }); c.closePath();
+    c.fillStyle = "rgba(79,140,255,.30)"; c.fill(); c.strokeStyle = "#4f8cff"; c.lineWidth = 3; c.stroke();
+    c.font = "bold 21px -apple-system,sans-serif";
+    dims.forEach(function (d, i) { var v = (d[1] || 0) / 100, x = cx + v * R * Math.cos(angs[i]), y = cy + v * R * Math.sin(angs[i]); c.fillStyle = "#4f8cff"; c.beginPath(); c.arc(x, y, 5, 0, 7); c.fill(); var lx = cx + (R + 34) * Math.cos(angs[i]), ly = cy + (R + 34) * Math.sin(angs[i]), ca = Math.cos(angs[i]); c.fillStyle = "#cdd8e6"; c.textAlign = Math.abs(ca) < 0.3 ? "center" : (ca > 0 ? "left" : "right"); c.fillText(d[0] + " " + (d[1] || 0), lx, ly + 7); });
+    c.textAlign = "center"; c.fillStyle = "#6f7d96"; c.font = "600 22px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 자체 능력치 지수", W / 2, H - 38);
+    return cv;
+  }
+  function sharePlayerCard(p) {
+    if (!p || !p.power) return;
+    playerCardCanvas(p).toBlob(function (blob) {
+      if (!blob) return;
+      var fname = (p.id || "player") + "-kicktalk.png";
+      try {
+        var file = new File([blob], fname, { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator.share({ files: [file], title: p.name + " 능력치", text: p.name + " — 킥톡 2026 월드컵 능력치 · kicktalk.xyz" }).catch(function () {});
+          return;
+        }
+      } catch (e) {}
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
+    }, "image/png");
+  }
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -738,7 +774,7 @@
         '<div class="score-bar"><div class="score-fill" style="width:' + ovr + '%"></div></div></div>';
     }
 
-    var powerHtml = p.power ? powerRadar(p.power) : "";
+    var powerHtml = p.power ? (powerRadar(p.power) + '<button class="share-card" data-share-card="' + esc(p.id) + '">📤 능력치 카드 이미지로 공유</button>') : "";
     var strengths = (p.strengths || []).map(function (s) { return '<span class="tag">' + esc(s) + "</span>"; }).join("");
     var weaknesses = (p.weaknesses || []).map(function (s) { return '<span class="tag weak">' + esc(s) + "</span>"; }).join("");
 
@@ -1608,6 +1644,8 @@
     if (ex) { var elist = ex.parentNode.querySelector(".news-list"); if (elist) elist.classList.remove("news-collapsed"); ex.style.display = "none"; return; }
     var sbtn = e.target.closest(".save-btn");
     if (sbtn) { var son = saveToggle(sbtn.getAttribute("data-save")); sbtn.classList.toggle("on", son); sbtn.textContent = son ? "★" : "☆"; return; }
+    var shc = e.target.closest(".share-card");
+    if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");
