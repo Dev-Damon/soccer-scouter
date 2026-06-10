@@ -1683,8 +1683,8 @@
     function bubble(m) {
       var col = ncolor(m.name), ch0 = (m.name || "?").trim().charAt(0).toUpperCase() || "?";
       return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
-        '<span class="yc-name" style="color:' + col + '">' + esc(m.name) + "</span>" +
-        '<span class="yc-msg">' + esc(m.body) + '</span><span class="yc-tm">' + agoShort(m.created_at) + "</span></div>";
+        '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(m.name) + "</span> " +
+        '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }
     function loadRender(forceBottom) {
       var m = msgsEl(); if (!m) return;
