@@ -1077,6 +1077,7 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
         '<div class="block h2h-slot"></div>' +
+        '<div class="block lineup-slot"></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
@@ -1096,6 +1097,7 @@
         "</div>" +
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
+    loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
   }
 
   // ===================== 감독 상세 =====================
@@ -1265,13 +1267,67 @@
       return found;
     }).catch(function () { return null; });
   }
+  var summaryCache = {};
+  function fetchSummary(fx) {
+    return resolveEspnId(fx).then(function (eid) {
+      if (!eid) return null;
+      if (summaryCache[eid]) return summaryCache[eid];
+      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { summaryCache[eid] = d; return d; });
+    });
+  }
   function loadH2H(slot, fx, a, b) {
     if (!slot || !window.fetch) return;
     slot.innerHTML = '<h3>역대 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';
-    resolveEspnId(fx).then(function (eid) {
-      if (!eid) { slot.style.display = "none"; return; }
-      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { renderH2H(slot, d, fx, a, b); });
+    fetchSummary(fx).then(function (d) {
+      if (!d) { slot.style.display = "none"; return; }
+      renderH2H(slot, d, fx, a, b);
     }).catch(function () { slot.style.display = "none"; });
+  }
+  function loadLineup(slot, fx, a, b) {
+    if (!slot || !window.fetch) return;
+    slot.innerHTML = '<h3>📋 라인업</h3><div class="h2h-loading">불러오는 중…</div>';
+    fetchSummary(fx).then(function (d) {
+      if (!d) { slot.style.display = "none"; return; }
+      renderLineup(slot, d, a, b);
+    }).catch(function () { slot.style.display = "none"; });
+  }
+  function luPlayer(p) {
+    var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
+    var nm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
+    var pos = (p.position && (p.position.abbreviation || p.position.name)) || "";
+    return '<div class="lu-p"><span class="lu-num">' + esc(num) + '</span><span class="lu-nm">' + esc(nm) + '</span>' + (pos ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + "</div>";
+  }
+  function luEvent(ev) {
+    var ty = (ev.type && ev.type.type) || "", clk = (ev.clock && ev.clock.displayValue) || "";
+    var icon = /goal|scored/.test(ty) ? "⚽" : /yellow/.test(ty) ? "🟨" : /red/.test(ty) ? "🟥" : /substitution/.test(ty) ? "🔄" : "";
+    if (!icon) return "";
+    return '<div class="lu-ev"><span class="lu-ec">' + esc(clk) + '</span><span class="lu-ei">' + icon + '</span><span class="lu-et">' + esc(ev.shortText || ev.text || "") + "</span></div>";
+  }
+  function renderLineup(slot, d, a, b) {
+    var rosters = d.rosters || [];
+    var hasLineup = rosters.some(function (r) { return (r.roster || []).some(function (p) { return p.starter; }); });
+    var events = (d.keyEvents || []).filter(function (ev) { var ty = (ev.type && ev.type.type) || ""; return /goal|scored|yellow|red|substitution/.test(ty); });
+    if (!hasLineup && !events.length) { slot.style.display = "none"; return; }
+    var html = "";
+    if (hasLineup) {
+      html += "<h3>📋 라인업</h3>";
+      rosters.forEach(function (rs) {
+        var t = teamsById[espnTeamId(rs.team && rs.team.displayName)];
+        var nm = t ? (t.flag + " " + t.name) : ((rs.team && rs.team.displayName) || "");
+        var fm = rs.formation ? ' <span class="muted-note">' + esc(rs.formation) + "</span>" : "";
+        var starters = (rs.roster || []).filter(function (p) { return p.starter; });
+        var subs = (rs.roster || []).filter(function (p) { return !p.starter; });
+        html += '<div class="lu-team"><div class="lu-tn">' + esc(nm) + fm + "</div>";
+        html += '<div class="lu-list">' + starters.map(luPlayer).join("") + "</div>";
+        if (subs.length) html += '<div class="lu-subh">교체 명단</div><div class="lu-list subs">' + subs.map(luPlayer).join("") + "</div>";
+        html += "</div>";
+      });
+    } else {
+      html += '<h3>📋 라인업</h3><div class="lu-wait">선발 라인업은 킥오프 약 1시간 전에 공개돼요.</div>';
+    }
+    if (events.length) html += '<div class="lu-events"><h3>⚽ 주요 이벤트</h3>' + events.map(luEvent).join("") + "</div>";
+    slot.innerHTML = html;
+    twem(slot);
   }
   function compLabel(e) {
     var ln = e.leagueName || e.competitionName || "";

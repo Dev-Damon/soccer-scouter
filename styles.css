@@ -325,6 +325,22 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .mb-row span { text-align: center; }
 .mb-row .mb-n { text-align: left; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mb-head { color: var(--muted); font-weight: 700; font-size: 11.5px; border-bottom: 2px solid var(--line); }
+/* 라인업 (ESPN 실시간) */
+.lu-team { margin-bottom: 14px; }
+.lu-tn { font-weight: 800; font-size: 14.5px; margin: 10px 0 8px; }
+.lu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; }
+.lu-list.subs { opacity: .72; }
+.lu-p { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 13.5px; }
+.lu-num { width: 22px; text-align: center; font-weight: 800; color: var(--muted); flex: none; }
+.lu-nm { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lu-pos { font-size: 11px; color: var(--muted); flex: none; }
+.lu-subh { font-size: 12px; color: var(--muted); font-weight: 700; margin: 10px 0 6px; }
+.lu-wait { color: var(--muted); padding: 8px 0; font-size: 13.5px; }
+.lu-events h3 { margin-top: 16px; }
+.lu-ev { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.lu-ec { width: 34px; font-weight: 800; color: var(--accent, #4f8cff); flex: none; }
+.lu-ei { flex: none; }
+.lu-et { flex: 1; line-height: 1.4; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }
 .bd-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
