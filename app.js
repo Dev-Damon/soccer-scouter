@@ -617,13 +617,18 @@
       html += '<div class="block"><h3>예상 포메이션' + (t.formation ? ' <span class="muted-note">' + esc(t.formation) + "</span>" : "") + "</h3>" +
         '<div class="pitch"><div class="pitch-line halfway"></div><div class="pitch-circle"></div>';
       t.lineup.forEach(function (d) {
-        var pc = posClass(d.pos);
+        // 이름·등번호·포지션은 선수 레코드(단일 소스)에서 조회. 라인업은 좌표(x,y)만 담당.
+        var pl = d.playerId ? playersById[d.playerId] : null;
+        var pos = (pl && pl.position) || d.pos;
+        var pc = posClass(pos);
+        var num = (pl && pl.number != null) ? pl.number : (d.number != null ? d.number : "");
+        var nm = (pl && pl.name) || d.name || "";
         var x = Math.max(4, Math.min(96, d.x || 50));
         var y = Math.max(4, Math.min(96, d.y || 50));
-        var pdAttr = (d.playerId && playersById[d.playerId]) ? ' data-player="' + esc(d.playerId) + '"' : "";
-        html += '<div class="pd ' + pc + (pdAttr ? " tappable" : "") + '"' + pdAttr + ' style="left:' + x + "%;top:" + y + '%" title="' + esc(d.name || "") + '">' +
-          '<span class="pd-dot">' + esc(d.number != null ? d.number : "") + "</span>" +
-          '<span class="pd-name">' + esc((d.name || "").split(" ").slice(-1)[0]) + "</span></div>";
+        var pdAttr = pl ? ' data-player="' + esc(d.playerId) + '"' : "";
+        html += '<div class="pd ' + pc + (pl ? " tappable" : "") + '"' + pdAttr + ' style="left:' + x + "%;top:" + y + '%" title="' + esc(nm) + '">' +
+          '<span class="pd-dot">' + esc(num) + "</span>" +
+          '<span class="pd-name">' + esc(nm.split(" ").slice(-1)[0]) + "</span></div>";
       });
       html += "</div></div>";
     }
@@ -749,6 +754,7 @@
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
+        '<div class="block h2h-slot"></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
@@ -759,7 +765,6 @@
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
-        '<div class="block h2h-slot"></div>' +
         ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
         '<div class="match-cta">' +
