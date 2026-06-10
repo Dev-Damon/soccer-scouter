@@ -401,7 +401,7 @@
         if (la) la.addEventListener("click", function () { stripEl.scrollBy({ left: -stripEl.clientWidth * 0.6, behavior: "smooth" }); });
         if (ra) ra.addEventListener("click", function () { stripEl.scrollBy({ left: stripEl.clientWidth * 0.6, behavior: "smooth" }); });
         stripEl.addEventListener("scroll", updArrows);
-        (window.requestAnimationFrame || setTimeout)(updArrows);
+        setTimeout(updArrows, 60); setTimeout(updArrows, 320);
       }
     }
   }
