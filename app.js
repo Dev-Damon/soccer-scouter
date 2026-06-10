@@ -919,30 +919,44 @@
       return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { renderH2H(slot, d, fx, a, b); });
     }).catch(function () { slot.style.display = "none"; });
   }
+  function compLabel(e) {
+    var ln = e.leagueName || e.competitionName || "";
+    var M = [[/world cup qualif/i, "월드컵 예선"], [/world cup/i, "월드컵"], [/friendly/i, "친선"],
+      [/asian cup qualif/i, "아시안컵 예선"], [/asian cup/i, "아시안컵"], [/gold cup/i, "골드컵"],
+      [/copa am/i, "코파 아메리카"], [/(euro|european champ).*qualif/i, "유로 예선"], [/euro|european champ/i, "유로"],
+      [/confederations/i, "컨페드컵"], [/nations league/i, "네이션스리그"], [/olympic/i, "올림픽"], [/africa.*cup|afcon/i, "네이션스컵"]];
+    for (var i = 0; i < M.length; i++) if (M[i][0].test(ln)) return M[i][1];
+    return ln || "기타";
+  }
   function renderH2H(slot, d, fx, a, b) {
     var blk = (d.headToHeadGames || [])[0];
     if (!blk || !(blk.events || []).length) { slot.style.display = "none"; return; }
     var blkAppId = espnTeamId(blk.team && blk.team.displayName);
-    var blkEspnId = String(blk.team && blk.team.id);
-    var w = 0, dr = 0, l = 0, meetings = [];
-    blk.events.forEach(function (e) {
-      var m = /^(\d+)\D+(\d+)$/.exec(e.score || "");
-      if (m) {
-        var hs = +m[1], as = +m[2];
-        var home = String(e.homeTeamId) === blkEspnId;
-        var bs = home ? hs : as, os = home ? as : hs;
-        if (bs > os) w++; else if (bs < os) l++; else dr++;
-      }
-      meetings.push({ yr: (e.gameDate || "").slice(0, 4), score: (e.score || "").replace(/\s/g, "") });
-    });
     // 대한민국이 낀 경기는 홈/원정 무관 '대한민국 기준', 그 외엔 홈팀 기준
     var perspId = (fx.homeId === "south-korea" || fx.awayId === "south-korea") ? "south-korea" : fx.homeId;
     var perspName = (perspId === fx.awayId) ? b.name : a.name;
-    var rec = (blkAppId === perspId) ? { w: w, d: dr, l: l } : { w: l, d: dr, l: w };
-    var recent = meetings.slice(0, 6).map(function (g) { return '<span class="h2h-g">' + esc(g.yr) + "·" + esc(g.score) + "</span>"; }).join("");
-    slot.innerHTML = '<h3>역대 상대전적 <span class="muted-note">' + blk.events.length + "경기</span></h3>" +
-      '<div class="h2h-rec">' + esc(perspName) + ' 기준 <b class="h2h-w">' + rec.w + '승</b> <b class="h2h-d">' + rec.d + '무</b> <b class="h2h-l">' + rec.l + "패</b></div>" +
-      '<div class="h2h-list">최근 맞대결: ' + recent + "</div>";
+    var oppName = (perspName === a.name) ? b.name : a.name;
+    var blockIsPersp = (blkAppId === perspId);
+    var w = 0, dr = 0, l = 0, rows = "";
+    blk.events.forEach(function (e) {
+      var H = parseInt(e.homeTeamScore, 10), A = parseInt(e.awayTeamScore, 10);
+      var blockHome = e.atVs !== "@";
+      var bs = blockHome ? H : A, os = blockHome ? A : H;
+      var gr = e.gameResult;  // 블록팀 기준 W/L/D (ESPN 권위 데이터)
+      var pScore, pOpp, res;
+      if (blockIsPersp) { pScore = bs; pOpp = os; res = gr; }
+      else { pScore = os; pOpp = bs; res = (gr === "W" ? "L" : gr === "L" ? "W" : "D"); }
+      if (res === "W") w++; else if (res === "L") l++; else dr++;
+      var rk = res === "W" ? "win" : res === "L" ? "lose" : "draw";
+      var rl = res === "W" ? "승" : res === "L" ? "패" : "무";
+      var sc = (isNaN(pScore) ? "-" : pScore) + " : " + (isNaN(pOpp) ? "-" : pOpp);
+      rows += '<div class="h2h-row"><span class="h2h-res ' + rk + '">' + rl + "</span>" +
+        '<div class="h2h-line"><span class="h2h-score"><b>' + esc(perspName) + "</b> " + sc + " " + esc(oppName) + "</span>" +
+        '<span class="h2h-meta">' + esc((e.gameDate || "").slice(0, 4)) + " · " + esc(compLabel(e)) + "</span></div></div>";
+    });
+    slot.style.display = "";
+    slot.innerHTML = '<h3>역대 상대전적 <span class="muted-note">' + esc(perspName) + " 기준 " + w + "승 " + dr + "무 " + l + "패</span></h3>" +
+      '<div class="h2h-list">' + rows + "</div>";
   }
 
   // ===================== 라우터 =====================
