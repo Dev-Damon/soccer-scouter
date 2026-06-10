@@ -492,8 +492,9 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .brk-stage .m32 .tm { padding: 3px 7px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
 .brk-stage .m32 .tm + .tm { border-top: 1px solid #3d5689; }
 .brk-stage .m32.r .tm { text-align: right; }
-.brk-stage .con { background: #172643; border: 1px solid rgba(79,140,255,.5); border-radius: 5px; color: #a9c6ff; font-weight: 800; text-align: center; }
-.brk-stage .csf { background: #1b2c4f; border: 1px solid rgba(79,140,255,.55); border-radius: 5px; color: #bcd2ff; font-weight: 800; text-align: center; }
+.brk-stage .con, .brk-stage .csf { background: #2c4d8f; border: 1px solid #5b86d4; border-radius: 999px; color: #eaf2ff; font-weight: 800; text-align: center; align-items: center; }
+.brk-stage .csf { background: #36599e; border-color: #6f97e0; }
+.brk-stage .third { background: #141f38; border: 1px solid #2d3f63; border-radius: 7px; color: #9fb0cc; font-weight: 700; text-align: center; align-items: center; }
 .brk-stage .fin { background: linear-gradient(135deg,#ffd86b,#f5b301); border-radius: 8px; color: #0a1530; text-align: center; align-items: center; z-index: 3; box-shadow: 0 2px 10px rgba(245,179,1,.35); }
 .brk-stage .fin .trophy { font-size: 22px; line-height: 1; }
 .brk-stage .fin .trophy img { width: 24px; height: 24px; vertical-align: middle; }
