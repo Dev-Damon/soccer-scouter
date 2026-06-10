@@ -292,6 +292,11 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .wr-cat, .wr-title, .wr-body { background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; font-size: 14px; font-family: inherit; box-sizing: border-box; width: 100%; }
 .wr-body { min-height: 200px; resize: vertical; }
 .wr-submit { background: var(--accent); color: #06122a; font-weight: 800; border: 0; border-radius: 12px; padding: 13px; font-size: 15px; cursor: pointer; }
+.bd-cat-tag.pin { color: var(--gold, #f5b301); background: rgba(245,179,1,.12); }
+.bd-item.pinned { border-color: rgba(245,179,1,.4); }
+.wr-pin { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; cursor: pointer; }
+.wr-pin input { width: 18px; height: 18px; }
+.post-edit { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 8px 14px; border-radius: 999px; cursor: pointer; }
 
 /* Player list row */
 .player-row {

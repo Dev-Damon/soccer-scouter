@@ -397,7 +397,7 @@
     if (!client()) return Promise.resolve({ posts: [], stats: {} });
     var qy = sb.from("board_posts").select("*").eq("hidden", false);
     if (category && category !== "전체") qy = qy.eq("category", category);
-    return qy.order("created_at", { ascending: false }).limit(100).then(function (r) {
+    return qy.order("pinned", { ascending: false }).order("created_at", { ascending: false }).limit(100).then(function (r) {
       var posts = r.data || [];
       if (!posts.length) return { posts: posts, stats: {} };
       var ids = posts.map(function (p) { return p.id; });
@@ -422,9 +422,15 @@
     }).catch(function () { return null; });
   }
   function bumpView(id) { if (sb) { try { sb.rpc("increment_post_view", { pid: id }); } catch (e) {} } }
-  function createPost(category, title, body) {
+  function createPost(category, title, body, pinned) {
     if (!user) return Promise.reject(new Error("login"));
-    return sb.from("board_posts").insert({ category: category || "자유", title: (title || "").trim().slice(0, 100), body: mask((body || "").trim()).slice(0, 2000), user_id: user.id, name: uname(user) }).select("id").maybeSingle();
+    var rec = { category: pinned ? "공지" : (category || "자유"), title: (title || "").trim().slice(0, 100), body: mask((body || "").trim()).slice(0, 2000), user_id: user.id, name: uname(user) };
+    if (pinned) rec.pinned = true;
+    return sb.from("board_posts").insert(rec).select("id").maybeSingle();
+  }
+  function updatePost(id, category, title, body, pinned) {
+    if (!user) return Promise.reject(new Error("login"));
+    return sb.from("board_posts").update({ category: pinned ? "공지" : (category || "자유"), title: (title || "").trim().slice(0, 100), body: mask((body || "").trim()).slice(0, 2000), pinned: !!pinned }).eq("id", id);
   }
   function deletePost(id) { return sb.from("board_posts").delete().eq("id", id); }
   function togglePostLike(id, liked) {
@@ -531,7 +537,7 @@
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
     listPosts: listPosts, getPost: getPost, bumpView: bumpView, createPost: createPost,
-    deletePost: deletePost, togglePostLike: togglePostLike,
+    deletePost: deletePost, updatePost: updatePost, togglePostLike: togglePostLike,
     listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost
   };
 })();
