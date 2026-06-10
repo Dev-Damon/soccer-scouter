@@ -707,11 +707,13 @@
     var tlItems = [];
     (p.honours || []).forEach(function (h) { tlItems.push(h); });
     if (p.notableTransfer) tlItems.push(p.notableTransfer);
-    var timeline = tlItems.map(function (it) {
-      var ym = /(\d{4})/.exec(it);
-      var yr = ym ? ym[1] : "";
-      return '<div class="tl-item"><span class="tl-year">' + esc(yr) + '</span><span class="tl-dot"></span>' +
-        '<span class="tl-text">' + esc(it) + "</span></div>";
+    tlItems = tlItems.map(function (it) {
+      var ys = it.match(/\d{4}/g);
+      return { text: it, yr: ys ? Math.max.apply(null, ys.map(Number)) : 0 };
+    }).sort(function (a, b) { return b.yr - a.yr; });  // 최신이 맨 위
+    var timeline = tlItems.map(function (o) {
+      return '<div class="tl-item"><span class="tl-year">' + (o.yr || "") + '</span><span class="tl-dot"></span>' +
+        '<span class="tl-text">' + esc(o.text) + "</span></div>";
     }).join("");
 
     viewEl.innerHTML =
@@ -1331,12 +1333,16 @@
   function postItem(p) {
     var u = KickComments.user && KickComments.user();
     var canMod = (u && u.id === p.user_id) || !!(KickComments.isAdmin && KickComments.isAdmin());
+    var st = (boardCache && boardCache.stats && boardCache.stats[p.id]) || { likes: 0, dislikes: 0 };
+    var rv = (boardCache && boardCache.mine && boardCache.mine[p.id]) || 0;
     return '<div class="pf-item" data-pid="' + esc(p.id) + '">' + bdAvatar(p.name) +
       '<div class="pf-main"><div class="pf-top"><span class="pf-nick">' + esc(p.name) + "</span>" +
       (p.pinned ? '<span class="pf-tag pin">📌 공지</span>' : '<span class="pf-tag">' + esc(p.category) + "</span>") +
       (canMod ? '<span class="pf-mod"><button class="pf-edit">수정</button><button class="pf-del">삭제</button></span>' : "") +
       '</div><div class="pf-date">' + agoShort(p.created_at) + "</div>" +
-      '<div class="pf-content">' + esc(p.body).replace(/\n/g, "<br>") + "</div></div></div>";
+      '<div class="pf-content">' + esc(p.body).replace(/\n/g, "<br>") + "</div>" +
+      '<div class="pf-react"><button class="pf-like' + (rv === 1 ? " on" : "") + '" data-rv="1">👍 <span>' + (st.likes || 0) + '</span></button>' +
+      '<button class="pf-dislike' + (rv === -1 ? " on" : "") + '" data-rv="-1">👎 <span>' + (st.dislikes || 0) + "</span></button></div></div></div>";
   }
   function paintBoard() {
     if (!boardCache) return;
@@ -1348,8 +1354,8 @@
     var form = '<div class="pf-write"><div class="pf-wrow"><select class="pf-wcat">' +
       fcats.map(function (c) { return '<option value="' + c + '"' + (boardCat === c ? " selected" : "") + ">" + c + "</option>"; }).join("") + "</select>" +
       (adm ? '<label class="pf-wpin"><input type="checkbox" class="pf-wpinned"> 📌공지</label>' : "") + "</div>" +
-      '<div class="pf-wmain"><textarea class="pf-wbody" maxlength="2000" placeholder="' +
-      (loggedIn ? "내용을 입력해 주세요." : "로그인 후 글을 남길 수 있어요 (입력 후 완료 누르면 로그인)") + '"></textarea>' +
+      '<div class="pf-wmain"><textarea class="pf-wbody' + (loggedIn ? "" : " locked") + '"' + (loggedIn ? "" : " readonly") + ' maxlength="2000" placeholder="' +
+      (loggedIn ? "내용을 입력해 주세요." : "로그인 후 작성할 수 있어요 (눌러서 로그인)") + '"></textarea>' +
       '<button class="pf-submit">완료</button></div></div>';
     var sortUi = '<div class="pf-sort"><button class="pf-s' + (boardSort === "new" ? " on" : "") + '" data-bsort="new">최신순</button><button class="pf-s' + (boardSort === "old" ? " on" : "") + '" data-bsort="old">오래된순</button></div>';
     var all = boardCache.posts.slice();
@@ -1466,6 +1472,16 @@
     if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
     if (e.target.closest(".rank-more")) { rankLimit += 30; paintRanking(); return; }
     if ((my = e.target.closest(".bd-cat"))) { boardCat = my.getAttribute("data-bcat"); renderBoard(); return; }
+    if (e.target.closest(".pf-wbody.locked")) { if (window.KickComments) KickComments.promptLogin(); return; }
+    if ((my = e.target.closest(".pf-like, .pf-dislike"))) {
+      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+      var ritem = my.closest(".pf-item"); if (!ritem) return;
+      var rpid = ritem.getAttribute("data-pid"), rval = parseInt(my.getAttribute("data-rv"), 10);
+      var rcur = (boardCache && boardCache.mine && boardCache.mine[rpid]) || 0;
+      my.disabled = true;
+      KickComments.togglePostReaction(rpid, rval, rcur).then(function () { renderBoard(); }).catch(function () { my.disabled = false; });
+      return;
+    }
     if ((my = e.target.closest(".pf-s"))) { boardSort = my.getAttribute("data-bsort"); paintBoard(); return; }
     if ((my = e.target.closest(".pf-submit"))) {
       if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }

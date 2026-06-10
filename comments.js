@@ -397,13 +397,17 @@
     if (category && category !== "전체") qy = qy.eq("category", category);
     return qy.order("pinned", { ascending: false }).order("created_at", { ascending: false }).limit(100).then(function (r) {
       var posts = r.data || [];
-      if (!posts.length) return { posts: posts, stats: {} };
+      if (!posts.length) return { posts: posts, stats: {}, mine: {} };
       var ids = posts.map(function (p) { return p.id; });
-      return sb.from("board_post_stats").select("*").in("post_id", ids).then(function (rr) {
-        var st = {}; (rr.data || []).forEach(function (x) { st[x.post_id] = { likes: x.likes || 0, comments: x.comments || 0 }; });
-        return { posts: posts, stats: st };
-      }).catch(function () { return { posts: posts, stats: {} }; });
-    }).catch(function () { return { posts: [], stats: {} }; });
+      return Promise.all([
+        sb.from("board_post_stats").select("*").in("post_id", ids),
+        user ? sb.from("board_post_likes").select("post_id,val").in("post_id", ids).eq("user_id", user.id) : Promise.resolve({ data: [] })
+      ]).then(function (res) {
+        var st = {}; ((res[0] && res[0].data) || []).forEach(function (x) { st[x.post_id] = { likes: x.likes || 0, dislikes: x.dislikes || 0, comments: x.comments || 0 }; });
+        var mine = {}; ((res[1] && res[1].data) || []).forEach(function (x) { mine[x.post_id] = x.val; });
+        return { posts: posts, stats: st, mine: mine };
+      }).catch(function () { return { posts: posts, stats: {}, mine: {} }; });
+    }).catch(function () { return { posts: [], stats: {}, mine: {} }; });
   }
   function getPost(id) {
     if (!client()) return Promise.resolve(null);
@@ -433,6 +437,11 @@
     return sb.from("board_posts").update({ category: pinned ? "공지" : (category || "자유"), title: (b.slice(0, 50) || "(내용)"), body: b, pinned: !!pinned }).eq("id", id);
   }
   function deletePost(id) { return sb.from("board_posts").delete().eq("id", id); }
+  function togglePostReaction(id, val, cur) {
+    if (!user) return Promise.reject(new Error("login"));
+    if (cur === val) return sb.from("board_post_likes").delete().eq("post_id", id).eq("user_id", user.id);
+    return sb.from("board_post_likes").upsert({ post_id: id, user_id: user.id, val: val }, { onConflict: "post_id,user_id" });
+  }
   function togglePostLike(id, liked) {
     if (!user) return Promise.reject(new Error("login"));
     return liked ? sb.from("board_post_likes").delete().eq("post_id", id).eq("user_id", user.id)
@@ -560,7 +569,7 @@
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,
     listPosts: listPosts, getPost: getPost, bumpView: bumpView, createPost: createPost,
-    deletePost: deletePost, updatePost: updatePost, togglePostLike: togglePostLike,
+    deletePost: deletePost, updatePost: updatePost, togglePostLike: togglePostLike, togglePostReaction: togglePostReaction,
     listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost,
     chatRecent: chatRecent, chatSend: chatSend, chatSubscribe: chatSubscribe, chatUnsubscribe: chatUnsubscribe
   };
