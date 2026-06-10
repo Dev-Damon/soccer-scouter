@@ -1931,7 +1931,7 @@
   });
 
   backBtn.addEventListener("click", function () {
-    if (window.location.hash) { go(""); } else { window.history.back(); }
+    if (window.history.length > 1) { window.history.back(); } else { go(""); }
   });
 
   document.getElementById("homeLink").addEventListener("click", function () {
