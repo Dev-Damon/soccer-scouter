@@ -12744,7 +12744,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "빅리그 명문에서 검증된 멕시코의 차세대 9번, 박스 안 결정력이 핵심.",
       "strengths": [
         "문전 위치 선정과 마무리",
@@ -12779,7 +12778,6 @@ window.DATA = {
       "caps": 97,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "팀의 주장이자 중원-수비를 잇는 살림꾼, 수비형 미드필더와 센터백을 오가는 멀티 자원.",
       "strengths": [
         "수비 위치 선정과 커버",
@@ -12815,7 +12813,6 @@ window.DATA = {
       "caps": 124,
       "intlGoals": 45,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "베테랑 9번이자 멕시코 역대급 골잡이, 풍부한 경험과 연계로 공격을 이끈다.",
       "strengths": [
         "등지는 플레이와 연계",
@@ -12851,7 +12848,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "이번 대회 최연소 선수이자 멕시코의 미래, 17세에 이미 주전급 기량을 보인 천재.",
       "strengths": [
         "드리블과 탈압박",
@@ -12885,7 +12881,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "세리에 A에서 검증된 왼발 센터백, 수비 라인의 안정감을 책임진다.",
       "strengths": [
         "1대1 대인 수비",
@@ -12920,7 +12915,6 @@ window.DATA = {
       "caps": 67,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "공중전에 강한 장신 수비수, 세트피스에서 공격 옵션도 되는 든든한 뒷문.",
       "strengths": [
         "공중볼 장악력",
@@ -12955,7 +12949,6 @@ window.DATA = {
       "caps": 90,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "창의적인 패스와 세트피스 키커로 중원의 공격 작업을 책임지는 베테랑.",
       "strengths": [
         "전진 패스와 키패스",
@@ -12991,7 +12984,6 @@ window.DATA = {
       "caps": 119,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "120경기 이상 출전한 좌측 풀백, 풍부한 경험과 체력으로 측면을 지킨다.",
       "strengths": [
         "오버래핑과 크로스",
@@ -13027,7 +13019,6 @@ window.DATA = {
       "caps": 152,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "멕시코의 살아있는 전설, 월드컵 무대의 명장면으로 유명한 베테랑 수문장.",
       "strengths": [
         "빅세이브와 반사신경",
@@ -13063,7 +13054,6 @@ window.DATA = {
       "caps": 61,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "중원과 수비를 모두 소화하는 멀티 플레이어, 전술 유연성의 핵심.",
       "strengths": [
         "여러 포지션 소화",
@@ -13098,7 +13088,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 7,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "기술과 창의성을 갖춘 측면 공격수, 공격에 변화를 주는 카드.",
       "strengths": [
         "드리블과 1대1 돌파",
@@ -13133,7 +13122,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "AFCON 4강행을 이끈 승부차기 선방의 달인이자 팀의 심장, 주장 골키퍼.",
       "strengths": [
         "승부차기 선방 능력(2024 AFCON 8강 케이프베르데전 4개 선방)",
@@ -13170,7 +13158,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "유럽 무대에서 뛰는 남아공의 골 해결사, 팀이 골을 의지하는 1선 에이스.",
       "strengths": [
         "피지컬과 스피드를 겸비한 정통 스트라이커",
@@ -13204,7 +13191,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "큰 경기에 강한 중원 사령탑, CAF 챔스 결승 결승골의 주인공.",
       "strengths": [
         "볼 탈취와 위치 선정 등 수비형 미드필더의 균형감",
@@ -13240,7 +13226,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 12,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "PSL 시대 최다 득점 기록의 베테랑 플레이메이커, 경험으로 무장한 조커.",
       "strengths": [
         "시야와 창의적인 패스 능력",
@@ -13278,7 +13263,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "브로스 감독이 '남아공 최고의 라이트백'이라 칭한 공수 겸장 풀백.",
       "strengths": [
         "지칠 줄 모르는 활동량과 오버래핑",
@@ -13314,7 +13298,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "올랜도 파이리츠에서 폭발한 21세 게임 체인저, 남아공의 미래.",
       "strengths": [
         "드리블 돌파와 1대1 능력",
@@ -13348,7 +13331,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "데뷔 시즌부터 공격포인트를 쏟아낸 빠른 측면 공격수.",
       "strengths": [
         "스피드와 측면 돌파",
@@ -13380,7 +13362,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "국내 최고로 꼽히는 스트라이커, 클럽 월드컵에서도 결승골을 넣은 해결사.",
       "strengths": [
         "박스 안 위치 선정과 마무리",
@@ -13415,7 +13396,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "약관의 나이에 MLS로 건너간 차세대 수비 핵심, 'TLB'.",
       "strengths": [
         "나이답지 않은 침착함과 리더십",
@@ -13451,7 +13431,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "공격 가담이 활발한 선다운스의 붙박이 레프트백.",
       "strengths": [
         "적극적인 오버래핑과 공격 전개",
@@ -13486,7 +13465,6 @@ window.DATA = {
       "caps": 144,
       "intlGoals": 56,
       "grade": "월드클래스",
-      "gradeScore": 85,
       "oneLiner": "A매치 144경기 56골의 살아있는 전설이자 팀의 심장인 주장",
       "strengths": [
         "폭발적인 양발 슈팅",
@@ -13503,7 +13481,7 @@ window.DATA = {
         "대한민국 A매치 최다 출전·득점 기록 보유"
       ],
       "notableTransfer": "2025년 토트넘에서 LAFC로 약 2650만 달러(MLS 역대 최고 이적료)에 이적",
-      "ovr": 92,
+      "ovr": 85,
       "scout": {
         "skill": 92,
         "value": 82,
@@ -13523,7 +13501,6 @@ window.DATA = {
       "caps": 79,
       "intlGoals": 4,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "유럽 최정상 클럽 주전으로 뛰는 아시아 최고 수준의 센터백",
       "strengths": [
         "강력한 제공권과 피지컬",
@@ -13559,7 +13536,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 85,
       "oneLiner": "챔피언스리그 우승팀 소속의 창의적인 플레이메이커",
       "strengths": [
         "탈압박 드리블",
@@ -13596,7 +13572,6 @@ window.DATA = {
       "caps": 79,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "측면을 폭발적으로 돌파하는 스피드형 윙어이자 핵심 공격수",
       "strengths": [
         "폭발적인 가속력",
@@ -13632,7 +13607,6 @@ window.DATA = {
       "caps": 105,
       "intlGoals": 15,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "분데스리가 주전으로 뛰는 활동량 좋은 베테랑 중원 자원",
       "strengths": [
         "넓은 활동 범위",
@@ -13668,7 +13642,6 @@ window.DATA = {
       "caps": 73,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "경기 템포를 조율하는 중원의 사령탑형 미드필더",
       "strengths": [
         "정확한 장단패스",
@@ -13703,7 +13676,6 @@ window.DATA = {
       "caps": 48,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "큰 경기에서 선방 쇼를 보여주는 국가대표 주전 골키퍼",
       "strengths": [
         "반응 속도와 선방 능력",
@@ -13739,7 +13711,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 12,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "제공권을 갖춘 정통파 타깃형 스트라이커",
       "strengths": [
         "뛰어난 제공권",
@@ -13774,7 +13745,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "부지런한 움직임이 강점인 차세대 박스 안 공격수",
       "strengths": [
         "오프더볼 침투",
@@ -13809,7 +13779,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "드리블이 돋보이는 한국 축구의 미래형 공격 미드필더",
       "strengths": [
         "과감한 돌파 드리블",
@@ -13842,7 +13811,6 @@ window.DATA = {
       "caps": 53,
       "intlGoals": 26,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "유로 2020 득점왕 출신, 체코의 확실한 한 방을 책임지는 에이스 스트라이커.",
       "strengths": [
         "박스 안 결정력",
@@ -13878,7 +13846,6 @@ window.DATA = {
       "caps": 89,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "장신 박스투박스 미드필더로 세트피스 득점력까지 갖춘 팀의 엔진.",
       "strengths": [
         "공중볼 장악",
@@ -13913,7 +13880,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "빌드업 능력을 갖춘 새 주장, 후방에서 공격을 시작하는 현대형 센터백.",
       "strengths": [
         "전진 패스·빌드업",
@@ -13948,7 +13914,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "체코 올해의 선수, 공격형 미드필더로 창의성과 득점·도움을 겸비한 신성.",
       "strengths": [
         "2선 침투와 슈팅",
@@ -13982,7 +13947,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "측면과 최전방을 오가는 다재다능 공격수, 슈크의 가장 든든한 파트너.",
       "strengths": [
         "멀티 포지션 소화",
@@ -14017,7 +13981,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "맨유 유스 출신의 발밑 좋은 골키퍼, 체코의 새 수문장으로 자리 잡은 자원.",
       "strengths": [
         "빌드업 패스",
@@ -14052,7 +14015,6 @@ window.DATA = {
       "caps": 61,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "투지 넘치는 베테랑 라이트백, 풍부한 경험으로 측면 수비를 지탱하는 기둥.",
       "strengths": [
         "적극적인 오버래핑",
@@ -14086,7 +14048,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 62,
       "oneLiner": "왼발 킥과 중거리 슈팅이 일품인 슬라비아의 창의적 미드필더.",
       "strengths": [
         "왼발 중거리 슈팅",
@@ -14120,7 +14081,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "수비형 미드필더와 센터백을 오가는 멀티 수비수, 유로 2020 8강의 숨은 공신.",
       "strengths": [
         "전술적 유연성",
@@ -14154,7 +14114,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "꾸준한 득점력을 보여주는 국내파 공격수, 슈크의 백업이자 조커 카드.",
       "strengths": [
         "박스 안 위치 선정",
@@ -14188,7 +14147,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "203cm 거구의 타깃맨, 후반 파워 플레이 때 위력을 발휘하는 플랜 B.",
       "strengths": [
         "압도적 제공권",
@@ -14222,7 +14180,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 15,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "주장이자 세계 최정상급 왼쪽 풀백, 캐나다 황금세대의 얼굴.",
       "strengths": [
         "폭발적인 스피드와 드리블",
@@ -14259,7 +14216,6 @@ window.DATA = {
       "caps": 77,
       "intlGoals": 39,
       "grade": "월드클래스",
-      "gradeScore": 87,
       "oneLiner": "릴 시절을 폭격한 캐나다 통산 최다 득점 공동선두의 해결사.",
       "strengths": [
         "박스 안 침착한 마무리",
@@ -14294,7 +14250,6 @@ window.DATA = {
       "caps": 90,
       "intlGoals": 30,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "조나단 데이비드와 함께 통산 최다 득점을 다투는 정통 타깃맨.",
       "strengths": [
         "제공권과 헤더",
@@ -14329,7 +14284,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "캐나다 중원을 조율하는 부주장이자 패스의 사령탑.",
       "strengths": [
         "정확한 패스와 게임 조율",
@@ -14365,7 +14319,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "셀틱 주전 오른쪽 풀백, 꾸준함의 대명사인 수비 핵심.",
       "strengths": [
         "1대1 수비와 태클",
@@ -14400,7 +14353,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "마르세유 소속이지만 임대로 출전 시간을 찾는 왼발 센터백.",
       "strengths": [
         "왼발 빌드업",
@@ -14432,7 +14384,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "데이비스 다음가는 측면 폭발력, 라리가 해트트릭의 주인공.",
       "strengths": [
         "폭발적 드리블",
@@ -14467,7 +14418,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 4,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "빅클럽들이 주시하는 박스투박스 역동성의 차세대 미드필더.",
       "strengths": [
         "탈압박과 전진 드리블",
@@ -14499,7 +14449,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "MLS 클럽 기록을 깨고 라리가로 건너간 떠오르는 공격 옵션.",
       "strengths": [
         "피지컬과 스피드 결합",
@@ -14531,7 +14480,6 @@ window.DATA = {
       "caps": 148,
       "intlGoals": 73,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "마흔의 나이에도 대표팀 득점·출전 1위를 지키는 영원한 캡틴이자 황금세대 마지막 생존자.",
       "strengths": [
         "탁월한 위치 선정과 결정력",
@@ -14568,7 +14516,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "2014년 멤버 중 제코와 함께 남은 단 둘 중 하나, 힘과 경험을 갖춘 수비 기둥.",
       "strengths": [
         "강력한 피지컬과 대인 수비",
@@ -14603,7 +14550,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "잘츠부르크에서 검증받아 벤피카로 빅스텝을 밟은 공수겸장 우측 풀백.",
       "strengths": [
         "활발한 오버래핑과 크로스",
@@ -14637,7 +14583,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "슈투트가르트가 구단 최고 이적료로 데려온, 제코의 뒤를 잇는 분데스리가 검증 공격수.",
       "strengths": [
         "다재다능한 공격 전개와 연계",
@@ -14669,7 +14614,6 @@ window.DATA = {
       "caps": 16,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "미국 유스 출신으로 국적을 바꿔 이탈리아전 결승 PK를 꽂은 '밀워키 메시'.",
       "strengths": [
         "드리블 돌파와 1대1",
@@ -14701,7 +14645,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "로마·아약스를 거친 191cm 장신 수비형 미드필더, 중원의 미래.",
       "strengths": [
         "넓은 커버 범위와 인터셉트",
@@ -14733,7 +14676,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "장크트파울리의 승격을 이끈 주전 수문장, 안정감 있는 No.1.",
       "strengths": [
         "선방 안정감과 반응속도",
@@ -14767,7 +14709,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "레인저스 출신으로 2024년 보스니아로 국적을 전환한 장신 중앙 수비수.",
       "strengths": [
         "공중볼 장악과 제공권",
@@ -14799,7 +14740,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "베식타시를 거친 중원 살림꾼, 헐 시티에서 임대로 실전 감각을 쌓는 앵커.",
       "strengths": [
         "볼 회수와 수비 밸런스",
@@ -14831,7 +14771,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "스웨덴 유스를 거쳐 보스니아를 택한 박스투박스형 중원 자원.",
       "strengths": [
         "넓은 활동 반경",
@@ -14863,7 +14802,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "헤르타에서 2부 득점왕을 찍은 장신 타깃맨, 제코의 백업 옵션.",
       "strengths": [
         "장신 활용 공중 결정력",
@@ -14897,7 +14835,6 @@ window.DATA = {
       "caps": 133,
       "intlGoals": 41,
       "grade": "월드클래스",
-      "gradeScore": 84,
       "oneLiner": "아시아 무대를 평정한 카타르의 간판, 2연속 아시안 풋볼러 오브 더 이어.",
       "strengths": [
         "폭발적인 측면 드리블과 침투",
@@ -14934,7 +14871,6 @@ window.DATA = {
       "caps": 126,
       "intlGoals": 60,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "카타르 역대 최다 득점자, 2019 아시안컵 한 대회 9골 기록의 사나이.",
       "strengths": [
         "골문 앞 본능적인 마무리",
@@ -14971,7 +14907,6 @@ window.DATA = {
       "caps": 184,
       "intlGoals": 41,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "한 클럽에서 한 우물만 판 카타르 역대 최다 출전 주장.",
       "strengths": [
         "탁월한 경기 운영과 리더십",
@@ -15008,7 +14943,6 @@ window.DATA = {
       "caps": 113,
       "intlGoals": 21,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "득점력까지 갖춘 카타르 수비의 베테랑 기둥.",
       "strengths": [
         "세트피스 공중볼 위협(수비수 21골)",
@@ -15044,7 +14978,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "2023 아시안컵 골든글러브를 차지한 카타르의 수문장.",
       "strengths": [
         "빠른 반응 속도와 선방 능력",
@@ -15080,7 +15013,6 @@ window.DATA = {
       "caps": 121,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "190cm 장신을 앞세운 카타르 중원의 수비형 파수꾼.",
       "strengths": [
         "190cm 신장의 공중볼·대인 방어",
@@ -15116,7 +15048,6 @@ window.DATA = {
       "caps": 103,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "측면과 중앙을 모두 소화하는 다재다능한 귀화 수비수.",
       "strengths": [
         "라이트백·센터백 멀티 포지션 소화",
@@ -15152,7 +15083,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "벨기에 무대를 거친 브라질계 귀화 윙어, 카타르 공격의 새 옵션.",
       "strengths": [
         "유럽 1부 리그 경험",
@@ -15188,7 +15118,6 @@ window.DATA = {
       "caps": 80,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "스페인 유스를 경험한 전성기 연령대의 중앙 수비수.",
       "strengths": [
         "전성기 연령대(28세)와 활동량",
@@ -15223,7 +15152,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "활동량으로 중원을 휘젓는 카타르의 박스투박스 미드필더.",
       "strengths": [
         "넓은 활동 범위와 압박",
@@ -15259,7 +15187,6 @@ window.DATA = {
       "caps": 146,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 84,
       "oneLiner": "스위스 최다 출전 기록 보유자이자 후방을 지휘하는 주장, 네 번째 월드컵에 나서는 팀의 심장.",
       "strengths": [
         "탈압박과 장거리 전개 패스",
@@ -15294,7 +15221,6 @@ window.DATA = {
       "caps": 81,
       "intlGoals": 4,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "트레블을 경험한 빌드업형 센터백으로, 수비 지능과 발밑 모두 최상급인 팀의 수비 핵심.",
       "strengths": [
         "위치 선정과 위험 감지",
@@ -15330,7 +15256,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 24,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "대표팀 현역 최다 득점자로, 힘과 영리한 움직임으로 전방을 지탱하는 에이스 공격수.",
       "strengths": [
         "피지컬을 활용한 볼 키핑과 연계",
@@ -15365,7 +15290,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "분데스리가 정상급 수문장으로, 2024 챔피언스리그 결승까지 이끈 안정감의 1번 골키퍼.",
       "strengths": [
         "선방 능력과 반응 속도",
@@ -15399,7 +15323,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "측면을 직선적으로 돌파하는 속도형 윙어로, 스위스 공격에 폭발력을 더하는 신흥 주포.",
       "strengths": [
         "순간 스피드와 드리블 돌파",
@@ -15433,7 +15356,6 @@ window.DATA = {
       "caps": 138,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "137캡의 베테랑 좌측 수비수로, 풍부한 경험과 왼발 킥으로 후방 좌측을 책임지는 산증인.",
       "strengths": [
         "왼발 킥과 세트피스·크로스",
@@ -15467,7 +15389,6 @@ window.DATA = {
       "caps": 88,
       "intlGoals": 11,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "자카 곁에서 중원을 청소하는 박스투박스 베테랑, 활동량과 안정성으로 균형을 잡는 살림꾼.",
       "strengths": [
         "왕성한 활동량과 인터셉트",
@@ -15501,7 +15422,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 11,
       "grade": "로테이션",
-      "gradeScore": 72,
       "oneLiner": "유로 2024 이탈리아전 MOM으로 빛난 측면 자원, 양쪽 측면을 두루 소화하는 다재다능한 윙어.",
       "strengths": [
         "좌우 측면 멀티 소화",
@@ -15535,7 +15455,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "피지컬과 기동력을 겸비한 수비형 미드필더로, 중원을 커버하며 빌드업도 가능한 만능 6번.",
       "strengths": [
         "넓은 수비 커버 범위",
@@ -15569,7 +15488,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "왼발 킥과 창의성을 갖춘 젊은 플레이메이커로, 세대교체 중인 중원의 미래 자원.",
       "strengths": [
         "왼발 킥과 세트피스",
@@ -15603,7 +15521,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 9,
       "grade": "월드클래스",
-      "gradeScore": 95,
       "oneLiner": "두 차례 챔스를 들어올린 현존 최고의 왼쪽 윙어, 브라질 공격의 핵심.",
       "strengths": [
         "폭발적인 1대1 돌파",
@@ -15641,7 +15558,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 11,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "바르셀로나에서 만개해 챔스 공동 득점왕에 오른 오른쪽 공격의 해결사.",
       "strengths": [
         "날카로운 왼발 슈팅과 킥",
@@ -15679,7 +15595,6 @@ window.DATA = {
       "caps": 128,
       "intlGoals": 79,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "브라질 역대 최다 득점자, 전성기는 지났지만 여전한 영향력의 베테랑.",
       "strengths": [
         "창의적인 플레이메이킹",
@@ -15718,7 +15633,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "뉴캐슬 70년 만의 우승을 주장으로 이끈 브라질 중원의 엔진.",
       "strengths": [
         "넓은 활동 범위",
@@ -15756,7 +15670,6 @@ window.DATA = {
       "caps": 105,
       "intlGoals": 7,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "PSG 첫 챔스 우승을 이끈 주장이자 브라질 수비의 기둥.",
       "strengths": [
         "뛰어난 위치 선정과 커버",
@@ -15795,7 +15708,6 @@ window.DATA = {
       "caps": 78,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "세계 최고 수준의 골키퍼, 안정감과 빌드업을 겸비한 최후의 보루.",
       "strengths": [
         "탁월한 선방과 반응속도",
@@ -15834,7 +15746,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "챔스 5회 우승에 빛나는 백전노장 수비형 미드필더.",
       "strengths": [
         "수비형 미드필더 위치 선정",
@@ -15872,7 +15783,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "아스널 우승을 이끈 강력한 수비수, 세트피스 득점력까지 겸비.",
       "strengths": [
         "강력한 피지컬과 공중볼",
@@ -15909,7 +15819,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "다재다능한 공격 자원, 여러 포지션을 소화하는 멀티 플레이어.",
       "strengths": [
         "다양한 공격 포지션 소화",
@@ -15946,7 +15855,6 @@ window.DATA = {
       "caps": 16,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "리옹 임대로 출전 기회를 노리는 브라질의 차세대 골잡이 유망주.",
       "strengths": [
         "나이 대비 뛰어난 결정력",
@@ -15984,7 +15892,6 @@ window.DATA = {
       "caps": 95,
       "intlGoals": 11,
       "grade": "월드클래스",
-      "gradeScore": 93,
       "oneLiner": "PSG 트레블의 주역이자 세계 최고 수준의 공격형 풀백, 모로코의 주장이자 상징.",
       "strengths": [
         "폭발적인 오버래핑과 스피드",
@@ -16022,7 +15929,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 14,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "스페인을 버리고 모로코를 택해 AFCON 득점왕에 오른, 레알 마드리드의 창의적 해결사.",
       "strengths": [
         "좁은 공간에서의 드리블 돌파",
@@ -16058,7 +15964,6 @@ window.DATA = {
       "caps": 89,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 84,
       "oneLiner": "2022 스페인전 승부차기 영웅, 빅매치에서 더 강해지는 모로코의 수호신.",
       "strengths": [
         "승부차기·일대일 선방",
@@ -16095,7 +16000,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "아약스·바이에른·맨유를 거친 다재다능한 수비 자원, 하키미를 든든히 받친다.",
       "strengths": [
         "좌우 풀백·수비 다목적 활용",
@@ -16132,7 +16036,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "정교한 볼 컨트롤과 시야로 수비를 가르는, 모로코 차세대 플레이메이커.",
       "strengths": [
         "좁은 공간 탈압박과 키패스",
@@ -16169,7 +16072,6 @@ window.DATA = {
       "caps": 73,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "2022 월드컵에서 세계를 놀라게 한 중원의 파이터, 모로코 수비 블록의 심장.",
       "strengths": [
         "왕성한 활동량과 볼 탈취",
@@ -16206,7 +16108,6 @@ window.DATA = {
       "caps": 64,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "왼발 빌드업과 제공권을 겸비한 모로코 수비의 기둥, 부상만 없다면 핵심.",
       "strengths": [
         "제공권과 헤더 능력",
@@ -16243,7 +16144,6 @@ window.DATA = {
       "caps": 69,
       "intlGoals": 35,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "유럽 대항전 우승을 안긴 늦깎이 골잡이, 모로코의 검증된 페널티 박스 해결사.",
       "strengths": [
         "박스 안 위치 선정과 마무리",
@@ -16280,7 +16180,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2022 월드컵에서 루이스 엔리케를 감탄케 한 우아한 8번, 중원의 윤활유.",
       "strengths": [
         "탈압박 드리블과 전진 능력",
@@ -16316,7 +16215,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "프랑스를 버리고 모로코를 택한 18세 신성, 다음 세대 중원의 청사진.",
       "strengths": [
         "나이 대비 성숙한 경기 운영",
@@ -16351,7 +16249,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "팬들의 청원 끝에 프랑스에서 아이티로 국적을 바꾼 프리미어리그 최전방, 팀의 최고 화력원.",
       "strengths": [
         "프리미어리그급 결정력",
@@ -16383,7 +16280,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "아이티 국적 선수 최초로 프리미어리그를 누비는 박스투박스 미드필더, 중원의 엔진.",
       "strengths": [
         "체력과 활동량",
@@ -16415,7 +16311,6 @@ window.DATA = {
       "caps": 74,
       "intlGoals": 44,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "44골로 아이티 역대 최다 득점자이자 예선 코스타리카전 해트트릭의 주인공, 정신적 지주.",
       "strengths": [
         "타고난 골 감각",
@@ -16449,7 +16344,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 34,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "194cm 장신 타깃맨으로 50경기 33골을 넣은 아이티 제2의 해결사.",
       "strengths": [
         "제공권과 포스트 플레이",
@@ -16481,7 +16375,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "아이티 태생·벨기에 성장의 멀티 수비수로 안데를레흐트·번리 경험을 갖춘 뒷문의 핵.",
       "strengths": [
         "센터백·레프트백 멀티 운용",
@@ -16513,7 +16406,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "랑스·브레스트를 거친 프랑스 출신 센터백으로 수비 라인의 붙박이 주전.",
       "strengths": [
         "대인 방어",
@@ -16545,7 +16437,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "MLS 11시즌 베테랑 윙어이자 2020 MLS컵 우승 경험자, 측면 공격의 활력소.",
       "strengths": [
         "측면 돌파",
@@ -16579,7 +16470,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "프랑스 리그 1 앙제 소속의 측면 수비수로 풀백 라인을 책임지는 자원.",
       "strengths": [
         "오버래핑 가담",
@@ -16611,7 +16501,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "38세 베테랑 골키퍼이자 주장, 풍부한 경험으로 어린 스쿼드를 이끄는 리더.",
       "strengths": [
         "풍부한 경험",
@@ -16643,7 +16532,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 54,
       "oneLiner": "AS로마 유스 출신의 빠른 측면 공격수로 팀의 미래를 책임질 영건.",
       "strengths": [
         "스피드와 폭발력",
@@ -16675,7 +16563,6 @@ window.DATA = {
       "caps": 70,
       "intlGoals": 15,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "나폴리 우승을 이끈 세리에 A MVP, 스코틀랜드 역사상 최고의 미드필더이자 팀의 에이스.",
       "strengths": [
         "박스 침투와 마무리 능력",
@@ -16711,7 +16598,6 @@ window.DATA = {
       "caps": 94,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "리버풀에서 모든 메이저 트로피를 들어올린 주장, 노련함으로 팀을 이끄는 스코틀랜드의 리더.",
       "strengths": [
         "풍부한 빅리그·우승 경험",
@@ -16749,7 +16635,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 20,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "애스턴 빌라 주장이자 스코틀랜드 부주장, 20골을 기록한 에너지 넘치는 박스 투 박스.",
       "strengths": [
         "엄청난 활동량과 추진력",
@@ -16784,7 +16669,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "오랜 부상을 털고 셀틱으로 돌아온 풀백, 덴마크전 결승골로 본선행을 견인한 주역.",
       "strengths": [
         "공수 양면 풀백 능력",
@@ -16820,7 +16704,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "그레이엄 수네스 이후 40년 만에 코파 이탈리아를 든 볼로냐 주장, 떠오르는 중원 자원.",
       "strengths": [
         "박스 투 박스 다재다능함",
@@ -16854,7 +16737,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 13,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "세리에 A 무대에서 뛰는 스코틀랜드 최전방의 무게중심, 꾸준한 득점원.",
       "strengths": [
         "전방 압박과 연계 플레이",
@@ -16886,7 +16768,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 7,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "이번 시즌 16골을 넣은 하츠 주장, 덴마크전 득점으로 본선행에 기여한 박스 안 해결사.",
       "strengths": [
         "박스 안 위치선정과 마무리",
@@ -16918,7 +16799,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "예선에서 결정적 골을 넣은 노련한 중원 조율사, 풍부한 A매치 경험의 베테랑.",
       "strengths": [
         "경기 운영과 패스",
@@ -16952,7 +16832,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": 10,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "프리미어리그 본머스에서 멀티 역할을 소화하는 다재다능한 공격 자원.",
       "strengths": [
         "다양한 포지션 소화",
@@ -16986,7 +16865,6 @@ window.DATA = {
       "caps": 83,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "43세 베테랑 골키퍼, 월드컵 최고령급 출전 후보로 노련함을 더하는 수문장.",
       "strengths": [
         "풍부한 경험과 안정감",
@@ -17021,7 +16899,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "클럽 출전이 제한적이지만 대표팀에선 꾸준한 오른쪽 풀백, 잠재력 큰 젊은 자원.",
       "strengths": [
         "폭발적인 스피드",
@@ -17055,7 +16932,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 33,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "캡틴 아메리카, 미국 황금세대의 얼굴이자 공격의 모든 것이 통하는 에이스.",
       "strengths": [
         "폭발적인 드리블과 1대1 돌파",
@@ -17092,7 +16968,6 @@ window.DATA = {
       "caps": 66,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "박스 투 박스의 화신, 어디든 채워 넣는 활동량으로 빅클럽에서 살아남은 멀티 미드필더.",
       "strengths": [
         "엄청난 활동량과 박스 진입 득점",
@@ -17129,7 +17004,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "미국의 주장이자 엔진, 중원을 청소하는 압박형 수비형 미드필더의 표본.",
       "strengths": [
         "인터셉트와 볼 탈취",
@@ -17166,7 +17040,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "랭스에서 폭발한 정통 9번, 미국이 오래 기다린 진짜 골잡이.",
       "strengths": [
         "박스 안 위치선정과 마무리",
@@ -17202,7 +17075,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "프리미어리그 정상급 왼쪽 풀백, 무지막지한 스피드와 어시스트 공장.",
       "strengths": [
         "폭발적인 주력과 오버래핑",
@@ -17238,7 +17110,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "전설 조지 웨아의 아들, 속도와 측면 다재다능함으로 우측을 책임지는 일꾼.",
       "strengths": [
         "빠른 스피드와 측면 침투",
@@ -17275,7 +17146,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "바르사 출신의 공격형 풀백, PSV에서 부활하며 양쪽 측면을 책임지는 테크니션.",
       "strengths": [
         "전진 드리블과 볼 운반",
@@ -17311,7 +17181,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "바이에른 유스 출신, PSV 폭발 후 레버쿠젠으로 점프한 미국 중원의 미래.",
       "strengths": [
         "라인 사이 침투와 창의적 패스",
@@ -17348,7 +17217,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "FA컵 우승 주역으로 떠오른 미국 수비의 핵, 2025 미국 올해의 선수.",
       "strengths": [
         "공중볼과 대인 마크",
@@ -17385,7 +17253,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 9,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "재능은 월드클래스지만 부상이 발목 잡은 황금세대의 미완성 천재.",
       "strengths": [
         "탈압박과 마지막 패스",
@@ -17421,7 +17288,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "늦깎이 신데렐라 골키퍼, 국제대회마다 골든글러브를 쓸어 담은 미국의 수문장.",
       "strengths": [
         "선방 능력과 반사 신경",
@@ -17458,7 +17324,6 @@ window.DATA = {
       "caps": 88,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "AC 밀란을 거쳐 팔메이라스 주장으로 부활한 파라과이 수비의 기둥이자 캡틴.",
       "strengths": [
         "공중볼 장악과 대인 수비",
@@ -17493,7 +17358,6 @@ window.DATA = {
       "caps": 76,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "뉴캐슬에서 프리미어리그를 누볐던 파라과이 공격의 창의성과 활동량의 핵심.",
       "strengths": [
         "왕성한 활동량과 침투",
@@ -17528,7 +17392,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 4,
       "grade": "유망주",
-      "gradeScore": 72,
       "oneLiner": "브라이턴을 거쳐 리그1에서 뛰는, 파라과이의 미래를 책임질 드리블 마법사.",
       "strengths": [
         "폭발적인 드리블과 탈압박",
@@ -17563,7 +17426,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "헤타페를 거쳐 프리미어리그에 안착한 왼발 수비수, 백라인의 또 다른 축.",
       "strengths": [
         "왼발 빌드업과 패스",
@@ -17598,7 +17460,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "토리노를 거친 노련한 9번, 월드컵 예선 최다 득점자로 최전방을 책임진다.",
       "strengths": [
         "연계 플레이와 포스트 역할",
@@ -17632,7 +17493,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "인터 마이애미 구단 최고액 매각의 주인공, 박스 투 박스로 성장하는 미드필더.",
       "strengths": [
         "넓은 활동 범위와 박스 침투",
@@ -17667,7 +17527,6 @@ window.DATA = {
       "caps": 70,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "브라질 무대에서 우승을 경험한 다재다능한 베테랑 수비수.",
       "strengths": [
         "좌우 수비 소화 가능한 멀티성",
@@ -17702,7 +17561,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "중원에서 공을 끊고 균형을 잡아주는 파라과이식 살림꾼 6번.",
       "strengths": [
         "볼 탈취와 수비 차단",
@@ -17736,7 +17594,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "세로 포르테뇨에서 상파울루로 건너가 성장 중인 단단한 중원 자원.",
       "strengths": [
         "체격을 활용한 중원 싸움",
@@ -17770,7 +17627,6 @@ window.DATA = {
       "caps": 104,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "네 번째 월드컵에 나서는 주장이자 호주 골문의 정신적 지주.",
       "strengths": [
         "반사신경과 선방 능력",
@@ -17806,7 +17662,6 @@ window.DATA = {
       "caps": 82,
       "intlGoals": 14,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "박스 투 박스로 뛰는 중원의 심장이자 팀 공동 최다 득점자.",
       "strengths": [
         "엄청난 활동량과 체력",
@@ -17841,7 +17696,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "198cm 장신으로 공중볼과 세트피스를 모두 지배하는 중앙 수비의 기둥.",
       "strengths": [
         "압도적인 제공권",
@@ -17876,7 +17730,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 4,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "공격 가담과 득점력까지 갖춘 호주 차세대 풀백의 핵심.",
       "strengths": [
         "적극적인 오버래핑과 크로스",
@@ -17910,7 +17763,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 5,
       "grade": "유망주",
-      "gradeScore": 65,
       "oneLiner": "수비수가 감당하기 힘든 폭발적인 스피드를 지닌 호주 최고 유망주.",
       "strengths": [
         "폭발적인 가속과 드리블",
@@ -17945,7 +17797,6 @@ window.DATA = {
       "caps": 80,
       "intlGoals": 14,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "네 번째 월드컵에 나서는 베테랑 윙어, 결정적 순간의 해결사.",
       "strengths": [
         "스피드와 침투 타이밍",
@@ -17980,7 +17831,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 67,
       "oneLiner": "이탈리아 대신 호주를 택한, 침착함을 갖춘 차세대 센터백.",
       "strengths": [
         "빌드업 능력과 패스",
@@ -18015,7 +17865,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "이탈리아에서 국적을 전향한, 창의성을 더할 무캡 공격형 미드필더.",
       "strengths": [
         "탈압박과 연계 플레이",
@@ -18049,7 +17898,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "어바인과 함께 분데스리가에서 뛰는 다재다능한 박스 투 박스 미드필더.",
       "strengths": [
         "넓은 활동 범위",
@@ -18084,7 +17932,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "중원의 균형을 잡아주는 수비형 미드필더, 묵묵한 살림꾼.",
       "strengths": [
         "높은 활동량과 압박",
@@ -18118,7 +17965,6 @@ window.DATA = {
       "caps": 84,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "세 번째 월드컵에 나서는 노련한 베테랑 레프트백.",
       "strengths": [
         "풍부한 경험과 안정감",
@@ -18153,7 +17999,6 @@ window.DATA = {
       "caps": 106,
       "intlGoals": 22,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "팀의 주장이자 심장, 배급과 세트피스로 경기를 지휘하는 사령관.",
       "strengths": [
         "정교한 롱패스·전개",
@@ -18189,7 +18034,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 6,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "레알 마드리드의 차세대 에이스, 왼발 하나로 경기를 바꾸는 천재.",
       "strengths": [
         "탁월한 왼발 킥·패스",
@@ -18226,7 +18070,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 83,
       "oneLiner": "유벤투스 10번을 단 독일 출신 신성, 폭발적인 돌파와 마무리가 일품.",
       "strengths": [
         "빠른 드리블·돌파",
@@ -18262,7 +18105,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 15,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "측면을 허무는 해결사, 대표팀에서 15골을 넣은 검증된 골잡이.",
       "strengths": [
         "측면 돌파·컷인 슈팅",
@@ -18298,7 +18140,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "유로 2024에서 헤더 2골로 영웅이 된, 제공권과 카리스마의 수비 리더.",
       "strengths": [
         "압도적 제공권·세트피스 득점",
@@ -18334,7 +18175,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "좌우·미드필드까지 소화하는 멀티 풀백, 브라이턴 올해의 선수.",
       "strengths": [
         "폭넓은 멀티 포지션 소화",
@@ -18369,7 +18209,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "레스터에서 프리미어리그를 누빈 베테랑, 빌드업이 되는 센터백.",
       "strengths": [
         "발밑·전진 패스",
@@ -18405,7 +18244,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "벤피카 클럽 레코드로 영입됐던 좌우 겸장 미드필더, 베식타시의 두뇌.",
       "strengths": [
         "양발 패스·킥",
@@ -18441,7 +18279,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "튀르키예의 부동의 1번, 반사신경과 선방으로 골문을 지킨다.",
       "strengths": [
         "뛰어난 반사신경·선방",
@@ -18477,7 +18314,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "갈라타사라이 리그 4연패의 일원, 측면을 폭주하는 에너자이저.",
       "strengths": [
         "빠른 스피드·돌파",
@@ -18513,7 +18349,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 9,
       "grade": "월드클래스",
-      "gradeScore": 93,
       "oneLiner": "좁은 공간을 마법처럼 빠져나가는 '밤비', 독일 공격의 심장",
       "strengths": [
         "폭발적 드리블 돌파",
@@ -18552,7 +18387,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 11,
       "grade": "월드클래스",
-      "gradeScore": 91,
       "oneLiner": "창의성과 연계 플레이의 정점, 분데스리가 최고액 이적의 주인공",
       "strengths": [
         "탁월한 패스 시야와 키패스",
@@ -18591,7 +18425,6 @@ window.DATA = {
       "caps": 110,
       "intlGoals": 10,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "후방을 지휘하는 두뇌이자 110캡의 베테랑 주장",
       "strengths": [
         "정확한 롱·숏 패스 배급",
@@ -18630,7 +18463,6 @@ window.DATA = {
       "caps": 82,
       "intlGoals": 3,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "레알 수비를 이끄는 독일의 강철 수비수",
       "strengths": [
         "1대1 대인 수비",
@@ -18669,7 +18501,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 22,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "가짜 9번으로 독일 최전방을 책임지는 다재다능한 공격수",
       "strengths": [
         "넓은 활동 반경",
@@ -18707,7 +18538,6 @@ window.DATA = {
       "caps": 76,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "스피드와 슈팅을 겸비한 측면의 화력 카드",
       "strengths": [
         "폭발적 스피드",
@@ -18745,7 +18575,6 @@ window.DATA = {
       "caps": 124,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "국가대표 은퇴를 번복하고 돌아온 124캡의 전설적 수문장",
       "strengths": [
         "스위퍼 키퍼 역할의 선구자",
@@ -18783,7 +18612,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "195cm 피지컬과 빌드업을 겸비한 바이에른의 안정적 센터백",
       "strengths": [
         "뛰어난 신장과 공중볼",
@@ -18820,7 +18648,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "왼발 빌드업과 전진 패스가 일품인 모던 센터백",
       "strengths": [
         "정확한 왼발 롱패스",
@@ -18857,7 +18684,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 4,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "급성장한 장신 공격수, 독일 9번 부재의 해법 후보",
       "strengths": [
         "장신을 활용한 포스트 플레이",
@@ -18895,7 +18721,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "키미히의 뒤를 잇는 바이에른산 차세대 수비형 미드필더",
       "strengths": [
         "안정적 볼 배급",
@@ -18931,7 +18756,6 @@ window.DATA = {
       "caps": 72,
       "intlGoals": 16,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "팀을 본선까지 이끈 주장이자 산증인, 중원의 정신적 지주.",
       "strengths": [
         "풍부한 유럽 경험",
@@ -18965,7 +18789,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "前 맨유 유망주 출신, 데뷔전부터 멀티골을 터뜨린 새 간판 윙어.",
       "strengths": [
         "드리블 돌파와 개인기",
@@ -18997,7 +18820,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "스쿼드 내 최고 수준 클럽 PSV 소속, 챔피언스리그를 뛰는 수비 핵심.",
       "strengths": [
         "빌드업 능력",
@@ -19031,7 +18853,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "한때 차세대 네덜란드 스타로 불린 다재다능한 수비형 자원.",
       "strengths": [
         "수비와 미드필더 겸업 가능",
@@ -19066,7 +18887,6 @@ window.DATA = {
       "caps": 72,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "팀 최다 출전급 베테랑 수문장, 골문을 지키는 안정의 상징.",
       "strengths": [
         "풍부한 국가대표 경험",
@@ -19100,7 +18920,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "유소년 세계 무대 득점왕 출신, 팀의 미래를 책임질 측면 공격수.",
       "strengths": [
         "스피드와 침투",
@@ -19135,7 +18954,6 @@ window.DATA = {
       "caps": 48,
       "intlGoals": 13,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "중원에서 골까지 책임지는 득점력 갖춘 핵심 미드필더.",
       "strengths": [
         "중거리 슈팅과 득점력",
@@ -19169,7 +18987,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "프리미어리그 구단 최고 이적료를 찍었던 경력의 베테랑 스트라이커.",
       "strengths": [
         "피지컬과 포스트 플레이",
@@ -19203,7 +19020,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "여러 리그를 누빈 경험 많은 측면·전방 멀티 공격수.",
       "strengths": [
         "다양한 리그 경험",
@@ -19235,7 +19051,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "측면에서 꾸준히 득점에 관여하는 활동량 좋은 공격 옵션.",
       "strengths": [
         "스피드",
@@ -19267,7 +19082,6 @@ window.DATA = {
       "caps": 103,
       "intlGoals": 15,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "AC밀란·바르사를 거친 주장, 100캡 돌파한 코트디부아르의 심장.",
       "strengths": [
         "박스 투 박스 활동량",
@@ -19303,7 +19117,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "맨유의 양발잡이 측면 자원, 좁은 공간 마무리가 일품인 에이스.",
       "strengths": [
         "양발 드리블·마무리",
@@ -19338,7 +19151,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "유로파리그 우승 경험의 왼발 센터백, 백라인의 기둥.",
       "strengths": [
         "스피드·커버 범위",
@@ -19373,7 +19185,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "센터백도 소화하는 파워풀 풀백, 우측을 통째로 책임진다.",
       "strengths": [
         "피지컬·스피드",
@@ -19408,7 +19219,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "분데스리가·세리에A를 누빈 빠른 발의 중앙 수비수.",
       "strengths": [
         "회복 스피드",
@@ -19443,7 +19253,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 71,
       "oneLiner": "스포르팅의 떠오르는 젊은 센터백, 미래의 주축 수비수.",
       "strengths": [
         "나이 대비 안정감",
@@ -19478,7 +19287,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "중원을 청소하는 장신 수비형 미드필더, 케시에의 든든한 짝.",
       "strengths": [
         "볼 차단·인터셉트",
@@ -19513,7 +19321,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "AFCON 결승을 빛낸 폭발적인 드리블러, 측면 돌파의 핵.",
       "strengths": [
         "일대일 돌파",
@@ -19547,7 +19354,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "니스에서 두각을 나타낸 멀티 공격수, 프리미어리그에 안착.",
       "strengths": [
         "피지컬·연계",
@@ -19581,7 +19387,6 @@ window.DATA = {
       "caps": 55,
       "intlGoals": 12,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "아스널을 거친 베테랑 윙어, 경험으로 측면에 변화를 준다.",
       "strengths": [
         "양발 슈팅",
@@ -19616,7 +19421,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "분데스리가 올해의 신인, 19세 폭발적 윙어 깜짝 카드.",
       "strengths": [
         "폭발적 스피드",
@@ -19651,7 +19455,6 @@ window.DATA = {
       "caps": 61,
       "intlGoals": 3,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "영국 이적료 기록을 갈아치운 에콰도르 황금세대의 심장이자 세계 최정상급 수비형 미드필더입니다.",
       "strengths": [
         "엄청난 활동량과 볼 탈취 능력",
@@ -19685,7 +19488,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 2,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "PSG의 챔피언스리그 우승 주역으로, 에콰도르 최초로 빅이어를 들어올린 차분한 센터백입니다.",
       "strengths": [
         "침착한 빌드업과 정확한 패스",
@@ -19722,7 +19524,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "레버쿠젠 무패 우승의 핵심 수비수로, 좌측 멀티 수비가 가능한 공격적인 왼발잡이 센터백입니다.",
       "strengths": [
         "적극적인 전진 수비와 태클",
@@ -19757,7 +19558,6 @@ window.DATA = {
       "caps": 105,
       "intlGoals": 49,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "A매치 49골의 역대 최다 득점자이자 주장으로, 베테랑 경험과 리더십을 책임지는 에콰도르의 상징입니다.",
       "strengths": [
         "풍부한 빅매치 경험과 리더십",
@@ -19791,7 +19591,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "공격 가담이 위협적인 풀백으로, 브라이턴을 거쳐 AC 밀란 사상 첫 에콰도르 선수가 된 주전 레프트백입니다.",
       "strengths": [
         "적극적인 오버래핑과 크로스",
@@ -19823,7 +19622,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "2025 코파 리베르타도레스 우승 멤버로, 측면에서 돌파와 창의성을 더하는 에콰도르의 공격 옵션입니다.",
       "strengths": [
         "측면 돌파와 드리블",
@@ -19857,7 +19655,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "활동량 좋은 오른쪽 풀백으로, 측면 공수 균형을 잡아주는 검증된 주전급 측면 수비수입니다.",
       "strengths": [
         "꾸준한 활동량과 체력",
@@ -19889,7 +19686,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "첼시 소속의 10대 특급 유망주로, 에콰도르가 가장 기대하는 차세대 공격형 미드필더입니다.",
       "strengths": [
         "나이 대비 성숙한 탈압박과 패스",
@@ -19921,7 +19717,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "신체 조건이 좋은 타깃형 스트라이커로, 벨기에 무대에서 자리 잡으며 발렌시아의 대안으로 떠오른 자원입니다.",
       "strengths": [
         "좋은 키와 포스트 플레이",
@@ -19955,7 +19750,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "2022 월드컵 경험을 갖춘 베테랑 골키퍼로, 안정감과 경험으로 골문을 지키는 자원입니다.",
       "strengths": [
         "선방 안정감과 경험",
@@ -19987,7 +19781,6 @@ window.DATA = {
       "caps": 91,
       "intlGoals": 12,
       "grade": "월드클래스",
-      "gradeScore": 92,
       "oneLiner": "오라녜의 주장이자 세계 최정상급 센터백, 수비의 절대적 기둥.",
       "strengths": [
         "압도적인 제공권과 피지컬",
@@ -20024,7 +19817,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 2,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "탈압박과 전진 드리블의 달인, 네덜란드 중원의 사령탑.",
       "strengths": [
         "압박을 벗겨내는 볼 운반 능력",
@@ -20060,7 +19852,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 19,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "유로 2024 득점왕 출신, 측면과 최전방을 오가는 다재다능한 공격수.",
       "strengths": [
         "양발을 쓰는 슈팅",
@@ -20096,7 +19887,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "전진성과 득점력을 겸비한 박스 투 박스 미드필더, 떠오르는 핵심 자원.",
       "strengths": [
         "적극적인 공격 가담과 득점",
@@ -20133,7 +19923,6 @@ window.DATA = {
       "caps": 71,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "폭발적인 오버래핑과 득점력을 갖춘 오라녜의 붙박이 오른쪽 윙백.",
       "strengths": [
         "강력한 피지컬과 스피드",
@@ -20169,7 +19958,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "측면과 중앙을 모두 소화하는 차세대 수비수, 침착함과 운동능력의 결합.",
       "strengths": [
         "다재다능한 수비 포지션 소화",
@@ -20205,7 +19993,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "리버풀에서 만개한 6번 자원, 큰 체격과 기술을 겸비한 중원 엔진.",
       "strengths": [
         "큰 체격을 활용한 볼 키핑",
@@ -20241,7 +20028,6 @@ window.DATA = {
       "caps": 109,
       "intlGoals": 55,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "네덜란드 역대 최다 득점자, 경험과 마무리를 갖춘 베테랑 공격수.",
       "strengths": [
         "풍부한 국가대표 경험",
@@ -20277,7 +20063,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "발밑이 뛰어난 차세대 수문장, 일찌감치 주전을 꿰찬 젊은 골키퍼.",
       "strengths": [
         "빌드업에 능한 발밑 기술",
@@ -20312,7 +20097,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "프리미어리그 최고 스피드 수비수, 반 다이크의 든든한 파트너 후보.",
       "strengths": [
         "리그 최상위권 스피드",
@@ -20347,7 +20131,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 13,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "빠른 스피드와 침투로 슈퍼서브 역할을 수행하는 다목적 공격수.",
       "strengths": [
         "폭발적인 스피드와 침투",
@@ -20383,7 +20166,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 7,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "혼자서도 경기를 바꾸는 일본 최고의 윙어이자 사실상 팀의 에이스.",
       "strengths": [
         "탈압박과 드리블 돌파",
@@ -20420,7 +20202,6 @@ window.DATA = {
       "caps": 73,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "리버풀에서 프리미어리그를 들어올린 백전노장 주장, 일본 허리의 기둥.",
       "strengths": [
         "볼 탈취와 수비 커버",
@@ -20457,7 +20238,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "2022 카타르 월드컵 독일전 동점골의 주인공, 큰 경기에 강한 해결사.",
       "strengths": [
         "왼발 컷인 슈팅",
@@ -20494,7 +20274,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "창의적인 패스와 득점력을 겸비한 일본 중원의 두뇌형 미드필더.",
       "strengths": [
         "키패스와 연계",
@@ -20531,7 +20310,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 16,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "에레디비시 득점왕 출신, 미토마 부재 속 일본의 최전방 해결사.",
       "strengths": [
         "박스 안 위치 선정",
@@ -20568,7 +20346,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "지칠 줄 모르는 압박과 스피드로 전방을 휘젓는 셀틱의 다재다능 공격수.",
       "strengths": [
         "폭발적인 스피드",
@@ -20605,7 +20382,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "바이에른 뮌헨이 바이아웃을 행사해 데려온 멀티 수비 자원.",
       "strengths": [
         "왼발 빌드업",
@@ -20641,7 +20417,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "아스널을 거친 멀티 수비수, 부상만 없다면 양쪽 풀백을 모두 책임지는 일꾼.",
       "strengths": [
         "좌우 풀백 겸용",
@@ -20678,7 +20453,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "세리에 A를 지키는 차세대 일본 수문장, 빠르게 주전을 꿰찬 유망 골키퍼.",
       "strengths": [
         "뛰어난 반사신경",
@@ -20715,7 +20489,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 17,
       "grade": "월드클래스",
-      "gradeScore": 92,
       "oneLiner": "영국 이적료 기록을 갈아치운, 스웨덴 역대 최연소 득점자 출신의 정상급 9번.",
       "strengths": [
         "뛰어난 골 결정력과 마무리",
@@ -20753,7 +20526,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 19,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "스포르팅에서 폭발한 골폭격기, 플레이오프 결승골로 스웨덴을 본선에 보낸 영웅.",
       "strengths": [
         "압도적인 득점력과 침투 타이밍",
@@ -20788,7 +20560,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "폭발적인 스피드로 측면을 뚫는, 5,500만 파운드의 역습 스페셜리스트.",
       "strengths": [
         "리그 최정상급 스피드",
@@ -20820,7 +20591,6 @@ window.DATA = {
       "caps": 76,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "맨유에서 잔뼈가 굵은 스웨덴 주장, 빌라에서 유로파리그 우승까지 더한 수비 리더.",
       "strengths": [
         "침착한 빌드업과 패스",
@@ -20856,7 +20626,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 72,
       "oneLiner": "바르셀로나와 경쟁 끝에 토트넘이 데려온, 스웨덴 차세대 미드필드의 핵심.",
       "strengths": [
         "나이답지 않은 탈압박과 볼 운반",
@@ -20890,7 +20659,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "세리에A 강호 아탈란타의 수비를 지키는, 린델뢰프의 듬직한 파트너.",
       "strengths": [
         "빠른 회복 속도와 대인 방어",
@@ -20924,7 +20692,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "분데스리가에서 꾸준한 출전을 쌓은 스웨덴 중원의 살림꾼.",
       "strengths": [
         "박스 투 박스 활동량",
@@ -20956,7 +20723,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "브라이턴에서 성장 중인, 에너지 넘치는 박스 투 박스 영건.",
       "strengths": [
         "왕성한 활동량과 압박",
@@ -20988,7 +20754,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "릴을 거쳐 프리미어리그로 온, 예선 전 경기를 소화한 붙박이 왼쪽 풀백.",
       "strengths": [
         "꾸준한 측면 오버래핑",
@@ -21020,7 +20785,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "베테랑 올센의 국가대표 은퇴 이후 골문을 책임지게 된 주전 후보.",
       "strengths": [
         "좋은 반사신경과 선방 능력",
@@ -21051,7 +20815,6 @@ window.DATA = {
       "caps": 81,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "팀의 주장이자 중원의 심장, 분데스리가에서 검증된 튀니지의 핵심.",
       "strengths": [
         "넓은 활동량과 볼 탈취",
@@ -21086,7 +20849,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "맨유 유스 출신의 창의적 미드필더, 프리미어리그 경험과 패기를 더하는 엔진.",
       "strengths": [
         "창의적인 탈압박과 드리블",
@@ -21121,7 +20883,6 @@ window.DATA = {
       "caps": 64,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "리그앙에서 다져진 수비 기둥, 무실점 예선을 지탱한 중앙 수비수.",
       "strengths": [
         "제공권과 대인 수비",
@@ -21157,7 +20918,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "덴마크 더블 우승의 주역, 측면을 허무는 빠른 윙어.",
       "strengths": [
         "스피드와 측면 돌파",
@@ -21192,7 +20952,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "노르웨이 대신 튀니지를 택한 셀틱의 측면 유망주, 폭발력의 한 방.",
       "strengths": [
         "속도와 일대일 돌파",
@@ -21227,7 +20986,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "덴마크 태생의 박스투박스 미드필더, 중원에 활동량을 더하는 옵션.",
       "strengths": [
         "넓은 활동 반경",
@@ -21262,7 +21020,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "무실점 예선을 지킨 안정적인 수문장, 튀니지의 제1 골키퍼.",
       "strengths": [
         "꾸준한 선방과 집중력",
@@ -21297,7 +21054,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "데뷔 후 빠르게 골을 쌓은 늦깎이 공격수, 최근 최다 득점원.",
       "strengths": [
         "골 감각과 마무리",
@@ -21329,7 +21085,6 @@ window.DATA = {
       "caps": 109,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 93,
       "oneLiner": "챔피언스리그를 두 번 들어올린 세계 최정상급 수문장.",
       "strengths": [
         "압도적인 선방 능력",
@@ -21367,7 +21122,6 @@ window.DATA = {
       "caps": 119,
       "intlGoals": 37,
       "grade": "월드클래스",
-      "gradeScore": 91,
       "oneLiner": "한 시대를 지배한 세계 최고의 플레이메이커, 노련함으로 승부한다.",
       "strengths": [
         "정교한 키패스와 크로스",
@@ -21405,7 +21159,6 @@ window.DATA = {
       "caps": 126,
       "intlGoals": 90,
       "grade": "월드클래스",
-      "gradeScore": 85,
       "oneLiner": "벨기에 역대 최다 득점자, 여전한 최전방 해결사.",
       "strengths": [
         "강력한 피지컬과 포스트 플레이",
@@ -21443,7 +21196,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "폭발적인 스피드와 드리블을 갖춘 차세대 측면 공격수.",
       "strengths": [
         "압도적인 1대1 드리블",
@@ -21481,7 +21233,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "여러 공격 포지션을 소화하는 영리한 멀티 자원.",
       "strengths": [
         "양발 활용과 슈팅",
@@ -21518,7 +21269,6 @@ window.DATA = {
       "caps": 84,
       "intlGoals": 13,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "2025년 주장으로 임명된 중원의 사령탑.",
       "strengths": [
         "넓은 시야와 패스 범위",
@@ -21555,7 +21305,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "압도적 피지컬을 갖춘 차세대 수비형 미드필더.",
       "strengths": [
         "볼 탈취와 커버 범위",
@@ -21590,7 +21339,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "밀란 실패를 딛고 아탈란타에서 부활한 공격형 미드필더.",
       "strengths": [
         "연계 플레이와 시야",
@@ -21626,7 +21374,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "수비형 미드필더도 소화하는 빌드업형 젊은 센터백.",
       "strengths": [
         "볼 운반과 패스",
@@ -21662,7 +21409,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "공격 가담이 활발한 풀백 자원, 프리미어리그에서 입지를 다지는 중.",
       "strengths": [
         "공격적인 오버래핑",
@@ -21699,7 +21445,6 @@ window.DATA = {
       "caps": 116,
       "intlGoals": 67,
       "grade": "월드클래스",
-      "gradeScore": 95,
       "oneLiner": "이집트 역대 최고 선수이자 팀의 심장, 월드컵 첫 8강을 노리는 주장.",
       "strengths": [
         "폭발적인 왼발 마무리와 컷인 슈팅",
@@ -21739,7 +21484,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 84,
       "oneLiner": "분데스리가에서 폭발해 맨시티로 빅이적한 살라의 두 번째 칼날.",
       "strengths": [
         "다재다능한 전방 움직임과 침투",
@@ -21777,7 +21521,6 @@ window.DATA = {
       "caps": 95,
       "intlGoals": 23,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "유럽 무대를 거쳐 친정으로 돌아온 베테랑 측면 자원, 살라의 반대편 옵션.",
       "strengths": [
         "빠른 측면 1대1 돌파",
@@ -21815,7 +21558,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "유럽에서 뛰는 수비 핵심이지만 ACL 부상 회복이 변수인 중앙 수비수.",
       "strengths": [
         "제공권과 대인 수비",
@@ -21852,7 +21594,6 @@ window.DATA = {
       "caps": 77,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "아프리카 최고 수준으로 평가받는 알 아흘리 주장 출신 베테랑 골키퍼.",
       "strengths": [
         "선방 능력과 위치 선정",
@@ -21888,7 +21629,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "알 아흘리 리그 득점왕 출신, 중원에서 공격을 연결하는 박스-투-박스 미드필더.",
       "strengths": [
         "박스 안으로 침투하는 득점 가담",
@@ -21925,7 +21665,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "피라미즈에서 두각을 나타내 유럽으로 진출한 빠른 측면 유망주.",
       "strengths": [
         "스피드를 활용한 측면 돌파",
@@ -21961,7 +21700,6 @@ window.DATA = {
       "caps": 53,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "중원을 단단히 받치는 수비형 미드필더, 카타르 리그에서 뛰는 베테랑.",
       "strengths": [
         "볼 차단과 중원 커버 범위",
@@ -21997,7 +21735,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "노장 엘 셰나위의 뒤를 잇는 알 아흘리 차세대 골키퍼 옵션.",
       "strengths": [
         "빠른 반응 속도",
@@ -22033,7 +21770,6 @@ window.DATA = {
       "caps": 105,
       "intlGoals": 60,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "알리 다에이에 이은 이란 역대 2위 득점원이자 팀의 모든 공격이 통하는 절대 에이스.",
       "strengths": [
         "뛰어난 골 결정력과 헤딩",
@@ -22071,7 +21807,6 @@ window.DATA = {
       "caps": 98,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "유럽 1부 리그 득점왕에 오른 최초의 아시아 선수, 측면을 책임지는 베테랑 윙어.",
       "strengths": [
         "양발 드리블과 크로스",
@@ -22109,7 +21844,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2018 월드컵에서 호날두의 페널티킥을 막아낸, 압도적 피지컬의 주전 수문장.",
       "strengths": [
         "195cm의 큰 키와 반사신경",
@@ -22144,7 +21878,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "스웨덴에서 귀화한 멀티 자원, 미드필드 어디든 소화하는 영리한 테크니션.",
       "strengths": [
         "여러 포지션 소화하는 다재다능함",
@@ -22180,7 +21913,6 @@ window.DATA = {
       "caps": 146,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "146캡스의 주장이자 팀 정신적 지주, 네 번째 월드컵을 바라보는 살아있는 전설.",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -22216,7 +21948,6 @@ window.DATA = {
       "caps": 74,
       "intlGoals": 8,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "2022 월드컵 웨일스전 결승골의 주인공, 공격 가담이 좋은 베테랑 라이트백.",
       "strengths": [
         "빠른 스피드와 오버래핑",
@@ -22252,7 +21983,6 @@ window.DATA = {
       "caps": 76,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "스피드와 활동량을 겸비한 좌측 풀백, 유럽 무대 경험이 풍부한 측면 수비수.",
       "strengths": [
         "빠른 스피드와 활동량",
@@ -22287,7 +22017,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "수비 라인을 지휘하는 장신 센터백, 세트피스에서 득점도 노리는 든든한 기둥.",
       "strengths": [
         "제공권과 피지컬",
@@ -22323,7 +22052,6 @@ window.DATA = {
       "caps": 83,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "한때 아틀레티코 유망주였던 190cm 수비형 미드필더, 중원의 방패.",
       "strengths": [
         "넓은 활동 범위와 수비 커버",
@@ -22359,7 +22087,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 14,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "36경기 14골의 효율을 자랑하는 떠오르는 측면 공격수, 타레미 뒤를 받칠 카드.",
       "strengths": [
         "뛰어난 득점 효율",
@@ -22394,7 +22121,6 @@ window.DATA = {
       "caps": 90,
       "intlGoals": 45,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "뉴질랜드 역대 최다 득점·최다 출전의 살아있는 전설이자 절대적인 에이스 주장.",
       "strengths": [
         "뛰어난 제공권과 헤더 마무리",
@@ -22431,7 +22157,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "코펜하겐·레드스타·올림피아코스를 거치며 우승을 쌓은 중원의 핵심 엔진.",
       "strengths": [
         "188cm 장신의 활동량과 박스 투 박스 능력",
@@ -22467,7 +22192,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "세리에A에서 다진 공격형 풀백, 측면을 책임지는 부주장급 자원.",
       "strengths": [
         "적극적인 오버래핑과 측면 크로스",
@@ -22503,7 +22227,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "프리미어리그 클럽이 점찍은 스포츠 패밀리 출신의 차세대 수비 핵심.",
       "strengths": [
         "젊은 나이에 비해 성숙한 위치 선정",
@@ -22539,7 +22262,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "리그1 선발 출전 첫 뉴질랜드인, 측면을 흔드는 창의적 공격 자원.",
       "strengths": [
         "빠른 드리블과 일대일 돌파",
@@ -22574,7 +22296,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "바이에른 뮌헨 출신이라는 화려한 이력의 펀자브계 테크니션.",
       "strengths": [
         "뛰어난 볼 컨트롤과 탈압박",
@@ -22609,7 +22330,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "노르웨이 리그 우승 멤버, 중원을 단단히 잠그는 살림꾼 수비형 미드필더.",
       "strengths": [
         "안정적인 볼 배급과 경기 조율",
@@ -22644,7 +22364,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "OFC 최우수 영플레이어 출신, 190cm 장신의 떠오르는 수비 유망주.",
       "strengths": [
         "190cm 장신의 제공권",
@@ -22679,7 +22398,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "토리노에서 세리에A를 경험한 득점력 있는 중원 자원.",
       "strengths": [
         "중원에서의 득점 가담 (5골)",
@@ -22714,7 +22432,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 59,
       "oneLiner": "월드컵 예선을 책임진 주전 수문장, OFC 골든글러브의 안정감.",
       "strengths": [
         "예선 무실점 행진의 안정적인 선방",
@@ -22748,7 +22465,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 6,
       "grade": "월드클래스",
-      "gradeScore": 95,
       "oneLiner": "18세에 이미 세계 최고 윙어 반열에 오른 스페인 공격의 핵심.",
       "strengths": [
         "폭발적인 1대1 드리블 돌파",
@@ -22788,7 +22504,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 5,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "경기 템포를 지배하는 스페인 미드필드의 두뇌.",
       "strengths": [
         "좁은 공간 탈압박과 패스 전개",
@@ -22828,7 +22543,6 @@ window.DATA = {
       "caps": 61,
       "intlGoals": 4,
       "grade": "월드클래스",
-      "gradeScore": 94,
       "oneLiner": "발롱도르를 거머쥔, 팀 밸런스를 책임지는 세계 최고의 수비형 미드필더.",
       "strengths": [
         "완벽한 위치 선정과 볼 배급",
@@ -22867,7 +22581,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 84,
       "oneLiner": "야말과 함께 양 측면을 폭격하는 스피드형 윙어.",
       "strengths": [
         "폭발적인 스피드와 측면 돌파",
@@ -22904,7 +22617,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 24,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "유로 2024 결승골의 주인공, 스페인 최전방의 해결사.",
       "strengths": [
         "박스 안 위치 선정과 마무리",
@@ -22942,7 +22654,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 83,
       "oneLiner": "PSG 우승을 이끈, 페드리·로드리와 호흡을 맞추는 중원 엔진.",
       "strengths": [
         "탈압박과 전진 드리블",
@@ -22980,7 +22691,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "득점과 찬스 메이킹을 겸비한 다재다능한 2선 자원.",
       "strengths": [
         "라인 사이 침투와 득점 본능",
@@ -23018,7 +22728,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "왕성한 활동량으로 왼쪽을 책임지는 검증된 주전 풀백.",
       "strengths": [
         "지칠 줄 모르는 활동량",
@@ -23056,7 +22765,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "골든글러브를 휩쓴, 발밑까지 좋은 스페인의 넘버원.",
       "strengths": [
         "뛰어난 선방과 안정감",
@@ -23094,7 +22802,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 74,
       "oneLiner": "19세에 바르사 주전을 꿰찬 차세대 수비 리더.",
       "strengths": [
         "나이답지 않은 침착함과 위치 선정",
@@ -23131,7 +22838,6 @@ window.DATA = {
       "caps": 98,
       "intlGoals": 22,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "역대 최다 출전·최다 득점의 주장, 카보베르데 축구의 심장이자 정신적 지주.",
       "strengths": [
         "풍부한 빅무대 경험과 주장 리더십",
@@ -23165,7 +22871,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "라리가 비야레알의 주전 센터백, 스쿼드 내 최고 수준의 무대에서 뛰는 수비 핵심.",
       "strengths": [
         "빠른 회복 속도와 1대1 대인 수비",
@@ -23198,7 +22903,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "에레디비시에서 왕성한 활동량을 자랑하는 중원 엔진, 공수 밸런스의 핵심.",
       "strengths": [
         "전방위 활동량과 태클·압박",
@@ -23232,7 +22936,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "갈라타사라이·올림피아코스 우승 경력의 베테랑 윙어, 측면 돌파와 한 방이 있는 자원.",
       "strengths": [
         "측면 1대1 돌파와 슈팅",
@@ -23266,7 +22969,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "아일랜드 태생의 주장형 센터백, SNS 메시지로 발탁된 사연으로 본선 진출을 이끈 수비 리더.",
       "strengths": [
         "수비 조직 지휘와 위치 선정",
@@ -23300,7 +23002,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "40세 부주장 골키퍼, 풍부한 경험으로 수비 라인을 지휘하는 최후방 베테랑.",
       "strengths": [
         "풍부한 경험과 위치 선정",
@@ -23333,7 +23034,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 7,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "예선 4골로 본선 진출을 견인한 돌풍의 주역, 떠오르는 공격 옵션.",
       "strengths": [
         "문전 침투와 결정력",
@@ -23366,7 +23066,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "러시아 1부 크라스노다르에서 뛰는 중원 자원, 에너지와 전술 균형을 더한다.",
       "strengths": [
         "중원 압박과 활동량",
@@ -23399,7 +23098,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "유럽대항전을 경험한 루도고레츠의 중원 자원, 균형과 활동량을 보탠다.",
       "strengths": [
         "박스 투 박스 활동량",
@@ -23432,7 +23130,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "스포르팅 유스 출신의 공격수, 빠른 발과 슈팅으로 측면·전방을 오간다.",
       "strengths": [
         "스피드와 직접 슈팅",
@@ -23465,7 +23162,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 6,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "24세 장신 공격수, 22캡에 6골로 효율 좋은 마무리를 보여주는 성장형 자원.",
       "strengths": [
         "피지컬과 문전 위치 선정",
@@ -23498,7 +23194,6 @@ window.DATA = {
       "caps": 109,
       "intlGoals": 27,
       "grade": "월드클래스",
-      "gradeScore": 84,
       "oneLiner": "아르헨티나전 결승골의 주인공이자 두 차례 AFC 올해의 선수를 받은 사우디의 절대적 에이스.",
       "strengths": [
         "폭발적인 드리블과 슈팅",
@@ -23535,7 +23230,6 @@ window.DATA = {
       "caps": 69,
       "intlGoals": 15,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "2년 연속 ACL 엘리트 우승을 견인한 사우디 최전방의 차세대 간판 공격수.",
       "strengths": [
         "박스 안 위치 선정",
@@ -23571,7 +23265,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "스쿼드 내 거의 유일한 유럽파로, 측면을 위아래로 휘젓는 사우디의 주목할 자원.",
       "strengths": [
         "빠른 스피드와 오버래핑",
@@ -23607,7 +23300,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "아르헨티나전 맨 오브 더 매치를 받은 베테랑 수문장.",
       "strengths": [
         "선방 안정감",
@@ -23643,7 +23335,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "사우디 역대 최고 이적료를 기록한 수비의 기둥.",
       "strengths": [
         "대인 방어와 제공권",
@@ -23680,7 +23371,6 @@ window.DATA = {
       "caps": 76,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "중원을 단단히 잠그는 사우디의 베테랑 살림꾼.",
       "strengths": [
         "볼 차단과 위치 선정",
@@ -23717,7 +23407,6 @@ window.DATA = {
       "caps": 55,
       "intlGoals": 18,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "아르헨티나전 동점골을 넣은 결정력 좋은 베테랑 골잡이.",
       "strengths": [
         "박스 안 마무리",
@@ -23753,7 +23442,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "탐박티와 함께 중앙 수비를 책임지는 경험 많은 센터백.",
       "strengths": [
         "대인 마크",
@@ -23789,7 +23477,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 12,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "최전방 옵션을 늘려주는 다재다능한 공격 자원.",
       "strengths": [
         "넓은 활동 범위",
@@ -23825,7 +23512,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "미드필더와 왼쪽 풀백을 오가며 활동량을 책임지는 멀티 자원.",
       "strengths": [
         "왕성한 활동량",
@@ -23861,7 +23547,6 @@ window.DATA = {
       "caps": 73,
       "intlGoals": 9,
       "grade": "월드클래스",
-      "gradeScore": 93,
       "oneLiner": "박스 투 박스로 뛰며 우루과이 중원을 통째로 지배하는 팀의 심장이자 리더.",
       "strengths": [
         "엄청난 활동량과 체력",
@@ -23898,7 +23583,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 13,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "'라 판테라'라 불리는 폭발적 스피드의 최전방 해결사로 비엘사의 원톱.",
       "strengths": [
         "폭발적인 스피드와 침투",
@@ -23934,7 +23618,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 1,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "압도적 피지컬과 스피드를 갖춘 바르셀로나 주장이자 우루과이 수비의 기둥.",
       "strengths": [
         "빠른 스피드로 뒷공간 커버",
@@ -23970,7 +23653,6 @@ window.DATA = {
       "caps": 99,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 83,
       "oneLiner": "10년 넘게 아틀레티코를 지킨 베테랑 주장으로 아라우호와 세계적 센터백 듀오를 형성.",
       "strengths": [
         "투쟁심과 대인 방어",
@@ -24006,7 +23688,6 @@ window.DATA = {
       "caps": 74,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "탈압박과 경기 조율에 능한 우루과이 중원의 또 다른 베테랑 엔진.",
       "strengths": [
         "볼 운반과 탈압박",
@@ -24042,7 +23723,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "타이밍 좋은 태클로 볼을 회수하는 전투적인 수비형 미드필더.",
       "strengths": [
         "볼 탈취와 인터셉트",
@@ -24078,7 +23758,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 13,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "2025 남미 올해의 선수에 빛나는 창의적인 플레이메이커이자 우루과이의 공격 키.",
       "strengths": [
         "탁월한 창의성과 키패스",
@@ -24114,7 +23793,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 73,
       "oneLiner": "기술과 탈압박이 좋은 남미 챔피언 출신의 영리한 미드필더.",
       "strengths": [
         "볼 키핑과 탈압박",
@@ -24150,7 +23828,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "나폴리 스쿠데토를 두 번 경험한 공수 균형 잡힌 왼쪽 풀백.",
       "strengths": [
         "오버래핑과 측면 공격 가담",
@@ -24185,7 +23862,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "맨유를 거친 빠른 측면 자원으로 교체 카드로서의 활용도가 높은 영건.",
       "strengths": [
         "빠른 스피드와 드리블",
@@ -24220,7 +23896,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "안정적인 선방으로 우루과이 골문을 지켜온 경험 많은 주전급 골키퍼.",
       "strengths": [
         "안정적인 선방",
@@ -24255,7 +23930,6 @@ window.DATA = {
       "caps": 97,
       "intlGoals": 56,
       "grade": "월드클래스",
-      "gradeScore": 97,
       "oneLiner": "프랑스의 주장이자 세계 최정상급 스피드와 결정력을 갖춘 에이스.",
       "strengths": [
         "폭발적인 스피드",
@@ -24293,7 +23967,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 7,
       "grade": "월드클래스",
-      "gradeScore": 94,
       "oneLiner": "2025 발롱도르 수상자, 양발 드리블과 챔스 2연패를 이끈 PSG의 핵심.",
       "strengths": [
         "양발 드리블·돌파",
@@ -24331,7 +24004,6 @@ window.DATA = {
       "caps": 16,
       "intlGoals": 4,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "바이에른에서 폭발한 창의적 윙어, 분데스리가 올해의 선수.",
       "strengths": [
         "정밀한 킥·세트피스",
@@ -24367,7 +24039,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "스피드와 빌드업을 겸비한 세계 정상급 센터백, 아스널 수비의 기둥.",
       "strengths": [
         "빠른 회복 스피드",
@@ -24403,7 +24074,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "힘과 스피드를 겸비한 바이에른의 주전 센터백.",
       "strengths": [
         "피지컬·스피드",
@@ -24439,7 +24109,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "센터백과 풀백을 모두 소화하는 다재다능한 바르샤 수비수.",
       "strengths": [
         "수비·공격 양면 활동량",
@@ -24475,7 +24144,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 84,
       "oneLiner": "수비와 센터백까지 겸하는 레알의 중원 사령탑.",
       "strengths": [
         "볼 차단·인터셉트",
@@ -24512,7 +24180,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "박스 투 박스 활동량을 갖춘 베테랑 중원 자원.",
       "strengths": [
         "넓은 활동 반경",
@@ -24549,7 +24216,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 74,
       "oneLiner": "환상적인 드리블과 창의성을 갖춘 맨시티의 신성.",
       "strengths": [
         "탈압박 드리블",
@@ -24585,7 +24251,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "피지컬과 연계를 겸비한 인터의 주전 스트라이커, 명수비수 릴리앙 튀랑의 아들.",
       "strengths": [
         "강력한 피지컬·제공권",
@@ -24621,7 +24286,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 85,
       "oneLiner": "반사신경과 빌드업을 겸비한 '매직 마이크', 프랑스의 넘버원 골키퍼.",
       "strengths": [
         "뛰어난 반사신경",
@@ -24658,7 +24322,6 @@ window.DATA = {
       "caps": 127,
       "intlGoals": 55,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "세네갈 역대 최다 득점자이자 팀의 상징, 마지막 월드컵을 노리는 살아있는 전설.",
       "strengths": [
         "폭발적인 스피드와 드리블 돌파",
@@ -24695,7 +24358,6 @@ window.DATA = {
       "caps": 103,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "수비를 지휘하는 베테랑 주장, 침착함과 전술 지능으로 뒷문을 책임진다.",
       "strengths": [
         "뛰어난 위치 선정과 대인 수비",
@@ -24731,7 +24393,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 85,
       "oneLiner": "챔피언스리그와 AFC 챔피언스리그를 모두 제패한 세계 정상급 수문장.",
       "strengths": [
         "안정적인 선방 능력과 큰 경기 강심장",
@@ -24768,7 +24429,6 @@ window.DATA = {
       "caps": 131,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "세네갈 역대 최다 출전 기록 보유자, 중원을 청소하는 살림꾼.",
       "strengths": [
         "엄청난 활동량과 볼 탈취 능력",
@@ -24804,7 +24464,6 @@ window.DATA = {
       "caps": 83,
       "intlGoals": 19,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "팰리스의 유럽 정복을 이끈 빠른 측면 자원, 잉글랜드전 3-1 승리의 주역.",
       "strengths": [
         "폭발적인 스피드와 측면 돌파",
@@ -24840,7 +24499,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "빠르고 피지컬 좋은 최전방 스트라이커, 위협적인 침투가 강점.",
       "strengths": [
         "빠른 스피드와 강한 몸싸움",
@@ -24876,7 +24534,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "창의적인 2선 공격수, 드리블과 연계로 공격에 활력을 불어넣는다.",
       "strengths": [
         "뛰어난 드리블과 볼 키핑",
@@ -24910,7 +24567,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "박스 투 박스로 뛰는 역동적인 중원 엔진, 어린 나이에 80캡을 쌓은 차세대 핵심.",
       "strengths": [
         "넓은 활동 범위와 체력",
@@ -24945,7 +24601,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 7,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "세네갈 미래를 짊어진 재능 넘치는 중원 자원, 빅클럽들의 관심을 받는 신성.",
       "strengths": [
         "탈압박과 전진 드리블",
@@ -24980,7 +24635,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 4,
       "grade": "유망주",
-      "gradeScore": 65,
       "oneLiner": "선덜랜드 구단 최고액 영입으로 검증된 젊은 중앙 미드필더.",
       "strengths": [
         "역동적인 박스 투 박스 능력",
@@ -25014,7 +24668,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "측면을 폭넓게 오가는 멀티 자원, 윙백과 윙어를 모두 소화한다.",
       "strengths": [
         "다재다능한 측면 활용도",
@@ -25048,7 +24701,6 @@ window.DATA = {
       "caps": 93,
       "intlGoals": 33,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "볼리비아전 결승골로 본선行을 확정지은 이라크의 에이스 타깃 스트라이커.",
       "strengths": [
         "탁월한 제공권과 포스트 플레이",
@@ -25085,7 +24737,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "프리미어리그를 밟은 첫 이라크 선수, 볼리비아전 선제골의 주인공.",
       "strengths": [
         "빠른 스피드와 직선적 침투",
@@ -25120,7 +24771,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "맨유 아카데미 출신으로 이라크 중원의 템포를 조율하는 딥라잉 플레이메이커.",
       "strengths": [
         "깔끔한 패스로 빌드업 주도",
@@ -25154,7 +24804,6 @@ window.DATA = {
       "caps": 100,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "A매치 100경기를 채운 주장이자 이라크의 정신적 지주인 베테랑 골키퍼.",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -25191,7 +24840,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "UAE전 막판 페널티킥을 성공시켜 플레이오프행을 확정한 스웨덴 출신 미드필더.",
       "strengths": [
         "담대한 멘탈과 키커로서의 안정감",
@@ -25225,7 +24873,6 @@ window.DATA = {
       "caps": 70,
       "intlGoals": 27,
       "grade": "주전급",
-      "gradeScore": 62,
       "oneLiner": "2019년 서아시아 올해의 선수 출신, 백업 화력을 책임지는 클리니컬 스트라이커.",
       "strengths": [
         "골문 앞 침착한 마무리",
@@ -25261,7 +24908,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "AFC U-23 아시안컵 득점왕 출신, 세리에A 코모 소속의 차세대 측면 공격수.",
       "strengths": [
         "드리블과 측면 침투",
@@ -25296,7 +24942,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "체코 무대에서 자리잡은 독일 태생 쿠르드계 왼쪽 풀백.",
       "strengths": [
         "꾸준한 유럽 리그 출전 경험",
@@ -25330,7 +24975,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 53,
       "oneLiner": "스웨덴 말뫼 태생, 폴란드 무대에서 검증된 젊은 오른쪽 풀백.",
       "strengths": [
         "젊은 나이와 성장 여력",
@@ -25362,7 +25006,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 48,
       "oneLiner": "스웨덴 유스를 거쳐 2026년 이라크로 전향한 MLS의 어린 공격형 미드필더.",
       "strengths": [
         "빠른 발과 창의적 침투",
@@ -25394,7 +25037,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 55,
       "grade": "월드클래스",
-      "gradeScore": 97,
       "oneLiner": "노르웨이 역대 최다 득점자이자 세계 최정상의 골 기계.",
       "strengths": [
         "압도적 결정력",
@@ -25432,7 +25074,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": 5,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "팀의 주장이자 경기를 설계하는 창의적 사령탑.",
       "strengths": [
         "탈압박과 시야",
@@ -25468,7 +25109,6 @@ window.DATA = {
       "caps": 72,
       "intlGoals": 26,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "홀란과 공존하는 장신 타깃형 스트라이커.",
       "strengths": [
         "제공권과 피지컬",
@@ -25502,7 +25142,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 8,
       "grade": "유망주",
-      "gradeScore": 74,
       "oneLiner": "폭발적 드리블을 갖춘 차세대 측면 에이스.",
       "strengths": [
         "1대1 돌파",
@@ -25534,7 +25173,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "맨시티가 키운 테크니션, 출전 시간 찾아 풀럼행.",
       "strengths": [
         "좁은 공간 드리블",
@@ -25570,7 +25208,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "프리미어리그서 검증된 장신 백업 스트라이커.",
       "strengths": [
         "제공권",
@@ -25602,7 +25239,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "장신과 빌드업을 겸비한 수비 핵심.",
       "strengths": [
         "제공권",
@@ -25636,7 +25272,6 @@ window.DATA = {
       "caps": 66,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "중원을 단단히 묶는 장신 수비형 미드필더.",
       "strengths": [
         "볼 탈취와 커버",
@@ -25670,7 +25305,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "벤피카에서 우승 경험을 쌓은 멀티 미드필더.",
       "strengths": [
         "활동량",
@@ -25706,7 +25340,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "세리에 A에서 다져진 투쟁적 센터백.",
       "strengths": [
         "대인 방어",
@@ -25738,7 +25371,6 @@ window.DATA = {
       "caps": 71,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "70캡을 넘긴 경험 풍부한 주전 골키퍼.",
       "strengths": [
         "선방 능력",
@@ -25770,7 +25402,6 @@ window.DATA = {
       "caps": 198,
       "intlGoals": 116,
       "grade": "월드클래스",
-      "gradeScore": 98,
       "oneLiner": "발롱도르 8회의 역대 최고 선수, 마지막 월드컵에서 유종의 미를 노린다.",
       "strengths": [
         "압도적인 창조력과 마무리",
@@ -25807,7 +25438,6 @@ window.DATA = {
       "caps": 76,
       "intlGoals": 37,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "2024 코파 아메리카 득점왕, 인터 밀란 주장이자 아르헨티나 최전방의 핵심.",
       "strengths": [
         "박스 안 결정력",
@@ -25844,7 +25474,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 14,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "활동량과 마무리를 겸비한 멀티 공격수, 메시 이후 시대의 핵심.",
       "strengths": [
         "다양한 포지션 소화",
@@ -25881,7 +25510,6 @@ window.DATA = {
       "caps": 59,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 89,
       "oneLiner": "월드컵·코파 우승을 결정지은 승부차기의 사나이, 세계 최정상급 골키퍼.",
       "strengths": [
         "승부차기 선방과 심리전",
@@ -25918,7 +25546,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 84,
       "oneLiner": "2022 월드컵 영플레이어상 수상자, 중원을 조립하는 두뇌형 미드필더.",
       "strengths": [
         "긴 패스와 전개력",
@@ -25955,7 +25582,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 85,
       "oneLiner": "리버풀 우승을 이끈 균형추, 공수 모두 능한 완성형 미드필더.",
       "strengths": [
         "탈압박과 패스 정확도",
@@ -25992,7 +25618,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 3,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "토트넘 유로파리그 우승의 주역, 공격적이고 저돌적인 센터백.",
       "strengths": [
         "전진 수비와 인터셉트",
@@ -26028,7 +25653,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "작은 키를 투지로 메우는 '도살자', 왼발 빌드업이 뛰어난 센터백.",
       "strengths": [
         "왼발 전개와 패스",
@@ -26065,7 +25689,6 @@ window.DATA = {
       "caps": 86,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "메시의 경호원으로 불리는 활동량 괴물, 중원의 살림꾼.",
       "strengths": [
         "엄청난 활동량과 커버",
@@ -26100,7 +25723,6 @@ window.DATA = {
       "caps": 131,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "수비 라인을 지휘하는 베테랑, 이번이 마지막 월드컵이 될 노장 리더.",
       "strengths": [
         "경험과 위치선정",
@@ -26135,7 +25757,6 @@ window.DATA = {
       "caps": 114,
       "intlGoals": 38,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "마지막 월드컵에 나서는 알제리의 영원한 캡틴이자 해결사.",
       "strengths": [
         "왼발 드리블과 컷인 슈팅",
@@ -26173,7 +25794,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 19,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "예선 최다 득점, 알제리 공격을 짊어진 폭발적인 스피드의 골잡이.",
       "strengths": [
         "엄청난 스피드와 침투",
@@ -26207,7 +25827,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": null,
       "grade": "월드클래스",
-      "gradeScore": 84,
       "oneLiner": "맨시티가 데려간 대회 최고의 공격형 풀백 중 한 명.",
       "strengths": [
         "폭발적인 오버래핑과 공격 가담",
@@ -26239,7 +25858,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "마르세유에서 만개한 다재다능한 전방 자원.",
       "strengths": [
         "연계 플레이와 볼 키핑",
@@ -26274,7 +25892,6 @@ window.DATA = {
       "caps": 81,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "분데스리가에서 검증된 견고한 수비와 세트피스 위협의 베테랑.",
       "strengths": [
         "강한 대인 수비",
@@ -26310,7 +25927,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "프랑스 대표를 거쳐 알제리를 택한 기술적인 플레이메이커.",
       "strengths": [
         "탈압박과 볼 운반",
@@ -26345,7 +25961,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "프랑크푸르트의 다재다능한 측면 자원, 알제리 중원의 활력소.",
       "strengths": [
         "측면·중앙 멀티 운용",
@@ -26379,7 +25994,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "독일을 거부하고 알제리를 택한 레버쿠젠의 떠오르는 신성.",
       "strengths": [
         "창의적인 공격 전개",
@@ -26411,7 +26025,6 @@ window.DATA = {
       "caps": 116,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "알제리 역대 최다 출전 기록의 수비 리더이자 정신적 지주.",
       "strengths": [
         "풍부한 경험과 위치 선정",
@@ -26446,7 +26059,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "에레디비시에서 급성장한 폭발적인 측면 드리블러.",
       "strengths": [
         "1대1 돌파와 스피드",
@@ -26481,7 +26093,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "지네딘 지단의 아들, 친조부모를 통해 알제리를 택한 주전 골키퍼.",
       "strengths": [
         "좋은 반사신경",
@@ -26513,7 +26124,6 @@ window.DATA = {
       "caps": 113,
       "intlGoals": 15,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "챔피언스리그 4회 우승에 빛나는 오스트리아의 주장이자 살아있는 전설.",
       "strengths": [
         "뛰어난 빌드업과 패스 능력",
@@ -26549,7 +26159,6 @@ window.DATA = {
       "caps": 98,
       "intlGoals": 26,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "공수 모두 가능한 박스투박스, 오스트리아 중원의 엔진.",
       "strengths": [
         "강력한 중거리 슈팅",
@@ -26584,7 +26193,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "2025년 오스트리아 올해의 선수, 지칠 줄 모르는 압박 기계.",
       "strengths": [
         "엄청난 활동량과 전방 압박",
@@ -26619,7 +26227,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 19,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "박스 안 침투에 능한 오스트리아의 핵심 득점원(부상 변수).",
       "strengths": [
         "탁월한 오프더볼 침투 타이밍",
@@ -26654,7 +26261,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "프리미어리그에서 검증된 힘 좋은 센터백.",
       "strengths": [
         "피지컬과 제공권 경합",
@@ -26688,7 +26294,6 @@ window.DATA = {
       "caps": 133,
       "intlGoals": 47,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "오스트리아 역대 최다 출전·최다 득점 기록 보유자인 베테랑 해결사.",
       "strengths": [
         "탁월한 마무리와 포스트 플레이",
@@ -26723,7 +26328,6 @@ window.DATA = {
       "caps": 75,
       "intlGoals": 24,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "본선행을 확정짓는 결승골을 넣은 큰 키의 타깃형 공격수.",
       "strengths": [
         "뛰어난 제공권과 헤더",
@@ -26758,7 +26362,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "중원을 지우는 안정적인 수비형 미드필더.",
       "strengths": [
         "볼 배급과 전개의 안정감",
@@ -26793,7 +26396,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "오스트리아의 골문을 지키는 안정적인 넘버원 키퍼.",
       "strengths": [
         "안정적인 선방과 위치 선정",
@@ -26828,7 +26430,6 @@ window.DATA = {
       "caps": 90,
       "intlGoals": 24,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "'요르단의 메시'로 불리는 팀의 절대 에이스, 5대 리그에서 뛰는 유일한 간판입니다.",
       "strengths": [
         "폭발적인 스피드와 측면 1대1 드리블 돌파",
@@ -26863,7 +26464,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 29,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "월드컵 본선行을 확정지은 결정적 해트트릭의 주인공, 부상에서 돌아온 최전방 해결사입니다.",
       "strengths": [
         "박스 안 위치 선정과 마무리 능력",
@@ -26898,7 +26498,6 @@ window.DATA = {
       "caps": 70,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "K리그1 베스트11에 뽑힌 수비 핵심, 친선전에서 바르셀로나를 상대로 골까지 넣은 중앙 수비수입니다.",
       "strengths": [
         "제공권과 대인 마크",
@@ -26933,7 +26532,6 @@ window.DATA = {
       "caps": 90,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "아시안컵 결승까지 팀을 이끈 베테랑 주장, 측면과 중원을 오가는 정신적 지주입니다.",
       "strengths": [
         "경험과 리더십, 전술 이해도",
@@ -26968,7 +26566,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 61,
       "oneLiner": "중원에서 공수를 연결하는 살림꾼, 월드컵 예선 사우디·팔레스타인전 득점으로 진출에 힘을 보탰습니다.",
       "strengths": [
         "활동량과 박스 투 박스 가담",
@@ -27003,7 +26600,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "중원을 보호하는 수비형 미드필더, 빅매치에서 한 방을 터뜨리는 승부사 기질이 있습니다.",
       "strengths": [
         "수비 위치 선정과 볼 차단",
@@ -27038,7 +26634,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "알나이마트 부상 공백을 메울 측면 자원, 북아프리카 명문 라자에서 뛰는 윙어입니다.",
       "strengths": [
         "측면 침투와 속도",
@@ -27071,7 +26666,6 @@ window.DATA = {
       "caps": 64,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "아시안컵 결승 전 경기를 책임진 주전 수문장, 역습 축구의 마지막 빗장입니다.",
       "strengths": [
         "선방 능력과 빅세이브 집중력",
@@ -27105,7 +26699,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "알아랍과 짝을 이루는 또 한 명의 베테랑 센터백, 수비 라인의 두께를 더합니다.",
       "strengths": [
         "대인 수비와 경합",
@@ -27138,7 +26731,6 @@ window.DATA = {
       "caps": 227,
       "intlGoals": 143,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "A매치 최다 출전·최다 득점의 살아있는 전설, 여섯 번째이자 마지막 월드컵에 나선 주장.",
       "strengths": [
         "결정력과 마무리",
@@ -27155,7 +26747,7 @@ window.DATA = {
         "A매치 최다 출전(227)·최다 득점(143) 보유"
       ],
       "notableTransfer": "2022년 맨유와 결별 후 알 나스르로 자유계약 이적.",
-      "ovr": 88,
+      "ovr": 82,
       "scout": {
         "skill": 88,
         "value": 78,
@@ -27174,7 +26766,6 @@ window.DATA = {
       "caps": 88,
       "intlGoals": 29,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "예선에서 해트트릭으로 본선행을 확정한 포르투갈의 공격형 사령탑 부주장.",
       "strengths": [
         "창의적인 키패스와 시야",
@@ -27210,7 +26801,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 84,
       "oneLiner": "PSG의 2연속 챔스 우승을 지휘한 세계 최고 수준의 중원 메트로놈.",
       "strengths": [
         "탈압박과 볼 운반",
@@ -27246,7 +26836,6 @@ window.DATA = {
       "caps": 74,
       "intlGoals": 3,
       "grade": "월드클래스",
-      "gradeScore": 85,
       "oneLiner": "맨시티 수비의 기둥이자 포르투갈 백라인을 지휘하는 최정상급 센터백.",
       "strengths": [
         "수비 리딩과 위치 선정",
@@ -27282,7 +26871,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 1,
       "grade": "월드클래스",
-      "gradeScore": 82,
       "oneLiner": "공수 양면을 지배하는 세계 최고 수준의 왼쪽 풀백, PSG 2연속 챔스 우승 주역.",
       "strengths": [
         "폭발적인 측면 돌파",
@@ -27318,7 +26906,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "21세에 이미 챔스 2회 우승한 포르투갈 중원의 미래, 박스투박스 엔진.",
       "strengths": [
         "압박과 볼 탈취",
@@ -27354,7 +26941,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "한 번의 돌파로 경기를 뒤집는 폭발력의 왼쪽 윙어, 밀란 공격의 핵.",
       "strengths": [
         "스피드와 드리블 돌파",
@@ -27391,7 +26977,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "유로 2024 승부차기 3개를 막아낸 영웅, 포르투갈의 확고한 넘버원 골키퍼.",
       "strengths": [
         "선방 능력과 반응속도",
@@ -27427,7 +27012,6 @@ window.DATA = {
       "caps": 107,
       "intlGoals": 14,
       "grade": "월드클래스",
-      "gradeScore": 83,
       "oneLiner": "어디든 뛸 수 있는 만능 미드필더, 맨시티 전성기의 두뇌이자 포르투갈의 살림꾼.",
       "strengths": [
         "탈압박과 볼 키핑",
@@ -27463,7 +27047,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 10,
       "grade": "로테이션",
-      "gradeScore": 74,
       "oneLiner": "2022 월드컵 스위스전 해트트릭의 주인공, 호날두 뒤를 잇는 정통 9번.",
       "strengths": [
         "박스 안 마무리",
@@ -27499,7 +27082,6 @@ window.DATA = {
       "caps": 108,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "108캡 주장이자 팀의 등뼈, 포르투·마르세유에서 검증된 수비 리더.",
       "strengths": [
         "대인 마크와 공중볼 장악",
@@ -27536,7 +27118,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "프리미어리그에서 두 자릿수 골을 넣어온 팀 내 최고 몸값의 측면 화력.",
       "strengths": [
         "양발 마무리와 침투",
@@ -27570,7 +27151,6 @@ window.DATA = {
       "caps": 69,
       "intlGoals": 21,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "음보카니를 넘어선 역대 최다 득점자, 노련함으로 최전방을 지키는 9번.",
       "strengths": [
         "박스 안 위치 선정과 결정력",
@@ -27606,7 +27186,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "아프리카 챔스 득점왕이자 올해의 선수, 검증된 아프리카 무대의 골잡이.",
       "strengths": [
         "스피드와 침투 타이밍",
@@ -27642,7 +27221,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "20세에 프리미어리그로 점프한 팀의 미래, 중원을 책임질 신예 엔진.",
       "strengths": [
         "넓은 활동량과 볼 회수",
@@ -27676,7 +27254,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "잉글랜드 출신 프리미어리그 풀백, 2025년 DR콩고를 택해 수비를 강화한 카드.",
       "strengths": [
         "1대1 태클 능력 리그 최정상급",
@@ -27711,7 +27288,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "프리미어리그·리그1을 누빈 베테랑 좌측 풀백, 측면 공수의 균형추.",
       "strengths": [
         "측면 오버래핑과 크로스",
@@ -27746,7 +27322,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 7,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "벨기에에서 나고 자란 폭발적 윙어, 측면 돌파로 변화를 주는 옵션.",
       "strengths": [
         "순간 스피드와 드리블 돌파",
@@ -27781,7 +27356,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "잉글랜드 2부에서 꾸준히 뛰는 중원 일꾼, 42캡의 안정적 살림꾼.",
       "strengths": [
         "볼 배급과 활동량",
@@ -27815,7 +27389,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "한때 첼시 유망주였던 베테랑 창작자, 노련함으로 공격에 활기를 더한다.",
       "strengths": [
         "탈압박과 키패스",
@@ -27850,7 +27423,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "우즈벡 사상 첫 프리미어리그 선수, 맨시티 수비를 지키는 팀의 간판이자 미래.",
       "strengths": [
         "폭발적인 스피드와 회복 주력",
@@ -27888,7 +27460,6 @@ window.DATA = {
       "caps": 91,
       "intlGoals": 44,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "역대 최다 득점자이자 주장, 세리에A를 거친 우즈벡 공격의 상징.",
       "strengths": [
         "역대 최다 44골의 결정력",
@@ -27925,7 +27496,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "CSKA 모스크바를 거친 22세 창의적 플레이메이커, 우즈벡 공격의 차세대 핵심.",
       "strengths": [
         "탈압박과 드리블 돌파",
@@ -27963,7 +27533,6 @@ window.DATA = {
       "caps": 83,
       "intlGoals": 24,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "통산 24골의 베테랑 골잡이, 쇼무로도프 뒤를 받치는 검증된 해결사.",
       "strengths": [
         "박스 안 위치 선정과 마무리",
@@ -28000,7 +27569,6 @@ window.DATA = {
       "caps": 74,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "팀의 1차 플레이메이커, 측면에서 기회를 만드는 베테랑 도우미.",
       "strengths": [
         "예선 4도움의 키패스 능력",
@@ -28038,7 +27606,6 @@ window.DATA = {
       "caps": 82,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "역대 최다 출전 톱10에 드는 중원 살림꾼, 우즈벡 미드필드의 균형추.",
       "strengths": [
         "많은 활동량과 볼 배급",
@@ -28075,7 +27642,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "스파르타크 모스크바를 경험한 25세 측면 자원, 빠른 침투가 강점.",
       "strengths": [
         "측면과 중앙을 오가는 침투",
@@ -28111,7 +27677,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "리그 5연패 주역이자 CAFA컵 MVP, 측면 수비의 기둥.",
       "strengths": [
         "꾸준한 오버래핑과 측면 장악",
@@ -28148,7 +27713,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "한때 아시아 올해의 유망주, 측면에서 변화를 주는 조커.",
       "strengths": [
         "측면 드리블과 마무리",
@@ -28185,7 +27749,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "수비를 지휘하는 35세 베테랑 수문장, 안정감으로 골문을 책임진다.",
       "strengths": [
         "풍부한 경험과 침착함",
@@ -28221,7 +27784,6 @@ window.DATA = {
       "caps": 73,
       "intlGoals": 22,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "리버풀과 뮌헨에서 우승을 휩쓴 콜롬비아 최고의 측면 폭발력, 이 팀의 진짜 에이스입니다.",
       "strengths": [
         "폭발적인 드리블 돌파",
@@ -28258,7 +27820,6 @@ window.DATA = {
       "caps": 126,
       "intlGoals": 31,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "전성기는 지났지만 여전히 콜롬비아 공격을 지휘하는 주장이자 키패스 마스터입니다.",
       "strengths": [
         "환상적인 왼발 킥과 키패스",
@@ -28294,7 +27855,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "팰리스 FA컵 우승의 주역, 끊임없이 오버래핑하는 콜롬비아 우측의 엔진입니다.",
       "strengths": [
         "왕성한 활동량과 오버래핑",
@@ -28329,7 +27889,6 @@ window.DATA = {
       "caps": 78,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "스피드와 태클로 수비 뒷공간을 책임지는 콜롬비아 백라인의 기둥입니다.",
       "strengths": [
         "빠른 스피드와 커버 능력",
@@ -28365,7 +27924,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "볼로냐의 코파 이탈리아 우승을 이끈, 침착한 빌드업형 왼발 센터백입니다.",
       "strengths": [
         "왼발 빌드업과 전진 패스",
@@ -28400,7 +27958,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "풋살 출신의 탈압박 능력을 갖춘, 콜롬비아 중원의 새로운 핵심입니다.",
       "strengths": [
         "좁은 공간 탈압박",
@@ -28436,7 +27993,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "리베르타도레스를 제패한 창의적인 측면 자원, 디아스의 반대편을 책임집니다.",
       "strengths": [
         "창의적인 패스와 드리블",
@@ -28472,7 +28028,6 @@ window.DATA = {
       "caps": 64,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "거친 압박과 차단으로 중원을 지키는 콜롬비아의 수비형 미드필더입니다.",
       "strengths": [
         "강력한 볼 차단과 태클",
@@ -28508,7 +28063,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "포르투갈 리그 득점왕에 오른, 콜롬비아의 떠오르는 정통 골잡이입니다.",
       "strengths": [
         "박스 안 위치 선정과 결정력",
@@ -28544,7 +28098,6 @@ window.DATA = {
       "caps": 113,
       "intlGoals": 79,
       "grade": "월드클래스",
-      "gradeScore": 94,
       "oneLiner": "잉글랜드 역대 최다 득점자이자 주장, 득점력과 연계 모두 세계 최고 수준의 완성형 9번.",
       "strengths": [
         "탁월한 결정력",
@@ -28583,7 +28136,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 6,
       "grade": "월드클래스",
-      "gradeScore": 93,
       "oneLiner": "공수 전 영역을 지배하는 차세대 세계 최고 미드필더, 결정적 순간에 강한 박스 투 박스.",
       "strengths": [
         "박스 투 박스 활동량",
@@ -28622,7 +28174,6 @@ window.DATA = {
       "caps": 48,
       "intlGoals": 14,
       "grade": "월드클래스",
-      "gradeScore": 90,
       "oneLiner": "드리블·득점·연계를 겸비한 세계 최정상급 윙어, 잉글랜드 공격의 오른쪽 해결사.",
       "strengths": [
         "폭발적인 드리블 돌파",
@@ -28661,7 +28212,6 @@ window.DATA = {
       "caps": 72,
       "intlGoals": 6,
       "grade": "월드클래스",
-      "gradeScore": 89,
       "oneLiner": "수비 차단부터 전진 패스, 세트피스까지 책임지는 잉글랜드 중원의 절대적 기둥.",
       "strengths": [
         "넓은 수비 커버 범위",
@@ -28699,7 +28249,6 @@ window.DATA = {
       "caps": 83,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "승부차기에 강하고 반사신경이 뛰어난 잉글랜드의 흔들림 없는 부동의 1번 GK.",
       "strengths": [
         "빠른 반응 선방",
@@ -28736,7 +28285,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "침착한 빌드업과 안정적인 수비를 겸비, 유로 2024 풀타임을 소화한 잉글랜드 수비의 핵.",
       "strengths": [
         "침착한 후방 빌드업",
@@ -28774,7 +28322,6 @@ window.DATA = {
       "caps": 87,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "트레블을 경험한 볼 플레잉 센터백, 풀백·미드필더까지 소화하는 전술적 다재다능함.",
       "strengths": [
         "뛰어난 패스 전개",
@@ -28813,7 +28360,6 @@ window.DATA = {
       "caps": 71,
       "intlGoals": 18,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "바르셀로나에서 부활해 라리가 우승을 맛본 폭발적 스피드의 왼쪽 공격수.",
       "strengths": [
         "직선적인 스피드와 침투",
@@ -28852,7 +28398,6 @@ window.DATA = {
       "caps": 16,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "탈압박과 창의성을 더해주는 10번, FA컵 결승골의 주인공이자 공격의 활력소.",
       "strengths": [
         "좁은 공간 탈압박",
@@ -28890,7 +28435,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "빠르고 저돌적인 왼쪽 윙어, 챔피언스리그 4골을 기록하며 폭발력을 증명한 공격 옵션.",
       "strengths": [
         "폭발적인 측면 스피드",
@@ -28928,7 +28472,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 72,
       "oneLiner": "강한 피지컬과 폭넓은 활동으로 급성장한 다재다능 공격 자원, 잉글랜드의 미래.",
       "strengths": [
         "강한 몸싸움과 볼 키핑",
@@ -28965,7 +28508,6 @@ window.DATA = {
       "caps": 198,
       "intlGoals": 29,
       "grade": "월드클래스",
-      "gradeScore": 92,
       "oneLiner": "발롱도르와 챔스 6회 우승에 빛나는, 40세에도 팀의 심장인 역대 최고의 크로아티아 선수.",
       "strengths": [
         "탈압박과 전진 패스",
@@ -29003,7 +28545,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 4,
       "grade": "월드클래스",
-      "gradeScore": 88,
       "oneLiner": "수비수 역대 최고액에 준하는 몸값으로 맨시티에 합류한, 크로아티아 수비의 미래이자 현재.",
       "strengths": [
         "빠른 스피드와 대인 수비",
@@ -29040,7 +28581,6 @@ window.DATA = {
       "caps": 112,
       "intlGoals": 5,
       "grade": "월드클래스",
-      "gradeScore": 85,
       "oneLiner": "첼시·맨시티에서 챔스와 PL을 모두 들어올린, 모드리치 곁의 검증된 중원 엔진.",
       "strengths": [
         "탈압박과 볼 운반",
@@ -29077,7 +28617,6 @@ window.DATA = {
       "caps": 153,
       "intlGoals": 38,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "메이저 대회 크로아티아 최다 공격포인트(18) 보유자, 36세에도 PSV 우승을 견인하는 베테랑.",
       "strengths": [
         "강력한 왼발 슈팅과 크로스",
@@ -29114,7 +28653,6 @@ window.DATA = {
       "caps": 115,
       "intlGoals": 36,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "호펜하임 역대 분데스리가 최다 득점자, 크로아티아의 검증된 골 옵션이자 만능 공격수.",
       "strengths": [
         "박스 안 결정력",
@@ -29151,7 +28689,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "라리가 시즌 골과 소시에다드 올해의 선수를 차지한, 모드리치 이후를 짊어질 중원 핵심.",
       "strengths": [
         "창의적 패스와 탈압박",
@@ -29188,7 +28725,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "2050만 유로에 아약스로 떠난, 그바르디올과 짝을 이룰 차세대 수비 기둥.",
       "strengths": [
         "빌드업 능력과 패스",
@@ -29225,7 +28761,6 @@ window.DATA = {
       "caps": 74,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "2022 월드컵 일본전 승부차기 3개를 막아낸 영웅, 토너먼트에 특화된 수문장.",
       "strengths": [
         "승부차기 선방 능력",
@@ -29262,7 +28797,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "바이에른과 레버쿠젠에서 모두 우승을 맛본, 여러 수비 포지션을 소화하는 멀티 수비수.",
       "strengths": [
         "좌우 풀백·센터백 겸업",
@@ -29299,7 +28833,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "디나모 자그레브가 키운 창의적 플레이메이커, 세리에 A로 무대를 옮긴 미래 자원.",
       "strengths": [
         "창의적 패스와 키패스",
@@ -29336,7 +28869,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "벤피카를 거쳐 MLS 클럽 최고액으로 이적한, 높이와 마무리를 겸비한 정통 9번.",
       "strengths": [
         "제공권과 포스트 플레이",
@@ -29373,7 +28905,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 3,
       "grade": "월드클래스",
-      "gradeScore": 86,
       "oneLiner": "빅클럽 이적으로 폼이 만개한 가나 공격의 새 에이스이자 최대 희망.",
       "strengths": [
         "폭발적인 스피드와 측면 돌파",
@@ -29409,7 +28940,6 @@ window.DATA = {
       "caps": 58,
       "intlGoals": 16,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "중원을 통제하는 가나의 엔진이자 부주장, 노련함의 중심축.",
       "strengths": [
         "볼 탈취와 수비 커버 범위",
@@ -29445,7 +28975,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "철강왕 같은 내구성과 빌바오 주장 경력을 갖춘 가나 공격의 정신적 리더.",
       "strengths": [
         "뛰어난 스피드와 활동량",
@@ -29481,7 +29010,6 @@ window.DATA = {
       "caps": 120,
       "intlGoals": 34,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "120캡의 대표팀 주장이자 예선 득점을 책임진 베테랑 리더.",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -29517,7 +29045,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "여러 빅리그를 거친 폭발적 드리블러, 측면의 조커 카드.",
       "strengths": [
         "일대일 드리블 돌파",
@@ -29551,7 +29078,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "어린 나이에 28캡을 쌓은 가나 측면의 미래 자원.",
       "strengths": [
         "드리블과 돌파 창의성",
@@ -29586,7 +29112,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 4,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "잠재력 높은 윙어지만 ACL 부상 여파가 변수인 영건.",
       "strengths": [
         "스피드와 직선적 돌파",
@@ -29620,7 +29145,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "리그1에서 자리잡은 다재다능한 수비 옵션.",
       "strengths": [
         "대인 수비와 회복 속도",
@@ -29652,7 +29176,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "2022 월드컵에 이어 가나 골문을 지키는 검증된 1번 키퍼.",
       "strengths": [
         "반사신경과 선방 능력",
@@ -29687,7 +29210,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "라리가에서 뛰는 장신 센터백, 다만 부상 회복이 관건.",
       "strengths": [
         "188cm 신장의 제공권",
@@ -29721,7 +29243,6 @@ window.DATA = {
       "caps": 159,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "157캡의 역대 최다 출전 주장, 중원을 지휘하는 팀의 정신적 지주.",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -29756,7 +29277,6 @@ window.DATA = {
       "caps": 73,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "'코코'라 불리는 파나마 공격의 창의적 엔진, 콘카카프 올해의 선수.",
       "strengths": [
         "탈압박과 전진 패스",
@@ -29792,7 +29312,6 @@ window.DATA = {
       "caps": 94,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "유럽 빅리그를 거친 공격적 윙백, 측면 공격의 핵심.",
       "strengths": [
         "측면 공격 가담과 크로스",
@@ -29827,7 +29346,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "잉글랜드 챔피언십에서 뛰는 25세 수비 기둥, 파나마 백라인의 미래.",
       "strengths": [
         "제공권과 신체 조건",
@@ -29859,7 +29377,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "최근 대표팀에서 가장 꾸준히 골을 넣는 측면 공격수(17골).",
       "strengths": [
         "골 결정력과 침투",
@@ -29891,7 +29408,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 17,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "월드컵 예선 공동 득점왕, 큰 경기에서 결승골을 책임지는 해결사.",
       "strengths": [
         "박스 안 위치 선정",
@@ -29925,7 +29441,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 14,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "네이션스리그에서 미국을 침몰시킨 후반 영웅, 베테랑 슈퍼서브.",
       "strengths": [
         "결정적인 한 방",
@@ -29961,7 +29476,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "마라카낭에서 브라질 상대로 중거리포를 꽂은 떠오르는 중원 자원.",
       "strengths": [
         "중거리 슈팅",
@@ -29993,7 +29507,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 63,
       "oneLiner": "백라인 뒤에서 안정감을 주는 35세 베테랑 주전 골키퍼.",
       "strengths": [
         "경험과 침착함",
@@ -30025,7 +29538,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "주전 경쟁을 펼치는 경험 많은 백업 골키퍼.",
       "strengths": [
         "반사신경",
@@ -30057,7 +29569,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "유럽 무대를 경험한 측면 수비 옵션, 무리요의 백업.",
       "strengths": [
         "측면 수비와 공격 가담",
@@ -30091,7 +29602,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "오초아의 노쇠를 이어받을 멕시코의 차세대 1순위 골키퍼.",
       "strengths": [
         "젊은 나이에 빠른 반사신경",
@@ -30123,7 +29633,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "꾸준한 클럽 폼으로 아기레가 다시 부른 베테랑 백업 키퍼.",
       "strengths": [
         "선방 능력과 1대1 대응",
@@ -30154,7 +29663,6 @@ window.DATA = {
       "caps": 55,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2022 월드컵 경험을 갖춘 검증된 라이트백 주전 후보.",
       "strengths": [
         "풍부한 메이저 대회 경험",
@@ -30189,7 +29697,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "센터백·라이트백·수미를 오가는 멕시코 수비의 멀티 옵션.",
       "strengths": [
         "다재다능한 포지션 소화",
@@ -30221,7 +29728,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "유럽 무대로 검증받는 멕시코 왼쪽 풀백의 미래.",
       "strengths": [
         "젊고 빠른 측면 공격 가담",
@@ -30255,7 +29761,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "에드손 알바레스를 받치는 안정적인 수비형 미드필더.",
       "strengths": [
         "볼 탈취와 인터셉트",
@@ -30287,7 +29792,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "라리가 빅클럽으로 점프한 멕시코 중원의 최대 기대주.",
       "strengths": [
         "나이 대비 성숙한 경기 운영",
@@ -30319,7 +29823,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "리가 MX를 평정하고 귀화한 스페인 출신 플레이메이커.",
       "strengths": [
         "탈압박과 패스 마스터리",
@@ -30351,7 +29854,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "강력한 왼발 킥을 갖춘 2022 월드컵 경험의 중원 자원.",
       "strengths": [
         "중거리 슛과 세트피스 키커",
@@ -30383,7 +29885,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "MLS에서 검증된 창의적 공격형 미드필더 신성.",
       "strengths": [
         "탈압박과 라스트패스",
@@ -30415,7 +29916,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "68캡의 베테랑 측면 자원, 멕시코 윙의 단골 손님.",
       "strengths": [
         "측면 드리블과 컷인 슛",
@@ -30450,7 +29950,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "유럽으로 건너가 폼을 끌어올린 폭발적인 왼쪽 윙어.",
       "strengths": [
         "스피드와 일대일 돌파",
@@ -30482,7 +29981,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "사우디 리그 득점왕에 오른 귀화 콜롬비아 출신 골잡이.",
       "strengths": [
         "탁월한 골 결정력",
@@ -30516,7 +30014,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "'라 오르미가', 어린 나이에 폭발한 멕시코의 깜짝 무기.",
       "strengths": [
         "박스 안 위치선정과 결정력",
@@ -30548,7 +30045,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "오를란도 파이어리츠의 주전급 골키퍼로 윌리엄스의 백업 1순위",
       "strengths": [
         "국내 리그 검증된 안정감",
@@ -30583,7 +30079,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "경험 많은 베테랑 3번 키퍼로 라커룸 안정감을 더하는 자원",
       "strengths": [
         "풍부한 리그 경력",
@@ -30614,7 +30109,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "오를란도 파이어리츠 주장 출신의 묵직한 센터백 자원",
       "strengths": [
         "제공권 장악",
@@ -30649,7 +30143,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "선덜스에서 급성장한 21세 센터백, 미래의 수비 핵심",
       "strengths": [
         "성장세",
@@ -30683,7 +30176,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 65,
       "oneLiner": "독일 무대에 진출한 22세 센터백, 유럽파 수비 유망주",
       "strengths": [
         "체격과 제공권",
@@ -30715,7 +30207,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "2026년 데뷔한 카이저 치프스 좌측 풀백 백업 옵션",
       "strengths": [
         "측면 커버 능력",
@@ -30746,7 +30237,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "노르웨이 무대에서 뛰는 22세 좌측 풀백 유망주",
       "strengths": [
         "측면 스피드",
@@ -30778,7 +30268,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "박스 투 박스 능력을 갖춘 파이어리츠 중원 엔진",
       "strengths": [
         "활동량",
@@ -30813,7 +30302,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "포르투갈 무대에서 검증된 수비형 미드필더, 중원의 균형추",
       "strengths": [
         "수비형 미드필더 안정감",
@@ -30845,7 +30333,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "선덜스 중원에서 다재다능함을 보여주는 미드필더",
       "strengths": [
         "전술 유연성",
@@ -30879,7 +30366,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "측면과 중원을 오가는 23세 멀티 자원 유망주",
       "strengths": [
         "측면 돌파",
@@ -30913,7 +30399,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "포스트 플레이에 능한 파이어리츠의 타깃형 공격수",
       "strengths": [
         "포스트 플레이",
@@ -30948,7 +30433,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "측면 돌파가 위협적인 파이어리츠 윙어형 공격수",
       "strengths": [
         "측면 드리블",
@@ -30980,7 +30464,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "키프로스 무대에서 뛰는 22세 우측 윙어 유망주",
       "strengths": [
         "폭발적 스피드",
@@ -31014,7 +30497,6 @@ window.DATA = {
       "caps": 80,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "네 번째 월드컵을 향하는 베테랑 수문장, 조현우와 주전 경쟁 중인 안정감의 상징",
       "strengths": [
         "경험과 안정적인 포지셔닝",
@@ -31051,7 +30533,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "장신 프레임과 발 기술을 갖춘 제3 골키퍼, 미래의 주전 후보",
       "strengths": [
         "190cm대 큰 키와 공중볼 장악",
@@ -31087,7 +30568,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "덴마크컵 결승골로 도약한 차세대 센터백, 김민재의 미래 파트너 후보",
       "strengths": [
         "젊은 나이와 성장세",
@@ -31123,7 +30603,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "왼발 센터백/풀백 멀티 자원, J리그에서 꾸준함을 쌓아온 수비수",
       "strengths": [
         "왼발 능력과 포지션 다양성",
@@ -31157,7 +30636,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "공격적인 왼쪽 풀백, 유럽 진출로 성장 중인 측면 자원",
       "strengths": [
         "왕성한 오버래핑과 활동량",
@@ -31191,7 +30669,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "양 측면을 모두 소화하는 주전급 풀백, 월드컵 예선 전 경기 출전한 핵심 측면 자원",
       "strengths": [
         "양발/양 측면 멀티 능력",
@@ -31227,7 +30704,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "스피드와 경험을 겸비한 오른쪽 풀백, 30대에도 꾸준히 호출되는 측면 백업",
       "strengths": [
         "빠른 스피드와 수비 복귀",
@@ -31263,7 +30739,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "센터백과 수비형 미드필더를 오가는 멀티 수비 자원, 전술적 활용도가 높은 백업",
       "strengths": [
         "수비 멀티 포지션 소화",
@@ -31297,7 +30772,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "올드펌 더비 골로 입증한 폭발적 윙어, 윙백까지 소화 가능한 멀티 측면 자원",
       "strengths": [
         "빠른 드리블과 돌파",
@@ -31334,7 +30808,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "탈압박과 중거리포를 겸비한 중원 핵심, 황인범과 함께 빌드업을 책임지는 미드필더",
       "strengths": [
         "뛰어난 볼 키핑과 탈압박",
@@ -31370,7 +30843,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "측면을 휘젓는 직선적 윙어, 유럽에서 성장 중인 차세대 공격 자원",
       "strengths": [
         "빠른 스피드와 직선 돌파",
@@ -31404,7 +30876,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "왼발 킥과 창의성을 갖춘 공격형 미드필더, 세트피스와 2선 침투에 능한 자원",
       "strengths": [
         "정교한 왼발 킥과 세트피스",
@@ -31440,7 +30911,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "슬라비아의 안정적인 수문장, 대표팀 No.1 자리를 다투는 반사신경형 골키퍼",
       "strengths": [
         "뛰어난 라인 세이브 반응속도",
@@ -31474,7 +30944,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "포르투갈 무대에서 경험을 쌓는 체코의 미래 골문, 제3 GK",
       "strengths": [
         "좋은 신장과 반사신경",
@@ -31506,7 +30975,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "세리에A를 경험한 우측 센터백, 후방 빌드업과 대인수비를 겸비",
       "strengths": [
         "대인방어 능력",
@@ -31540,7 +31008,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "분데스리가에서 자리잡은 좌측 센터백, 왼발 빌드업이 강점",
       "strengths": [
         "왼발 전개 능력",
@@ -31572,7 +31039,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "장신 센터백 유망주, 슬라비아에서 차세대 수비 핵으로 성장 중",
       "strengths": [
         "좋은 신장과 제공권",
@@ -31606,7 +31072,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "공격 가담이 활발한 레프트백, 측면 오버래핑과 크로스가 무기",
       "strengths": [
         "측면 공격 가담",
@@ -31640,7 +31105,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "베테랑 좌측 풀백, 풍부한 경험으로 후방을 단단히 묶는 자원",
       "strengths": [
         "경험과 경기 운영",
@@ -31674,7 +31138,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "쿠팔의 백업 라이트백, 활동량과 멀티 포지션 소화가 강점",
       "strengths": [
         "왕성한 활동량",
@@ -31708,7 +31171,6 @@ window.DATA = {
       "caps": 79,
       "intlGoals": 8,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "분데스리가를 누빈 베테랑 미드필더, 활동량과 경기 조율의 노련함",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -31740,7 +31202,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "수비형 미드필더 차세대 주자, 안정적인 볼 배급과 압박 능력",
       "strengths": [
         "볼 회수와 압박",
@@ -31772,7 +31233,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "활동량 좋은 중앙 미드필더, 박스 투 박스로 양면을 메우는 일꾼",
       "strengths": [
         "넓은 활동 반경",
@@ -31806,7 +31266,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "플젠에서 떠오른 젊은 미드필더, 대표팀 미래를 위한 발탁",
       "strengths": [
         "젊은 패기와 활동량",
@@ -31838,7 +31297,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "2008년생 초신성, 체코의 미래를 보고 발탁한 최연소 자원",
       "strengths": [
         "뛰어난 잠재력",
@@ -31870,7 +31328,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "투쟁심 강한 전방 공격수, 압박과 몸싸움으로 라인을 흔드는 타겟맨",
       "strengths": [
         "강한 전방 압박",
@@ -31904,7 +31361,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "측면을 파고드는 젊은 윙어, 드리블과 속도로 변화를 주는 조커",
       "strengths": [
         "빠른 스피드와 드리블",
@@ -31936,7 +31392,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "월드컵 주전 골키퍼로 낙점된 베테랑 수문장, 안정감이 강점",
       "strengths": [
         "반사신경",
@@ -31970,7 +31425,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 65,
       "oneLiner": "크레포와 주전 경쟁한 차세대 No.1 후보, 20경기 10클린시트",
       "strengths": [
         "선방 능력",
@@ -32002,7 +31456,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "크리스탈 팰리스 소속 떠오르는 영건 GK, 미래를 위한 제3골키퍼",
       "strengths": [
         "잠재력",
@@ -32034,7 +31487,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "리그앙에서 검증된 피지컬 센터백, 부상 복귀 후 주전 경쟁",
       "strengths": [
         "피지컬",
@@ -32066,7 +31518,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "풀럼 유스 출신 20세 센터백, 캐나다 수비의 미래",
       "strengths": [
         "볼 플레이",
@@ -32098,7 +31549,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "잉글랜드 태생 귀화 센터백, 베네수엘라전 풀타임 데뷔",
       "strengths": [
         "수비 위치선정",
@@ -32130,7 +31580,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "공수 겸장 라이트백 베테랑, 풍부한 대표팀 경험이 강점",
       "strengths": [
         "활동량",
@@ -32162,7 +31611,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "크로아티아 명문 하이두크의 멀티 수비 자원, 유틸리티성 강점",
       "strengths": [
         "멀티 포지션",
@@ -32194,7 +31642,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "MLS에서 꾸준한 센터백, 백업 수비 옵션",
       "strengths": [
         "성실함",
@@ -32226,7 +31673,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "유니온SG 우승 견인 골잡이, 부상 회복 변수 안고 합류",
       "strengths": [
         "골 결정력",
@@ -32260,7 +31706,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "측면을 휘젓는 활동량 자원, 윙어로서 침투 위협",
       "strengths": [
         "스피드",
@@ -32292,7 +31737,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "중원을 조율하는 박스투박스, 안정적 패스가 강점",
       "strengths": [
         "패스 전개",
@@ -32324,7 +31768,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "아스널 유스 출신 창의적 공격형 미드필더, 잠재력 풍부",
       "strengths": [
         "창의성",
@@ -32356,7 +31799,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "리버풀 유스 출신 폭발적인 윙어, 측면 속도전 옵션",
       "strengths": [
         "스피드",
@@ -32388,7 +31830,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "대표팀 최고참급 중원 베테랑, 경험과 리더십의 상징",
       "strengths": [
         "경기 운영",
@@ -32422,7 +31863,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "안데를레흐트로 유럽 진출한 수비형 미드필더 유망주",
       "strengths": [
         "볼 탈취",
@@ -32454,7 +31894,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "리예카에서 안정감을 키운 차세대 보스니아 수문장 후보",
       "strengths": [
         "발밑 빌드업",
@@ -32489,7 +31928,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "2020년 데뷔 후 30캡을 쌓은 경험 많은 센터백 자원",
       "strengths": [
         "대인 마크",
@@ -32522,7 +31960,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "세리에A에서 검증된 보스니아 수비의 미래 핵심",
       "strengths": [
         "볼 플레이",
@@ -32555,7 +31992,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "튀르키예 무대에서 꾸준한 출전 시간을 확보한 수비 옵션",
       "strengths": [
         "체격 활용",
@@ -32588,7 +32024,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "리예카 우승 멤버로 신뢰를 쌓은 수비 로테이션 자원",
       "strengths": [
         "제공권",
@@ -32623,7 +32058,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "리그1 무대를 밟는 측면 수비의 유망주",
       "strengths": [
         "측면 커버",
@@ -32656,7 +32090,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 63,
       "oneLiner": "잉글랜드 경험을 갖춘 수비형 미드필더 베테랑",
       "strengths": [
         "볼 탈취",
@@ -32691,7 +32124,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "스쿼드 최연소, 보스니아 중원의 미래로 꼽히는 재능",
       "strengths": [
         "드리블",
@@ -32724,7 +32156,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "독일 무대에서 경험을 쌓은 박스투박스 미드필더",
       "strengths": [
         "활동량",
@@ -32757,7 +32188,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "꾸준한 출전 시간으로 발탁된 중원 로테이션 자원",
       "strengths": [
         "체력",
@@ -32790,7 +32220,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "체코 무대에서 성장 중인 측면 미드필더 유망주",
       "strengths": [
         "스피드",
@@ -32823,7 +32252,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "제코 이후를 노리는 보스니아 공격의 차세대 스트라이커",
       "strengths": [
         "골 결정력",
@@ -32856,7 +32284,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "루마니아 무대에서 발탁된 공격 옵션",
       "strengths": [
         "피지컬",
@@ -32889,7 +32316,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "바르샴 뒤를 받치는 백업 골키퍼로 반사신경과 안정감은 있으나 국제 경험이 적다",
       "strengths": [
         "근거리 슛 반응",
@@ -32922,7 +32348,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "장신의 제3 골키퍼로 잠재력은 있으나 아직 검증이 필요한 단계",
       "strengths": [
         "좋은 신장과 공중볼 장악",
@@ -32953,7 +32378,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "노련한 귀화 좌측 수비수로 경험과 크로스가 강점이지만 나이로 인한 스피드 저하가 우려",
       "strengths": [
         "풍부한 경험",
@@ -32986,7 +32410,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "꾸준한 측면 수비 옵션으로 활동량은 좋으나 공격 가담 시 마무리가 아쉽다",
       "strengths": [
         "활동량과 체력",
@@ -33019,7 +32442,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "유럽파에 도전한 카타르 좌측 수비의 핵심으로 적극적인 오버래핑이 강점",
       "strengths": [
         "왕성한 오버래핑과 체력",
@@ -33052,7 +32474,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "신장과 제공권을 갖춘 센터백 백업으로 빌드업 안정성을 키워야 한다",
       "strengths": [
         "좋은 신장과 제공권",
@@ -33083,7 +32504,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "측면과 중앙을 오가는 다재다능한 젊은 수비수로 활용도가 높다",
       "strengths": [
         "여러 수비 포지션 소화",
@@ -33114,7 +32534,6 @@ window.DATA = {
       "caps": 117,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "100경기 이상 출전한 노련한 중원 사령탑으로 경기 운영과 리더십이 돋보인다",
       "strengths": [
         "경기 조율과 패스 전개",
@@ -33147,7 +32566,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "수비형 미드필더로 안정적인 볼 배급을 제공하는 경험 많은 옵션",
       "strengths": [
         "볼 배급 안정성",
@@ -33178,7 +32596,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 54,
       "oneLiner": "에너지 넘치는 젊은 미드필더로 발전 가능성이 큰 미래 자원",
       "strengths": [
         "활동량과 압박",
@@ -33209,7 +32626,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "19세의 차세대 중원 유망주로 기술과 창의성에서 가능성을 보인다",
       "strengths": [
         "탈압박과 볼 컨트롤",
@@ -33240,7 +32656,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "빠른 측면 돌파를 갖춘 윙어로 아핍의 백업이자 교체 카드로 유용하다",
       "strengths": [
         "스피드와 측면 돌파",
@@ -33273,7 +32688,6 @@ window.DATA = {
       "caps": 67,
       "intlGoals": 16,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "장신 타깃형 스트라이커로 제공권과 포스트 플레이에서 알모에즈와 차별화된 옵션을 제공",
       "strengths": [
         "뛰어난 제공권과 포스트 플레이",
@@ -33306,7 +32720,6 @@ window.DATA = {
       "caps": 68,
       "intlGoals": 9,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "경험 많은 측면 공격 자원으로 활동량과 노련함으로 팀에 균형을 더한다",
       "strengths": [
         "풍부한 경험",
@@ -33339,7 +32752,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "코벨에 가려졌지만 풍부한 빅리그 경험을 갖춘 백업 1순위 골키퍼",
       "strengths": [
         "발밑 빌드업",
@@ -33373,7 +32785,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "스위스 차세대 수문장으로 꼽히는 젊은 제3 골키퍼",
       "strengths": [
         "반사신경",
@@ -33407,7 +32818,6 @@ window.DATA = {
       "caps": 66,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "두 차례 월드컵을 경험한 수비 조직의 핵심 센터백",
       "strengths": [
         "빌드업 능력",
@@ -33439,7 +32849,6 @@ window.DATA = {
       "caps": 59,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "오버래핑이 강점인 베테랑 오른쪽 풀백",
       "strengths": [
         "크로스 정확도",
@@ -33473,7 +32882,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "공격적 성향이 돋보이는 왼쪽 풀백 옵션",
       "strengths": [
         "왼발 킥",
@@ -33507,7 +32915,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "장신과 빌드업을 겸비한 차세대 센터백 자원",
       "strengths": [
         "피지컬",
@@ -33541,7 +32948,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "투지 넘치는 대인 수비형 백업 센터백",
       "strengths": [
         "대인 수비",
@@ -33575,7 +32981,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "분데스리가 무대로 도약한 젊은 수비 유망주",
       "strengths": [
         "성장세",
@@ -33607,7 +33012,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "박스 투 박스 활동량을 갖춘 중원 엔진",
       "strengths": [
         "활동량",
@@ -33641,7 +33045,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "다재다능함이 무기인 중원 멀티 자원",
       "strengths": [
         "전술 이해도",
@@ -33675,7 +33078,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 65,
       "oneLiner": "거액 이적으로 주목받는 스위스 차세대 중원 핵심",
       "strengths": [
         "볼 운반",
@@ -33709,7 +33111,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "역동성과 잠재력을 겸비한 어린 중원 자원",
       "strengths": [
         "기동력",
@@ -33741,7 +33142,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "측면과 중앙을 오가는 경험 많은 공격형 미드필더",
       "strengths": [
         "오프더볼 침투",
@@ -33775,7 +33175,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "빠른 속도와 측면 침투가 강점인 윙어 겸 공격수",
       "strengths": [
         "스피드",
@@ -33810,7 +33209,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "득점 감각과 연계를 겸비한 다재다능 스트라이커",
       "strengths": [
         "골 결정력",
@@ -33844,7 +33242,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "제공권이 강점인 정통 타깃형 백업 스트라이커",
       "strengths": [
         "공중볼",
@@ -33878,7 +33275,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2025 골드컵 8강 코스타리카전 승부차기에서 3개를 막아낸 주전 골키퍼.",
       "strengths": [
         "승부차기 선방 능력",
@@ -33913,7 +33309,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "월드컵 명단에 든 무캡 신예로 미래를 보고 뽑은 차세대 수문장.",
       "strengths": [
         "큰 체격과 리치",
@@ -33946,7 +33341,6 @@ window.DATA = {
       "caps": 80,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "80캡의 베테랑 센터백으로 수비라인의 경험과 리더십을 책임진다.",
       "strengths": [
         "위치선정과 경기 읽기",
@@ -33979,7 +33373,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "운동능력이 뛰어난 센터백으로 골드컵 결승 결승골의 주인공.",
       "strengths": [
         "스피드와 회복력",
@@ -34015,7 +33408,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "리그1에서 뛰는 빌드업형 센터백으로 백3 옵션을 더한다.",
       "strengths": [
         "볼 배급과 전진 패스",
@@ -34050,7 +33442,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "분데스리가에서 단련된 양쪽 풀백 겸용 멀티 수비수.",
       "strengths": [
         "좌우 풀백 소화",
@@ -34083,7 +33474,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "MLS 올해의 영플레이어 출신, 라리가로 점프한 공격형 라이트백 유망주.",
       "strengths": [
         "오버래핑과 공격 가담",
@@ -34119,7 +33509,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "셀틱에서 국내 더블을 들어올린 왼발 센터백 백업 카드.",
       "strengths": [
         "왼발 센터백 희소성",
@@ -34155,7 +33544,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "공격적인 좌측 윙백으로 백3에서 측면 추진력을 더하는 옵션.",
       "strengths": [
         "측면 돌파와 활동량",
@@ -34188,7 +33576,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 13,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "13골을 넣은 정통 9번으로 발로건과 경쟁하는 결정력 좋은 스트라이커.",
       "strengths": [
         "박스 안 결정력",
@@ -34224,7 +33611,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "활동량과 압박이 돋보이는 공격형 미드필더 겸 측면 자원.",
       "strengths": [
         "전방 압박과 활동량",
@@ -34259,7 +33645,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 7,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "큰 체격을 활용하는 타깃형 공격수로 전방의 높이를 책임진다.",
       "strengths": [
         "피지컬과 포스트 플레이",
@@ -34292,7 +33677,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "리가 MX 강호의 측면 공격수로 드리블과 창의성을 더하는 윙어.",
       "strengths": [
         "드리블 돌파",
@@ -34327,7 +33711,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "두 차례 골드컵 우승을 경험한 헌신적인 박스투박스 베테랑 미드필더.",
       "strengths": [
         "활동량과 수비 가담",
@@ -34363,7 +33746,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "킥과 배급이 좋은 깊은 위치 미드필더로 애덤스의 백업 역할.",
       "strengths": [
         "장거리 패스와 킥",
@@ -34396,7 +33778,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 82,
       "oneLiner": "발밑이 세계 최고 수준인 빌드업형 골키퍼, 알리송과 함께 골문을 양분하는 베테랑",
       "strengths": [
         "탁월한 패스 능력과 빌드업",
@@ -34435,7 +33816,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "올림픽 금메달 영웅 출신의 38세 백업, 라커룸 리더십을 더하는 제3 골키퍼",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -34473,7 +33853,6 @@ window.DATA = {
       "caps": 67,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "오른쪽과 센터백을 모두 소화하는 베테랑 주장형 수비수, 경험과 리더십의 축",
       "strengths": [
         "다재다능한 포지션 소화",
@@ -34513,7 +33892,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "유벤투스 한 시대를 풍미한 베테랑 레프트백, 안정감으로 좌측 백업을 책임지는 자원",
       "strengths": [
         "수비 위치 선정과 대인 마크",
@@ -34551,7 +33929,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "세리에 A 최고 수준의 대인 방어를 자랑하는 강력한 센터백, 마르키뉴스의 파트너 후보",
       "strengths": [
         "압도적인 대인 수비와 제공권",
@@ -34588,7 +33965,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 71,
       "oneLiner": "빠른 발과 커버 능력을 갖춘 센터백, 사우디행 후 폼 유지가 관건인 로테이션 자원",
       "strengths": [
         "수비 스피드와 커버링",
@@ -34624,7 +34000,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "제니트의 주장급 레프트백, 꾸준함이 강점이나 국제무대 노출은 제한적인 백업 자원",
       "strengths": [
         "안정적인 수비",
@@ -34661,7 +34036,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "박스 투 박스로 활동량과 탈압박을 겸비한 신성 미드필더, 웨슬리 부상 공백을 메운 막판 합류 카드",
       "strengths": [
         "엄청난 활동량과 커버 범위",
@@ -34697,7 +34071,6 @@ window.DATA = {
       "caps": 61,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "창의적인 공격형 미드필더, 골과 도움을 모두 생산하는 브라질 중원의 연결고리",
       "strengths": [
         "창의적 패스와 공간 침투",
@@ -34735,7 +34108,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "리버풀 전성기를 이끈 수비형 미드필더, 카세미루 백업으로 안정감을 더하는 베테랑",
       "strengths": [
         "수비형 미드필더 위치 선정",
@@ -34773,7 +34145,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "폭발적인 스피드를 갖춘 왼쪽 윙어, 비니시우스의 측면 백업이자 침투형 옵션",
       "strengths": [
         "폭발적인 스피드와 침투",
@@ -34809,7 +34180,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 71,
       "oneLiner": "박스 안 마무리에 능한 정통 9번 스트라이커, 브라질에 부족한 타깃형 옵션",
       "strengths": [
         "박스 안 위치 선정과 마무리",
@@ -34844,7 +34214,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "경험 풍부한 베테랑 수문장, 백업 옵션으로 안정감을 더하는 노장 골키퍼",
       "strengths": [
         "풍부한 메이저 대회 경험",
@@ -34878,7 +34247,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "2022 월드컵 4강을 경험한 국내파 골키퍼, 보누의 든든한 백업",
       "strengths": [
         "대회 경험",
@@ -34913,7 +34281,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "유럽 트로피를 들어올린 22세 센터백, 모로코 수비의 미래 자원",
       "strengths": [
         "피지컬과 공중볼",
@@ -34947,7 +34314,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "네덜란드 U21 출신의 공격적 왼쪽 풀백, 모로코 좌측 수비 뎁스 보강",
       "strengths": [
         "오버래핑과 공격 가담",
@@ -34979,7 +34345,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "프랑스 유스 출신의 거구 센터백, 2026년 모로코로 전향한 PL 검증 수비수",
       "strengths": [
         "피지컬과 제공권",
@@ -35013,7 +34378,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "공격력까지 겸비한 오른쪽 풀백/윙어, 하키미 백업으로 폭발력을 더하는 신성",
       "strengths": [
         "전진성과 득점력",
@@ -35047,7 +34411,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "아시아 무대를 평정한 결정력의 공격수, 모로코 전방의 골 보장 카드",
       "strengths": [
         "박스 안 결정력",
@@ -35081,7 +34444,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "2025-26 라리가 10골 8도움의 폭발적 왼쪽 윙어, 모로코 측면 공격의 핵",
       "strengths": [
         "드리블 돌파",
@@ -35113,7 +34475,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "벨기에 대신 모로코를 택한 21세 윙어, PL 데뷔 시즌 인상 남긴 측면 신성",
       "strengths": [
         "스피드와 직선 드리블",
@@ -35145,7 +34506,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "에레디비시 올해의 선수에 빛나는 박스투박스, 빅클럽이 노리는 모로코 중원 자원",
       "strengths": [
         "득점력 있는 미드필더",
@@ -35179,7 +34539,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 69,
       "oneLiner": "랑스에서 두각을 보인 수비형 미드필더, 모로코 중원에 무게감을 더하는 자원",
       "strengths": [
         "볼 탈취와 커버 범위",
@@ -35211,7 +34570,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "노장 플라시드의 뒤를 받칠 젊은 백업 GK, 발밑 안정감이 강점",
       "strengths": [
         "젊은 나이",
@@ -35243,7 +34601,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 42,
       "oneLiner": "월드컵 엔트리 합류한 3옵션 골키퍼, 실전 기회는 제한적",
       "strengths": [
         "성실한 훈련 태도",
@@ -35274,7 +34631,6 @@ window.DATA = {
       "caps": 45,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "공동 주장이자 수비 리더, 노련함으로 아이티 백라인을 지휘하는 센터백",
       "strengths": [
         "리더십",
@@ -35308,7 +34664,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "프랑스 무대에서 다져진 풀백, 측면 커버 범위가 넓은 로테이션 자원",
       "strengths": [
         "활동량",
@@ -35340,7 +34695,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 53,
       "oneLiner": "미국 무대 경험 풍부한 베테랑 측면 수비, 안정적 수비 옵션",
       "strengths": [
         "경험",
@@ -35372,7 +34726,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "벨기에 1부에서 성장 중인 24세 수비수, 아이티 백라인의 미래 자원",
       "strengths": [
         "젊음과 성장 잠재력",
@@ -35404,7 +34757,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 45,
       "oneLiner": "스쿼드 최연소 수비 유망주, 미래를 보고 발탁한 20세 센터백",
       "strengths": [
         "젊은 나이",
@@ -35436,7 +34788,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "포르투갈 무대 경험을 갖춘 중원 자원, 박스-투-박스형 미드필더",
       "strengths": [
         "활동량",
@@ -35468,7 +34819,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "MLS에서 검증된 수비형 미드필더, 26경기 6골로 중원을 단단히 지탱",
       "strengths": [
         "수비 차단",
@@ -35500,7 +34850,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "미국 2부에서 다져진 젊은 중원, 활동량 기반의 로테이션 유망주",
       "strengths": [
         "활동량",
@@ -35532,7 +34881,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 46,
       "oneLiner": "엔트리 유일의 국내파 21세 미드필더, 자국 리그를 대표하는 상징적 발탁",
       "strengths": [
         "젊은 나이",
@@ -35564,7 +34912,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 49,
       "oneLiner": "슬로바키아 무대를 거친 중원 자원, 깊이를 더하는 로테이션 옵션",
       "strengths": [
         "전술 이해도",
@@ -35595,7 +34942,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "본선행을 확정지은 결승골의 주인공, 폭발력 있는 측면 윙어",
       "strengths": [
         "스피드와 폭발력",
@@ -35627,7 +34973,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "헝가리에서 16골 폭발한 떠오르는 공격수, 리그1 클럽들이 주목하는 신성",
       "strengths": [
         "득점 감각",
@@ -35661,7 +35006,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "잉글랜드 U21 출신에서 2023년 스코틀랜드를 택해 No.1 등번호를 받은 사실상의 주전 골키퍼.",
       "strengths": [
         "발밑 빌드업과 패스 전개",
@@ -35693,7 +35037,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "스코티시 프리미어십에서 꾸준함을 보여 제3 골키퍼로 합류한 백업 자원.",
       "strengths": [
         "선방 반응 속도",
@@ -35724,7 +35067,6 @@ window.DATA = {
       "caps": 66,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "66캡의 베테랑 센터백으로 수비 리더십과 경험을 더하는 백업 옵션.",
       "strengths": [
         "공중볼 경합",
@@ -35756,7 +35098,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "장신 센터백으로 빌드업 능력과 롱패스가 좋은 핵심 수비 자원.",
       "strengths": [
         "전진 패스와 빌드업",
@@ -35790,7 +35131,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "양 측면을 모두 소화하는 공격형 풀백으로 부상만 없으면 주전급 잠재력.",
       "strengths": [
         "좌우 측면 모두 소화",
@@ -35822,7 +35162,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "꾸준한 챔피언십 센터백으로 수비 깊이를 더하는 옵션.",
       "strengths": [
         "위치 선정",
@@ -35854,7 +35193,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "49캡 좌발 센터백으로 챔피언스리그 경험까지 갖춘 검증된 자원.",
       "strengths": [
         "좌발 빌드업",
@@ -35889,7 +35227,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "셀틱에서 우승을 경험한 라이트백으로 패터슨의 백업 역할.",
       "strengths": [
         "활동량과 오버래핑",
@@ -35924,7 +35261,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "부상을 딛고 레인저스 수비를 지킨 센터백, 백업 수비 자원.",
       "strengths": [
         "공중볼 경합",
@@ -35958,7 +35294,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "19세 레인저스 미드필더로 월드컵에 깜짝 발탁된 차세대 자원.",
       "strengths": [
         "젊은 나이와 성장 잠재력",
@@ -35990,7 +35325,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "폭발적인 드리블을 갖춘 윙어로 스코틀랜드 측면의 미래.",
       "strengths": [
         "빠른 스피드와 드리블",
@@ -36022,7 +35356,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "전 잉글랜드 국가대표 대런 플레처 아들이자 빌리 길무어 부상 대체로 합류한 신예.",
       "strengths": [
         "박스 투 박스 활동량",
@@ -36054,7 +35387,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 10,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "50캡 10골의 타깃맨으로 공중전과 연계에 능한 백업 스트라이커.",
       "strengths": [
         "타깃형 포스트 플레이",
@@ -36086,7 +35418,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "전 잉글랜드 스타 데이비드 허스트 아들로 입스위치에서 입지를 다진 장신 스트라이커.",
       "strengths": [
         "장신 피지컬",
@@ -36118,7 +35449,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "선덜랜드 시절 81경기 40골의 결정력으로 4년 만에 대표팀에 복귀한 와일드카드.",
       "strengths": [
         "박스 안 결정력",
@@ -36150,7 +35480,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2019 코파 아메리카 8강 승부차기에서 2개를 막아낸 베테랑 수문장, 1986 월드컵 GK 로베르토 페르난데스의 아들",
       "strengths": [
         "승부차기·1대1 선방",
@@ -36184,7 +35513,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "아르헨티나 명문 산 로렌소에서 출전 기회를 잡으며 떠오르는 차세대 파라과이 골키퍼",
       "strengths": [
         "젊은 나이와 성장 잠재력",
@@ -36216,7 +35544,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "파라과이 명문 올림피아의 안정적인 베테랑 골키퍼로 3옵션 백업 역할",
       "strengths": [
         "꾸준한 리그 출전 경험",
@@ -36248,7 +35575,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "프리미어리그를 경험한 노련한 센터백으로 수비 라인의 경험치와 공중볼을 책임지는 베테랑",
       "strengths": [
         "공중볼 장악력",
@@ -36284,7 +35610,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "파라과이 리그에서 잔뼈가 굵은 베테랑 센터백으로 수비 뎁스를 더하는 자원",
       "strengths": [
         "위치 선정과 경기 읽기",
@@ -36317,7 +35642,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "러시아 무대에서 뛰는 젊은 측면 수비수로 비니시우스를 막아낸 일화로 주목받은 풀백",
       "strengths": [
         "측면 스피드와 활동량",
@@ -36349,7 +35673,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "아르헨티나 라누스에서 뛰는 센터백으로 수비 라인 뎁스를 채우는 자원",
       "strengths": [
         "대인 수비",
@@ -36381,7 +35704,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "아르헨티나 탈예레스에서 성장 중인 젊은 수비 자원으로 수비 옵션을 넓혀줄 카드",
       "strengths": [
         "젊음과 성장 가능성",
@@ -36413,7 +35735,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "187cm 타깃형 스트라이커로 LDU 키토 시절 득점력을 입증한 파라과이의 전방 옵션",
       "strengths": [
         "제공권과 포스트 플레이",
@@ -36445,7 +35766,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "아르헨티나 무대에서 꾸준히 골을 넣어온 베테랑 타깃맨으로 후반 조커 카드",
       "strengths": [
         "공중볼과 몸싸움",
@@ -36477,7 +35797,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "브라질 세리에A에서 뛰는 다재다능한 공격수로 측면과 중앙을 오가는 잠재력 자원",
       "strengths": [
         "측면·중앙 멀티 포지션 소화",
@@ -36509,7 +35828,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "프리미어리그를 거쳐 팔메이라스에 안착한 폭발적인 측면 공격수로 파라과이 공격의 속도 자원",
       "strengths": [
         "폭발적 드리블과 스피드",
@@ -36541,7 +35859,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "공격형 미드필더 겸 윙어로 창의적인 키패스를 뿌리는 파라과이 공격의 연결 고리",
       "strengths": [
         "창의적 패스와 킥",
@@ -36574,7 +35891,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "팔메이라스에서 뛰는 박스투박스 미드필더로 중원 뎁스를 더하는 자원",
       "strengths": [
         "활동량",
@@ -36606,7 +35922,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "MLS에서 활약하는 젊은 중원 자원으로 미래를 내다본 미드필드 옵션",
       "strengths": [
         "젊음과 발전 가능성",
@@ -36638,7 +35953,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "라이언의 뒤를 받치는 백업 키퍼로, 데뷔전 뉴질랜드전 클린시트로 신뢰를 쌓은 늦깎이 유럽파.",
       "strengths": [
         "안정적인 라인 컨트롤",
@@ -36674,7 +35988,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "센터백·풀백·미드필더를 두루 소화하는 '스위스 아미 나이프' 멀티 자원으로 MLS 진출 후 가치를 키웠다.",
       "strengths": [
         "수비 전 포지션 소화 가능한 다재다능함",
@@ -36707,7 +36020,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "스코틀랜드 출신이지만 호주를 택한 좌족 센터백으로, EPL 경험을 발판 삼아 수트타와 함께 백라인을 구성한다.",
       "strengths": [
         "왼발 빌드업과 롱패스",
@@ -36740,7 +36052,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "독일 유스에서 성장한 베테랑 수비수로, 세 번째 월드컵에 나서는 백라인의 경험과 투지의 상징.",
       "strengths": [
         "풍부한 메이저 토너먼트 경험",
@@ -36775,7 +36086,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "데뷔(2016)와 두 번째 캡 사이 8년을 기다린 라이트백 자원으로, J리그에서 폼을 되살려 대표팀에 복귀했다.",
       "strengths": [
         "측면 수비 안정감",
@@ -36810,7 +36120,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "2025년 10월 데뷔한 측면 자원으로, 이번 시즌 4골을 넣으며 공격적 풀백 옵션으로 떠올랐다.",
       "strengths": [
         "측면 공격 가담과 득점력",
@@ -36843,7 +36152,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "하츠의 핵심 수비형 미드필더로, 강한 활동량과 투지로 중원 밸런스를 잡아주는 일꾼.",
       "strengths": [
         "엄청난 활동량과 압박",
@@ -36876,7 +36184,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "왼발 킥과 세트피스가 강점인 창의적 미드필더로, 프랑크푸르트 유로파리그 우승 경력의 기술형 자원.",
       "strengths": [
         "정교한 왼발 킥과 세트피스",
@@ -36911,7 +36218,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "MLS에서 성장 중인 젊은 중원 자원으로, 깊이를 더하는 미래형 옵션.",
       "strengths": [
         "젊은 나이의 성장 잠재력",
@@ -36944,7 +36250,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "A리그 멜버른 시티의 젊은 미드필더로, 깜짝 발탁된 미래 자원.",
       "strengths": [
         "젊은 잠재력",
@@ -36977,7 +36282,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 51,
       "oneLiner": "레전드 폴 오콘의 아들로 기대를 모으는 젊은 센터백/미드필더 자원.",
       "strengths": [
         "빌드업 능력",
@@ -37010,7 +36314,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "케냐 난민캠프 출신의 폭발적 윙어로, 2022 월드컵 본선행을 결정지은 결정적 한 방의 주인공.",
       "strengths": [
         "측면 돌파와 스피드",
@@ -37045,7 +36348,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "노리치에서 폭발적 득점력을 뽐내며 22세에 호주의 주전 스트라이커 후보로 떠오른 신성.",
       "strengths": [
         "뛰어난 골 결정력",
@@ -37078,7 +36380,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "데뷔전 중국전 7분 만에 골을 터뜨린 윙어로, 성실함과 클리니컬한 마무리가 강점.",
       "strengths": [
         "높은 활동량과 압박",
@@ -37111,7 +36412,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "거의 2m에 달하는 장신 타깃맨으로, 전 소케루스 쿠시니 옌기의 동생이자 무캡 깜짝 발탁 자원.",
       "strengths": [
         "압도적 제공권과 피지컬",
@@ -37144,7 +36444,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "유로 2024 8강을 책임진 베테랑 수문장, 노련함과 안정감으로 골문을 지킨다",
       "strengths": [
         "풍부한 메이저 대회 경험",
@@ -37178,7 +36477,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "맨유에서 출전 기회를 늘려가는 백업 GK, 큰 키와 반사신경이 강점인 차세대 수문장",
       "strengths": [
         "우수한 반사신경과 선방 능력",
@@ -37210,7 +36508,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "세리에A에서 검증된 멀티 풀백, 오른쪽 측면과 스리백 우측을 모두 소화하는 주전 수비수",
       "strengths": [
         "전술적 다재다능함 (라이트백·스리백 우측)",
@@ -37242,7 +36539,6 @@ window.DATA = {
       "caps": 26,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "어린 나이에 유럽을 떠돈 재능형 센터백, 빌드업과 대인 수비를 겸비한 핵심 수비 자원",
       "strengths": [
         "정확한 빌드업 패스",
@@ -37274,7 +36570,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "라이트백과 센터백을 오가는 멀티 수비수, 강한 슈팅과 활동량으로 측면을 책임진다",
       "strengths": [
         "측면·중앙 모두 소화하는 활용도",
@@ -37306,7 +36601,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "갈라타사라이의 왼쪽 풀백, 측면 침투와 공격 가담이 돋보이는 성장형 수비수",
       "strengths": [
         "적극적인 공격 가담과 오버래핑",
@@ -37338,7 +36632,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "갈라타사라이 수비의 기둥, 왼발 빌드업과 침착한 대인 수비를 갖춘 늦깎이 주전 센터백",
       "strengths": [
         "정확한 왼발 빌드업 전개",
@@ -37372,7 +36665,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "장신 센터백으로 유로 2024를 경험한 백업 수비 자원, 공중볼 장악이 강점",
       "strengths": [
         "장신에서 나오는 공중볼 우위",
@@ -37406,7 +36698,6 @@ window.DATA = {
       "caps": 72,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "센터백과 수비형 미드필더를 겸하는 베테랑 멀티 자원, 72캡의 경험으로 수비를 안정시킨다",
       "strengths": [
         "센터백·수비형 MF 겸업 가능",
@@ -37440,7 +36731,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "도르트문트의 수비형 미드필더, 강한 압박과 볼 탈취로 중원을 단단히 잠그는 안전판",
       "strengths": [
         "적극적인 압박과 인터셉트",
@@ -37474,7 +36764,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "페네르바흐체의 박스-투-박스 미드필더, 활동량과 수비 가담으로 중원 균형을 잡는다",
       "strengths": [
         "왕성한 활동량과 커버 범위",
@@ -37506,7 +36795,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "독일에서 자라 튀르키예를 택한 공격형 재능, 마무리와 침투가 돋보이는 차세대 스타",
       "strengths": [
         "날카로운 마무리 감각",
@@ -37538,7 +36826,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "스웨덴 대신 튀르키예를 선택한 장신 스트라이커, 포스트플레이와 결정력을 갖춘 기대주",
       "strengths": [
         "장신을 활용한 포스트플레이",
@@ -37570,7 +36857,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "공격형 미드필더와 윙어를 겸하는 베테랑, 중거리 슈팅과 세트피스가 무기인 경험형 자원",
       "strengths": [
         "강력한 중거리 슈팅",
@@ -37602,7 +36888,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "갈라타사라이의 우측 윙어, 드리블 돌파와 컷인 슈팅으로 측면을 휘젓는 슈퍼 조커",
       "strengths": [
         "날카로운 드리블 돌파",
@@ -37636,7 +36921,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "스피드를 앞세운 측면 윙어, 빠른 침투와 직선적인 돌파로 후반 변수를 만든다",
       "strengths": [
         "폭발적인 스피드",
@@ -37668,7 +36952,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "34세에 A매치 데뷔한 대기만성형 수문장으로, 노이어의 백업이지만 분데스리가 최다 선방을 자랑하는 안정적 1.5선택지",
       "strengths": [
         "뛰어난 반응속도와 선방 능력",
@@ -37701,7 +36984,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "한때 노이어 후계자로 꼽혔던 슈투트가르트 주전 GK, 발밑 능력이 좋은 모던 골키퍼지만 대표팀에선 3번째 옵션",
       "strengths": [
         "우수한 발밑 빌드업 능력",
@@ -37734,7 +37016,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "AC 밀란을 거쳐 뉴캐슬에 안착한 장신 센터백으로, 우측 수비와 수미까지 소화하는 다재다능한 24세 유망 자원",
       "strengths": [
         "압도적인 피지컬과 제공권",
@@ -37767,7 +37048,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "전 슈투트가르트 주장 출신의 단단한 센터백으로, 안정적 수비와 리더십을 갖춘 도르트문트 백3 핵심",
       "strengths": [
         "견고한 1대1 수비",
@@ -37800,7 +37080,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "독일 좌측 풀백의 핵심으로, 폭발적인 크로스와 공격 가담이 일품인 RB 라이프치히 주장",
       "strengths": [
         "정교한 크로스와 세트피스",
@@ -37833,7 +37112,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "프랑크푸르트에서 급성장한 좌측 풀백/윙백 유망주로, 활동량과 잠재력을 인정받아 깜짝 발탁된 22세 신예",
       "strengths": [
         "넓은 활동 범위와 체력",
@@ -37866,7 +37144,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "하부리그를 거쳐 만개한 늦깎이 스트라이커로, 나겔스만 체제에서 분당 최고 공격포인트를 자랑하는 폼 좋은 9번",
       "strengths": [
         "뛰어난 골 결정력과 위치 선정",
@@ -37899,7 +37176,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "스피드와 침투가 무기인 도르트문트 공격수로, 슈퍼서브 및 멀티 공격 옵션으로 발탁된 23세 다재다능 자원",
       "strengths": [
         "빠른 발과 뒷공간 침투",
@@ -37932,7 +37208,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "엘로이 룸의 뒤를 받치는 차세대 1순위 백업 골키퍼",
       "strengths": [
         "발밑 빌드업",
@@ -37963,7 +37238,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 47,
       "oneLiner": "젊은 제3 골키퍼, 장기적 포스트 자원",
       "strengths": [
         "반사신경",
@@ -37994,7 +37268,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "PSV 리그 3회 우승 경력의 베테랑 풀백, 수비진의 검증된 리더",
       "strengths": [
         "오버래핑 가담",
@@ -38029,7 +37302,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "60캡의 대표팀 수비 기둥, 센터백 안정의 핵심",
       "strengths": [
         "풍부한 대표팀 경험",
@@ -38061,7 +37333,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 62,
       "oneLiner": "에레디비시에서 꾸준히 뛰는 우측 수비 주전 자원",
       "strengths": [
         "일대일 수비",
@@ -38092,7 +37363,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "28캡의 좌측 수비 옵션, 측면 안정감을 더하는 자원",
       "strengths": [
         "체력",
@@ -38123,7 +37393,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "PSV 출신 젊은 풀백, 측면 공격 가담형 백업",
       "strengths": [
         "스피드",
@@ -38154,7 +37423,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 49,
       "oneLiner": "이제 막 대표팀에 합류한 젊은 수비 유망주",
       "strengths": [
         "성장 잠재력",
@@ -38185,7 +37453,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 63,
       "oneLiner": "PSV·유벤투스 육성을 거친 다재다능한 젊은 중원, 수비형MF·우측백 겸업",
       "strengths": [
         "볼 운반",
@@ -38217,7 +37484,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "28캡의 중원 활동량 담당, 박스 투 박스 자원",
       "strengths": [
         "활동량",
@@ -38249,7 +37515,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "에너지 넘치는 중원 로테이션 자원",
       "strengths": [
         "전진 드리블",
@@ -38280,7 +37545,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 2,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "아약스 출신의 빠른 공격형 미드필더 유망주",
       "strengths": [
         "스피드",
@@ -38312,7 +37576,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "측면과 중원을 오가는 젊은 공격 자원",
       "strengths": [
         "스피드",
@@ -38343,7 +37606,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 61,
       "oneLiner": "대표팀 9골의 측면 공격수, 한 방 있는 베테랑",
       "strengths": [
         "스피드",
@@ -38375,7 +37637,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "27캡을 쌓은 젊은 측면 공격 자원, 선택지 폭 확장",
       "strengths": [
         "측면 침투",
@@ -38407,7 +37668,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "현 대표팀 부동의 1번, 반사신경과 공중볼 처리가 안정적인 주전 골키퍼",
       "strengths": [
         "반사신경",
@@ -38439,7 +37699,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "장신에 발밑이 좋은 백업 골키퍼, 프랑스 유스 출신으로 코트디부아르 선택",
       "strengths": [
         "장신 커버력",
@@ -38471,7 +37730,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "벨기에 무대에서 성장 중인 제3 골키퍼, 아직 A매치 데뷔 전",
       "strengths": [
         "성장 잠재력",
@@ -38502,7 +37760,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "프리미어리그를 거친 피지컬 강한 센터백, 수비 조직의 핵심 옵션",
       "strengths": [
         "대인 방어",
@@ -38534,7 +37791,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "프랑스 유스 출신의 공격적인 라이트백, 측면 오버래핑이 활발한 신성",
       "strengths": [
         "공격 가담",
@@ -38566,7 +37822,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "경험 많은 왼쪽 풀백, 크로스와 세트피스 전달이 강점인 베테랑",
       "strengths": [
         "크로스",
@@ -38598,7 +37853,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "활동량 좋은 왼쪽 풀백, 아크파의 부상 공백을 메운 대체 자원",
       "strengths": [
         "활동량",
@@ -38630,7 +37884,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "프랑스를 거절하고 코트디부아르를 택한 인테르 장신 스트라이커, 연계와 결정력 겸비",
       "strengths": [
         "연계 플레이",
@@ -38662,7 +37915,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "폭발적인 스피드의 프랑스 유스 출신 공격수, 잠재력 높지만 기복이 과제",
       "strengths": [
         "스피드",
@@ -38694,7 +37946,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "분데스리가에서 성장 중인 측면 공격수, 속도와 돌파가 매력적인 유망주",
       "strengths": [
         "스피드",
@@ -38726,7 +37977,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "벨기에 리그에서 득점 감각을 보여준 젊은 공격수, 백업 옵션",
       "strengths": [
         "박스 안 움직임",
@@ -38758,7 +38008,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "박스 투 박스 능력이 뛰어난 베테랑 미드필더, 중원 추진력의 핵심",
       "strengths": [
         "박스 투 박스",
@@ -38790,7 +38039,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "차세대 수비형 미드필더, 활동량과 볼 회수 능력이 돋보이는 신성",
       "strengths": [
         "볼 회수",
@@ -38822,7 +38070,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "패스 능력이 뛰어난 베테랑 플레이메이커, 경험으로 중원을 조율하는 백업",
       "strengths": [
         "패스 정확도",
@@ -38854,7 +38101,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "갈린데스 노쇠 이후를 책임질 차세대 1순위 골키퍼 후보.",
       "strengths": [
         "발밑 빌드업",
@@ -38889,7 +38135,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "남미 무대 검증된 베테랑, 3옵션 안정감 더하는 국내파 키퍼.",
       "strengths": [
         "라인 커맨딩",
@@ -38924,7 +38169,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "유럽 빅클럽이 줄 선 22세 센터백, 에콰도르 수비의 미래.",
       "strengths": [
         "빌드업 능력",
@@ -38958,7 +38202,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "공중볼과 세트피스 한 방을 갖춘 베테랑 센터백.",
       "strengths": [
         "제공권 장악",
@@ -38991,7 +38234,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "벨기에에서 성장 중인 측면 풀백 유망주, 에콰도르의 미래 자원.",
       "strengths": [
         "폭발적 스피드",
@@ -39024,7 +38266,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "백업 센터백 깊이를 더하는 장신 수비수.",
       "strengths": [
         "장신 피지컬",
@@ -39057,7 +38298,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "카이세도 옆을 받치는 멀티 수비형 미드필더.",
       "strengths": [
         "수비형 미드필더 안정감",
@@ -39090,7 +38330,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "중원에 추진력과 한 방을 더하는 박스 투 박스 미드필더.",
       "strengths": [
         "중거리 슈팅",
@@ -39123,7 +38362,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "EPL 무대를 밟은 측면 드리블러, 폭발력 있는 윙어 유망주.",
       "strengths": [
         "측면 돌파",
@@ -39156,7 +38394,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "양 측면을 모두 소화하는 빠른 공격형 미드필더 유망주.",
       "strengths": [
         "스피드",
@@ -39189,7 +38426,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "남미 무대 검증된 중원 조율사, 로테이션 옵션.",
       "strengths": [
         "볼 배급",
@@ -39224,7 +38460,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 59,
       "oneLiner": "유럽에서 성장 중인 수비형 미드필더 유망주, 중원 깊이 보강.",
       "strengths": [
         "볼 탈취",
@@ -39257,7 +38492,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "독일에서 자란 기술형 윙어, 측면 백업 자원.",
       "strengths": [
         "측면 돌파",
@@ -39290,7 +38524,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "공격 전 포지션을 소화하는 다재다능 공격수 유망주.",
       "strengths": [
         "측면·중앙 겸업",
@@ -39323,7 +38556,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "엔네르 발렌시아를 대체할 장신 타깃형 스트라이커 옵션.",
       "strengths": [
         "타깃맨 역할",
@@ -39356,7 +38588,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "스페인 출생 후 에콰도르를 택한 700만 유로 신성, 차세대 골잡이.",
       "strengths": [
         "왼발 마무리",
@@ -39389,7 +38620,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "분데스리가 유일의 대표팀 멤버로, 발밑이 좋은 베테랑 넘버원 골키퍼.",
       "strengths": [
         "뛰어난 빌드업/패스 능력",
@@ -39423,7 +38653,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "프리미어리그 승격팀에서 자리 잡은 미래의 대표팀 골키퍼 후보.",
       "strengths": [
         "젊은 나이와 성장 잠재력",
@@ -39457,7 +38686,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "센터백과 좌측 풀백을 모두 소화하는 맨시티 우승 경험의 멀티 수비수.",
       "strengths": [
         "수비 다재다능성(CB/LB)",
@@ -39493,7 +38721,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "첼시가 거액에 영입한 좌발 센터백/좌측백 겸용의 차세대 수비 핵심.",
       "strengths": [
         "뛰어난 나이 대비 성숙도",
@@ -39527,7 +38754,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "브라이턴 수비의 기둥으로 빠르게 성장한 빌드업형 센터백.",
       "strengths": [
         "전진 패스와 빌드업",
@@ -39559,7 +38785,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "수비형 미드필더 출신으로 라이트백까지 소화하는 멀티 수비 자원.",
       "strengths": [
         "6번/라이트백 겸용성",
@@ -39593,7 +38818,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "35세에 합류한 아탈란타의 살림꾼, 경험과 수비 균형을 책임지는 노련한 6번.",
       "strengths": [
         "수비 위치선정과 차단",
@@ -39628,7 +38852,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "왼발 킥과 득점력을 겸비한 박스투박스, 유벤투스에서 적응 시험대에 선 미드필더.",
       "strengths": [
         "정확한 왼발 슈팅/세트피스",
@@ -39662,7 +38885,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "PSV에서 시즌 두 자릿수 득점을 올린 침투 능력 좋은 공격형 미드필더.",
       "strengths": [
         "박스 침투와 마무리",
@@ -39697,7 +38919,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "위리언 팀버의 쌍둥이 형제, 활동량과 전진 드리블이 돋보이는 중원 자원.",
       "strengths": [
         "박스투박스 활동량",
@@ -39731,7 +38952,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 69,
       "oneLiner": "패트릭 클라위베르트의 아들, 본머스에서 두 자릿수 득점을 낸 공격형 미드필더 겸 윙어.",
       "strengths": [
         "측면/2선 다재다능성",
@@ -39764,7 +38984,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "강력한 피지컬과 등지는 플레이가 강점인 파워형 스트라이커.",
       "strengths": [
         "몸싸움과 홀딩 능력",
@@ -39798,7 +39017,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "콘테와의 불화로 임대를 떠났지만 갈라타사라이에서 다시 살아난 재간둥이 좌측 윙어.",
       "strengths": [
         "1대1 드리블 돌파",
@@ -39834,7 +39052,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "A매치 데뷔 없이 깜짝 발탁된 챔피언십 MVP 출신의 폭발적 측면 공격수.",
       "strengths": [
         "드리블 돌파와 가속력",
@@ -39869,7 +39086,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 14,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "197cm의 타깃맨, 후반 조커로 변수를 만드는 경험 풍부한 베테랑 스트라이커.",
       "strengths": [
         "압도적 제공권과 타깃 플레이",
@@ -39904,7 +39120,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "반사신경이 좋은 J리그 정상급 골키퍼로 백업 1순위",
       "strengths": [
         "슈팅 선방",
@@ -39938,7 +39153,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "안정적 핸들링이 강점인 제3 골키퍼",
       "strengths": [
         "크로스 처리",
@@ -39969,7 +39183,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "빌드업과 대인 수비를 겸비한 수비 라인의 핵심 센터백",
       "strengths": [
         "빌드업",
@@ -40001,7 +39214,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "유럽 강팀 주전을 소화하는 다재다능 센터백",
       "strengths": [
         "대인 수비",
@@ -40033,7 +39245,6 @@ window.DATA = {
       "caps": 145,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "아시아 최초 5회 월드컵, 경험과 리더십의 베테랑 좌측 수비수",
       "strengths": [
         "경험",
@@ -40068,7 +39279,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "프랑스 무대에서 성장 중인 젊은 센터백 자원",
       "strengths": [
         "스피드",
@@ -40100,7 +39310,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "공격 가담이 좋은 오버래핑형 우측 풀백",
       "strengths": [
         "오버래핑",
@@ -40132,7 +39341,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "공중볼과 경험을 갖춘 베테랑 백업 센터백",
       "strengths": [
         "제공권",
@@ -40166,7 +39374,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "엔도의 후계자로 거론되는 활동량 좋은 수비형 미드필더",
       "strengths": [
         "볼 탈취",
@@ -40198,7 +39405,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "박스 투 박스로 공수 연결을 책임지는 중원 엔진",
       "strengths": [
         "전진 패스",
@@ -40232,7 +39438,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "탈압박과 창의적 패스가 돋보이는 공격형 미드필더 유망주",
       "strengths": [
         "드리블 탈압박",
@@ -40264,7 +39469,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "왼발 슈팅과 측면 침투가 매서운 윙어 겸 공격수",
       "strengths": [
         "왼발 슈팅",
@@ -40296,7 +39500,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "폭발적인 스피드와 크로스를 갖춘 베테랑 우측 윙어",
       "strengths": [
         "스피드",
@@ -40328,7 +39531,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "박스 안 위치선정이 좋은 정통 타깃형 중앙 공격수",
       "strengths": [
         "박스 안 위치선정",
@@ -40360,7 +39562,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "플레이오프에서 우크라이나·폴란드전을 모두 선발로 막아낸 노련한 베테랑 키퍼",
       "strengths": [
         "풍부한 경험과 빅매치 침착함",
@@ -40393,7 +39594,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "장신과 안정적 선방 능력을 갖춘 미래 주전 후보 골키퍼",
       "strengths": [
         "좋은 신장과 공중볼 장악",
@@ -40426,7 +39626,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "라리가에서 단련된 강인한 대인 수비형 센터백",
       "strengths": [
         "몸싸움과 대인 마크",
@@ -40462,7 +39661,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "침착한 빌드업이 강점인 좌우 겸용 센터백",
       "strengths": [
         "전진 패스와 빌드업",
@@ -40495,7 +39693,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "도르트문트 좌측을 책임지는 공격적이고 활동량 많은 윙백",
       "strengths": [
         "오버래핑과 전진 침투",
@@ -40528,7 +39725,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "세트피스 득점력까지 갖춘 장신 센터백",
       "strengths": [
         "공중볼·세트피스 위협",
@@ -40561,7 +39757,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "센터백과 수비형 미드필더를 겸하는 멀티 수비 자원",
       "strengths": [
         "포지션 유연성",
@@ -40594,7 +39789,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "세리에 A 주장 완장을 찬 안정적 수비형 미드필더",
       "strengths": [
         "볼 배급과 경기 조율",
@@ -40627,7 +39821,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "측면을 위아래로 누비는 노련한 왼쪽 미드필더",
       "strengths": [
         "측면 활동량과 크로스",
@@ -40660,7 +39853,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "벨기에 무대에서 성장 중인 에너지 넘치는 젊은 미드필더",
       "strengths": [
         "박스 투 박스 활동량",
@@ -40693,7 +39885,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "빠른 돌파가 무기인 말뫼의 왼쪽 윙어",
       "strengths": [
         "스피드와 1대1 돌파",
@@ -40726,7 +39917,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "셀틱 데뷔 시즌 20골을 넘긴 다재다능한 2선 공격수",
       "strengths": [
         "득점력과 어시스트",
@@ -40763,7 +39953,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "196cm 장신을 활용하는 타깃형 스트라이커",
       "strengths": [
         "제공권과 포스트 플레이",
@@ -40796,7 +39985,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "측면과 전방을 오가는 부지런한 공격 자원",
       "strengths": [
         "활동량과 침투",
@@ -40829,7 +40017,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "국내 리그에서 안정감을 보이는 백업 골키퍼, 대표팀 경험은 적다.",
       "strengths": [
         "반사신경",
@@ -40861,7 +40048,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "클럽 아프리캥 소속의 젊은 제3 골키퍼로 경험을 쌓는 단계.",
       "strengths": [
         "체격",
@@ -40892,7 +40078,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "수비 중앙을 책임지는 베테랑 센터백, 탈비와 짝을 이룰 핵심 자원.",
       "strengths": [
         "공중볼 장악",
@@ -40924,7 +40109,6 @@ window.DATA = {
       "caps": 44,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "리그앙에서 검증된 공격적 레프트백, 측면 공수 균형의 핵심.",
       "strengths": [
         "오버래핑",
@@ -40958,7 +40142,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "프리미어리그를 거친 다재다능한 라이트백, 풀백·윙백 모두 소화.",
       "strengths": [
         "측면 다용도성",
@@ -40990,7 +40173,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "아스널을 거친 좌족 센터백, 빌드업이 강점인 회전 자원.",
       "strengths": [
         "좌족 빌드업",
@@ -41022,7 +40204,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "국내 최강 에스페랑스의 수비수, 안정적인 후방 옵션.",
       "strengths": [
         "수비 위치선정",
@@ -41055,7 +40236,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "스웨덴 리그에서 뛰는 측면 수비 자원으로 깊이를 더한다.",
       "strengths": [
         "체력",
@@ -41086,7 +40266,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "튀르키예 리그에서 성장 중인 젊은 수비 자원.",
       "strengths": [
         "성장 잠재력",
@@ -41117,7 +40296,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "국내 리그 모나스티르 소속의 수비 백업.",
       "strengths": [
         "국내 리그 적응력",
@@ -41148,7 +40326,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "PSG·바르사 유스를 거친 창의적 미드필더, 튀니지의 미래 자원.",
       "strengths": [
         "탈압박",
@@ -41180,7 +40357,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "분데스리가에서 검증된 수비형 미드필더, 사미 케디라의 동생.",
       "strengths": [
         "볼 차단",
@@ -41212,7 +40388,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "독일 무대에서 성장한 폭발적인 왼쪽 윙어, 측면 옵션을 더한다.",
       "strengths": [
         "드리블 돌파",
@@ -41246,7 +40421,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "2025-26 시즌 튀니지 리그 득점 선두를 달린 결정적인 스트라이커.",
       "strengths": [
         "골 결정력",
@@ -41278,7 +40452,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "PSG로 발탁된 폭발적인 어린 윙어, 튀니지 공격의 차세대 카드.",
       "strengths": [
         "스피드",
@@ -41310,7 +40483,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "18세의 MLS 유망 공격수로 스쿼드에 젊음을 불어넣는다.",
       "strengths": [
         "나이 대비 잠재력",
@@ -41341,7 +40513,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "쿠르투아 뒤를 잇는 차세대 1번, 첫 시즌부터 프리미어리그에서 검증된 반사신경",
       "strengths": [
         "빠른 반사신경과 1대1 선방",
@@ -41376,7 +40547,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "벨기에가 키우는 20세 장신 골키퍼, 3번째 GK로 경험을 쌓는 미래 자원",
       "strengths": [
         "뛰어난 신체조건과 리치",
@@ -41408,7 +40578,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "양쪽 풀백을 모두 소화하는 베테랑 멀티 수비수, 메이저 대회 단골 자원",
       "strengths": [
         "좌우 측면 모두 소화하는 다재다능함",
@@ -41443,7 +40612,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "황금세대 라이트백, 경험과 리더십으로 백업 역할을 책임지는 베테랑",
       "strengths": [
         "메이저 대회 경험과 노련함",
@@ -41478,7 +40646,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "왼발 센터백으로 빌드업과 측면 커버가 모두 가능한 벨기에 수비의 핵심",
       "strengths": [
         "왼발 빌드업 능력",
@@ -41511,7 +40678,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "유벤투스 유스 출신 센터백, 세리에 A에서 안정감을 입증한 차세대 수비 기둥",
       "strengths": [
         "탄탄한 대인 수비",
@@ -41544,7 +40710,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "가르시아 체제에서 발탁된 신예 센터백, 신체능력이 돋보이는 미래 자원",
       "strengths": [
         "뛰어난 운동능력과 스피드",
@@ -41575,7 +40740,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "클뤼프 브뤼헤의 수비 리더, 안정감과 경험을 더하는 베테랑 백업 센터백",
       "strengths": [
         "풍부한 경험과 위치선정",
@@ -41608,7 +40772,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "가르시아의 젊은 피 실험 대상, 측면을 폭넓게 소화하는 21세 풀백 유망주",
       "strengths": [
         "왕성한 활동량과 측면 돌파",
@@ -41639,7 +40802,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "레인저스에서 성장한 박스투박스 미드필더, 중원에 활동량을 더하는 옵션",
       "strengths": [
         "넓은 활동 범위와 볼 탈취",
@@ -41671,7 +40833,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "벨기에 리그 최고의 플레이메이커, 득점력과 경기 운영을 겸비한 베테랑 공격형 미드필더",
       "strengths": [
         "창의적인 패스와 득점 가담",
@@ -41706,7 +40867,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "황금세대 마지막 생존자, 경험과 라커룸 리더십을 책임지는 37세 베테랑",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -41741,7 +40901,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "측면과 중원을 오가는 드리블러, 리그 1에서 두각을 나타낸 21세 신예",
       "strengths": [
         "빠른 드리블과 1대1 돌파",
@@ -41772,7 +40931,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "측면 전 지역을 소화하는 다재다능한 윙어, 수비 가담까지 충실한 일꾼형 공격수",
       "strengths": [
         "왕성한 활동량과 양면 플레이",
@@ -41807,7 +40965,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "장신 우측 윙어, 드리블과 슈팅을 겸비해 측면에서 위협을 만드는 공격 옵션",
       "strengths": [
         "신체조건을 활용한 측면 돌파",
@@ -41839,7 +40996,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "가르시아가 첫 발탁한 21세 무명 윙어, 릴에서의 활약으로 깜짝 승선한 미래 자원",
       "strengths": [
         "폭발적인 스피드와 측면 침투",
@@ -41870,7 +41026,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "엘 셰나위 뒤를 받치는 안정적인 백업 골키퍼로, 빅클럽 소속은 아니지만 대표팀 신뢰를 쌓아왔다.",
       "strengths": [
         "꾸준한 출전으로 다진 경기 감각",
@@ -41901,7 +41056,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "38세 베테랑 제3골키퍼로 라커룸 리더십과 경험을 제공하는 보험성 자원이다.",
       "strengths": [
         "풍부한 리그 경험과 정신적 안정감",
@@ -41932,7 +41086,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "알 아흘리에서 잔뼈가 굵은 오른쪽 풀백으로, 수비와 측면 공격 가담을 안정적으로 겸한다.",
       "strengths": [
         "꾸준한 측면 오버래핑과 크로스",
@@ -41967,7 +41120,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "알 아흘리 우승 수비의 기둥으로, 제공권과 위치 선정이 돋보이는 노련한 센터백이다.",
       "strengths": [
         "뛰어난 제공권 장악",
@@ -42002,7 +41154,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "U-20 우승 주장 출신의 경험 많은 센터백으로, 리더십과 빌드업 능력을 겸비했다.",
       "strengths": [
         "후방 빌드업과 패스 전개",
@@ -42037,7 +41188,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "자말렉이 키운 25세 센터백으로, 유럽 이적설이 도는 성장세 높은 수비 유망주다.",
       "strengths": [
         "젊은 나이에 비해 침착한 수비",
@@ -42071,7 +41221,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "공격 가담이 활발한 왼쪽 풀백으로, 측면을 넓게 쓰는 윙백 역할에 강점이 있다.",
       "strengths": [
         "활발한 측면 오버래핑",
@@ -42106,7 +41255,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "유럽 무대를 경험한 왼쪽 풀백으로, 아부 엘 포투의 대안이 되는 측면 로테이션 자원이다.",
       "strengths": [
         "유럽 리그 경험과 전술 이해",
@@ -42139,7 +41287,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "신생 강호 ZED FC에서 떠오른 센터백으로, 백라인 깊이를 더하는 신예 수비 자원이다.",
       "strengths": [
         "젊고 빠른 회복력",
@@ -42170,7 +41317,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "카이로 라이벌 간 충격 이적으로 화제가 된 창의적 윙어로, 찬스 메이킹과 세트피스가 일품이다.",
       "strengths": [
         "탁월한 패스와 찬스 메이킹",
@@ -42205,7 +41351,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "중원을 단단히 잠그는 수비형 미드필더로, 볼 탈취와 활동량에서 안정감을 준다.",
       "strengths": [
         "넓은 활동 범위와 볼 탈취",
@@ -42239,7 +41384,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "피라미즈 중원의 살림꾼으로, 박스 투 박스 역할을 소화하는 로테이션 미드필더다.",
       "strengths": [
         "성실한 활동량과 공수 연결",
@@ -42272,7 +41416,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "ZED FC에서 성장한 24세 미드필더로, 대표팀 중원의 미래 자원으로 합류했다.",
       "strengths": [
         "젊은 활동량과 전진 능력",
@@ -42303,7 +41446,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "걸프 무대로 진출한 수비형 미드필더로, 중원에 물리적 단단함을 더하는 옵션이다.",
       "strengths": [
         "강한 대인 압박과 볼 차단",
@@ -42334,7 +41476,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "라리가 무대에서 뛰는 23세 측면 자원으로, 유럽 경험을 갖춘 폭발력 있는 윙어다.",
       "strengths": [
         "빠른 드리블과 측면 돌파",
@@ -42365,7 +41506,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "바르셀로나 B에서 다듬어지는 19세 공격수로, 대표팀의 미래를 책임질 깜짝 유망주다.",
       "strengths": [
         "나이 대비 뛰어난 기술과 침착함",
@@ -42396,7 +41536,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "베이란반드 뒤를 받치는 안정적인 백업 수문장",
       "strengths": [
         "선방 안정성",
@@ -42429,7 +41568,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "반사신경이 좋은 제3 골키퍼 옵션",
       "strengths": [
         "근거리 반사 선방",
@@ -42460,7 +41598,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "스쿼드 최고령 베테랑 센터백, 카나니자데간의 파트너 후보",
       "strengths": [
         "제공권 장악",
@@ -42493,7 +41630,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "다재다능한 수비 옵션으로 백라인 뎁스를 채우는 자원",
       "strengths": [
         "수비 위치 선정",
@@ -42524,7 +41660,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "예선에서 자리를 굳힌 활동량 풍부한 주전 풀백",
       "strengths": [
         "대인 수비와 태클",
@@ -42557,7 +41692,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "베테랑 일색 백라인에 합류한 젊은 미래 자원",
       "strengths": [
         "젊은 다리와 스피드",
@@ -42588,7 +41722,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "측면과 중앙을 오가는 직선적인 윙어형 미드필더",
       "strengths": [
         "드리블 돌파",
@@ -42621,7 +41754,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "2022 월드컵 웨일스전 결승골 주인공인 장신 중앙 미드필더",
       "strengths": [
         "중거리 슈팅",
@@ -42654,7 +41786,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "중원에 활동량을 더하는 젊은 박스투박스 자원",
       "strengths": [
         "활동량과 체력",
@@ -42685,7 +41816,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 54,
       "oneLiner": "스쿼드 최연소급, 이란 중원의 미래로 꼽히는 신예",
       "strengths": [
         "볼 운반과 탈압박",
@@ -42716,7 +41846,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "측면을 무너뜨리는 폭발적인 드리블러형 공격 자원",
       "strengths": [
         "1대1 돌파",
@@ -42749,7 +41878,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "타레미를 받칠 박스 안 마무리에 능한 정통 스트라이커",
       "strengths": [
         "페널티 박스 위치 선정",
@@ -42783,7 +41911,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "장신 타깃맨으로 전방 옵션을 다양화하는 자원",
       "strengths": [
         "제공권과 포스트 플레이",
@@ -42814,7 +41941,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "측면과 최전방을 오가는 다재다능한 영건 공격수",
       "strengths": [
         "측면 침투와 스피드",
@@ -42847,7 +41973,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "유럽파 공격 자원으로 스쿼드에 다른 색을 더하는 카드",
       "strengths": [
         "유럽 무대 적응력",
@@ -42878,7 +42003,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "프리미어리그 본머스가 점찍은 뉴질랜드 차세대 수문장, 발밑과 반사신경이 모두 좋은 미래의 주전감.",
       "strengths": [
         "뛰어난 반사신경",
@@ -42913,7 +42037,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "키 큰 체격으로 공중 장악에 능한 제3 골키퍼, 안정감은 있지만 출전 기회는 제한적.",
       "strengths": [
         "큰 체격과 공중볼 처리",
@@ -42946,7 +42069,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "63캡의 베테랑 수비 리더, 경험과 리더십으로 뉴질랜드 백라인을 지탱하는 기둥.",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -42979,7 +42101,6 @@ window.DATA = {
       "caps": 51,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "51캡의 다재다능한 수비수, 풀백과 센터백을 오가며 안정감을 더하는 베테랑.",
       "strengths": [
         "포지션 다재다능함(풀백/센터백)",
@@ -43012,7 +42133,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "왼쪽 측면을 책임지는 좌발 수비수, 정확한 크로스와 세트피스 배달이 강점.",
       "strengths": [
         "정확한 왼발 크로스",
@@ -43047,7 +42167,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "유럽 경험을 갖춘 센터백, 빌드업 가담과 침착한 볼 처리로 백라인 안정감을 더한다.",
       "strengths": [
         "볼 처리와 빌드업 가담",
@@ -43082,7 +42201,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "활동량 좋은 우측 풀백, 공수 전환에서의 에너지가 돋보이는 라이징 자원.",
       "strengths": [
         "왕성한 활동량",
@@ -43117,7 +42235,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "프리미어리그 경험까지 보유한 56캡 베테랑 센터백, 경험치는 최고지만 전성기는 지났다.",
       "strengths": [
         "오랜 잉글랜드 무대 경험",
@@ -43150,7 +42267,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 63,
       "oneLiner": "웰링턴 피닉스 주장 출신 수비형 미드필더, 중원을 단단히 묶는 살림꾼.",
       "strengths": [
         "수비형 MF로서 중원 차단",
@@ -43183,7 +42299,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "에레디비시에서 뛰는 창의적인 미드필더, 부상만 없다면 중원 창조력의 핵심.",
       "strengths": [
         "창의적인 패스와 연계",
@@ -43216,7 +42331,6 @@ window.DATA = {
       "caps": 70,
       "intlGoals": 9,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "A-리그 통산 100골 클럽의 베테랑 윙어, 노련함과 마무리로 측면을 책임진다.",
       "strengths": [
         "풍부한 경험과 결정력",
@@ -43251,7 +42365,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "잉글랜드 하부 리그에서 단련 중인 부지런한 스트라이커, 우드의 백업 옵션.",
       "strengths": [
         "왕성한 활동량과 압박",
@@ -43284,7 +42397,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "덴마크 1부에서 뛰는 기동성 좋은 공격수, 측면과 최전방을 오가는 멀티 옵션.",
       "strengths": [
         "스피드와 기동성",
@@ -43317,7 +42429,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "스코틀랜드 1부에서 뛰는 직선적인 공격수, 측면 침투와 드리블이 강점.",
       "strengths": [
         "직선적인 드리블 돌파",
@@ -43350,7 +42461,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "오클랜드 FC 돌풍을 이끈 자국 리그 공격수, 폭발적인 한 방을 노리는 신예.",
       "strengths": [
         "스피드와 침투",
@@ -43385,7 +42495,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "A-리그에서 폼이 급상승한 신예 공격수, 깜짝 발탁된 뉴질랜드의 미래 자원.",
       "strengths": [
         "최근의 상승세와 득점 감각",
@@ -43418,7 +42527,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "유로 2024 전 경기 선발로 우승을 지킨 스페인의 부동의 1번",
       "strengths": [
         "발밑 빌드업",
@@ -43454,7 +42562,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "에스파뇰 최다 선방 기록 후 바르사 주전 골문을 꿰찬 미래의 1번",
       "strengths": [
         "반사신경",
@@ -43489,7 +42596,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "공격 가담과 킥력이 돋보이는 스페인의 우측 풀백 옵션",
       "strengths": [
         "크로스 정확도",
@@ -43524,7 +42630,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "센터백과 풀백을 오가는 멀티 수비 자원, 빌드업이 강점",
       "strengths": [
         "볼 배급",
@@ -43559,7 +42664,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 77,
       "oneLiner": "세트피스와 왼발 킥이 위협적인 공격형 레프트백",
       "strengths": [
         "프리킥/세트피스",
@@ -43595,7 +42699,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 72,
       "oneLiner": "라이트백부터 미드필더까지 소화하는 활동량 괴물 멀티자원",
       "strengths": [
         "활동량",
@@ -43630,7 +42733,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "유로 2024 우승 주역, 라리가 복귀로 폼을 끌어올린 베테랑 센터백",
       "strengths": [
         "왼발 빌드업",
@@ -43666,7 +42768,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "라이트백·센터백을 겸하는 190cm 피지컬의 차세대 수비 유망주",
       "strengths": [
         "피지컬/제공권",
@@ -43700,7 +42801,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "투쟁심과 전진 능력을 겸비한 바르사·스페인의 차세대 핵심 미드필더",
       "strengths": [
         "투지/압박",
@@ -43736,7 +42836,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "세계 최고 수준의 6번, 후방 안정과 배급을 책임지는 수비형 미드필더",
       "strengths": [
         "위치 선정",
@@ -43771,7 +42870,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 10,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "박스투박스에 임시 9번까지 소화하는 다재다능한 중원 일꾼",
       "strengths": [
         "제공권/헤딩",
@@ -43806,7 +42904,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 74,
       "oneLiner": "왼발 창의성과 세트피스가 돋보이는 공격형 미드필더",
       "strengths": [
         "왼발 패스/킥",
@@ -43842,7 +42939,6 @@ window.DATA = {
       "caps": 55,
       "intlGoals": 23,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "양 측면과 최전방을 모두 소화하는 결정력 좋은 만능 공격수",
       "strengths": [
         "골 결정력",
@@ -43879,7 +42975,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 71,
       "oneLiner": "양 날개를 소화하는 직선적 드리블러, 측면 백업 자원",
       "strengths": [
         "드리블",
@@ -43914,7 +43009,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "박스 안 위치 선정이 좋은 정통 타깃형 베테랑 스트라이커",
       "strengths": [
         "박스 위치 선정",
@@ -43948,7 +43042,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "데뷔전 득점으로 본선행을 거머쥔 측면 돌파형 신예",
       "strengths": [
         "드리블",
@@ -43980,7 +43073,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "보지냐의 뒤를 받치는 검증된 백업 골키퍼, 불가리아 무대에서 안정감을 쌓았다.",
       "strengths": [
         "안정적인 캐칭",
@@ -44011,7 +43103,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "MLS에서 자리잡은 젊은 수문장, 카보베르데의 차세대 1번 후보.",
       "strengths": [
         "좋은 신체조건",
@@ -44042,7 +43133,6 @@ window.DATA = {
       "caps": 62,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "은퇴를 번복하고 돌아와 수비 공백을 메운 카보베르데 역사의 산증인 좌측 풀백.",
       "strengths": [
         "경험과 리더십",
@@ -44073,7 +43163,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "MLS 우승을 경험한 안정적인 우측 수비수, 카보베르데 백라인의 핵심.",
       "strengths": [
         "오버래핑 가담",
@@ -44106,7 +43195,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "터키 빅클럽에서 뛰는 젊은 우측 풀백, 활동량과 성장세가 돋보인다.",
       "strengths": [
         "왕성한 활동량",
@@ -44137,7 +43225,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "루마니아 명문 FCSB의 주전 센터백, A매치 42경기의 든든한 수비 기둥.",
       "strengths": [
         "공중볼 장악",
@@ -44170,7 +43257,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "네덜란드 출신 공격형 우측 수비수, 2026년 €10M에 트라브존스포르로 이적한 차세대 자원.",
       "strengths": [
         "공격 가담과 득점력",
@@ -44201,7 +43287,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "중동 무대에서 활약 중인 베테랑 수비수, 백라인 뎁스를 책임진다.",
       "strengths": [
         "수비 경험",
@@ -44232,7 +43317,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 54,
       "oneLiner": "핀란드 리그에서 입지를 넓힌 수비 옵션, 대표팀 뎁스를 보강한다.",
       "strengths": [
         "성실한 수비 가담",
@@ -44263,7 +43347,6 @@ window.DATA = {
       "caps": 16,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 65,
       "oneLiner": "포르투갈 1부에서 뛰는 창의적인 중앙 미드필더, 카보베르데 중원의 미래.",
       "strengths": [
         "전진 패스",
@@ -44294,7 +43377,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "헝가리 리그에서 안정적으로 뛰는 박스투박스 미드필더.",
       "strengths": [
         "활동량",
@@ -44325,7 +43407,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "포르투갈 1부 무대 경험을 갖춘 중원 옵션, 대표팀 뎁스를 더한다.",
       "strengths": [
         "경기 운영",
@@ -44356,7 +43437,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "키프로스 무대에서 꾸준히 득점하는 베테랑 공격수, 교체 카드로 유효하다.",
       "strengths": [
         "박스 안 마무리",
@@ -44387,7 +43467,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "터키 1부에서 뛰는 노련한 타깃맨, 다양한 리그 경험을 살린 백업 공격 자원.",
       "strengths": [
         "피지컬과 제공권",
@@ -44418,7 +43497,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "이스라엘 강호에서 뛰는 젊은 측면 공격수, 빠른 발과 성장세가 강점.",
       "strengths": [
         "스피드",
@@ -44449,7 +43527,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "2022 월드컵 3옵션에서 4년 만에 대표팀 부동의 1번으로 성장한 차세대 수문장.",
       "strengths": [
         "188cm 좋은 체격과 공중볼 처리",
@@ -44483,7 +43560,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "월드컵 명단의 세 번째 골키퍼로 합류한 알카드시아의 백업 수문장.",
       "strengths": [
         "국내 리그 꾸준한 출전 경험"
@@ -44513,7 +43589,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "베테랑 나초 옆에서 수비를 배우며 떠오른 사우디 차세대 센터백 유망주.",
       "strengths": [
         "빠른 성장세와 전술 이해도",
@@ -44545,7 +43620,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "알힐랄에서 다진 우승 DNA를 갖춘 노련한 백라인의 안정판.",
       "strengths": [
         "경기 운영 경험",
@@ -44580,7 +43654,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "알이티하드의 백업 수비 옵션으로 명단에 든 베테랑 디펜더.",
       "strengths": [
         "다양한 수비 포지션 소화",
@@ -44613,7 +43686,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "알카드시아 백라인을 책임지며 대표팀 수비 뎁스를 더한 디펜더.",
       "strengths": [
         "측면·중앙 겸용 활용성",
@@ -44644,7 +43716,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "알아흘리의 수비 자원으로 백라인 깊이를 보강하는 디펜더.",
       "strengths": [
         "적극적인 태클",
@@ -44675,7 +43746,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "알힐랄에서 기회를 노리는 젊은 측면 수비 자원.",
       "strengths": [
         "측면 활동량",
@@ -44708,7 +43778,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "알나스르 백라인에서 입지를 넓혀가는 사우디 수비 유망주.",
       "strengths": [
         "젊은 나이",
@@ -44739,7 +43808,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "알나스르 중원을 받치는 활동량 풍부한 수비형 미드필더.",
       "strengths": [
         "볼 탈취와 커버",
@@ -44773,7 +43841,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "알아흘리에서 다재다능함을 보이는 박스투박스형 미드필더.",
       "strengths": [
         "넓은 활동 범위",
@@ -44804,7 +43871,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "창의적인 패스와 드리블로 기대를 모으는 사우디 차세대 플레이메이커.",
       "strengths": [
         "창의적인 전개",
@@ -44836,7 +43902,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "스피드와 돌파를 갖춘 사우디의 측면 공격 유망주.",
       "strengths": [
         "측면 돌파",
@@ -44868,7 +43933,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "별이 가득한 알나스르에서 출전 기회를 노리는 사우디 윙어.",
       "strengths": [
         "측면 침투",
@@ -44901,7 +43965,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "알힐랄에서 슈퍼스타들과 경쟁하며 출전을 노리는 공격 자원.",
       "strengths": [
         "박스 안 위치 선정",
@@ -44934,7 +43997,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "신흥 클럽 네옴에서 기회를 잡아 대표팀에 합류한 중원 유망주.",
       "strengths": [
         "성장 잠재력",
@@ -44965,7 +44027,6 @@ window.DATA = {
       "caps": 133,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "은퇴를 번복하고 5번째 월드컵에 나서는 우루과이 역대 최다 출전 골키퍼, 베테랑의 경험과 안정감",
       "strengths": [
         "풍부한 빅매치 경험",
@@ -45000,7 +44061,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "리가 MX에서 안정적 활약을 이어가는 차세대 수문장, 무슬레라 이후를 노리는 백업",
       "strengths": [
         "발밑 빌드업 능력",
@@ -45031,7 +44091,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "2018·2022 월드컵 경험을 가진 베테랑 라이트백, 플라멩구에서 남미 정상급 수비 안정감 입증",
       "strengths": [
         "수비 위치 선정",
@@ -45067,7 +44126,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "프리미어리그에서 뛰는 장신 센터백, 아라우호·히메네스 뒤를 받치는 수비 옵션",
       "strengths": [
         "제공권",
@@ -45099,7 +44157,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2026 예선 대부분을 소화한 신뢰받는 센터백, 비엘사 체제 수비 핵심 자원",
       "strengths": [
         "적극적인 압박",
@@ -45133,7 +44190,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "공수 균형이 잘 잡힌 레프트백, 올리베라와 왼쪽 측면을 양분하는 핵심 풀백",
       "strengths": [
         "왕성한 활동량",
@@ -45169,7 +44225,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "유럽과 남미를 두루 경험한 베테랑 레프트백, 측면 수비 깊이를 더하는 멀티 자원",
       "strengths": [
         "풍부한 A매치 경험",
@@ -45203,7 +44258,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "측면 전 지역을 소화하는 멀티 풀백, 비엘사의 전술적 유연성을 더하는 젊은 카드",
       "strengths": [
         "좌우 풀백 겸업 가능",
@@ -45234,7 +44288,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "수아레스 부재 속 박스 안 마무리를 책임지는 정통 9번, 데뷔전 골로 신뢰 획득",
       "strengths": [
         "박스 안 위치 선정",
@@ -45268,7 +44321,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "라리가에서 두 자릿수 가까운 득점으로 존재감을 키운 장신 스트라이커, 다윈 누녜스의 대안",
       "strengths": [
         "피지컬과 포스트 플레이",
@@ -45300,7 +44352,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "왼쪽 측면을 폭발적으로 휘젓는 윙어 겸 풀백, 챔피언스리그 무대 검증된 측면 공격수",
       "strengths": [
         "스피드와 돌파",
@@ -45334,7 +44385,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "양 측면을 모두 소화하는 빠른 윙어, 펠리스트리와 측면 공격 경쟁을 펼치는 자원",
       "strengths": [
         "일대일 돌파",
@@ -45368,7 +44418,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "측면과 2선을 오가는 부지런한 공격형 미드필더, 비엘사가 선호하는 압박형 자원",
       "strengths": [
         "측면 침투",
@@ -45400,7 +44449,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "남미 정상급 클럽에서 검증된 박스투박스 미드필더, 발베르데·벤탄쿠르 뒤를 받치는 중원 깊이",
       "strengths": [
         "활동량과 박스투박스 능력",
@@ -45434,7 +44482,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "왼발 킥과 창의성을 갖춘 공격형 미드필더, 데 아라스카에타·데 라 크루스의 대안",
       "strengths": [
         "왼발 킥과 세트피스",
@@ -45466,7 +44513,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "마냥의 든든한 백업, 발밑이 좋고 침착한 후방 빌드업형 골키퍼",
       "strengths": [
         "발밑 빌드업",
@@ -45500,7 +44546,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "랑스 준우승을 이끈 프랑스 차세대 수문장, 반사신경과 안정감이 돋보이는 미래 자원",
       "strengths": [
         "반사신경",
@@ -45535,7 +44580,6 @@ window.DATA = {
       "caps": 27,
       "intlGoals": 0,
       "grade": "월드클래스",
-      "gradeScore": 87,
       "oneLiner": "판데이크 옆에서 검증된 폭발적인 스피드와 제공권을 갖춘 정상급 센터백",
       "strengths": [
         "스피드",
@@ -45570,7 +44614,6 @@ window.DATA = {
       "caps": 42,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "폭발적인 오버래핑과 왼발 슈팅을 겸비한 공격형 레프트백",
       "strengths": [
         "공격 가담",
@@ -45606,7 +44649,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "센터백과 레프트백을 모두 소화하는 우승 경험 풍부한 베테랑 멀티 수비수",
       "strengths": [
         "다재다능",
@@ -45642,7 +44684,6 @@ window.DATA = {
       "caps": 56,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 73,
       "oneLiner": "정교한 크로스와 세트피스 키커로 가치 있는 경험 많은 레프트백",
       "strengths": [
         "크로스 정확도",
@@ -45677,7 +44718,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "왕성한 활동량과 공격 가담을 자랑하는 프랑스의 차세대 라이트백",
       "strengths": [
         "스태미나",
@@ -45712,7 +44752,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "2026년 데뷔한 힘과 제공권 좋은 신예 센터백, 빅클럽 이적설의 주인공",
       "strengths": [
         "피지컬",
@@ -45746,7 +44785,6 @@ window.DATA = {
       "caps": 67,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 81,
       "oneLiner": "여전히 엄청난 활동량으로 중원을 지배하는 살아있는 전설 수비형 미드필더",
       "strengths": [
         "볼 탈취",
@@ -45782,7 +44820,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 72,
       "oneLiner": "강력한 피지컬과 전진 드리블을 겸비한 박스투박스 미드필더",
       "strengths": [
         "볼 운반",
@@ -45814,7 +44851,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "어린 나이에 완성도 높은 경기 운영을 보이는 프랑스 중원의 미래",
       "strengths": [
         "경기 지능",
@@ -45849,7 +44885,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "폭발적인 스피드와 드리블 돌파를 갖춘 좌측 윙어",
       "strengths": [
         "스피드",
@@ -45884,7 +44919,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "챔피언스리그 결승에서 빛난 창의성 넘치는 어린 공격형 자원",
       "strengths": [
         "창의성",
@@ -45919,7 +44953,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 70,
       "oneLiner": "기술과 탈압박이 뛰어난 모나코의 공격형 미드필더 겸 윙어",
       "strengths": [
         "볼 컨트롤",
@@ -45951,7 +44984,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 71,
       "oneLiner": "제공권과 포스트플레이가 강한 정통 타깃형 스트라이커 옵션",
       "strengths": [
         "제공권",
@@ -45986,7 +45018,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "1m97 장신의 르아브르 주전 골키퍼, 멘디 뒤를 받치는 노련한 백업",
       "strengths": [
         "장신에서 나오는 공중볼·하이볼 처리",
@@ -46021,7 +45052,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "2025년 세네갈로 국적 전환한 니스 주전 키퍼, No.2 경쟁의 다크호스",
       "strengths": [
         "선방 능력과 반사신경",
@@ -46056,7 +45086,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "쿨리발리 옆을 채우는 리옹 구단 최고액 센터백, 피지컬형 수비 핵심",
       "strengths": [
         "강한 대인방어와 피지컬",
@@ -46091,7 +45120,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "폭발적 오버래핑이 강점인 좌측 풀백, 세네갈 좌측 측면의 미래",
       "strengths": [
         "빠른 스피드와 공격 가담",
@@ -46126,7 +45154,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "AFCON 결승 120분을 소화한 첼시 센터백, 쿨리발리 후계 1순위 신성",
       "strengths": [
         "대형 무대에서의 침착함",
@@ -46161,7 +45188,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "좌측 풀백·윙백 모두 소화하는 2022 월드컵 멤버, 측면 백업의 든든한 옵션",
       "strengths": [
         "좌측 풀백·윙 멀티 활용성",
@@ -46197,7 +45223,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "1m92 베테랑 센터백, 제공권과 경험으로 백라인 깊이를 더하는 자원",
       "strengths": [
         "192cm 제공권 우위",
@@ -46232,7 +45257,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "우측 풀백·센터백을 겸하는 니스 유스 출신 신예, 디아타의 측면 대안",
       "strengths": [
         "우측·중앙 멀티 포지션",
@@ -46265,7 +45289,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "AFCON 결승 결승골의 주인공, 박스-투-박스로 중원을 지배하는 일꾼",
       "strengths": [
         "왕성한 활동량과 박스-투-박스 능력",
@@ -46301,7 +45324,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "라리가에서 검증된 수비형 미드필더, 가나 게예를 받치는 안정적 옵션",
       "strengths": [
         "수비형 미드필더 위치선정",
@@ -46336,7 +45358,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "6개월 만에 바이에른·월드컵까지 오른 18세 깜짝 신성, 중원의 미래 자원",
       "strengths": [
         "폭발적 성장세와 잠재력",
@@ -46369,7 +45390,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "세리에A에서 두각 나타내는 폭발적 좌측 윙어, 세네갈 측면 공격의 차세대 카드",
       "strengths": [
         "빠른 드리블 돌파",
@@ -46402,7 +45422,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 3,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "PSG의 18세 우측 윙어, 2025년 세네갈로 전향한 폭발적 측면 신성",
       "strengths": [
         "빠른 스피드와 드리블",
@@ -46435,7 +45454,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "AFC컵 2회 우승의 경험을 갖춘 이라크의 유력한 주전 골키퍼 후보",
       "strengths": [
         "선방 능력",
@@ -46471,7 +45489,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "볼리비아 PO 호수비로 주전 경쟁에 불을 지핀 백업 골키퍼",
       "strengths": [
         "반사신경",
@@ -46504,7 +45521,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "리그 우승을 이끈 알 쇼르타의 안정적인 중앙 수비수",
       "strengths": [
         "대인 수비",
@@ -46538,7 +45554,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "스피드와 제공권을 갖춘 차세대 중앙 수비 핵심",
       "strengths": [
         "속도",
@@ -46570,7 +45585,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "스웨덴 성장배경의 베테랑 센터백, 경험으로 수비 라인을 받친다",
       "strengths": [
         "경험",
@@ -46602,7 +45616,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "덴마크 출신 베테랑 센터백, 안정감으로 수비진 깊이를 더한다",
       "strengths": [
         "빌드업",
@@ -46634,7 +45647,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "187cm 장신을 활용하는 알 쇼르타의 주전 좌측 풀백",
       "strengths": [
         "제공권",
@@ -46668,7 +45680,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "활동량이 좋은 젊은 우측 풀백, 측면 백업 자원",
       "strengths": [
         "활동량",
@@ -46700,7 +45711,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 63,
       "oneLiner": "콜롬비아전 데뷔 후 부상을 딛고 돌아온 유럽파 기대주 미드필더",
       "strengths": [
         "기술",
@@ -46732,7 +45742,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "세리에A를 경험한 유럽파 신예, 중원에 기술적 옵션을 더한다",
       "strengths": [
         "볼 컨트롤",
@@ -46764,7 +45773,6 @@ window.DATA = {
       "caps": 71,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "71캡 8골의 경험을 갖춘 중원의 베테랑 살림꾼",
       "strengths": [
         "경기 운영",
@@ -46796,7 +45804,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "독일 유스 출신의 빠른 측면 자원, 측면 돌파로 변화를 준다",
       "strengths": [
         "스피드",
@@ -46828,7 +45835,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "이탈리아 무대로 도약한 노르웨이 출생의 왼쪽 윙어 유망주",
       "strengths": [
         "측면 스피드",
@@ -46860,7 +45866,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 59,
       "oneLiner": "AFC컵 우승 경험을 갖춘 국내파 측면 공격수",
       "strengths": [
         "경험",
@@ -46894,7 +45899,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "닐란드의 백업으로 자리잡은 챔피언십 출신 백업 골키퍼.",
       "strengths": [
         "발밑 안정감",
@@ -46925,7 +45929,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "분데스리가 승격팀에서 경험을 쌓는 차세대 수문장 후보.",
       "strengths": [
         "좋은 신체조건",
@@ -46956,7 +45959,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "양쪽 측면을 모두 소화하는 노르웨이의 확실한 주전 풀백.",
       "strengths": [
         "왕성한 활동량",
@@ -46988,7 +45990,6 @@ window.DATA = {
       "caps": 32,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "세리에A에서 검증된 공격적인 우측 풀백 옵션.",
       "strengths": [
         "오버래핑",
@@ -47022,7 +46023,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "프리미어리그로 도약한 공격적인 좌측 윙백.",
       "strengths": [
         "측면 돌파",
@@ -47054,7 +46054,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "유럽 무대 경험을 쌓은 좌측 풀백 백업.",
       "strengths": [
         "공격 가담",
@@ -47087,7 +46086,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "세리에A 볼로냐에서 자리잡은 좌측 센터백.",
       "strengths": [
         "빌드업 패스",
@@ -47119,7 +46117,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "챔피언십에서 성장 중인 신예 수비수.",
       "strengths": [
         "전투적 수비",
@@ -47150,7 +46147,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "보되/글림트의 주장이자 노르웨이 중원의 살림꾼.",
       "strengths": [
         "볼 배급",
@@ -47184,7 +46180,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "박스투박스 침투에 능한 세리에A 중앙 미드필더.",
       "strengths": [
         "침투 능력",
@@ -47216,7 +46211,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "벤피카의 측면을 책임지는 재능있는 공격형 미드필더.",
       "strengths": [
         "드리블",
@@ -47248,7 +46242,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 5,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "8경기 5골의 효율을 보인 공격형 미드필더 깜짝 카드.",
       "strengths": [
         "슈팅 결정력",
@@ -47280,7 +46273,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "투지와 활동량으로 중원을 받치는 베테랑 미드필더.",
       "strengths": [
         "압박",
@@ -47312,7 +46304,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 61,
       "oneLiner": "AC밀란을 거친 폭발력 있는 좌측 윙어.",
       "strengths": [
         "드리블 돌파",
@@ -47346,7 +46337,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 48,
       "oneLiner": "단 1캡의 자국리그 출신 수비 유망주.",
       "strengths": [
         "성장 잠재력",
@@ -47377,7 +46367,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "에미 마르티네스 뒤를 든든히 받치는 검증된 백업 GK",
       "strengths": [
         "발밑 안정감",
@@ -47412,7 +46401,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "반사신경 좋은 제3 골키퍼, 빅클럽 백업 경험 보유",
       "strengths": [
         "선방 능력",
@@ -47445,7 +46433,6 @@ window.DATA = {
       "caps": 49,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "월드컵 우승 멤버이자 공격 가담 좋은 주전 오른쪽 풀백",
       "strengths": [
         "오버래핑",
@@ -47481,7 +46468,6 @@ window.DATA = {
       "caps": 63,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "경험 풍부한 왼쪽 풀백, 안정적인 수비와 활동량",
       "strengths": [
         "수비 안정감",
@@ -47517,7 +46503,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 72,
       "oneLiner": "카타르 결승 결승 PK의 주인공, 오른쪽 풀백 백업",
       "strengths": [
         "담대함",
@@ -47553,7 +46538,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "마르세유 주장으로 성장한 센터백, 로메로의 대안",
       "strengths": [
         "제공권",
@@ -47585,7 +46569,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 69,
       "oneLiner": "센터백·왼쪽 풀백 겸용 멀티 수비수, 거친 대인수비 강점",
       "strengths": [
         "대인수비",
@@ -47617,7 +46600,6 @@ window.DATA = {
       "caps": 70,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "긴 패스로 경기를 조율하는 베테랑 수비형 미드필더",
       "strengths": [
         "롱패스",
@@ -47653,7 +46635,6 @@ window.DATA = {
       "caps": 36,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "박스 투 박스 능력 갖춘 다이내믹한 중원 자원",
       "strengths": [
         "활동량",
@@ -47689,7 +46670,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "창의적 패스가 돋보이는 공격형 미드필더",
       "strengths": [
         "전진 패스",
@@ -47725,7 +46705,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "왼쪽 풀백·윙백 겸용 유망주, 왼발 킥과 공격성",
       "strengths": [
         "왼발 킥",
@@ -47757,7 +46736,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "디 마리아 공백을 메울 창의적 공격형 미드필더",
       "strengths": [
         "드리블",
@@ -47792,7 +46770,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 73,
       "oneLiner": "세리에 A에서 폭발한 아르헨티나의 차세대 플레이메이커",
       "strengths": [
         "탈압박",
@@ -47824,7 +46801,6 @@ window.DATA = {
       "caps": 39,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "양 측면을 소화하는 파워풀한 윙어, 헌신적인 공수 기여",
       "strengths": [
         "스피드",
@@ -47859,7 +46835,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "끊임없이 뛰는 활동량의 측면 자원, 디에고 시메오네의 아들",
       "strengths": [
         "활동량",
@@ -47891,7 +46866,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 65,
       "oneLiner": "남미 무대에서 검증된 정통 9번 스트라이커 옵션",
       "strengths": [
         "포스트 플레이",
@@ -47925,7 +46899,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "AFCON 후 은퇴를 번복하고 돌아온 국내파 노장 키퍼, 지단의 백업 경쟁자.",
       "strengths": [
         "국내 리그 풍부한 경험",
@@ -47958,7 +46931,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 45,
       "oneLiner": "스위스 2부에서 깜짝 발탁된 3옵션 키퍼, 검증은 이제부터.",
       "strengths": [
         "민첩한 반사신경",
@@ -47989,7 +46961,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "에스페랑스의 수비 기둥, 클럽월드컵까지 경험한 알제리 센터백 주전 후보.",
       "strengths": [
         "제공권과 피지컬",
@@ -48024,7 +46995,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "벨기에서 자라 세리에 A로 올라선 오른쪽 풀백, 측면 활력의 새 옵션.",
       "strengths": [
         "왕성한 오버래핑",
@@ -48056,7 +47026,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "프랑스 유스 출신을 거부하고 알제리를 택한 공격적 레프트백.",
       "strengths": [
         "측면 돌파와 크로스",
@@ -48090,7 +47059,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "국내 강호 JS 카빌리에서 발탁된 센터백, 대표팀 수비 뎁스 보강.",
       "strengths": [
         "제공권",
@@ -48121,7 +47089,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "리그 1로 올라선 파리 FC의 수비수, 새 얼굴 백업 자원.",
       "strengths": [
         "대인 수비 적극성",
@@ -48152,7 +47119,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "USM 알제의 측면 수비수, 국내파 뎁스 보강용 발탁.",
       "strengths": [
         "활동량",
@@ -48183,7 +47149,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "한때 토트넘 유망주, 네덜란드전 결승 도움으로 부활을 알린 수비형 미드필더.",
       "strengths": [
         "경기 조율과 패스 전개",
@@ -48215,7 +47180,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "페예노르트에서 트벤테로 임대 복귀해 폼을 되찾은 6번 미드필더.",
       "strengths": [
         "볼 탈취와 인터셉트",
@@ -48249,7 +47213,6 @@ window.DATA = {
       "caps": 30,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "니스의 박스투박스 엔진, 알제리 중원의 숨은 활력소.",
       "strengths": [
         "왕성한 활동량",
@@ -48281,7 +47244,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "샤를루아에서 꾸준히 출전 중인 중원 자원, 대표팀 뎁스 보강.",
       "strengths": [
         "전진성",
@@ -48312,7 +47274,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "헝가리 무대에서 득점력을 키우는 깜짝 발탁 공격수.",
       "strengths": [
         "문전 위치선정",
@@ -48343,7 +47304,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "걸프 무대에서 활약하는 측면 공격형 자원, 화력 백업.",
       "strengths": [
         "측면 드리블",
@@ -48376,7 +47336,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 54,
       "oneLiner": "프로시노네에서 기회를 잡은 측면 공격수, 깜짝 발탁된 새 얼굴.",
       "strengths": [
         "스피드",
@@ -48407,7 +47366,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "발밑이 안정적인 백업 골키퍼, 슐라거에 이은 No.2 후보",
       "strengths": [
         "빌드업 능력",
@@ -48439,7 +47397,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "체코 무대에서 경험 쌓는 제3 골키퍼, 미래 대비 카드",
       "strengths": [
         "반사신경",
@@ -48470,7 +47427,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "브레멘 주장 출신의 왼발 센터백, 빌드업과 리더십 겸비",
       "strengths": [
         "왼발 배급력",
@@ -48502,7 +47458,6 @@ window.DATA = {
       "caps": 37,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "분데스리가에서 검증된 안정적인 센터백, 알라바 파트너 후보",
       "strengths": [
         "제공권",
@@ -48534,7 +47489,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "오른쪽 풀백·센터백 겸용의 멀티 수비수, 전술 유연성 제공",
       "strengths": [
         "다중 포지션 소화",
@@ -48566,7 +47520,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "양쪽 측면을 모두 소화하는 베테랑 풀백, 백업 옵션",
       "strengths": [
         "좌우 측면 겸용",
@@ -48598,7 +47551,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "라리가로 도약한 신예 센터백, 수비 라인 깊이 보강",
       "strengths": [
         "제공권",
@@ -48630,7 +47582,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "공격 가담 좋은 왼쪽 윙백, 측면에 활력을 더하는 자원",
       "strengths": [
         "크로스 정확도",
@@ -48662,7 +47613,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "이탈리아 무대에서 단련된 왼발 센터백, 수비 백업 카드",
       "strengths": [
         "왼발 활용",
@@ -48694,7 +47644,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "투쟁심 강한 박스투박스 미드필더, 중원 에너지의 핵",
       "strengths": [
         "압박",
@@ -48726,7 +47675,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "템포 조절에 능한 수비형 미드필더, 중원 균형 옵션",
       "strengths": [
         "패스 배급",
@@ -48758,7 +47706,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "창의적인 공격형 미드필더, 찬스 메이킹과 침투의 윤활유",
       "strengths": [
         "키패스",
@@ -48790,7 +47737,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "측면 돌파에 능한 윙어형 미드필더, 측면 공격 옵션",
       "strengths": [
         "드리블 돌파",
@@ -48822,7 +47768,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 67,
       "oneLiner": "빈 출생 귀화 자원, 잉글랜드 유스 거친 폭발력 있는 미드필더",
       "strengths": [
         "폭발적 드리블",
@@ -48854,7 +47799,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "독일 유스에서 전향한 귀화 신성, 오스트리아 중원의 미래",
       "strengths": [
         "기술적 완성도",
@@ -48886,7 +47830,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "200cm 장신 타깃맨, 제공권으로 차별화되는 플랜 B 공격수",
       "strengths": [
         "압도적 제공권",
@@ -48918,7 +47861,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "야지드 아불라일라와 주전 자리를 다투는 차세대 수문장. 반사신경과 발밑이 안정적이다.",
       "strengths": [
         "좋은 반사신경",
@@ -48952,7 +47894,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "경험 많은 제3 골키퍼. 라커룸 안정감을 주는 베테랑 옵션이다.",
       "strengths": [
         "풍부한 국내 리그 경험",
@@ -48987,7 +47928,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "65캡의 베테랑 수비수. 풀백과 센터백을 오가며 수비 라인을 지휘한다.",
       "strengths": [
         "풍부한 A매치 경험",
@@ -49021,7 +47961,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "전성기에 접어든 센터백. 대인 방어와 세트피스 득점력을 겸비했다.",
       "strengths": [
         "강한 대인 방어",
@@ -49055,7 +47994,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "노련함으로 버티는 백업 센터백. 위기관리에 능한 베테랑이다.",
       "strengths": [
         "경기 읽기",
@@ -49090,7 +48028,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 63,
       "oneLiner": "젊은 센터백 옵션. 해외 리그에서 출전하며 성장 중인 수비수다.",
       "strengths": [
         "젊은 나이",
@@ -49122,7 +48059,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "활동량 좋은 풀백. 측면을 오르내리며 공수 모두 기여한다.",
       "strengths": [
         "왕성한 활동량",
@@ -49156,7 +48092,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 48,
       "oneLiner": "이제 막 대표팀에 합류한 수비 자원. 깊이를 더하는 백업이다.",
       "strengths": [
         "성장 잠재력",
@@ -49188,7 +48123,6 @@ window.DATA = {
       "caps": 57,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "중원의 살림꾼. 57캡의 경험으로 공수 전환을 매끄럽게 연결한다.",
       "strengths": [
         "볼 배급",
@@ -49222,7 +48156,6 @@ window.DATA = {
       "caps": 72,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "72캡의 수비형 미드필더. 중원 균형을 잡는 노련한 방패다.",
       "strengths": [
         "수비적 위치 선정",
@@ -49256,7 +48189,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "중원에 깊이를 더하는 국내파 미드필더. 로테이션 옵션이다.",
       "strengths": [
         "활동량",
@@ -49287,7 +48219,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 57,
       "oneLiner": "성장 중인 젊은 미드필더. 에너지와 전진성으로 중원에 활력을 준다.",
       "strengths": [
         "젊은 나이",
@@ -49319,7 +48250,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "노련한 중원 자원. 템포 조절과 경기 운영에 능한 베테랑이다.",
       "strengths": [
         "경기 운영",
@@ -49353,7 +48283,6 @@ window.DATA = {
       "caps": 29,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 62,
       "oneLiner": "젊지만 29캡을 쌓은 멀티 자원. 중원과 측면을 오가며 활약한다.",
       "strengths": [
         "다재다능성",
@@ -49385,7 +48314,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "셀라미 감독의 비밀병기로 불리는 20세 공격수. 이집트 명문에서 잠재력을 인정받았다.",
       "strengths": [
         "폭발적인 잠재력",
@@ -49418,7 +48346,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 59,
       "oneLiner": "U-23 득점왕 출신의 독일 태생 윙어. 사우디 무대에서 검증받는 차세대 공격 자원이다.",
       "strengths": [
         "측면 돌파",
@@ -49453,7 +48380,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "디오구 코스타를 받쳐주는 노련한 백업 GK, 반사신경과 PK 대응이 강점.",
       "strengths": [
         "근거리 반사신경",
@@ -49487,7 +48413,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "세 번째 GK 옵션, 라리가와 자국 리그 경험을 두루 갖춘 안정형 키퍼.",
       "strengths": [
         "공중볼 처리",
@@ -49521,7 +48446,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "후벵 디아스와 짝을 이루는 왼발 센터백, 후방 빌드업의 핵심.",
       "strengths": [
         "왼발 전개 능력",
@@ -49557,7 +48481,6 @@ window.DATA = {
       "caps": 66,
       "intlGoals": 12,
       "grade": "주전급",
-      "gradeScore": 79,
       "oneLiner": "양쪽 풀백을 소화하는 공격형 풀백, 정확한 크로스와 전진성이 일품.",
       "strengths": [
         "공격 가담",
@@ -49591,7 +48514,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 3,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "활동량 많은 우측 풀백, 양 측면 모두 소화 가능한 멀티 자원.",
       "strengths": [
         "풍부한 활동량",
@@ -49626,7 +48548,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "스피드와 대인 수비가 강점인 우측 풀백, 달롯·칸셀루와 경쟁.",
       "strengths": [
         "스피드",
@@ -49660,7 +48581,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 66,
       "oneLiner": "센터백과 수비형 미드필더를 오가는 다재다능한 젊은 수비수.",
       "strengths": [
         "멀티 포지션 소화",
@@ -49692,7 +48612,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "벤피카에서 자리잡은 차세대 센터백, 제공권과 피지컬이 강점.",
       "strengths": [
         "제공권 장악",
@@ -49724,7 +48643,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "정확한 장거리 패스와 침착함을 갖춘 후방 플레이메이커.",
       "strengths": [
         "롱패스 전개",
@@ -49758,7 +48676,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "강한 주력과 드리블 돌파를 갖춘 박스 투 박스 미드필더, 풀백도 소화.",
       "strengths": [
         "드리블 전진",
@@ -49792,7 +48709,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "라리가에서 자리잡은 수비형 미드필더, 볼 탈취와 활동량이 강점.",
       "strengths": [
         "볼 탈취",
@@ -49824,7 +48740,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "폭발적 드리블과 측면 돌파가 강점인 윙어, 양 측면 모두 소화.",
       "strengths": [
         "측면 드리블",
@@ -49859,7 +48774,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 69,
       "oneLiner": "창의적 연계와 마무리를 겸비한 2선 공격수, 기복이 과제.",
       "strengths": [
         "창의적 패스",
@@ -49893,7 +48807,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 67,
       "oneLiner": "폭발적 드리블이 무기인 우측 윙어, 1대1 돌파로 측면을 흔든다.",
       "strengths": [
         "1대1 드리블",
@@ -49927,7 +48840,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "스포르팅에서 폼이 오른 윙어, 침투 패스와 슈팅이 강점.",
       "strengths": [
         "키패스 공급",
@@ -49962,7 +48874,6 @@ window.DATA = {
       "caps": 25,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "프랑스 유스 출신이지만 DR콩고를 택한 No.1 골키퍼, AFCON 8강 승부차기 결승 페널티까지 직접 성공시킨 핵심 수문장",
       "strengths": [
         "승부차기 강심장과 빅매치 침착함",
@@ -49997,7 +48908,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "마이너 리그를 무대로 꾸준히 출전하며 대표팀 백업 자리를 굳힌 두 번째 골키퍼",
       "strengths": [
         "꾸준한 클럽 주전 출전 경험",
@@ -50030,7 +48940,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "벨기에 명문 스탕다르에서 어린 나이에 1군을 경험 중인 미래의 주전 후보 골키퍼",
       "strengths": [
         "뛰어난 운동능력과 반사신경",
@@ -50063,7 +48972,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "콩고 부니아 태생 맨유 아카데미 산물, 잉글랜드 유스를 거부하고 조국을 택한 프리미어리그 센터백",
       "strengths": [
         "프리미어리그급 피지컬과 대인 수비",
@@ -50099,7 +49007,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "폴란드 리그에서 잔뼈가 굵은 신체 좋은 센터백, 대표팀 수비 뎁스를 책임지는 자원",
       "strengths": [
         "좋은 신장과 제공권 장악",
@@ -50134,7 +49041,6 @@ window.DATA = {
       "caps": 14,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "프랑스 무대를 거쳐 그리스에서 뛰는 경험 많은 센터백, 대표팀 수비 중앙의 베테랑 옵션",
       "strengths": [
         "경험에서 나오는 위치 선정",
@@ -50169,7 +49075,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "벨기에·콩고 이중국적의 베테랑 좌측 수비수, 풀백과 윙백을 두루 소화하는 측면 자원",
       "strengths": [
         "좌측 풀백·윙백 멀티 운용",
@@ -50204,7 +49109,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "AC밀란 칼룰루의 형, 28캡의 대표팀 붙박이 우측 수비수로 측면 수비를 책임지는 일꾼",
       "strengths": [
         "측면 수비·공격 가담 균형",
@@ -50239,7 +49143,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "브라가에서 한 시즌 21골을 터뜨린 득점력 입증된 장신 스트라이커, 바캄부 뒤를 받칠 핵심 공격 옵션",
       "strengths": [
         "박스 안 마무리와 위치 선정",
@@ -50275,7 +49178,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "리그앙 릴에서 성장 중인 21세 중원 자원, 대표팀의 미래를 책임질 박스투박스 유망주",
       "strengths": [
         "젊은 나이와 높은 성장 잠재력",
@@ -50308,7 +49210,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "낭트에서 프랑스컵을 들어올린 경험 많은 수비형 미드필더, 중원에 균형을 더하는 회전 자원",
       "strengths": [
         "수비형 미드필더로서의 안정감",
@@ -50343,7 +49244,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "리그에서 검증된 25세 수문장, 우즈벡 GK 세대교체의 중심 후보",
       "strengths": [
         "젊은 나이에 비해 풍부한 리그 경험",
@@ -50378,7 +49278,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 50,
       "oneLiner": "192cm 장신을 활용한 공중볼 강점의 백업 골키퍼",
       "strengths": [
         "192cm 압도적 신장",
@@ -50411,7 +49310,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "한국·러시아·이란을 거친 베테랑 센터백, 수비 라인의 경험치",
       "strengths": [
         "다국적 리그 경험",
@@ -50444,7 +49342,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 62,
       "oneLiner": "65캡의 베테랑 레프트백, 풍부한 메이저 대회 경험이 자산",
       "strengths": [
         "65캡 풍부한 국제 경험",
@@ -50479,7 +49376,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "오버래핑이 강점인 27세 풀백, 측면 수비 깊이를 더한다",
       "strengths": [
         "적극적인 오버래핑",
@@ -50514,7 +49410,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "185cm 베테랑 센터백, 제공권과 경험으로 수비 옵션을 넓힌다",
       "strengths": [
         "185cm 제공권",
@@ -50547,7 +49442,6 @@ window.DATA = {
       "caps": 28,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 60,
       "oneLiner": "28캡의 전성기 센터백, 수비 라인의 핵심 옵션",
       "strengths": [
         "전성기 나이대 안정감",
@@ -50580,7 +49474,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "2026년 데뷔한 22세 레프트백, 차세대 측면 수비 자원",
       "strengths": [
         "젊은 나이와 성장 잠재력",
@@ -50613,7 +49506,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 48,
       "oneLiner": "리그에서 기회를 잡은 백업 수비수, 스쿼드 깊이를 위한 자원",
       "strengths": [
         "성실한 수비 가담",
@@ -50646,7 +49538,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "월드컵 첫 발탁된 신예 공격수, 깜짝 카드가 될 잠재력",
       "strengths": [
         "저돌적인 침투",
@@ -50679,7 +49570,6 @@ window.DATA = {
       "caps": 43,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 61,
       "oneLiner": "43캡 베테랑 미드필더, 경기 조율과 세트피스 전담의 안정감",
       "strengths": [
         "풍부한 A매치 경험",
@@ -50712,7 +49602,6 @@ window.DATA = {
       "caps": 23,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "박스투박스로 중원을 휘젓는 27세 미드필더, 활동량이 무기",
       "strengths": [
         "왕성한 활동량",
@@ -50747,7 +49636,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "월드컵 예선 내내 주전 자리를 지킨 안정감 있는 베테랑 수문장.",
       "strengths": [
         "반사신경과 1대1 대응",
@@ -50783,7 +49671,6 @@ window.DATA = {
       "caps": 131,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "콜롬비아 역대 최다 출전 기록을 보유한 마지막 메이저 대회의 노련한 골키퍼.",
       "strengths": [
         "풍부한 빅매치 경험과 리더십",
@@ -50820,7 +49707,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "199cm 장신을 앞세운 주전 후보 골키퍼로 차기 넘버원 경쟁 중.",
       "strengths": [
         "199cm 장신과 공중볼 지배력",
@@ -50852,7 +49738,6 @@ window.DATA = {
       "caps": 50,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "195cm 장신에 세트피스 위협까지 갖춘 경험 많은 센터백.",
       "strengths": [
         "195cm 제공권과 세트피스 득점력",
@@ -50888,7 +49773,6 @@ window.DATA = {
       "caps": 41,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "라리가에서 검증된 활동량 풍부한 주전 레프트백.",
       "strengths": [
         "왕성한 오버래핑과 스태미나",
@@ -50920,7 +49804,6 @@ window.DATA = {
       "caps": 65,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "두 차례 월드컵을 경험한 노련한 라이트백 백업.",
       "strengths": [
         "월드컵 경험과 수비 안정감",
@@ -50954,7 +49837,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "리가 MX에서 자리잡은 센터백 뎁스 자원.",
       "strengths": [
         "대인 수비와 피지컬",
@@ -50986,7 +49868,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "리그1에서 검증된 측면 수비 백업 옵션.",
       "strengths": [
         "좌우 측면 소화 다재다능",
@@ -51018,7 +49899,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "남미 최고 수준의 창의성을 지닌 좌족 플레이메이커.",
       "strengths": [
         "탈압박과 침투 패스",
@@ -51053,7 +49933,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "라인 사이를 파고드는 창의적인 공격형 미드필더 대안.",
       "strengths": [
         "드리블과 라인 간 침투",
@@ -51085,7 +49964,6 @@ window.DATA = {
       "caps": 24,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "수비형 미드필더 자리를 단단히 받쳐주는 젊은 6번.",
       "strengths": [
         "볼 탈취와 커버링",
@@ -51120,7 +49998,6 @@ window.DATA = {
       "caps": 15,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "득점 감각이 물오른 박스 안의 정통 중앙 공격수.",
       "strengths": [
         "피지컬과 마무리 능력",
@@ -51156,7 +50033,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 2,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "라리가에서 폭발한 다재다능한 공격수, 데뷔전 멀티골의 해결사.",
       "strengths": [
         "다양한 위치 소화(스트라이커·윙어)",
@@ -51191,7 +50067,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "빠른 발과 돌파를 갖춘 측면 공격 유망주.",
       "strengths": [
         "스피드와 1대1 돌파",
@@ -51223,7 +50098,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "크리스탈 팰리스에서 FA컵 우승을 이끈 발밑 좋은 백업 골키퍼.",
       "strengths": [
         "뛰어난 발밑/빌드업 가담",
@@ -51259,7 +50133,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "버즐리에서 역대급 클린시트 기록을 세우고 맨시티로 복귀한 차세대 수문장.",
       "strengths": [
         "뛰어난 빌드업 능력",
@@ -51294,7 +50167,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 80,
       "oneLiner": "공수겸장 풀백으로 첼시 주장이자 잉글랜드 우측을 책임지는 핵심.",
       "strengths": [
         "폭발적인 오버래핑과 크로스",
@@ -51332,7 +50204,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "센터백과 풀백을 오가는 멀티 수비수로 안정감이 강점.",
       "strengths": [
         "다재다능한 수비 포지션 소화",
@@ -51365,7 +50236,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "32세에 데뷔한 늦깎이 거인 수비수, 카라바오컵 결승골의 주인공.",
       "strengths": [
         "압도적인 제공권과 피지컬",
@@ -51400,7 +50270,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 67,
       "oneLiner": "리버풀 유스 출신으로 레버쿠젠에서 주전으로 도약한 차세대 센터백.",
       "strengths": [
         "좋은 체격과 빌드업",
@@ -51436,7 +50305,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "양쪽 풀백을 소화하는 폭발적인 스피드의 젊은 수비수.",
       "strengths": [
         "뛰어난 가속과 스피드",
@@ -51471,7 +50339,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 67,
       "oneLiner": "긴 부진을 딛고 토트넘 주전으로 부활한 운동능력형 풀백.",
       "strengths": [
         "강한 1대1 수비와 피지컬",
@@ -51506,7 +50373,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 76,
       "oneLiner": "침착한 볼 간수와 탈압박이 일품인 차세대 중원 사령관.",
       "strengths": [
         "압박 속 탈압박 능력",
@@ -51541,7 +50407,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "활동량과 패스가 좋은 박스투박스 미드필더로 급성장한 자원.",
       "strengths": [
         "넓은 활동 범위와 체력",
@@ -51574,7 +50439,6 @@ window.DATA = {
       "caps": 89,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "네 번째 월드컵을 노리는 베테랑 리더, 라커룸 정신적 지주.",
       "strengths": [
         "풍부한 경험과 리더십",
@@ -51611,7 +50475,6 @@ window.DATA = {
       "caps": 20,
       "intlGoals": null,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "케인의 가장 확실한 백업, 침투와 마무리가 검증된 스트라이커.",
       "strengths": [
         "빠른 침투와 라인브레이킹",
@@ -51644,7 +50507,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "사우디 무대에서 득점력을 이어가는 정통 박스 스트라이커.",
       "strengths": [
         "페널티킥 등 마무리 결정력",
@@ -51679,7 +50541,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "리바코비치에 이은 백업 골키퍼 후보, 그리스·덴마크 무대에서 안정감을 증명한 발밑 좋은 키퍼",
       "strengths": [
         "빌드업 시 발밑 처리",
@@ -51712,7 +50573,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "잉글랜드 무대에서 출전 시간을 늘려가는 제3 골키퍼, 아직 A매치 데뷔 전이지만 대표팀 명단에 진입한 장신 키퍼",
       "strengths": [
         "큰 신장과 리치",
@@ -51745,7 +50605,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 74,
       "oneLiner": "193cm 장신 센터백, 2018 월드컵 준우승 멤버로 제공권과 대인 수비가 강점인 베테랑 수비수",
       "strengths": [
         "제공권 장악",
@@ -51780,7 +50639,6 @@ window.DATA = {
       "caps": 13,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 72,
       "oneLiner": "세리에 A에서 주전으로 자리 잡은 센터백, 풀백까지 소화 가능한 다재다능한 수비 자원",
       "strengths": [
         "피지컬과 제공권",
@@ -51813,7 +50671,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "19세 193cm 차세대 수비 핵심, 분데스리가 최고 듀얼 성공률과 득점력까지 갖춘 토트넘 소유 유망주",
       "strengths": [
         "압도적 신장과 제공권",
@@ -51848,7 +50705,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "2022 월드컵 멤버였던 센터백, 견고한 수비를 제공하는 백업 자원이자 경험 있는 옵션",
       "strengths": [
         "안정적 대인 수비",
@@ -51883,7 +50739,6 @@ window.DATA = {
       "caps": 83,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "박스 투 박스 능력과 득점력을 겸비한 베테랑 미드필더, 83캡의 풍부한 메이저 대회 경험을 보유",
       "strengths": [
         "박스 침투와 득점 가담",
@@ -51920,7 +50775,6 @@ window.DATA = {
       "caps": 55,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 75,
       "oneLiner": "토리노에서 8골을 넣은 공격형 미드필더, 창의성과 슈팅력으로 2선을 책임지는 검증된 주전 자원",
       "strengths": [
         "중거리 슈팅과 득점력",
@@ -51956,7 +50810,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 67,
       "oneLiner": "인터 밀란이 영입한 22세 홀딩 미드필더, 어린 나이에도 전술적으로 까다로운 역할을 소화하는 차세대 모드리치 후보",
       "strengths": [
         "볼 배급과 게임 운영",
@@ -51989,7 +50842,6 @@ window.DATA = {
       "caps": 38,
       "intlGoals": 6,
       "grade": "주전급",
-      "gradeScore": 73,
       "oneLiner": "라리가 득점 3위(음바페·무리치 다음)에 오른 타깃형 스트라이커, 제공권과 마무리를 겸비한 검증된 중앙 공격수",
       "strengths": [
         "제공권과 포스트 플레이",
@@ -52022,7 +50874,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "194cm 장신 스트라이커, 분데스리가에서 성장 중인 젊은 공격 옵션으로 제공권과 잠재력이 매력",
       "strengths": [
         "큰 신장과 제공권",
@@ -52055,7 +50906,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "월드컵 명단 유일의 국내파 골키퍼, 예선 6경기 1실점의 안정감",
       "strengths": [
         "선방 안정성",
@@ -52091,7 +50941,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 48,
       "oneLiner": "잉글랜드 유스 출신 전향파, 세인트 패트릭스 첫 월드컵 대표",
       "strengths": [
         "발밑 빌드업",
@@ -52124,7 +50973,6 @@ window.DATA = {
       "caps": 52,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "52캡 베테랑 레프트백, 수비라인의 경험과 안정감의 축",
       "strengths": [
         "풍부한 국제 경험",
@@ -52159,7 +51007,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 68,
       "oneLiner": "리그앙에서 검증된 레프트백, 40캡의 주전 측면 수비수",
       "strengths": [
         "활동량",
@@ -52192,7 +51039,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "토고 제안을 뿌리치고 가나를 택한 오세르 라이트백",
       "strengths": [
         "측면 1대1 수비",
@@ -52225,7 +51071,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "196cm 장신 센터백, 바샥셰히르의 유럽 진출 주역",
       "strengths": [
         "압도적 제공권",
@@ -52258,7 +51103,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "바젤에서 분데스리가로 도약한 22세 센터백 유망주",
       "strengths": [
         "빌드업 능력",
@@ -52291,7 +51135,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "니스 소속 21세 수비수, 월드컵 데뷔를 노리는 젊은 자원",
       "strengths": [
         "젊은 나이와 잠재력",
@@ -52324,7 +51167,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "지쿠 부상을 메운 베테랑 수비수, 다재다능함이 강점",
       "strengths": [
         "포지션 유연성",
@@ -52357,7 +51199,6 @@ window.DATA = {
       "caps": 19,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "오세르 중원을 지키는 수비형 미드필더, 파트너와 균형 담당",
       "strengths": [
         "볼 탈취",
@@ -52390,7 +51231,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "라리가에서 단련된 수비형 미드필더, 중원 보강 자원",
       "strengths": [
         "수비적 위치선정",
@@ -52423,7 +51263,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "측면과 중앙을 오가는 공격형 미드필더, 드리블이 강점",
       "strengths": [
         "드리블 돌파",
@@ -52456,7 +51295,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "노르셸란이 인정한 20세 박스투박스, 가나 중원의 미래",
       "strengths": [
         "활동량",
@@ -52492,7 +51330,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "폭발적 스피드를 지닌 21세 측면 공격수, 가나의 미래 윙어",
       "strengths": [
         "스피드",
@@ -52525,7 +51362,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "코번트리 승격을 이끈 타깃맨, 10번을 단 박스 안의 해결사",
       "strengths": [
         "제공권과 포스트플레이",
@@ -52558,7 +51394,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 54,
       "oneLiner": "측면에서 속도와 창의성을 더하는 22세 신예 공격수",
       "strengths": [
         "스피드",
@@ -52591,7 +51426,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 52,
       "oneLiner": "메히아·모스케라 뒤를 받치는 제3 골키퍼로, 경험은 적지만 안정적인 백업 옵션.",
       "strengths": [
         "라인 컨트롤",
@@ -52622,7 +51456,6 @@ window.DATA = {
       "caps": 96,
       "intlGoals": 4,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "2018 월드컵 풀타임 경험을 가진 파나마 수비의 기둥, 센터백 핵심.",
       "strengths": [
         "제공권",
@@ -52654,7 +51487,6 @@ window.DATA = {
       "caps": 78,
       "intlGoals": 5,
       "grade": "주전급",
-      "gradeScore": 66,
       "oneLiner": "유럽 무대를 누빈 베테랑 좌측 풀백, 정확한 왼발 킥과 세트피스가 무기.",
       "strengths": [
         "왼발 킥·세트피스",
@@ -52686,7 +51518,6 @@ window.DATA = {
       "caps": 40,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "경험 많은 백업 센터백으로, 제공권과 몸싸움에서 안정감을 더한다.",
       "strengths": [
         "제공권",
@@ -52718,7 +51549,6 @@ window.DATA = {
       "caps": 47,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 64,
       "oneLiner": "유럽 1부에서 검증된 다재다능 수비수, 센터백과 풀백을 모두 소화.",
       "strengths": [
         "수비 다재다능성",
@@ -52750,7 +51580,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "남미 리그에서 경험을 쌓은 수비 로테이션 자원.",
       "strengths": [
         "피지컬",
@@ -52781,7 +51610,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "측면을 활발히 오르내리는 풀백으로 뎁스를 더하는 자원.",
       "strengths": [
         "측면 활동량",
@@ -52812,7 +51640,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 53,
       "oneLiner": "러시아 1부에서 경험을 쌓는 24세 수비 유망주, 미래 자원.",
       "strengths": [
         "젊은 나이",
@@ -52844,7 +51671,6 @@ window.DATA = {
       "caps": 98,
       "intlGoals": 8,
       "grade": "주전급",
-      "gradeScore": 67,
       "oneLiner": "거의 100경기를 소화한 베테랑 윙어형 미드필더, 측면 창의성의 핵심.",
       "strengths": [
         "드리블 돌파",
@@ -52876,7 +51702,6 @@ window.DATA = {
       "caps": 55,
       "intlGoals": 7,
       "grade": "주전급",
-      "gradeScore": 69,
       "oneLiner": "2026 예선 공동 득점왕, 폭발적인 좌측 돌파로 파나마 공격을 이끈다.",
       "strengths": [
         "스피드",
@@ -52908,7 +51733,6 @@ window.DATA = {
       "caps": 139,
       "intlGoals": 7,
       "grade": "로테이션",
-      "gradeScore": 56,
       "oneLiner": "139캡의 대표팀 레전드 윙어, 베테랑 리더십과 경기 조율의 상징.",
       "strengths": [
         "경험·리더십",
@@ -52940,7 +51764,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "gradeScore": 57,
       "oneLiner": "사프리사에서 결정력을 보여준 떠오르는 공격수, 교체 카드로 위협적.",
       "strengths": [
         "박스 안 움직임",
@@ -52972,7 +51795,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "191cm 장신 타깃맨, 제공권 한 방을 위한 아기레 감독의 플랜B 카드",
       "strengths": [
         "압도적인 제공권과 헤더 결정력",
@@ -53005,7 +51827,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "2025시즌 MLS 리그 최소 실점을 이끈 떠오르는 중앙 수비 유망주, 월드컵에서 A매치 데뷔를 노린다",
       "strengths": [
         "대인 방어와 공중볼 경합",
@@ -53040,7 +51861,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "무다우의 백업으로 선발된 폴로콰네 시티의 폭발적인 라이트백, 국내 리그에서 검증된 측면 수비 자원",
       "strengths": [
         "왕성한 활동량과 측면 스피드",
@@ -53073,7 +51893,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "강원에서의 호조로 월드컵 막차를 탄 K리그 출신 깜짝 발탁 자원",
       "strengths": [
         "넓은 활동량과 왕성한 압박",
@@ -53107,7 +51926,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "조유민의 부상 공백을 메우며 첫 월드컵 무대에 오른 젊은 센터백",
       "strengths": [
         "좋은 신체조건과 제공권",
@@ -53141,7 +51959,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "분데스리가에서 검증된 독일 태생 혼혈 미드필더, 중원에 활력을 더할 새 옵션",
       "strengths": [
         "강한 볼 탈취와 압박 강도",
@@ -53175,7 +51992,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 3,
       "grade": "로테이션",
-      "gradeScore": 66,
       "oneLiner": "전북의 중원을 지탱하는 균형형 미드필더, 안정감 있는 백업 옵션",
       "strengths": [
         "볼 배급과 경기 템포 조율",
@@ -53209,7 +52025,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "노바스코샤 출신의 폭발적인 왼쪽 윙어로, 코파 아메리카 무대에서 검증된 캐나다의 스피드 옵션이다.",
       "strengths": [
         "직선적인 폭발력과 1대1 돌파",
@@ -53246,7 +52061,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 42,
       "oneLiner": "오스만 하지키치의 대회 직전 부상으로 깜짝 발탁된 18세 장신 GK, A대표팀 데뷔를 앞둔 미래 자원",
       "strengths": [
         "193cm 장신과 좋은 리치",
@@ -53281,7 +52095,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 50,
       "oneLiner": "오스트리아 유스 출신에서 2026년 FIFA 국적 변경으로 보스니아를 택한 공격형 미드필더, 라프니츠 시절 득점·도움 능력으로 주목받은 신예",
       "strengths": [
         "전진성과 공격 포인트 생산력(라프니츠서 4골 5도움)",
@@ -53314,7 +52127,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "2025-26 알가라파에서 주전으로 올라선 21세 멀티 수비 유망주, 카타르 수비의 미래",
       "strengths": [
         "오른쪽과 중앙을 모두 소화하는 멀티 능력",
@@ -53350,7 +52162,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 56,
       "oneLiner": "스페인 하부 임대 경험을 거쳐 알아라비 주전으로 자리잡은 22세 센터백, 빌드업이 강점",
       "strengths": [
         "후방 빌드업과 패스 전개",
@@ -53383,7 +52194,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "안첼로티 체제에서 깜짝 발탁된 플라멩구의 좌족 센터백, 빌드업과 제공권을 겸비한 백업 자원",
       "strengths": [
         "왼발 빌드업과 롱패스 전개",
@@ -53420,7 +52230,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 73,
       "oneLiner": "바스쿠가 키운 폭발적인 드리블러, 부상 이탈자 호드리구·에스테바웅의 공백을 메울 브라질 차세대 윙어",
       "strengths": [
         "폭발적인 가속과 1대1 돌파",
@@ -53453,7 +52262,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "리베르타도레스 MVP 출신의 측면 자원, 직선적인 돌파와 크로스로 호드리구·에스테바웅 부재를 메우는 카드",
       "strengths": [
         "측면 1대1 돌파와 가속",
@@ -53491,7 +52299,6 @@ window.DATA = {
       "caps": 5,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "라자 무패우승·2025 AFCON 우승을 경험한 백업 레프트백, 하키미·아나스의 뒤를 받친다",
       "strengths": [
         "왼쪽 측면 커버 범위",
@@ -53529,7 +52336,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "메헬렌에서의 호성적으로 깜짝 발탁된 프랑스 출신 센터백, 1캡짜리 신예 옵션",
       "strengths": [
         "뛰어난 피지컬과 대인 수비",
@@ -53562,7 +52368,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "리그1에서 2000분 넘게 뛴 우아한 패서, 모로코 미드필드의 차세대 자원",
       "strengths": [
         "넓은 패스 레인지와 시야",
@@ -53595,7 +52400,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "26인 명단 최대 깜짝 발탁, 안쪽으로 파고드는 왼발잡이 라이트윙의 폭발력",
       "strengths": [
         "직선적 돌파와 드리블",
@@ -53628,7 +52432,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 61,
       "oneLiner": "U20 월드챔피언 출신 윙어, 첫 성인 월드컵 발탁으로 감격한 스트라스부르 신예",
       "strengths": [
         "측면 스피드와 돌파",
@@ -53663,7 +52466,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "아스널 유스 출신의 측면 공격수, 화려한 이력 대비 만개하지 못한 디아스포라 자원",
       "strengths": [
         "측면·중앙을 오가는 다재다능함",
@@ -53696,7 +52498,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "수비와 공격을 넘나드는 멀티 자원, 리그1 무대에서 검증 중인 과들루프 태생 그르나디에",
       "strengths": [
         "라이트백부터 스트라이커까지 소화하는 전술적 유연성",
@@ -53729,7 +52530,6 @@ window.DATA = {
       "caps": 17,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "수비 라인을 보호하고 빌드업을 시작하는 딥라잉 플레이메이커, 알파로 체제에서 중원 밸런스를 잡는 살림꾼",
       "strengths": [
         "볼 배급과 전진 패스",
@@ -53765,7 +52565,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "데뷔 시즌 만에 월드컵 무대를 밟은 폭발적인 측면 자원, 빠른 발과 직선적 돌파가 무기인 알비로하의 차세대 윙어",
       "strengths": [
         "스피드와 1대1 돌파",
@@ -53801,7 +52600,6 @@ window.DATA = {
       "caps": 69,
       "intlGoals": 15,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "전성기를 지났지만 박스 침투와 경험으로 중원에 무게감을 더하는 베테랑",
       "strengths": [
         "강한 피지컬과 공중볼",
@@ -53839,7 +52637,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 70,
       "oneLiner": "큰 체격에 양발을 쓰며 전진 드리블이 가능한 올라운드 미드필더",
       "strengths": [
         "볼 운반과 전진 드리블",
@@ -53874,7 +52671,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 72,
       "oneLiner": "뒤늦게 대표팀에 합류해 전술 다재다능함과 킥 정확도로 가치를 입증한 베테랑",
       "strengths": [
         "정확한 패스와 세트피스",
@@ -53909,7 +52705,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 71,
       "oneLiner": "25/26 시즌 미드필더로 폭발적 득점력을 보이며 대표팀에 다시 이름을 올린 플레이메이커",
       "strengths": [
         "박스 외곽 슈팅과 득점 감각",
@@ -53944,7 +52739,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 73,
       "oneLiner": "후방에서 경기를 조율하는 영리한 패스 마스터, 키미히의 대안이자 동반자",
       "strengths": [
         "탈압박과 정교한 전진 패스",
@@ -53979,7 +52773,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "부상당한 레나르트 카를을 대체해 막판 합류한 차세대 중원 재능",
       "strengths": [
         "큰 체격과 볼 키핑",
@@ -54014,7 +52807,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 69,
       "oneLiner": "측면에서 속도와 직선성을 더하는 슈퍼서브 옵션, 25/26 시즌 활약으로 발탁",
       "strengths": [
         "빠른 스피드와 침투",
@@ -54049,7 +52841,6 @@ window.DATA = {
       "caps": 31,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 54,
       "oneLiner": "네덜란드 하부·중동·튀르키예를 두루 거친 33세 베테랑 윙어로, 폴렌담 승격을 이끈 경험과 측면 변칙성으로 퀴라소의 조커 역할을 맡는다.",
       "strengths": [
         "풍부한 국제 경력과 다양한 리그 경험",
@@ -54088,7 +52879,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "벨기에 리그에서 두 자릿수 공격 포인트를 찍는 키 작은 테크니션, 코트디부아르의 깜짝 카드",
       "strengths": [
         "좁은 공간 탈압박과 드리블",
@@ -54125,7 +52915,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "빌드업 능력을 갖춘 2003년생 센터백으로, 한 시즌 만에 챔피언스리그 무대까지 밟은 일본 수비의 미래 자원.",
       "strengths": [
         "정확한 패스와 빌드업 가담",
@@ -54160,7 +52949,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 68,
       "oneLiner": "191cm 장신 타깃맨으로 2025-26 벨기에 리그서 11골 7도움을 폭발시키며 우에다의 백업으로 급부상한 신성.",
       "strengths": [
         "압도적 제공권과 헤더 결정력",
@@ -54193,7 +52981,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "A매치 데뷔 없이 발탁된 깜짝 카드로, 스피드와 강한 압박으로 라인을 끌고 가는 분데스리가 신예 공격수.",
       "strengths": [
         "빠른 스피드와 침투",
@@ -54226,7 +53013,6 @@ window.DATA = {
       "caps": 0,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "2025 스웨덴 리그 우승 돌풍의 주역, A매치 무캡으로 월드컵에 깜짝 합류한 신성 센터백",
       "strengths": [
         "뛰어난 제공권과 신체조건",
@@ -54261,7 +53047,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "멜뷔 우승 후 MLS로 건너간 장신 멀티 수비수, 에밀 홀름 부상 공백을 메운 백업 자원",
       "strengths": [
         "193cm 장신에서 나오는 제공권",
@@ -54296,7 +53081,6 @@ window.DATA = {
       "caps": 22,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "터키 쉬페르리그에서 꾸준히 뛰는 베테랑 좌우 풀백, 알리 말룰 이탈 후 측면 수비 뎁스를 메우는 경험 자원",
       "strengths": [
         "좌우 풀백 모두 소화하는 다재다능함",
@@ -54332,7 +53116,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "스위스 수페르리가 루가노의 수비형 미드필더, A매치 경험은 적지만 라무시 감독이 중원 뎁스로 발탁한 신예",
       "strengths": [
         "볼 회수와 중원 커버 범위",
@@ -54365,7 +53148,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "월드컵 직전 러시아전 데뷔골로 단숨에 최종 명단에 합류한 이집트 국내리그의 깜짝 좌측 윙어",
       "strengths": [
         "박스 안 침투 타이밍과 헤더 마무리",
@@ -54401,7 +53183,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 58,
       "oneLiner": "꾸준한 국내 리그 폼으로 발탁된 세파한의 측면 수비 옵션, 월드컵 데뷔를 노리는 신예",
       "strengths": [
         "우측 측면 전 영역 커버 가능한 다재다능함",
@@ -54434,7 +53215,6 @@ window.DATA = {
       "caps": 21,
       "intlGoals": 2,
       "grade": "로테이션",
-      "gradeScore": 62,
       "oneLiner": "2년 공백을 깨고 부활 시즌으로 월드컵 명단에 복귀한 폭발적인 마무리형 스트라이커",
       "strengths": [
         "박스 안 침투와 마무리 본능",
@@ -54469,7 +53249,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 4,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "제공권과 포스트 플레이가 강점인 뒤늦게 만개한 베테랑 타깃맨",
       "strengths": [
         "강한 피지컬과 제공권 장악",
@@ -54508,7 +53287,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 48,
       "oneLiner": "왼발 빌드업이 가능한 멀티 수비수로, 볼리비아와의 플레이오프 결승전 선발 출전한 검증된 백업 옵션",
       "strengths": [
         "왼발 패스 및 빌드업",
@@ -54541,7 +53319,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "gradeScore": 42,
       "oneLiner": "185cm 신장에 U23 대표를 거친 젊은 수비수로, 월드컵 명단에 깜짝 발탁된 미래 자원",
       "strengths": [
         "185cm 좋은 피지컬과 제공권",
@@ -54574,7 +53351,6 @@ window.DATA = {
       "caps": 35,
       "intlGoals": 6,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "유로 2016 아이슬란드전 골의 주인공, 산전수전 다 겪은 베테랑 미드필더로 깊이를 더하는 로테이션 자원",
       "strengths": [
         "박스 침투와 마무리 능력",
@@ -54611,7 +53387,6 @@ window.DATA = {
       "caps": 2,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "부상으로 빠진 이브라힘 사브라의 대체로 합류한 20세 공격형 좌측 풀백 유망주.",
       "strengths": [
         "공격 가담 능력(2025-26시즌 5개 공격 포인트)",
@@ -54646,7 +53421,6 @@ window.DATA = {
       "caps": 34,
       "intlGoals": 8,
       "grade": "로테이션",
-      "gradeScore": 68,
       "oneLiner": "한때 유럽 최고 유망주로 꼽혔던 베테랑 윙어, 라리가 복귀 후 폼을 되찾으며 마르티네스의 측면 옵션으로 재발탁됐다.",
       "strengths": [
         "양발 슈팅과 강력한 중거리포",
@@ -54686,7 +53460,6 @@ window.DATA = {
       "caps": 59,
       "intlGoals": 11,
       "grade": "주전급",
-      "gradeScore": 70,
       "oneLiner": "영 보이즈에서 200경기를 뛰며 성장한 측면 자원, 대표팀 최다 경험치 중 한 명",
       "strengths": [
         "빠른 스피드와 직선적 돌파",
@@ -54723,7 +53496,6 @@ window.DATA = {
       "caps": 33,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "스위스 출생의 라리가급 6번, 중원 안정감을 책임지는 살림꾼",
       "strengths": [
         "볼 탈취와 인터셉트 능력",
@@ -54758,7 +53530,6 @@ window.DATA = {
       "caps": 6,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 64,
       "oneLiner": "프랑스 유스 출신의 폭발적 측면 드리블러, 2024년 콩고 대표팀 전향",
       "strengths": [
         "빠른 발과 1대1 돌파",
@@ -54793,7 +53564,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 55,
       "oneLiner": "잉글랜드 출생 베테랑 수비형 미드필더, 부상당한 부시리를 대체한 막판 콜업",
       "strengths": [
         "피지컬과 활동량 기반의 중원 차단",
@@ -54826,7 +53596,6 @@ window.DATA = {
       "caps": null,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "카메룬과의 플레이오프 준결승에서 음벰바 결승골을 어시스트한 깜짝 카드",
       "strengths": [
         "측면에서의 크로스와 어시스트 능력",
@@ -54859,7 +53628,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "2007년생 폭발적 라이트백 신성, 2026년 5월 다리 골절 수술이 변수",
       "strengths": [
         "수비 진영을 폭넓게 커버하는 활동량",
@@ -54892,7 +53660,6 @@ window.DATA = {
       "caps": 71,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 71,
       "oneLiner": "70캡 베테랑 앵커맨, 중원 균형과 수비 차단의 핵심 살림꾼",
       "strengths": [
         "풍부한 A매치 경험과 리더십",
@@ -54930,7 +53697,6 @@ window.DATA = {
       "caps": 18,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "UAE 무대에서 다수 우승을 경험한 안정적 중원 로테이션 자원",
       "strengths": [
         "볼 간수와 패스 안정성",
@@ -54968,7 +53734,6 @@ window.DATA = {
       "caps": 1,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 52,
       "oneLiner": "190cm 장신 중앙 미드필더, 러시아 무대 경험 갖춘 신예 깜짝 발탁",
       "strengths": [
         "190cm 신장 활용한 공중볼·박스 침투",
@@ -55001,7 +53766,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 62,
       "oneLiner": "콜롬비아 중원의 미래로 꼽히는 U-20 주장 출신, A대표 데뷔골을 신고한 박스-투-박스 유망주",
       "strengths": [
         "넓은 활동량과 박스-투-박스 커버리지",
@@ -55039,7 +53803,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "거친 수비와 볼 회수에 특화된 콜롬비아 중원의 살림꾼형 6번 자원",
       "strengths": [
         "볼 탈취와 인터셉트 등 수비형 미드필더 본연의 임무",
@@ -55074,7 +53837,6 @@ window.DATA = {
       "caps": 8,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "왼발 드리블과 측면 파괴력을 갖춘 콜롬비아의 슈퍼서브형 공격 옵션",
       "strengths": [
         "왼발 드리블 돌파와 측면 1대1 능력",
@@ -55109,7 +53871,6 @@ window.DATA = {
       "caps": 3,
       "intlGoals": 0,
       "grade": "유망주",
-      "gradeScore": 71,
       "oneLiner": "2025-26 PL 영플레이어이자 맨시티 올해의 선수, 첫 메이저 대회에 깜짝 발탁된 멀티 풀백",
       "strengths": [
         "좌측 풀백·인버티드 윙백·미드필더를 오가는 포지션 유연성",
@@ -55148,7 +53909,6 @@ window.DATA = {
       "caps": 10,
       "intlGoals": 1,
       "grade": "주전급",
-      "gradeScore": 78,
       "oneLiner": "폭발적인 드리블과 컷인 슈팅을 갖춘 양 측면 윙어, 아스널 PL 우승 멤버이자 잉글랜드 회전 카드",
       "strengths": [
         "빠른 가속과 1대1 돌파",
@@ -55187,7 +53947,6 @@ window.DATA = {
       "caps": 12,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 64,
       "oneLiner": "거친 태클과 활동량으로 중원을 받치는 박스투박스형 수비 미드필더, 디나모와 프랑크푸르트에서 우승 경험을 쌓은 백업 자원.",
       "strengths": [
         "왕성한 활동량과 압박",
@@ -55224,7 +53983,6 @@ window.DATA = {
       "caps": 9,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 65,
       "oneLiner": "볼로냐 코파 이탈리아 우승 멤버로 안정적인 볼 배급과 수비 균형을 제공하는 중원 회전 자원.",
       "strengths": [
         "안정적인 볼 순환과 패스",
@@ -55260,7 +54018,6 @@ window.DATA = {
       "caps": 4,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 60,
       "oneLiner": "리예카 더블 우승을 이끈 왼발잡이 공격형 미드필더, 2024-25시즌 15골로 팀 득점 1위에 오른 국내 리그 상승세 자원.",
       "strengths": [
         "왼발 슈팅과 마무리 능력",
@@ -55296,7 +54053,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "로테이션",
-      "gradeScore": 63,
       "oneLiner": "리예카 더블 우승 후 올랜도 시티 지정선수로 활약 중인 폭발적 드리블의 오른쪽 윙어, 2024년 데뷔골을 신고한 측면 옵션.",
       "strengths": [
         "빠른 스피드와 1대1 돌파",
@@ -55332,7 +54088,6 @@ window.DATA = {
       "caps": 60,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 58,
       "oneLiner": "60캡의 베테랑 미드필더로, 활동량과 경기 운영으로 중원에 안정감을 더하는 로테이션 자원.",
       "strengths": [
         "풍부한 A매치 경험(60캡)",
@@ -55367,7 +54122,6 @@ window.DATA = {
       "caps": 54,
       "intlGoals": 5,
       "grade": "로테이션",
-      "gradeScore": 60,
       "oneLiner": "측면을 폭넓게 쓰는 30세 윙어로, 칠레 무대 경험과 54캡을 갖춘 알찬 백업 공격 옵션.",
       "strengths": [
         "측면 돌파와 스피드",
@@ -55402,7 +54156,6 @@ window.DATA = {
       "caps": 11,
       "intlGoals": 1,
       "grade": "유망주",
-      "gradeScore": 55,
       "oneLiner": "에콰도르 무대에서 꾸준히 골을 넣으며 떠오른 24세 공격수, 파나마의 미래형 옵션.",
       "strengths": [
         "나이 대비 안정된 골 결정력",
@@ -55439,7 +54192,6 @@ window.DATA = {
       "caps": 7,
       "intlGoals": 0,
       "grade": "로테이션",
-      "gradeScore": 71,
       "oneLiner": "보타포구의 리베르타도레스 우승을 이끈 박스투박스 미드필더, 활동량과 회수 능력이 강점인 중원 백업",
       "strengths": [
         "넓은 활동 범위와 왕성한 체력",

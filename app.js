@@ -49,7 +49,7 @@
   function gradeClass(g) { return "g-" + esc(g); }
   function badge(p, hideScore) {
     return '<span class="badge ' + gradeClass(p.grade) + '">' + esc(p.grade) +
-      (hideScore ? "" : ' <span class="score">' + (p.gradeScore || "") + "</span>") + "</span>";
+      (hideScore ? "" : ' <span class="score">' + (p.ovr || "") + "</span>") + "</span>";
   }
   // 이름 첫글자 대신 '포지션 배지'(GK/DF/MF/FW 색상) — 의미 있는 시각 요소
   // 포지션 표기를 영문 약어로 통일 (한글/혼합 → GK/CB/LB/.../CF). 배지·선수정보 공용. 데이터는 그대로.
@@ -455,7 +455,7 @@
     html += '<div class="sec-h">선수 · ' + players.length + "</div>";
     if (players.length) {
       html += '<div class="grid">';
-      players.sort(function (a, b) { return (b.gradeScore || 0) - (a.gradeScore || 0); });
+      players.sort(function (a, b) { return (b.ovr || 0) - (a.ovr || 0); });
       players.forEach(function (p) { html += playerRow(p); });
       html += "</div>";
     } else {
@@ -468,7 +468,7 @@
     backBtn.hidden = false;
     tabsEl.hidden = true;
     var list = DATA.players.filter(function (p) { return p.grade === grade; })
-      .sort(function (a, b) { return (b.gradeScore || 0) - (a.gradeScore || 0); });
+      .sort(function (a, b) { return (b.ovr || 0) - (a.ovr || 0); });
     var html = '<div class="sec-h"><span class="badge ' + gradeClass(grade) + '">' + esc(grade) + "</span> " + list.length + "명</div><div class=\"grid\">";
     list.forEach(function (p) { html += playerRow(p); });
     html += "</div>";
@@ -489,7 +489,7 @@
     backBtn.hidden = false;
     tabsEl.hidden = true;
 
-    var ovr = p.ovr || p.gradeScore || 0;
+    var ovr = p.ovr || 0;
     var team = teamsById[teamIdByName(p.team)];
 
     var facts = [
@@ -561,12 +561,12 @@
     tabsEl.hidden = true;
 
     // 주 정렬: 포메이션 순서(공격→미드→수비→GK), 같은 포지션 안에서는 점수 높은순.
-    // gradeScore는 정렬용으로만 내부 유지하고 UI 배지에는 노출하지 않는다.
+    // 점수(ovr)는 정렬용으로 쓰되 나라상세 배지에는 노출하지 않는다.
     var roster = DATA.players.filter(function (p) { return p.team === t.name; })
       .sort(function (a, b) {
         var ra = posRank(a), rb = posRank(b);
         if (ra !== rb) return ra - rb;
-        return (b.gradeScore || 0) - (a.gradeScore || 0);
+        return (b.ovr || 0) - (a.ovr || 0);
       });
 
     // 컨트리 히어로
