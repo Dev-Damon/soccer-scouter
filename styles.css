@@ -310,9 +310,9 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .pf-dislike.on { color: #e5748a; border-color: #e5748a; }
 .pf-wbody.locked { opacity: 0.55; cursor: pointer; }
 /* 실시간 채팅 */
-.chat-fab { position: fixed; right: 16px; bottom: 78px; z-index: 60; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #fff; border: 0; font-size: 22px; line-height: 1; box-shadow: 0 4px 16px rgba(0,0,0,.45); cursor: pointer; display: grid; place-items: center; }
-.chat-fab img { width: 26px; height: 26px; }
-.chat-fab.open { background: #34467a; }
+.chat-fab { position: fixed; right: 16px; bottom: 78px; z-index: 60; width: 54px; height: 54px; border-radius: 50%; background: radial-gradient(circle at 34% 28%, #5cf0bd, #0fb886 72%); color: #fff; border: 0; font-size: 22px; line-height: 1; box-shadow: 0 6px 18px rgba(15,184,134,.5), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -3px 5px rgba(0,0,0,.22); cursor: pointer; display: grid; place-items: center; }
+.chat-fab img { width: 27px; height: 27px; }
+.chat-fab.open { background: radial-gradient(circle at 34% 28%, #6b7da8, #3a4d77 72%); box-shadow: 0 6px 18px rgba(0,0,0,.4), inset 0 2px 1px rgba(255,255,255,.3); }
 .chat-panel { position: fixed; right: 14px; bottom: 140px; z-index: 60; width: min(360px, calc(100vw - 28px)); height: min(62vh, 480px); background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 34px rgba(0,0,0,.55); }
 .chat-panel[hidden] { display: none; }
 .chat-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: 14.5px; }
@@ -482,12 +482,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
   background: linear-gradient(135deg, var(--accent), #2a5bd0);
   box-shadow: var(--shadow);
 }
-.hero-grid {
-  position: absolute; inset: 0; opacity: .14; pointer-events: none;
-  background-image: linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
-  background-size: 26px 26px;
-}
+.hero-grid { display: none; }
 .hero-tag { position: relative; font-size: 11.5px; font-weight: 800; color: #eaf2ff; display: flex; align-items: center; gap: 6px; }
 .hero-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: #ff5e63; animation: pulse 1.6s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }

@@ -1714,5 +1714,6 @@
     panel.querySelector(".chat-close").addEventListener("click", toggle);
     panel.querySelector(".chat-send").addEventListener("click", send);
     panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
+    panel.querySelector(".chat-in").addEventListener("focus", function () { if (!KickComments.user || !KickComments.user()) { this.blur(); KickComments.promptLogin(); } });
   })();
 })();
