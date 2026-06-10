@@ -18,8 +18,8 @@
   "use strict";
 
   var CONFIG = {
-    url: "",       // 예: https://abcd.supabase.co
-    anonKey: ""    // 예: eyJhbGciOi...
+    url: "https://jhzchgvnkwdroxfrgjvm.supabase.co",
+    anonKey: "sb_publishable_AsDWJPjKDg1S5wqezB9Vtw_uxKFmE26"  // Supabase publishable(=공개 anon) key — RLS로 보호되어 공개 안전
   };
 
   // 간단 욕설 마스킹(필요 시 확장). RLS/신고와 병행.
@@ -109,7 +109,7 @@
     refreshUser()
       .then(function () { return load(m.key); })
       .then(function (list) { m.el.innerHTML = boxHtml(list); bind(m); })
-      .catch(function () { m.el.innerHTML = '<h3 class="cmt-h">댓글</h3><div class="cmt-soon">댓글을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</div>'; });
+      .catch(function () { m.el.style.display = "none"; });  // 테이블 미생성/일시오류 → 조용히 숨김
   }
 
   function load(key) {
