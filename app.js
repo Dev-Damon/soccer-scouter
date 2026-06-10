@@ -318,17 +318,20 @@
     }
     fetchStandings();  // ESPN 순위 비동기 갱신(캐시 60초) → 도착 시 자동 재렌더
     var hasData = Object.keys(STAND).length > 0;
+    var cmp = function (a, b) {
+      return b.s.pts - a.s.pts || b.s.gd - a.s.gd || b.s.gf - a.s.gf ||
+        (((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999));
+    };
     var html = '<div class="stand-note">' +
-      (hasData ? "조별 순위 · 경기 결과 실시간 반영 · 상위 2팀 16강 직행" : "순위 불러오는 중… (개막 전이라 0)") +
+      (hasData ? "조별 순위 · 결과 실시간 반영 · 1·2위 직행 + 각 조 3위 중 상위 8팀 진출" : "순위 불러오는 중… (개막 전이라 0)") +
       "</div>";
+    var thirds = [];
     groups.forEach(function (g) {
       var rows = (g.teamIds || []).map(function (id) {
         return { id: id, t: teamsById[id], s: STAND[id] || { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 } };
       });
-      rows.sort(function (a, b) {
-        return b.s.pts - a.s.pts || b.s.gd - a.s.gd || b.s.gf - a.s.gf ||
-          (((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999));
-      });
+      rows.sort(cmp);
+      if (rows[2]) thirds.push({ g: g.group, r: rows[2] });
       html += '<div class="group-card"><h3><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + "조</h3>" +
         '<table class="stand"><thead><tr><th class="c">#</th><th>팀</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th></tr></thead><tbody>';
       rows.forEach(function (r, i) {
@@ -343,6 +346,22 @@
       });
       html += "</tbody></table></div>";
     });
+    // 각 조 3위팀 순위 (WC2026: 12개 조 3위 중 상위 8팀 16강 진출)
+    thirds.sort(function (a, b) { return cmp(a.r, b.r); });
+    html += '<div class="group-card"><h3>🥉 3위 팀 순위 <span class="muted-note">상위 8팀 16강 진출</span></h3>' +
+      '<table class="stand"><thead><tr><th class="c">#</th><th>팀</th><th class="c">조</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th></tr></thead><tbody>';
+    thirds.forEach(function (o, i) {
+      var t = o.r.t, s = o.r.s;
+      var gd = (s.gd > 0 ? "+" : "") + s.gd;
+      html += '<tr class="' + (i < 8 ? "qual" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
+        '<td class="c rk">' + (i + 1) + "</td>" +
+        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + "</span>" +
+          '<span class="tm-n">' + esc(t ? t.name : o.r.id) + "</span></td>" +
+        '<td class="c">' + esc(o.g) + "</td>" +
+        "<td>" + s.p + "</td><td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td>" +
+        "<td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
+    });
+    html += "</tbody></table></div>";
     viewEl.innerHTML = html;
   }
 
