@@ -215,7 +215,7 @@
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' +
-        '<div class="cmt-form"><textarea class="cmt-ta" maxlength="500" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/500</div>'
+        '<div class="cmt-form"><textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>'
       : '<div class="cmt-login"><span class="cmt-login-t">로그인하고 댓글 남기기</span>' +
         ((PROVIDERS && PROVIDERS.google) ? '<button class="cmt-in g" data-p="google">' + GICON + "Google</button>" : "") +
         ((PROVIDERS && PROVIDERS.kakao) ? '<button class="cmt-in kakao" data-p="kakao">카카오</button>' : "") + "</div>";
@@ -270,7 +270,7 @@
     if (!user) { alert("로그인 후 답글을 남길 수 있어요."); return; }
     var isReply = cmt.classList.contains("reply");
     var prefill = isReply ? "@" + cmt.getAttribute("data-name") + " " : "";
-    node.innerHTML = '<textarea class="cmt-ta" maxlength="500" placeholder="답글">' + esc(prefill) + "</textarea>" +
+    node.innerHTML = '<textarea class="cmt-ta" maxlength="300" placeholder="답글">' + esc(prefill) + "</textarea>" +
       '<button class="cmt-rsend" data-root="' + esc(cmt.getAttribute("data-root")) + '" data-replyuid="' + esc(cmt.getAttribute("data-uid")) + '">답글 등록</button>';
     var ta = node.querySelector(".cmt-ta");
     if (ta) { ta.focus(); try { ta.setSelectionRange(ta.value.length, ta.value.length); } catch (e2) {} }
@@ -285,7 +285,7 @@
       thread_key: m.key, parent_id: parentId || null, user_id: user.id,
       reply_to_user: replyToUser || null,
       name: uname(user), avatar: avatarOf(user),
-      body: mask(body).slice(0, 500)
+      body: mask(body).slice(0, 300)
     };
     ta.disabled = true;
     sb.from("comments").insert(rec).then(function (r) {
