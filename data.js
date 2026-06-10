@@ -13508,7 +13508,8 @@ window.DATA = {
         "skill": 92,
         "value": 82,
         "fame": 93
-      }
+      },
+      "number": 7
     },
     {
       "id": "kim-min-jae",
@@ -13543,7 +13544,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 80
-      }
+      },
+      "number": 3
     },
     {
       "id": "lee-kang-in",
@@ -13579,7 +13581,8 @@ window.DATA = {
         "skill": 85,
         "value": 85,
         "fame": 73
-      }
+      },
+      "number": 18
     },
     {
       "id": "hwang-hee-chan",
@@ -13614,7 +13617,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 69
-      }
+      },
+      "number": 11
     },
     {
       "id": "lee-jae-sung",
@@ -13649,7 +13653,8 @@ window.DATA = {
         "skill": 72,
         "value": 64,
         "fame": 73
-      }
+      },
+      "number": 17
     },
     {
       "id": "hwang-in-beom",
@@ -13683,7 +13688,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 64
-      }
+      },
+      "number": 6
     },
     {
       "id": "jo-hyeon-woo",
@@ -13718,7 +13724,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 58
-      }
+      },
+      "number": 1
     },
     {
       "id": "cho-gue-sung",
@@ -13752,7 +13759,8 @@ window.DATA = {
         "skill": 62,
         "value": 62,
         "fame": 53
-      }
+      },
+      "number": 9
     },
     {
       "id": "oh-hyeon-gyu",
@@ -13786,7 +13794,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 47
-      }
+      },
+      "number": 10
     },
     {
       "id": "bae-jun-ho",
@@ -13818,7 +13827,8 @@ window.DATA = {
         "skill": 55,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 14
     },
     {
       "id": "patrik-schick",
@@ -15616,7 +15626,8 @@ window.DATA = {
         "skill": 95,
         "value": 95,
         "fame": 82
-      }
+      },
+      "number": 7
     },
     {
       "id": "raphinha",
@@ -15653,7 +15664,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 76
-      }
+      },
+      "number": 11
     },
     {
       "id": "neymar",
@@ -15691,7 +15703,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 86
-      }
+      },
+      "number": 10
     },
     {
       "id": "bruno-guimaraes",
@@ -15728,7 +15741,8 @@ window.DATA = {
         "skill": 82,
         "value": 82,
         "fame": 71
-      }
+      },
+      "number": 8
     },
     {
       "id": "marquinhos",
@@ -15766,7 +15780,8 @@ window.DATA = {
         "skill": 88,
         "value": 84,
         "fame": 89
-      }
+      },
+      "number": 4
     },
     {
       "id": "alisson",
@@ -15804,7 +15819,8 @@ window.DATA = {
         "skill": 90,
         "value": 80,
         "fame": 85
-      }
+      },
+      "number": 1
     },
     {
       "id": "casemiro",
@@ -15841,7 +15857,8 @@ window.DATA = {
         "skill": 80,
         "value": 71,
         "fame": 78
-      }
+      },
+      "number": 5
     },
     {
       "id": "gabriel-magalhaes",
@@ -15877,7 +15894,8 @@ window.DATA = {
         "skill": 81,
         "value": 81,
         "fame": 65
-      }
+      },
+      "number": 3
     },
     {
       "id": "matheus-cunha",
@@ -15913,7 +15931,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 58
-      }
+      },
+      "number": 19
     },
     {
       "id": "endrick",
@@ -15950,7 +15969,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 57
-      }
+      },
+      "number": 9
     },
     {
       "id": "achraf-hakimi",
@@ -19658,7 +19678,7 @@ window.DATA = {
       "name": "윌리안 파초",
       "nameEn": "Willian Pacho",
       "team": "에콰도르",
-      "club": "파리 생제르맹 (Paris Saint-Germain)",
+      "club": "파리 생제르맹",
       "league": "리그앙 (프랑스)",
       "position": "센터백",
       "age": 24,
@@ -21332,7 +21352,8 @@ window.DATA = {
         "skill": 93,
         "value": 83,
         "fame": 91
-      }
+      },
+      "number": 1
     },
     {
       "id": "kevin-de-bruyne",
@@ -21369,7 +21390,8 @@ window.DATA = {
         "skill": 91,
         "value": 81,
         "fame": 92
-      }
+      },
+      "number": 7
     },
     {
       "id": "romelu-lukaku",
@@ -21406,7 +21428,8 @@ window.DATA = {
         "skill": 85,
         "value": 76,
         "fame": 89
-      }
+      },
+      "number": 9
     },
     {
       "id": "jeremy-doku",
@@ -21443,7 +21466,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 70
-      }
+      },
+      "number": 22
     },
     {
       "id": "leandro-trossard",
@@ -21479,7 +21503,8 @@ window.DATA = {
         "skill": 75,
         "value": 71,
         "fame": 66
-      }
+      },
+      "number": 11
     },
     {
       "id": "youri-tielemans",
@@ -21515,7 +21540,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 73
-      }
+      },
+      "number": 8
     },
     {
       "id": "amadou-onana",
@@ -21549,7 +21575,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 58
-      }
+      },
+      "number": 15
     },
     {
       "id": "charles-de-ketelaere",
@@ -21584,7 +21611,8 @@ window.DATA = {
         "skill": 72,
         "value": 72,
         "fame": 59
-      }
+      },
+      "number": 10
     },
     {
       "id": "zeno-debast",
@@ -21619,7 +21647,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 55
-      }
+      },
+      "number": 4
     },
     {
       "id": "maxim-de-cuyper",
@@ -21655,7 +21684,8 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 50
-      }
+      },
+      "number": 3
     },
     {
       "id": "mohamed-salah",
@@ -22743,7 +22773,8 @@ window.DATA = {
         "skill": 95,
         "value": 99,
         "fame": 81
-      }
+      },
+      "number": 19
     },
     {
       "id": "pedri",
@@ -22782,7 +22813,8 @@ window.DATA = {
         "skill": 90,
         "value": 95,
         "fame": 80
-      }
+      },
+      "number": 8
     },
     {
       "id": "rodri",
@@ -22820,7 +22852,8 @@ window.DATA = {
         "skill": 94,
         "value": 94,
         "fame": 85
-      }
+      },
+      "number": 16
     },
     {
       "id": "nico-williams",
@@ -22856,7 +22889,8 @@ window.DATA = {
         "skill": 84,
         "value": 88,
         "fame": 69
-      }
+      },
+      "number": 17
     },
     {
       "id": "mikel-oyarzabal",
@@ -22893,7 +22927,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 72
-      }
+      },
+      "number": 21
     },
     {
       "id": "fabian-ruiz",
@@ -22930,7 +22965,8 @@ window.DATA = {
         "skill": 83,
         "value": 79,
         "fame": 72
-      }
+      },
+      "number": 14
     },
     {
       "id": "dani-olmo",
@@ -22967,7 +23003,8 @@ window.DATA = {
         "skill": 81,
         "value": 81,
         "fame": 72
-      }
+      },
+      "number": 10
     },
     {
       "id": "marc-cucurella",
@@ -23004,7 +23041,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 65
-      }
+      },
+      "number": 24
     },
     {
       "id": "david-raya",
@@ -23041,7 +23079,8 @@ window.DATA = {
         "skill": 82,
         "value": 78,
         "fame": 66
-      }
+      },
+      "number": 13
     },
     {
       "id": "pau-cubarsi",
@@ -23077,7 +23116,8 @@ window.DATA = {
         "skill": 74,
         "value": 78,
         "fame": 59
-      }
+      },
+      "number": 5
     },
     {
       "id": "ryan-mendes",
@@ -24246,7 +24286,7 @@ window.DATA = {
       "name": "우스만 뎀벨레",
       "nameEn": "Ousmane Dembélé",
       "team": "프랑스",
-      "club": "파리 생제르맹 (PSG)",
+      "club": "파리 생제르맹",
       "league": "리그앙 (프랑스)",
       "position": "공격수/윙어 (FW)",
       "age": 29,
@@ -28528,7 +28568,8 @@ window.DATA = {
         "skill": 94,
         "value": 89,
         "fame": 94
-      }
+      },
+      "number": 9
     },
     {
       "id": "jude-bellingham",
@@ -28566,7 +28607,8 @@ window.DATA = {
         "skill": 93,
         "value": 98,
         "fame": 82
-      }
+      },
+      "number": 10
     },
     {
       "id": "bukayo-saka",
@@ -28604,7 +28646,8 @@ window.DATA = {
         "skill": 90,
         "value": 90,
         "fame": 80
-      }
+      },
+      "number": 7
     },
     {
       "id": "declan-rice",
@@ -28641,7 +28684,8 @@ window.DATA = {
         "skill": 89,
         "value": 89,
         "fame": 82
-      }
+      },
+      "number": 4
     },
     {
       "id": "jordan-pickford",
@@ -28677,7 +28721,8 @@ window.DATA = {
         "skill": 80,
         "value": 76,
         "fame": 76
-      }
+      },
+      "number": 1
     },
     {
       "id": "marc-guehi",
@@ -28714,7 +28759,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 67
-      }
+      },
+      "number": 6
     },
     {
       "id": "john-stones",
@@ -28752,7 +28798,8 @@ window.DATA = {
         "skill": 81,
         "value": 77,
         "fame": 80
-      }
+      },
+      "number": 5
     },
     {
       "id": "marcus-rashford",
@@ -28790,7 +28837,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 76
-      }
+      },
+      "number": 11
     },
     {
       "id": "eberechi-eze",
@@ -28827,7 +28875,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 64
-      }
+      },
+      "number": 24
     },
     {
       "id": "anthony-gordon",
@@ -28864,7 +28913,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 63
-      }
+      },
+      "number": 15
     },
     {
       "id": "morgan-rogers",
@@ -28900,7 +28950,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 58
-      }
+      },
+      "number": 26
     },
     {
       "id": "luka-modric",
@@ -30985,7 +31036,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 65
-      }
+      },
+      "number": 21
     },
     {
       "id": "song-bum-keun",
@@ -31020,14 +31072,15 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 42
-      }
+      },
+      "number": 12
     },
     {
       "id": "lee-han-beom",
       "name": "이한범",
       "nameEn": "Lee Han-beom",
       "team": "대한민국",
-      "club": "미트윌란 (Midtjylland)",
+      "club": "미트윌란",
       "league": "수페르리가 (덴마크)",
       "position": "센터백",
       "age": 23,
@@ -31055,7 +31108,8 @@ window.DATA = {
         "skill": 64,
         "value": 67,
         "fame": 46
-      }
+      },
+      "number": 20
     },
     {
       "id": "kim-tae-hyeon",
@@ -31088,14 +31142,15 @@ window.DATA = {
         "skill": 60,
         "value": 60,
         "fame": 42
-      }
+      },
+      "number": 13
     },
     {
       "id": "lee-tae-seok",
       "name": "이태석",
       "nameEn": "Lee Tae-seok",
       "team": "대한민국",
-      "club": "오스트리아 빈 (Austria Wien)",
+      "club": "FK 아우스트리아 빈",
       "league": "분데스리가 (오스트리아)",
       "position": "풀백",
       "age": 23,
@@ -31121,14 +31176,15 @@ window.DATA = {
         "skill": 58,
         "value": 61,
         "fame": 41
-      }
+      },
+      "number": 2
     },
     {
       "id": "seol-young-woo",
       "name": "설영우",
       "nameEn": "Seol Young-woo",
       "team": "대한민국",
-      "club": "츠르베나 즈베즈다 (Red Star Belgrade)",
+      "club": "츠르베나 즈베즈다",
       "league": "수페르리가 (세르비아)",
       "position": "풀백",
       "age": 27,
@@ -31156,7 +31212,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 55
-      }
+      },
+      "number": 15
     },
     {
       "id": "kim-moon-hwan",
@@ -31191,14 +31248,15 @@ window.DATA = {
         "skill": 63,
         "value": 60,
         "fame": 52
-      }
+      },
+      "number": 22
     },
     {
       "id": "park-jin-seop",
       "name": "박진섭",
       "nameEn": "Park Jin-seop",
       "team": "대한민국",
-      "club": "저장 FC (Zhejiang)",
+      "club": "저장 FC",
       "league": "중국 슈퍼리그 (중국)",
       "position": "센터백",
       "age": 30,
@@ -31224,14 +31282,15 @@ window.DATA = {
         "skill": 59,
         "value": 56,
         "fame": 41
-      }
+      },
+      "number": 20
     },
     {
       "id": "yang-hyun-jun",
       "name": "양현준",
       "nameEn": "Yang Hyun-jun",
       "team": "대한민국",
-      "club": "셀틱 (Celtic)",
+      "club": "셀틱",
       "league": "스코티시 프리미어십 (스코틀랜드)",
       "position": "윙어",
       "age": 24,
@@ -31260,14 +31319,15 @@ window.DATA = {
         "skill": 65,
         "value": 65,
         "fame": 50
-      }
+      },
+      "number": 16
     },
     {
       "id": "paik-seung-ho",
       "name": "백승호",
       "nameEn": "Paik Seung-ho",
       "team": "대한민국",
-      "club": "버밍엄 시티 (Birmingham City)",
+      "club": "버밍엄 시티",
       "league": "EFL 챔피언십 (잉글랜드)",
       "position": "중앙 미드필더",
       "age": 28,
@@ -31295,14 +31355,15 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 51
-      }
+      },
+      "number": 8
     },
     {
       "id": "eom-ji-sung",
       "name": "엄지성",
       "nameEn": "Eom Ji-sung",
       "team": "대한민국",
-      "club": "스완지 시티 (Swansea City)",
+      "club": "스완지 시티",
       "league": "EFL 챔피언십 (잉글랜드)",
       "position": "윙어",
       "age": 23,
@@ -31328,7 +31389,8 @@ window.DATA = {
         "skill": 62,
         "value": 65,
         "fame": 45
-      }
+      },
+      "number": 26
     },
     {
       "id": "lee-dong-gyeong",
@@ -31363,7 +31425,8 @@ window.DATA = {
         "skill": 63,
         "value": 63,
         "fame": 46
-      }
+      },
+      "number": 19
     },
     {
       "id": "jind-ich-stan-k",
@@ -34357,7 +34420,8 @@ window.DATA = {
         "skill": 82,
         "value": 78,
         "fame": 69
-      }
+      },
+      "number": 23
     },
     {
       "id": "weverton",
@@ -34394,7 +34458,8 @@ window.DATA = {
         "skill": 65,
         "value": 58,
         "fame": 52
-      }
+      },
+      "number": 12
     },
     {
       "id": "danilo",
@@ -34433,7 +34498,8 @@ window.DATA = {
         "skill": 78,
         "value": 69,
         "fame": 73
-      }
+      },
+      "number": 2
     },
     {
       "id": "alex-sandro",
@@ -34470,7 +34536,8 @@ window.DATA = {
         "skill": 70,
         "value": 62,
         "fame": 61
-      }
+      },
+      "number": 6
     },
     {
       "id": "bremer",
@@ -34506,7 +34573,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 60
-      }
+      },
+      "number": 14
     },
     {
       "id": "roger-iba-ez",
@@ -34541,7 +34609,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 52
-      }
+      },
+      "number": 15
     },
     {
       "id": "douglas-santos",
@@ -34577,7 +34646,8 @@ window.DATA = {
         "skill": 66,
         "value": 63,
         "fame": 50
-      }
+      },
+      "number": 16
     },
     {
       "id": "derson",
@@ -34612,7 +34682,8 @@ window.DATA = {
         "skill": 77,
         "value": 77,
         "fame": 56
-      }
+      },
+      "number": 17
     },
     {
       "id": "lucas-paquet",
@@ -34649,7 +34720,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 69
-      }
+      },
+      "number": 7
     },
     {
       "id": "fabinho",
@@ -34686,7 +34758,8 @@ window.DATA = {
         "skill": 70,
         "value": 67,
         "fame": 59
-      }
+      },
+      "number": 17
     },
     {
       "id": "gabriel-martinelli",
@@ -34721,7 +34794,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 60
-      }
+      },
+      "number": 18
     },
     {
       "id": "igor-thiago",
@@ -39143,7 +39217,7 @@ window.DATA = {
       "name": "데닐 카스티요",
       "nameEn": "Denil Castillo",
       "team": "에콰도르",
-      "club": "FC 미트윌란",
+      "club": "미트윌란",
       "league": "수페르리가 (덴마크)",
       "position": "MF",
       "age": 22,
@@ -41287,7 +41361,8 @@ window.DATA = {
         "skill": 72,
         "value": 76,
         "fame": 52
-      }
+      },
+      "number": 12
     },
     {
       "id": "mike-penders",
@@ -41318,7 +41393,8 @@ window.DATA = {
         "skill": 60,
         "value": 63,
         "fame": 42
-      }
+      },
+      "number": 16
     },
     {
       "id": "timothy-castagne",
@@ -41352,7 +41428,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 53
-      }
+      },
+      "number": 21
     },
     {
       "id": "thomas-meunier",
@@ -41386,7 +41463,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 49
-      }
+      },
+      "number": 2
     },
     {
       "id": "arthur-theate",
@@ -41418,7 +41496,8 @@ window.DATA = {
         "skill": 73,
         "value": 73,
         "fame": 51
-      }
+      },
+      "number": 5
     },
     {
       "id": "koni-de-winter",
@@ -41450,7 +41529,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 50
-      }
+      },
+      "number": 24
     },
     {
       "id": "nathan-ngoy",
@@ -41576,7 +41656,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 47
-      }
+      },
+      "number": 18
     },
     {
       "id": "hans-vanaken",
@@ -41610,7 +41691,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 51
-      }
+      },
+      "number": 20
     },
     {
       "id": "axel-witsel",
@@ -41644,7 +41726,8 @@ window.DATA = {
         "skill": 66,
         "value": 59,
         "fame": 49
-      }
+      },
+      "number": 6
     },
     {
       "id": "diego-moreira",
@@ -41709,7 +41792,8 @@ window.DATA = {
         "skill": 70,
         "value": 70,
         "fame": 51
-      }
+      },
+      "number": 14
     },
     {
       "id": "dodi-lukebakio",
@@ -41740,7 +41824,8 @@ window.DATA = {
         "skill": 71,
         "value": 71,
         "fame": 50
-      }
+      },
+      "number": 17
     },
     {
       "id": "matias-fernandez-pardo",
@@ -43354,7 +43439,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 69
-      }
+      },
+      "number": 23
     },
     {
       "id": "joan-garcia",
@@ -43423,7 +43509,8 @@ window.DATA = {
         "skill": 76,
         "value": 76,
         "fame": 58
-      }
+      },
+      "number": 2
     },
     {
       "id": "eric-garcia",
@@ -43457,7 +43544,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 57
-      }
+      },
+      "number": 12
     },
     {
       "id": "alejandro-grimaldo",
@@ -43492,7 +43580,8 @@ window.DATA = {
         "skill": 77,
         "value": 73,
         "fame": 59
-      }
+      },
+      "number": 18
     },
     {
       "id": "marcos-llorente",
@@ -43526,7 +43615,8 @@ window.DATA = {
         "skill": 72,
         "value": 68,
         "fame": 56
-      }
+      },
+      "number": 3
     },
     {
       "id": "aymeric-laporte",
@@ -43561,7 +43651,8 @@ window.DATA = {
         "skill": 78,
         "value": 74,
         "fame": 66
-      }
+      },
+      "number": 15
     },
     {
       "id": "marc-pubill",
@@ -43630,7 +43721,8 @@ window.DATA = {
         "skill": 81,
         "value": 85,
         "fame": 65
-      }
+      },
+      "number": 9
     },
     {
       "id": "martin-zubimendi",
@@ -43664,7 +43756,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 61
-      }
+      },
+      "number": 6
     },
     {
       "id": "mikel-merino",
@@ -43698,7 +43791,8 @@ window.DATA = {
         "skill": 79,
         "value": 79,
         "fame": 64
-      }
+      },
+      "number": 20
     },
     {
       "id": "alex-baena",
@@ -43733,7 +43827,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 57
-      }
+      },
+      "number": 7
     },
     {
       "id": "ferran-torres",
@@ -43769,7 +43864,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 69
-      }
+      },
+      "number": 11
     },
     {
       "id": "yeremy-pino",
@@ -43803,7 +43899,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 54
-      }
+      },
+      "number": 22
     },
     {
       "id": "borja-iglesias",
@@ -45502,7 +45599,7 @@ window.DATA = {
       "name": "뤼카 에르난데스",
       "nameEn": "Lucas Hernandez",
       "team": "프랑스",
-      "club": "파리 생제르맹 (Paris Saint-Germain)",
+      "club": "파리 생제르맹",
       "league": "리그앙 (프랑스)",
       "position": "DF",
       "age": 30,
@@ -45710,7 +45807,7 @@ window.DATA = {
       "name": "바랑 자이르-에므리",
       "nameEn": "Warren Zaïre-Emery",
       "team": "프랑스",
-      "club": "파리 생제르맹 (Paris Saint-Germain)",
+      "club": "파리 생제르맹",
       "league": "리그앙 (프랑스)",
       "position": "MF",
       "age": 20,
@@ -45745,7 +45842,7 @@ window.DATA = {
       "name": "브래들리 바르콜라",
       "nameEn": "Bradley Barcola",
       "team": "프랑스",
-      "club": "파리 생제르맹 (Paris Saint-Germain)",
+      "club": "파리 생제르맹",
       "league": "리그앙 (프랑스)",
       "position": "FW",
       "age": 23,
@@ -45780,7 +45877,7 @@ window.DATA = {
       "name": "데지레 두에",
       "nameEn": "Désiré Doué",
       "team": "프랑스",
-      "club": "파리 생제르맹 (Paris Saint-Germain)",
+      "club": "파리 생제르맹",
       "league": "리그앙 (프랑스)",
       "position": "FW",
       "age": 21,
@@ -51147,7 +51244,8 @@ window.DATA = {
         "skill": 75,
         "value": 75,
         "fame": 56
-      }
+      },
+      "number": 13
     },
     {
       "id": "james-trafford",
@@ -51181,7 +51279,8 @@ window.DATA = {
         "skill": 68,
         "value": 71,
         "fame": 49
-      }
+      },
+      "number": 23
     },
     {
       "id": "reece-james",
@@ -51218,7 +51317,8 @@ window.DATA = {
         "skill": 80,
         "value": 80,
         "fame": 66
-      }
+      },
+      "number": 2
     },
     {
       "id": "ezri-konsa",
@@ -51250,7 +51350,8 @@ window.DATA = {
         "skill": 74,
         "value": 74,
         "fame": 55
-      }
+      },
+      "number": 14
     },
     {
       "id": "dan-burn",
@@ -51284,7 +51385,8 @@ window.DATA = {
         "skill": 68,
         "value": 61,
         "fame": 50
-      }
+      },
+      "number": 3
     },
     {
       "id": "jarell-quansah",
@@ -51319,7 +51421,8 @@ window.DATA = {
         "skill": 67,
         "value": 70,
         "fame": 50
-      }
+      },
+      "number": 22
     },
     {
       "id": "tino-livramento",
@@ -51353,7 +51456,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 52
-      }
+      },
+      "number": 12
     },
     {
       "id": "djed-spence",
@@ -51387,7 +51491,8 @@ window.DATA = {
         "skill": 67,
         "value": 67,
         "fame": 49
-      }
+      },
+      "number": 21
     },
     {
       "id": "kobbie-mainoo",
@@ -51421,7 +51526,8 @@ window.DATA = {
         "skill": 76,
         "value": 80,
         "fame": 57
-      }
+      },
+      "number": 18
     },
     {
       "id": "elliot-anderson",
@@ -51453,7 +51559,8 @@ window.DATA = {
         "skill": 70,
         "value": 74,
         "fame": 50
-      }
+      },
+      "number": 8
     },
     {
       "id": "jordan-henderson",
@@ -51489,7 +51596,8 @@ window.DATA = {
         "skill": 65,
         "value": 58,
         "fame": 66
-      }
+      },
+      "number": 16
     },
     {
       "id": "ollie-watkins",
@@ -51521,7 +51629,8 @@ window.DATA = {
         "skill": 74,
         "value": 70,
         "fame": 55
-      }
+      },
+      "number": 19
     },
     {
       "id": "ivan-toney",
@@ -51555,7 +51664,8 @@ window.DATA = {
         "skill": 68,
         "value": 65,
         "fame": 50
-      }
+      },
+      "number": 17
     },
     {
       "id": "dominik-kotarski",
@@ -51731,7 +51841,7 @@ window.DATA = {
       "name": "마르틴 에를리치",
       "nameEn": "Martin Erlic",
       "team": "크로아티아",
-      "club": "FC 미트윌란",
+      "club": "미트윌란",
       "league": "수페르리가엔 (덴마크)",
       "position": "DF",
       "age": 28,
@@ -52982,7 +53092,8 @@ window.DATA = {
         "skill": 58,
         "value": 58,
         "fame": 41
-      }
+      },
+      "number": 24
     },
     {
       "id": "cho-wi-je",
@@ -53015,7 +53126,8 @@ window.DATA = {
         "skill": 55,
         "value": 55,
         "fame": 39
-      }
+      },
+      "number": 5
     },
     {
       "id": "jens-castrop",
@@ -53048,7 +53160,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 51
-      }
+      },
+      "number": 23
     },
     {
       "id": "kim-jin-gyu",
@@ -53081,7 +53194,8 @@ window.DATA = {
         "skill": 66,
         "value": 66,
         "fame": 50
-      }
+      },
+      "number": 4
     },
     {
       "id": "jacob-shaffelburg",
@@ -53362,7 +53476,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 60
-      }
+      },
+      "number": 21
     },
     {
       "id": "youssef-belammari",
@@ -55018,7 +55133,8 @@ window.DATA = {
         "skill": 71,
         "value": 75,
         "fame": 55
-      }
+      },
+      "number": 20
     },
     {
       "id": "noni-madueke",
@@ -55056,7 +55172,8 @@ window.DATA = {
         "skill": 78,
         "value": 78,
         "fame": 61
-      }
+      },
+      "number": 25
     },
     {
       "id": "kristijan-jakic",
