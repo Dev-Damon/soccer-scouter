@@ -179,6 +179,14 @@
     return all.slice(0, limit || 8);
   }
 
+  var WITTY = [
+    "축알못이 만든 축구분석 사이트",
+    "따뜻한 응원보단 신랄한 비판 지향",
+    "전문성? 그런 거 없습니다",
+    "분석이라 쓰고 뇌피셜이라 읽는다",
+    "맞으면 실력, 틀리면 모른 척",
+    "정확도는 보장 못 합니다 (재미는 보장)"
+  ];
   function isKoreaFx(f) { return f.homeName === "대한민국" || f.awayName === "대한민국" || f.homeId === "south-korea" || f.awayId === "south-korea"; }
   function ddayCount(targetKst, todayKst) { return Math.round((Date.parse(targetKst + "T00:00:00Z") - Date.parse(todayKst + "T00:00:00Z")) / 86400000); }
   function topBanner() {
@@ -194,7 +202,9 @@
       if (next) { var d2 = ddayCount(next, today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
       else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
     }
-    return '<div class="hero-banner"><div class="hb-title">2026 월드컵, 국가와 선수를 한눈에</div>' +
+    var witty = WITTY[Math.floor(Math.random() * WITTY.length)];
+    return '<div class="hero-banner"><div class="hb-title">2026 월드컵,<br>국가와 선수를 한눈에</div>' +
+      '<div class="hb-sub">' + esc(witty) + "</div>" +
       '<div class="hb-dday">' + dday + "</div></div>";
   }
 
