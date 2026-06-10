@@ -501,6 +501,7 @@
     var more = (list.length > rankLimit) ? '<button class="rank-more">더보기 (' + (list.length - rankLimit) + "명)</button>" : "";
     wrap.innerHTML = '<div class="sec-h">⚡ 선수 랭킹</div>' + sortUi + posUi +
       '<div class="rank-list">' + shown.map(function (p, i) { return rankCard(p, i + 1); }).join("") + "</div>" + more;
+    twem(wrap);  // 동적 렌더된 국기 이모지 → 트위모지 이미지 변환
   }
 
   function renderSearch(q) {
@@ -610,6 +611,7 @@
     slot.innerHTML = '<div class="block rate-box"><h3>선수 평점 <span class="muted-note">유저 평가</span></h3>' +
       '<div class="rate-stars">' + stars + "</div>" +
       '<div class="rate-avg">' + avg + (mine ? ' · 내 평점 ' + mine + "★" : "") + "</div></div>";
+    twem(slot);
   }
 
   function renderPlayer(id) {
