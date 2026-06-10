@@ -688,6 +688,23 @@
       '<span class="cmp-v' + (vb >= va ? " hi" : "") + '">' + vb + "</span></div>";
   }
 
+  function newsItemHtml(nw) {
+    var meta = [nw.source, nw.date].filter(Boolean).map(esc).join(" · ");
+    var tag = nw.url ? "a" : "div";
+    var foot = meta + (nw.url ? (meta ? " · " : "") + "원문 보기 ↗" : "");
+    return "<" + tag + ' class="news-item' + (nw.url ? " ext" : "") + '"' +
+      (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
+      '<div class="news-title">' + esc(nw.title) + "</div>" +
+      (nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
+      (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
+      "</" + tag + ">";
+  }
+  function matchNews(team, max) {
+    if (!team || !team.news || !team.news.length) return "";
+    var kn = team.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, max || 3);
+    return '<div class="mn-team"><div class="mn-h"><span class="mn-flag">' + esc(team.flag) + "</span>" + esc(team.name) + " 주요 소식</div>" +
+      '<div class="news-list">' + kn.map(newsItemHtml).join("") + "</div></div>";
+  }
   function renderMatch(id) {
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
@@ -743,6 +760,8 @@
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
         '<div class="block h2h-slot"></div>' +
+        ((a.news && a.news.length) || (b.news && b.news.length) ?
+          '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
         '<div class="match-cta">' +
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
