@@ -2,7 +2,7 @@ const https = require('https'), fs = require('fs');
 function get(u){return new Promise(r=>{https.get(u,{headers:{'User-Agent':'Mozilla/5.0'}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))}).on('error',()=>r(''))})}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 global.window={}; require('../data.js'); const D=global.window.DATA;
-const teamsById={}; D.teams.forEach(t=>teamsById[t.id]=t);
+const teamsById={}, teamsByName={}; D.teams.forEach(t=>{teamsById[t.id]=t; teamsByName[t.name]=t;});
 function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z ]/g,'').trim();}
 const byName={};
 D.players.forEach(p=>{ if(!p.nameEn)return; var n=norm(p.nameEn); byName[n]=p; var parts=n.split(' '); if(parts.length>1){var sur='__sur_'+parts[parts.length-1]; if(!byName[sur])byName[sur]=p;} });
@@ -31,7 +31,7 @@ if(!DATES.length){ DATES=[...new Set(D.fixtures.map(f=>(f.kstDate||f.date||'').r
     });
     await sleep(110);
   }
-  const out=Object.values(stats).map(s=>{ var t=s.teamId&&teamsById[s.teamId]; return {name:s.name, team:t?t.name:'', flag:t?t.flag:'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red}; });
+  const out=Object.values(stats).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {name:s.name, team:t?t.name:'', flag:t?t.flag:'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red}; });
   fs.writeFileSync('stats.json', JSON.stringify({players:out}));
   console.log('경기:',eids.size,'| 기록선수:',out.length);
   return out;
