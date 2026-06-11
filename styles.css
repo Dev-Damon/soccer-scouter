@@ -830,7 +830,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .vs-clock { font-size: 11px; font-weight: 800; color: var(--muted); margin-top: 2px; }
 .vs-clock.live { color: #ff5e63; }
 .vs-clock.live::before { content: "● "; }
-.adslot { text-align: center; margin: 18px 0 6px; padding: 11px 10px 12px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; }
+.adslot { text-align: center; margin: 18px 0 6px; padding: 11px 10px 12px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.detail .adslot { margin-left: -20px; margin-right: -20px; }  /* .detail 20px 패딩 밖으로 → 320px 광고 폭 확보 */
 .adslot .kakao_ad_area, .adslot iframe { border-radius: 8px; overflow: hidden; }
 .ad-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; letter-spacing: 1px; }
 .kakao_ad_area { margin: 0 auto; }
