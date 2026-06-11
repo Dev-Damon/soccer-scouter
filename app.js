@@ -1158,18 +1158,21 @@
   // 경기 예상 라인업 피치(두 팀 마주보기) — 자체 t.lineup 기반(경기 전에도 항상)
   function matchFormation(a, b) {
     if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
-    var W = 720, H = 440, padX = 0.08, span = 0.38;
+    var W = 720, H = 440, padX = 0.08, span = 0.40;
     function side(t, left, col) {
       return (t.lineup || []).map(function (d) {
         var p = playersById[d.playerId] || {};
-        var num = (p.number != null ? p.number : ""), nm = (p.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
+        var num = (p.number != null ? p.number : "");
+        var nm = (p.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
+        if (nm.length > 5) nm = nm.slice(0, 4) + "…";  // 너무 긴 이름은 줄임(겹침 방지, 탭하면 상세)
         var fx = (90 - d.y) / 70;
         var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
+        px = left ? Math.min(px, W * 0.43) : Math.max(px, W * 0.57);  // 중앙 버퍼 — 양팀 공격수 이름이 가운데서 안 겹치게
         var py = (d.x / 100) * 0.80 * H + 0.10 * H;
         var pd = p.id ? ' data-player="' + esc(p.id) + '"' : "";
         return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
           '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-          '<text x="' + px.toFixed(0) + '" y="' + (py + 36).toFixed(0) + '" fill="#fff" font-size="23" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.35);stroke-width:3px">' + esc(nm) + "</text></g>";
+          '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text></g>";
       }).join("");
     }
     var pitch = '<rect class="mf-grass" width="' + W + '" height="' + H + '"/>' +
