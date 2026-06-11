@@ -1330,6 +1330,8 @@
       var eid = espnIdCache[fx.id]; if (eid) delete summaryCache[eid];
       fetchSummary(fx).then(function (d) { if (d && parseHash().name === "match") renderLineup(slot, d, a, b); });
     }
+    // fetchLive(스코어 폴링)가 끝날 때마다 즉시 이 경기 점수 갱신(다음 20초 틱 안 기다림)
+    window._matchLiveTick = function () { updScore(); var lv = LIVE[fx.id]; if (lv && lv.state === "in") refreshLineup(); };
     updScore();
     var lvNow = LIVE[fx.id], ko = matchKickoff(fx);
     // 킥오프 2시간 전 ~ 종료 후까지 타이머 가동(선발 라인업 뜨자마자 자동 교체 + 라이브 스코어)
@@ -1459,6 +1461,7 @@
     if (!window.fetch) return;
     fetch(ESPN_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
       var res = applyEspn(d);
+      if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
       if (res.changed && onHomeSchedule()) renderSchedule();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
       scheduleLive(res.anyLive ? 15000 : (res.anyToday ? 180000 : 0));  // 라이브 15초 / 임박 3분 / 없으면 중단
@@ -2110,7 +2113,7 @@
   }
 
   var matchLiveTimer = null;
-  function stopMatchLive() { if (matchLiveTimer) { clearInterval(matchLiveTimer); matchLiveTimer = null; } }
+  function stopMatchLive() { if (matchLiveTimer) { clearInterval(matchLiveTimer); matchLiveTimer = null; } window._matchLiveTick = null; }
   function route() {
     var r = parseHash();
     window.scrollTo(0, 0);
@@ -2449,6 +2452,9 @@
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
   fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분)
+  // 모바일은 백그라운드에서 타이머가 멈춤 → 앱으로 돌아오는 즉시 점수 재요청(딜레이 없이 최신)
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible" && window.fetch) fetchLive(); });
+  window.addEventListener("focus", function () { if (window.fetch) fetchLive(); });
 
   // 자동수집 뉴스(news.json, GitHub Actions 4시간 크론) 로드 → 팀별 news 최신화 후 현재 화면 다시 렌더
   function loadNews() {
