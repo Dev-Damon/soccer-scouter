@@ -2079,6 +2079,7 @@
       return;
     }
     if ((my = e.target.closest("[data-pred]"))) { var ps = my.closest(".pred-slot"); if (ps && ps._predFx && ps._predOpen && window.KickComments) KickComments.predVote(ps._predFx, my.getAttribute("data-pred")).then(ps._predPaint); return; }
+    if ((my = e.target.closest(".bet-loginbtn"))) { if (window.KickComments && KickComments.signIn) KickComments.signIn(my.getAttribute("data-p") || "google"); return; }
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
     if ((my = e.target.closest("[data-betamt]"))) { var bsa = my.closest(".bet-slot"); if (bsa && bsa._betReload) { bsa._betStake = parseInt(my.getAttribute("data-betamt"), 10); bsa._betReload(); } return; }
     if ((my = e.target.closest("[data-betch]"))) {
