@@ -1563,8 +1563,8 @@
     var blkAppId = espnTeamId(blk.team && blk.team.displayName);
     // 대한민국이 낀 경기는 홈/원정 무관 '대한민국 기준', 그 외엔 홈팀 기준
     var perspId = (fx.homeId === "south-korea" || fx.awayId === "south-korea") ? "south-korea" : fx.homeId;
-    var perspName = (perspId === fx.awayId) ? b.name : a.name;
-    var oppName = (perspName === a.name) ? b.name : a.name;
+    var persp = (b.id === perspId) ? b : a;  // perspId 팀(한국 경기면 항상 한국) — a/b 스왑과 무관하게 id로 매칭
+    var perspName = persp.name, oppName = (persp === a ? b : a).name;
     var blockIsPersp = (blkAppId === perspId);
     var w = 0, dr = 0, l = 0, rows = "";
     blk.events.forEach(function (e) {
