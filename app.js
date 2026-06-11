@@ -749,7 +749,7 @@
       angs.map(function (a) { var r = a * Math.PI / 180; return '<line x1="' + cx + '" y1="' + cy + '" x2="' + (cx + R * Math.cos(r)).toFixed(1) + '" y2="' + (cy + R * Math.sin(r)).toFixed(1) + '" stroke="#2a3a5c" stroke-width="1"/>'; }).join("");
     var poly = dims.map(function (d, i) { var q = pt(d[1] || 0, i); return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" ");
     var dots = dims.map(function (d, i) { var q = pt(d[1] || 0, i); return '<circle cx="' + q[0].toFixed(1) + '" cy="' + q[1].toFixed(1) + '" r="3.5" fill="#4f8cff"/>'; }).join("");
-    var labels = dims.map(function (d, i) { var r = angs[i] * Math.PI / 180, lx = cx + (R + 26) * Math.cos(r), ly = cy + (R + 26) * Math.sin(r), anc = Math.abs(Math.cos(r)) < 0.3 ? "middle" : (Math.cos(r) > 0 ? "start" : "end"); return '<text x="' + lx.toFixed(0) + '" y="' + (ly + 4).toFixed(0) + '" fill="#cdd8e6" font-size="15" font-weight="700" text-anchor="' + anc + '">' + d[0] + " " + (d[1] || 0) + "</text>"; }).join("");
+    var labels = dims.map(function (d, i) { var r = angs[i] * Math.PI / 180, lx = cx + (R + 26) * Math.cos(r), ly = cy + (R + 26) * Math.sin(r), anc = Math.abs(Math.cos(r)) < 0.3 ? "middle" : (Math.cos(r) > 0 ? "start" : "end"); return '<text x="' + lx.toFixed(0) + '" y="' + (ly + 4).toFixed(0) + '" class="pr-lbl" font-size="15" font-weight="700" text-anchor="' + anc + '">' + d[0] + " " + (d[1] || 0) + "</text>"; }).join("");
     var radar = '<svg viewBox="-25 0 390 315" class="pw-radar">' + grid + '<polygon points="' + poly + '" fill="rgba(79,140,255,.28)" stroke="#4f8cff" stroke-width="2.5"/>' + dots + labels + "</svg>";
     var bars = dims.slice().sort(function (a, b) { return (b[1] || 0) - (a[1] || 0); }).map(function (d) {
       var v = d[1] || 0, col = v >= 85 ? "#4f8cff" : v >= 70 ? "#5bbf8a" : v >= 55 ? "#f0a93b" : "#e5748a";
@@ -811,7 +811,7 @@
     var grid = [0.25, 0.5, 0.75, 1].map(function (f) { return '<polygon points="' + rpf(f) + '" fill="none" stroke="#2a3a5c" stroke-width="1"/>'; }).join("") +
       angs.map(function (a) { var r = a * Math.PI / 180; return '<line x1="' + cx + '" y1="' + cy + '" x2="' + (cx + R * Math.cos(r)).toFixed(1) + '" y2="' + (cy + R * Math.sin(r)).toFixed(1) + '" stroke="#2a3a5c"/>'; }).join("");
     function poly(pw, col, fl) { var pts = CMP_KEYS.map(function (k, i) { var a = angs[i] * Math.PI / 180, v = (pw[k] || 0) / 100; return (cx + v * R * Math.cos(a)).toFixed(1) + "," + (cy + v * R * Math.sin(a)).toFixed(1); }).join(" "); return '<polygon points="' + pts + '" fill="' + fl + '" stroke="' + col + '" stroke-width="2.5"/>'; }
-    var labels = CMP_KEYS.map(function (k, i) { var r = angs[i] * Math.PI / 180, lx = cx + (R + 26) * Math.cos(r), ly = cy + (R + 26) * Math.sin(r), anc = Math.abs(Math.cos(r)) < 0.3 ? "middle" : (Math.cos(r) > 0 ? "start" : "end"); return '<text x="' + lx.toFixed(0) + '" y="' + (ly + 4).toFixed(0) + '" fill="#cdd8e6" font-size="14" font-weight="700" text-anchor="' + anc + '">' + k + "</text>"; }).join("");
+    var labels = CMP_KEYS.map(function (k, i) { var r = angs[i] * Math.PI / 180, lx = cx + (R + 26) * Math.cos(r), ly = cy + (R + 26) * Math.sin(r), anc = Math.abs(Math.cos(r)) < 0.3 ? "middle" : (Math.cos(r) > 0 ? "start" : "end"); return '<text x="' + lx.toFixed(0) + '" y="' + (ly + 4).toFixed(0) + '" class="pr-lbl" font-size="14" font-weight="700" text-anchor="' + anc + '">' + k + "</text>"; }).join("");
     return '<svg viewBox="-25 0 390 315" class="pw-radar">' + grid + poly(pwA, "#4f8cff", "rgba(79,140,255,.22)") + poly(pwB, "#f0a93b", "rgba(240,169,59,.20)") + labels + "</svg>";
   }
   function paintCmpResults(q) {
@@ -1989,7 +1989,13 @@
     var ex = e.target.closest("[data-expand]");
     if (ex) { var elist = ex.parentNode.querySelector(".news-list"); if (elist) elist.classList.remove("news-collapsed"); ex.style.display = "none"; return; }
     var sbtn = e.target.closest(".save-btn");
-    if (sbtn) { sbtn.classList.toggle("on", saveToggle(sbtn.getAttribute("data-save"))); return; }
+    if (sbtn) {
+      if (sbtn._sbusy) return; sbtn._sbusy = true; setTimeout(function () { sbtn._sbusy = false; }, 350);  // 연타 방지
+      var saved = saveToggle(sbtn.getAttribute("data-save"));
+      sbtn.classList.toggle("on", saved);
+      if (saved) { sbtn.classList.remove("pop"); void sbtn.offsetWidth; sbtn.classList.add("pop"); }  // 저장 시 팝 애니메이션
+      return;
+    }
     var rst = e.target.closest(".mr-pt");
     if (rst) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var rpid = rst.getAttribute("data-rate-pid"), sc = +rst.getAttribute("data-score"); ((mrCtx.mine && mrCtx.mine[rpid] === sc) ? KickComments.unrateMatchPlayer(mrCtx.matchId, rpid) : KickComments.rateMatchPlayer(mrCtx.matchId, rpid, sc)).then(refreshMatchRatings); return; }
     var mvb = e.target.closest(".mr-mvp");

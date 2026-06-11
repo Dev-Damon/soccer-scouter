@@ -278,7 +278,8 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .pw-radarwrap { display: flex; justify-content: center; margin: 2px 0 8px; }
 .pw-radar { width: 100%; max-width: 340px; height: auto; }
 .pw-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.pw-bn { width: 52px; font-size: 12.5px; font-weight: 700; color: #cdd8e6; flex: none; }
+.pw-bn { width: 52px; font-size: 12.5px; font-weight: 700; color: var(--muted); flex: none; }
+.pr-lbl { fill: var(--muted); }
 .pw-bt { flex: 1; height: 9px; background: var(--bg-soft); border-radius: 6px; overflow: hidden; }
 .pw-bf { height: 100%; border-radius: 6px; }
 .pw-bv { width: 24px; text-align: right; font-size: 13px; font-weight: 800; flex: none; }
@@ -917,3 +918,6 @@ html.light .pitch { background: linear-gradient(160deg, #5fb588, #4ba06d); }
 /* 경기 피치 잔디 — 다크는 어둡게, 라이트는 밝게(#2e8b54) */
 .mf-grass { fill: #13351f; }
 html.light .mf-grass { fill: #2e8b54; }
+/* 저장 별 팝 애니메이션 */
+@keyframes savePop { 0% { transform: scale(1); } 30% { transform: scale(1.55) rotate(-14deg); } 55% { transform: scale(.82) rotate(8deg); } 78% { transform: scale(1.12) rotate(-3deg); } 100% { transform: scale(1) rotate(0); } }
+.save-btn.pop { animation: savePop .5s cubic-bezier(.3,1.4,.5,1); }
