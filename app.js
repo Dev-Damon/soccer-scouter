@@ -1115,7 +1115,7 @@
           '<text x="' + px.toFixed(0) + '" y="' + (py + 30).toFixed(0) + '" fill="#e6edf8" font-size="12" font-weight="400" text-anchor="middle">' + esc(nm) + "</text></g>";
       }).join("");
     }
-    var pitch = '<rect width="' + W + '" height="' + H + '" fill="#13351f"/>' +
+    var pitch = '<rect class="mf-grass" width="' + W + '" height="' + H + '"/>' +
       '<rect x="6" y="6" width="' + (W - 12) + '" height="' + (H - 12) + '" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
       '<line x1="' + (W / 2) + '" y1="6" x2="' + (W / 2) + '" y2="' + (H - 6) + '" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
       '<circle cx="' + (W / 2) + '" cy="' + (H / 2) + '" r="54" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +

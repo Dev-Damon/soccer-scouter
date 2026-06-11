@@ -913,3 +913,6 @@ html.light .pitch { background: linear-gradient(160deg, #5fb588, #4ba06d); }
 .of-bar { flex: 1; height: 7px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
 .of-bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #3a6fd8); }
 .of-r { flex: none; width: 30px; text-align: right; font-weight: 800; color: var(--accent); }
+/* 경기 피치 잔디 — 다크는 어둡게, 라이트는 밝게(#2e8b54) */
+.mf-grass { fill: #13351f; }
+html.light .mf-grass { fill: #2e8b54; }
