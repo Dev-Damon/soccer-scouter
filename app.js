@@ -557,11 +557,13 @@
   }
 
   // ===================== 공통: 선수 행 =====================
-  function playerRow(p, hideScore) {
+  function playerRow(p, hideScore, clubLeague) {
+    // clubLeague: 나라상세에선 나라명 대신 '클럽 · 리그' 표시
+    var sub = clubLeague ? (esc(p.club) + (p.league ? " · " + esc(p.league) : "")) : (esc(p.team) + " · " + esc(p.club));
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
       numBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
-      '<div class="player-sub">' + esc(p.team) + " · " + esc(p.club) + "</div></div>" +
+      '<div class="player-sub">' + sub + "</div></div>" +
       badge(p, hideScore) + "</div>";
   }
 
@@ -1049,7 +1051,7 @@
 
     // 전체 선수단
     var rosterHtml = roster.length
-      ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, true); }).join("") + "</div>"
+      ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, true, true); }).join("") + "</div>"
       : '<div class="empty">선수 데이터를 채우는 중입니다.</div>';
     html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
     html += '<div class="adslot"></div>';
