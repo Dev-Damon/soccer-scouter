@@ -1156,33 +1156,84 @@
       '<div class="news-list">' + kn.map(newsItemHtml).join("") + "</div></div>";
   }
   // 경기 예상 라인업 피치(두 팀 마주보기) — 자체 t.lineup 기반(경기 전에도 항상)
-  function matchFormation(a, b) {
-    if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
+  function normName(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z ]/g, "").trim(); }
+  var _nameMap = null;
+  function playerByName(nm) {
+    if (!_nameMap) { _nameMap = {}; (DATA.players || []).forEach(function (p) { if (!p.nameEn) return; var n = normName(p.nameEn); _nameMap[n] = p; var sur = "_s" + n.split(" ").pop(); if (!_nameMap[sur]) _nameMap[sur] = p; }); }
+    var n = normName(nm); return _nameMap[n] || _nameMap["_s" + n.split(" ").pop()] || null;
+  }
+  // ESPN 포지션 약어 → 깊이밴드(0=GK,1=수비,2=미드,3=공미,4=공격) + 좌우값
+  function espnBand(abbr) {
+    var a = (abbr || "").toUpperCase();
+    if (a === "G" || a === "GK") return 0;
+    if (/AM/.test(a)) return 3;
+    if (/^(F|CF|ST|SS|RF|LF|RW|LW|W)(-|$)/.test(a)) return 4;
+    if (/^(DM|CM|RM|LM|M)(-|$)/.test(a)) return 2;
+    if (/^(CD|CB|RB|LB|RWB|LWB|WB|D)(-|$)/.test(a)) return 1;
+    return 2;
+  }
+  function espnSideV(abbr) {
+    var a = (abbr || "").toUpperCase();
+    var s = /-L$/.test(a) ? -2 : /-R$/.test(a) ? 2 : /^L/.test(a) ? -2 : /^R/.test(a) ? 2 : 0;
+    if (/B$/.test(a) && s) s *= 1.4;
+    return s;
+  }
+  function espnLineupCoords(rs) {
+    var starters = (rs.roster || []).filter(function (p) { return p.starter; });
+    if (starters.length < 9) return null;
+    var bands = { 0: [], 1: [], 2: [], 3: [], 4: [] };
+    starters.forEach(function (p) { var abbr = (p.position && p.position.abbreviation) || ""; bands[espnBand(abbr)].push({ p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0 }); });
+    var depth = { 0: 88, 1: 68, 2: 48, 3: 28, 4: 10 };
+    var out = [];
+    Object.keys(bands).forEach(function (bk) {
+      var arr = bands[bk]; if (!arr.length) return;
+      arr.sort(function (x, y) { return (x.sv - y.sv) || (x.fp - y.fp); });
+      arr.forEach(function (it, i) { out.push({ p: it.p, x: arr.length === 1 ? 50 : (i + 0.5) / arr.length * 100, y: depth[bk] }); });
+    });
+    return out;
+  }
+  function pitchSVG(plA, plB) {
     var W = 720, H = 440, padX = 0.08, span = 0.40;
-    function side(t, left, col) {
-      return (t.lineup || []).map(function (d) {
-        var p = playersById[d.playerId] || {};
-        var num = (p.number != null ? p.number : "");
-        var nm = (p.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
-        if (nm.length > 5) nm = nm.slice(0, 4) + "…";  // 너무 긴 이름은 줄임(겹침 방지, 탭하면 상세)
+    function side(players, left, col) {
+      return players.map(function (d) {
+        var num = (d.number != null && d.number !== "") ? d.number : "";
+        var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
+        if (nm.length > 5) nm = nm.slice(0, 4) + "…";
         var fx = (90 - d.y) / 70;
         var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
-        px = left ? Math.min(px, W * 0.43) : Math.max(px, W * 0.57);  // 중앙 버퍼 — 양팀 공격수 이름이 가운데서 안 겹치게
+        px = left ? Math.min(px, W * 0.43) : Math.max(px, W * 0.57);
         var py = (d.x / 100) * 0.80 * H + 0.10 * H;
-        var pd = p.id ? ' data-player="' + esc(p.id) + '"' : "";
+        var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";
         return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
           '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
           '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text></g>";
       }).join("");
     }
-    var pitch = '<rect class="mf-grass" width="' + W + '" height="' + H + '"/>' +
-      '<rect x="6" y="6" width="' + (W - 12) + '" height="' + (H - 12) + '" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
-      '<line x1="' + (W / 2) + '" y1="6" x2="' + (W / 2) + '" y2="' + (H - 6) + '" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
-      '<circle cx="' + (W / 2) + '" cy="' + (H / 2) + '" r="54" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
-      '<rect x="6" y="' + (H / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>' +
-      '<rect x="' + (W - 84) + '" y="' + (H / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>';
-    var head = '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + " <b>" + esc(a.formation || "") + '</b></span><span class="mf-b"><b>' + esc(b.formation || "") + "</b> " + esc(b.name) + " " + esc(b.flag) + "</span></div>";
-    return '<h3>📋 예상 라인업 <span class="muted-note">탭하면 선수 상세</span></h3>' + head + '<div class="mf-wrap"><svg viewBox="0 0 ' + W + " " + H + '" class="mf-pitch">' + pitch + side(a, true, "#4f8cff") + side(b, false, "#e5566a") + "</svg></div>";
+    var W2 = 720, H2 = 440;
+    var pitch = '<rect class="mf-grass" width="' + W2 + '" height="' + H2 + '"/>' +
+      '<rect x="6" y="6" width="' + (W2 - 12) + '" height="' + (H2 - 12) + '" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
+      '<line x1="' + (W2 / 2) + '" y1="6" x2="' + (W2 / 2) + '" y2="' + (H2 - 6) + '" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
+      '<circle cx="' + (W2 / 2) + '" cy="' + (H2 / 2) + '" r="54" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>' +
+      '<rect x="6" y="' + (H2 / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>' +
+      '<rect x="' + (W2 - 84) + '" y="' + (H2 / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>';
+    return '<div class="mf-wrap"><svg viewBox="0 0 ' + W2 + " " + H2 + '" class="mf-pitch">' + pitch + side(plA, true, "#4f8cff") + side(plB, false, "#e5566a") + "</svg></div>";
+  }
+  function mfHead(a, fa, b, fb) {
+    return '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + esc(b.name) + " " + esc(b.flag) + "</span></div>";
+  }
+  function matchFormation(a, b) {
+    if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
+    function toPl(t) { return (t.lineup || []).map(function (d) { var p = playersById[d.playerId] || {}; return { name: p.name || "", number: p.number, x: d.x, y: d.y, pid: p.id }; }); }
+    return '<h3>📋 예상 라인업 <span class="muted-note">탭하면 선수 상세</span></h3>' + mfHead(a, a.formation, b, b.formation) + pitchSVG(toPl(a), toPl(b));
+  }
+  function espnPitch(d, a, b) {
+    var rosters = d.rosters || [];
+    function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
+    var ra = rosterFor(a), rb = rosterFor(b);
+    var ca = ra && espnLineupCoords(ra), cb = rb && espnLineupCoords(rb);
+    if (!ca || !cb) return null;
+    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
+    return '<h3>📋 선발 라인업 <span class="muted-note">실시간 · 탭하면 상세</span></h3>' + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
   }
   function renderMatch(id) {
     var fx = fixturesById[id];
@@ -1234,7 +1285,7 @@
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
         '<div class="block h2h-slot"></div>' +
-        (mf ? '<div class="block">' + mf + "</div>" : "") +
+        '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
         '<div class="block lineup-slot"></div>' +
         '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
@@ -1654,6 +1705,10 @@
     if (events.length) html += '<div class="lu-events"><h3>⚽ 주요 이벤트</h3>' + events.map(luEvent).join("") + "</div>";
     slot.innerHTML = html;
     twem(slot);
+    // 실제 선발 라인업이 오면 포메이션 피치도 '예상→실시간'으로 자동 교체
+    if (hasLineup) {
+      try { var ep = espnPitch(d, a, b); var mb = viewEl.querySelector(".mf-block"); if (ep && mb) { mb.innerHTML = ep; mb.style.display = ""; twem(mb); } } catch (e) {}
+    }
   }
   // ===== 경기 평점·MVP =====
   var mrCtx = null;
