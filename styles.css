@@ -131,7 +131,7 @@ html, body {
 .fx-live .lv-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: lvblink 1.1s infinite ease-in-out; }
 @keyframes lvblink { 50% { opacity: .2; } }
 .fx-final { margin-top: 1px; font-size: 10.5px; font-weight: 800; color: var(--muted); }
-.fx-goals { grid-column: 1 / -1; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: #c7d3e0; font-size: 12px; text-align: center; }
+.fx-goals { grid-column: 1 / -1; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--text); font-size: 12px; text-align: center; }
 
 /* Group block (조별) */
 .group-card {
@@ -167,7 +167,7 @@ table.stand .tm { display: flex; align-items: center; gap: 8px; }
 table.stand .tm .team-flag { font-size: 20px; flex: none; }
 table.stand .tm-n { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 table.stand td.rk { color: var(--muted); font-weight: 800; width: 20px; }
-table.stand td.pts { font-weight: 900; color: #fff; }
+table.stand td.pts { font-weight: 900; color: var(--text); }
 table.stand tr.qual td.rk { color: var(--accent); }
 table.stand tr.qual { background: rgba(46,230,166,.06); }
 table.stand tr[data-team] { cursor: pointer; }
@@ -480,7 +480,7 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .post-cat { display: inline-block; font-size: 11px; font-weight: 800; color: var(--accent); background: rgba(79,140,255,.12); border-radius: 999px; padding: 2px 9px; }
 .post-title { font-size: 20px; font-weight: 800; margin: 8px 0 4px; line-height: 1.3; }
 .post-meta { color: var(--muted); font-size: 12.5px; margin-bottom: 14px; }
-.post-body { font-size: 15px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; color: #e8eef6; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.post-body { font-size: 15px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; color: var(--text); padding-bottom: 16px; border-bottom: 1px solid var(--line); }
 .post-act { display: flex; gap: 10px; margin: 14px 0; }
 .post-like { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 14px; font-weight: 700; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
 .post-like.on { color: #e5484d; border-color: #e5484d; }
