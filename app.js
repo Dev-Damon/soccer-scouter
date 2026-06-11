@@ -985,8 +985,9 @@
       var oppNm = opp ? (esc(opp.flag) + " " + esc(opp.name)) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
       var when = esc((fxDate(f) || "") + (fxTime(f) ? " " + fxTime(f) : ""));
       var stage = f.group ? esc(f.group + "조") : esc(f.stage || "");
-      var ko = matchKickoff(f), past = ko && ko < now;
-      return '<div class="ts-row' + (past ? " past" : "") + '" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + (past ? ' <span class="ts-done">종료</span>' : "") + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
+      var lv = LIVE[f.id], live = !!(lv && lv.state === "in"), ended = matchEnded(f);
+      var badge = live ? ' <span class="ts-live">🔴 LIVE</span>' : ended ? ' <span class="ts-done">종료</span>' : "";
+      return '<div class="ts-row' + (ended ? " past" : "") + '" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + badge + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
     }).join("");
     return '<div class="block"><h3>📅 경기 일정</h3><div class="ts-list">' + rows + "</div></div>";
   }
