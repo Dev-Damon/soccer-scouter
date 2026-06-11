@@ -2038,7 +2038,7 @@
       var nav = btn.getAttribute("data-nav");
       searchEl.value = "";
       if (nav === "home") { homeTab = "schedule"; go(""); }
-      else if (nav === "search") { go("search"); setTimeout(function () { searchEl.focus(); }, 30); }
+      else if (nav === "search") { searchEl.focus(); go("search"); }  // iOS: 포커스는 탭 제스처 내에서 동기 호출해야 키보드+커서 함께 뜸(setTimeout이면 커서 안 감)
       else if (nav === "board") { go("board"); }
       else if (nav === "saved") { go("saved"); }
       else if (nav === "my") { go("my"); }
