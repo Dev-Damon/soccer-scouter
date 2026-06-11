@@ -1390,7 +1390,7 @@
   }
   function loadH2H(slot, fx, a, b) {
     if (!slot || !window.fetch) return;
-    slot.innerHTML = '<h3>역대 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';
+    slot.innerHTML = '<h3>최근 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';
     fetchSummary(fx).then(function (d) {
       if (!d) { slot.style.display = "none"; return; }
       renderH2H(slot, d, fx, a, b);
