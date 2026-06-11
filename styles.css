@@ -548,7 +548,7 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .detail-name-en { color: var(--muted); font-size: 13px; }
 .detail-badge { margin-left: auto; }
 
-.oneliner { margin: 14px 0 4px; font-size: 15px; color: #dbe6fb; line-height: 1.5; }
+.oneliner { margin: 14px 0 4px; font-size: 15px; color: var(--text); line-height: 1.5; }
 
 .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
 .fact { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
@@ -718,7 +718,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .ovr { display: flex; flex-direction: column; align-items: center; }
 .ovr-l { font-size: 10px; font-weight: 800; color: var(--muted); }
 .ovr-v { font-size: 33px; font-weight: 900; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
-.quote { margin: 14px 0; padding: 10px 12px; background: var(--bg-soft); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; font-size: 14px; color: #dbe6fb; line-height: 1.5; }
+.quote { margin: 14px 0; padding: 10px 12px; background: var(--bg-soft); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; font-size: 14px; color: var(--text); line-height: 1.5; }
 
 /* 강점/약점 2단 */
 .sw { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
