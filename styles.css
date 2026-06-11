@@ -1031,3 +1031,12 @@ html.light .mf-grass { fill: #2e8b54; }
 .bet-amt::-webkit-outer-spin-button, .bet-amt::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .bet-cancel { width: 100%; margin-top: 9px; padding: 9px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg-soft); color: var(--muted); font-size: 13px; font-weight: 700; cursor: pointer; }
 .bet-cancel:active { transform: scale(.99); }
+/* 라인업: 교체명단 접이식(선발은 피치에 있음) */
+.lu-subs-d { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.lu-subs-d > summary { cursor: pointer; padding: 11px 13px; font-weight: 700; font-size: 13.5px; color: var(--text); background: var(--bg-soft); list-style: none; }
+.lu-subs-d > summary::-webkit-details-marker { display: none; }
+.lu-subs-d > summary::after { content: "  ▼"; color: var(--muted); font-size: 10px; }
+.lu-subs-d[open] > summary::after { content: "  ▲"; }
+.lu-subteam { padding: 10px 13px; }
+.lu-subteam .lu-tn { font-size: 13px; margin-bottom: 6px; }
+.lu-p.clickable { cursor: pointer; }

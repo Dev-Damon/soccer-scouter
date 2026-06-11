@@ -1166,9 +1166,10 @@
   function espnBand(abbr) {
     var a = (abbr || "").toUpperCase();
     if (a === "G" || a === "GK") return 0;
+    if (/^(DM|CDM)(-|$)/.test(a)) return 1.5;   // 수비형 미드 = 별도 라인(4-1-4-1 등)
     if (/AM/.test(a)) return 3;
     if (/^(F|CF|ST|SS|RF|LF|RW|LW|W)(-|$)/.test(a)) return 4;
-    if (/^(DM|CM|RM|LM|M)(-|$)/.test(a)) return 2;
+    if (/^(CM|RM|LM|M)(-|$)/.test(a)) return 2;
     if (/^(CD|CB|RB|LB|RWB|LWB|WB|D)(-|$)/.test(a)) return 1;
     return 2;
   }
@@ -1181,14 +1182,14 @@
   function espnLineupCoords(rs) {
     var starters = (rs.roster || []).filter(function (p) { return p.starter; });
     if (starters.length < 9) return null;
-    var bands = { 0: [], 1: [], 2: [], 3: [], 4: [] };
-    starters.forEach(function (p) { var abbr = (p.position && p.position.abbreviation) || ""; bands[espnBand(abbr)].push({ p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0 }); });
-    var depth = { 0: 88, 1: 68, 2: 48, 3: 28, 4: 10 };
+    var bands = {};
+    starters.forEach(function (p) { var abbr = (p.position && p.position.abbreviation) || ""; var bk = espnBand(abbr); (bands[bk] = bands[bk] || []).push({ p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0 }); });
+    var depth = { "0": 88, "1": 70, "1.5": 56, "2": 44, "3": 28, "4": 12 };
     var out = [];
     Object.keys(bands).forEach(function (bk) {
-      var arr = bands[bk]; if (!arr.length) return;
+      var arr = bands[bk];
       arr.sort(function (x, y) { return (x.sv - y.sv) || (x.fp - y.fp); });
-      arr.forEach(function (it, i) { out.push({ p: it.p, x: arr.length === 1 ? 50 : (i + 0.5) / arr.length * 100, y: depth[bk] }); });
+      arr.forEach(function (it, i) { out.push({ p: it.p, x: arr.length === 1 ? 50 : (i + 0.5) / arr.length * 100, y: depth[bk] != null ? depth[bk] : 44 }); });
     });
     return out;
   }
@@ -1680,9 +1681,10 @@
   }
   function luPlayer(p) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
-    var nm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
+    var enm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
+    var mp = playerByName(enm), nm = mp ? mp.name : enm;
     var pos = (p.position && (p.position.abbreviation || p.position.name)) || "";
-    return '<div class="lu-p"><span class="lu-num">' + esc(num) + '</span><span class="lu-nm">' + esc(nm) + '</span>' + (pos ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + "</div>";
+    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + '><span class="lu-num">' + esc(num) + '</span><span class="lu-nm">' + esc(nm) + '</span>' + (pos ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + "</div>";
   }
   function luEvent(ev) {
     var ty = (ev.type && ev.type.type) || "", clk = (ev.clock && ev.clock.displayValue) || "";
@@ -1697,18 +1699,15 @@
     if (!hasLineup && !events.length) { slot.style.display = "none"; return; }
     var html = "";
     if (hasLineup) {
-      html += "<h3>📋 라인업</h3>";
-      rosters.forEach(function (rs) {
+      // 선발은 피치에 다 있으니 LIST엔 '교체 명단'만(접이식, 평소 접힘 → 경기상세 짧게)
+      var subsHtml = rosters.map(function (rs) {
         var t = teamsById[espnTeamId(rs.team && rs.team.displayName)];
         var nm = t ? (t.flag + " " + t.name) : ((rs.team && rs.team.displayName) || "");
-        var fm = rs.formation ? ' <span class="muted-note">' + esc(rs.formation) + "</span>" : "";
-        var starters = (rs.roster || []).filter(function (p) { return p.starter; });
         var subs = (rs.roster || []).filter(function (p) { return !p.starter; });
-        html += '<div class="lu-team"><div class="lu-tn">' + esc(nm) + fm + "</div>";
-        html += '<div class="lu-list">' + starters.map(luPlayer).join("") + "</div>";
-        if (subs.length) html += '<div class="lu-subh">교체 명단</div><div class="lu-list subs">' + subs.map(luPlayer).join("") + "</div>";
-        html += "</div>";
-      });
+        if (!subs.length) return "";
+        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(luPlayer).join("") + "</div></div>";
+      }).join("");
+      if (subsHtml) html += '<details class="lu-subs-d"><summary>🔄 교체 명단 보기</summary>' + subsHtml + "</details>";
     } else {
       html += '<h3>📋 라인업</h3><div class="lu-wait">선발 라인업은 킥오프 약 1시간 전에 공개돼요.</div>';
     }
