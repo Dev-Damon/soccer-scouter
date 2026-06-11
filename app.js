@@ -1509,8 +1509,33 @@
     if (leader && lead > 0 && playersById[leader]) html += '<div class="mr-lead">🏆 현재 MVP <b>' + esc(playersById[leader].name) + "</b> · " + lead + '표 <span class="muted-note">(총 ' + md.total + "표)</span></div>";
     html += '<div class="mr-hint muted-note">숫자 탭 = 선수 평점(10점) · 🏆 = MVP 투표(경기당 1명)</div>';
     html += '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="mr-list">' + idsA.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
-    html += '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="mr-list">' + idsB.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div></div>";
+    html += '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="mr-list">' + idsB.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
+    html += officialSection(a, b, idsA, idsB) + "</div>";
     viewEl.innerHTML = html; twem(viewEl);
+  }
+  // 공식 평점(참고) — 현재 더미(데모) 데이터. 추후 ratings.json 연동.
+  function dummyRating(pid) {
+    var p = playersById[pid] || {}, ovr = p.ovr || 72, h = 0, s = String(pid);
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 997;
+    var base = 5.9 + (ovr - 65) * 0.045 + (h % 13) / 10;
+    return Math.max(5.5, Math.min(9.3, Math.round(base * 10) / 10));
+  }
+  function officialSection(a, b, idsA, idsB) {
+    var all = idsA.concat(idsB), rmap = {}, potm = null, top = 0;
+    all.forEach(function (pid) { var r = dummyRating(pid); rmap[pid] = r; if (r > top) { top = r; potm = pid; } });
+    function rows(ids) {
+      return ids.slice().sort(function (x, y) { return rmap[y] - rmap[x]; }).map(function (pid) {
+        var p = playersById[pid] || {}, r = rmap[pid];
+        return '<div class="of-row"><span class="of-nm">' + (pid === potm ? "⭐ " : "") + esc(p.name || "") +
+          '</span><span class="of-bar"><span style="width:' + (r / 10 * 100).toFixed(0) + '%"></span></span><span class="of-r">' + r.toFixed(1) + "</span></div>";
+      }).join("");
+    }
+    var pp = playersById[potm] || {};
+    return '<div class="of-wrap"><div class="sec-h">📊 공식 평점 <span class="muted-note">참고용 · 데모 데이터</span></div>' +
+      '<div class="of-mom">🏅 이 경기 MOM(최우수) <b>' + esc(pp.name || "") + '</b> <span class="of-r">' + (rmap[potm] || 0).toFixed(1) + "</span></div>" +
+      '<div class="of-src muted-note">출처: 데모(더미) — 실제 공식 평점은 경기 종료 후 연동 예정</div>' +
+      '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="of-list">' + rows(idsA) + "</div>" +
+      '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="of-list">' + rows(idsB) + "</div></div>";
   }
   function refreshMatchRatings() {
     if (!mrCtx) return;

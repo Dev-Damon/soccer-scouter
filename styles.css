@@ -902,3 +902,14 @@ html.light .brk-stage .con, html.light .brk-stage .csf { background: #dce9fb; bo
 html.light .brk-stage .third { background: #eef2f8; border-color: #d9e0ec; color: #46546d; }
 html.light .brk-note { background: #fff6e0; border-color: #efd584; color: #8a6a00; }
 html.light .pitch { background: linear-gradient(160deg, #5fb588, #4ba06d); }
+/* 공식 평점(참고) 섹션 */
+.of-wrap { margin-top: 22px; padding-top: 8px; border-top: 1px solid var(--line); }
+.of-mom { background: linear-gradient(135deg, rgba(245,179,1,.16), rgba(245,179,1,.05)); border: 1px solid rgba(245,179,1,.38); border-radius: 12px; padding: 11px 14px; font-size: 13.5px; margin: 4px 0 6px; }
+.of-mom b { color: var(--gold); }
+.of-src { font-size: 11px; margin-bottom: 12px; }
+.of-list { display: grid; gap: 7px; margin-bottom: 4px; }
+.of-row { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.of-nm { flex: none; width: 40%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.of-bar { flex: 1; height: 7px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.of-bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #3a6fd8); }
+.of-r { flex: none; width: 30px; text-align: right; font-weight: 800; color: var(--accent); }
