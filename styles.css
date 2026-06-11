@@ -935,3 +935,16 @@ html.light .mf-grass { fill: #2e8b54; }
 .cmt-anon input:focus { outline: none; border-color: var(--accent); }
 /* 모바일 쿠팡 배너 — 좁은 화면만(PC는 좌측 사이드 쿠팡으로 대체) */
 @media (min-width: 1000px) { .cpang-m { display: none; } }
+/* 월드컵 기록(득점왕) 리더보드 */
+.sc-list { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+.sc-row { display: flex; align-items: center; gap: 11px; padding: 11px 12px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+.sc-row.clickable { cursor: pointer; }
+.sc-row.clickable:active { transform: scale(.99); }
+.sc-rank { width: 22px; text-align: center; font-weight: 800; color: var(--muted); font-size: 14px; flex: none; }
+.sc-row:nth-child(1) .sc-rank { color: #f5b301; } .sc-row:nth-child(2) .sc-rank { color: #9fb0cc; } .sc-row:nth-child(3) .sc-rank { color: #cd7f32; }
+.sc-flag { font-size: 22px; flex: none; }
+.sc-flag img { width: 24px; height: 24px; vertical-align: middle; }
+.sc-name { flex: 1; min-width: 0; font-weight: 700; font-size: 14px; display: flex; flex-direction: column; gap: 1px; }
+.sc-team { font-size: 11px; color: var(--muted); font-weight: 500; }
+.sc-val { flex: none; font-weight: 900; font-size: 17px; color: var(--accent); }
+.sc-sub { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 3px; }

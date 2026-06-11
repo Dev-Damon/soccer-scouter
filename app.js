@@ -221,7 +221,37 @@
     });
     if (homeTab === "groups") return renderGroups();
     if (homeTab === "bracket") return renderBracket();
+    if (homeTab === "scorers") return renderScorers();
     return renderSchedule();
+  }
+
+  // ===================== 월드컵 기록(득점왕·도움·자책골·카드) =====================
+  var statsData = null, statsLoading = null, scoreCat = "goals";
+  var SCORE_CATS = [["goals", "⚽ 득점"], ["assists", "🅰️ 도움"], ["og", "🥅 자책골"], ["cards", "🟨 카드"]];
+  function ensureStats() {
+    if (statsData) return Promise.resolve(statsData);
+    if (statsLoading) return statsLoading;
+    statsLoading = fetch("stats.json").then(function (r) { return r.json(); }).then(function (j) { statsData = j; return j; }).catch(function () { statsData = { players: [] }; return statsData; });
+    return statsLoading;
+  }
+  function scVal(p) { return scoreCat === "cards" ? ((p.yellow || 0) + (p.red || 0) * 2) : (p[scoreCat] || 0); }
+  function renderScorers() {
+    ensureStats().then(function (j) {
+      if (parseHash().name !== "home" || homeTab !== "scorers") return;
+      var subs = '<div class="rank-sorts">' + SCORE_CATS.map(function (c) { return '<button class="rank-sb' + (scoreCat === c[0] ? " on" : "") + '" data-scat="' + c[0] + '">' + c[1] + "</button>"; }).join("") + "</div>";
+      var players = (j.players || []).filter(function (p) { return scVal(p) > 0; }).sort(function (a, b) { var d = scVal(b) - scVal(a); return d || (b.goals || 0) - (a.goals || 0); });
+      var html = '<div class="sec-h">👟 월드컵 기록 <span class="muted-note">실시간 집계 · ESPN</span></div>' + subs;
+      if (!players.length) { html += '<div class="empty">아직 기록이 없어요.<br>경기가 시작되면 골·도움·카드가 자동으로 채워져요! ⚽</div>'; viewEl.innerHTML = html; twem(viewEl); return; }
+      var rows = players.slice(0, 50).map(function (p, i) {
+        var v = scoreCat === "cards" ? ('🟨 ' + (p.yellow || 0) + (p.red ? '  🟥 ' + p.red : "")) :
+          (scVal(p) + (scoreCat === "goals" && p.assists ? ' <span class="sc-sub">' + p.assists + 'A</span>' : ""));
+        return '<div class="sc-row' + (p.pid ? " clickable" : "") + '"' + (p.pid ? ' data-player="' + esc(p.pid) + '"' : "") + '>' +
+          '<span class="sc-rank">' + (i + 1) + "</span><span class=\"sc-flag\">" + esc(p.flag || "") + "</span>" +
+          '<span class="sc-name">' + esc(p.name) + '<span class="sc-team">' + esc(p.team || "") + "</span></span>" +
+          '<span class="sc-val">' + v + "</span></div>";
+      }).join("");
+      viewEl.innerHTML = html + '<div class="sc-list">' + rows + "</div>"; twem(viewEl);
+    });
   }
 
   function fixtureDates() {
@@ -1906,6 +1936,7 @@
       KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
       return;
     }
+    if ((my = e.target.closest("[data-scat]"))) { scoreCat = my.getAttribute("data-scat"); renderScorers(); return; }
     if ((my = e.target.closest(".rank-sb"))) { rankSort = my.getAttribute("data-rsort"); rankLimit = 30; paintRanking(); return; }
     if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
     if (e.target.closest(".rank-more")) { rankLimit += 30; paintRanking(); return; }
