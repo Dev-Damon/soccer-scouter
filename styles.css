@@ -958,16 +958,16 @@ html.light .mf-grass { fill: #2e8b54; }
 .sc-statsub { font-size: 10px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 .sc-sub { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 3px; }
 .sc-mainline { display: flex; align-items: baseline; gap: 1px; }
-/* 승부예측 투표 */
-.pred-head { font-weight: 800; font-size: 15px; margin-bottom: 10px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-.pred-meta { font-size: 12px; color: var(--muted); font-weight: 600; }
-.pred-opt { position: relative; display: flex; align-items: center; gap: 9px; width: 100%; padding: 12px 14px; margin-bottom: 7px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg-soft); cursor: pointer; overflow: hidden; font-size: 14px; color: var(--text); text-align: left; }
-.pred-opt:disabled { cursor: default; }
-.pred-opt.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
-.pred-bar { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(58,123,247,.15); z-index: 0; transition: width .45s ease; }
-.pred-opt.on .pred-bar { background: rgba(58,123,247,.28); }
-.pred-flag { position: relative; z-index: 1; font-size: 18px; flex: none; }
-.pred-flag img { width: 20px; height: 20px; vertical-align: middle; }
-.pred-lbl { position: relative; z-index: 1; flex: 1; font-weight: 700; min-width: 0; }
-.pred-pct { position: relative; z-index: 1; font-weight: 900; font-size: 15px; flex: none; }
-.pred-hint { font-size: 11px; color: var(--muted); text-align: center; margin-top: 4px; }
+/* 승부예측 투표 (가로 정렬) */
+.pred-q { font-weight: 800; font-size: 15px; margin-bottom: 11px; }
+.pred-cols { display: flex; gap: 8px; }
+.pred-col { flex: 1; min-width: 0; padding: 13px 6px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--bg-soft); cursor: pointer; display: flex; flex-direction: column; gap: 7px; align-items: center; }
+.pred-col:disabled { cursor: default; }
+.pred-col.on { border-color: var(--accent); background: rgba(58,123,247,.1); }
+.pred-col-team { font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 4px; justify-content: center; color: var(--text); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pred-col-flag { flex: none; font-size: 15px; }
+.pred-col-flag img.emoji { width: 18px; height: 18px; vertical-align: middle; }
+.pred-col-pct { font-weight: 900; font-size: 21px; color: var(--muted); }
+.pred-col.on .pred-col-pct { color: var(--accent); }
+.pred-foot { font-size: 12px; color: var(--muted); margin-top: 11px; text-align: center; }
+.pred-foot b { color: var(--text); }

@@ -1471,30 +1471,42 @@
     if (!slot || !window.KickComments || !KickComments.predCounts) return;
     var leftCh = aIsHome ? "home" : "away", rightCh = aIsHome ? "away" : "home";
     var ko = matchKickoff(fx);
-    var open = ko ? Date.now() < ko : !matchEnded(fx);
+    function isOpen() { return ko ? Date.now() < ko : !matchEnded(fx); }
+    function cd() {
+      if (!isOpen()) return "투표 마감";
+      if (!ko) return "";
+      var ms = ko - Date.now(); if (ms <= 0) return "곧 시작";
+      var m = Math.floor(ms / 60000), h = Math.floor(m / 60), d = Math.floor(h / 24);
+      if (d > 0) return d + "일 " + (h % 24) + "시간 후 종료";
+      if (h > 0) return h + "시간 " + (m % 60) + "분 후 종료";
+      return m + "분 후 종료";
+    }
     function paint(c) {
-      var mine = KickComments.predMine(fx.id), total = c.total || 0;
+      var mine = KickComments.predMine(fx.id), total = c.total || 0, op = isOpen();
       function pct(n) { return total > 0 ? Math.round(n / total * 100) : 0; }
       var opts = [
-        { ch: leftCh, label: a.name + " 승", flag: a.flag, n: c[leftCh] || 0 },
-        { ch: "draw", label: "무승부", flag: "🤝", n: c.draw || 0 },
-        { ch: rightCh, label: b.name + " 승", flag: b.flag, n: c[rightCh] || 0 }
+        { ch: leftCh, name: a.name, flag: a.flag, n: c[leftCh] || 0 },
+        { ch: "draw", name: "무승부", flag: "", n: c.draw || 0 },
+        { ch: rightCh, name: b.name, flag: b.flag, n: c[rightCh] || 0 }
       ];
-      var rows = opts.map(function (o) {
+      var cols = opts.map(function (o) {
         var p = pct(o.n), on = mine === o.ch;
-        return '<button class="pred-opt' + (on ? " on" : "") + '"' + (open ? ' data-pred="' + o.ch + '"' : " disabled") + '>' +
-          '<span class="pred-bar" style="width:' + p + '%"></span>' +
-          '<span class="pred-flag">' + esc(o.flag) + '</span><span class="pred-lbl">' + esc(o.label) + "</span>" +
-          '<span class="pred-pct">' + p + "%</span></button>";
+        return '<button class="pred-col' + (on ? " on" : "") + '"' + (op ? ' data-pred="' + o.ch + '"' : " disabled") + '>' +
+          '<span class="pred-col-team">' + (o.flag ? '<span class="pred-col-flag">' + esc(o.flag) + "</span>" : "") + esc(o.name) + "</span>" +
+          '<span class="pred-col-pct">' + p + "%</span></button>";
       }).join("");
-      slot.innerHTML = '<div class="pred-box"><div class="pred-head">🔮 승부예측 <span class="pred-meta">' +
-        (total ? total.toLocaleString() + "명 참여" : "첫 예측을 남겨보세요") + (open ? "" : " · 투표 마감") + "</span></div>" +
-        rows + (open ? '<div class="pred-hint">' + (mine ? "다시 눌러 예측 변경 가능" : "로그인 없이 익명 투표 · 기기당 1표") + "</div>" : "") + "</div>";
+      slot.innerHTML = '<div class="pred-box"><div class="pred-q">이 경기의 승리팀을 맞혀보세요! 🔮</div>' +
+        '<div class="pred-cols">' + cols + "</div>" +
+        '<div class="pred-foot">' + (total ? "<b>" + total.toLocaleString() + "</b>명 참여중" : "첫 예측을 남겨보세요") + " · ⏱ " + cd() + "</div></div>";
+      slot._predOpen = op;
       twem(slot);
     }
     paint({ total: 0 });
-    slot._predFx = fx.id; slot._predPaint = paint; slot._predOpen = open;
-    KickComments.predCounts(fx.id).then(paint);
+    slot._predFx = fx.id; slot._predPaint = paint;
+    function refresh() { KickComments.predCounts(fx.id).then(function (c) { if (document.body.contains(slot)) paint(c); }); }
+    refresh();
+    if (window._predTimer) clearInterval(window._predTimer);
+    window._predTimer = setInterval(function () { if (!document.body.contains(slot)) { clearInterval(window._predTimer); return; } refresh(); }, 30000);
   }
 
   function loadH2H(slot, fx, a, b) {
