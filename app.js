@@ -1055,9 +1055,10 @@
       html += "</div></div>";
     }
 
-    // 예상 포메이션 피치 (있으면)
+    html += '<div class="team-live-slot"></div>';  // 라이브 경기 배너(이 팀이 뛰는 중이면)
+    // 예상 포메이션 피치 (있으면) — 선발 확정되면 자동으로 '선발 포메이션'으로 교체
     if (t.lineup && t.lineup.length) {
-      html += '<div class="block"><h3>예상 포메이션' + (t.formation ? ' <span class="muted-note">' + esc(t.formation) + "</span>" : "") + "</h3>" +
+      html += '<div class="block team-pitch-block"><h3 class="team-pitch-h">예상 포메이션' + (t.formation ? ' <span class="muted-note">' + esc(t.formation) + "</span>" : "") + "</h3>" +
         '<div class="pitch"><div class="pitch-line halfway"></div><div class="pitch-circle"></div>';
       t.lineup.forEach(function (d) {
         // 이름·등번호·포지션은 선수 레코드(단일 소스)에서 조회. 라인업은 좌표(x,y)만 담당.
@@ -2452,9 +2453,15 @@
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
   fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분)
-  // 모바일은 백그라운드에서 타이머가 멈춤 → 앱으로 돌아오는 즉시 점수 재요청(딜레이 없이 최신)
-  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible" && window.fetch) fetchLive(); });
-  window.addEventListener("focus", function () { if (window.fetch) fetchLive(); });
+  // 모바일은 백그라운드에서 타이머가 멈춤 → 앱으로 돌아오는 즉시 점수 재요청 + 화면 즉시 재렌더(스테일 방지)
+  function onAppReturn() {
+    if (!window.fetch) return;
+    fetchLive();  // 최신 점수 비동기 요청(도착 시 자동 재렌더)
+    if (onHomeSchedule()) renderSchedule();          // 홈이면 현재 점수로 즉시 재렌더
+    else if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 갱신
+  }
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") onAppReturn(); });
+  window.addEventListener("focus", onAppReturn);
 
   // 자동수집 뉴스(news.json, GitHub Actions 4시간 크론) 로드 → 팀별 news 최신화 후 현재 화면 다시 렌더
   function loadNews() {
