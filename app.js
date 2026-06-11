@@ -1308,10 +1308,11 @@
     var rosters = d.rosters || [];
     function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
     var ra = rosterFor(a), rb = rosterFor(b);
-    var ca = ra && espnLineupCoords(ra), cb = rb && espnLineupCoords(rb);
+    // 교체 반영(currentLineupCoords)은 교체 이벤트 없으면 선발과 동일 → 라이브 중 교체 시 자동 갱신
+    var ca = ra && currentLineupCoords(ra, d.keyEvents), cb = rb && currentLineupCoords(rb, d.keyEvents);
     if (!ca || !cb) return null;
     function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: mp ? mp.name : nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
-    return '<h3>📋 선발 라인업 <span class="muted-note">실시간 · 탭하면 상세</span></h3>' + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
+    return '<h3>📋 라인업 <span class="muted-note">실시간 · 탭하면 상세</span></h3>' + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
   }
   function renderMatch(id) {
     var fx = fixturesById[id];
@@ -1770,6 +1771,7 @@
   function enToKo(name) { var mp = playerByName(name || ""); return mp ? mp.name : (name || ""); }
   function luEvent(ev) {
     function nk(a) { return enToKo((a && a.displayName) || ""); }
+    function jn(a) { var n = (a && a.displayName) || "", mp = playerByName(n); var num = (mp && mp.number != null) ? mp.number : ((a && a.jersey != null && a.jersey !== "") ? a.jersey : ""); return (num !== "" ? num + "번 " : "") + enToKo(n); }
     var ty = ((ev.type && ev.type.type) || "").toLowerCase(), clk = (ev.clock && ev.clock.displayValue) || "";
     var parts = (ev.participants || ev.athletesInvolved || []).map(function (a) { return a.athlete; }).filter(Boolean);
     var icon, txt;
@@ -1777,7 +1779,7 @@
     else if (/goal|scored/.test(ty) && !/missed|saved/.test(ty)) { icon = "⚽"; txt = nk(parts[0]) + " 골" + (parts[1] ? " (도움 " + nk(parts[1]) + ")" : ""); }
     else if (/yellow/.test(ty)) { icon = "🟨"; txt = nk(parts[0]) + " 경고"; }
     else if (/red/.test(ty)) { icon = "🟥"; txt = nk(parts[0]) + " 퇴장"; }
-    else if (/substitution/.test(ty)) { icon = "🔄"; txt = (parts[0] ? nk(parts[0]) + " ⬆" : "") + (parts[1] ? " " + nk(parts[1]) + " ⬇" : ""); }
+    else if (/substitution/.test(ty)) { icon = "🔄"; txt = (parts[0] ? jn(parts[0]) + " ⬆" : "") + (parts[1] ? " " + jn(parts[1]) + " ⬇" : ""); }
     else return "";
     if (!(txt || "").trim()) txt = ev.shortText || ev.text || "";
     return '<div class="lu-ev"><span class="lu-ec">' + esc(clk) + '</span><span class="lu-ei">' + icon + '</span><span class="lu-et">' + esc(txt) + "</span></div>";
