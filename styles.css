@@ -841,7 +841,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
   #sideAdL { display: block; position: fixed; top: 78px; left: max(12px, calc((100vw - 720px) / 4 - 45px)); z-index: 40; text-align: center; }
   #sideAdL .ad-label { font-size: 10px; color: var(--muted); margin-bottom: 5px; letter-spacing: 1px; }
 }
-.cpang-note { font-size: 9px; color: var(--muted); line-height: 1.4; margin-top: 6px; max-width: 120px; }
+.cpang-note { font-size: 10.5px; color: var(--text); font-weight: 600; line-height: 1.45; margin-top: 7px; max-width: 150px; }
 .ad-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; letter-spacing: 1px; }
 .kakao_ad_area { margin: 0 auto; }
 

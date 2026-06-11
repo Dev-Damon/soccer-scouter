@@ -324,7 +324,7 @@
     if (!el) return;
     el.innerHTML = '<div class="ad-label">광고</div>' +
       '<iframe src="https://ads-partners.coupang.com/widgets.html?id=996159&template=carousel&trackingCode=AF6139723&subId=&width=' + w + '&height=' + h + '&tsource=" width="' + w + '" height="' + h + '" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>' +
-      '<div class="cpang-note">쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 받을 수 있습니다.</div>';
+      '<div class="cpang-note">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>';
   }
   // PC 사이드 세로광고 — 넓은 화면에서만 1회 삽입(고정요소라 재렌더 영향 없음): 우=애드핏 160×600, 좌=쿠팡 90×728
   if (window.matchMedia && window.matchMedia("(min-width: 1100px)").matches && document.body) {
