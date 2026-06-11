@@ -1794,9 +1794,11 @@
     var pts = myCache.points, ptCard = "", rankH = "";
     if (pts && pts.points != null && KickComments.tierOf) {
       var tr = KickComments.tierOf(pts.points);
+      var checkBtn = pts.checked ? '<span class="pt-checked">✅ 오늘 출석 완료</span>' : '<button class="pt-checkin" data-checkin>📅 출석 체크 <b>+200</b></button>';
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
-        '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div></div>';
+        '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
+        '<div class="pt-checkrow">' + checkBtn + "</div></div>";
     }
     if (myCache.ranking && myCache.ranking.length) {
       var myUid = (KickComments.user() || {}).id;
@@ -2081,6 +2083,7 @@
     if ((my = e.target.closest("[data-pred]"))) { var ps = my.closest(".pred-slot"); if (ps && ps._predFx && ps._predOpen && window.KickComments) KickComments.predVote(ps._predFx, my.getAttribute("data-pred")).then(ps._predPaint); return; }
     if ((my = e.target.closest(".bet-loginbtn"))) { if (window.KickComments && KickComments.signIn) KickComments.signIn(my.getAttribute("data-p") || "google"); return; }
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
+    if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
     if ((my = e.target.closest("[data-betamt]"))) { var bsa = my.closest(".bet-slot"); if (bsa && bsa._betReload) { bsa._betStake = parseInt(my.getAttribute("data-betamt"), 10); bsa._betReload(); } return; }
     if ((my = e.target.closest("[data-betch]"))) {
       var bsl = my.closest(".bet-slot"); if (!bsl || !bsl._betFx) return;
@@ -2428,7 +2431,5 @@
     setTimeout(function () { t.classList.add("show"); }, 10);
     setTimeout(function () { t.classList.remove("show"); setTimeout(function () { t.remove(); }, 300); }, 3500);
   }
-  if (window.KickComments && KickComments.ready) KickComments.ready().then(function (u) {
-    if (u && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { if (r && r.got) ktToast("🎉 출석 +200 KP · 잔액 " + ((r.points || 0)).toLocaleString() + " KP"); });
-  });
+  // 출석은 MY 탭의 '출석 체크' 버튼으로 직접(자동지급 X)
 })();

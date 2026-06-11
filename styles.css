@@ -227,7 +227,7 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .my-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; cursor: pointer; }
 .my-item:active { transform: scale(0.99); }
 .my-iw { color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 4px; }
-.my-ib { font-size: 14px; line-height: 1.5; color: #cdd8e6; white-space: pre-wrap; word-break: break-word; }
+.my-ib { font-size: 14px; line-height: 1.5; color: var(--text); white-space: pre-wrap; word-break: break-word; }
 .my-admin { background: none; border: 0; color: var(--accent); font-size: 12.5px; cursor: pointer; margin-left: 8px; }
 /* 관리자 페이지 */
 .mgr-h { font-size: 18px; margin: 4px 0 14px; }
@@ -1016,3 +1016,9 @@ html.light .mf-grass { fill: #2e8b54; }
 .pt-rk-tier { font-size: 11px; font-weight: 800; flex: none; }
 .pt-rk-name { flex: 1; min-width: 0; font-weight: 600; color: var(--text); }
 .pt-rk-pts { font-weight: 800; color: var(--accent); flex: none; }
+/* 출석 체크 버튼 */
+.pt-checkrow { margin-top: 11px; }
+.pt-checkin { width: 100%; padding: 11px; border: none; border-radius: 10px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 800; cursor: pointer; }
+.pt-checkin b { font-weight: 900; }
+.pt-checkin:active { transform: scale(.99); }
+.pt-checked { display: block; text-align: center; padding: 11px; border-radius: 10px; background: var(--bg-soft); color: var(--muted); font-size: 13.5px; font-weight: 700; }
