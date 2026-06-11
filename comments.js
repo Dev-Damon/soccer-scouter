@@ -612,7 +612,25 @@
   }
   function chatUnsubscribe(ch) { try { if (ch && sb) sb.removeChannel(ch); } catch (e) {} }
 
+  // ===== 승부예측(익명 투표, 기기당 1표) =====
+  function predDevice() { var d; try { d = localStorage.getItem("kc_device"); } catch (e) {} if (!d) { d = "d" + Math.random().toString(36).slice(2, 10) + Date.now().toString(36); try { localStorage.setItem("kc_device", d); } catch (e) {} } return d; }
+  function predMine(mid) { try { return localStorage.getItem("kc_pred_" + mid) || null; } catch (e) { return null; } }
+  function predCounts(mid) {
+    if (!sb) return Promise.resolve({ home: 0, draw: 0, away: 0, total: 0 });
+    return sb.rpc("predict_counts", { mid: mid }).then(function (r) {
+      var c = { home: 0, draw: 0, away: 0, total: 0 };
+      (r.data || []).forEach(function (row) { c[row.choice] = +row.n; c.total += +row.n; });
+      return c;
+    }).catch(function () { return { home: 0, draw: 0, away: 0, total: 0 }; });
+  }
+  function predVote(mid, choice) {
+    try { localStorage.setItem("kc_pred_" + mid, choice); } catch (e) {}
+    if (!sb) return predCounts(mid);
+    return sb.from("match_predictions").upsert({ match_id: mid, device_id: predDevice(), choice: choice }, { onConflict: "match_id,device_id" }).then(function () { return predCounts(mid); }).catch(function () { return predCounts(mid); });
+  }
+
   window.KickComments = {
+    predCounts: predCounts, predMine: predMine, predVote: predVote,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

@@ -1226,6 +1226,7 @@
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
+        '<div class="block pred-slot"></div>' +
         '<div class="block h2h-slot"></div>' +
         (mf ? '<div class="block">' + mf + "</div>" : "") +
         '<div class="block lineup-slot"></div>' +
@@ -1255,6 +1256,7 @@
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
+    loadPrediction(viewEl.querySelector(".pred-slot"), fx, a, b, aIsHome);
     function updScore() {
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
@@ -1465,6 +1467,36 @@
     h2hLoading = fetch("h2h.json").then(function (r) { return r.json(); }).then(function (j) { H2HPRE = j || {}; return H2HPRE; }).catch(function () { H2HPRE = {}; return H2HPRE; });
     return h2hLoading;
   }
+  function loadPrediction(slot, fx, a, b, aIsHome) {
+    if (!slot || !window.KickComments || !KickComments.predCounts) return;
+    var leftCh = aIsHome ? "home" : "away", rightCh = aIsHome ? "away" : "home";
+    var ko = matchKickoff(fx);
+    var open = ko ? Date.now() < ko : !matchEnded(fx);
+    function paint(c) {
+      var mine = KickComments.predMine(fx.id), total = c.total || 0;
+      function pct(n) { return total > 0 ? Math.round(n / total * 100) : 0; }
+      var opts = [
+        { ch: leftCh, label: a.name + " 승", flag: a.flag, n: c[leftCh] || 0 },
+        { ch: "draw", label: "무승부", flag: "🤝", n: c.draw || 0 },
+        { ch: rightCh, label: b.name + " 승", flag: b.flag, n: c[rightCh] || 0 }
+      ];
+      var rows = opts.map(function (o) {
+        var p = pct(o.n), on = mine === o.ch;
+        return '<button class="pred-opt' + (on ? " on" : "") + '"' + (open ? ' data-pred="' + o.ch + '"' : " disabled") + '>' +
+          '<span class="pred-bar" style="width:' + p + '%"></span>' +
+          '<span class="pred-flag">' + esc(o.flag) + '</span><span class="pred-lbl">' + esc(o.label) + "</span>" +
+          '<span class="pred-pct">' + p + "%</span></button>";
+      }).join("");
+      slot.innerHTML = '<div class="pred-box"><div class="pred-head">🔮 승부예측 <span class="pred-meta">' +
+        (total ? total.toLocaleString() + "명 참여" : "첫 예측을 남겨보세요") + (open ? "" : " · 투표 마감") + "</span></div>" +
+        rows + (open ? '<div class="pred-hint">' + (mine ? "다시 눌러 예측 변경 가능" : "로그인 없이 익명 투표 · 기기당 1표") + "</div>" : "") + "</div>";
+      twem(slot);
+    }
+    paint({ total: 0 });
+    slot._predFx = fx.id; slot._predPaint = paint; slot._predOpen = open;
+    KickComments.predCounts(fx.id).then(paint);
+  }
+
   function loadH2H(slot, fx, a, b) {
     if (!slot) return;
     ensureH2H().then(function (pre) {
@@ -1945,6 +1977,7 @@
       KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
       return;
     }
+    if ((my = e.target.closest("[data-pred]"))) { var ps = my.closest(".pred-slot"); if (ps && ps._predFx && ps._predOpen && window.KickComments) KickComments.predVote(ps._predFx, my.getAttribute("data-pred")).then(ps._predPaint); return; }
     if ((my = e.target.closest("[data-scat]"))) { scoreCat = my.getAttribute("data-scat"); renderScorers(); return; }
     if ((my = e.target.closest(".rank-sb"))) { rankSort = my.getAttribute("data-rsort"); rankLimit = 30; paintRanking(); return; }
     if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
