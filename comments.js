@@ -120,8 +120,9 @@
   }
   function refreshUser() {
     if (!client()) return Promise.resolve(null);
-    return sb.auth.getUser()
-      .then(function (r) { user = (r && r.data && r.data.user) || null; return user; })
+    // getSession()=로컬 세션(자동갱신, 네트워크 실패에 강함). getUser()는 매번 서버검증이라 일시적 실패 시 로그아웃처럼 보임.
+    return sb.auth.getSession()
+      .then(function (r) { user = (r && r.data && r.data.session && r.data.session.user) || null; return user; })
       .then(function (u) {
         if (!u) { profile = null; return u; }
         return sb.from("profiles").select("nickname").eq("user_id", u.id).maybeSingle()
@@ -658,13 +659,14 @@
   function dailyCheckin() { if (!sb || !user) return Promise.resolve(null); return sb.rpc("daily_checkin").then(function (r) { return r.data; }).catch(function () { return null; }); }
   function placeBet(mid, ch, amt) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("place_bet", { mid: mid, ch: ch, amt: amt }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
   function myBet(mid) { if (!sb || !user) return Promise.resolve(null); return sb.from("bets").select("*").eq("user_id", user.id).eq("match_id", mid).maybeSingle().then(function (r) { return r.data; }).catch(function () { return null; }); }
+  function cancelBet(mid) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("cancel_bet", { mid: mid }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
   function myBets() { if (!sb || !user) return Promise.resolve([]); return sb.from("bets").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
 
   window.KickComments = {
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

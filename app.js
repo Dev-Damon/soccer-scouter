@@ -1553,7 +1553,8 @@
         var body = bet.status === "won" ? '<span class="bet-win">✅ 적중! +' + (bet.payout || 0).toLocaleString() + ' KP</span>'
           : bet.status === "lost" ? '<span class="bet-lose">❌ 아쉽! −' + bet.stake.toLocaleString() + ' KP</span>'
           : '<span class="bet-pend">적중 시 +' + pot.toLocaleString() + ' KP · 결과 후 자동정산</span>';
-        slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-mine"><b>' + esc(nm) + '</b> ×' + bet.odds + ' · ' + bet.stake.toLocaleString() + ' KP &nbsp; ' + body + "</div></div>";
+        var cancelBtn = (open && bet.status === "pending") ? '<button class="bet-cancel" data-betcancel="' + fx.id + '">베팅 취소 · 환불받기</button>' : "";
+        slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-mine"><b>' + esc(nm) + '</b> ×' + bet.odds + ' · ' + bet.stake.toLocaleString() + ' KP &nbsp; ' + body + "</div>" + cancelBtn + "</div>";
         return;
       }
       if (!open) { slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-closed">⏱ 베팅 마감된 경기</div></div>'; return; }
@@ -2098,6 +2099,12 @@
     if ((my = e.target.closest(".bet-loginbtn"))) { if (window.KickComments && KickComments.signIn) KickComments.signIn(my.getAttribute("data-p") || "google"); return; }
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
     if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
+    if ((my = e.target.closest("[data-betcancel]"))) {
+      if (!confirm("베팅을 취소하고 포인트를 돌려받을까요?")) return;
+      var bsc = my.closest(".bet-slot");
+      if (window.KickComments) KickComments.cancelBet(my.getAttribute("data-betcancel")).then(function () { if (bsc && bsc._betReload) bsc._betReload(); ktToast("베팅 취소 · 포인트 환불 완료"); }).catch(function () { alert("취소 실패 — 경기가 이미 시작됐을 수 있어요."); });
+      return;
+    }
     if ((my = e.target.closest("[data-betstep]"))) {
       var bss = my.closest(".bet-slot"); var inp = bss && bss.querySelector(".bet-amt"); if (!inp) return;
       var bal = bss._betStakeMax || 0, step = my.getAttribute("data-betstep"), cur = parseInt(inp.value, 10) || 0;
