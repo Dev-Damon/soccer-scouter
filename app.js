@@ -395,9 +395,11 @@
       });
       listHtml += "</div>";
     }
+    listHtml += '<div class="adslot cpang-m"></div>';  // 모바일 쿠팡(320x50)
 
     viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
     insertAdFit(viewEl.querySelector(".home-ad"));
+    insertCoupang(viewEl.querySelector(".cpang-m"), 320, 50);
     startWittyTicker();
 
     // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬

@@ -931,3 +931,5 @@ html.light .mf-grass { fill: #2e8b54; }
 .cmt-anon { display: flex; gap: 6px; margin-bottom: 6px; }
 .cmt-anon input { flex: 1; min-width: 0; background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
 .cmt-anon input:focus { outline: none; border-color: var(--accent); }
+/* 모바일 쿠팡 배너 — 좁은 화면만(PC는 좌측 사이드 쿠팡으로 대체) */
+@media (min-width: 1000px) { .cpang-m { display: none; } }

@@ -595,7 +595,7 @@
   }
   function anonChatName() {
     var n; try { n = localStorage.getItem("kc_chatnick"); } catch (e) {}
-    if (!n) { n = funName(); try { localStorage.setItem("kc_chatnick", n); } catch (e) {} }
+    if (!n) { n = "익명" + Math.floor(1000 + Math.random() * 9000); try { localStorage.setItem("kc_chatnick", n); } catch (e) {} }  // 채팅은 익명+숫자
     return n;
   }
   function chatSend(body) {
