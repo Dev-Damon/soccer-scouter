@@ -15,7 +15,12 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
 // 인자: 날짜 목록(테스트용) 없으면 우리 fixtures 날짜
 function pad(d){return d}
 let DATES = process.argv.slice(2);
-if(!DATES.length){ DATES=[...new Set(D.fixtures.map(f=>(f.kstDate||f.date||'').replace(/-/g,'')).filter(Boolean))]; }
+if(!DATES.length){
+  // ESPN scoreboard는 UTC 날짜 기준 → KST 경기일 ±1일도 같이 스캔(안 그러면 자정 넘는 경기 누락)
+  var base=[...new Set(D.fixtures.map(f=>(f.kstDate||f.date||'').replace(/-/g,'')).filter(Boolean))];
+  var s=new Set(); base.forEach(d=>{ s.add(d); var n=parseInt(d,10); s.add(String(n-1)); s.add(String(n+1)); });
+  DATES=[...s];
+}
 (async()=>{
   const stats={};
   function rec(key,name,p){ return stats[key]||(stats[key]={key, name, teamId:p?p.team:null, flag:'', teamName:'', goals:0,assists:0,og:0,yellow:0,red:0,apps:0}); }

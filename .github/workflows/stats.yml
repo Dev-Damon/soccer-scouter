@@ -1,7 +1,7 @@
 name: 월드컵 기록 집계 (득점왕)
 on:
   schedule:
-    - cron: '5 * * * *'   # 매시 5분 — ESPN 골/도움/카드/자책골 집계
+    - cron: '*/20 * * * *'   # 20분마다(경기 중 자주 갱신)
   workflow_dispatch: {}
 permissions:
   contents: write
