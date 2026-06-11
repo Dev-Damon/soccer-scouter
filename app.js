@@ -358,6 +358,7 @@
       ' · ' + dayFixtures.length + '경기 <span class="kst-note">한국시간</span></div>';
     dayFixtures.forEach(function (fx) { if (!hero || fx !== hero) listHtml += fixtureCard(fx); });
 
+    listHtml += '<div class="adslot home-ad"></div>';
     // 주요 소식 (팀 뉴스가 있을 때만)
     var hn = homeNews(8);
     if (hn.length) {
@@ -377,7 +378,6 @@
       });
       listHtml += "</div>";
     }
-    listHtml += '<div class="adslot home-ad"></div>';
 
     viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
     insertAdFit(viewEl.querySelector(".home-ad"));
@@ -1171,6 +1171,7 @@
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
+        '<div class="adslot"></div>' +
         '<div class="cmt-slot"></div>' +
         ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
@@ -1178,7 +1179,6 @@
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
         "</div>" +
-        '<div class="adslot"></div>' +
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
