@@ -1,8 +1,9 @@
-// 수동 정산: 종료된 WC 경기를 ESPN에서 찾아 match_results 기록 + settle_match 호출
-// 실행: SUPABASE_PAT=xxx node scripts/settle.js   (PAT 없으면 SQL만 출력)
+// 베팅 자동 정산: 종료된 WC 경기를 ESPN에서 찾아 settle_with_result RPC로 정산
+// 공개 anon 키만 사용(PAT 불필요) → 예약 실행 가능. settle_with_result는 결과 먼저 쓴 사람이 이김(멱등).
 const https = require('https');
+const ANON = 'sb_publishable_AsDWJPjKDg1S5wqezB9Vtw';
 function get(u){return new Promise(r=>{https.get(u,{headers:{'User-Agent':'Mozilla/5.0'}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))}).on('error',()=>r(''))})}
-function post(p,body){return new Promise(r=>{var data=JSON.stringify(body);var req=https.request({hostname:'api.supabase.com',path:p,method:'POST',headers:{'Authorization':'Bearer '+process.env.SUPABASE_PAT,'Content-Type':'application/json','Content-Length':Buffer.byteLength(data)}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))});req.write(data);req.end();})}
+function rpc(name,body){return new Promise(r=>{var data=JSON.stringify(body);var req=https.request({hostname:'jhzchgvnkwdroxfrgjvm.supabase.co',path:'/rest/v1/rpc/'+name,method:'POST',headers:{apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json','Content-Length':Buffer.byteLength(data)}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))});req.on('error',()=>r('ERR'));req.write(data);req.end();})}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 global.window={}; require('../data.js'); const D=global.window.DATA;
 const teamsById={}; D.teams.forEach(t=>teamsById[t.id]=t);
@@ -31,8 +32,7 @@ const allDates=new Set(); dates.forEach(d=>{allDates.add(d);var n=parseInt(d);al
   }
   if(!results.length){console.log('정산할 종료 경기 없음');return;}
   results.sort((a,b)=>a.ko-b.ko); // 시간순(연승 정확)
-  var sql=results.map(r=>`insert into match_results(match_id,result) values('${r.match_id}','${r.result}') on conflict (match_id) do nothing;`).join('\n')+'\n'+results.map(r=>`select settle_match('${r.match_id}');`).join('\n');
   console.log('정산 대상:', results.map(r=>r.match_id+'='+r.result+'('+r.score+')').join(', '));
-  if(!process.env.SUPABASE_PAT){console.log('--- PAT 없음, SQL만 ---\n'+sql);return;}
-  console.log('정산 실행:', (await post('/v1/projects/jhzchgvnkwdroxfrgjvm/database/query',{query:sql})).slice(0,400));
+  for(const r of results){ var out=await rpc('settle_with_result',{mid:r.match_id,res:r.result}); console.log(' '+r.match_id+'→'+String(out).slice(0,80)); await sleep(150); }
+  console.log('정산 완료('+results.length+'경기)');
 })();
