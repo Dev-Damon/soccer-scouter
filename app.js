@@ -2062,8 +2062,8 @@
       var mb = document.getElementById("themeBtn"); if (mb) mb.textContent = t === "light" ? "☀️" : "🌙";
       var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute("content", t === "light" ? "#f3f5f8" : "#0b1220");
     }
-    var cur = "dark";
-    try { cur = localStorage.getItem(KEY) || "dark"; } catch (e) {}
+    var cur = "light";
+    try { cur = localStorage.getItem(KEY) || "light"; } catch (e) {}
     apply(cur);
     var btn = document.getElementById("themeBtn");
     if (btn) btn.addEventListener("click", function () {
