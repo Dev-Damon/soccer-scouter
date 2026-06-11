@@ -1533,12 +1533,13 @@
   }
   function loadBetting(slot, fx, a, b, aIsHome) {
     if (!slot || !window.KickComments || !KickComments.myPoints) return;
-    var user = KickComments.user && KickComments.user();
     var ko = matchKickoff(fx);
     var open = ko ? Date.now() < ko : !matchEnded(fx);
     var ODDS = betOddsOf(fx); if (!ODDS) { slot.innerHTML = ""; return; }
     var L = aIsHome ? "home" : "away", R = aIsHome ? "away" : "home";
     var NAME = { draw: "무승부" }; NAME[aIsHome ? "home" : "away"] = a.name; NAME[aIsHome ? "away" : "home"] = b.name;
+    KickComments.ready().then(function (user) {  // 로그인 상태 확정 후 렌더(OAuth 복귀 직후 user()=null로 로그인창 떠있던 버그)
+    if (!document.body.contains(slot)) return;
     if (!user) {
       slot.innerHTML = '<div class="bet-box"><div class="bet-h">💰 포인트 베팅 <span class="bet-info" data-bet-guide>ⓘ</span></div>' +
         '<div class="bet-login">로그인하면 <b>1,000 포인트</b>로 베팅하고 랭킹에 도전! <button class="cmt-in g bet-loginbtn" data-p="google">구글 로그인</button></div></div>';
@@ -1578,6 +1579,7 @@
     slot._betFx = fx.id;
     slot._betReload = function () { Promise.all([KickComments.myPoints(), KickComments.myBet(fx.id)]).then(function (r) { render(r[0], r[1]); }); };
     slot._betReload();
+    });
   }
   function showBetGuide() {
     var ov = document.createElement("div"); ov.className = "bet-guide-ov";
