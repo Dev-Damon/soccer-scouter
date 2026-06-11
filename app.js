@@ -1620,7 +1620,7 @@
 
   // ===================== 관리자 페이지 (#admin) =====================
   var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act";
-  function fmtJoin(iso) { try { var d = new Date(iso); function z(n) { return (n < 10 ? "0" : "") + n; } return '<span class="mb-d">' + d.getFullYear() + "." + z(d.getMonth() + 1) + "." + z(d.getDate()) + '</span><span class="mb-t">' + z(d.getHours()) + ":" + z(d.getMinutes()) + ":" + z(d.getSeconds()) + "</span>"; } catch (e) { return ""; } }
+  function fmtJoin(iso) { try { var s = new Date(iso).toLocaleString("sv-SE", { timeZone: "Asia/Seoul" }), p = s.split(" "); return '<span class="mb-d">' + p[0].replace(/-/g, ".") + '</span><span class="mb-t">' + (p[1] || "") + "</span>"; } catch (e) { return ""; } }
   function membersTableHtml() {
     var us = (adminCache.users || []).slice();
     if (memberSort === "join") us.sort(function (a, b) { return (b.joined || "").localeCompare(a.joined || ""); });

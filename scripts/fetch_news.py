@@ -45,7 +45,9 @@ def parse_items(raw, max_n=5):
         date = ""
         if pub:
             try:
-                date = datetime.datetime.strptime(pub[:25], "%a, %d %b %Y %H:%M:%S").strftime("%Y-%m-%d")
+                # RSS pubDate는 GMT → +9시간 해서 한국시간(KST) 날짜로
+                dt = datetime.datetime.strptime(pub[:25], "%a, %d %b %Y %H:%M:%S") + datetime.timedelta(hours=9)
+                date = dt.strftime("%Y-%m-%d")
             except Exception:
                 date = ""
         title = html.unescape(re.sub("<[^>]+>", "", title)).strip()
