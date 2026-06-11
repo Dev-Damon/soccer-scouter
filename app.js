@@ -243,12 +243,21 @@
       var html = '<div class="sec-h">👟 월드컵 기록 <span class="muted-note">실시간 집계 · ESPN</span></div>' + subs;
       if (!players.length) { html += '<div class="empty">아직 기록이 없어요.<br>경기가 시작되면 골·도움·카드가 자동으로 채워져요! ⚽</div>'; viewEl.innerHTML = html; twem(viewEl); return; }
       var rows = players.slice(0, 50).map(function (p, i) {
-        var v = scoreCat === "cards" ? ('🟨 ' + (p.yellow || 0) + (p.red ? '  🟥 ' + p.red : "")) :
-          (scVal(p) + (scoreCat === "goals" && p.assists ? ' <span class="sc-sub">' + p.assists + 'A</span>' : ""));
+        var pl = p.pid && playersById[p.pid];
+        var meta = pl ? (esc(pl.club || "") + (pl.league ? " · " + esc(pl.league) : "")) : esc(p.team || "");
+        var apps = p.apps || 0, main, statsub;
+        if (scoreCat === "cards") {
+          main = '🟨' + (p.yellow || 0) + (p.red ? '  🟥' + p.red : "");
+          statsub = apps ? apps + "경기" : "";
+        } else {
+          var unit = scoreCat === "goals" ? "골" : scoreCat === "assists" ? "도움" : "자책";
+          main = scVal(p) + unit;
+          statsub = apps ? (apps + "경기 · 평균 " + (scVal(p) / apps).toFixed(2)) : "";
+        }
         return '<div class="sc-row' + (p.pid ? " clickable" : "") + '"' + (p.pid ? ' data-player="' + esc(p.pid) + '"' : "") + '>' +
           '<span class="sc-rank">' + (i + 1) + "</span><span class=\"sc-flag\">" + esc(p.flag || "") + "</span>" +
-          '<span class="sc-name">' + esc(p.name) + '<span class="sc-team">' + esc(p.team || "") + "</span></span>" +
-          '<span class="sc-val">' + v + "</span></div>";
+          '<span class="sc-name">' + esc(p.name) + '<span class="sc-team">' + meta + "</span></span>" +
+          '<span class="sc-stat"><b class="sc-val">' + main + "</b>" + (statsub ? '<span class="sc-statsub">' + statsub + "</span>" : "") + "</span></div>";
       }).join("");
       viewEl.innerHTML = html + '<div class="sc-list">' + rows + "</div>"; twem(viewEl);
     });
@@ -600,7 +609,7 @@
   // ===================== 공통: 선수 행 =====================
   function playerRow(p, hideScore, clubLeague) {
     // clubLeague: 나라상세에선 나라명 대신 '클럽 · 리그' 표시
-    var sub = clubLeague ? (esc(p.club) + (p.league ? " · " + esc(p.league) : "")) : (esc(p.team) + " · " + esc(p.club));
+    var sub = clubLeague ? (esc(p.club) + (p.league ? " · " + esc(p.league) : "")) : (esc(p.team) + " · " + esc(p.club) + (p.league ? " · " + esc(p.league) : ""));
     return '<div class="player-row" data-player="' + esc(p.id) + '">' +
       numBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +

@@ -15,7 +15,7 @@ let DATES = process.argv.slice(2);
 if(!DATES.length){ DATES=[...new Set(D.fixtures.map(f=>(f.kstDate||f.date||'').replace(/-/g,'')).filter(Boolean))]; }
 (async()=>{
   const stats={};
-  function rec(key,name,p){ return stats[key]||(stats[key]={key, name, teamId:p?p.team:null, goals:0,assists:0,og:0,yellow:0,red:0}); }
+  function rec(key,name,p){ return stats[key]||(stats[key]={key, name, teamId:p?p.team:null, goals:0,assists:0,og:0,yellow:0,red:0,apps:0}); }
   function bump(nm, field){ var p=matchPlayer(nm); var k=p?p.id:('n:'+nm); rec(k, p?p.name:nm, p)[field]++; }
   const eids=new Set();
   for(const dt of DATES){ let d; try{d=JSON.parse(await get(SCORE+dt))}catch(e){continue} (d.events||[]).forEach(e=>{var st=((e.status||{}).type||{}).state; if(st==='post'||st==='in')eids.add(e.id);}); await sleep(110); }
@@ -29,9 +29,14 @@ if(!DATES.length){ DATES=[...new Set(D.fixtures.map(f=>(f.kstDate||f.date||'').r
       else if(/yellow.?card/.test(ty)){ if(parts[0])bump(parts[0],'yellow'); }
       else if(/red.?card/.test(ty)){ if(parts[0])bump(parts[0],'red'); }
     });
+    // 출전 집계: 선발 + 교체 투입
+    var appeared=new Set();
+    (s.rosters||[]).forEach(rs=>{ (rs.roster||[]).forEach(pl=>{ if(pl.starter && pl.athlete && pl.athlete.displayName) appeared.add(pl.athlete.displayName); }); });
+    (s.keyEvents||[]).forEach(ev=>{ if(/substitution/i.test((ev.type||{}).type||'')){ var inA=((ev.participants||[])[0]||{}).athlete; if(inA&&inA.displayName) appeared.add(inA.displayName); } });
+    appeared.forEach(nm=>bump(nm,'apps'));
     await sleep(110);
   }
-  const out=Object.values(stats).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {name:s.name, team:t?t.name:'', flag:t?t.flag:'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red}; });
+  const out=Object.values(stats).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {name:s.name, team:t?t.name:'', flag:t?t.flag:'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red, apps:s.apps}; });
   fs.writeFileSync('stats.json', JSON.stringify({players:out}));
   console.log('경기:',eids.size,'| 기록선수:',out.length);
   return out;
