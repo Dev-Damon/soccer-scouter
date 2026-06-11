@@ -214,7 +214,7 @@
       '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var an = anonGet();
-    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick" maxlength="14" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"><button class="cmt-dice" title="랜덤 닉네임" type="button">🎲</button></div>';
+    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick" maxlength="20" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">🎲</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">🌶</button><input class="cmt-pw cmt-pw-full" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
     var form = '<div class="cmt-form">' + anonRow + '<textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
@@ -246,6 +246,7 @@
       if ((t = e.target.closest(".cmt-sortbtn"))) { sortMode = t.getAttribute("data-sort"); return paint(m); }
       if ((t = e.target.closest(".cmt-rx"))) { return react(m, t.getAttribute("data-id"), parseInt(t.getAttribute("data-v"), 10)); }
       if (e.target.closest(".cmt-dice")) { var ni = m.el.querySelector(".cmt-form .cmt-nick"); if (ni) ni.value = funName(); return; }
+      if (e.target.closest(".cmt-spicy")) { var ns = m.el.querySelector(".cmt-form .cmt-nick"); if (ns) ns.value = spicyName(); return; }
       if (e.target.closest(".cmt-send")) { return send(m, null, m.el.querySelector(".cmt-form .cmt-ta")); }
       if ((t = e.target.closest(".cmt-reply"))) { return toggleReply(m, t); }
       if ((t = e.target.closest(".cmt-del"))) { return del(m, t.getAttribute("data-id"), t.getAttribute("data-anon") === "1"); }
@@ -282,6 +283,11 @@
   var FN_MOD = ["노래하는", "춤추는", "수영하는", "하늘 나는", "졸고있는", "배고픈", "신난", "용감한", "게으른", "수줍은", "반짝이는", "통통 튀는", "엉뚱한", "느긋한", "호기심 많은", "잠 못 드는", "질주하는", "웃고있는", "당당한", "구르는", "점프하는", "산책하는", "명상하는", "골 넣는", "드리블하는", "응원하는", "헤딩하는", "수다스런", "초롱초롱한", "두근대는"];
   var FN_NOUN = ["강아지", "고양이", "펭귄", "코끼리", "판다", "너구리", "다람쥐", "여우", "부엉이", "돌고래", "거북이", "햄스터", "고슴도치", "알파카", "카피바라", "수달", "라쿤", "사자", "호랑이", "곰", "토끼", "병아리", "오리", "문어", "미어캣", "나무늘보", "고라니", "로버트", "제임스", "토마스", "철수", "만수", "봉구", "감자", "꽈배기", "골키퍼"];
   function funName() { return FN_MOD[Math.floor(Math.random() * FN_MOD.length)] + " " + FN_NOUN[Math.floor(Math.random() * FN_NOUN.length)]; }
+  // 🌶 매운맛: [장소]+[짓궂은 행동]+[이름]
+  var SP_LOC = ["강남", "동탄", "출근길", "한강", "노래방", "PC방", "지하철", "헬스장", "탕비실", "고시원", "관중석", "벤치", "옥상", "분식집", "찜질방"];
+  var SP_ACT = ["수건도둑", "마이크 독점러", "새치기 장인", "라면국물 흡입러", "무한리필 학살자", "와이파이 빌런", "단톡방 잠수왕", "치킨다리 강탈범", "오프사이드 함정러", "헛발슛 장인", "할리우드 액션왕", "셀카 30장러", "탕수육 부먹파", "민초 수호자", "역주행 드리블러", "백패스 셔틀"];
+  var SP_NAME = ["엄준식", "김철수", "박영희", "이만수", "최봉구", "정대만", "옥동자", "감자", "도라에몽"];
+  function spicyName() { return SP_LOC[Math.floor(Math.random() * SP_LOC.length)] + " " + SP_ACT[Math.floor(Math.random() * SP_ACT.length)] + " " + SP_NAME[Math.floor(Math.random() * SP_NAME.length)]; }
   function anonGet() { try { return JSON.parse(localStorage.getItem("kc_anon") || "{}"); } catch (e) { return {}; } }
   function anonSet(n, p) { try { localStorage.setItem("kc_anon", JSON.stringify({ name: n, pw: p })); } catch (e) {} }
   function cmtErr(em) { return /banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." : /duplicate/.test(em) ? "방금 같은 내용을 작성했어요. (도배 방지)" : /has_link/.test(em) ? "링크는 작성할 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." : /spam_campaign/.test(em) ? "스팸으로 감지되어 차단되었어요." : /row-level|policy/.test(em) ? "닉네임/비밀번호를 확인해주세요." : "등록 실패: " + em; }
@@ -529,7 +535,9 @@
       ".cmt-form{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}",
       ".cmt-anon{flex-basis:100%;width:100%;display:flex;gap:6px}",
       ".cmt-anon input{flex:1;min-width:0;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:8px;padding:8px 10px;font-size:13px}",
-      ".cmt-dice{flex:none;width:40px;background:var(--bg-soft,#0f1a2a);border:1px solid var(--line,#1e2a3a);border-radius:8px;font-size:16px;cursor:pointer;line-height:1}",
+      ".cmt-anon{flex-wrap:wrap}",
+      ".cmt-pw-full{flex-basis:100%}",
+      ".cmt-dice,.cmt-spicy{flex:none;width:40px;background:var(--bg-soft,#0f1a2a);border:1px solid var(--line,#1e2a3a);border-radius:8px;font-size:16px;cursor:pointer;line-height:1}",
       ".cmt-replybox{margin:6px 0 0 0}",
       ".cmt-ta{flex:1;min-height:44px;resize:vertical;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px}",
       ".cmt-send,.cmt-rsend{align-self:flex-end;background:var(--accent,#2ee6a6);color:#fff;font-weight:800;border:0;border-radius:10px;padding:0 16px;height:44px;cursor:pointer}",

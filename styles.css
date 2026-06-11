@@ -611,6 +611,11 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .dchip-mo { font-size: 10px; }
 .dchip.on { background: var(--text); border-color: var(--text); }
 .dchip.on .dchip-dow, .dchip.on .dchip-day, .dchip.on .dchip-mo { color: var(--bg); }
+/* 대한민국 경기일: 태극기 + 빨강 강조 */
+.dchip.kor { border-color: #e5484d; background: rgba(229,72,77,.07); }
+.dchip.kor.on { background: var(--text); border-color: var(--text); }
+.dchip-kor { font-size: 13px; line-height: 1; }
+.dchip-kor img { width: 15px; height: 15px; vertical-align: middle; }
 
 /* 빅매치 히어로 */
 .hero {
