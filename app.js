@@ -377,8 +377,10 @@
       });
       listHtml += "</div>";
     }
+    listHtml += '<div class="adslot home-ad"></div>';
 
     viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
+    insertAdFit(viewEl.querySelector(".home-ad"));
     startWittyTicker();
 
     // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬
@@ -1033,8 +1035,9 @@
       ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, true); }).join("") + "</div>"
       : '<div class="empty">선수 데이터를 채우는 중입니다.</div>';
     html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
-
+    html += '<div class="adslot"></div>';
     viewEl.innerHTML = html;
+    insertAdFit(viewEl.querySelector(".adslot"));
   }
 
   // ===================== 경기 예상 (매치업) =====================
@@ -1175,9 +1178,11 @@
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
         "</div>" +
+        '<div class="adslot"></div>' +
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
+    insertAdFit(viewEl.querySelector(".adslot"));
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
