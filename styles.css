@@ -649,6 +649,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .tabbar-btn .tb-l { font-size: 10.5px; font-weight: 700; }
 .tabbar-btn.active { color: var(--accent); }
 .tabbar-btn.active .tb-ic { filter: none; }
+.tabbar-btn[data-nav="saved"] .tb-ic, html.light .tabbar-btn[data-nav="saved"] .tb-ic { filter: none; }  /* 저장 별은 항상 밝은 노랑 */
 
 /* 지수 막대 (전력지표 / 스카우터 지수) */
 .idx-row { display: grid; grid-template-columns: 62px 1fr 34px; align-items: center; gap: 10px; margin: 9px 0; }
