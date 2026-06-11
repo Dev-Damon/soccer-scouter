@@ -2073,6 +2073,11 @@
     });
   })();
 
+  // ===== 모달 뒤로가기 닫기 (응원하기·채팅) — 열 때 history state push, 뒤로가기면 페이지 대신 모달 닫기 =====
+  var ktModalClose = null;
+  function ktModalOpen(closeFn) { ktModalClose = closeFn; try { history.pushState({ ktModal: 1 }, ""); } catch (e) {} }
+  window.addEventListener("popstate", function () { if (ktModalClose) { var f = ktModalClose; ktModalClose = null; f(); } });
+
   // ===== 후원(응원하기) =====
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;
@@ -2107,7 +2112,7 @@
           '<div class="ds-note muted-note">금액을 누르면 토스 송금창이 열려요. 보내주신 마음은 서버비·개선에 쓰입니다 💙</div></div>';
         document.body.appendChild(ov);
         ov.addEventListener("click", function (e) {
-          if (e.target === ov || e.target.closest(".ds-x")) { close(); return; }
+          if (e.target === ov || e.target.closest(".ds-x")) { if (ktModalClose) history.back(); else close(); return; }
           var cp = e.target.closest(".ds-copy");
           if (cp) { try { navigator.clipboard.writeText(cp.getAttribute("data-acct")); cp.textContent = "복사됨!"; setTimeout(function () { cp.textContent = "복사"; }, 1500); } catch (e2) {} return; }
           var tr = e.target.closest(".ds-tier");
@@ -2115,7 +2120,7 @@
         });
       }
       var st0 = ov.querySelector(".ds-status"); if (st0) st0.innerHTML = "";   // 열 때마다 초기화(계좌 숨김)
-      ov.classList.add("on"); twem(ov);
+      ov.classList.add("on"); twem(ov); ktModalOpen(close);
     }
     btn.addEventListener("click", open);
   })();
@@ -2204,8 +2209,8 @@
         inp.value = ""; inp.focus();
       }).catch(function () { inp.disabled = false; alert("전송 실패"); });
     }
-    fab.addEventListener("click", toggle);
-    panel.querySelector(".chat-close").addEventListener("click", toggle);
+    fab.addEventListener("click", function () { if (open) { if (ktModalClose) history.back(); else toggle(); } else { toggle(); ktModalOpen(function () { if (open) toggle(); }); } });
+    panel.querySelector(".chat-close").addEventListener("click", function () { if (ktModalClose) history.back(); else toggle(); });
     panel.querySelector(".chat-send").addEventListener("click", send);
     panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
     panel.querySelector(".chat-in").addEventListener("focus", function () { if (!KickComments.user || !KickComments.user()) { this.blur(); KickComments.promptLogin(); } });
