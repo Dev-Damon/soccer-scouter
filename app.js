@@ -374,7 +374,7 @@
   }
   function pageAd() { if (!viewEl || viewEl.querySelector(".adslot")) return; var d = document.createElement("div"); d.className = "adslot"; viewEl.appendChild(d); insertAdFit(d); coupangBottom(); }
   // 페이지 맨 아래에 쿠팡 배너 1개(모든 페이지 공통) — 이미 있으면 스킵
-  function coupangBottom() { if (!viewEl || viewEl.querySelector(".cpang-m")) return; var cp = document.createElement("div"); cp.className = "adslot cpang-m"; viewEl.appendChild(cp); insertCoupang(cp, 320, 50); }
+  function coupangBottom() { if (!viewEl || viewEl.querySelector(".cpang-m")) return; var cp = document.createElement("div"); cp.className = "adslot cpang-m"; viewEl.appendChild(cp); insertCoupang(cp, 320, 100); }
   function renderSchedule() {
     var dates = fixtureDates();
     if (!dates.length) {
@@ -440,7 +440,7 @@
 
     viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
     insertAdFit(viewEl.querySelector(".home-ad"));
-    insertCoupang(viewEl.querySelector(".cpang-m"), 320, 50);
+    insertCoupang(viewEl.querySelector(".cpang-m"), 320, 100);
     startWittyTicker();
 
     // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬
@@ -1229,6 +1229,7 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
         '<div class="block pred-slot"></div>' +
+        '<div class="block bet-slot"></div>' +
         '<div class="block h2h-slot"></div>' +
         (mf ? '<div class="block">' + mf + "</div>" : "") +
         '<div class="block lineup-slot"></div>' +
@@ -1259,6 +1260,8 @@
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
     loadPrediction(viewEl.querySelector(".pred-slot"), fx, a, b, aIsHome);
+    loadBetting(viewEl.querySelector(".bet-slot"), fx, a, b, aIsHome);
+    if (matchEnded(fx) && window.KickComments && KickComments.settleMatch) KickComments.settleMatch(fx.id);  // 종료경기 정산 트리거(권위결과 기준)
     function updScore() {
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
@@ -1509,6 +1512,71 @@
     refresh();
     if (window._predTimer) clearInterval(window._predTimer);
     window._predTimer = setInterval(function () { if (!document.body.contains(slot)) { clearInterval(window._predTimer); return; } refresh(); }, 30000);
+  }
+
+  var BET_PRESETS = [50, 100, 500];
+  function betOddsOf(fx) {
+    var home = teamsById[fx.homeId], away = teamsById[fx.awayId];
+    if (!home || !away) return null;
+    var pr = predict(home, away);
+    function od(p) { return Math.min(10, Math.max(1.1, Math.round(100 / Math.max(1, p)) / 10)); }
+    return { home: od(pr.winA), draw: od(pr.draw), away: od(pr.winB) };
+  }
+  function loadBetting(slot, fx, a, b, aIsHome) {
+    if (!slot || !window.KickComments || !KickComments.myPoints) return;
+    var user = KickComments.user && KickComments.user();
+    var ko = matchKickoff(fx);
+    var open = ko ? Date.now() < ko : !matchEnded(fx);
+    var ODDS = betOddsOf(fx); if (!ODDS) { slot.innerHTML = ""; return; }
+    var L = aIsHome ? "home" : "away", R = aIsHome ? "away" : "home";
+    var NAME = { draw: "무승부" }; NAME[aIsHome ? "home" : "away"] = a.name; NAME[aIsHome ? "away" : "home"] = b.name;
+    if (!user) {
+      slot.innerHTML = '<div class="bet-box"><div class="bet-h">💰 포인트 베팅 <span class="bet-info" data-bet-guide>ⓘ</span></div>' +
+        '<div class="bet-login">로그인하면 <b>1,000 포인트</b>로 베팅하고 랭킹에 도전! <button class="cmt-in g bet-loginbtn" data-p="google">구글 로그인</button></div></div>';
+      twem(slot); return;
+    }
+    function render(pts, bet) {
+      if (!document.body.contains(slot)) return;
+      var bal = (pts && pts.points) || 0;
+      var head = '<div class="bet-h">💰 포인트 베팅 <span class="bet-bal">' + bal.toLocaleString() + ' KP</span> <span class="bet-info" data-bet-guide>ⓘ</span></div>';
+      if (bet) {
+        var nm = NAME[bet.choice] || bet.choice, pot = Math.round(bet.stake * bet.odds);
+        var body = bet.status === "won" ? '<span class="bet-win">✅ 적중! +' + (bet.payout || 0).toLocaleString() + ' KP</span>'
+          : bet.status === "lost" ? '<span class="bet-lose">❌ 아쉽! −' + bet.stake.toLocaleString() + ' KP</span>'
+          : '<span class="bet-pend">적중 시 +' + pot.toLocaleString() + ' KP · 결과 후 자동정산</span>';
+        slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-mine"><b>' + esc(nm) + '</b> ×' + bet.odds + ' · ' + bet.stake.toLocaleString() + ' KP &nbsp; ' + body + "</div></div>";
+        return;
+      }
+      if (!open) { slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-closed">⏱ 베팅 마감된 경기</div></div>'; return; }
+      var stake = Math.min(slot._betStake || 100, bal || 100);
+      var chips = BET_PRESETS.map(function (v) { return '<button class="bet-chip' + (stake === v ? " on" : "") + '" data-betamt="' + v + '">' + v + "</button>"; }).join("") +
+        '<button class="bet-chip' + (bal && stake === bal ? " on" : "") + '" data-betamt="' + bal + '">올인</button>';
+      var opts = [L, "draw", R].map(function (ch) {
+        return '<button class="bet-opt" data-betch="' + ch + '"><span class="bet-opt-name">' + esc(NAME[ch]) + "</span><span class=\"bet-opt-odds\">×" + ODDS[ch] + '</span><span class="bet-opt-win">적중 +' + Math.round(stake * ODDS[ch]).toLocaleString() + "</span></button>";
+      }).join("");
+      slot.innerHTML = '<div class="bet-box">' + head +
+        '<div class="bet-stakes"><span class="bet-stakes-l">베팅액</span>' + chips + "</div>" +
+        '<div class="bet-opts">' + opts + "</div>" +
+        '<div class="bet-note">옵션을 누르면 베팅돼요 · 포인트는 현금가치 없는 재미용</div></div>';
+      slot._betStakeMax = bal;
+      twem(slot);
+    }
+    slot._betFx = fx.id;
+    slot._betReload = function () { Promise.all([KickComments.myPoints(), KickComments.myBet(fx.id)]).then(function (r) { render(r[0], r[1]); }); };
+    slot._betReload();
+  }
+  function showBetGuide() {
+    var ov = document.createElement("div"); ov.className = "bet-guide-ov";
+    ov.innerHTML = '<div class="bet-guide"><button class="bet-guide-x" aria-label="닫기">✕</button>' +
+      "<h3>🎮 포인트 게임 안내</h3>" +
+      "<ul class=\"bet-guide-list\"><li>가입하면 <b>1,000 KP</b> 지급, 매일 출석 시 <b>+200 KP</b></li>" +
+      "<li>경기 승·무·패에 포인트를 <b>베팅</b> → 적중하면 배당만큼 획득, 틀리면 잃어요</li>" +
+      "<li>배당은 전력차 기반 자동 산출 — <b>언더독 적중 = 대박</b></li>" +
+      "<li>🔥 연속 적중 보너스: 3연승 +10% · 5연승 +25% · 10연승 +50%</li>" +
+      "<li>누적 포인트로 <b>등급·랭킹</b>에 도전!</li></ul>" +
+      '<div class="bet-disc">⚠️ 본 포인트는 환전·현금화·구매가 일절 불가능하며, 오로지 재미와 랭킹을 위한 것입니다. 실제 금전적 가치가 없습니다.</div></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".bet-guide-x")) ov.remove(); });
   }
 
   function loadH2H(slot, fx, a, b) {
@@ -1992,6 +2060,16 @@
       return;
     }
     if ((my = e.target.closest("[data-pred]"))) { var ps = my.closest(".pred-slot"); if (ps && ps._predFx && ps._predOpen && window.KickComments) KickComments.predVote(ps._predFx, my.getAttribute("data-pred")).then(ps._predPaint); return; }
+    if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
+    if ((my = e.target.closest("[data-betamt]"))) { var bsa = my.closest(".bet-slot"); if (bsa && bsa._betReload) { bsa._betStake = parseInt(my.getAttribute("data-betamt"), 10); bsa._betReload(); } return; }
+    if ((my = e.target.closest("[data-betch]"))) {
+      var bsl = my.closest(".bet-slot"); if (!bsl || !bsl._betFx) return;
+      var amt = Math.min(bsl._betStake || 100, bsl._betStakeMax || 0);
+      if (amt < 10) { alert("최소 10 KP부터 베팅할 수 있어요."); return; }
+      if (!confirm(amt.toLocaleString() + " KP를 베팅할까요? (한 경기 1회, 취소 불가)")) return;
+      KickComments.placeBet(bsl._betFx, my.getAttribute("data-betch"), amt).then(function () { bsl._betReload(); }).catch(function (err) { alert("베팅 실패: " + ((err && err.message) || "다시 시도해주세요")); });
+      return;
+    }
     if ((my = e.target.closest("[data-scat]"))) { scoreCat = my.getAttribute("data-scat"); renderScorers(); return; }
     if ((my = e.target.closest(".rank-sb"))) { rankSort = my.getAttribute("data-rsort"); rankLimit = 30; paintRanking(); return; }
     if ((my = e.target.closest(".rank-pb"))) { rankPos = my.getAttribute("data-rpos"); rankLimit = 30; paintRanking(); return; }
@@ -2323,4 +2401,14 @@
     panel.querySelector(".chat-send").addEventListener("click", send);
     panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
   })();
+
+  // 토스트 + 일일 출석 +200 KP
+  function ktToast(msg) {
+    var t = document.createElement("div"); t.className = "kt-toast"; t.textContent = msg; document.body.appendChild(t);
+    setTimeout(function () { t.classList.add("show"); }, 10);
+    setTimeout(function () { t.classList.remove("show"); setTimeout(function () { t.remove(); }, 300); }, 3500);
+  }
+  if (window.KickComments && KickComments.ready) KickComments.ready().then(function (u) {
+    if (u && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { if (r && r.got) ktToast("🎉 출석 +200 KP · 잔액 " + ((r.points || 0)).toLocaleString() + " KP"); });
+  });
 })();

@@ -638,8 +638,18 @@
     return sb.from("match_predictions").upsert({ match_id: mid, device_id: predDevice(), choice: choice }, { onConflict: "match_id,device_id" }).then(function () { return predCounts(mid); }).catch(function () { return predCounts(mid); });
   }
 
+  // ===== 포인트 게임(베팅) =====
+  function myPoints() { if (!sb || !user) return Promise.resolve(null); return sb.rpc("my_points").then(function (r) { return r.data; }).catch(function () { return null; }); }
+  function dailyCheckin() { if (!sb || !user) return Promise.resolve(null); return sb.rpc("daily_checkin").then(function (r) { return r.data; }).catch(function () { return null; }); }
+  function placeBet(mid, ch, amt) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("place_bet", { mid: mid, ch: ch, amt: amt }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
+  function myBet(mid) { if (!sb || !user) return Promise.resolve(null); return sb.from("bets").select("*").eq("user_id", user.id).eq("match_id", mid).maybeSingle().then(function (r) { return r.data; }).catch(function () { return null; }); }
+  function myBets() { if (!sb || !user) return Promise.resolve([]); return sb.from("bets").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
+  function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
+  function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
+
   window.KickComments = {
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, pointsRanking: pointsRanking, settleMatch: settleMatch,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },
