@@ -434,6 +434,9 @@
   }
 
   function pickBigMatch(list) {
+    // 무조건 대한민국 경기가 빅매치
+    var kor = list.filter(function (fx) { return fx.homeId && fx.awayId && (fx.homeId === "south-korea" || fx.awayId === "south-korea"); })[0];
+    if (kor) return kor;
     var best = null, bestScore = 1e9;
     list.forEach(function (fx) {
       if (!fx.homeId || !fx.awayId) return;
