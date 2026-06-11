@@ -16,7 +16,7 @@ function predict(a, b) {
   var s = winA + winB + draw; winA /= s; winB /= s; draw /= s;
   return { winA: winA, draw: draw, winB: winB };
 }
-function odds(p) { var o = Math.round((1 / Math.max(0.01, p)) * 10) / 10; return Math.min(10, Math.max(1.1, o)); }
+function odds(p) { var o = Math.round((1 / Math.max(0.01, p * 1.12)) * 10) / 10; return Math.min(10, Math.max(1.1, o)); }  // ×1.12 = 북메이커 마진(오버라운드)
 const rows = [];
 D.fixtures.forEach(fx => {
   if (!fx.homeId || !fx.awayId) return;
