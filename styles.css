@@ -125,7 +125,7 @@ html, body {
 .fx-meta { grid-column: 1 / -1; color: var(--muted); font-size: 12px; text-align: center; margin-top: 4px; }
 /* 라이브 경기 */
 .fixture.is-live { border-color: rgba(229,72,77,.55); box-shadow: 0 0 0 1px rgba(229,72,77,.25); }
-.fx-score { font-size: 22px; font-weight: 900; color: #fff; font-variant-numeric: tabular-nums; letter-spacing: 1px; }
+.fx-score { font-size: 22px; font-weight: 900; color: var(--text); font-variant-numeric: tabular-nums; letter-spacing: 1px; }
 .fx-score i { color: var(--muted); font-style: normal; margin: 0 3px; font-weight: 700; }
 .fx-live { display: inline-flex; align-items: center; gap: 5px; margin-top: 1px; font-size: 10.5px; font-weight: 800; color: #fff; background: #e5484d; padding: 2px 8px; border-radius: 999px; letter-spacing: .3px; }
 .fx-live .lv-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: lvblink 1.1s infinite ease-in-out; }
