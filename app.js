@@ -372,7 +372,9 @@
     var _sl = document.createElement("div"); _sl.id = "sideAdL"; document.body.appendChild(_sl);
     insertCoupang(_sl, 90, 728);
   }
-  function pageAd() { if (!viewEl || viewEl.querySelector(".adslot")) return; var d = document.createElement("div"); d.className = "adslot"; viewEl.appendChild(d); insertAdFit(d); }
+  function pageAd() { if (!viewEl || viewEl.querySelector(".adslot")) return; var d = document.createElement("div"); d.className = "adslot"; viewEl.appendChild(d); insertAdFit(d); coupangBottom(); }
+  // 페이지 맨 아래에 쿠팡 배너 1개(모든 페이지 공통) — 이미 있으면 스킵
+  function coupangBottom() { if (!viewEl || viewEl.querySelector(".cpang-m")) return; var cp = document.createElement("div"); cp.className = "adslot cpang-m"; viewEl.appendChild(cp); insertCoupang(cp, 320, 50); }
   function renderSchedule() {
     var dates = fixtureDates();
     if (!dates.length) {
@@ -964,7 +966,7 @@
         (team ? '<div class="team-link" data-team="' + esc(team.id) + '">' + esc(team.flag) + " " + esc(team.name) + " 전력 보기 →</div>" : "") +
         '<div class="adslot"></div>' +
       "</div>";
-    insertAdFit(viewEl.querySelector(".adslot"));
+    insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
   }
 
   function teamIdByName(name) {
@@ -1106,7 +1108,7 @@
     html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
     html += '<div class="adslot"></div>';
     viewEl.innerHTML = html;
-    insertAdFit(viewEl.querySelector(".adslot"));
+    insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
   }
 
   // ===================== 경기 예상 (매치업) =====================
@@ -1252,7 +1254,7 @@
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
-    insertAdFit(viewEl.querySelector(".adslot"));
+    insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);

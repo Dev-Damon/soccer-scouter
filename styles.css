@@ -617,7 +617,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .dchip.kor { border-color: var(--muted); }
 .dchip.kor.on { background: var(--text); border-color: var(--text); }
 .dchip-kor { position: absolute; top: -23px; left: 0; right: 0; text-align: center; font-size: 19px; line-height: 1; }
-.dchip-kor img.emoji { width: 24px; height: 24px; vertical-align: middle; }
+.dchip-kor img.emoji { width: 21px; height: 21px; vertical-align: middle; }
 
 /* 빅매치 히어로 */
 .hero {
