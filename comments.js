@@ -456,7 +456,11 @@
   }
   function ratePlayer(pid, score) {
     if (!user) return Promise.reject(new Error("login"));
-    return sb.from("player_ratings").upsert({ player_id: pid, user_id: user.id, score: score, updated_at: new Date().toISOString() }, { onConflict: "player_id,user_id" });
+    // 같은 점수를 다시 누르면 평점 취소(삭제)
+    return sb.from("player_ratings").select("score").eq("player_id", pid).eq("user_id", user.id).maybeSingle().then(function (r) {
+      if (r.data && r.data.score === score) return sb.from("player_ratings").delete().eq("player_id", pid).eq("user_id", user.id);
+      return sb.from("player_ratings").upsert({ player_id: pid, user_id: user.id, score: score, updated_at: new Date().toISOString() }, { onConflict: "player_id,user_id" });
+    });
   }
   // ── 게시판 ──
   function listPosts(category) {

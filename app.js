@@ -2612,6 +2612,8 @@
       }).catch(function () { inp.disabled = false; alert("전송 실패"); });
     }
     fab.addEventListener("click", function () { if (open) { if (ktModalClose) history.back(); else toggle(); } else { toggle(); ktModalOpen(function () { if (open) toggle(); }); } });
+    // 채팅 열려있을 때 바깥(패널·버블 외부) 누르면 닫기
+    document.addEventListener("pointerdown", function (e) { if (open && !panel.contains(e.target) && !fab.contains(e.target)) { if (ktModalClose) history.back(); else toggle(); } });
     panel.querySelector(".chat-close").addEventListener("click", function () { if (ktModalClose) history.back(); else toggle(); });
     panel.querySelector(".chat-send").addEventListener("click", send);
     panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
