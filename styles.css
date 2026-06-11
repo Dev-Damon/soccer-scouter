@@ -897,3 +897,7 @@ html.light .var-tag { color: #fff; }
 /* 테마 토글 버튼 (☀️/🌙) */
 .theme-btn { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 999px; width: 36px; height: 36px; font-size: 15px; line-height: 1; cursor: pointer; flex: none; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
 .theme-btn:active { transform: scale(.94); }
+/* 라이트 모드 — 대진표/안내문 가독성 */
+html.light .brk-stage .con, html.light .brk-stage .csf { background: #dce9fb; border-color: #b6cef2; color: #2c5fc4; }
+html.light .brk-stage .third { background: #eef2f8; border-color: #d9e0ec; color: #46546d; }
+html.light .brk-note { background: #fff6e0; border-color: #efd584; color: #8a6a00; }
