@@ -1540,8 +1540,9 @@
       if (h > 0) return h + "시간 " + (m % 60) + "분 후 종료";
       return m + "분 후 종료";
     }
-    function paint(c) {
-      var mine = KickComments.predMine(fx.id), total = c.total || 0, op = isOpen();
+    function paint(c, bet) {
+      var locked = !!bet;  // 베팅하면 예측 고정(변경 불가)
+      var mine = bet ? bet.choice : KickComments.predMine(fx.id), total = c.total || 0, op = isOpen() && !locked;
       function pct(n) { return total > 0 ? Math.round(n / total * 100) : 0; }
       var opts = [
         { ch: leftCh, name: a.name, flag: a.flag, n: c[leftCh] || 0 },
@@ -1556,13 +1557,17 @@
       }).join("");
       slot.innerHTML = '<div class="pred-box"><div class="pred-q">이 경기의 승리팀을 맞혀보세요! 🔮</div>' +
         '<div class="pred-cols">' + cols + "</div>" +
-        '<div class="pred-foot">' + (total ? "<b>" + total.toLocaleString() + "</b>명 참여중" : "첫 예측을 남겨보세요") + " · ⏱ " + cd() + "</div></div>";
+        '<div class="pred-foot">' + (total ? "<b>" + total.toLocaleString() + "</b>명 참여중" : "첫 예측을 남겨보세요") + " · ⏱ " + cd() + (locked ? " · 💰 베팅완료(예측 고정)" : "") + "</div></div>";
       slot._predOpen = op;
       twem(slot);
     }
     paint({ total: 0 });
     slot._predFx = fx.id; slot._predPaint = paint;
-    function refresh() { KickComments.predCounts(fx.id).then(function (c) { if (document.body.contains(slot)) paint(c); }); }
+    function refresh() {
+      var betP = (KickComments.user && KickComments.user() && KickComments.myBet) ? KickComments.myBet(fx.id) : Promise.resolve(null);
+      Promise.all([KickComments.predCounts(fx.id), betP]).then(function (r) { if (document.body.contains(slot)) paint(r[0], r[1]); });
+    }
+    slot._predReload = refresh;
     refresh();
     if (window._predTimer) clearInterval(window._predTimer);
     window._predTimer = setInterval(function () { if (!document.body.contains(slot)) { clearInterval(window._predTimer); return; } refresh(); }, 30000);
@@ -2162,7 +2167,7 @@
     if ((my = e.target.closest("[data-betcancel]"))) {
       if (!confirm("베팅을 취소하고 포인트를 돌려받을까요?")) return;
       var bsc = my.closest(".bet-slot");
-      if (window.KickComments) KickComments.cancelBet(my.getAttribute("data-betcancel")).then(function () { if (bsc && bsc._betReload) bsc._betReload(); ktToast("베팅 취소 · 포인트 환불 완료"); }).catch(function () { alert("취소 실패 — 경기가 이미 시작됐을 수 있어요."); });
+      if (window.KickComments) KickComments.cancelBet(my.getAttribute("data-betcancel")).then(function () { if (bsc && bsc._betReload) bsc._betReload(); ktToast("베팅 취소 · 포인트 환불 완료"); var psl = document.querySelector(".pred-slot"); if (psl && psl._predReload) psl._predReload(); }).catch(function () { alert("취소 실패 — 경기가 이미 시작됐을 수 있어요."); });
       return;
     }
     if ((my = e.target.closest("[data-betstep]"))) {
@@ -2177,7 +2182,8 @@
       var amt = Math.max(0, Math.min(parseInt(binp ? binp.value : bsl._betStake, 10) || 0, bsl._betStakeMax || 0));
       if (amt < 10) { alert("최소 10 KP부터 베팅할 수 있어요."); return; }
       if (!confirm(amt.toLocaleString() + " KP를 베팅할까요? (한 경기 1회, 취소 불가)")) return;
-      KickComments.placeBet(bsl._betFx, my.getAttribute("data-betch"), amt).then(function () { bsl._betReload(); }).catch(function (err) { alert("베팅 실패: " + ((err && err.message) || "다시 시도해주세요")); });
+      var bch = my.getAttribute("data-betch");
+      KickComments.placeBet(bsl._betFx, bch, amt).then(function () { bsl._betReload(); if (KickComments.predVote) KickComments.predVote(bsl._betFx, bch); var psl = document.querySelector(".pred-slot"); if (psl && psl._predReload) psl._predReload(); }).catch(function (err) { alert("베팅 실패: " + ((err && err.message) || "다시 시도해주세요")); });
       return;
     }
     if ((my = e.target.closest("[data-scat]"))) { scoreCat = my.getAttribute("data-scat"); renderScorers(); return; }
