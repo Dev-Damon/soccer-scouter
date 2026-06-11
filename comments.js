@@ -214,7 +214,7 @@
       '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var an = anonGet();
-    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick" maxlength="20" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">🎲</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">🌶</button><input class="cmt-pw cmt-pw-full" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
+    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick cmt-nick-full" maxlength="20" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">🎲</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">🌶</button><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
     var form = '<div class="cmt-form">' + anonRow + '<textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
@@ -536,7 +536,7 @@
       ".cmt-anon{flex-basis:100%;width:100%;display:flex;gap:6px}",
       ".cmt-anon input{flex:1;min-width:0;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:8px;padding:8px 10px;font-size:13px}",
       ".cmt-anon{flex-wrap:wrap}",
-      ".cmt-pw-full{flex-basis:100%}",
+      ".cmt-anon input.cmt-nick-full{flex:0 0 100%}",
       ".cmt-dice,.cmt-spicy{flex:none;width:40px;background:var(--bg-soft,#0f1a2a);border:1px solid var(--line,#1e2a3a);border-radius:8px;font-size:16px;cursor:pointer;line-height:1}",
       ".cmt-replybox{margin:6px 0 0 0}",
       ".cmt-ta{flex:1;min-height:44px;resize:vertical;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px}",
