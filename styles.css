@@ -600,7 +600,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .ds-arrow { display: flex; position: absolute; top: calc(50% - 3px); transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: #162133; border: 1px solid #2a3a5c; color: #eaf0fb; font-size: 18px; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 9px rgba(0,0,0,.5); z-index: 3; opacity: 1; transition: opacity .25s ease; }
 .ds-arrow.l { left: -3px; } .ds-arrow.r { right: -3px; }
 .ds-arrow.hide { opacity: 0; pointer-events: none; }
-.datestrip { display: flex; gap: 8px; overflow-x: auto; padding: 20px 2px 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.datestrip { display: flex; gap: 8px; overflow-x: auto; padding: 26px 2px 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .datestrip::-webkit-scrollbar { display: none; }
 .dchip {
   position: relative;
@@ -616,8 +616,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 /* 대한민국 경기일: 태극기 + 빨강 강조 */
 .dchip.kor { border-color: var(--muted); }
 .dchip.kor.on { background: var(--text); border-color: var(--text); }
-.dchip-kor { position: absolute; top: -18px; left: 0; right: 0; text-align: center; font-size: 14px; line-height: 1; }
-.dchip-kor img { width: 16px; height: 16px; vertical-align: middle; }
+.dchip-kor { position: absolute; top: -23px; left: 0; right: 0; text-align: center; font-size: 19px; line-height: 1; }
+.dchip-kor img { width: 22px; height: 22px; vertical-align: middle; }
 
 /* 빅매치 히어로 */
 .hero {
