@@ -95,6 +95,13 @@
   }
   // 로그인 사용자(user_id 있음) 표시명은 마스킹, 익명(랜덤닉)은 그대로
   function dispName(name, userId) { return userId ? maskName(name) : (name || "익명"); }
+  // 포인트 등급(티어)
+  var TIERS = [
+    { min: 0, name: "브론즈", c: "#cd7f32" }, { min: 3000, name: "실버", c: "#8fa0b8" },
+    { min: 8000, name: "골드", c: "#e8a90c" }, { min: 20000, name: "플래티넘", c: "#16b8a8" },
+    { min: 50000, name: "다이아", c: "#5b9bd5" }, { min: 120000, name: "챌린저", c: "#e5484d" }
+  ];
+  function tierOf(pts) { var t = TIERS[0], i; for (i = 0; i < TIERS.length; i++) if ((pts || 0) >= TIERS[i].min) t = TIERS[i]; return t; }
 
   var mounts = [];
   function client() {
@@ -163,9 +170,14 @@
         var list = r.data || [];
         if (!list.length) return { list: list, rx: {} };
         var ids = list.map(function (c) { return c.id; });
-        return sb.from("comment_reactions").select("comment_id,user_id,value").in("comment_id", ids)
-          .then(function (rr) {
-            var rx = {};
+        var uids = list.map(function (c) { return c.user_id; }).filter(Boolean);
+        var ptsP = uids.length ? sb.rpc("points_for", { ids: uids }).then(function (pr) {
+          var pm = {}; (pr.data || []).forEach(function (x) { pm[x.user_id] = x.points; });
+          list.forEach(function (c) { if (c.user_id && pm[c.user_id] != null) c._pts = pm[c.user_id]; });
+        }).catch(function () {}) : Promise.resolve();
+        return Promise.all([sb.from("comment_reactions").select("comment_id,user_id,value").in("comment_id", ids), ptsP])
+          .then(function (arr) {
+            var rr = arr[0], rx = {};
             (rr.data || []).forEach(function (x) {
               var e = rx[x.comment_id] || (rx[x.comment_id] = { like: 0, dislike: 0, mine: 0 });
               if (x.value === 1) e.like++; else e.dislike++;
@@ -194,8 +206,10 @@
     var react = '<button class="cmt-rx up' + (rr.mine === 1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="1">▲ ' + rr.like + "</button>" +
       '<button class="cmt-rx down' + (rr.mine === -1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="-1">▼ ' + rr.dislike + "</button>";
     var dn = dispName(c.name, c.user_id);
+    var tier = (c._pts != null) ? tierOf(c._pts) : null;
+    var tierBadge = tier ? '<span class="cmt-tier" style="color:' + tier.c + ';border-color:' + tier.c + '">' + tier.name + "</span>" : "";
     return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(dn) + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
-      '<div class="cmt-top"><span class="cmt-name">' + esc(dn) + "</span>" +
+      '<div class="cmt-top">' + tierBadge + '<span class="cmt-name">' + esc(dn) + "</span>" +
         '<span class="cmt-time">' + timeago(c.created_at) + "</span></div>" +
       '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
       '<div class="cmt-act">' + react +
@@ -558,6 +572,7 @@
       ".cmt{}",
       ".cmt-top{display:flex;align-items:baseline;gap:8px}",
       ".cmt-name{font-weight:500;font-size:13.5px}",
+      ".cmt-tier{font-size:10px;font-weight:800;border:1px solid;border-radius:5px;padding:1px 5px;margin-right:5px;vertical-align:middle}",
       ".cmt-time{color:var(--muted,#9fb0c3);font-size:11.5px}",
       ".cmt-body{font-size:14px;line-height:1.5;margin:3px 0;white-space:pre-wrap;word-break:break-word}",
       ".cmt-act{display:flex;gap:12px}",
@@ -649,7 +664,7 @@
 
   window.KickComments = {
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, pointsRanking: pointsRanking, settleMatch: settleMatch,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

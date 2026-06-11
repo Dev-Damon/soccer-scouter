@@ -1000,3 +1000,19 @@ html.light .mf-grass { fill: #2e8b54; }
 .bet-disc { font-size: 12px; color: var(--muted); background: var(--bg-soft); padding: 11px 13px; border-radius: 10px; line-height: 1.6; }
 .kt-toast { position: fixed; left: 50%; bottom: 92px; transform: translate(-50%, 18px); background: #1a2740; color: #fff; padding: 11px 18px; border-radius: 24px; font-size: 13.5px; font-weight: 700; z-index: 300; opacity: 0; transition: opacity .3s, transform .3s; box-shadow: 0 6px 20px rgba(0,0,0,.3); max-width: 90vw; text-align: center; }
 .kt-toast.show { opacity: 1; transform: translate(-50%, 0); }
+/* MY 포인트 카드 + 랭킹 */
+.pt-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 15px; margin: 12px 0; }
+.pt-top { display: flex; align-items: center; gap: 10px; }
+.pt-tier { color: #fff; font-weight: 800; font-size: 12px; padding: 3px 11px; border-radius: 20px; }
+.pt-bal { margin-left: auto; font-weight: 900; font-size: 22px; color: var(--text); }
+.pt-bal small { font-size: 13px; color: var(--muted); font-weight: 700; }
+.pt-sub { font-size: 12.5px; color: var(--muted); margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pt-guide { margin-left: auto; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 16px; padding: 4px 11px; font-size: 11.5px; color: var(--text); cursor: pointer; font-weight: 700; }
+.pt-rank { display: flex; flex-direction: column; gap: 4px; }
+.pt-rk { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; font-size: 13px; }
+.pt-rk.me { border-color: var(--accent); background: rgba(58,123,247,.08); }
+.pt-rk-n { width: 20px; text-align: center; font-weight: 800; color: var(--muted); flex: none; }
+.pt-rk:nth-child(1) .pt-rk-n { color: #f5b301; } .pt-rk:nth-child(2) .pt-rk-n { color: #9fb0cc; } .pt-rk:nth-child(3) .pt-rk-n { color: #cd7f32; }
+.pt-rk-tier { font-size: 11px; font-weight: 800; flex: none; }
+.pt-rk-name { flex: 1; min-width: 0; font-weight: 600; color: var(--text); }
+.pt-rk-pts { font-weight: 800; color: var(--accent); flex: none; }

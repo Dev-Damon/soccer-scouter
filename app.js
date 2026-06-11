@@ -1791,17 +1791,36 @@
     var avH = av ? '<img class="my-av" src="' + esc(av) + '" alt="">' : '<span class="my-av ph">' + esc(nick.slice(0, 1)) + "</span>";
     var list = myTab === "mine" ? myCache.mine : myCache.tagged;
     var listH = list.length ? list.map(myItem).join("") : '<div class="empty">' + (myTab === "mine" ? "작성한 댓글이 없어요." : "나를 태그한 댓글이 없어요.") + "</div>";
+    var pts = myCache.points, ptCard = "", rankH = "";
+    if (pts && pts.points != null && KickComments.tierOf) {
+      var tr = KickComments.tierOf(pts.points);
+      ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
+        '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
+        '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div></div>';
+    }
+    if (myCache.ranking && myCache.ranking.length) {
+      var myUid = (KickComments.user() || {}).id;
+      rankH = '<div class="sec-h" style="margin-top:18px">🏆 포인트 랭킹 TOP 20</div><div class="pt-rank">' +
+        myCache.ranking.map(function (r, i) {
+          var t = KickComments.tierOf(r.points), me = (r.user_id === myUid);
+          return '<div class="pt-rk' + (me ? " me" : "") + '"><span class="pt-rk-n">' + (i + 1) + "</span>" +
+            '<span class="pt-rk-tier" style="color:' + t.c + '">' + t.name + "</span>" +
+            '<span class="pt-rk-name">' + (me ? "👤 나" : t.name + " 회원") + "</span>" +
+            '<span class="pt-rk-pts">' + r.points.toLocaleString() + " KP</span></div>";
+        }).join("") + "</div>";
+    }
     viewEl.innerHTML = '<div class="my">' +
       '<div class="my-profile">' + avH +
         '<div class="my-meta"><div class="my-nick">' + esc(nick) + "</div>" +
           '<button class="my-edit">닉네임 수정</button>' +
           ((window.KickComments && KickComments.isAdmin && KickComments.isAdmin()) ? ' <button class="my-admin">🛠 관리자</button>' : "") + "</div>" +
         '<button class="my-out">로그아웃</button></div>' +
+      ptCard +
       '<div class="my-editbox"></div>' +
       '<div class="my-tabs">' +
         '<button class="my-tabbtn' + (myTab === "mine" ? " on" : "") + '" data-mytab="mine">내가 쓴 댓글 ' + myCache.mine.length + "</button>" +
         '<button class="my-tabbtn' + (myTab === "tagged" ? " on" : "") + '" data-mytab="tagged">나를 태그한 댓글 ' + myCache.tagged.length + "</button></div>" +
-      '<div class="my-list">' + listH + "</div></div>"; pageAd();
+      '<div class="my-list">' + listH + "</div>" + rankH + "</div>"; pageAd();
   }
   function renderMyLogin() {
     return KickComments.providers().then(function (P) {
@@ -1818,9 +1837,9 @@
     KickComments.ready().then(function (user) {
       if (parseHash().name !== "my") return;
       if (!user) return renderMyLogin();
-      Promise.all([KickComments.myComments(), KickComments.taggedComments()]).then(function (res) {
+      Promise.all([KickComments.myComments(), KickComments.taggedComments(), KickComments.myPoints(), KickComments.pointsRanking(20)]).then(function (res) {
         if (parseHash().name !== "my") return;
-        myCache = { mine: res[0] || [], tagged: res[1] || [] };
+        myCache = { mine: res[0] || [], tagged: res[1] || [], points: res[2], ranking: res[3] || [] };
         paintMy();
       });
     });
