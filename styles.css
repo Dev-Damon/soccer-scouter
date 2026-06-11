@@ -922,3 +922,7 @@ html.light .mf-grass { fill: #2e8b54; }
 /* 저장 별 팝 애니메이션 */
 @keyframes savePop { 0% { transform: scale(1); } 30% { transform: scale(1.55) rotate(-14deg); } 55% { transform: scale(.82) rotate(8deg); } 78% { transform: scale(1.12) rotate(-3deg); } 100% { transform: scale(1) rotate(0); } }
 .save-btn.pop { animation: savePop .5s cubic-bezier(.3,1.4,.5,1); }
+/* 익명 댓글 닉네임/비번 입력 (디시식) */
+.cmt-anon { display: flex; gap: 6px; margin-bottom: 6px; }
+.cmt-anon input { flex: 1; min-width: 0; background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+.cmt-anon input:focus { outline: none; border-color: var(--accent); }

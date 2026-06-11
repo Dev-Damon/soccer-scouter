@@ -2210,7 +2210,6 @@
       }
     }
     function send() {
-      if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; }
       var inp = panel.querySelector(".chat-in"); var v = (inp.value || "").trim(); if (!v) return;
       inp.disabled = true;
       KickComments.chatSend(v).then(function (r) {
@@ -2223,6 +2222,5 @@
     panel.querySelector(".chat-close").addEventListener("click", function () { if (ktModalClose) history.back(); else toggle(); });
     panel.querySelector(".chat-send").addEventListener("click", send);
     panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
-    panel.querySelector(".chat-in").addEventListener("focus", function () { if (!KickComments.user || !KickComments.user()) { this.blur(); KickComments.promptLogin(); } });
   })();
 })();

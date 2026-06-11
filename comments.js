@@ -195,7 +195,7 @@
         '<span class="cmt-more-wrap"><button class="cmt-more" aria-label="더보기">⋯</button>' +
           '<div class="cmt-menu" hidden>' +
           (mine ? '<button class="cmt-del" data-id="' + esc(c.id) + '">삭제</button>'
-                : '<button class="cmt-report" data-id="' + esc(c.id) + '">🚩 신고</button>') +
+                : (!c.user_id ? '<button class="cmt-del" data-id="' + esc(c.id) + '" data-anon="1">삭제</button>' : "") + '<button class="cmt-report" data-id="' + esc(c.id) + '">🚩 신고</button>') +
           "</div></span>" +
       "</div>" +
       '<div class="cmt-replybox"></div>' +
@@ -213,7 +213,9 @@
     var sortUi = '<div class="cmt-sort">' +
       '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
-    var form = '<div class="cmt-form"><textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
+    var an = anonGet();
+    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick" maxlength="12" placeholder="닉네임" value="' + esc(an.name || "") + '"><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
+    var form = '<div class="cmt-form">' + anonRow + '<textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
       : form;  // 로그아웃 상태에서도 입력창 표시, 등록/답글 시 로그인 유도
@@ -245,7 +247,7 @@
       if ((t = e.target.closest(".cmt-rx"))) { return react(m, t.getAttribute("data-id"), parseInt(t.getAttribute("data-v"), 10)); }
       if (e.target.closest(".cmt-send")) { return send(m, null, m.el.querySelector(".cmt-form .cmt-ta")); }
       if ((t = e.target.closest(".cmt-reply"))) { return toggleReply(m, t); }
-      if ((t = e.target.closest(".cmt-del"))) { return del(m, t.getAttribute("data-id")); }
+      if ((t = e.target.closest(".cmt-del"))) { return del(m, t.getAttribute("data-id"), t.getAttribute("data-anon") === "1"); }
       if ((t = e.target.closest(".cmt-report"))) { return report(t.getAttribute("data-id")); }
       if ((t = e.target.closest(".cmt-rsend"))) {
         return send(m, t.getAttribute("data-root"), t.parentNode.querySelector(".cmt-ta"), t.getAttribute("data-replyuid"));
@@ -265,7 +267,6 @@
     var node = cmt && cmt.querySelector(":scope > .cmt-replybox");
     if (!node) return;
     if (node.innerHTML) { node.innerHTML = ""; return; }
-    if (!user) { confirmLogin(); return; }
     var isReply = cmt.classList.contains("reply");
     var prefill = isReply ? "@" + cmt.getAttribute("data-name") + " " : "";
     node.innerHTML = '<textarea class="cmt-ta" maxlength="300" placeholder="답글">' + esc(prefill) + "</textarea>" +
@@ -274,35 +275,43 @@
     if (ta) { ta.focus(); try { ta.setSelectionRange(ta.value.length, ta.value.length); } catch (e2) {} }
   }
 
-  function send(m, parentId, ta, replyToUser) {
-    if (!ta) return;
-    var body = (ta.value || "").trim();
-    if (!body) return;
-    if (!user) { confirmLogin(); return; }
-    var rec = {
-      thread_key: m.key, parent_id: parentId || null, user_id: user.id,
-      reply_to_user: replyToUser || null,
-      name: uname(user), avatar: avatarOf(user),
-      body: mask(body).slice(0, 300)
-    };
+  // ── 익명(디시식) 헬퍼 ──
+  function sha256(s) { try { return crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)).then(function (b) { return Array.prototype.map.call(new Uint8Array(b), function (x) { return ("0" + x.toString(16)).slice(-2); }).join(""); }); } catch (e) { return Promise.resolve("x" + s); } }
+  function anonGet() { try { return JSON.parse(localStorage.getItem("kc_anon") || "{}"); } catch (e) { return {}; } }
+  function anonSet(n, p) { try { localStorage.setItem("kc_anon", JSON.stringify({ name: n, pw: p })); } catch (e) {} }
+  function cmtErr(em) { return /banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." : /duplicate/.test(em) ? "방금 같은 내용을 작성했어요. (도배 방지)" : /has_link/.test(em) ? "링크는 작성할 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." : /spam_campaign/.test(em) ? "스팸으로 감지되어 차단되었어요." : /row-level|policy/.test(em) ? "닉네임/비밀번호를 확인해주세요." : "등록 실패: " + em; }
+  function doInsert(m, ta, rec) {
     ta.disabled = true;
     sb.from("comments").insert(rec).then(function (r) {
-      if (r.error) {
-        var em = String(r.error.message || "");
-        alert(/banned/.test(em) ? "이용이 제한된 계정입니다." :
-              /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." :
-              /duplicate/.test(em) ? "방금 같은 내용을 작성했어요. (도배 방지)" :
-              /has_link/.test(em) ? "링크는 작성할 수 없어요." :
-              /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." :
-              /spam_campaign/.test(em) ? "스팸으로 감지되어 차단되었어요." :
-              "등록 실패: " + em);
-        ta.disabled = false; return;
-      }
+      if (r.error) { alert(cmtErr(String(r.error.message || ""))); ta.disabled = false; return; }
       render(m);
     });
   }
+  function send(m, parentId, ta, replyToUser) {
+    if (!ta) return;
+    var body = (ta.value || "").trim(); if (!body) return;
+    var base = { thread_key: m.key, parent_id: parentId || null, reply_to_user: replyToUser || null, body: mask(body).slice(0, 300) };
+    if (user) { base.user_id = user.id; base.name = uname(user); base.avatar = avatarOf(user); doInsert(m, ta, base); return; }
+    // 익명: 닉네임 + 비번(메인 폼 입력값 또는 이전에 저장한 값)
+    var nickEl = m.el.querySelector(".cmt-form .cmt-nick"), pwEl = m.el.querySelector(".cmt-form .cmt-pw"), an = anonGet();
+    var nick = ((nickEl && nickEl.value) || an.name || "").trim(), pw = ((pwEl && pwEl.value) || an.pw || "").trim();
+    if (!nick) { alert("닉네임을 입력해주세요."); return; }
+    if (!pw) { alert("비밀번호를 입력해주세요. (내 댓글 삭제할 때 필요해요)"); return; }
+    anonSet(nick, pw);
+    sha256(pw).then(function (h) { base.user_id = null; base.name = nick.slice(0, 12); base.pw_hash = h; base.avatar = null; doInsert(m, ta, base); });
+  }
 
-  function del(m, id) {
+  function del(m, id, isAnon) {
+    if (isAnon) {
+      var pw = prompt("이 댓글의 비밀번호를 입력하세요:"); if (!pw) return;
+      sha256(pw.trim()).then(function (h) {
+        sb.rpc("delete_anon_comment", { cid: id, pw: h }).then(function (r) {
+          if (r.error || r.data !== true) { alert("비밀번호가 일치하지 않아요."); return; }
+          render(m);
+        });
+      });
+      return;
+    }
     if (!confirm("댓글을 삭제할까요?")) return;
     sb.from("comments").delete().eq("id", id).then(function () { render(m); });
   }
@@ -566,11 +575,16 @@
     return sb.from("chat_messages").select("*").order("created_at", { ascending: false }).limit(limit || 100)
       .then(function (r) { return (r.data || []).slice().reverse(); }).catch(function () { return []; });
   }
+  function anonChatName() {
+    var n; try { n = localStorage.getItem("kc_chatnick"); } catch (e) {}
+    if (!n) { n = "익명" + Math.floor(1000 + Math.random() * 9000); try { localStorage.setItem("kc_chatnick", n); } catch (e) {} }
+    return n;
+  }
   function chatSend(body) {
-    if (!user) return Promise.reject(new Error("login"));
     var b = mask((body || "").trim()).slice(0, 300);
     if (!b) return Promise.resolve({ skip: true });
-    return sb.from("chat_messages").insert({ body: b, user_id: user.id, name: uname(user) });
+    if (user) return sb.from("chat_messages").insert({ body: b, user_id: user.id, name: uname(user) });
+    return sb.from("chat_messages").insert({ body: b, user_id: null, name: anonChatName() });  // 비로그인=랜덤 닉네임
   }
   function chatSubscribe(onMsg) {
     if (!sb) return null;
