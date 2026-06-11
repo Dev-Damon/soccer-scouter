@@ -308,16 +308,21 @@
   }
 
   // 카카오 애드핏 배너 삽입 (SPA: 영역+스크립트를 매번 새로 넣어 렌더 트리거)
-  function insertAdFit(el) {
+  function insertAdFit(el, unit, w, h) {
     if (!el || el.getAttribute("data-done")) return;
     el.setAttribute("data-done", "1");
     el.innerHTML = '<div class="ad-label">광고</div>';
     var ins = document.createElement("ins"); ins.className = "kakao_ad_area"; ins.style.display = "none";
-    ins.setAttribute("data-ad-unit", "DAN-SWWhds5NegoTMohB");
-    ins.setAttribute("data-ad-width", "320"); ins.setAttribute("data-ad-height", "50");
+    ins.setAttribute("data-ad-unit", unit || "DAN-SWWhds5NegoTMohB");
+    ins.setAttribute("data-ad-width", w || "320"); ins.setAttribute("data-ad-height", h || "50");
     el.appendChild(ins);
     var s = document.createElement("script"); s.async = true; s.src = "//t1.kakaocdn.net/kas/static/ba.min.js";
     el.appendChild(s);
+  }
+  // PC 사이드 세로광고(160×600) — 넓은 화면에서만 1회 삽입(고정요소라 재렌더 영향 없음)
+  if (window.matchMedia && window.matchMedia("(min-width: 1100px)").matches && document.body) {
+    var _sa = document.createElement("div"); _sa.id = "sideAd"; document.body.appendChild(_sa);
+    insertAdFit(_sa, "DAN-d8Ks9EUQd2zgzDyG", "160", "600");
   }
   function renderSchedule() {
     var dates = fixtureDates();

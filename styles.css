@@ -833,6 +833,12 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .adslot { text-align: center; margin: 18px 0 6px; padding: 11px 10px 12px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .detail .adslot { margin-left: -20px; margin-right: -20px; }  /* .detail 20px 패딩 밖으로 → 320px 광고 폭 확보 */
 .adslot .kakao_ad_area, .adslot iframe { border-radius: 8px; overflow: hidden; }
+/* PC 사이드 세로광고 — 넓은 화면 우측 여백에 고정 */
+#sideAd { display: none; }
+@media (min-width: 1100px) {
+  #sideAd { display: block; position: fixed; top: 78px; right: max(12px, calc((100vw - 720px) / 4 - 80px)); z-index: 40; text-align: center; }
+  #sideAd .ad-label { font-size: 10px; color: var(--muted); margin-bottom: 5px; letter-spacing: 1px; }
+}
 .ad-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; letter-spacing: 1px; }
 .kakao_ad_area { margin: 0 auto; }
 
