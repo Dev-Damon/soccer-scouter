@@ -836,10 +836,10 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 /* PC 사이드 세로광고 — 좌(쿠팡 90px)는 990px+, 우(애드핏 160px)는 1100px+ */
 #sideAd, #sideAdL { display: none; }
 #sideAd .ad-label, #sideAdL .ad-label { font-size: 10px; color: var(--muted); margin-bottom: 5px; letter-spacing: 1px; }
-@media (min-width: 990px) {
+@media (min-width: 1200px) {
   #sideAdL { display: block; position: fixed; top: 78px; left: max(10px, calc((100vw - 720px) / 4 - 45px)); z-index: 40; text-align: center; }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1380px) {
   #sideAd { display: block; position: fixed; top: 78px; right: max(12px, calc((100vw - 720px) / 4 - 80px)); z-index: 40; text-align: center; }
 }
 .cpang-note { font-size: 10.5px; color: var(--text); font-weight: 600; line-height: 1.45; margin-top: 7px; max-width: 150px; }
