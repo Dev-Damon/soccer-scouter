@@ -65,8 +65,8 @@ html, body {
 }
 .tabs[hidden] { display: none; }
 .tab {
-  flex: 1; min-height: 44px; padding: 10px 12px; font-size: 14px; font-weight: 700;
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  flex: 1; min-height: 44px; padding: 10px 4px; font-size: 13px; font-weight: 700; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
   background: transparent; color: var(--muted);
   border: 1px solid transparent; border-radius: 10px; cursor: pointer;
   transition: color .15s ease, background .15s ease, box-shadow .15s ease;
