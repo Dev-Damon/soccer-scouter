@@ -1388,13 +1388,24 @@
       return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { summaryCache[eid] = d; return d; });
     });
   }
+  var H2HPRE = null, h2hLoading = null;
+  function ensureH2H() {   // 사전수집 h2h.json 1회 로드(첫 경기 진입 때)
+    if (H2HPRE) return Promise.resolve(H2HPRE);
+    if (h2hLoading) return h2hLoading;
+    if (!window.fetch) { H2HPRE = {}; return Promise.resolve(H2HPRE); }
+    h2hLoading = fetch("h2h.json").then(function (r) { return r.json(); }).then(function (j) { H2HPRE = j || {}; return H2HPRE; }).catch(function () { H2HPRE = {}; return H2HPRE; });
+    return h2hLoading;
+  }
   function loadH2H(slot, fx, a, b) {
-    if (!slot || !window.fetch) return;
-    slot.innerHTML = '<h3>최근 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';
-    fetchSummary(fx).then(function (d) {
-      if (!d) { slot.style.display = "none"; return; }
-      renderH2H(slot, d, fx, a, b);
-    }).catch(function () { slot.style.display = "none"; });
+    if (!slot) return;
+    ensureH2H().then(function (pre) {
+      if (parseHash().name !== "match") return;
+      var rec = pre && pre[fx.id];
+      if (rec && rec.h2h) { renderH2H(slot, { headToHeadGames: rec.h2h }, fx, a, b); return; }  // 조별리그=사전수집 즉시
+      if (!window.fetch) { slot.style.display = "none"; return; }
+      slot.innerHTML = '<h3>최근 상대전적</h3><div class="h2h-loading">불러오는 중…</div>';  // 토너먼트/누락=라이브
+      fetchSummary(fx).then(function (d) { if (!d) { slot.style.display = "none"; return; } renderH2H(slot, d, fx, a, b); }).catch(function () { slot.style.display = "none"; });
+    });
   }
   function loadLineup(slot, fx, a, b) {
     if (!slot || !window.fetch) return;
