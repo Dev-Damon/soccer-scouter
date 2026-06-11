@@ -1519,7 +1519,7 @@
     var home = teamsById[fx.homeId], away = teamsById[fx.awayId];
     if (!home || !away) return null;
     var pr = predict(home, away);
-    function od(p) { return Math.min(10, Math.max(1.1, Math.round(100 / Math.max(1, p)) / 10)); }
+    function od(p) { return Math.min(10, Math.max(1.1, Math.round(1000 / Math.max(1, p)) / 10)); }  // predict()는 %(예 56)라 배당=100/% → 1000/p/10(소수1자리)
     return { home: od(pr.winA), draw: od(pr.draw), away: od(pr.winB) };
   }
   function loadBetting(slot, fx, a, b, aIsHome) {
