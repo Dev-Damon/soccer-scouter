@@ -218,7 +218,7 @@
     var form = '<div class="cmt-form">' + anonRow + '<textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
-      : form;  // 로그아웃 상태에서도 입력창 표시, 등록/답글 시 로그인 유도
+      : '<div class="cmt-loginrow"><button class="cmt-in g" data-p="google">G  구글로 로그인</button><span class="cmt-loginhint">로그인하면 닉네임 고정 · 내 댓글 관리</span></div>' + form;  // 비로그인: 익명 작성 + 선택적 구글로그인
     return '<h3 class="cmt-h">댓글 <span class="cmt-cnt">' + list.length + "</span></h3>" +
       '<div class="cmt-guide">댓글로 좋아하는 선수를 응원해보세요! ⚽</div>' + head +
       (roots.length ? sortUi : "") +
@@ -526,7 +526,9 @@
       ".cmt-anon input{flex:1;min-width:0;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:8px;padding:8px 10px;font-size:13px}",
       ".cmt-replybox{margin:6px 0 0 0}",
       ".cmt-ta{flex:1;min-height:44px;resize:vertical;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px}",
-      ".cmt-send,.cmt-rsend{align-self:flex-end;background:var(--accent,#2ee6a6);color:#06281d;font-weight:800;border:0;border-radius:10px;padding:0 16px;height:44px;cursor:pointer}",
+      ".cmt-send,.cmt-rsend{align-self:flex-end;background:var(--accent,#2ee6a6);color:#fff;font-weight:800;border:0;border-radius:10px;padding:0 16px;height:44px;cursor:pointer}",
+      ".cmt-loginrow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:10px}",
+      ".cmt-loginhint{font-size:11.5px;color:var(--muted,#9fb0cc)}",
       ".cmt-rsend{height:36px;margin-top:6px;font-size:13px}",
       ".cmt-list{display:flex;flex-direction:column;gap:14px}",
       ".cmt-empty{color:var(--muted,#9fb0c3);font-size:13px;padding:8px 0}",
