@@ -2103,7 +2103,8 @@
   });
 
   document.getElementById("homeLink").addEventListener("click", function () {
-    searchEl.value = ""; homeTab = "schedule"; go("");
+    searchEl.value = ""; homeTab = "schedule";
+    if (parseHash().name === "home") renderHome(); else go("");  // 홈의 다른 탭(조별/대진표/기록)에 있어도 일정으로 복귀
   });
 
   // ===== 테마(라이트/다크) 토글 — localStorage, 기본 다크 =====
