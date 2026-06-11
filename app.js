@@ -1522,6 +1522,15 @@
     function od(p) { return Math.min(10, Math.max(1.1, Math.round(1000 / Math.max(1, p * 1.12)) / 10)); }  // predict()는 %(예 56)라 배당=100/% → 1000/p/10(소수1자리)
     return { home: od(pr.winA), draw: od(pr.draw), away: od(pr.winB) };
   }
+  function updBetWin(bss) {
+    if (!bss) return;
+    var inp = bss.querySelector(".bet-amt"); var s = inp ? (parseInt(inp.value, 10) || 0) : (bss._betStake || 0);
+    bss._betStake = s;
+    Array.prototype.forEach.call(bss.querySelectorAll(".bet-opt-win"), function (el) {
+      var o = parseFloat(el.getAttribute("data-odds")) || 0;
+      el.textContent = "적중 +" + Math.round(s * o).toLocaleString();
+    });
+  }
   function loadBetting(slot, fx, a, b, aIsHome) {
     if (!slot || !window.KickComments || !KickComments.myPoints) return;
     var user = KickComments.user && KickComments.user();
@@ -1548,16 +1557,20 @@
         return;
       }
       if (!open) { slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-closed">⏱ 베팅 마감된 경기</div></div>'; return; }
-      var stake = Math.min(slot._betStake || 100, bal || 100);
-      var chips = BET_PRESETS.map(function (v) { return '<button class="bet-chip' + (stake === v ? " on" : "") + '" data-betamt="' + v + '">' + v + "</button>"; }).join("") +
-        '<button class="bet-chip' + (bal && stake === bal ? " on" : "") + '" data-betamt="' + bal + '">올인</button>';
+      var stake = Math.max(10, Math.min(slot._betStake || 100, bal || 100));
+      slot._betStake = stake;
       var opts = [L, "draw", R].map(function (ch) {
-        return '<button class="bet-opt" data-betch="' + ch + '"><span class="bet-opt-name">' + esc(NAME[ch]) + "</span><span class=\"bet-opt-odds\">×" + ODDS[ch] + '</span><span class="bet-opt-win">적중 +' + Math.round(stake * ODDS[ch]).toLocaleString() + "</span></button>";
+        return '<button class="bet-opt" data-betch="' + ch + '"><span class="bet-opt-name">' + esc(NAME[ch]) + "</span><span class=\"bet-opt-odds\">×" + ODDS[ch] + '</span><span class="bet-opt-win" data-odds="' + ODDS[ch] + '">적중 +' + Math.round(stake * ODDS[ch]).toLocaleString() + "</span></button>";
       }).join("");
       slot.innerHTML = '<div class="bet-box">' + head +
-        '<div class="bet-stakes"><span class="bet-stakes-l">베팅액</span>' + chips + "</div>" +
+        '<div class="bet-stakes"><span class="bet-stakes-l">베팅액</span>' +
+          '<button class="bet-step" data-betstep="-100">−100</button>' +
+          '<input class="bet-amt" type="number" inputmode="numeric" value="' + stake + '" min="10" max="' + bal + '">' +
+          '<button class="bet-step" data-betstep="100">+100</button>' +
+          '<button class="bet-step bet-allin" data-betstep="ALLIN">올인</button>' +
+        "</div>" +
         '<div class="bet-opts">' + opts + "</div>" +
-        '<div class="bet-note">옵션을 누르면 베팅돼요 · 포인트는 현금가치 없는 재미용</div></div>';
+        '<div class="bet-note">금액 조절 후 옵션을 누르면 베팅돼요 · 현금가치 없는 재미용</div></div>';
       slot._betStakeMax = bal;
       twem(slot);
     }
@@ -2063,6 +2076,7 @@
 
   // ===================== 이벤트 =====================
   viewEl.addEventListener("input", function (e) {
+    if (e.target.classList && e.target.classList.contains("bet-amt")) { updBetWin(e.target.closest(".bet-slot")); return; }
     if (e.target.closest(".mgr-search") && adminCache) {
       adminQ = e.target.value;
       var q = adminQ.toLowerCase();
@@ -2084,10 +2098,16 @@
     if ((my = e.target.closest(".bet-loginbtn"))) { if (window.KickComments && KickComments.signIn) KickComments.signIn(my.getAttribute("data-p") || "google"); return; }
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
     if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
-    if ((my = e.target.closest("[data-betamt]"))) { var bsa = my.closest(".bet-slot"); if (bsa && bsa._betReload) { bsa._betStake = parseInt(my.getAttribute("data-betamt"), 10); bsa._betReload(); } return; }
+    if ((my = e.target.closest("[data-betstep]"))) {
+      var bss = my.closest(".bet-slot"); var inp = bss && bss.querySelector(".bet-amt"); if (!inp) return;
+      var bal = bss._betStakeMax || 0, step = my.getAttribute("data-betstep"), cur = parseInt(inp.value, 10) || 0;
+      inp.value = step === "ALLIN" ? bal : Math.max(10, Math.min(bal, cur + parseInt(step, 10)));
+      updBetWin(bss); return;
+    }
     if ((my = e.target.closest("[data-betch]"))) {
       var bsl = my.closest(".bet-slot"); if (!bsl || !bsl._betFx) return;
-      var amt = Math.min(bsl._betStake || 100, bsl._betStakeMax || 0);
+      var binp = bsl.querySelector(".bet-amt");
+      var amt = Math.max(0, Math.min(parseInt(binp ? binp.value : bsl._betStake, 10) || 0, bsl._betStakeMax || 0));
       if (amt < 10) { alert("최소 10 KP부터 베팅할 수 있어요."); return; }
       if (!confirm(amt.toLocaleString() + " KP를 베팅할까요? (한 경기 1회, 취소 불가)")) return;
       KickComments.placeBet(bsl._betFx, my.getAttribute("data-betch"), amt).then(function () { bsl._betReload(); }).catch(function (err) { alert("베팅 실패: " + ((err && err.message) || "다시 시도해주세요")); });
