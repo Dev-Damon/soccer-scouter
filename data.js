@@ -12693,7 +12693,7 @@ window.DATA = {
         "에레디비시 통산 멕시코 최다 득점 기록 (45골)"
       ],
       "notableTransfer": "2025년 2월 페예노르트에서 AC 밀란으로 고정 이적료 약 2,850만 유로(+보너스)에 이적",
-      "ovr": 80,
+      "ovr": 83,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -12707,7 +12707,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 76,
         "골결정력": 85
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "edson-alvarez",
@@ -12737,7 +12738,7 @@ window.DATA = {
         "에레디비시 우승 (아약스)"
       ],
       "notableTransfer": "2019년 클럽 아메리카에서 아약스로 약 1,500만 유로 이적, 2023년 웨스트햄 이적 후 2025년 페네르바흐체 임대",
-      "ovr": 79,
+      "ovr": 77,
       "scout": {
         "skill": 79,
         "value": 79,
@@ -12751,7 +12752,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 83,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "raul-jimenez",
@@ -12781,7 +12783,7 @@ window.DATA = {
         "프리메이라리가 우승 (벤피카)"
       ],
       "notableTransfer": "2018년 벤피카에서 울버햄프턴으로 구단 최고액 약 3,000만 파운드에 이적, 2023년 풀럼 이적",
-      "ovr": 76,
+      "ovr": 79,
       "scout": {
         "skill": 76,
         "value": 68,
@@ -12795,7 +12797,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 80,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "gilberto-mora",
@@ -12823,7 +12826,7 @@ window.DATA = {
         "CONCACAF 골드컵 우승 (2025, 최연소 국제대회 우승 기록)"
       ],
       "notableTransfer": "2024년 15세에 리가 MX 최연소 선발 출전·득점, 레알 마드리드·바르셀로나 등 빅클럽 영입설",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -12837,7 +12840,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "johan-vasquez",
@@ -12866,7 +12870,7 @@ window.DATA = {
         "CONCACAF 네이션스리그 우승"
       ],
       "notableTransfer": "2021년 푸마스에서 제노아로 이적, 세리에 A에 정착한 멕시코 주전 센터백",
-      "ovr": 72,
+      "ovr": 69,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -12880,7 +12884,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "cesar-montes",
@@ -12909,7 +12914,7 @@ window.DATA = {
         "CONCACAF 네이션스리그 우승"
       ],
       "notableTransfer": "몬테레이에서 에스파뇰을 거쳐 로코모티프 모스크바로 이적한 장신 센터백",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -12923,7 +12928,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 84,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "orbelin-pineda",
@@ -12953,7 +12959,7 @@ window.DATA = {
         "그리스 수페르리가 우승 (AEK)"
       ],
       "notableTransfer": "셀타 비고를 거쳐 AEK 아테네에 정착, 그리스 리그에서 핵심 플레이메이커로 활약",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -12967,7 +12973,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 62,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "jesus-gallardo",
@@ -13011,7 +13018,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "guillermo-ochoa",
@@ -13041,7 +13049,7 @@ window.DATA = {
         "CONCACAF 네이션스리그 우승"
       ],
       "notableTransfer": "아메리카·말라가·스탕다르 리에주·살레르니타나 등을 거친 6회 월드컵 도전 골키퍼",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 55,
@@ -13055,7 +13063,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "luis-romo",
@@ -13084,7 +13093,7 @@ window.DATA = {
         "CONCACAF 네이션스리그 우승"
       ],
       "notableTransfer": "크루스 아술, 몬테레이를 거쳐 과달라하라(치바스)로 이적한 다재다능 미드필더",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -13098,7 +13107,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "alexis-vega",
@@ -13127,7 +13137,7 @@ window.DATA = {
         "리가 MX 우승 (톨루카)"
       ],
       "notableTransfer": "과달라하라에서 톨루카로 이적, 리가 MX 우승에 기여한 측면 공격수",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -13141,7 +13151,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "ronwen-williams",
@@ -13172,7 +13183,7 @@ window.DATA = {
         "2026 CAF 챔피언스리그 우승"
       ],
       "notableTransfer": "2022년 슈퍼스포츠 유나이티드에서 12년 만에 마멜로디 선다운스로 이적",
-      "ovr": 78,
+      "ovr": 79,
       "scout": {
         "skill": 78,
         "value": 69,
@@ -13186,7 +13197,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 76,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "lyle-foster",
@@ -13214,7 +13226,7 @@ window.DATA = {
         "2022 벨기에 2부 우승 및 1부 승격(베스테를로)"
       ],
       "notableTransfer": "2023년 1월 모나코에서 번리로 약 1,100만 유로에 이적(그 전 베스테를로에서 승격 견인)",
-      "ovr": 75,
+      "ovr": 77,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -13228,7 +13240,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "teboho-mokoena",
@@ -13258,7 +13271,7 @@ window.DATA = {
         "A매치 50경기 달성 기념패 수여"
       ],
       "notableTransfer": "주로 마멜로디 선다운스에서 활약하며 A매치 50경기를 돌파한 핵심 자원",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -13272,7 +13285,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 74,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "themba-zwane",
@@ -13304,7 +13318,7 @@ window.DATA = {
         "2019/20 PSL 올해의 선수"
       ],
       "notableTransfer": "마멜로디 선다운스의 원클럽 레전드로 1년 계약 연장하며 잔류",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 59,
@@ -13318,7 +13332,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 59,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "khuliso-mudau",
@@ -13348,7 +13363,7 @@ window.DATA = {
         "2023 아프리칸 풋볼 리그 우승"
       ],
       "notableTransfer": "마멜로디 선다운스에서 장기 활약하며 한때 번리 등 유럽 클럽의 관심을 받음",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -13362,7 +13377,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "relebohile-mofokeng",
@@ -13390,7 +13406,7 @@ window.DATA = {
         "베트웨이 프리미어십 이달의 선수 수상"
       ],
       "notableTransfer": "올랜도 파이리츠 유스 출신으로 유럽 이적이 거론되는 차세대 스타",
-      "ovr": 68,
+      "ovr": 71,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -13404,7 +13420,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "oswin-appollis",
@@ -13430,7 +13447,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025/26 시즌 폴로콰네 시티에서 올랜도 파이리츠로 이적(여러 빅클럽 경쟁 끝에 영입)",
-      "ovr": 69,
+      "ovr": 71,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -13444,7 +13461,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 56,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "iqraam-rayners",
@@ -13473,7 +13491,7 @@ window.DATA = {
         "다수의 PSL 우승"
       ],
       "notableTransfer": "2024년 8월 스텔렌보스에서 마멜로디 선다운스로 자유계약 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -13487,7 +13505,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mbekezeli-mbokazi",
@@ -13517,7 +13536,7 @@ window.DATA = {
         "2026 월드컵 본선 진출 기여"
       ],
       "notableTransfer": "2025년 12월 올랜도 파이리츠에서 시카고 파이어로 약 300만 달러에 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -13531,7 +13550,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "aubrey-modiba",
@@ -13560,7 +13580,7 @@ window.DATA = {
         "2026 CAF 챔피언스리그 우승"
       ],
       "notableTransfer": "슈퍼스포츠 유나이티드를 거쳐 마멜로디 선다운스에서 주전으로 정착",
-      "ovr": 67,
+      "ovr": 73,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -13574,7 +13594,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 69,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "son-heung-min",
@@ -13604,7 +13625,7 @@ window.DATA = {
         "대한민국 A매치 최다 출전·득점 기록 보유"
       ],
       "notableTransfer": "2025년 토트넘에서 LAFC로 약 2650만 달러(MLS 역대 최고 이적료)에 이적",
-      "ovr": 85,
+      "ovr": 89,
       "scout": {
         "skill": 92,
         "value": 82,
@@ -13618,7 +13639,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 73,
         "골결정력": 90
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "kim-min-jae",
@@ -13647,7 +13669,7 @@ window.DATA = {
         "분데스리가 우승(바이에른)"
       ],
       "notableTransfer": "2023년 나폴리에서 바이에른 뮌헨으로 약 5000만 유로(아시아 선수 역대 최고 이적료)에 이적",
-      "ovr": 90,
+      "ovr": 89,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -13661,7 +13683,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 88,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "lee-kang-in",
@@ -13691,7 +13714,7 @@ window.DATA = {
         "쿠프 드 프랑스 우승"
       ],
       "notableTransfer": "2023년 마요르카에서 파리 생제르맹으로 약 2200만 유로에 이적",
-      "ovr": 85,
+      "ovr": 83,
       "scout": {
         "skill": 85,
         "value": 85,
@@ -13705,7 +13728,8 @@ window.DATA = {
         "테크닉": 89,
         "피지컬": 62,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "hwang-hee-chan",
@@ -13734,7 +13758,7 @@ window.DATA = {
         "오스트리아 분데스리가 우승(잘츠부르크)"
       ],
       "notableTransfer": "잘츠부르크·라이프치히를 거쳐 울버햄프턴으로 이적해 프리미어리그에서 활약",
-      "ovr": 74,
+      "ovr": 79,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -13748,7 +13772,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 76,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "lee-jae-sung",
@@ -13777,7 +13802,7 @@ window.DATA = {
         "A매치 100경기 이상 출전(센추리 클럽)"
       ],
       "notableTransfer": "홀슈타인 킬을 거쳐 분데스리가 마인츠 05로 이적해 주전으로 정착",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -13791,7 +13816,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 62,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "hwang-in-beom",
@@ -13819,7 +13845,7 @@ window.DATA = {
         "2018 아시안게임 금메달"
       ],
       "notableTransfer": "2024년 페예노르트와 4년 계약을 맺고 에레디비시 무대에서 활약",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -13833,7 +13859,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 64,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jo-hyeon-woo",
@@ -13862,7 +13889,7 @@ window.DATA = {
         "2018 러시아 월드컵 독일전 호수비로 주목"
       ],
       "notableTransfer": "K리그 울산 HD에서 장기간 주전 골키퍼로 활약하며 국가대표 No.1 자리 확보",
-      "ovr": 66,
+      "ovr": 67,
       "scout": {
         "skill": 66,
         "value": 59,
@@ -13876,7 +13903,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 63,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "cho-gue-sung",
@@ -13904,7 +13932,7 @@ window.DATA = {
         "2022 카타르 월드컵 가나전 멀티골"
       ],
       "notableTransfer": "전북에서 미트윌란으로 이적, 2022 카타르 월드컵에서 한 경기 멀티골 기록",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -13918,7 +13946,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "oh-hyeon-gyu",
@@ -13946,7 +13975,7 @@ window.DATA = {
         "스코틀랜드 프리미어십 우승(셀틱)"
       ],
       "notableTransfer": "수원·셀틱을 거쳐 베식타스로 이적해 유럽 무대 경험을 쌓음",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -13960,7 +13989,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "bae-jun-ho",
@@ -13986,7 +14016,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "대전 하나시티즌에서 잉글랜드 스토크 시티로 이적한 유망주",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -14000,7 +14030,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 48,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "patrik-schick",
@@ -14030,7 +14061,7 @@ window.DATA = {
         "유로 2020 공동 득점왕(5골)·올해의 골"
       ],
       "notableTransfer": "2020년 RB 라이프치히에서 레버쿠젠으로 약 2,650만 유로에 이적, 2030년까지 재계약.",
-      "ovr": 86,
+      "ovr": 88,
       "scout": {
         "skill": 86,
         "value": 82,
@@ -14044,7 +14075,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 85,
         "골결정력": 88
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "tomas-soucek",
@@ -14073,7 +14105,7 @@ window.DATA = {
         "체코 1부리그 우승 2회·체코컵 2회(슬라비아)"
       ],
       "notableTransfer": "2020년 슬라비아 프라하에서 웨스트햄으로 약 2,100만 유로(£19m)에 완전 이적.",
-      "ovr": 80,
+      "ovr": 78,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -14087,7 +14119,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 87,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "ladislav-krejci",
@@ -14116,7 +14149,7 @@ window.DATA = {
         "체코 대표팀 주장 (2026~)"
       ],
       "notableTransfer": "스파르타 프라하→지로나(2024, 1,200만 유로)→울버햄프턴(2025 임대, 약 £26m 완전이적 조건).",
-      "ovr": 76,
+      "ovr": 78,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -14130,7 +14163,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 82,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "pavel-sulc",
@@ -14158,7 +14192,7 @@ window.DATA = {
         "체코 올해의 선수(황금공) (2024-25)"
       ],
       "notableTransfer": "2025년 비크토리아 플젠에서 리옹으로 약 750만 유로(+보너스 250만)에 이적.",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -14172,7 +14206,8 @@ window.DATA = {
         "테크닉": 81,
         "피지컬": 60,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "adam-hlozek",
@@ -14201,7 +14236,7 @@ window.DATA = {
         "DFB-포칼 우승 (2024)"
       ],
       "notableTransfer": "2024년 바이어 레버쿠젠에서 호펜하임으로 약 1,800만 유로에 완전 이적.",
-      "ovr": 70,
+      "ovr": 76,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -14215,7 +14250,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "matej-kovar",
@@ -14244,7 +14280,7 @@ window.DATA = {
         "DFB-포칼 우승 (2024)"
       ],
       "notableTransfer": "맨체스터 유나이티드 유스→레버쿠젠→2026년 1월 PSV 완전 이적(2030년까지).",
-      "ovr": 66,
+      "ovr": 67,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -14258,7 +14294,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 63,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "vladimir-coufal",
@@ -14286,7 +14323,7 @@ window.DATA = {
         "UEFA 컨퍼런스리그 우승 (2023, 웨스트햄)"
       ],
       "notableTransfer": "2024년까지 웨스트햄에서 활약 후 호펜하임으로 이적, 컨퍼런스리그 우승 멤버.",
-      "ovr": 64,
+      "ovr": 70,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -14300,7 +14337,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 66,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "lukas-provod",
@@ -14328,7 +14366,7 @@ window.DATA = {
         "체코 1부리그 우승 (슬라비아 프라하)"
       ],
       "notableTransfer": "슬라비아 프라하 장기 핵심 자원으로 국내 리그 정상급 활약 유지.",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -14342,7 +14380,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "tomas-holes",
@@ -14384,7 +14423,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "mojmir-chytil",
@@ -14412,7 +14452,7 @@ window.DATA = {
         "체코 1부리그 우승 (슬라비아 프라하)"
       ],
       "notableTransfer": "시그마 올로모우츠에서 슬라비아 프라하로 이적해 국내 무대 정상급 공격수로 성장.",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -14426,7 +14466,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 59,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "tomas-chory",
@@ -14454,7 +14495,7 @@ window.DATA = {
         "체코 1부리그 우승 (슬라비아 프라하)"
       ],
       "notableTransfer": "비크토리아 플젠을 거쳐 슬라비아 프라하로 이적, 장신 타깃맨으로 활용.",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 51,
@@ -14468,7 +14509,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 58,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "alphonso-davies",
@@ -14513,7 +14555,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 82,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "jonathan-david",
@@ -14542,7 +14585,7 @@ window.DATA = {
         "캐나다 통산 최다 득점 공동선두"
       ],
       "notableTransfer": "2025년 7월 릴 계약 만료 후 자유계약으로 유벤투스와 5년 계약. (이전 릴 이적료 약 3000만 유로로 캐나다 역대 최고액)",
-      "ovr": 87,
+      "ovr": 89,
       "scout": {
         "skill": 87,
         "value": 87,
@@ -14556,7 +14599,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 78,
         "골결정력": 88
-      }
+      },
+      "ovrBase": 87
     },
     {
       "id": "cyle-larin",
@@ -14585,7 +14629,7 @@ window.DATA = {
         "콩카카프 골드컵 준우승"
       ],
       "notableTransfer": "2023년 베식타시에서 마요르카로 이적, 2026년 6월 사우샘프턴 이적 예정.",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 68,
@@ -14599,7 +14643,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 78,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "stephen-eustaquio",
@@ -14629,7 +14674,7 @@ window.DATA = {
         "캐나다 올해의 선수 (2023)"
       ],
       "notableTransfer": "2026년 2월 FC 포르투에서 LAFC로 4개월 임대 (바이아웃 옵션 포함).",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -14643,7 +14688,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 72,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "alistair-johnston",
@@ -14672,7 +14718,7 @@ window.DATA = {
         "스코티시컵 우승"
       ],
       "notableTransfer": "2023년 1월 CF 몬트리올에서 셀틱으로 이적.",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -14686,7 +14732,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 74,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "derek-cornelius",
@@ -14712,7 +14759,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 8월 마르세유와 4년 계약, 2025년 9월 레인저스로 임대.",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -14726,7 +14773,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "tajon-buchanan",
@@ -14755,7 +14803,7 @@ window.DATA = {
         "세리에 A 우승 (인테르)"
       ],
       "notableTransfer": "2025년 7월 인테르 밀란에서 비야레알로 약 850만 유로에 완전 이적.",
-      "ovr": 68,
+      "ovr": 74,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -14769,7 +14817,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 70,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ismael-kone",
@@ -14795,7 +14844,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 6월 왓퍼드에서 마르세유로 약 1500만 파운드(옵션 포함) 이적, 2026년 2월 사수올로로 완전 이적.",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -14809,7 +14858,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "tani-oluwaseyi",
@@ -14835,7 +14885,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 미네소타 유나이티드에서 비야레알로 클럽 기록상 약 850만~900만 달러에 이적.",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -14849,7 +14899,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 51,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "edin-dzeko",
@@ -14880,7 +14931,7 @@ window.DATA = {
         "세리에A 득점왕 2016-17"
       ],
       "notableTransfer": "맨시티·로마·인터 밀란을 거쳐 2026년 1월 시즌 말까지 샬케 04와 계약, 마흔에 본선행을 견인.",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 69,
@@ -14894,7 +14945,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 84,
         "골결정력": 85
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "sead-kolasinac",
@@ -14923,7 +14975,7 @@ window.DATA = {
         "FA컵·커뮤니티실드(아스널)"
       ],
       "notableTransfer": "샬케·아스널을 거쳐 2023년 아탈란타로 이적, 2024년 유로파리그 우승 합류.",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -14937,7 +14989,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 86,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "amar-dedic",
@@ -14965,7 +15018,7 @@ window.DATA = {
         "오스트리아 분데스리가 우승(잘츠부르크)"
       ],
       "notableTransfer": "2025년 잘츠부르크에서 약 1000만 유로에 벤피카로 이적.",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 75,
@@ -14979,7 +15032,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 70,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "ermedin-demirovic",
@@ -15005,7 +15059,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 아우크스부르크에서 약 2100만 유로(+보너스)로 슈투트가르트행, 구단 영입 기록 경신.",
-      "ovr": 73,
+      "ovr": 77,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -15019,7 +15073,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "esmir-bajraktarevic",
@@ -15045,7 +15100,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 1월 뉴잉글랜드 레볼루션에서 PSV로 이적(이적료 비공개).",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -15059,7 +15114,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 57,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "benjamin-tahirovic",
@@ -15085,7 +15141,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "로마, 아약스를 거쳐 2025년 브뢴뷔로 이적(2028년까지 계약).",
-      "ovr": 62,
+      "ovr": 65,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -15099,7 +15155,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 73,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "nikola-vasilj",
@@ -15127,7 +15184,7 @@ window.DATA = {
         "2. 분데스리가 우승(장크트파울리)"
       ],
       "notableTransfer": "장크트파울리 소속으로 2.분데스리가 우승 및 분데스리가 승격을 견인.",
-      "ovr": 66,
+      "ovr": 67,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -15141,7 +15198,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 63,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "nikola-katic",
@@ -15167,7 +15225,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레인저스·취리히를 거쳐 2025년 샬케 04로 이적(2028년까지).",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -15181,7 +15239,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "amir-hadziahmetovic",
@@ -15207,7 +15266,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "베식타시 소속으로 2025년 헐 시티에 임대(2026년 6월까지).",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -15221,7 +15280,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 69,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "armin-gigovic",
@@ -15247,7 +15307,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 영 보이스로 완전 이적(2029년까지 계약).",
-      "ovr": 59,
+      "ovr": 63,
       "scout": {
         "skill": 59,
         "value": 59,
@@ -15261,7 +15321,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 64,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "haris-tabakovic",
@@ -15289,7 +15350,7 @@ window.DATA = {
         "2. 분데스리가 득점왕 2023-24(헤르타)"
       ],
       "notableTransfer": "헤르타 베를린에서 2023-24 2.분데스리가 득점왕(22골) 후 호펜하임 이적, 2025-26 묀헨글라트바흐 임대.",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 54,
@@ -15303,7 +15364,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "akram-afif",
@@ -15334,7 +15396,7 @@ window.DATA = {
         "카타르 스타스 리그 다수 우승"
       ],
       "notableTransfer": "2016년 비야레알로 이적해 카타르 출생 첫 라리가 선수가 되었고, 세비야·헤타페·에위펀 등 유럽 임대를 거쳐 2020년 알 사드에 완전 정착.",
-      "ovr": 84,
+      "ovr": 86,
       "scout": {
         "skill": 84,
         "value": 84,
@@ -15348,7 +15410,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 66,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "almoez-ali",
@@ -15379,7 +15442,7 @@ window.DATA = {
         "카타르 역대 최다 득점자(60골)"
       ],
       "notableTransfer": "아스파이어 아카데미 출신으로 LASK·쿨투랄 레오네사 등 유럽을 경험한 뒤 2016년 알 두하일에 정착해 주장으로 활약 중.",
-      "ovr": 80,
+      "ovr": 83,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -15393,7 +15456,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 84
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "hassan-al-haydos",
@@ -15424,7 +15488,7 @@ window.DATA = {
         "카타르 역대 최다 출전(184캡)"
       ],
       "notableTransfer": "2007년부터 알 사드 한 팀에서만 뛴 원클럽맨으로, 2024년 은퇴 선언 후 2025년 월드컵을 위해 복귀.",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -15438,7 +15502,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 62,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "boualem-khoukhi",
@@ -15468,7 +15533,7 @@ window.DATA = {
         "카타르 스타스 리그 우승 다수"
       ],
       "notableTransfer": "알제리 출생으로 2009년 알 아라비를 거쳐 2017년 알 사드로 이적, 귀화 후 카타르 대표로 활약.",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -15482,7 +15547,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 82,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "meshaal-barsham",
@@ -15512,7 +15578,7 @@ window.DATA = {
         "카타르 스타스 리그 우승 다수"
       ],
       "notableTransfer": "유소년 시절부터 알 사드에서 성장한 원클럽맨 골키퍼로, 올림픽 높이뛰기 금메달리스트 무타즈 바르샴의 동생.",
-      "ovr": 71,
+      "ovr": 72,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -15526,7 +15592,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "karim-boudiaf",
@@ -15556,7 +15623,7 @@ window.DATA = {
         "카타르 스타스 리그 우승 7회"
       ],
       "notableTransfer": "프랑스 출생으로 2013년부터 카타르 대표로 활약, 알 두하일에서 리그 우승 7회를 경험한 베테랑.",
-      "ovr": 65,
+      "ovr": 68,
       "scout": {
         "skill": 65,
         "value": 58,
@@ -15570,7 +15637,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 76,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "pedro-miguel",
@@ -15600,7 +15668,7 @@ window.DATA = {
         "2022 월드컵 출전"
       ],
       "notableTransfer": "포르투갈 출생(카보베르데계)으로 2016년 카타르 대표로 데뷔, 알 사드의 핵심 수비수로 자리잡음.",
-      "ovr": 64,
+      "ovr": 70,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -15614,7 +15682,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 66,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "edmilson-junior",
@@ -15644,7 +15713,7 @@ window.DATA = {
         "2022 AFC 챔피언스리그 득점왕"
       ],
       "notableTransfer": "벨기에 신트트라위던·스탕다르 리에주를 거쳐 2018년 알 두하일 합류, 2024년 카타르 대표로 데뷔.",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 60,
@@ -15658,7 +15727,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 56,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "assim-madibo",
@@ -15688,7 +15758,7 @@ window.DATA = {
         "AFC U-19 챔피언십 우승 2014"
       ],
       "notableTransfer": "알 두하일 소속이나 현재 알 와크라로 임대, 2014 AFC U-19 우승 멤버 출신.",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -15702,7 +15772,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "granit-xhaka",
@@ -15745,7 +15816,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 80,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "manuel-akanji",
@@ -15789,7 +15861,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 85,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "breel-embolo",
@@ -15818,7 +15891,7 @@ window.DATA = {
         "트로페오 호안 감페르 (모나코, 2024)"
       ],
       "notableTransfer": "2014년 바젤 데뷔 후 약 €20m에 샬케 이적, 묀헨글라트바흐·모나코 거쳐 2025년 렌 합류",
-      "ovr": 80,
+      "ovr": 83,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -15832,7 +15905,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 82,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "gregor-kobel",
@@ -15860,7 +15934,7 @@ window.DATA = {
         "UEFA 챔피언스리그 준우승 (도르트문트, 2023-24, 스위스 GK 최초 결승 진출)"
       ],
       "notableTransfer": "2021년 슈투트가르트에서 €15m에 도르트문트 이적, 장기 계약(2028년까지)",
-      "ovr": 82,
+      "ovr": 83,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -15874,7 +15948,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 80,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "dan-ndoye",
@@ -15902,7 +15977,7 @@ window.DATA = {
         "코파 이탈리아 (볼로냐, 결승 득점)"
       ],
       "notableTransfer": "2025년 볼로냐에서 노팅엄 포레스트로 약 €40m+(£34m 규모) 이적, 5년 계약",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -15916,7 +15991,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 68,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "ricardo-rodriguez",
@@ -15944,7 +16020,7 @@ window.DATA = {
         "UEFA 유로파 컨퍼런스리그 등 클럽 커리어 경험"
       ],
       "notableTransfer": "볼프스부르크·AC밀란·토리노 거쳐 베테랑으로 레알 베티스에서 활약",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -15958,7 +16034,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "remo-freuler",
@@ -15986,7 +16063,7 @@ window.DATA = {
         "코파 이탈리아 (볼로냐)"
       ],
       "notableTransfer": "아탈란타·노팅엄 포레스트 거쳐 볼로냐에서 주축으로 활약(코파 이탈리아 우승)",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -16000,7 +16077,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 74,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "ruben-vargas",
@@ -16028,7 +16106,7 @@ window.DATA = {
         "유로 2024 16강 이탈리아전 MOM (득점·도움)"
       ],
       "notableTransfer": "2025년 아우크스부르크에서 약 €2m에 세비야 이적",
-      "ovr": 72,
+      "ovr": 75,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -16042,7 +16120,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 58,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "denis-zakaria",
@@ -16070,7 +16149,7 @@ window.DATA = {
         "리그 1 클럽 커리어 경험"
       ],
       "notableTransfer": "묀헨글라트바흐·유벤투스·첼시 거쳐 모나코에서 주축으로 활약",
-      "ovr": 76,
+      "ovr": 77,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -16084,7 +16163,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 83,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "fabian-rieder",
@@ -16112,7 +16192,7 @@ window.DATA = {
         "스위스 슈퍼리그 (영보이즈)"
       ],
       "notableTransfer": "영보이즈에서 렌으로 이적 후 슈투트가르트 임대 거쳐 2025년 아우크스부르크 합류",
-      "ovr": 64,
+      "ovr": 67,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -16126,7 +16206,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 57,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "vinicius-junior",
@@ -16157,7 +16238,7 @@ window.DATA = {
         "발롱도르 2위 2024"
       ],
       "notableTransfer": "2017년 플라멩구에서 레알 마드리드로 약 €46M에 이적 (당시 19세 이하 최고 이적료)",
-      "ovr": 95,
+      "ovr": 96,
       "scout": {
         "skill": 95,
         "value": 95,
@@ -16171,7 +16252,8 @@ window.DATA = {
         "테크닉": 92,
         "피지컬": 74,
         "골결정력": 84
-      }
+      },
+      "ovrBase": 95
     },
     {
       "id": "raphinha",
@@ -16202,7 +16284,7 @@ window.DATA = {
         "라리가 올해의 선수 2024-25"
       ],
       "notableTransfer": "2022년 리즈에서 바르셀로나로 초기 £50M(추가 옵션 £55M)에 이적",
-      "ovr": 90,
+      "ovr": 92,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -16216,7 +16298,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 74,
         "골결정력": 84
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "neymar",
@@ -16248,7 +16331,7 @@ window.DATA = {
         "FIFA 컨페더레이션스컵 2013"
       ],
       "notableTransfer": "2017년 바르셀로나에서 PSG로 €222M, 당시 세계 최고 이적료 기록",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 69,
@@ -16262,7 +16345,8 @@ window.DATA = {
         "테크닉": 92,
         "피지컬": 62,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "bruno-guimaraes",
@@ -16293,7 +16377,7 @@ window.DATA = {
         "코파 두 브라질 2019"
       ],
       "notableTransfer": "2022년 리옹에서 뉴캐슬로 최대 £40M에 이적",
-      "ovr": 82,
+      "ovr": 84,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -16307,7 +16391,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 83,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "marquinhos",
@@ -16353,7 +16438,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 86,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "alisson",
@@ -16385,7 +16471,7 @@ window.DATA = {
         "야신 트로피 2019"
       ],
       "notableTransfer": "2018년 로마에서 리버풀로 £66.8M, 당시 골키퍼 최고 이적료 기록",
-      "ovr": 90,
+      "ovr": 89,
       "scout": {
         "skill": 90,
         "value": 80,
@@ -16399,7 +16485,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 84,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "casemiro",
@@ -16430,7 +16517,7 @@ window.DATA = {
         "EFL컵 (맨유)"
       ],
       "notableTransfer": "2022년 레알 마드리드에서 맨유로 £60M(+£10M 옵션)에 이적",
-      "ovr": 80,
+      "ovr": 79,
       "scout": {
         "skill": 80,
         "value": 71,
@@ -16444,7 +16531,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 86,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "gabriel-magalhaes",
@@ -16474,7 +16562,7 @@ window.DATA = {
         "챔피언스리그 올해의 팀 2025-26"
       ],
       "notableTransfer": "2020년 릴에서 아스널로 약 £27M에 이적",
-      "ovr": 81,
+      "ovr": 83,
       "scout": {
         "skill": 81,
         "value": 81,
@@ -16488,7 +16576,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 88,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "matheus-cunha",
@@ -16518,7 +16607,7 @@ window.DATA = {
         "울버햄튼 올해의 선수 2024-25"
       ],
       "notableTransfer": "2025년 울버햄튼에서 맨유로 £62.5M에 이적",
-      "ovr": 70,
+      "ovr": 76,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -16532,7 +16621,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 68,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "endrick",
@@ -16563,7 +16653,7 @@ window.DATA = {
         "세리이 A 신인상 2022"
       ],
       "notableTransfer": "2024년 팔메이라스에서 레알 마드리드로 이적 (조건부 포함 약 €60M)",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -16577,7 +16667,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "achraf-hakimi",
@@ -16623,7 +16714,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 82,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 93
     },
     {
       "id": "brahim-diaz",
@@ -16667,7 +16759,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 68,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "yassine-bounou",
@@ -16712,7 +16805,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 81,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "noussair-mazraoui",
@@ -16743,7 +16837,7 @@ window.DATA = {
         "2022 월드컵 4강"
       ],
       "notableTransfer": "2024년 바이에른 뮌헨에서 맨체스터 유나이티드로 4년 계약에 이적",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -16757,7 +16851,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 74,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "bilal-el-khannouss",
@@ -16802,7 +16897,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 58,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "sofyan-amrabat",
@@ -16833,7 +16929,7 @@ window.DATA = {
         "CAF 올해의 팀 (2023, 2024)"
       ],
       "notableTransfer": "2023-24 피오렌티나에서 맨체스터 유나이티드로 임대(FA컵 우승), 이후 페네르바체 거쳐 베티스 임대",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -16847,7 +16943,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 84,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "nayef-aguerd",
@@ -16878,7 +16975,7 @@ window.DATA = {
         "2022 월드컵 4강"
       ],
       "notableTransfer": "2022년 렌에서 웨스트햄으로 3000만 파운드, 2025년 마르세유로 약 2300만 유로에 이적",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -16892,7 +16989,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 80,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "ayoub-el-kaabi",
@@ -16923,7 +17021,7 @@ window.DATA = {
         "아프리카 네이션스 챔피언십 우승 (2018, 2020)"
       ],
       "notableTransfer": "2023년 알 사드에서 올림피아코스로 이적, 컨퍼런스리그 우승·득점왕",
-      "ovr": 71,
+      "ovr": 77,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -16937,7 +17035,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 74,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "azzedine-ounahi",
@@ -16967,7 +17066,7 @@ window.DATA = {
         "파나티나이코스 올해의 선수 (2024-25)"
       ],
       "notableTransfer": "2023년 앙제에서 마르세유로 약 800만 유로, 파나티나이코스 거쳐 2025년 지로나로 이적",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -16981,7 +17080,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "ayyoub-bouaddi",
@@ -17010,7 +17110,7 @@ window.DATA = {
         "21세기 리그 1 최연소 출전 선수"
       ],
       "notableTransfer": "릴 유스 출신, 2026년 5월 프랑스 연령별 대표(U21 주장)에서 모로코로 국적 전환 승인",
-      "ovr": 60,
+      "ovr": 63,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -17024,7 +17124,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 71,
         "골결정력": 43
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "wilson-isidor",
@@ -17050,7 +17151,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 로코모티프 모스크바/제니트 계열에서 선덜랜드로 약 600만 유로에 이적, 25/26 PL 데뷔 시즌 6골.",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -17064,7 +17165,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 74,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "jean-ricner-bellegarde",
@@ -17090,7 +17192,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 스트라스부르에서 울버햄프턴으로 1,280만 파운드(5년 계약) 이적, 2025년 8월 아이티로 국적 변경.",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -17104,7 +17206,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 66,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "duckens-nazon",
@@ -17132,7 +17235,7 @@ window.DATA = {
         "아이티 국가대표 역대 최다 득점자 (44골)"
       ],
       "notableTransfer": "라발·코번트리·신트트라위던 등을 거쳐 현재 이란 에스테글랄 소속, 2025년 12월 클럽 통산 100골 달성.",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -17146,7 +17249,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 76,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "frantzdy-pierrot",
@@ -17172,7 +17276,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "마카비 하이파·AEK 아테네를 거쳐 2026년 2월 AEK에서 리제스포르로 임대 이적.",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -17186,7 +17290,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "hannes-delcroix",
@@ -17226,7 +17331,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "jean-kevin-duverne",
@@ -17266,7 +17372,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "derrick-etienne-jr",
@@ -17294,7 +17401,7 @@ window.DATA = {
         "MLS컵 우승 (콜럼버스 크루, 2020)"
       ],
       "notableTransfer": "뉴욕 레드불스 홈그로운 출신, 콜럼버스·애틀랜타를 거쳐 2024년부터 토론토 FC 소속.",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -17308,7 +17415,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "carlens-arcus",
@@ -17348,7 +17456,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "johny-placide",
@@ -17374,7 +17483,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "프랑스 렌·랭스 등을 거친 베테랑으로 현재 리그 2 바스티아 소속, 대표팀 주장.",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 46,
@@ -17388,7 +17497,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "ruben-providence",
@@ -17414,7 +17524,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "AS로마 유스를 거쳐 여러 클럽을 경험한 뒤 네덜란드 에레디비시 알메러 시티 소속.",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 54,
@@ -17428,7 +17538,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 58,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "scott-mctominay",
@@ -17458,7 +17569,7 @@ window.DATA = {
         "2025 발롱도르 후보(1987년 이후 첫 스코틀랜드인)"
       ],
       "notableTransfer": "2024년 맨체스터 유나이티드에서 나폴리로 약 2,500만 파운드(€3,000만)에 이적",
-      "ovr": 88,
+      "ovr": 87,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -17472,7 +17583,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 87,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "andy-robertson",
@@ -17504,7 +17616,7 @@ window.DATA = {
         "FIFA 클럽 월드컵"
       ],
       "notableTransfer": "2025-26 시즌 후 리버풀과 계약 만료, 2026년 6월 토트넘으로 자유계약 이적",
-      "ovr": 82,
+      "ovr": 85,
       "scout": {
         "skill": 82,
         "value": 78,
@@ -17518,7 +17630,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 78,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "john-mcginn",
@@ -17547,7 +17660,7 @@ window.DATA = {
         "EFL 챔피언십 플레이오프 승격"
       ],
       "notableTransfer": "2018년 히버니언에서 애스턴 빌라로 이적, 이후 클럽 주장으로 성장",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -17561,7 +17674,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 76,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "kieran-tierney",
@@ -17591,7 +17705,7 @@ window.DATA = {
         "FA컵(아스널)"
       ],
       "notableTransfer": "2019년 셀틱에서 아스널로 약 2,500만 파운드 이적, 2025년 여름 셀틱으로 5년 계약 복귀",
-      "ovr": 75,
+      "ovr": 76,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -17605,7 +17719,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 68,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "lewis-ferguson",
@@ -17633,7 +17748,7 @@ window.DATA = {
         "코파 이탈리아 우승(2024-25, 볼로냐 주장)"
       ],
       "notableTransfer": "2022년 애버딘에서 볼로냐로 약 300만 파운드 이적",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -17647,7 +17762,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 74,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "che-adams",
@@ -17673,7 +17789,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 사우샘프턴에서 토리노로 자유계약 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -17687,7 +17803,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "lawrence-shankland",
@@ -17713,7 +17830,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2022년 벨기에 베베런에서 하츠로 이적, 하츠 주장 겸 핵심 골잡이로 활약",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -17727,7 +17844,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "kenny-mclean",
@@ -17755,7 +17873,7 @@ window.DATA = {
         "EFL 챔피언십 우승(노리치)"
       ],
       "notableTransfer": "2018년 애버딘에서 노리치 시티로 이적",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 52,
@@ -17769,7 +17887,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "ryan-christie",
@@ -17797,7 +17916,7 @@ window.DATA = {
         "EFL 챔피언십 우승(본머스 승격)"
       ],
       "notableTransfer": "2021년 셀틱에서 본머스로 이적",
-      "ovr": 62,
+      "ovr": 65,
       "scout": {
         "skill": 62,
         "value": 59,
@@ -17811,7 +17930,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 55,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "craig-gordon",
@@ -17840,7 +17960,7 @@ window.DATA = {
         "스코티시 프리미어십 우승(셀틱)"
       ],
       "notableTransfer": "2007년 하츠에서 선덜랜드로 당시 영국 골키퍼 최고액 약 900만 파운드에 이적",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 49,
@@ -17854,7 +17974,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "nathan-patterson",
@@ -17882,7 +18003,7 @@ window.DATA = {
         "스코티시 프리미어십 우승(레인저스)"
       ],
       "notableTransfer": "2022년 레인저스에서 에버턴으로 약 1,200만 파운드 이적",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -17896,7 +18017,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "christian-pulisic",
@@ -17927,7 +18049,7 @@ window.DATA = {
         "미국 올해의 선수 4회"
       ],
       "notableTransfer": "2019년 첼시로 5,760만 파운드 이적, 2023년 AC 밀란으로 최대 2,200만 유로에 합류",
-      "ovr": 88,
+      "ovr": 87,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -17941,7 +18063,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 70,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "weston-mckennie",
@@ -17972,7 +18095,7 @@ window.DATA = {
         "미국 올해의 선수 (2020)"
       ],
       "notableTransfer": "2020년 샬케에서 유벤투스 임대 후 1,850만 유로(+보너스)에 완전 이적, 2023년 리즈 임대",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -17986,7 +18109,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 82,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "tyler-adams",
@@ -18017,7 +18141,7 @@ window.DATA = {
         "프리미어리그 이달의 골 (2025년 11월)"
       ],
       "notableTransfer": "2022년 RB 라이프치히에서 리즈로 2,000만 파운드 이적, 2023년 본머스로 5년 계약",
-      "ovr": 79,
+      "ovr": 78,
       "scout": {
         "skill": 79,
         "value": 79,
@@ -18031,7 +18155,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 80,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "folarin-balogun",
@@ -18061,7 +18186,7 @@ window.DATA = {
         "모나코 올해의 선수 (2025-26)"
       ],
       "notableTransfer": "2023년 아스널에서 모나코로 기본 3,000만 유로(최대 4,000만)에 이적, 2022-23 랭스 임대서 리그 21골",
-      "ovr": 76,
+      "ovr": 80,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -18075,7 +18200,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 70,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "antonee-robinson",
@@ -18105,7 +18231,7 @@ window.DATA = {
         "미국 올해의 선수 (2024)"
       ],
       "notableTransfer": "2020년 위건에서 풀럼으로 약 200만 파운드 이적, 2024-25 프리미어리그 수비수 최다 10어시스트",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -18119,7 +18245,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 76,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "timothy-weah",
@@ -18150,7 +18277,7 @@ window.DATA = {
         "2022 월드컵 득점"
       ],
       "notableTransfer": "2019년 PSG에서 릴로 1,000만 유로, 2023년 유벤투스로 약 1,030만 유로, 2025년 마르세유 임대(최대 1,800만 유로 의무이적)",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -18164,7 +18291,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 74,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "sergino-dest",
@@ -18194,7 +18322,7 @@ window.DATA = {
         "콘카카프 네이션스리그 우승 (2020·2023·2024)"
       ],
       "notableTransfer": "2020년 아약스에서 바르셀로나로 2,100만 유로(+변수), 2024년 PSV로 완전 이적",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -18208,7 +18336,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 58,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "malik-tillman",
@@ -18239,7 +18368,7 @@ window.DATA = {
         "스코틀랜드 PFA 영플레이어 (2022-23)"
       ],
       "notableTransfer": "2023년 PSV 임대 후 1,200만 유로 옵션 발동, 2025년 바이어 레버쿠젠으로 약 3,500만 유로 이적",
-      "ovr": 75,
+      "ovr": 76,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -18253,7 +18382,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 66,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "chris-richards",
@@ -18284,7 +18414,7 @@ window.DATA = {
         "미국 올해의 선수 (2025)"
       ],
       "notableTransfer": "2019년 바이에른 합류 후, 2022년 크리스털 팰리스로 약 1,200만 유로 이적",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -18298,7 +18428,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "giovanni-reyna",
@@ -18328,7 +18459,7 @@ window.DATA = {
         "네이션스리그 MVP (2023-24)"
       ],
       "notableTransfer": "2025년 보루시아 도르트문트에서 묀헨글라트바흐로 약 700만 유로 이적, 2023-24 노팅엄 포레스트 임대",
-      "ovr": 68,
+      "ovr": 72,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -18342,7 +18473,8 @@ window.DATA = {
         "테크닉": 79,
         "피지컬": 61,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "matt-turner",
@@ -18373,7 +18505,7 @@ window.DATA = {
         "FA컵 (2024-25, 임대)"
       ],
       "notableTransfer": "2022년 뉴잉글랜드에서 아스널, 2023년 노팅엄 포레스트, 2025년 리옹 이적 후 뉴잉글랜드 임대",
-      "ovr": 66,
+      "ovr": 67,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -18387,7 +18519,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 63,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "gustavo-gomez",
@@ -18416,7 +18549,7 @@ window.DATA = {
         "팔메이라스 주장"
       ],
       "notableTransfer": "2016년 AC 밀란으로 약 850만 유로에 이적, 이후 팔메이라스 주장으로 정착",
-      "ovr": 82,
+      "ovr": 83,
       "scout": {
         "skill": 82,
         "value": 73,
@@ -18430,7 +18563,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 87,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "miguel-almiron",
@@ -18459,7 +18593,7 @@ window.DATA = {
         "뉴캐슬 프리미어리그 다수 경기 출전"
       ],
       "notableTransfer": "2019년 애틀랜타에서 뉴캐슬로 약 2100만 파운드(당시 MLS 최고액)에 이적, 2025년 애틀랜타로 복귀",
-      "ovr": 78,
+      "ovr": 79,
       "scout": {
         "skill": 78,
         "value": 74,
@@ -18473,7 +18607,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 68,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "julio-enciso",
@@ -18502,7 +18637,7 @@ window.DATA = {
         "브라이턴 프리미어리그 경험"
       ],
       "notableTransfer": "2025년 여름 브라이턴에서 스트라스부르로 약 1700만 파운드에 이적(브라이턴 셀온 조항 포함)",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -18516,7 +18651,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 56,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "omar-alderete",
@@ -18545,7 +18681,7 @@ window.DATA = {
         "선덜랜드 데뷔 시즌 다수 클린시트 기여"
       ],
       "notableTransfer": "2025년 헤타페에서 선덜랜드로 4년 계약(보도된 이적료 약 1000만 파운드)으로 이적",
-      "ovr": 75,
+      "ovr": 76,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -18559,7 +18695,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "antonio-sanabria",
@@ -18587,7 +18724,7 @@ window.DATA = {
         "2026 월드컵 예선 파라과이 최다 득점(4골)"
       ],
       "notableTransfer": "2025년 8월 크레모네세로 이적, 이전 토리노 등 이탈리아 무대에서 활약",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -18601,7 +18738,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 72,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "diego-gomez",
@@ -18630,7 +18768,7 @@ window.DATA = {
         "인터 마이애미 주축 활약"
       ],
       "notableTransfer": "2025년 인터 마이애미에서 브라이턴으로 구단 최고액(보도된 약 1500만 달러+추가옵션)에 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -18644,7 +18782,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "junior-alonso",
@@ -18673,7 +18812,7 @@ window.DATA = {
         "2021 코파 두 브라질 우승"
       ],
       "notableTransfer": "2020년 아틀레치쿠 미네이루로 약 300만 유로에 이적, 2024년 재합류",
-      "ovr": 66,
+      "ovr": 72,
       "scout": {
         "skill": 66,
         "value": 59,
@@ -18687,7 +18826,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "andres-cubas",
@@ -18715,7 +18855,7 @@ window.DATA = {
         "밴쿠버 화이트캡스 주전 수비형 미드필더"
       ],
       "notableTransfer": "프랑스 니메를 거쳐 2022년 밴쿠버 화이트캡스로 이적해 MLS 핵심으로 자리잡음",
-      "ovr": 64,
+      "ovr": 67,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -18729,7 +18869,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 75,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "damian-bobadilla",
@@ -18757,7 +18898,7 @@ window.DATA = {
         "상파울루 1군 정착"
       ],
       "notableTransfer": "2023년 세로 포르테뇨에서 상파울루로 약 300만 달러(지분 60%)에 이적",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -18771,7 +18912,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mathew-ryan",
@@ -18815,7 +18957,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 72,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "jackson-irvine",
@@ -18844,7 +18987,7 @@ window.DATA = {
         "호주 대표팀 주장"
       ],
       "notableTransfer": "2021년 장크트파울리 합류 후 주장으로 2.분데스리가 우승과 1부 승격을 이끔",
-      "ovr": 76,
+      "ovr": 77,
       "scout": {
         "skill": 76,
         "value": 68,
@@ -18858,7 +19001,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "harry-souttar",
@@ -18887,7 +19031,7 @@ window.DATA = {
         "데뷔전 멀티골 등 수비수로 드문 득점력"
       ],
       "notableTransfer": "2023년 스토크시티에서 레스터시티로 약 1500만 파운드(호주 선수 역대 최고 이적료)에 이적",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -18901,7 +19045,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 86,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jordan-bos",
@@ -18943,7 +19088,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "nestory-irankunda",
@@ -18972,7 +19118,7 @@ window.DATA = {
         "18세 123일에 A매치 득점(역대 두 번째 최연소 득점)"
       ],
       "notableTransfer": "2024년 애들레이드 유나이티드에서 바이에른 뮌헨으로 이적, 2025년 왓퍼드로 5년 계약 이적",
-      "ovr": 65,
+      "ovr": 70,
       "scout": {
         "skill": 65,
         "value": 68,
@@ -18986,7 +19132,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 69,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "mathew-leckie",
@@ -19015,7 +19162,7 @@ window.DATA = {
         "A리그 챔피언십 우승"
       ],
       "notableTransfer": "헤르타 베를린 등 분데스리가에서 활약 후 2020년 멜버른 시티로 복귀",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -19029,7 +19176,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "alessandro-circati",
@@ -19072,7 +19220,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "cristian-volpato",
@@ -19100,7 +19249,7 @@ window.DATA = {
         "이탈리아 U-21 대표 경력"
       ],
       "notableTransfer": "2023년 AS 로마에서 사수올로로 750만 유로(재판매 수익 15% 포함)에 이적",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -19114,7 +19263,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "connor-metcalfe",
@@ -19143,7 +19293,7 @@ window.DATA = {
         "A리그 백투백 우승"
       ],
       "notableTransfer": "2022년 멜버른 시티에서 장크트파울리로 이적",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -19157,7 +19307,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "aiden-oneill",
@@ -19185,7 +19336,7 @@ window.DATA = {
         "스탕다르 리에주 주장 역임"
       ],
       "notableTransfer": "2025년 스탕다르 리에주(주장)에서 뉴욕 시티 FC로 약 250만 유로에 이적",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -19199,7 +19350,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "aziz-behich",
@@ -19242,7 +19394,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "hakan-calhanoglu",
@@ -19272,7 +19425,7 @@ window.DATA = {
         "튀르키예 올해의 선수(2021)"
       ],
       "notableTransfer": "2021년 AC 밀란에서 자유계약으로 라이벌 인터 밀란 이적, 이후 주축으로 성장",
-      "ovr": 90,
+      "ovr": 89,
       "scout": {
         "skill": 90,
         "value": 86,
@@ -19286,7 +19439,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 82,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "arda-guler",
@@ -19317,7 +19471,7 @@ window.DATA = {
         "CL 영플레이어상(2025-26)"
       ],
       "notableTransfer": "2023년 7월 페네르바흐체에서 약 2,000만 유로 바이아웃으로 레알 마드리드 이적",
-      "ovr": 88,
+      "ovr": 85,
       "scout": {
         "skill": 88,
         "value": 92,
@@ -19331,7 +19485,8 @@ window.DATA = {
         "테크닉": 91,
         "피지컬": 66,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "kenan-yildiz",
@@ -19375,7 +19530,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 68,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 83
     },
     {
       "id": "kerem-akturkoglu",
@@ -19405,7 +19561,7 @@ window.DATA = {
         "쉬페르리그 올해의 선수(2021-22)"
       ],
       "notableTransfer": "2024년 갈라타사라이→벤피카(€12M), 2025년 페네르바흐체로 €22.5M 복귀",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -19419,7 +19575,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "merih-demiral",
@@ -19449,7 +19606,7 @@ window.DATA = {
         "사우디 슈퍼컵(2025)"
       ],
       "notableTransfer": "2019년 유벤투스(€18M)·아탈란타 거쳐 2023년 알 아흘리로 약 €17M 이적",
-      "ovr": 76,
+      "ovr": 78,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -19463,7 +19620,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 85,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "ferdi-kadioglu",
@@ -19492,7 +19650,7 @@ window.DATA = {
         "브라이턴 올해의 선수(2025-26)"
       ],
       "notableTransfer": "2024년 8월 페네르바흐체에서 약 £25M(추가옵션 £4.2M)에 브라이턴 이적",
-      "ovr": 75,
+      "ovr": 76,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -19506,7 +19664,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 62,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "caglar-soyuncu",
@@ -19536,7 +19695,7 @@ window.DATA = {
         "튀르키예 올해의 선수(2019)"
       ],
       "notableTransfer": "2018년 프라이부르크에서 약 £18M에 레스터 시티 이적, FA컵 우승 후 복귀",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -19550,7 +19709,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 82,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "orkun-kokcu",
@@ -19580,7 +19740,7 @@ window.DATA = {
         "타사 다 리가(2024-25)"
       ],
       "notableTransfer": "2023년 페예노르트에서 €25M(+€5M)에 벤피카 이적, 클럽 레코드 후 쉬페르리그 복귀",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -19594,7 +19754,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "ugurcan-cakir",
@@ -19624,7 +19785,7 @@ window.DATA = {
         "튀르키예 슈퍼컵 2회"
       ],
       "notableTransfer": "2025년 9월 트라브존스포르에서 €27.5M에 갈라타사라이 이적(5년 계약)",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -19638,7 +19799,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 78,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "baris-alper-yilmaz",
@@ -19668,7 +19830,7 @@ window.DATA = {
         "튀르키예 슈퍼컵(2023)"
       ],
       "notableTransfer": "갈라타사라이에서 성장해 쉬페르리그 4연패를 함께한 측면 자원",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -19682,7 +19844,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 72,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jamal-musiala",
@@ -19715,7 +19878,7 @@ window.DATA = {
         "독일 올해의 선수(2022, 2024)"
       ],
       "notableTransfer": "2019년 16세에 첼시 아카데미에서 바이에른 뮌헨으로 이적, 유스를 거쳐 핵심으로 성장",
-      "ovr": 93,
+      "ovr": 91,
       "scout": {
         "skill": 93,
         "value": 98,
@@ -19729,7 +19892,8 @@ window.DATA = {
         "테크닉": 93,
         "피지컬": 74,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 93
     },
     {
       "id": "florian-wirtz",
@@ -19762,7 +19926,7 @@ window.DATA = {
         "U-21 유럽선수권 우승(2021)"
       ],
       "notableTransfer": "2025년 분데스리가 역대 최고액인 약 1억 파운드(보너스 포함)에 레버쿠젠에서 리버풀로 이적",
-      "ovr": 91,
+      "ovr": 89,
       "scout": {
         "skill": 91,
         "value": 96,
@@ -19776,7 +19940,8 @@ window.DATA = {
         "테크닉": 92,
         "피지컬": 72,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 91
     },
     {
       "id": "joshua-kimmich",
@@ -19823,7 +19988,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 78,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "antonio-rudiger",
@@ -19856,7 +20022,7 @@ window.DATA = {
         "FIFA 월드 11(2024)"
       ],
       "notableTransfer": "2022년 첼시 계약 만료 후 자유계약(FA)으로 레알 마드리드 합류",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 77,
@@ -19870,7 +20036,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 89,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "kai-havertz",
@@ -19902,7 +20069,7 @@ window.DATA = {
         "UEFA 슈퍼컵(2021)"
       ],
       "notableTransfer": "2020년 약 6,200만 파운드에 레버쿠젠→첼시, 2023년 약 6,500만 파운드에 아스널 이적",
-      "ovr": 81,
+      "ovr": 83,
       "scout": {
         "skill": 81,
         "value": 81,
@@ -19916,7 +20083,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 83,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "leroy-sane",
@@ -19948,7 +20116,7 @@ window.DATA = {
         "2017 컨페더레이션스컵 우승"
       ],
       "notableTransfer": "2016년 3,700만 파운드에 맨시티 이적, 2020년 약 4,500만 유로에 바이에른, 2025년 갈라타사라이 합류",
-      "ovr": 76,
+      "ovr": 80,
       "scout": {
         "skill": 76,
         "value": 72,
@@ -19962,7 +20130,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 66,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "manuel-neuer",
@@ -19994,7 +20163,7 @@ window.DATA = {
         "IFFHS 세계 최고 골키퍼 5회"
       ],
       "notableTransfer": "2011년 샬케 04에서 바이에른 뮌헨으로 이적, 이후 한 시대를 풍미한 골키퍼",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 69,
@@ -20008,7 +20177,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 78,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "jonathan-tah",
@@ -20039,7 +20209,7 @@ window.DATA = {
         "분데스리가 올해의 팀 다수 선정"
       ],
       "notableTransfer": "2025년 레버쿠젠 계약 만료 후 사실상 자유계약(소액 80만 유로)으로 바이에른 뮌헨 이적",
-      "ovr": 77,
+      "ovr": 80,
       "scout": {
         "skill": 77,
         "value": 73,
@@ -20053,7 +20223,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 85,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "nico-schlotterbeck",
@@ -20084,7 +20255,7 @@ window.DATA = {
         "분데스리가 올해의 팀 다수 선정"
       ],
       "notableTransfer": "2022년 약 2,500만 유로에 SC 프라이부르크에서 보루시아 도르트문트로 이적",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -20098,7 +20269,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 82,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "nick-woltemade",
@@ -20130,7 +20302,7 @@ window.DATA = {
         "분데스리가 올해의 팀(2024-25)"
       ],
       "notableTransfer": "2025년 8월 뉴캐슬 구단 최고액(초기 6,500만 파운드+추가 옵션)에 슈투트가르트에서 이적",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -20144,7 +20316,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "aleksandar-pavlovic",
@@ -20174,7 +20347,7 @@ window.DATA = {
         "분데스리가 우승(바이에른)"
       ],
       "notableTransfer": "바이에른 뮌헨 유스 출신으로 1군에 안착, 키미히와 중원을 구성",
-      "ovr": 66,
+      "ovr": 69,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -20188,7 +20361,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 77,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "leandro-bacuna",
@@ -20216,7 +20390,7 @@ window.DATA = {
         "퀴라소 역대 최다 출전(72경기)·역대 2위 득점자(16골)"
       ],
       "notableTransfer": "흐로닝언·애스턴 빌라·레딩·카디프시티 등 잉글랜드 무대를 거친 베테랑",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -20230,7 +20404,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "tahith-chong",
@@ -20256,7 +20431,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "맨체스터 유나이티드 1군 16경기 출전 후 버밍엄·루턴 거쳐 2025년 셰필드 유나이티드 4년 계약 이적",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -20270,7 +20445,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 64,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "armando-obispo",
@@ -20298,7 +20474,7 @@ window.DATA = {
         "에레디비시 우승 2회 (2022-23, 2023-24, PSV)"
       ],
       "notableTransfer": "PSV 유스 출신으로 비테세 임대를 거쳐 1군 정착, 통산 180경기 출전",
-      "ovr": 72,
+      "ovr": 70,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -20312,7 +20488,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 78,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "riechedly-bazoer",
@@ -20355,7 +20532,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "eloy-room",
@@ -20383,7 +20561,7 @@ window.DATA = {
         "MLS컵 우승 (2020, 컬럼버스 크루)"
       ],
       "notableTransfer": "비테세·흐로닝언 거쳐 MLS 컬럼버스 크루에서 주전 골키퍼로 활약",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -20397,7 +20575,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "sontje-hansen",
@@ -20426,7 +20605,7 @@ window.DATA = {
         "U-17 유럽선수권 우승 (2019)"
       ],
       "notableTransfer": "아약스 유스 출신, NEC 거쳐 2025년 미들즈브러로 약 340만 파운드 이적",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -20440,7 +20619,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "juninho-bacuna",
@@ -20468,7 +20648,7 @@ window.DATA = {
         "퀴라소 역대 3위 득점자 (15골)"
       ],
       "notableTransfer": "허더즈필드 100경기 이상 출전 후 레인저스·버밍엄시티 거친 잉글랜드/스코틀랜드 무대 베테랑",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -20482,7 +20662,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "jurgen-locadia",
@@ -20510,7 +20691,7 @@ window.DATA = {
         "에레디비시 우승 (PSV)"
       ],
       "notableTransfer": "2018년 PSV에서 브라이턴으로 약 1500만 파운드(당시 구단 최고액)에 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -20524,7 +20705,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "kenji-gorre",
@@ -20550,7 +20732,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "맨체스터 유나이티드·스완지 유스 출신으로 포르투갈·이스라엘 리그를 거친 저니맨",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -20564,7 +20746,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "jearl-margaritha",
@@ -20590,7 +20773,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "네덜란드 하부 리그를 거쳐 벨기에 베버런으로 이적한 측면 공격수",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -20604,7 +20787,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 59,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "franck-kessie",
@@ -20634,7 +20818,7 @@ window.DATA = {
         "이탈리아 세리에A 우승(AC밀란)"
       ],
       "notableTransfer": "2023년 바르셀로나에서 알 아흘리로 약 1250만 유로에 이적.",
-      "ovr": 88,
+      "ovr": 87,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -20648,7 +20832,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 89,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "amad-diallo",
@@ -20677,7 +20862,7 @@ window.DATA = {
         "아탈란타 유스 캄피오나토 프리마베라 우승"
       ],
       "notableTransfer": "2021년 아탈란타에서 맨유로 이적(보너스 포함 최대 약 3700만 파운드).",
-      "ovr": 80,
+      "ovr": 83,
       "scout": {
         "skill": 80,
         "value": 84,
@@ -20691,7 +20876,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 64,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "evan-ndicka",
@@ -20720,7 +20906,7 @@ window.DATA = {
         "2023 아프리카 네이션스컵 우승(전 경기 풀타임)"
       ],
       "notableTransfer": "2023년 프랑크푸르트에서 자유계약으로 로마 이적(5년 계약).",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -20734,7 +20920,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 85,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "wilfried-singo",
@@ -20763,7 +20950,7 @@ window.DATA = {
         "토리노·모나코·갈라타사라이 주전 정착"
       ],
       "notableTransfer": "2025년 모나코에서 갈라타사라이로 약 3080만 유로에 이적(2030년까지).",
-      "ovr": 77,
+      "ovr": 80,
       "scout": {
         "skill": 77,
         "value": 77,
@@ -20777,7 +20964,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 84,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "odilon-kossounou",
@@ -20806,7 +20994,7 @@ window.DATA = {
         "분데스리가 우승 스쿼드(레버쿠젠)"
       ],
       "notableTransfer": "레버쿠젠을 거쳐 아탈란타에서 활약.",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -20820,7 +21008,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 85,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "ousmane-diomande",
@@ -20849,7 +21038,7 @@ window.DATA = {
         "2023 아프리카 네이션스컵 우승 멤버"
       ],
       "notableTransfer": "스포르팅 CP에서 핵심 수비수로 성장.",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 75,
@@ -20863,7 +21052,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "ibrahim-sangare",
@@ -20892,7 +21082,7 @@ window.DATA = {
         "에레디비시에 우승(PSV)"
       ],
       "notableTransfer": "2023년 PSV에서 노팅엄 포레스트로 이적.",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -20906,7 +21096,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 82,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "simon-adingra",
@@ -20934,7 +21125,7 @@ window.DATA = {
         "2023 아프리카 네이션스컵 우승(결승 도움)"
       ],
       "notableTransfer": "브라이턴을 거쳐 모나코에서 활약.",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -20948,7 +21139,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 56,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "evann-guessand",
@@ -20976,7 +21168,7 @@ window.DATA = {
         "프리미어리그 무대 진출"
       ],
       "notableTransfer": "OGC 니스를 거쳐 크리스탈 팰리스로 이적.",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -20990,7 +21182,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "nicolas-pepe",
@@ -21019,7 +21212,7 @@ window.DATA = {
         "2023 아프리카 네이션스컵 우승 멤버"
       ],
       "notableTransfer": "2019년 릴에서 아스널로 약 7200만 파운드 클럽 최고액 이적.",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -21033,7 +21226,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "yan-diomande",
@@ -21062,7 +21256,7 @@ window.DATA = {
         "데뷔 시즌 33경기 20개 공격 포인트"
       ],
       "notableTransfer": "2025년 RB 라이프치히 합류 후 곧바로 두각.",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -21076,7 +21270,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 57,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "moises-caicedo",
@@ -21104,7 +21299,7 @@ window.DATA = {
         "UEFA 컨퍼런스리그 우승 (2024-25)"
       ],
       "notableTransfer": "2023년 브라이턴에서 첼시로 영국 역대 최고 이적료 약 1억 1500만 파운드에 이적",
-      "ovr": 90,
+      "ovr": 88,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -21118,7 +21313,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 88,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "willian-pacho",
@@ -21163,7 +21359,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 86,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "piero-hincapie",
@@ -21192,7 +21389,7 @@ window.DATA = {
         "DFB-포칼 우승 (2023-24)"
       ],
       "notableTransfer": "2025년 바이어 레버쿠젠에서 아스널로 임대 이적(약 4500만 파운드 완전 영입 옵션 포함)",
-      "ovr": 82,
+      "ovr": 84,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -21206,7 +21403,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 83,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "enner-valencia",
@@ -21234,7 +21432,7 @@ window.DATA = {
         "에콰도르 A매치 역대 최다 득점자 (49골)"
       ],
       "notableTransfer": "웨스트햄·페네르바체 등 유럽 무대를 거친 베테랑, 현재 멕시코 파추카 소속",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -21248,7 +21446,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 74,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "pervis-estupinan",
@@ -21274,7 +21473,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 브라이턴에서 AC 밀란으로 약 1700만 유로(추가 옵션 포함)에 이적, 구단 첫 에콰도르 선수",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -21288,7 +21487,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 74,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "gonzalo-plata",
@@ -21316,7 +21516,7 @@ window.DATA = {
         "코파 리베르타도레스 우승 (2025)"
       ],
       "notableTransfer": "스포르팅·바야돌리드 등을 거쳐 브라질 플라멩구에서 활약, 2025 코파 리베르타도레스 우승",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -21330,7 +21530,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "angelo-preciado",
@@ -21356,7 +21557,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "헨크 등 유럽 무대를 거쳐 브라질 아틀레치쿠 미네이루로 이적",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -21370,7 +21571,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "kendry-paez",
@@ -21396,7 +21598,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "독립 델 바예에서 첼시로 이적 후 스트라스부르를 거쳐 2026년 리버 플레이트로 임대",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -21410,7 +21612,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 58,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "kevin-rodriguez",
@@ -21438,7 +21641,7 @@ window.DATA = {
         "벨기에 주필러 프로리그 우승 (2024-25)"
       ],
       "notableTransfer": "2023년 독립 델 바예에서 벨기에 위니옹 생질루아즈로 이적",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -21452,7 +21655,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "hernan-galindez",
@@ -21478,7 +21682,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아르헨티나에서 태어나 에콰도르 국적으로 대표팀에 합류, 현재 우라칸 소속",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 52,
@@ -21492,7 +21696,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "virgil-van-dijk",
@@ -21523,7 +21728,7 @@ window.DATA = {
         "PFA 올해의 선수 (2018-19)"
       ],
       "notableTransfer": "2018년 1월 사우샘프턴에서 리버풀로 7,500만 파운드 이적, 당시 수비수 세계 최고 이적료",
-      "ovr": 92,
+      "ovr": 93,
       "scout": {
         "skill": 92,
         "value": 82,
@@ -21537,7 +21742,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 93,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 92
     },
     {
       "id": "frenkie-de-jong",
@@ -21581,7 +21787,8 @@ window.DATA = {
         "테크닉": 92,
         "피지컬": 80,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "cody-gakpo",
@@ -21611,7 +21818,7 @@ window.DATA = {
         "네덜란드 올해의 선수 (2021-22)"
       ],
       "notableTransfer": "2023년 1월 PSV에서 리버풀로 약 4,000~5,000만 유로에 이적, PSV 역대 최고 이적 수입",
-      "ovr": 82,
+      "ovr": 85,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -21625,7 +21832,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 78,
         "골결정력": 81
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "tijjani-reijnders",
@@ -21656,7 +21864,7 @@ window.DATA = {
         "세리에A 베스트 미드필더 (2024-25)"
       ],
       "notableTransfer": "2025년 AC 밀란에서 맨체스터 시티로 약 4,650만 파운드에 이적",
-      "ovr": 81,
+      "ovr": 83,
       "scout": {
         "skill": 81,
         "value": 81,
@@ -21670,7 +21878,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 76,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "denzel-dumfries",
@@ -21700,7 +21909,7 @@ window.DATA = {
         "챔피언스리그 준우승 (2022-23, 2024-25)"
       ],
       "notableTransfer": "2021년 PSV에서 인터 밀란으로 초기 이적료 1,250만 유로(+보너스)에 이적",
-      "ovr": 79,
+      "ovr": 82,
       "scout": {
         "skill": 79,
         "value": 75,
@@ -21714,7 +21923,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 83,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "ryan-gravenberch",
@@ -21744,7 +21954,7 @@ window.DATA = {
         "프리미어리그 영플레이어상 (2024-25)"
       ],
       "notableTransfer": "2023년 바이에른 뮌헨에서 리버풀로 약 4,000만 유로에 이적",
-      "ovr": 80,
+      "ovr": 82,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -21758,7 +21968,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 78,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "memphis-depay",
@@ -21788,7 +21999,7 @@ window.DATA = {
         "네덜란드 역대 최다 득점자 (55골)"
       ],
       "notableTransfer": "2024년 아틀레티코 마드리드에서 코린치안스로 이적, 브라질 무대 진출",
-      "ovr": 77,
+      "ovr": 78,
       "scout": {
         "skill": 77,
         "value": 73,
@@ -21802,7 +22013,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 68,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "bart-verbruggen",
@@ -21831,7 +22043,7 @@ window.DATA = {
         "안더레흐트 올해의 선수 (2022-23)"
       ],
       "notableTransfer": "2023년 7월 안더레흐트에서 브라이턴으로 이적, 5년 계약",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 77,
@@ -21845,7 +22057,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "micky-van-de-ven",
@@ -21874,7 +22087,7 @@ window.DATA = {
         "유로 2024 4강 (네덜란드)"
       ],
       "notableTransfer": "2023년 8월 볼프스부르크에서 토트넘으로 초기 이적료 3,450만 파운드에 이적",
-      "ovr": 74,
+      "ovr": 79,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -21888,7 +22101,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 82,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "donyell-malen",
@@ -21918,7 +22132,7 @@ window.DATA = {
         "유로 2024 4강 (네덜란드)"
       ],
       "notableTransfer": "2026년 1월 아스톤 빌라에서 AS 로마로 임대 후 2,500만 유로에 완전 이적",
-      "ovr": 70,
+      "ovr": 77,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -21932,7 +22146,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 68,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "takefusa-kubo",
@@ -21963,7 +22178,7 @@ window.DATA = {
         "JPFA 베스트11(2022·2023·2024)"
       ],
       "notableTransfer": "2019년 레알 마드리드 입단 후 출전 없이 임대 전전, 2022년 레알 소시에다드 완전 이적(일본인 첫 영입).",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 86,
@@ -21977,7 +22192,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 62,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "wataru-endo",
@@ -22008,7 +22224,7 @@ window.DATA = {
         "JPFA 베스트11(2022·2023·2024)"
       ],
       "notableTransfer": "2023년 8월 슈투트가르트에서 리버풀로 약 1600만 파운드에 이적, 4년 계약.",
-      "ovr": 80,
+      "ovr": 78,
       "scout": {
         "skill": 80,
         "value": 71,
@@ -22022,7 +22238,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 84,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "ritsu-doan",
@@ -22053,7 +22270,7 @@ window.DATA = {
         "2025 IFFHS 아시아 올해의 팀"
       ],
       "notableTransfer": "프라이부르크에서 2025년 프랑크푸르트로 이적, 2030년까지 장기 계약.",
-      "ovr": 79,
+      "ovr": 81,
       "scout": {
         "skill": 79,
         "value": 79,
@@ -22067,7 +22284,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 64,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "daichi-kamada",
@@ -22098,7 +22316,7 @@ window.DATA = {
         "IFFHS 아시아 올해의 팀(2022·2023·2024)"
       ],
       "notableTransfer": "프랑크푸르트(2017년 €250만 이적)·라치오를 거쳐 2024년 크리스털 팰리스 자유계약 이적.",
-      "ovr": 78,
+      "ovr": 79,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -22112,7 +22330,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 68,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "ayase-ueda",
@@ -22143,7 +22362,7 @@ window.DATA = {
         "JPFA 베스트11(2023·2024·2025)"
       ],
       "notableTransfer": "2023년 8월 세르클러 브뤼허에서 페예노르트로 €800만에 이적, 5년 계약.",
-      "ovr": 75,
+      "ovr": 77,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -22157,7 +22376,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 74,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "daizen-maeda",
@@ -22188,7 +22408,7 @@ window.DATA = {
         "J리그 득점왕(2021)"
       ],
       "notableTransfer": "요코하마 F. 마리노스에서 2022년 셀틱 임대 후 완전 영입, 4년 계약.",
-      "ovr": 73,
+      "ovr": 77,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -22202,7 +22422,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "hiroki-ito",
@@ -22232,7 +22453,7 @@ window.DATA = {
         "J2리그 우승(2021)"
       ],
       "notableTransfer": "2024년 6월 슈투트가르트에서 바이에른 뮌헨으로 추정 €3000만 바이아웃 행사 이적, 2028년까지 계약.",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -22246,7 +22467,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 76,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "takehiro-tomiyasu",
@@ -22277,7 +22499,7 @@ window.DATA = {
         "JPFA 베스트11(2022·2023·2024)"
       ],
       "notableTransfer": "볼로냐·아스널(2021-2025)을 거쳐 2025년 12월 아약스로 이적.",
-      "ovr": 68,
+      "ovr": 74,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -22291,7 +22513,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 70,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "zion-suzuki",
@@ -22322,7 +22545,7 @@ window.DATA = {
         "IFFHS 아시아 올해의 팀(2024·2025)"
       ],
       "notableTransfer": "2024년 7월 신트트라위던에서 파르마로 이적, 5년 계약(나카타 히데토시 이후 두 번째 일본 대표).",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -22336,7 +22559,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 76,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "alexander-isak",
@@ -22368,7 +22592,7 @@ window.DATA = {
         "PFA 올해의 팀 2024-25"
       ],
       "notableTransfer": "2025년 9월 뉴캐슬에서 리버풀로 영국 역대 최고 이적료 1억 2,500만 파운드에 이적.",
-      "ovr": 92,
+      "ovr": 94,
       "scout": {
         "skill": 92,
         "value": 92,
@@ -22382,7 +22606,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 80,
         "골결정력": 92
-      }
+      },
+      "ovrBase": 92
     },
     {
       "id": "viktor-gyokeres",
@@ -22411,7 +22636,7 @@ window.DATA = {
         "포르투갈 리그 득점왕"
       ],
       "notableTransfer": "2025년 여름 스포르팅에서 아스널로 보장 이적료 5,500만 파운드(+추가옵션)에 이적, 직전 시즌 포르투갈 리그 39골.",
-      "ovr": 88,
+      "ovr": 91,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -22425,7 +22650,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 88,
         "골결정력": 89
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "anthony-elanga",
@@ -22451,7 +22677,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 7월 노팅엄 포레스트에서 뉴캐슬로 최대 5,500만 파운드(고정 5,200만)에 이적.",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -22465,7 +22691,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 68,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "victor-lindelof",
@@ -22509,7 +22736,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 74,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "lucas-bergvall",
@@ -22537,7 +22765,7 @@ window.DATA = {
         "유로파리그 2024-25 (토트넘)"
       ],
       "notableTransfer": "2024년 위르고르덴에서 토트넘으로 약 850만 파운드에 이적, 바르셀로나를 제치고 영입.",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -22551,7 +22779,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 64,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "isak-hien",
@@ -22579,7 +22808,7 @@ window.DATA = {
         "유로파리그 2023-24 (아탈란타)"
       ],
       "notableTransfer": "2024년 1월 베로나에서 아탈란타로 약 900만 유로에 이적.",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -22593,7 +22822,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 85,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "mattias-svanberg",
@@ -22619,7 +22849,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2022년 볼로냐에서 볼프스부르크로 5년 계약 이적.",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -22633,7 +22863,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 74,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "yasin-ayari",
@@ -22659,7 +22890,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 AIK에서 브라이턴 이적, 2027년까지 계약.",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -22673,7 +22904,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "gabriel-gudmundsson",
@@ -22699,7 +22931,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 7월 릴에서 리즈 유나이티드로 4년 계약 이적.",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -22713,7 +22945,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "viktor-johansson",
@@ -22738,7 +22971,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "로빈 올센의 국가대표 은퇴 후 스웨덴 주전 골키퍼 자리 경쟁의 선두주자로 부상.",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -22752,7 +22985,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "ellyes-skhiri",
@@ -22781,7 +23015,7 @@ window.DATA = {
         "2019 아프리카 네이션스컵 4위"
       ],
       "notableTransfer": "몽펠리에→쾰른(2019)을 거쳐 2023년 7월 아인트라흐트 프랑크푸르트와 4년 계약, 챔피언스리그 무대 경험.",
-      "ovr": 82,
+      "ovr": 81,
       "scout": {
         "skill": 82,
         "value": 78,
@@ -22795,7 +23029,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 85,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "hannibal-mejbri",
@@ -22824,7 +23059,7 @@ window.DATA = {
         "2021·2022 아프리카 올해의 신예"
       ],
       "notableTransfer": "2019년 모나코에서 맨체스터 유나이티드로 500만 유로(추가 옵션 포함 최대 1000만)에 이적, 버밍엄·세비야 임대 후 2024년 번리로 4년 계약.",
-      "ovr": 75,
+      "ovr": 79,
       "scout": {
         "skill": 75,
         "value": 79,
@@ -22838,7 +23073,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 76,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "montassar-talbi",
@@ -22868,7 +23104,7 @@ window.DATA = {
         "2021 FIFA 아랍컵 준우승"
       ],
       "notableTransfer": "리잔스포르·루빈 카잔을 거쳐 2022년 7월 로리앙과 5년 계약, 2024-25 리그2 우승 및 베스트팀.",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -22882,7 +23118,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 80,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "elias-achouri",
@@ -22911,7 +23148,7 @@ window.DATA = {
         "2024-25 덴마크컵 우승"
       ],
       "notableTransfer": "비보르 역대 최고 이적료로 2023년 7월 FC 코펜하겐과 4년 계약.",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -22925,7 +23162,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "sebastian-tounekti",
@@ -22954,7 +23192,7 @@ window.DATA = {
         "엘리테세리엔 2회 (2020·2021)"
       ],
       "notableTransfer": "함마르뷔에서 2025년 9월 셀틱과 5년 계약.",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -22968,7 +23206,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 55,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "anis-ben-slimane",
@@ -22997,7 +23236,7 @@ window.DATA = {
         "2022 기린컵 우승"
       ],
       "notableTransfer": "브뢰뇌비→셰필드 유나이티드(2023)를 거쳐 2025년 노리치 시티로 완전 이적(비공개).",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -23011,7 +23250,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "aymen-dahmen",
@@ -23040,7 +23280,7 @@ window.DATA = {
         "2022 기린컵 우승"
       ],
       "notableTransfer": "사우디 알 하젬을 거쳐 2024년 친정 CS 스팍시엥에 3년 계약으로 복귀.",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -23054,7 +23294,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "hazem-mastouri",
@@ -23080,7 +23321,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "US 모나스티르를 거쳐 2025년 8월 러시아 디나모 마하치칼라로 이적.",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -23094,7 +23335,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 59,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "thibaut-courtois",
@@ -23125,7 +23367,7 @@ window.DATA = {
         "2018 월드컵 골든글러브"
       ],
       "notableTransfer": "2018년 첼시에서 레알 마드리드로 약 3,500만 파운드에 이적",
-      "ovr": 93,
+      "ovr": 92,
       "scout": {
         "skill": 93,
         "value": 83,
@@ -23139,7 +23381,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 86,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 93
     },
     {
       "id": "kevin-de-bruyne",
@@ -23170,7 +23413,7 @@ window.DATA = {
         "FA컵 2회"
       ],
       "notableTransfer": "2025년 맨체스터 시티에서 나폴리로 자유계약(FA) 이적, 2015년 볼프스부르크에서 맨시티 이적 시 5,500만 파운드",
-      "ovr": 91,
+      "ovr": 90,
       "scout": {
         "skill": 91,
         "value": 81,
@@ -23184,7 +23427,8 @@ window.DATA = {
         "테크닉": 93,
         "피지컬": 78,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 91
     },
     {
       "id": "romelu-lukaku",
@@ -23215,7 +23459,7 @@ window.DATA = {
         "2018 월드컵 3위"
       ],
       "notableTransfer": "2021년 첼시 입단 시 9,750만 파운드(당시 벨기에 선수 최고액), 2024년 나폴리로 3,000만 유로 완전이적",
-      "ovr": 85,
+      "ovr": 87,
       "scout": {
         "skill": 85,
         "value": 76,
@@ -23229,7 +23473,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 90,
         "골결정력": 85
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "jeremy-doku",
@@ -23260,7 +23505,7 @@ window.DATA = {
         "FIFA 클럽월드컵 (2023)"
       ],
       "notableTransfer": "2023년 스타드 렌에서 맨체스터 시티로 5,500만 파운드(6,500만 유로)에 이적",
-      "ovr": 80,
+      "ovr": 82,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -23274,7 +23519,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 62,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "leandro-trossard",
@@ -23304,7 +23550,7 @@ window.DATA = {
         "벨기에 1부리그 (2019, 헹크)"
       ],
       "notableTransfer": "2023년 1월 브라이튼에서 아스널로 약 2,700만 파운드(추가 옵션 포함)에 이적",
-      "ovr": 75,
+      "ovr": 81,
       "scout": {
         "skill": 75,
         "value": 71,
@@ -23318,7 +23564,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 62,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "youri-tielemans",
@@ -23348,7 +23595,7 @@ window.DATA = {
         "2018 월드컵 3위"
       ],
       "notableTransfer": "2023년 레스터 시티에서 아스톤 빌라로 자유계약 이적, 2019년 모나코→레스터 3,200만 파운드",
-      "ovr": 76,
+      "ovr": 77,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -23362,7 +23609,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 70,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "amadou-onana",
@@ -23390,7 +23638,7 @@ window.DATA = {
         "UEFA 유로파리그 (2026, 아스톤 빌라)"
       ],
       "notableTransfer": "2024년 에버턴에서 아스톤 빌라로 5,000만 파운드에 이적, 2022년 릴→에버턴 3,300만 파운드",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -23404,7 +23652,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 88,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "charles-de-ketelaere",
@@ -23433,7 +23682,7 @@ window.DATA = {
         "벨기에 1부리그 3회 (클럽 브뤼헤)"
       ],
       "notableTransfer": "2022년 클럽 브뤼헤에서 AC 밀란으로 약 3,500만 유로, 2024년 아탈란타로 완전이적",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -23447,7 +23696,8 @@ window.DATA = {
         "테크닉": 81,
         "피지컬": 68,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "zeno-debast",
@@ -23490,7 +23740,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "maxim-de-cuyper",
@@ -23534,7 +23785,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mohamed-salah",
@@ -23568,7 +23820,7 @@ window.DATA = {
         "푸스카스상(2018)"
       ],
       "notableTransfer": "2017년 로마 → 리버풀 약 3,650만 파운드(당시 구단 최고액)",
-      "ovr": 95,
+      "ovr": 96,
       "scout": {
         "skill": 95,
         "value": 85,
@@ -23582,7 +23834,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 76,
         "골결정력": 93
-      }
+      },
+      "ovrBase": 95
     },
     {
       "id": "omar-marmoush",
@@ -23614,7 +23867,7 @@ window.DATA = {
         "프리미어리그 올해의 골(2024-25)"
       ],
       "notableTransfer": "2025년 1월 아인트라흐트 프랑크푸르트 → 맨체스터 시티 약 5,900만 파운드",
-      "ovr": 84,
+      "ovr": 86,
       "scout": {
         "skill": 84,
         "value": 84,
@@ -23628,7 +23881,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 78,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "trezeguet",
@@ -23660,7 +23914,7 @@ window.DATA = {
         "U-20 아프리카 네이션스컵 우승(2013)"
       ],
       "notableTransfer": "2019년 카심파샤 → 애스턴 빌라 약 875만 파운드, 2025년 알 아흘리 복귀(약 160만 유로)",
-      "ovr": 75,
+      "ovr": 80,
       "scout": {
         "skill": 75,
         "value": 71,
@@ -23674,7 +23928,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 70,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "mohamed-abdelmonem",
@@ -23705,7 +23960,7 @@ window.DATA = {
         "아프리카 네이션스컵 베스트 11(2021)"
       ],
       "notableTransfer": "2024년 8월 알 아흘리 → OGC 니스(2028년까지 계약)",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -23719,7 +23974,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 81,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "mohamed-el-shenawy",
@@ -23749,7 +24005,7 @@ window.DATA = {
         "아프리카 네이션스컵 준우승(2021)"
       ],
       "notableTransfer": "2016년 알 아흘리 합류 후 장기 주전·주장으로 활약",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -23763,7 +24019,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 72,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "emam-ashour",
@@ -23794,7 +24051,7 @@ window.DATA = {
         "이집트 프리미어리그 득점왕(2024-25)"
       ],
       "notableTransfer": "2023년 잠말렉·미트윌란을 거쳐 알 아흘리 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -23808,7 +24065,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ibrahim-adel",
@@ -23838,7 +24096,7 @@ window.DATA = {
         "이집트컵 우승(2023-24)"
       ],
       "notableTransfer": "2025년 알 자지라 거쳐 2026년 FC 노르셸란 임대 후 완전 이적(2029년까지)",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -23852,7 +24110,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 53,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mostafa-shobeir",
@@ -23882,7 +24141,7 @@ window.DATA = {
         "CAF 챔피언스리그 우승(알 아흘리)"
       ],
       "notableTransfer": "알 아흘리 유스 출신으로 1군 백업 골키퍼로 성장",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -23896,7 +24155,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "mehdi-taremi",
@@ -23928,7 +24188,7 @@ window.DATA = {
         "AFC 아시안컵 베스트팀 (2023)"
       ],
       "notableTransfer": "2024년 인터 밀란 이적 후 2025 챔피언스리그 결승 진출, 2025년 €2.5M에 올림피아코스로 이적.",
-      "ovr": 88,
+      "ovr": 89,
       "scout": {
         "skill": 88,
         "value": 78,
@@ -23942,7 +24202,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 84,
         "골결정력": 85
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "alireza-jahanbakhsh",
@@ -23988,7 +24249,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 64,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "alireza-beiranvand",
@@ -24017,7 +24279,7 @@ window.DATA = {
         "기네스 세계기록(최장 드롭킥 78m)"
       ],
       "notableTransfer": "2020년 벨기에 안트베르프로 유럽 진출 후 보아비스타 임대, 2024년 트락토르로 복귀.",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -24031,7 +24293,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "saman-ghoddos",
@@ -24061,7 +24324,7 @@ window.DATA = {
         "알스벤스칸 올해의 공격수 (2017)"
       ],
       "notableTransfer": "2018년 첫 이란인 리그앙 선수로 아미앵 입성, 2020년 브렌트포드 이적 후 PL 승격 기여.",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -24075,7 +24338,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ehsan-hajsafi",
@@ -24119,7 +24383,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "ramin-rezaeian",
@@ -24163,7 +24428,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "milad-mohammadi",
@@ -24206,7 +24472,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "hossein-kanaanizadegan",
@@ -24250,7 +24517,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "saeid-ezatolahi",
@@ -24280,7 +24548,7 @@ window.DATA = {
         "AFC 아시안컵 베스트팀 (2023)"
       ],
       "notableTransfer": "2014년 아틀레티코 마드리드 입단 후 로스토프·레딩을 거쳐 2024년 샤밥 알-아흘리 이적.",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -24294,7 +24562,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mohammad-mohebi",
@@ -24323,7 +24592,7 @@ window.DATA = {
         "CAFA 네이션스컵 우승 (2023)"
       ],
       "notableTransfer": "2021년 포르투갈 산타클라라로 유럽 진출, 2023년 러시아 로스토프로 이적.",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -24337,7 +24606,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "chris-wood",
@@ -24368,7 +24638,7 @@ window.DATA = {
         "2016 OFC 네이션스컵 우승"
       ],
       "notableTransfer": "2022년 1월 뉴캐슬로 약 2500만 파운드에 이적하며 '역대 최고 이적료 오세아니아 선수'에 등극, 이후 노팅엄 포레스트로 완전 이적.",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 69,
@@ -24382,7 +24652,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 86,
         "골결정력": 85
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "marko-stamenic",
@@ -24412,7 +24683,7 @@ window.DATA = {
         "그리스 슈퍼리그·컵 우승 (올림피아코스)"
       ],
       "notableTransfer": "2024년 6월 노팅엄 포레스트와 5년 계약 후 올림피아코스 임대, 2025년 8월 스완지 시티로 약 200만 파운드 이상에 이적.",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -24426,7 +24697,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 70,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "liberato-cacace",
@@ -24456,7 +24728,7 @@ window.DATA = {
         "2019-20 해리 큐얼 메달"
       ],
       "notableTransfer": "벨기에 신트트라위던과 이탈리아 엠폴리(세리에A 76경기)를 거쳐 2025년 잉글랜드 렉섬으로 이적.",
-      "ovr": 68,
+      "ovr": 74,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -24470,7 +24742,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "tyler-bindon",
@@ -24500,7 +24773,7 @@ window.DATA = {
         "2024 핼버그 신인상"
       ],
       "notableTransfer": "2025년 2월 레딩에서 노팅엄 포레스트로 2028년까지 계약 후 셰필드 유나이티드 임대.",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -24514,7 +24787,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ben-old",
@@ -24543,7 +24817,7 @@ window.DATA = {
         "2024 A리그 올스타 선정"
       ],
       "notableTransfer": "2024년 7월 웰링턴 피닉스에서 생테티엔으로 이적, 2024년 8월 리그1 첫 선발 출전 뉴질랜드인으로 기록.",
-      "ovr": 62,
+      "ovr": 65,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -24557,7 +24831,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 55,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "sarpreet-singh",
@@ -24586,7 +24861,7 @@ window.DATA = {
         "2019-20 DFB-포칼 우승 (바이에른)"
       ],
       "notableTransfer": "2019년 웰링턴 피닉스에서 바이에른 뮌헨으로 이적했으나 분데스리가 정착 실패, 이후 다수 클럽 임대를 거침.",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -24600,7 +24875,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 51,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "joe-bell",
@@ -24629,7 +24905,7 @@ window.DATA = {
         "2019 ACC 올해의 미드필더"
       ],
       "notableTransfer": "미국 대학(버지니아)을 거쳐 비킹 FK, 덴마크 브뢰뇌비를 오갔으며 2025년 비킹에서 엘리테세리엔 우승.",
-      "ovr": 60,
+      "ovr": 63,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -24643,7 +24919,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 71,
         "골결정력": 43
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "finn-surman",
@@ -24672,7 +24949,7 @@ window.DATA = {
         "2022 OFC U-19 챔피언십 우승"
       ],
       "notableTransfer": "2024년 7월 웰링턴 피닉스에서 MLS 포틀랜드 팀버스로 이적.",
-      "ovr": 56,
+      "ovr": 61,
       "scout": {
         "skill": 56,
         "value": 59,
@@ -24686,7 +24963,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "matthew-garbett",
@@ -24715,7 +24993,7 @@ window.DATA = {
         "2018-19 뉴질랜드 챔피언십 우승 (이스턴 서버브)"
       ],
       "notableTransfer": "스웨덴 팔켄베리에서 이탈리아 토리노(세리에A)로 이적 후 NAC 브레다를 거쳐 2025년 8월 피터버러로 이적.",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -24729,7 +25007,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "max-crocombe",
@@ -24757,7 +25036,7 @@ window.DATA = {
         "2024 OFC 네이션스컵 우승 및 골든글러브 (무실점)"
       ],
       "notableTransfer": "잉글랜드 하부리그를 두루 거쳐 챔피언십 밀월의 주전 골키퍼로 정착, 뉴질랜드 No.1 자리 확보.",
-      "ovr": 59,
+      "ovr": 60,
       "scout": {
         "skill": 59,
         "value": 56,
@@ -24771,7 +25050,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 56,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "lamine-yamal",
@@ -24804,7 +25084,7 @@ window.DATA = {
         "골든 보이(2024)"
       ],
       "notableTransfer": "바르셀로나 유스 출신으로 2031년까지 재계약 체결",
-      "ovr": 95,
+      "ovr": 94,
       "scout": {
         "skill": 95,
         "value": 99,
@@ -24818,7 +25098,8 @@ window.DATA = {
         "테크닉": 94,
         "피지컬": 66,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 95
     },
     {
       "id": "pedri",
@@ -24851,7 +25132,7 @@ window.DATA = {
         "도쿄 올림픽 은메달"
       ],
       "notableTransfer": "2020년 라스팔마스에서 약 500만 유로에 바르셀로나 이적",
-      "ovr": 90,
+      "ovr": 88,
       "scout": {
         "skill": 90,
         "value": 95,
@@ -24865,7 +25146,8 @@ window.DATA = {
         "테크닉": 93,
         "피지컬": 68,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "rodri",
@@ -24897,7 +25179,7 @@ window.DATA = {
         "유로 2024 대회 MVP"
       ],
       "notableTransfer": "2019년 아틀레티코 마드리드 방출 조항(6,260만 파운드) 발동으로 맨시티 이적",
-      "ovr": 94,
+      "ovr": 91,
       "scout": {
         "skill": 94,
         "value": 94,
@@ -24911,7 +25193,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 88,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 94
     },
     {
       "id": "nico-williams",
@@ -24941,7 +25224,7 @@ window.DATA = {
         "유로 2024 베스트팀"
       ],
       "notableTransfer": "2025년 7월 빌바오와 2035년까지 10년 재계약(방출 조항 약 9,000만 유로)",
-      "ovr": 84,
+      "ovr": 86,
       "scout": {
         "skill": 84,
         "value": 88,
@@ -24955,7 +25238,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 72,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "mikel-oyarzabal",
@@ -24986,7 +25270,7 @@ window.DATA = {
         "U-21 유럽선수권 우승"
       ],
       "notableTransfer": "레알 소시에다드 유스 출신 원클럽맨 주장",
-      "ovr": 80,
+      "ovr": 83,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -25000,7 +25284,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 70,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "fabian-ruiz",
@@ -25031,7 +25316,7 @@ window.DATA = {
         "네이션스리그 우승"
       ],
       "notableTransfer": "2022년 레알 베티스에서 PSG로 이적(베티스 시절 바이아웃 3,000만 유로)",
-      "ovr": 83,
+      "ovr": 84,
       "scout": {
         "skill": 83,
         "value": 79,
@@ -25045,7 +25330,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 78,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 83
     },
     {
       "id": "dani-olmo",
@@ -25076,7 +25362,7 @@ window.DATA = {
         "도쿄 올림픽 은메달"
       ],
       "notableTransfer": "2024년 RB 라이프치히에서 약 6,000만 유로에 바르셀로나 이적",
-      "ovr": 81,
+      "ovr": 82,
       "scout": {
         "skill": 81,
         "value": 81,
@@ -25090,7 +25376,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 64,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "marc-cucurella",
@@ -25121,7 +25408,7 @@ window.DATA = {
         "도쿄 올림픽 은메달"
       ],
       "notableTransfer": "2022년 브라이턴에서 첼시로 초기 5,600만 파운드(추가 옵션 포함 최대 6,300만)에 이적",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -25135,7 +25422,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 76,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "david-raya",
@@ -25166,7 +25454,7 @@ window.DATA = {
         "프리미어리그 골든글러브 3시즌 연속"
       ],
       "notableTransfer": "2024년 브렌트포드에서 아스널로 완전 이적(2,700만 파운드)",
-      "ovr": 82,
+      "ovr": 83,
       "scout": {
         "skill": 82,
         "value": 78,
@@ -25180,7 +25468,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 78,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "pau-cubarsi",
@@ -25210,7 +25499,7 @@ window.DATA = {
         "파리 올림픽 금메달(2024)"
       ],
       "notableTransfer": "바르셀로나 유스(라 마시아) 출신",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 78,
@@ -25224,7 +25513,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 74,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "ryan-mendes",
@@ -25252,7 +25542,7 @@ window.DATA = {
         "2011-12 리그2 공동 3위 득점왕(13골)"
       ],
       "notableTransfer": "릴(2012)·노팅엄 포레스트 임대(2015)·UAE 샤르자/알나스르 등을 거친 베테랑으로, 현재 튀르키예 2부 이으드르에서 활약하며 올해 6-1 대승서 해트트릭 기록.",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -25266,7 +25556,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "logan-costa",
@@ -25293,7 +25584,7 @@ window.DATA = {
         "라리가/유로파리그 무대 정기 출전 경험"
       ],
       "notableTransfer": "2024년 8월 툴루즈에서 비야레알로 €17.5M(+보너스 €1.5M) 이적 — 비야레알 역대 최고액 수비수 영입.",
-      "ovr": 78,
+      "ovr": 75,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -25307,7 +25598,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 84,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "jamiro-monteiro",
@@ -25335,7 +25627,7 @@ window.DATA = {
         "2022 MLS 위클리 베스트 선정"
       ],
       "notableTransfer": "MLS 필라델피아 유니언이 구단 기록 $2M에 영입(2020), 산호세 어스퀘이크스를 거쳐 2024년 PEC 즈볼레와 2+1년 계약.",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -25349,7 +25641,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 66,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "garry-rodrigues",
@@ -25377,7 +25670,7 @@ window.DATA = {
         "2021-22 그리스 수페르리가 우승(올림피아코스)"
       ],
       "notableTransfer": "2017년 PAOK에서 갈라타사라이로 €3.7M 이적, 이후 올림피아코스 등을 거쳐 현재 키프로스 아폴론 리마솔 소속.",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -25391,7 +25684,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "roberto-lopes",
@@ -25433,7 +25727,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "vozinha",
@@ -25460,7 +25755,7 @@ window.DATA = {
         "카보베르데 대표팀 통산 86캡의 주전 수문장"
       ],
       "notableTransfer": "포르투갈을 무대로 오랜 커리어를 이어온 골키퍼로, 현재 샤베스 소속이며 대표팀 통산 86캡.",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -25474,7 +25769,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "dailon-livramento",
@@ -25501,7 +25797,7 @@ window.DATA = {
         "2026 월드컵 예선 카보베르데 팀 내 최다 득점(4골)"
       ],
       "notableTransfer": "로테르담 태생으로 현재 포르투갈 1부 카사 피아 소속, 2026 예선 팀 내 최다 4골 기록.",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -25515,7 +25811,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "kevin-pina",
@@ -25542,7 +25839,7 @@ window.DATA = {
         "러시아 프리미어리그 정기 출전"
       ],
       "notableTransfer": "러시아 프리미어리그 크라스노다르 소속의 중원 자원으로 대표팀 통산 31캡.",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -25556,7 +25853,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "deroy-duarte",
@@ -25583,7 +25881,7 @@ window.DATA = {
         "루도고레츠 소속 유럽대항전 출전 경험"
       ],
       "notableTransfer": "네덜란드 출신으로 불가리아 강호 루도고레츠 라즈그라드에서 뛰며 유럽대항전 경험 보유.",
-      "ovr": 56,
+      "ovr": 60,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -25597,7 +25895,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 61,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "jovane-cabral",
@@ -25624,7 +25923,7 @@ window.DATA = {
         "스포르팅 CP 1군 무대 경험"
       ],
       "notableTransfer": "스포르팅 CP를 거쳐 라치오 임대 등을 경험한 뒤 현재 포르투갈 1부 이스트렐라 아마도라 소속.",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -25638,7 +25937,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "benchimol",
@@ -25665,7 +25965,7 @@ window.DATA = {
         "대표팀 22경기 6골의 득점 효율"
       ],
       "notableTransfer": "러시아 프리미어리그 아크론 톨리야티 소속으로 대표팀 22경기 6골의 준수한 득점 효율 보유.",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -25679,7 +25979,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 59,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "salem-al-dawsari",
@@ -25710,7 +26011,7 @@ window.DATA = {
         "AFC 챔피언스리그 MVP (2021)"
       ],
       "notableTransfer": "알 힐랄 원클럽맨에 가까운 핵심 자원으로, 2025년 클럽월드컵 아시아 통산 최다 득점(5골) 기록.",
-      "ovr": 84,
+      "ovr": 86,
       "scout": {
         "skill": 84,
         "value": 75,
@@ -25724,7 +26025,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 68,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "firas-al-buraikan",
@@ -25754,7 +26056,7 @@ window.DATA = {
         "AFC U-23 아시안컵 (2022)"
       ],
       "notableTransfer": "2023년 알 아흘리로 이적, 보도된 이적료 약 4000만 사우디 리얄(약 990만 유로).",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -25768,7 +26070,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 74,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "saud-abdulhamid",
@@ -25798,7 +26101,7 @@ window.DATA = {
         "AFC U-23 아시안컵 (2022)"
       ],
       "notableTransfer": "2024년 AS 로마로 250만 유로에 이적 후 2025년 랑스 임대, 2026년 완전 이적으로 전환.",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -25812,7 +26115,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "mohammed-al-owais",
@@ -25842,7 +26146,7 @@ window.DATA = {
         "프로리그 올해의 GK (2017-18)"
       ],
       "notableTransfer": "알 힐랄에서 다수의 우승을 경험한 뒤 출전 기회를 위해 이적, 풍부한 경력의 노장 GK.",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -25856,7 +26160,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "hassan-al-tambakti",
@@ -25887,7 +26192,7 @@ window.DATA = {
         "사우디 슈퍼컵 2회"
       ],
       "notableTransfer": "2023년 알 힐랄로 약 4600만 사우디 리얄에 이적, 사우디 역대 최고 이적료 자국 선수.",
-      "ovr": 71,
+      "ovr": 74,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -25901,7 +26206,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 78,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "mohamed-kanno",
@@ -25932,7 +26238,7 @@ window.DATA = {
         "사우디 슈퍼컵 4회"
       ],
       "notableTransfer": "2017년 알 힐랄 이적 후 다수의 우승을 경험한 장기 핵심 미드필더.",
-      "ovr": 68,
+      "ovr": 72,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -25946,7 +26252,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 79,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "saleh-al-shehri",
@@ -25976,7 +26283,7 @@ window.DATA = {
         "킹스컵 3회"
       ],
       "notableTransfer": "2024년 알 힐랄에서 알 이티하드로 자유계약 이적, 이적 첫 시즌 프로리그·킹스컵 우승.",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -25990,7 +26297,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "abdulelah-al-amri",
@@ -26020,7 +26328,7 @@ window.DATA = {
         "아랍 클럽 챔피언스컵 (2023)"
       ],
       "notableTransfer": "2024년 알 이티하드 임대로 프로리그·킹스컵 우승 후 알 나스르 복귀.",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -26034,7 +26342,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "abdullah-al-hamdan",
@@ -26064,7 +26373,7 @@ window.DATA = {
         "킹스컵 2회"
       ],
       "notableTransfer": "2026년 알 힐랄에서 알 나스르로 자유계약 이적, 5년간의 알 힐랄 시절 마감.",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -26078,7 +26387,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "nasser-al-dawsari",
@@ -26108,7 +26418,7 @@ window.DATA = {
         "ACL 결승 최단시간 골 기록 (16초)"
       ],
       "notableTransfer": "13세에 알 힐랄 유스 입단해 한 클럽에서만 성장한 원클럽맨.",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -26122,7 +26432,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "federico-valverde",
@@ -26167,7 +26478,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 89,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 93
     },
     {
       "id": "darwin-nunez",
@@ -26197,7 +26509,7 @@ window.DATA = {
         "코파 아메리카 3위 (2024)"
       ],
       "notableTransfer": "2022년 벤피카→리버풀 €75M+추가 옵션, 2025년 €53M에 알 힐랄 이적",
-      "ovr": 82,
+      "ovr": 85,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -26211,7 +26523,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 84,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "ronald-araujo",
@@ -26241,7 +26554,7 @@ window.DATA = {
         "코파 아메리카 3위 (2024)"
       ],
       "notableTransfer": "2018년 보스턴 리버에서 바르셀로나로 €1.7M+옵션 이적, 2031년까지 재계약",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 86,
@@ -26255,7 +26568,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 90,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "jose-maria-gimenez",
@@ -26299,7 +26613,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 86,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 83
     },
     {
       "id": "rodrigo-bentancur",
@@ -26343,7 +26658,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 76,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "manuel-ugarte",
@@ -26387,7 +26703,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 82,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "giorgian-de-arrascaeta",
@@ -26417,7 +26734,7 @@ window.DATA = {
         "브라질 세리에A 3회"
       ],
       "notableTransfer": "2019년 크루제이루에서 €15M에 플라멩구 이적 (당시 브라질 이적료 기록)",
-      "ovr": 81,
+      "ovr": 82,
       "scout": {
         "skill": 81,
         "value": 77,
@@ -26431,7 +26748,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 66,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "nicolas-de-la-cruz",
@@ -26475,7 +26793,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 58,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "mathias-olivera",
@@ -26504,7 +26823,7 @@ window.DATA = {
         "코파 아메리카 3위 (2024)"
       ],
       "notableTransfer": "2022년 헤타페에서 나폴리로 이적해 즉시 주전 자리 차지",
-      "ovr": 76,
+      "ovr": 77,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -26518,7 +26837,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "facundo-pellistri",
@@ -26547,7 +26867,7 @@ window.DATA = {
         "코파 아메리카 3위 (2024)"
       ],
       "notableTransfer": "2020년 페냐롤→맨체스터 유나이티드 £9M, 2024년 €6M에 파나티나이코스 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -26561,7 +26881,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "sergio-rochet",
@@ -26590,7 +26911,7 @@ window.DATA = {
         "코파 아메리카 3위 (2024)"
       ],
       "notableTransfer": "2023년 나시오날에서 US$1.6M에 인테르나시오나우 이적",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -26604,7 +26925,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 74,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "kylian-mbappe",
@@ -26636,7 +26958,7 @@ window.DATA = {
         "피치치 2회 (24-25, 25-26)"
       ],
       "notableTransfer": "2024년 PSG에서 레알 마드리드로 자유계약 이적 (앞서 2017년 모나코→PSG는 약 1억 8천만 유로로 역대 최고 10대 선수)",
-      "ovr": 97,
+      "ovr": 98,
       "scout": {
         "skill": 97,
         "value": 97,
@@ -26650,7 +26972,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 80,
         "골결정력": 92
-      }
+      },
+      "ovrBase": 97
     },
     {
       "id": "ousmane-dembele",
@@ -26682,7 +27005,7 @@ window.DATA = {
         "리그앙 3회"
       ],
       "notableTransfer": "2023년 바르셀로나에서 PSG로 약 5,040만 유로 이적 (앞서 2017년 도르트문트→바르샤 1억 500만+옵션)",
-      "ovr": 94,
+      "ovr": 95,
       "scout": {
         "skill": 94,
         "value": 94,
@@ -26696,7 +27019,8 @@ window.DATA = {
         "테크닉": 92,
         "피지컬": 72,
         "골결정력": 84
-      }
+      },
+      "ovrBase": 94
     },
     {
       "id": "michael-olise",
@@ -26726,7 +27050,7 @@ window.DATA = {
         "분데스리가 시즌 베스트 일레븐"
       ],
       "notableTransfer": "2024년 크리스탈 팰리스에서 바이에른 뮌헨으로 옵션 포함 약 6,000만 유로 이적",
-      "ovr": 88,
+      "ovr": 87,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -26740,7 +27064,8 @@ window.DATA = {
         "테크닉": 91,
         "피지컬": 70,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "william-saliba",
@@ -26770,7 +27095,7 @@ window.DATA = {
         "유로 2024 토너먼트 베스트 일레븐"
       ],
       "notableTransfer": "2019년 생테티엔에서 아스널로 약 2,700만 파운드 이적 (이후 임대 후 정착)",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 86,
@@ -26784,7 +27109,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 87,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "dayot-upamecano",
@@ -26814,7 +27140,7 @@ window.DATA = {
         "2021 네이션스리그 우승"
       ],
       "notableTransfer": "2021년 RB 라이프치히에서 바이언 뮌헨으로 바이아웃 약 4,250만 유로 이적",
-      "ovr": 82,
+      "ovr": 84,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -26828,7 +27154,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 88,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "jules-kounde",
@@ -26858,7 +27185,7 @@ window.DATA = {
         "2021 네이션스리그 우승"
       ],
       "notableTransfer": "2022년 세비야에서 바르셀로나로 이적",
-      "ovr": 81,
+      "ovr": 84,
       "scout": {
         "skill": 81,
         "value": 81,
@@ -26872,7 +27199,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 82,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "aurelien-tchouameni",
@@ -26917,7 +27245,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 86,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "adrien-rabiot",
@@ -26948,7 +27277,7 @@ window.DATA = {
         "2021 네이션스리그 우승"
       ],
       "notableTransfer": "2025년 마르세유를 거쳐 AC 밀란 합류 (앞서 2019년 PSG→유벤투스 자유계약)",
-      "ovr": 79,
+      "ovr": 80,
       "scout": {
         "skill": 79,
         "value": 75,
@@ -26962,7 +27291,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 82,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "rayan-cherki",
@@ -26992,7 +27322,7 @@ window.DATA = {
         "2024 올림픽 은메달"
       ],
       "notableTransfer": "2025년 리옹에서 맨체스터 시티로 초기 3,650만 유로(+옵션)에 이적",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 78,
@@ -27006,7 +27336,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 58,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "marcus-thuram",
@@ -27036,7 +27367,7 @@ window.DATA = {
         "2022 월드컵 준우승"
       ],
       "notableTransfer": "2023년 묀헨글라드바흐에서 인터 밀란으로 자유계약 이적",
-      "ovr": 80,
+      "ovr": 84,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -27050,7 +27381,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 86,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "mike-maignan",
@@ -27095,7 +27427,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 80,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "sadio-mane",
@@ -27126,7 +27459,7 @@ window.DATA = {
         "AFCON 2025 대회 MVP"
       ],
       "notableTransfer": "리버풀에서 2022년 바이에른 뮌헨으로 약 4100만 유로 이적 후 2023년 알 나스르 합류",
-      "ovr": 90,
+      "ovr": 92,
       "scout": {
         "skill": 90,
         "value": 80,
@@ -27140,7 +27473,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 78,
         "골결정력": 85
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "kalidou-koulibaly",
@@ -27170,7 +27504,7 @@ window.DATA = {
         "AFCON 2021 대회 베스트 11"
       ],
       "notableTransfer": "나폴리에서 2022년 첼시로 약 3400만 파운드, 2023년 알 힐랄로 약 2000만 파운드 이적",
-      "ovr": 80,
+      "ovr": 76,
       "scout": {
         "skill": 80,
         "value": 71,
@@ -27184,7 +27518,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 88,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "edouard-mendy",
@@ -27229,7 +27564,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 82,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "idrissa-gana-gueye",
@@ -27259,7 +27595,7 @@ window.DATA = {
         "UEFA 챔피언스리그 준우승 (2020, PSG)"
       ],
       "notableTransfer": "에버턴에서 2019년 PSG로 약 3000만 유로 이적 후 2022년 에버턴 복귀",
-      "ovr": 75,
+      "ovr": 77,
       "scout": {
         "skill": 75,
         "value": 67,
@@ -27273,7 +27609,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 82,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "ismaila-sarr",
@@ -27303,7 +27640,7 @@ window.DATA = {
         "UEFA 컨퍼런스리그 우승 (2026, 대회 MVP·득점왕)"
       ],
       "notableTransfer": "왓퍼드에서 2024년 크리스털 팰리스로 약 1250만 파운드 이적",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -27317,7 +27654,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 70,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "nicolas-jackson",
@@ -27347,7 +27685,7 @@ window.DATA = {
         "FIFA 클럽 월드컵 우승 (2025, 첼시)"
       ],
       "notableTransfer": "비야레알에서 2023년 첼시로 약 3500만 유로 이적 후 2025년 바이에른 뮌헨 임대 이적",
-      "ovr": 74,
+      "ovr": 80,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -27361,7 +27699,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "iliman-ndiaye",
@@ -27389,7 +27728,7 @@ window.DATA = {
         "AFCON 우승 (2025)"
       ],
       "notableTransfer": "마르세유에서 2024년 에버턴으로 약 1560만 파운드(추가 옵션 포함) 이적",
-      "ovr": 70,
+      "ovr": 76,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -27403,7 +27742,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 66,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "pape-matar-sarr",
@@ -27432,7 +27772,7 @@ window.DATA = {
         "UEFA 유로파리그 우승 (2025, 토트넘)"
       ],
       "notableTransfer": "메스에서 2021년 토트넘으로 약 1400만 파운드 이적",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 77,
@@ -27446,7 +27786,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 72,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "lamine-camara",
@@ -27475,7 +27816,7 @@ window.DATA = {
         "AFCON 2025 영플레이어 후보급 활약"
       ],
       "notableTransfer": "메스에서 2024년 AS 모나코로 약 1500만 유로 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -27489,7 +27830,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "habib-diarra",
@@ -27517,7 +27859,7 @@ window.DATA = {
         "AFCON 우승 (2025)"
       ],
       "notableTransfer": "스트라스부르에서 2025년 선덜랜드로 약 3150만 유로(클럽 역대 최고액) 이적",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 68,
@@ -27531,7 +27873,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "krepin-diatta",
@@ -27573,7 +27916,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "aymen-hussein",
@@ -27604,7 +27948,7 @@ window.DATA = {
         "2023 AFC 아시안컵 베스트팀"
       ],
       "notableTransfer": "2025년 알카르마로 이라크 기록적인 12억 5천만 디나르에 이적, 튀니지 CS 스팍시엔·UAE 알자지라 등 경유.",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 68,
@@ -27618,7 +27962,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 78,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "ali-al-hamadi",
@@ -27647,7 +27992,7 @@ window.DATA = {
         "이라크 첫 프리미어리그 출전 선수 (2024년 8월)"
       ],
       "notableTransfer": "2024년 1월 AFC 윔블던에서 입스위치로 이적, 2025년 9월 루턴 타운 시즌 임대.",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -27661,7 +28006,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "zidane-iqbal",
@@ -27689,7 +28035,7 @@ window.DATA = {
         "에레디비시 이달의 팀 선정 (2024년 12월, 2025년 3월)"
       ],
       "notableTransfer": "2023년 6월 맨체스터 유나이티드에서 위트레흐트로 4년 계약 이적, 맨유에서 챔피언스리그 데뷔.",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -27703,7 +28049,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "jalal-hassan",
@@ -27734,7 +28081,7 @@ window.DATA = {
         "아시안컵 3회 연속 주전 출전"
       ],
       "notableTransfer": "2017년부터 알자우라에서 8시즌 연속 활약, 아르빌·알쇼르타 등 경유.",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -27748,7 +28095,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "amir-al-ammari",
@@ -27776,7 +28124,7 @@ window.DATA = {
         "아라비안 걸프컵 우승 (2023)"
       ],
       "notableTransfer": "2024년 스웨덴 할름스타드에서 폴란드 크라코비아로 3년 계약 이적.",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -27790,7 +28138,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mohanad-ali",
@@ -27820,7 +28169,7 @@ window.DATA = {
         "이라크 FA컵 우승 (2023-24)"
       ],
       "notableTransfer": "2019년 알두하일로 약 120만 달러 이적, 포르티모넨세·아리스 등 임대 경유 후 UAE 진출.",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -27834,7 +28183,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "ali-jasim",
@@ -27863,7 +28213,7 @@ window.DATA = {
         "AFC U-23 아시안컵 3위 (2024)"
       ],
       "notableTransfer": "2024년 7월 코모(세리에A) 3년 계약 이적, 알메러시티·알나즈마 임대.",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -27877,7 +28227,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "merchas-doski",
@@ -27905,7 +28256,7 @@ window.DATA = {
         "킹스컵 우승 (2023, 2025)"
       ],
       "notableTransfer": "2025년 슬로바츠코에서 빅토리아 플젠으로 이적, 오스트리아 바커 인스브루크 경유.",
-      "ovr": 54,
+      "ovr": 59,
       "scout": {
         "skill": 54,
         "value": 54,
@@ -27919,7 +28270,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 56,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "hussein-ali",
@@ -27945,7 +28297,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "포곤 슈체친 소속으로 2028년까지 계약, 측면 수비 핵심 자원.",
-      "ovr": 53,
+      "ovr": 58,
       "scout": {
         "skill": 53,
         "value": 53,
@@ -27959,7 +28311,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 55,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "ahmed-qasem",
@@ -27985,7 +28338,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 스웨덴 엘프스보리에서 내슈빌 SC로 이적, 2026년 5월 이라크 대표팀 데뷔.",
-      "ovr": 48,
+      "ovr": 51,
       "scout": {
         "skill": 48,
         "value": 50,
@@ -27999,7 +28352,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 41,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 48
     },
     {
       "id": "erling-haaland",
@@ -28031,7 +28385,7 @@ window.DATA = {
         "골든보이 (2020)"
       ],
       "notableTransfer": "2022년 도르트문트에서 맨시티로 약 6000만 유로(£51.2m)에 이적.",
-      "ovr": 97,
+      "ovr": 98,
       "scout": {
         "skill": 97,
         "value": 97,
@@ -28045,7 +28399,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 92,
         "골결정력": 98
-      }
+      },
+      "ovrBase": 97
     },
     {
       "id": "martin-odegaard",
@@ -28075,7 +28430,7 @@ window.DATA = {
         "PFA 올해의 팀 2회"
       ],
       "notableTransfer": "2021년 레알 마드리드에서 아스널로 초기 £30m(약 3500만 유로)에 영구 이적.",
-      "ovr": 90,
+      "ovr": 88,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -28089,7 +28444,8 @@ window.DATA = {
         "테크닉": 91,
         "피지컬": 68,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "alexander-sorloth",
@@ -28117,7 +28473,7 @@ window.DATA = {
         "라리가 득점 2위 (23/24, 비야레알 23골)"
       ],
       "notableTransfer": "2024년 비야레알에서 아틀레티코 마드리드로 약 3200만 유로(+보너스 800만)에 이적.",
-      "ovr": 80,
+      "ovr": 83,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -28131,7 +28487,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 87,
         "골결정력": 84
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "antonio-nusa",
@@ -28157,7 +28514,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 클럽 브뤼헤에서 RB 라이프치히로 약 2100만 유로에 이적.",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 78,
@@ -28171,7 +28528,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 64,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "oscar-bobb",
@@ -28201,7 +28559,7 @@ window.DATA = {
         "UEFA 슈퍼컵 (2023/24)"
       ],
       "notableTransfer": "2026년 1월 맨시티에서 풀럼으로 £27m(약 3100만 유로)에 이적.",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -28215,7 +28573,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 58,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jorgen-strand-larsen",
@@ -28241,7 +28600,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 2월 울버햄튼에서 크리스탈 팰리스로 구단 최고액 £48m에 이적.",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -28255,7 +28614,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "kristoffer-ajer",
@@ -28283,7 +28643,7 @@ window.DATA = {
         "스코틀랜드 트레블 3연패 (셀틱, 2017/18~2019/20)"
       ],
       "notableTransfer": "2021년 셀틱에서 브렌트퍼드로 초기 £13.5m에 이적.",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -28297,7 +28657,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 82,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "sander-berge",
@@ -28325,7 +28686,7 @@ window.DATA = {
         "벨기에 프로리그 우승 (2018/19, 헹크)"
       ],
       "notableTransfer": "2024년 번리에서 풀럼으로 £20m(+보너스 £5m)에 이적.",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -28339,7 +28700,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 82,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "fredrik-aursnes",
@@ -28369,7 +28731,7 @@ window.DATA = {
         "엘리테세리엔 (2019, 몰데)"
       ],
       "notableTransfer": "2022년 페예노르트에서 벤피카로 약 1300만 유로(+200만 보너스)에 이적.",
-      "ovr": 69,
+      "ovr": 71,
       "scout": {
         "skill": 69,
         "value": 66,
@@ -28383,7 +28745,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 68,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "leo-ostigard",
@@ -28409,7 +28772,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "세리에 A 무대에서 꾸준히 출전하며 주전급으로 성장.",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -28423,7 +28786,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "orjan-nyland",
@@ -28449,7 +28813,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "독일·잉글랜드를 거쳐 현재 라리가 세비야에서 활약.",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -28463,7 +28827,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "lionel-messi",
@@ -28508,7 +28873,8 @@ window.DATA = {
         "테크닉": 99,
         "피지컬": 68,
         "골결정력": 95
-      }
+      },
+      "ovrBase": 98
     },
     {
       "id": "lautaro-martinez",
@@ -28539,7 +28905,7 @@ window.DATA = {
         "세리에 A 득점왕 2회"
       ],
       "notableTransfer": "2018년 라싱 클루브에서 인터 밀란으로 약 2270만 유로에 이적",
-      "ovr": 90,
+      "ovr": 92,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -28553,7 +28919,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 80,
         "골결정력": 91
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "julian-alvarez",
@@ -28584,7 +28951,7 @@ window.DATA = {
         "프리미어리그 2회"
       ],
       "notableTransfer": "2024년 8월 맨체스터 시티에서 아틀레티코 마드리드로 최대 9500만 유로(클럽 기록)에 이적",
-      "ovr": 88,
+      "ovr": 91,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -28598,7 +28965,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 76,
         "골결정력": 88
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "emiliano-martinez",
@@ -28629,7 +28997,7 @@ window.DATA = {
         "FIFA 올해의 골키퍼 2022·2024"
       ],
       "notableTransfer": "2020년 9월 아스널에서 애스턴 빌라로 약 2000만 파운드에 이적",
-      "ovr": 89,
+      "ovr": 88,
       "scout": {
         "skill": 89,
         "value": 79,
@@ -28643,7 +29011,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 84,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 89
     },
     {
       "id": "enzo-fernandez",
@@ -28674,7 +29043,7 @@ window.DATA = {
         "FIFA 클럽 월드컵 2025 우승"
       ],
       "notableTransfer": "2023년 1월 벤피카에서 첼시로 당시 영국 최고 이적료 1억680만 파운드에 이적",
-      "ovr": 84,
+      "ovr": 85,
       "scout": {
         "skill": 84,
         "value": 84,
@@ -28688,7 +29057,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 76,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "alexis-mac-allister",
@@ -28719,7 +29089,7 @@ window.DATA = {
         "EFL컵 2023-24 우승"
       ],
       "notableTransfer": "2023년 6월 브라이턴에서 리버풀로 초기 3500만 파운드(추가옵션 포함 약 5500만)로 이적",
-      "ovr": 85,
+      "ovr": 86,
       "scout": {
         "skill": 85,
         "value": 85,
@@ -28733,7 +29103,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 75,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "cristian-romero",
@@ -28763,7 +29134,7 @@ window.DATA = {
         "유로파리그 2024-25 우승(시즌 베스트)"
       ],
       "notableTransfer": "2022년 아탈란타에서 토트넘으로 완전 이적(2021년 1600만 유로 임대옵션 행사 후), 유벤투스 시절 2600만 유로 이적 이력",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 86,
@@ -28777,7 +29148,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 88,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "lisandro-martinez",
@@ -28808,7 +29180,7 @@ window.DATA = {
         "에레디비시 2회"
       ],
       "notableTransfer": "2022년 7월 아약스에서 맨체스터 유나이티드로 약 4700만~4900만 파운드(추가옵션 포함)에 이적",
-      "ovr": 80,
+      "ovr": 82,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -28822,7 +29194,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 78,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "rodrigo-de-paul",
@@ -28851,7 +29224,7 @@ window.DATA = {
         "코파 아메리카 2021·2024 우승(대회 베스트 2회)"
       ],
       "notableTransfer": "2025년 7월 아틀레티코 마드리드에서 인터 마이애미로 임대 후 1500만 유로 의무 이적 조건으로 합류",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 74,
@@ -28865,7 +29238,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 80,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "nicolas-otamendi",
@@ -28894,7 +29268,7 @@ window.DATA = {
         "코파 아메리카 2021·2024 우승"
       ],
       "notableTransfer": "2020년 맨체스터 시티에서 벤피카로 이적",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -28908,7 +29282,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 84,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "riyad-mahrez",
@@ -28940,7 +29315,7 @@ window.DATA = {
         "CAF 올해의 선수 2016"
       ],
       "notableTransfer": "2018년 레스터에서 맨시티로 6000만 파운드 이적(당시 아프리카 선수 최고액), 2023년 알 아흘리행",
-      "ovr": 88,
+      "ovr": 89,
       "scout": {
         "skill": 88,
         "value": 78,
@@ -28954,7 +29329,8 @@ window.DATA = {
         "테크닉": 91,
         "피지컬": 68,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "mohamed-amoura",
@@ -28982,7 +29358,7 @@ window.DATA = {
         "벨기에 컵 우승(유니온 생질루아즈)"
       ],
       "notableTransfer": "2024년 유니온 생질루아즈에서 볼프스부르크로 약 1700만 유로 이적, 2025년 완전 영입",
-      "ovr": 80,
+      "ovr": 84,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -28996,7 +29372,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 64,
         "골결정력": 81
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "rayan-ait-nouri",
@@ -29022,7 +29399,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 울버햄튼에서 맨시티로 3630만 파운드(보너스 포함) 이적",
-      "ovr": 84,
+      "ovr": 85,
       "scout": {
         "skill": 84,
         "value": 84,
@@ -29036,7 +29413,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 74,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "amine-gouiri",
@@ -29065,7 +29443,7 @@ window.DATA = {
         "UEFA U-17 챔피언십 득점왕 2017"
       ],
       "notableTransfer": "2025년 1월 렌에서 마르세유로 약 2200만 유로(보너스 포함) 이적",
-      "ovr": 76,
+      "ovr": 79,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -29079,7 +29457,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 66,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "ramy-bensebaini",
@@ -29109,7 +29488,7 @@ window.DATA = {
         "쿠프 드 프랑스 우승 2018-19"
       ],
       "notableTransfer": "2023년 묀헨글라트바흐에서 도르트문트로 자유계약 이적, 2019년 렌→글라트바흐 800만 유로",
-      "ovr": 75,
+      "ovr": 80,
       "scout": {
         "skill": 75,
         "value": 71,
@@ -29123,7 +29502,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 83,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "houssem-aouar",
@@ -29152,7 +29532,7 @@ window.DATA = {
         "사우디 킹스컵 우승 2024-25"
       ],
       "notableTransfer": "2024년 로마에서 알 이티하드로 약 1200만 유로 이적",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -29166,7 +29546,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 64,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "fares-chaibi",
@@ -29194,7 +29575,7 @@ window.DATA = {
         "쿠프 드 프랑스 우승 2022-23(툴루즈)"
       ],
       "notableTransfer": "2023년 툴루즈에서 프랑크푸르트로 1700만 유로 이적",
-      "ovr": 68,
+      "ovr": 71,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -29208,7 +29589,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ibrahim-maza",
@@ -29234,7 +29616,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 헤르타 베를린에서 레버쿠젠으로 1200만 유로 이적",
-      "ovr": 64,
+      "ovr": 67,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -29248,7 +29630,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 57,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "aissa-mandi",
@@ -29277,7 +29660,7 @@ window.DATA = {
         "알제리 역대 최다 A매치 출전 기록 보유"
       ],
       "notableTransfer": "헤타페·레알 베티스를 거쳐 릴 합류, 알제리 역대 최다 캡 보유",
-      "ovr": 67,
+      "ovr": 73,
       "scout": {
         "skill": 67,
         "value": 60,
@@ -29291,7 +29674,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "anis-hadj-moussa",
@@ -29320,7 +29704,7 @@ window.DATA = {
         "에레디비시 이달의 선수 2026년 5월"
       ],
       "notableTransfer": "2024년 파트로 에이스던에서 페예노르트로 이적(구단 기록적 이적료)",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -29334,7 +29718,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 54,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "luca-zidane",
@@ -29360,7 +29745,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 그라나다 합류, 2025년 FIFA 승인 후 프랑스에서 알제리로 대표팀 변경",
-      "ovr": 57,
+      "ovr": 59,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -29374,7 +29759,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 54,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "david-alaba",
@@ -29418,7 +29804,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 80,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "marcel-sabitzer",
@@ -29447,7 +29834,7 @@ window.DATA = {
         "유로 2016·2020·2024 본선 출전"
       ],
       "notableTransfer": "2023년 바이에른 뮌헨에서 도르트문트로 약 1,900만 유로(보너스 포함)에 이적",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -29461,7 +29848,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 76,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "konrad-laimer",
@@ -29504,7 +29892,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 80,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "christoph-baumgartner",
@@ -29533,7 +29922,7 @@ window.DATA = {
         "자국 대표팀 주요 득점원"
       ],
       "notableTransfer": "2023년 호펜하임에서 RB 라이프치히로 약 2,550만 유로에 이적",
-      "ovr": 78,
+      "ovr": 79,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -29547,7 +29936,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 66,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "kevin-danso",
@@ -29575,7 +29965,7 @@ window.DATA = {
         "2025 UEFA 유로파리그 우승(토트넘)"
       ],
       "notableTransfer": "2025년 랑스에서 토트넘으로 약 2,090만 파운드에 완전 이적",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -29589,7 +29979,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 82,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "marko-arnautovic",
@@ -29618,7 +30009,7 @@ window.DATA = {
         "세리에A 우승(인터 밀란)"
       ],
       "notableTransfer": "2025년 인터 밀란을 떠나 레드스타 베오그라드와 2년 계약",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 59,
@@ -29632,7 +30023,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "michael-gregoritsch",
@@ -29661,7 +30053,7 @@ window.DATA = {
         "대표팀 다수 득점 기여"
       ],
       "notableTransfer": "2025년 SC 프라이부르크를 떠나 브뢴비와 3년 계약(아우크스부르크 임대)",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -29675,7 +30067,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "nicolas-seiwald",
@@ -29704,7 +30097,7 @@ window.DATA = {
         "오스트리아 분데스리가 우승(잘츠부르크)"
       ],
       "notableTransfer": "2023년 레드불 잘츠부르크에서 RB 라이프치히로 약 2,000만 유로에 이적",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -29718,7 +30111,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 70,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "alexander-schlager",
@@ -29747,7 +30141,7 @@ window.DATA = {
         "대표팀 주전 골키퍼"
       ],
       "notableTransfer": "2023년 LASK에서 레드불 잘츠부르크로 이적",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -29761,7 +30155,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mousa-al-tamari",
@@ -29790,7 +30185,7 @@ window.DATA = {
         "5대 리그에서 득점한 첫 요르단 선수"
       ],
       "notableTransfer": "2025년 2월 몽펠리에에서 렌으로 약 800~900만 유로에 이적(2028년까지 계약)",
-      "ovr": 82,
+      "ovr": 84,
       "scout": {
         "skill": 82,
         "value": 82,
@@ -29804,7 +30199,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "ali-olwan",
@@ -29833,7 +30229,7 @@ window.DATA = {
         "2025년 6월 오만전 해트트릭으로 첫 월드컵 진출 견인"
       ],
       "notableTransfer": "여러 카타르·말레이시아 클럽을 거친 저니맨으로 2026년 알사일리야 합류",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -29847,7 +30243,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "yazan-al-arab",
@@ -29876,7 +30273,7 @@ window.DATA = {
         "2023-24 이라크 스타스 리그 우승(알쇼르타)"
       ],
       "notableTransfer": "2024년 7월 이라크 알쇼르타에서 FC 서울로 이적",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -29890,7 +30287,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 78,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "ehsan-haddad",
@@ -29919,7 +30317,7 @@ window.DATA = {
         "이라크 프리미어리그 2회 우승"
       ],
       "notableTransfer": "알파이살리·이라크 클럽을 거친 베테랑으로 자국 알후세인 소속",
-      "ovr": 64,
+      "ovr": 70,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -29933,7 +30331,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 66,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "noor-al-rawabdeh",
@@ -29962,7 +30361,7 @@ window.DATA = {
         "2024-25 MFL 챌린지컵 우승"
       ],
       "notableTransfer": "바레인 알무하라크를 거쳐 2023년 말레이시아 슬랑오르 합류",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -29976,7 +30375,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "nizar-al-rashdan",
@@ -30005,7 +30405,7 @@ window.DATA = {
         "바레인 킹스컵 우승(2024-25)"
       ],
       "notableTransfer": "바레인·이라크를 거쳐 2026년 1월 카타르 SC로 이적",
-      "ovr": 56,
+      "ovr": 59,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -30019,7 +30419,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 67,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "mohammad-abu-zrayq",
@@ -30046,7 +30447,7 @@ window.DATA = {
         "2025 FIFA 아랍컵 준우승"
       ],
       "notableTransfer": "에스페랑스·알쇼르타 등을 거쳐 2026년 1월 라자 카사블랑카 합류",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -30060,7 +30461,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 45,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "yazeed-abulaila",
@@ -30088,7 +30490,7 @@ window.DATA = {
         "요르단 프로 리그 다수 우승"
       ],
       "notableTransfer": "자국 알후세인의 원클럽급 베테랑 골키퍼",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -30102,7 +30504,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mohammad-abu-hasheesh",
@@ -30129,7 +30532,7 @@ window.DATA = {
         "2023 AFC 아시안컵 준우승"
       ],
       "notableTransfer": "이라크 알카르마 SC 소속의 경험 많은 수비수",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 52,
@@ -30143,7 +30546,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 57,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "cristiano-ronaldo",
@@ -30173,7 +30577,7 @@ window.DATA = {
         "A매치 최다 출전(227)·최다 득점(143) 보유"
       ],
       "notableTransfer": "2022년 맨유와 결별 후 알 나스르로 자유계약 이적.",
-      "ovr": 82,
+      "ovr": 87,
       "scout": {
         "skill": 88,
         "value": 78,
@@ -30187,7 +30591,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 82,
         "골결정력": 92
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "bruno-fernandes",
@@ -30217,7 +30622,7 @@ window.DATA = {
         "2026 예선 아르메니아전 해트트릭"
       ],
       "notableTransfer": "2020년 1월 스포르팅에서 맨유로 약 €55m(추가 옵션 포함 최대 €80m)에 이적.",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 82,
@@ -30231,7 +30636,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 74,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "vitinha",
@@ -30261,7 +30667,7 @@ window.DATA = {
         "네이션스리그 2025 우승"
       ],
       "notableTransfer": "2022년 FC 포르투에서 PSG로 이적해 핵심으로 성장.",
-      "ovr": 84,
+      "ovr": 85,
       "scout": {
         "skill": 84,
         "value": 84,
@@ -30275,7 +30681,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 68,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 84
     },
     {
       "id": "ruben-dias",
@@ -30305,7 +30712,7 @@ window.DATA = {
         "PFA 올해의 선수(2021)"
       ],
       "notableTransfer": "2020년 벤피카에서 맨시티로 약 €68m(역대 수비수 최고 수준)에 이적.",
-      "ovr": 85,
+      "ovr": 81,
       "scout": {
         "skill": 85,
         "value": 85,
@@ -30319,7 +30726,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 88,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "nuno-mendes",
@@ -30349,7 +30757,7 @@ window.DATA = {
         "네이션스리그 2025 우승"
       ],
       "notableTransfer": "2022년 스포르팅에서 PSG로 €40m에 완전 이적.",
-      "ovr": 82,
+      "ovr": 84,
       "scout": {
         "skill": 82,
         "value": 86,
@@ -30363,7 +30771,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 80,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "joao-neves",
@@ -30393,7 +30802,7 @@ window.DATA = {
         "아르메니아전(9-1) 해트트릭"
       ],
       "notableTransfer": "2024년 벤피카에서 PSG로 약 €60m에 이적.",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 84,
@@ -30407,7 +30816,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 68,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "rafael-leao",
@@ -30438,7 +30848,7 @@ window.DATA = {
         "세리에 A MVP(2022)"
       ],
       "notableTransfer": "2019년 릴에서 AC 밀란으로 이적해 스쿠데토 주역으로 성장.",
-      "ovr": 78,
+      "ovr": 84,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -30452,7 +30862,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 76,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "diogo-costa",
@@ -30482,7 +30893,7 @@ window.DATA = {
         "프리메이라 리가 우승"
       ],
       "notableTransfer": "FC 포르투 유스 출신으로 1군에 안착한 자국 리그 대표 골키퍼.",
-      "ovr": 77,
+      "ovr": 79,
       "scout": {
         "skill": 77,
         "value": 77,
@@ -30496,7 +30907,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 76,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "bernardo-silva",
@@ -30526,7 +30938,7 @@ window.DATA = {
         "트레블(2023) 주역"
       ],
       "notableTransfer": "2017년 AS 모나코에서 맨시티로 약 €50m에 이적.",
-      "ovr": 83,
+      "ovr": 85,
       "scout": {
         "skill": 83,
         "value": 79,
@@ -30540,7 +30952,8 @@ window.DATA = {
         "테크닉": 91,
         "피지컬": 66,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 83
     },
     {
       "id": "goncalo-ramos",
@@ -30570,7 +30983,7 @@ window.DATA = {
         "2022 월드컵 스위스전(6-1) 해트트릭"
       ],
       "notableTransfer": "2023년 벤피카에서 PSG로 임대 후 약 €65m에 완전 이적.",
-      "ovr": 74,
+      "ovr": 79,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -30584,7 +30997,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 78,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "chancel-mbemba",
@@ -30615,7 +31029,7 @@ window.DATA = {
         "DR콩고 최다 출전 기록 보유"
       ],
       "notableTransfer": "2015년 안더레흐트에서 뉴캐슬로 약 1200만 유로 이적, 이후 포르투·마르세유 거쳐 2025년 릴 합류",
-      "ovr": 80,
+      "ovr": 82,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -30629,7 +31043,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 86,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "yoane-wissa",
@@ -30657,7 +31072,7 @@ window.DATA = {
         "프리미어리그 두 자릿수 득점 시즌(브렌트포드)"
       ],
       "notableTransfer": "2025년 9월 브렌트포드에서 뉴캐슬로 약 5500만 파운드(추가 옵션 포함) 마감일 이적",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -30671,7 +31086,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 72,
         "골결정력": 81
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "cedric-bakambu",
@@ -30701,7 +31117,7 @@ window.DATA = {
         "비야레알 데뷔 시즌 22골"
       ],
       "notableTransfer": "2018년 비야레알에서 베이징 궈안으로 약 4000만 유로 이적(당시 중국 리그 기록급), 2024년 레알 베티스 합류",
-      "ovr": 76,
+      "ovr": 79,
       "scout": {
         "skill": 76,
         "value": 68,
@@ -30715,7 +31131,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 72,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "fiston-mayele",
@@ -30745,7 +31162,7 @@ window.DATA = {
         "2025 CAF 올해의 인터클럽 선수"
       ],
       "notableTransfer": "탄자니아 영 아프리칸스 거쳐 이집트 피라미즈 FC로 이적, 클럽 역대 최다 득점자 등극",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -30759,7 +31176,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "noah-sadiki",
@@ -30787,7 +31205,7 @@ window.DATA = {
         "벨기에 1부 우승(유니온 생질루아즈, 90년 만의 우승)"
       ],
       "notableTransfer": "2025년 7월 유니온 생질루아즈에서 선덜랜드로 약 2000만 유로(보너스 포함) 5년 계약 이적",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -30801,7 +31219,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 72,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "aaron-wan-bissaka",
@@ -30830,7 +31249,7 @@ window.DATA = {
         "EFL컵 우승(맨체스터 유나이티드)"
       ],
       "notableTransfer": "2024년 8월 맨체스터 유나이티드에서 웨스트햄으로 약 1500만 파운드 이적, 2025년 DR콩고로 대표팀 변경",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -30844,7 +31263,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 76,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "arthur-masuaku",
@@ -30873,7 +31293,7 @@ window.DATA = {
         "그리스 리그 우승(올림피아코스)"
       ],
       "notableTransfer": "웨스트햄·베식타시 거쳐 2025년 선덜랜드 합류, 2026년 1월 랑스로 임대",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -30887,7 +31307,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "theo-bongonda",
@@ -30916,7 +31337,7 @@ window.DATA = {
         "스파르타크 모스크바 3시즌 16골"
       ],
       "notableTransfer": "헹크·셀타 비고·카디스 거쳐 2023년 스파르타크 모스크바 이적, 벨기에 연령별 대표에서 2022년 DR콩고로 전향",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -30930,7 +31351,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 57,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "edo-kayembe",
@@ -30958,7 +31380,7 @@ window.DATA = {
         "왓퍼드 주전 미드필더로 정착"
       ],
       "notableTransfer": "2022년 1월 벨기에 오이펜에서 왓퍼드로 이적, 2026년 5월 1년 연장 발동",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -30972,7 +31394,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "gael-kakuta",
@@ -31001,7 +31424,7 @@ window.DATA = {
         "랑스 임대 시즌 11골 5도움"
       ],
       "notableTransfer": "2007년 랑스에서 첼시로 이적해 논란의 영입, 이후 세비야·아미앵·랑스 등 거침",
-      "ovr": 62,
+      "ovr": 65,
       "scout": {
         "skill": 62,
         "value": 55,
@@ -31015,7 +31438,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 55,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "abdukodir-khusanov",
@@ -31061,7 +31485,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 87,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "eldor-shomurodov",
@@ -31092,7 +31517,7 @@ window.DATA = {
         "우즈베키스탄 올해의 선수 (2019, 2021, 2025)"
       ],
       "notableTransfer": "2021년 제노아에서 AS로마로 1750만 유로+보너스에 이적, 2026년 바샥셰히르로 완전 이적",
-      "ovr": 86,
+      "ovr": 87,
       "scout": {
         "skill": 86,
         "value": 82,
@@ -31106,7 +31531,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 82,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "abbosbek-fayzullaev",
@@ -31138,7 +31564,7 @@ window.DATA = {
         "AFC 올해의 유망주 (2023)"
       ],
       "notableTransfer": "2023년 CSKA 모스크바 입단 후 2025년 이스탄불 바샥셰히르로 5년 계약 이적",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 84,
@@ -31152,7 +31578,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 64,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "igor-sergeev",
@@ -31183,7 +31610,7 @@ window.DATA = {
         "타이리그컵 우승 (2023-24)"
       ],
       "notableTransfer": "파흐타코르를 여러 차례 거쳐 2016년 베이징 궈안 임대, 현재 이란 페르세폴리스 소속",
-      "ovr": 72,
+      "ovr": 75,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -31197,7 +31624,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 76,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "jaloliddin-masharipov",
@@ -31229,7 +31657,7 @@ window.DATA = {
         "우즈베키스탄 올해의 선수 (2020)"
       ],
       "notableTransfer": "2020년 알 나스르(사우디) 입단 후 2024년 이란 에스테글랄로 이적",
-      "ovr": 71,
+      "ovr": 76,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -31243,7 +31671,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 60,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "otabek-shukurov",
@@ -31274,7 +31703,7 @@ window.DATA = {
         "AFC U-16 챔피언십 우승 (2012)"
       ],
       "notableTransfer": "샤르자, 카라귐뤼크(튀르키예), 카이세리스포르, 알 파이하(사우디)를 거쳐 바니야스 이적",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -31288,7 +31717,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "oston-urunov",
@@ -31318,7 +31748,7 @@ window.DATA = {
         "CAFA 네이션스컵 우승 (2025)"
       ],
       "notableTransfer": "2020년 우파에서 스파르타크 모스크바로 이적 후 현재 이란 페르세폴리스 소속",
-      "ovr": 68,
+      "ovr": 72,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -31332,7 +31762,8 @@ window.DATA = {
         "테크닉": 79,
         "피지컬": 61,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "khojiakbar-alijonov",
@@ -31363,7 +31794,7 @@ window.DATA = {
         "AFC U-23 챔피언십 우승 (2018)"
       ],
       "notableTransfer": "파흐타코르 원클럽맨에 가까운 행보로 국내 리그 우승을 휩쓴 측면 수비수",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -31377,7 +31808,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "dostonbek-khamdamov",
@@ -31408,7 +31840,7 @@ window.DATA = {
         "AFC U-16 챔피언십 우승 (2012)"
       ],
       "notableTransfer": "분요드코르에서 안지(러시아)를 거쳐 파흐타코르로 복귀, 카타르·UAE 임대 경험",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -31422,7 +31854,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 53,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "utkir-yusupov",
@@ -31452,7 +31885,7 @@ window.DATA = {
         "CAFA 네이션스컵 준우승 (2023)"
       ],
       "notableTransfer": "카자흐스탄 출생으로 2017년 우즈베키스탄 국적 취득, 나브바호르의 주전 골키퍼",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 52,
@@ -31466,7 +31899,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "luis-diaz",
@@ -31497,7 +31931,7 @@ window.DATA = {
         "코파 아메리카 득점왕 공동 (2021)"
       ],
       "notableTransfer": "2025년 리버풀에서 바이에른 뮌헨으로 약 7,500만 유로(추가옵션 포함) 이적",
-      "ovr": 90,
+      "ovr": 92,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -31511,7 +31945,8 @@ window.DATA = {
         "테크닉": 89,
         "피지컬": 75,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "james-rodriguez",
@@ -31541,7 +31976,7 @@ window.DATA = {
         "챔피언스리그 우승 (2016·2017, 레알 마드리드)"
       ],
       "notableTransfer": "2014년 모나코에서 레알 마드리드로 약 6,300만 파운드, 당시 콜롬비아 역대 최고액 이적",
-      "ovr": 80,
+      "ovr": 79,
       "scout": {
         "skill": 80,
         "value": 71,
@@ -31555,7 +31990,8 @@ window.DATA = {
         "테크닉": 89,
         "피지컬": 58,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "daniel-munoz",
@@ -31584,7 +32020,7 @@ window.DATA = {
         "커뮤니티 실드 (2025)"
       ],
       "notableTransfer": "2024년 헹크에서 크리스탈 팰리스로 약 660만 파운드 이적",
-      "ovr": 76,
+      "ovr": 78,
       "scout": {
         "skill": 76,
         "value": 72,
@@ -31598,7 +32034,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 76,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "davinson-sanchez",
@@ -31628,7 +32065,7 @@ window.DATA = {
         "2024 코파 아메리카 베스트 11"
       ],
       "notableTransfer": "2017년 아약스에서 토트넘으로 구단 최고액 약 4,200만 파운드 이적, 2023년 갈라타사라이행",
-      "ovr": 75,
+      "ovr": 79,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -31642,7 +32079,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 87,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "jhon-lucumi",
@@ -31671,7 +32109,7 @@ window.DATA = {
         "볼로냐 챔피언스리그 진출 기여 (2023-24)"
       ],
       "notableTransfer": "2022년 헹크에서 볼로냐로 이적, 세리에 A 정착",
-      "ovr": 72,
+      "ovr": 75,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -31685,7 +32123,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "richard-rios",
@@ -31715,7 +32154,7 @@ window.DATA = {
         "2024 코파 아메리카 준우승"
       ],
       "notableTransfer": "2025년 팔메이라스에서 벤피카로 5년 계약 이적 (이적료 비공개)",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -31729,7 +32168,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 80,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "jhon-arias",
@@ -31759,7 +32199,7 @@ window.DATA = {
         "2025 클럽월드컵 베스트 11"
       ],
       "notableTransfer": "2025년 플루미넨시→울버햄튼, 2026년 팔메이라스로 2,500만 유로 이적",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -31773,7 +32213,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 60,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "jefferson-lerma",
@@ -31803,7 +32244,7 @@ window.DATA = {
         "2018 월드컵 출전"
       ],
       "notableTransfer": "2018년 본머스로 구단 최고액 약 3,000만 유로, 2023년 팰리스 자유계약 이적",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -31817,7 +32258,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 82,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "luis-suarez",
@@ -31847,7 +32289,7 @@ window.DATA = {
         "프리메이라 리가 시즌 베스트 11 (2025-26)"
       ],
       "notableTransfer": "2025년 알메리아에서 스포르팅으로 약 2,500만 유로(옵션 포함) 이적",
-      "ovr": 71,
+      "ovr": 76,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -31861,7 +32303,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 76,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "harry-kane",
@@ -31893,7 +32336,7 @@ window.DATA = {
         "잉글랜드 역대 최다 득점자(79골)"
       ],
       "notableTransfer": "2023년 토트넘에서 바이에른 뮌헨으로 이적, 1억 유로+보너스 1천만으로 분데스리가 역대 최고 이적료",
-      "ovr": 94,
+      "ovr": 95,
       "scout": {
         "skill": 94,
         "value": 89,
@@ -31907,7 +32350,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 86,
         "골결정력": 96
-      }
+      },
+      "ovrBase": 94
     },
     {
       "id": "jude-bellingham",
@@ -31953,7 +32397,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 86,
         "골결정력": 84
-      }
+      },
+      "ovrBase": 93
     },
     {
       "id": "bukayo-saka",
@@ -31985,7 +32430,7 @@ window.DATA = {
         "잉글랜드 올해의 선수 (2회)"
       ],
       "notableTransfer": "아스널 유스 출신으로 빅클럽 이적 없이 핵심 주전으로 성장",
-      "ovr": 90,
+      "ovr": 91,
       "scout": {
         "skill": 90,
         "value": 90,
@@ -31999,7 +32444,8 @@ window.DATA = {
         "테크닉": 90,
         "피지컬": 72,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 90
     },
     {
       "id": "declan-rice",
@@ -32030,7 +32476,7 @@ window.DATA = {
         "아스널 올해의 선수 (2024-25)"
       ],
       "notableTransfer": "2023년 웨스트햄에서 아스널로 기본 1억 파운드(최대 1억 500만), 잉글랜드 선수 공동 최고 이적료",
-      "ovr": 89,
+      "ovr": 88,
       "scout": {
         "skill": 89,
         "value": 89,
@@ -32044,7 +32490,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 88,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 89
     },
     {
       "id": "jordan-pickford",
@@ -32074,7 +32521,7 @@ window.DATA = {
         "프리미어리그 시즌 최고 선방상 (2021-22, 2025-26)"
       ],
       "notableTransfer": "2017년 선덜랜드에서 에버턴으로 기본 2,500만 파운드(최대 3,000만), 당시 영국 GK 최고 이적료급",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -32088,7 +32535,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 74,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "marc-guehi",
@@ -32119,7 +32567,7 @@ window.DATA = {
         "유로 2024 준우승"
       ],
       "notableTransfer": "2026년 1월 크리스탈 팰리스에서 맨체스터 시티로 약 2,000만 파운드 이적",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -32133,7 +32581,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 82,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "john-stones",
@@ -32165,7 +32614,7 @@ window.DATA = {
         "유로 2020·2024 준우승"
       ],
       "notableTransfer": "2016년 에버턴에서 맨체스터 시티로 4,750만 파운드, 당시 세계 2위 수비수 이적료",
-      "ovr": 81,
+      "ovr": 82,
       "scout": {
         "skill": 81,
         "value": 77,
@@ -32179,7 +32628,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 83,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "marcus-rashford",
@@ -32211,7 +32661,7 @@ window.DATA = {
         "유로 2020 준우승"
       ],
       "notableTransfer": "2025년 맨유에서 바르셀로나로 시즌 임대(완전이적 옵션 약 3,030만 파운드), 2026년 5월 라리가 우승",
-      "ovr": 79,
+      "ovr": 84,
       "scout": {
         "skill": 79,
         "value": 79,
@@ -32225,7 +32675,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 76,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "eberechi-eze",
@@ -32256,7 +32707,7 @@ window.DATA = {
         "유로 2024 준우승"
       ],
       "notableTransfer": "2025년 8월 크리스탈 팰리스에서 아스널로 기본 6,000만 파운드(추가옵션 750만)",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -32270,7 +32721,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 68,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "anthony-gordon",
@@ -32301,7 +32753,7 @@ window.DATA = {
         "유로 2024 준우승"
       ],
       "notableTransfer": "2023년 에버턴에서 뉴캐슬로 기본 4,000만 파운드(최대 4,500만), 2026년 7월 바르셀로나행 확정(약 6,930만)",
-      "ovr": 76,
+      "ovr": 79,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -32315,7 +32767,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 62,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "morgan-rogers",
@@ -32345,7 +32798,7 @@ window.DATA = {
         "PFA 영플레이어 (2024-25)"
       ],
       "notableTransfer": "2024년 미들즈브러에서 애스턴 빌라로 약 800만 파운드(추가옵션 포함 최대 1,500만)",
-      "ovr": 72,
+      "ovr": 75,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -32359,7 +32812,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 68,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "luka-modric",
@@ -32391,7 +32845,7 @@ window.DATA = {
         "2022 월드컵 3위"
       ],
       "notableTransfer": "2012년 레알 마드리드 이적(약 3000만 파운드) 후 13시즌 동안 28개 트로피, 2025년 자유계약으로 AC 밀란 합류",
-      "ovr": 92,
+      "ovr": 90,
       "scout": {
         "skill": 92,
         "value": 82,
@@ -32405,7 +32859,8 @@ window.DATA = {
         "테크닉": 94,
         "피지컬": 70,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 92
     },
     {
       "id": "josko-gvardiol",
@@ -32436,7 +32891,7 @@ window.DATA = {
         "2022 월드컵 3위"
       ],
       "notableTransfer": "2023년 RB 라이프치히에서 맨체스터 시티로 약 7700만 파운드(9000만 유로)에 이적, 당시 세계 두 번째 고액 수비수",
-      "ovr": 88,
+      "ovr": 89,
       "scout": {
         "skill": 88,
         "value": 88,
@@ -32450,7 +32905,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 86,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 88
     },
     {
       "id": "mateo-kovacic",
@@ -32495,7 +32951,8 @@ window.DATA = {
         "테크닉": 89,
         "피지컬": 78,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 85
     },
     {
       "id": "ivan-perisic",
@@ -32540,7 +32997,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 78,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "andrej-kramaric",
@@ -32585,7 +33043,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 64,
         "골결정력": 82
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "luka-sucic",
@@ -32616,7 +33075,7 @@ window.DATA = {
         "2022 월드컵 3위"
       ],
       "notableTransfer": "2024년 레드불 잘츠부르크에서 레알 소시에다드로 약 1000만 유로(+10% 재판매 조항)에 이적",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 78,
@@ -32630,7 +33089,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "josip-sutalo",
@@ -32661,7 +33121,7 @@ window.DATA = {
         "에레디비시 시즌 베스트 11(2024-25)"
       ],
       "notableTransfer": "2023년 디나모 자그레브에서 아약스로 약 2050만 유로에 이적, 5년 계약 체결",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -32675,7 +33135,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "dominik-livakovic",
@@ -32706,7 +33167,7 @@ window.DATA = {
         "크로아티아 리그 다수 우승"
       ],
       "notableTransfer": "2023년 디나모 자그레브에서 페네르바체로 약 665만 유로에 이적, 2026년 1월 디나모로 임대 복귀",
-      "ovr": 73,
+      "ovr": 76,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -32720,7 +33181,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 74,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "josip-stanisic",
@@ -32751,7 +33213,7 @@ window.DATA = {
         "2022 월드컵 3위"
       ],
       "notableTransfer": "바이에른 뮌헨 유스 출신, 2023-24 바이어 레버쿠젠 임대에서 무패 우승 경험 후 복귀(2029년까지 연장)",
-      "ovr": 75,
+      "ovr": 79,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -32765,7 +33227,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 78,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "martin-baturina",
@@ -32796,7 +33259,7 @@ window.DATA = {
         "크로아티아 올해의 팀(2023)"
       ],
       "notableTransfer": "2025년 6월 디나모 자그레브에서 세리에 A 코모와 5년 계약 체결(이적료 비공개)",
-      "ovr": 68,
+      "ovr": 72,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -32810,7 +33273,8 @@ window.DATA = {
         "테크닉": 79,
         "피지컬": 61,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "petar-musa",
@@ -32841,7 +33305,7 @@ window.DATA = {
         "2022-23 네이션스리그 준우승"
       ],
       "notableTransfer": "2024년 벤피카에서 FC 댈러스로 클럽 역대 최고액 970만 달러(최대 1300만 달러)에 이적, 지정선수",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -32855,7 +33319,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "antoine-semenyo",
@@ -32885,7 +33350,7 @@ window.DATA = {
         "프리미어리그 이달의 선수 (2026년 2월)"
       ],
       "notableTransfer": "2026년 1월 본머스에서 맨체스터 시티로 약 6400만 파운드에 이적, 곧바로 5시즌 반 계약 체결",
-      "ovr": 86,
+      "ovr": 88,
       "scout": {
         "skill": 86,
         "value": 86,
@@ -32899,7 +33364,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 84,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 86
     },
     {
       "id": "thomas-partey",
@@ -32943,7 +33409,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 84,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "inaki-williams",
@@ -32973,7 +33440,7 @@ window.DATA = {
         "라리가 아프리카 MVP (2023-24, 2024-25)"
       ],
       "notableTransfer": "아틀레틱 빌바오 원클럽맨으로 라리가 251경기 연속 출전 기록 보유, 2022년 스페인에서 가나로 국적 전향",
-      "ovr": 79,
+      "ovr": 83,
       "scout": {
         "skill": 79,
         "value": 75,
@@ -32987,7 +33454,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 82,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "jordan-ayew",
@@ -33017,7 +33485,7 @@ window.DATA = {
         "크리스털 팰리스 올해의 선수 (2019-20)"
       ],
       "notableTransfer": "2024년 8월 크리스털 팰리스에서 레스터 시티로 약 500만 파운드 이적, 2026년 5월 강등 후 방출",
-      "ovr": 74,
+      "ovr": 77,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -33031,7 +33499,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "kamaldeen-sulemana",
@@ -33059,7 +33528,7 @@ window.DATA = {
         "EFL 챔피언십 플레이오프 우승 (2024, 사우샘프턴)"
       ],
       "notableTransfer": "렌(약 2000만 유로)·사우샘프턴(약 2200만 파운드)을 거쳐 2025년 약 1700만 유로에 아탈란타 합류",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -33073,7 +33542,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "abdul-fatawu-issahaku",
@@ -33102,7 +33572,7 @@ window.DATA = {
         "U-20 아프리카 네이션스컵 우승 및 MVP (2021)"
       ],
       "notableTransfer": "스포르팅 CP(2022, 6000만 유로 바이아웃 조항)를 거쳐 2024년 7월 레스터 시티로 기본 약 1000만 유로에 완전 이적",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -33116,7 +33586,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 59,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "ernest-nuamah",
@@ -33144,7 +33615,7 @@ window.DATA = {
         "덴마크 수페르리가 올해의 선수 (2022-23)"
       ],
       "notableTransfer": "2024년 RWD 몰렌베이크에서 리옹으로 약 2850만 유로에 완전 이적",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 66,
@@ -33158,7 +33629,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 56,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "alidu-seidu",
@@ -33184,7 +33656,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "클레르몽에서 2024년 1월 렌으로 이적, 2028년까지 계약",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -33198,7 +33670,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "lawrence-ati-zigi",
@@ -33227,7 +33700,7 @@ window.DATA = {
         "스위스 수페르리가 이달의 선수 (2022년 11월)"
       ],
       "notableTransfer": "장크트갈렌 주전 수문장으로 자리매김, 2022 월드컵에서도 가나 주전 골키퍼로 활약",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -33241,7 +33714,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "abdul-mumin",
@@ -33269,7 +33743,7 @@ window.DATA = {
         "라리가 이달의 골 (2024년 9월)"
       ],
       "notableTransfer": "비토리아 기마랑이스를 거쳐 2022년 9월 라요 바예카노 합류",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -33283,7 +33757,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "anibal-godoy",
@@ -33312,7 +33787,7 @@ window.DATA = {
         "파나마 역대 A매치 최다 출전 (157+캡)"
       ],
       "notableTransfer": "2024년 12월 자유계약으로 신생 구단 샌디에이고 FC 입단, 그 전엔 내슈빌 SC 등 MLS에서 활약",
-      "ovr": 74,
+      "ovr": 73,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -33326,7 +33801,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 80,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "adalberto-carrasquilla",
@@ -33356,7 +33832,7 @@ window.DATA = {
         "골드컵 준우승 (2023)"
       ],
       "notableTransfer": "2025년 1월 휴스턴 다이너모에서 푸마스 UNAM으로 이적 (다이너모 구단 역대 최고 이적료)",
-      "ovr": 78,
+      "ovr": 79,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -33370,7 +33846,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 74,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "michael-amir-murillo",
@@ -33399,7 +33876,7 @@ window.DATA = {
         "콘카카프 골드컵 준우승 (2023)"
       ],
       "notableTransfer": "2026년 2월 올랭피크 마르세유에서 베식타시로 약 €500만(3년 반 계약)에 이적, 앞서 안더레흐트·뉴욕 레드불스 거쳐",
-      "ovr": 75,
+      "ovr": 79,
       "scout": {
         "skill": 75,
         "value": 71,
@@ -33413,7 +33890,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "jose-cordoba",
@@ -33439,7 +33917,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 7월 레프스키 소피아에서 노리치 시티로 약 £300만에 이적, 앞서 셀타 비고 B팀 거쳐",
-      "ovr": 68,
+      "ovr": 74,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -33453,7 +33931,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ismael-diaz",
@@ -33479,7 +33958,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 7월 우니베르시닷 카톨리카에서 클루브 레온으로 €42.5만에 이적, 유스 시절 FC 포르투 거쳐",
-      "ovr": 70,
+      "ovr": 76,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -33493,7 +33972,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 62,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jose-fajardo",
@@ -33521,7 +34001,7 @@ window.DATA = {
         "콘카카프 골드컵 준우승 (2023)"
       ],
       "notableTransfer": "칠레 우니베르시닷 카톨리카 소속, 파나마 국내 리그 출신으로 해외 진출",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -33535,7 +34015,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "cecilio-waterman",
@@ -33565,7 +34046,7 @@ window.DATA = {
         "골드컵 준우승 (2013, 2023)"
       ],
       "notableTransfer": "2025년 칠레 코킴보 우니도로 복귀해 구단 사상 첫 칠레 1부 우승 견인(리그 25경기 9골)",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -33579,7 +34060,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "carlos-harvey",
@@ -33605,7 +34087,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 1월 미네소타 유나이티드 입단 후 핵심 자원으로 성장, 계약 연장",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -33619,7 +34101,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 69,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "luis-mejia",
@@ -33645,7 +34128,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "우루과이 명문 나시오날 소속, 남미 무대에서 꾸준히 활약한 베테랑 수문장",
-      "ovr": 63,
+      "ovr": 64,
       "scout": {
         "skill": 63,
         "value": 56,
@@ -33659,7 +34142,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 60,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "orlando-mosquera",
@@ -33685,7 +34169,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "사우디아라비아 알 파이하 FC 소속으로 중동 무대에서 활약",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -33699,7 +34183,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "cesar-blackman",
@@ -33727,7 +34212,7 @@ window.DATA = {
         "슬로바키아 리그 우승 경험(슬로반 브라티슬라바)"
       ],
       "notableTransfer": "슬로바키아 명문 슬로반 브라티슬라바 소속으로 유럽 무대(챔피언스리그 등) 경험",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -33741,7 +34226,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "ra-l-rangel",
@@ -33767,7 +34253,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "치바스 유스 출신, 2023년 1군 데뷔",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -33781,7 +34267,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "carlos-acevedo",
@@ -33806,7 +34293,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "산토스 라구나 주장 골키퍼로 장기 활약",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -33820,7 +34307,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jorge-s-nchez",
@@ -33849,7 +34337,7 @@ window.DATA = {
         "CONCACAF 네이션스리그 우승"
       ],
       "notableTransfer": "크루스 아술→PAOK 이적 (2026년), 과거 아약스 이적",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -33863,7 +34351,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "israel-reyes",
@@ -33903,7 +34392,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "mateo-ch-vez",
@@ -33945,7 +34435,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "rik-lira",
@@ -33971,7 +34462,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "푸마스→크루스 아술 이적, 현 크루스 아술 주장",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -33985,7 +34476,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "obed-vargas",
@@ -34011,7 +34503,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "시애틀 사운더스→아틀레티코 마드리드 이적",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -34025,7 +34517,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "lvaro-fidalgo",
@@ -34051,7 +34544,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "클루브 아메리카→레알 베티스, 2026년 멕시코로 귀화",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -34065,7 +34558,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "luis-ch-vez",
@@ -34091,7 +34585,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "파추카→디나모 모스크바 이적",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 62,
@@ -34105,7 +34599,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "brian-guti-rrez",
@@ -34131,7 +34626,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "시카고 파이어→치바스 이적 (2025년, 약 $500만)",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -34145,7 +34640,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "roberto-alvarado",
@@ -34174,7 +34670,7 @@ window.DATA = {
         "CONCACAF 네이션스리그 우승"
       ],
       "notableTransfer": "크루스 아술→치바스 이적",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -34188,7 +34684,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 62,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "c-sar-huerta",
@@ -34214,7 +34711,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "푸마스 UNAM→안더레흐트 이적 (2025년 1월)",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -34228,7 +34725,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 73,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "juli-n-qui-ones",
@@ -34256,7 +34754,7 @@ window.DATA = {
         "사우디 프로리그 득점왕 (2025-26, 33골)"
       ],
       "notableTransfer": "클루브 아메리카→알 카디시야 (2024년, 약 $1,600만, 멕시코 클럽 최고 이적료)",
-      "ovr": 73,
+      "ovr": 77,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -34270,7 +34768,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 68,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "armando-gonz-lez",
@@ -34296,7 +34795,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "치바스 유스 출신, 2025-26 리가 MX 득점 돌풍",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 66,
@@ -34310,7 +34809,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "sipho-chaine",
@@ -34339,7 +34839,7 @@ window.DATA = {
         "MTN8"
       ],
       "notableTransfer": "Chippa United에서 Orlando Pirates로 이적",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -34353,7 +34853,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "ricardo-goss",
@@ -34378,7 +34879,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "SuperSport United, Bidvest Wits 등 거쳐 Siwelele FC",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -34392,7 +34893,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "nkosinathi-sibisi",
@@ -34421,7 +34923,7 @@ window.DATA = {
         "MTN8"
       ],
       "notableTransfer": "AmaZulu에서 Orlando Pirates로 이적, 현 주장",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -34435,7 +34937,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "khulumani-ndamane",
@@ -34477,7 +34980,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ime-okon",
@@ -34517,7 +35021,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 80,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "bradley-cross",
@@ -34556,7 +35061,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "samukele-kabini",
@@ -34596,7 +35102,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "thalente-mbatha",
@@ -34625,7 +35132,7 @@ window.DATA = {
         "MTN8"
       ],
       "notableTransfer": "SuperSport United에서 Orlando Pirates로 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -34639,7 +35146,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "sphephelo-sithole",
@@ -34665,7 +35173,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Belenenses 거쳐 CD Tondela로 이적",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -34679,7 +35187,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "jayden-adams",
@@ -34707,7 +35216,7 @@ window.DATA = {
         "Betway Premiership"
       ],
       "notableTransfer": "Stellenbosch FC에서 Mamelodi Sundowns로 이적",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -34721,7 +35230,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "kamogelo-sebelebele",
@@ -34749,7 +35259,7 @@ window.DATA = {
         "MTN8"
       ],
       "notableTransfer": "TS Galaxy에서 Orlando Pirates로 이적",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -34763,7 +35273,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "evidence-makgopa",
@@ -34792,7 +35303,7 @@ window.DATA = {
         "MTN8"
       ],
       "notableTransfer": "Baroka FC에서 Orlando Pirates로 이적",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -34806,7 +35317,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "tshepang-moremi",
@@ -34832,7 +35344,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "AmaZulu FC에서 Orlando Pirates로 3년 계약 이적",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -34846,7 +35358,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 65,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "thapelo-maseko",
@@ -34874,7 +35387,7 @@ window.DATA = {
         "Betway Premiership"
       ],
       "notableTransfer": "Mamelodi Sundowns에서 AEL Limassol(키프로스)로 이적",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -34888,7 +35401,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "kim-seung-gyu",
@@ -34918,7 +35432,7 @@ window.DATA = {
         "2022 카타르 월드컵 주전 골키퍼"
       ],
       "notableTransfer": "알샤바브(사우디)를 거쳐 2024년 일본 FC 도쿄로 이적",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -34932,7 +35446,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "song-bum-keun",
@@ -34961,7 +35476,7 @@ window.DATA = {
         "K리그1 우승 경험(전북)"
       ],
       "notableTransfer": "2023년 J리그 쇼난 벨마레를 거쳐 전북 현대로 복귀",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -34975,7 +35490,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "lee-han-beom",
@@ -35004,7 +35520,7 @@ window.DATA = {
         "2025-26 덴마크컵 우승(결승 결승골)"
       ],
       "notableTransfer": "FC 서울에서 2023년 덴마크 미트윌란으로 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -35018,7 +35534,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "kim-tae-hyeon",
@@ -35045,7 +35562,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 사간 도스에서 가시마 앤틀러스로 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -35059,7 +35576,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 62,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "lee-tae-seok",
@@ -35086,7 +35604,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "FC 서울에서 2025년 오스트리아 빈으로 이적",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -35100,7 +35618,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 60,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "seol-young-woo",
@@ -35129,7 +35648,7 @@ window.DATA = {
         "세르비아 수페르리가 우승(츠르베나 즈베즈다)"
       ],
       "notableTransfer": "울산 HD에서 2024년 세르비아 츠르베나 즈베즈다로 이적",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -35143,7 +35662,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 68,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "kim-moon-hwan",
@@ -35172,7 +35692,7 @@ window.DATA = {
         "2019 K리그 베스트11"
       ],
       "notableTransfer": "전북 현대를 거쳐 대전 하나시티즌으로 이적",
-      "ovr": 63,
+      "ovr": 69,
       "scout": {
         "skill": 63,
         "value": 60,
@@ -35186,7 +35706,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 65,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "park-jin-seop",
@@ -35213,7 +35734,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "전북 현대를 거쳐 중국 저장 FC로 이적",
-      "ovr": 59,
+      "ovr": 64,
       "scout": {
         "skill": 59,
         "value": 56,
@@ -35227,7 +35748,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 74,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "yang-hyun-jun",
@@ -35257,7 +35779,7 @@ window.DATA = {
         "셀틱 올해의 영플레이어"
       ],
       "notableTransfer": "강원 FC에서 2023년 스코틀랜드 셀틱으로 이적",
-      "ovr": 65,
+      "ovr": 70,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -35271,7 +35793,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 58,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "paik-seung-ho",
@@ -35300,7 +35823,7 @@ window.DATA = {
         "바르셀로나 유스 출신"
       ],
       "notableTransfer": "전북 현대에서 2024년 잉글랜드 버밍엄 시티로 이적",
-      "ovr": 71,
+      "ovr": 74,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -35314,7 +35837,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "eom-ji-sung",
@@ -35341,7 +35865,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "광주 FC에서 2024년 잉글랜드 스완지 시티로 이적(약 100만 파운드)",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -35355,7 +35879,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 55,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "lee-dong-gyeong",
@@ -35384,7 +35909,7 @@ window.DATA = {
         "K리그1 우승(울산)"
       ],
       "notableTransfer": "독일 샬케 임대를 거쳐 울산 HD로 복귀",
-      "ovr": 63,
+      "ovr": 66,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -35398,7 +35923,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 56,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "jind-ich-stan-k",
@@ -35426,7 +35952,7 @@ window.DATA = {
         "체코 1부리그 우승 (Slavia Prague)"
       ],
       "notableTransfer": "Viktoria Plzeň에서 Slavia Prague로 이적 (2023)",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -35440,7 +35966,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 74,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "luk-horn-ek",
@@ -35466,7 +35993,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Sparta Prague 유스 출신, Braga 이적 후 성장",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -35480,7 +36007,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "david-zima",
@@ -35508,7 +36036,7 @@ window.DATA = {
         "체코 1부리그 우승 (Slavia Prague)"
       ],
       "notableTransfer": "Torino에서 Slavia Prague로 복귀 (2023)",
-      "ovr": 71,
+      "ovr": 70,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -35522,7 +36050,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 78,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "robin-hran",
@@ -35562,7 +36091,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "t-p-n-chaloupek",
@@ -35604,7 +36134,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "david-jur-sek",
@@ -35646,7 +36177,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "jaroslav-zelen",
@@ -35688,7 +36220,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "david-doud-ra",
@@ -35730,7 +36263,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "vladim-r-darida",
@@ -35756,7 +36290,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Hertha BSC 장기 활약 후 체코 복귀 (Hradec Králové)",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 59,
@@ -35770,7 +36304,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "luk-erv",
@@ -35796,7 +36331,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Slavia Prague에서 Viktoria Plzeň으로 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -35810,7 +36345,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "michal-sad-lek",
@@ -35838,7 +36374,7 @@ window.DATA = {
         "체코 1부리그 우승 (Slavia Prague)"
       ],
       "notableTransfer": "Twente 거쳐 Slavia Prague로 이적",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -35852,7 +36388,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "alexandr-sojka",
@@ -35878,7 +36415,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Viktoria Plzeň 유스 출신, 1군 정착",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 60,
@@ -35892,7 +36429,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "hugo-soch-rek",
@@ -35918,7 +36456,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Sparta Prague 유스 출신, 최연소 발탁",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -35932,7 +36470,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "jan-kuchta",
@@ -35960,7 +36499,7 @@ window.DATA = {
         "체코 1부리그 우승 (Sparta Prague)"
       ],
       "notableTransfer": "Lokomotiv Moscow, Slavia 거쳐 Sparta Prague 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -35974,7 +36513,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "denis-vi-insk",
@@ -36000,7 +36540,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Viktoria Plzeň에서 성장한 측면 공격수",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -36014,7 +36554,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "maxime-cr-peau",
@@ -36042,7 +36583,7 @@ window.DATA = {
         "MLS Cup (LAFC, 2022)"
       ],
       "notableTransfer": "LAFC에서 Portland Timbers 거쳐 Orlando City SC 합류",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -36056,7 +36597,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "dayne-st-clair",
@@ -36082,7 +36624,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Minnesota United에서 Inter Miami CF 이적",
-      "ovr": 65,
+      "ovr": 66,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -36096,7 +36638,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 62,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "owen-goodman",
@@ -36122,7 +36665,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Crystal Palace에서 Barnsley FC로 임대",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 55,
@@ -36136,7 +36679,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "mo-se-bombito",
@@ -36176,7 +36720,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 85,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "luc-de-fougerolles",
@@ -36216,7 +36761,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "alfie-jones",
@@ -36256,7 +36802,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "richie-laryea",
@@ -36296,7 +36843,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "niko-sigur",
@@ -36336,7 +36884,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "joel-waterman",
@@ -36376,7 +36925,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "promise-david",
@@ -36404,7 +36954,7 @@ window.DATA = {
         "Belgian Pro League 우승 (Union SG, 2024-25)"
       ],
       "notableTransfer": "유니온 SG와 2029년까지 4년 재계약",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -36418,7 +36968,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "ali-ahmed",
@@ -36444,7 +36995,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Vancouver Whitecaps에서 Norwich City FC 이적",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -36458,7 +37009,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mathieu-choini-re",
@@ -36484,7 +37036,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "CF Montréal에서 LAFC 이적",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -36498,7 +37050,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "marcelo-flores",
@@ -36524,7 +37077,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Arsenal 유스 출신, Tigres UANL 합류",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 60,
@@ -36538,7 +37091,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "liam-millar",
@@ -36564,7 +37118,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Liverpool 유스 출신, Hull City FC 이적",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -36578,7 +37132,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "jonathan-osorio",
@@ -36606,7 +37161,7 @@ window.DATA = {
         "MLS Cup (Toronto FC, 2017)"
       ],
       "notableTransfer": "Toronto FC 원클럽맨",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -36620,7 +37175,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "nathan-saliba",
@@ -36646,7 +37202,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "CF Montréal에서 Anderlecht 유럽 진출",
-      "ovr": 56,
+      "ovr": 60,
       "scout": {
         "skill": 56,
         "value": 59,
@@ -36660,7 +37216,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 61,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "martin-zlomislic",
@@ -36689,7 +37246,7 @@ window.DATA = {
         "크로아티아 1부리그 우승 (리예카)"
       ],
       "notableTransfer": "독일 유스 시스템을 거쳐 크로아티아 리예카에 정착, 2024-25 크로아티아 리그 우승 기여",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -36703,7 +37260,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "dennis-hadzikadunic",
@@ -36744,7 +37302,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "tarik-muharemovic",
@@ -36771,7 +37330,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "유벤투스 유스 출신, 사수올로에서 세리에A 정상급 수비수로 성장하며 인테르 등의 관심",
-      "ovr": 72,
+      "ovr": 70,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -36785,7 +37344,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 79,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "nihad-mujakic",
@@ -36826,7 +37386,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "stjepan-radeljic",
@@ -36869,7 +37430,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 74,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "nidal-celik",
@@ -36910,7 +37472,8 @@ window.DATA = {
         "테크닉": 48,
         "피지컬": 72,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "ivan-sunjic",
@@ -36939,7 +37502,7 @@ window.DATA = {
         "키프로스 리그 우승 (파포스)"
       ],
       "notableTransfer": "버밍엄 시티에서 활약 후 키프로스 강호 파포스로 이적, 챔피언스리그 경험",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -36953,7 +37516,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "kerim-alajbegovic",
@@ -36980,7 +37544,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "잘츠부르크 유스를 거쳐 1군에 합류한 스쿼드 최연소 유망주",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -36994,7 +37558,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "dzenis-burnic",
@@ -37021,7 +37586,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "도르트문트 유스 출신으로 독일 2부 카를스루에에서 중원 주력으로 활약",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -37035,7 +37600,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "ivan-basic",
@@ -37062,7 +37628,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "발칸 지역을 거쳐 카자흐스탄 강호 아스타나에서 중원 핵심으로 자리잡음",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 54,
@@ -37076,7 +37642,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 59,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "amar-memic",
@@ -37103,7 +37670,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "체코 강호 빅토리아 플젠에서 측면 자원으로 성장 중인 유망주",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -37117,7 +37684,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "samed-bazdar",
@@ -37144,7 +37712,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "파르티잔 베오그라드를 거쳐 폴란드 야기엘로니아에서 골 감각을 키우는 젊은 공격수",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -37158,7 +37726,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "jovo-lukic",
@@ -37185,7 +37754,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "루마니아 우니베르시타테아 클루지에서 공격 자원으로 출전 기회를 잡음",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -37199,7 +37768,8 @@ window.DATA = {
         "테크닉": 48,
         "피지컬": 56,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "salah-zakaria",
@@ -37226,7 +37796,7 @@ window.DATA = {
         "카타르 스타스 리그 우승 (알 두하일)"
       ],
       "notableTransfer": "2021년 1월 알 와크라에서 알 두하일로 이적",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -37240,7 +37810,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "mahmoud-abunada",
@@ -37265,7 +37836,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알 라이얀 유스 출신, 1군 정착",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -37279,7 +37850,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "lucas-mendes",
@@ -37320,7 +37892,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "sultan-al-brake",
@@ -37361,7 +37934,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "homam-ahmed",
@@ -37402,7 +37976,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 72,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "issa-laye",
@@ -37441,7 +38016,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "jassem-gaber",
@@ -37480,7 +38056,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "abdulaziz-hatem",
@@ -37507,7 +38084,7 @@ window.DATA = {
         "AFC 아시안컵 우승 2019, 2023 (카타르)"
       ],
       "notableTransfer": "알 라이얀의 베테랑 중원 핵심",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -37521,7 +38098,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ahmed-fathy",
@@ -37546,7 +38124,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알 아라비 소속 중앙 미드필더",
-      "ovr": 59,
+      "ovr": 63,
       "scout": {
         "skill": 59,
         "value": 53,
@@ -37560,7 +38138,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 64,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "mohamed-al-mannai",
@@ -37585,7 +38164,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알 샤말 소속 젊은 중원 자원",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 57,
@@ -37599,7 +38178,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 59,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "yusuf-abdurisag",
@@ -37626,7 +38206,7 @@ window.DATA = {
         "AFC 아시안컵 우승 2023 (카타르)"
       ],
       "notableTransfer": "알 사드 거쳐 알 와크라에서 활약하는 윙어",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -37640,7 +38220,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "mohammed-muntari",
@@ -37667,7 +38248,7 @@ window.DATA = {
         "AFC 아시안컵 우승 2019 (카타르)"
       ],
       "notableTransfer": "가나 출신 귀화 스트라이커",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 60,
@@ -37681,7 +38262,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "ahmed-alaaeldin",
@@ -37708,7 +38290,7 @@ window.DATA = {
         "AFC 아시안컵 우승 2019 (카타르)"
       ],
       "notableTransfer": "알 라이얀의 베테랑 측면 공격수",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -37722,7 +38304,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "yvon-mvogo",
@@ -37750,7 +38333,7 @@ window.DATA = {
         "스위스 챌린지 리그 우승(영 보이스)"
       ],
       "notableTransfer": "PSV에서 임대 후 2022년 로리앙으로 완전 이적",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 59,
@@ -37764,7 +38347,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "marvin-keller",
@@ -37792,7 +38376,7 @@ window.DATA = {
         "스위스 수페르리가 우승(영 보이스)"
       ],
       "notableTransfer": "빌 임대 복귀 후 영 보이스 주전 도약",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -37806,7 +38390,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "nico-elvedi",
@@ -37832,7 +38417,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2016년 취리히에서 묀헨글라트바흐로 이적해 장기간 주전",
-      "ovr": 74,
+      "ovr": 73,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -37846,7 +38431,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 80,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "silvan-widmer",
@@ -37874,7 +38460,7 @@ window.DATA = {
         "스위스 수페르리가 우승(바젤)"
       ],
       "notableTransfer": "2021년 바젤에서 마인츠로 이적",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -37888,7 +38474,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 70,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "miro-muheim",
@@ -37930,7 +38517,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "aur-le-amenda",
@@ -37972,7 +38560,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "eray-c-mert",
@@ -38014,7 +38603,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "luca-jaquez",
@@ -38054,7 +38644,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "djibril-sow",
@@ -38082,7 +38673,7 @@ window.DATA = {
         "UEFA 유로파리그 우승(프랑크푸르트)"
       ],
       "notableTransfer": "2023년 프랑크푸르트에서 세비야로 이적",
-      "ovr": 71,
+      "ovr": 74,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -38096,7 +38687,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 74,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "michel-aebischer",
@@ -38124,7 +38716,7 @@ window.DATA = {
         "스위스 수페르리가 우승(영 보이스)"
       ],
       "notableTransfer": "볼로냐 거쳐 2025년 피사로 이적",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -38138,7 +38730,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "ardon-jashari",
@@ -38166,7 +38759,7 @@ window.DATA = {
         "벨기에컵 우승(클뤼프 브뤼헤)"
       ],
       "notableTransfer": "2025년 클뤼프 브뤼헤에서 약 3700만 유로에 AC 밀란 이적(밀란 역대 중앙 미드필더 최고액)",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 68,
@@ -38180,7 +38773,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "johan-manzambi",
@@ -38206,7 +38800,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "프라이부르크 유스 출신으로 1군 도약",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -38220,7 +38814,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "christian-fassnacht",
@@ -38248,7 +38843,7 @@ window.DATA = {
         "스위스 수페르리가 우승(영 보이스)"
       ],
       "notableTransfer": "노리치 거쳐 영 보이스 복귀",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -38262,7 +38857,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "noah-okafor",
@@ -38291,7 +38887,7 @@ window.DATA = {
         "오스트리아 분데스리가 우승(잘츠부르크)"
       ],
       "notableTransfer": "2024년 잘츠부르크 거쳐 AC 밀란 이적, 이후 2025년 리즈 합류",
-      "ovr": 72,
+      "ovr": 77,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -38305,7 +38901,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 68,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "zeki-amdouni",
@@ -38333,7 +38930,7 @@ window.DATA = {
         "스위스컵 우승(바젤)"
       ],
       "notableTransfer": "2023년 바젤에서 번리로 이적",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -38347,7 +38944,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 73,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "cedric-itten",
@@ -38375,7 +38973,7 @@ window.DATA = {
         "스위스 수페르리가 우승(영 보이스)"
       ],
       "notableTransfer": "레인저스 거쳐 영 보이스, 2025년 뒤셀도르프 이적",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -38389,7 +38987,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "matt-freese",
@@ -38418,7 +39017,7 @@ window.DATA = {
         "2025 CONCACAF 골드컵 우승"
       ],
       "notableTransfer": "필라델피아 유니언에서 뉴욕 시티 FC로 이적 (2024)",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -38432,7 +39031,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 72,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "chris-brady",
@@ -38459,7 +39059,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "시카고 파이어 자체 육성 (홈그로운)",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -38473,7 +39073,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "tim-ream",
@@ -38514,7 +39115,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "miles-robinson",
@@ -38558,7 +39160,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "mark-mckenzie",
@@ -38601,7 +39204,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "joe-scally",
@@ -38642,7 +39246,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "alex-freeman",
@@ -38686,7 +39291,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "auston-trusty",
@@ -38730,7 +39336,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "max-arfsten",
@@ -38771,7 +39378,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "ricardo-pepi",
@@ -38801,7 +39409,7 @@ window.DATA = {
         "2024 네덜란드 슈퍼컵 우승"
       ],
       "notableTransfer": "FC 아우크스부르크에서 PSV로 이적 (2024)",
-      "ovr": 71,
+      "ovr": 76,
       "scout": {
         "skill": 71,
         "value": 75,
@@ -38815,7 +39423,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 72,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "brenden-aaronson",
@@ -38844,7 +39453,7 @@ window.DATA = {
         "2023-24 EFL 챔피언십 승격(우승)"
       ],
       "notableTransfer": "레드불 잘츠부르크에서 리즈로 이적 (2022)",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -38858,7 +39467,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "haji-wright",
@@ -38885,7 +39495,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "안탈리아스포르에서 코번트리 시티로 이적 (2024)",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -38899,7 +39509,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "alejandro-zendejas",
@@ -38928,7 +39539,7 @@ window.DATA = {
         "리가 MX 다수 우승(클루브 아메리카)"
       ],
       "notableTransfer": "클루브 아메리카 소속 (리가 MX)",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -38942,7 +39553,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 65,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "cristian-roldan",
@@ -38972,7 +39584,7 @@ window.DATA = {
         "2021 CONCACAF 골드컵 우승"
       ],
       "notableTransfer": "시애틀 사운더스 원클럽맨 (MLS)",
-      "ovr": 59,
+      "ovr": 63,
       "scout": {
         "skill": 59,
         "value": 56,
@@ -38986,7 +39598,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 64,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "sebastian-berhalter",
@@ -39013,7 +39626,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "콜럼버스 크루에서 밴쿠버 화이트캡스로 이적 (2023)",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -39027,7 +39640,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "ederson",
@@ -39059,7 +39673,7 @@ window.DATA = {
         "코파 아메리카"
       ],
       "notableTransfer": "2025년 맨체스터 시티에서 페네르바흐체로 이적 (3년 계약)",
-      "ovr": 82,
+      "ovr": 84,
       "scout": {
         "skill": 82,
         "value": 78,
@@ -39073,7 +39687,8 @@ window.DATA = {
         "테크닉": 88,
         "피지컬": 80,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 82
     },
     {
       "id": "weverton",
@@ -39104,7 +39719,7 @@ window.DATA = {
         "브라질 세리이 A 우승"
       ],
       "notableTransfer": "팔메이라스에서 그레미우로 이적",
-      "ovr": 65,
+      "ovr": 66,
       "scout": {
         "skill": 65,
         "value": 58,
@@ -39118,7 +39733,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 62,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "danilo",
@@ -39151,7 +39767,7 @@ window.DATA = {
         "코파 아메리카"
       ],
       "notableTransfer": "2025년 유벤투스에서 플라멩구로 복귀, 같은 해 코파 리베르타도레스 결승 결승골",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 69,
@@ -39165,7 +39781,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 78,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "alex-sandro",
@@ -39196,7 +39813,7 @@ window.DATA = {
         "코파 아메리카"
       ],
       "notableTransfer": "유벤투스 장수 후 플라멩구로 이적",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -39210,7 +39827,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 74,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "bremer",
@@ -39240,7 +39858,7 @@ window.DATA = {
         "세리에 A 올해의 수비수"
       ],
       "notableTransfer": "토리노에서 유벤투스로 이적",
-      "ovr": 80,
+      "ovr": 82,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -39254,7 +39872,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 86,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "roger-iba-ez",
@@ -39283,7 +39902,7 @@ window.DATA = {
         "AFC 챔피언스리그 엘리트 우승 (알 아흘리)"
       ],
       "notableTransfer": "AS 로마에서 알 아흘리로 이적",
-      "ovr": 71,
+      "ovr": 74,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -39297,7 +39916,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 78,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "douglas-santos",
@@ -39327,7 +39947,7 @@ window.DATA = {
         "리우 올림픽 금메달 (2016)"
       ],
       "notableTransfer": "함부르크에서 제니트로 이적",
-      "ovr": 66,
+      "ovr": 72,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -39341,7 +39961,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 68,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "derson",
@@ -39370,7 +39991,7 @@ window.DATA = {
         "UEFA 유로파리그 우승 (아탈란타)"
       ],
       "notableTransfer": "2025년 아탈란타에서 맨체스터 유나이티드로 약 3500만 파운드 이적, 부상당한 웨슬리 대체 차출",
-      "ovr": 77,
+      "ovr": 78,
       "scout": {
         "skill": 77,
         "value": 77,
@@ -39384,7 +40005,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 78,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "lucas-paquet",
@@ -39415,7 +40037,7 @@ window.DATA = {
         "FA컵 준우승 등 클럽 커리어"
       ],
       "notableTransfer": "2026년 웨스트햄에서 플라멩구로 복귀",
-      "ovr": 79,
+      "ovr": 81,
       "scout": {
         "skill": 79,
         "value": 79,
@@ -39429,7 +40051,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 72,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "fabinho",
@@ -39460,7 +40083,7 @@ window.DATA = {
         "사우디 프로리그 우승"
       ],
       "notableTransfer": "리버풀에서 알 이티하드로 이적",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -39474,7 +40097,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 78,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "gabriel-martinelli",
@@ -39503,7 +40127,7 @@ window.DATA = {
         "FA 커뮤니티 실드"
       ],
       "notableTransfer": "이투아노에서 아스널로 이적",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -39517,7 +40141,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 68,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "igor-thiago",
@@ -39546,7 +40171,7 @@ window.DATA = {
         "벨기에 프로리그 득점 관련 활약"
       ],
       "notableTransfer": "클뤼흐 브뤼헤에서 브렌트포드로 이적",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -39560,7 +40185,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 80,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "ahmed-reda-tagnaouti",
@@ -39589,7 +40215,7 @@ window.DATA = {
         "2018 아프리카 네이션스 챔피언십 우승"
       ],
       "notableTransfer": "2025년 여름 와이다드 카사블랑카에서 AS FAR로 이적",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -39603,7 +40229,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "chadi-riad",
@@ -39631,7 +40258,7 @@ window.DATA = {
         "2026 UEFA 컨퍼런스리그 우승 (크리스털 팰리스, 결승 풀타임 출전)"
       ],
       "notableTransfer": "2024년 바르셀로나(B)·레알 베티스 임대 후 크리스털 팰리스로 2029년까지 장기 계약 이적",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -39645,7 +40272,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 76,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "issa-diop",
@@ -39687,7 +40315,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "zakaria-el-ouahdi",
@@ -39729,7 +40358,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "soufiane-rahimi",
@@ -39757,7 +40387,7 @@ window.DATA = {
         "2023-24 AFC 챔피언스리그 엘리트 우승 및 득점왕"
       ],
       "notableTransfer": "2023-24 AFC 챔피언스리그 알아인 우승 견인 (대회 13골 득점왕)",
-      "ovr": 73,
+      "ovr": 77,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -39771,7 +40401,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 62,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "abde-ezzalzouli",
@@ -39797,7 +40428,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 바르셀로나에서 레알 베티스로 약 750만 유로 이적 (바이백 조항 포함)",
-      "ovr": 75,
+      "ovr": 80,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -39811,7 +40442,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 62,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "chemsdine-talbi",
@@ -39837,7 +40469,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 클뤼브 브뤼헤에서 선덜랜드로 약 1650만 파운드 이적",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -39851,7 +40483,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "ismael-saibari",
@@ -39879,7 +40512,7 @@ window.DATA = {
         "2025-26 에레디비시 우승 및 올해의 선수 (15골 8도움)"
       ],
       "notableTransfer": "PSV가 약 4000만 유로로 평가, 2026년 바이에른 뮌헨 영입 관심 보도",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -39893,7 +40526,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 74,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "neil-el-aynaoui",
@@ -39919,7 +40553,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 RC 랑스에서 AS 로마로 초기 2300만 유로(+200만 추가)에 이적",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -39933,7 +40567,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "alexandre-pierre",
@@ -39959,7 +40594,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "프랑스 유스 출신, 소쇼에서 주전 골키퍼로 성장",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -39973,7 +40608,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "josu-duverger",
@@ -39998,7 +40634,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "독일 하부리그에서 활약하며 대표팀 3번째 GK로 발탁",
-      "ovr": 42,
+      "ovr": 44,
       "scout": {
         "skill": 42,
         "value": 42,
@@ -40012,7 +40648,8 @@ window.DATA = {
         "테크닉": 41,
         "피지컬": 39,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 42
     },
     {
       "id": "ricardo-ad",
@@ -40054,7 +40691,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "martin-exp-rience",
@@ -40094,7 +40732,8 @@ window.DATA = {
         "테크닉": 45,
         "피지컬": 69,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "duke-lacroix",
@@ -40134,7 +40773,8 @@ window.DATA = {
         "테크닉": 44,
         "피지컬": 68,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "wilguens-paugain",
@@ -40174,7 +40814,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "keeto-thermoncy",
@@ -40200,7 +40841,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스위스 영 보이스 2군에서 활약, 20세 최연소급 수비 유망주",
-      "ovr": 45,
+      "ovr": 46,
       "scout": {
         "skill": 45,
         "value": 47,
@@ -40214,7 +40855,8 @@ window.DATA = {
         "테크닉": 36,
         "피지컬": 60,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 45
     },
     {
       "id": "leverton-pierre",
@@ -40240,7 +40882,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "포르투갈 비젤라에서 활약하며 대표팀 중원 한 축 담당",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -40254,7 +40896,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "danley-jean-jacques",
@@ -40280,7 +40923,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "메스에서 필라델피아 유니언으로 약 140만 유로 이적 (2024)",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -40294,7 +40937,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "carl-saint",
@@ -40320,7 +40964,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "USL 엘파소에서 중원 자원으로 성장, 대표팀 발탁",
-      "ovr": 50,
+      "ovr": 54,
       "scout": {
         "skill": 50,
         "value": 53,
@@ -40334,7 +40978,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 55,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "woodensky-pierre",
@@ -40360,7 +41005,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스쿼드 유일의 국내(아이티) 리그 소속, 비올레트 AC 미드필더",
-      "ovr": 46,
+      "ovr": 49,
       "scout": {
         "skill": 46,
         "value": 48,
@@ -40374,7 +41019,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 51,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 46
     },
     {
       "id": "dominique-simon",
@@ -40399,7 +41045,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "슬로바키아 타트란 프레쇼우에서 활약하며 대표팀 합류",
-      "ovr": 49,
+      "ovr": 53,
       "scout": {
         "skill": 49,
         "value": 49,
@@ -40413,7 +41059,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 54,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 49
     },
     {
       "id": "louicius-deedson",
@@ -40439,7 +41086,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "오덴세(덴마크)에서 FC 댈러스로 이적 (2025), 니카라과전 결승골로 본선행 확정",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -40453,7 +41100,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 64,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "lenny-joseph",
@@ -40481,7 +41129,7 @@ window.DATA = {
         "헝가리 컵 우승 (2025-26, 페렌츠바로시)"
       ],
       "notableTransfer": "페렌츠바로시에서 2025-26시즌 16골 10도움, 마자르 쿠퍼(헝가리컵) 우승",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -40495,7 +41143,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "angus-gunn",
@@ -40521,7 +41170,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 노리치 시티에서 노팅엄 포레스트로 1년 계약 자유이적",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -40535,7 +41184,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 74,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "liam-kelly",
@@ -40560,7 +41210,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 마더웰에서 레인저스로 이적",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -40574,7 +41224,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "grant-hanley",
@@ -40614,7 +41265,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "jack-hendry",
@@ -40642,7 +41294,7 @@ window.DATA = {
         "벨기에 프로리그 우승 (클뤼프 브뤼헤)"
       ],
       "notableTransfer": "클뤼프 브뤼헤에서 사우디 알 에티파크로 이적",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -40656,7 +41308,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 78,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "aaron-hickey",
@@ -40682,7 +41335,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2022년 볼로냐에서 브렌트퍼드로 4년 계약 이적",
-      "ovr": 73,
+      "ovr": 72,
       "scout": {
         "skill": 73,
         "value": 77,
@@ -40696,7 +41349,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 66,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "dominic-hyam",
@@ -40736,7 +41390,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 74,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "scott-mckenna",
@@ -40779,7 +41434,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "anthony-ralston",
@@ -40822,7 +41478,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "john-souttar",
@@ -40864,7 +41521,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "finlay-curtis",
@@ -40890,7 +41548,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레인저스 아카데미 승격",
-      "ovr": 56,
+      "ovr": 60,
       "scout": {
         "skill": 56,
         "value": 59,
@@ -40904,7 +41562,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 61,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "ben-gannon-doak",
@@ -40930,7 +41589,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 리버풀에서 본머스로 이적",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -40944,7 +41603,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "tyler-fletcher",
@@ -40970,7 +41630,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "맨체스터 유나이티드 아카데미 소속, 길무어 부상 대체로 발탁",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 60,
@@ -40984,7 +41644,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "lyndon-dykes",
@@ -41010,7 +41671,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "QPR에서 찰턴 애슬레틱으로 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -41024,7 +41685,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "george-hirst",
@@ -41050,7 +41712,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레스터 시티에서 입스위치 타운으로 이적",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -41064,7 +41726,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 65,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "ross-stewart",
@@ -41090,7 +41753,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 선덜랜드에서 사우샘프턴으로 3년 계약 이적",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -41104,7 +41767,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "gatito-fern-ndez",
@@ -41132,7 +41796,7 @@ window.DATA = {
         "파라과이 리그 우승 (2009 Apertura 외 다수)"
       ],
       "notableTransfer": "커리어 대부분을 Cerro Porteño에서 보냄 (2007 데뷔)",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -41146,7 +41810,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 68,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "orlando-gill",
@@ -41172,7 +41837,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "San Lorenzo(아르헨티나)에서 주전 경쟁 중, 2025년 9월 대표팀 데뷔",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -41186,7 +41851,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "gast-n-olveira",
@@ -41212,7 +41878,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Olimpia(파라과이) 주전 골키퍼",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 53,
@@ -41226,7 +41892,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "fabi-n-balbuena",
@@ -41256,7 +41923,7 @@ window.DATA = {
         "파라과이 리그 우승 (2014, Libertad)"
       ],
       "notableTransfer": "Corinthians→West Ham(EPL 3시즌)→Dynamo Moscow를 거쳐 Grêmio 합류",
-      "ovr": 73,
+      "ovr": 68,
       "scout": {
         "skill": 73,
         "value": 65,
@@ -41270,7 +41937,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 82,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "gustavo-vel-zquez",
@@ -41311,7 +41979,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "juan-jos-c-ceres",
@@ -41351,7 +42020,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "jos-canale",
@@ -41391,7 +42061,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "alexandro-maidana",
@@ -41431,7 +42102,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "lex-arce",
@@ -41457,7 +42129,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "LDU Quito에서 활약 후 2025년 Independiente Rivadavia로 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -41471,7 +42143,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "gabriel-valos",
@@ -41497,7 +42170,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아르헨티나 Independiente 소속 스트라이커",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 55,
@@ -41511,7 +42184,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "isidro-pitta",
@@ -41537,7 +42211,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "브라질 Red Bull Bragantino 소속 공격수",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -41551,7 +42225,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "ram-n-sosa",
@@ -41577,7 +42252,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Nottingham Forest(EPL)에서 2025년 약 1100만 유로에 Palmeiras로 이적",
-      "ovr": 72,
+      "ovr": 77,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -41591,7 +42266,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 62,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "maur-cio",
@@ -41617,7 +42293,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "브라질 Palmeiras 소속 중원 자원",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -41631,7 +42307,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "mat-as-galarza",
@@ -41657,7 +42334,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "MLS Atlanta United 소속 미드필더",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -41671,7 +42348,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "paul-izzo",
@@ -41701,7 +42379,7 @@ window.DATA = {
         "A리그 마리너스 올해의 선수(2016/17)"
       ],
       "notableTransfer": "2024년 멜버른 빅토리에서 덴마크 라네르스로 3년 계약 이적",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 59,
@@ -41715,7 +42393,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "kai-trewin",
@@ -41756,7 +42435,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "cameron-burgess",
@@ -41783,7 +42463,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "입스위치 타운에서 스완지 시티로 이적(2024/25 프리미어리그 18경기 출전 경력)",
-      "ovr": 71,
+      "ovr": 68,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -41797,7 +42477,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 80,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "milos-degenek",
@@ -41826,7 +42507,7 @@ window.DATA = {
         "월드컵 3회 연속 출전(2018·2022·2026)"
       ],
       "notableTransfer": "여러 유럽·미국 클럽을 거쳐 키프로스 아포엘에 정착",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -41840,7 +42521,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 77,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jason-geria",
@@ -41883,7 +42565,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jacob-italiano",
@@ -41924,7 +42607,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "cameron-devlin",
@@ -41951,7 +42635,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2021년 호주에서 스코틀랜드 하츠로 이적해 130경기 이상 출전한 컬트 히어로",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -41965,7 +42649,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "ajdin-hrustic",
@@ -41994,7 +42679,7 @@ window.DATA = {
         "UEFA 유로파리그 우승(아인트라흐트 프랑크푸르트, 2021/22)"
       ],
       "notableTransfer": "아인트라흐트 프랑크푸르트(유로파리그 우승)·헬라스 베로나를 거쳐 헤라클레스 알멜로로 복귀",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -42008,7 +42693,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "lucas-herrington",
@@ -42035,7 +42721,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "호주를 거쳐 MLS 콜로라도 래피즈로 이적",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 55,
@@ -42049,7 +42735,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 57,
         "골결정력": 43
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "patrick-beach",
@@ -42076,7 +42763,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "멜버른 시티 유스 출신으로 1군 자리 잡음",
-      "ovr": 50,
+      "ovr": 54,
       "scout": {
         "skill": 50,
         "value": 53,
@@ -42090,7 +42777,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 55,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "paul-okon-engstler",
@@ -42117,7 +42805,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "전 소케루스 주장 폴 오콘의 아들로, 유럽을 거쳐 시드니 FC에 합류",
-      "ovr": 51,
+      "ovr": 55,
       "scout": {
         "skill": 51,
         "value": 54,
@@ -42131,7 +42819,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 56,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 51
     },
     {
       "id": "awer-mabil",
@@ -42160,7 +42849,7 @@ window.DATA = {
         "2022 월드컵 플레이오프 승부차기 결승골(페루전)"
       ],
       "notableTransfer": "FC 미트윌란·카디스를 거쳐 스페인 카스테욘으로 이적",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -42174,7 +42863,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "mohamed-toure",
@@ -42201,7 +42891,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 1월 노리치 시티로 이적해 11경기 12개 공격포인트 폭발",
-      "ovr": 72,
+      "ovr": 76,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -42215,7 +42905,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 72,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "nishan-velupillay",
@@ -42242,7 +42933,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "멜버른 빅토리 소속으로 2024년 10월 중국전 데뷔골",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -42256,7 +42947,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "tete-yengi",
@@ -42283,7 +42975,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "잉글랜드 입스위치를 거쳐 J리그 마치다 젤비아로 이적",
-      "ovr": 53,
+      "ovr": 57,
       "scout": {
         "skill": 53,
         "value": 53,
@@ -42297,7 +42989,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 57,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "mert-g-nok",
@@ -42325,7 +43018,7 @@ window.DATA = {
         "UEFA 유로 2024 본선 주전 골키퍼"
       ],
       "notableTransfer": "2026년 1월 페네르바흐체로 복귀, 2027-28 시즌까지 계약",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -42339,7 +43032,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 74,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "altay-bay-nd-r",
@@ -42365,7 +43059,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 페네르바흐체→맨체스터 유나이티드 이적 (튀르키예 선수 최초)",
-      "ovr": 66,
+      "ovr": 67,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -42379,7 +43073,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 63,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "zeki-elik",
@@ -42405,7 +43100,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2022년 릴→AS 로마 이적 (약 700만 유로)",
-      "ovr": 73,
+      "ovr": 72,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -42419,7 +43114,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 68,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "ozan-kabak",
@@ -42445,7 +43141,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "샬케·리버풀(임대)·노리치를 거쳐 호펜하임 정착",
-      "ovr": 72,
+      "ovr": 69,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -42459,7 +43155,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "mert-m-ld-r",
@@ -42499,7 +43196,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "eren-elmal",
@@ -42539,7 +43237,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 80,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "abd-lkerim-bardakc",
@@ -42581,7 +43280,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "samet-akaydin",
@@ -42623,7 +43323,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "kaan-ayhan",
@@ -42651,7 +43352,7 @@ window.DATA = {
         "갈라타사라이 쉬페르 리그 우승"
       ],
       "notableTransfer": "포르투나 뒤셀도르프·사수올로 거쳐 갈라타사라이 소속",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -42665,7 +43366,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 74,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "salih-zcan",
@@ -42693,7 +43395,7 @@ window.DATA = {
         "보루시아 도르트문트 UEFA 챔피언스리그 준우승(2024)"
       ],
       "notableTransfer": "2022년 쾰른→보루시아 도르트문트 이적",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -42707,7 +43409,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 73,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "i-smail-y-ksek",
@@ -42733,7 +43436,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "페네르바흐체 유스 출신 중원 자원",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -42747,7 +43450,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "can-uzun",
@@ -42773,7 +43477,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 뉘른베르크→아인트라흐트 프랑크푸르트 이적 (5년 계약)",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -42787,7 +43491,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "deniz-g-l",
@@ -42813,7 +43518,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 스웨덴 대표팀 대신 튀르키예 대표팀 선택, 포르투 소속",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -42827,7 +43532,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "i-rfan-can-kahveci",
@@ -42853,7 +43559,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "페네르바흐체 거쳐 카슴파샤 소속",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -42867,7 +43573,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "yunus-akg-n",
@@ -42895,7 +43602,7 @@ window.DATA = {
         "갈라타사라이 쉬페르 리그 우승"
       ],
       "notableTransfer": "레스터 시티 임대 후 갈라타사라이 복귀",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -42909,7 +43616,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "o-uz-ayd-n",
@@ -42935,7 +43643,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알라뉴아스포르→페네르바흐체 이적",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -42949,7 +43657,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "oliver-baumann",
@@ -42976,7 +43685,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2014년 SC 프라이부르크에서 호펜하임 이적, 이후 클럽 주장 및 분데스리가 500경기 출전",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -42990,7 +43699,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 72,
         "골결정력": 31
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "alexander-n-bel",
@@ -43017,7 +43727,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2020년 샬케에서 바이에른 뮌헨 이적, AS 모나코·슈투트가르트 임대 후 완전 이적",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -43031,7 +43741,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "malick-thiaw",
@@ -43058,7 +43769,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 AC 밀란에서 약 3,500만 유로에 뉴캐슬 이적",
-      "ovr": 76,
+      "ovr": 73,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -43072,7 +43783,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 82,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "waldemar-anton",
@@ -43099,7 +43811,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 VfB 슈투트가르트(주장)에서 도르트문트 이적",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -43113,7 +43825,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 76,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "david-raum",
@@ -43140,7 +43853,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2022년 호펜하임에서 RB 라이프치히 이적, 현 클럽 주장",
-      "ovr": 75,
+      "ovr": 78,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -43154,7 +43867,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 70,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "nathaniel-brown",
@@ -43195,7 +43909,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "deniz-undav",
@@ -43222,7 +43937,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "브라이턴에서 슈투트가르트 임대 후 2024년 완전 이적",
-      "ovr": 77,
+      "ovr": 80,
       "scout": {
         "skill": 77,
         "value": 77,
@@ -43236,7 +43951,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 81
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "maximilian-beier",
@@ -43263,7 +43979,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 TSG 호펜하임에서 보루시아 도르트문트 이적",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -43277,7 +43993,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 66,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "trevor-doornbusch",
@@ -43302,7 +44019,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "PSV 유스 출신, 이후 VVV-펜로 정착",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -43316,7 +44033,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "tyrick-bodak",
@@ -43341,7 +44059,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "텔스타르의 에레디비시 승격과 함께 1군 도약",
-      "ovr": 47,
+      "ovr": 49,
       "scout": {
         "skill": 47,
         "value": 47,
@@ -43355,7 +44073,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 44,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 47
     },
     {
       "id": "joshua-brenet",
@@ -43398,7 +44117,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "juri-n-gaari",
@@ -43438,7 +44158,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "sherel-floranus",
@@ -43477,7 +44198,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "roshon-van-eijma",
@@ -43516,7 +44238,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "shurandy-sambo",
@@ -43555,7 +44278,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "deveron-fonville",
@@ -43580,7 +44304,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "NEC 네이메헌에서 1군 진입",
-      "ovr": 49,
+      "ovr": 50,
       "scout": {
         "skill": 49,
         "value": 51,
@@ -43594,7 +44318,8 @@ window.DATA = {
         "테크닉": 40,
         "피지컬": 64,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 49
     },
     {
       "id": "livano-comenencia",
@@ -43620,7 +44345,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "PSV 유스 → 유벤투스(넥스트젠/U23) → FC 취리히",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 66,
@@ -43634,7 +44359,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "godfried-roemeratoe",
@@ -43660,7 +44386,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "RKC 발베이크 중원 핵심",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -43674,7 +44400,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "kevin-felida",
@@ -43699,7 +44426,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "FC 덴 보스에서 주전 미드필더로 활약",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 54,
@@ -43713,7 +44440,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 59,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "ar-jany-martha",
@@ -43739,7 +44467,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아약스 유스 출신, 잉글랜드 로더럼 유나이티드로 이적",
-      "ovr": 53,
+      "ovr": 57,
       "scout": {
         "skill": 53,
         "value": 56,
@@ -43753,7 +44481,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 58,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "tyrese-noslin",
@@ -43778,7 +44507,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "텔스타르의 에레디비시 승격 주역",
-      "ovr": 50,
+      "ovr": 54,
       "scout": {
         "skill": 50,
         "value": 53,
@@ -43792,7 +44521,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 55,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "gervane-kastaneer",
@@ -43818,7 +44548,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "유럽 무대를 거쳐 말레이시아 트렝가누 FC로 이적",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 58,
@@ -43832,7 +44562,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 65,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "jeremy-antonisse",
@@ -43858,7 +44589,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "네덜란드를 거쳐 그리스 AE 키피시아로 이적",
-      "ovr": 56,
+      "ovr": 61,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -43872,7 +44603,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 60,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "yahia-fofana",
@@ -43898,7 +44630,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 앙제에서 차이쿠르 리제스포르로 이적",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -43912,7 +44644,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 70,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "alban-lafont",
@@ -43938,7 +44671,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 낭트에서 파나티나이코스로 이적",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -43952,7 +44685,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mohamed-kon",
@@ -43977,7 +44711,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -43991,7 +44725,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "emmanuel-agbadou",
@@ -44017,7 +44752,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 울버햄튼에서 베식타스로 약 1550만 파운드 이적",
-      "ovr": 72,
+      "ovr": 69,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -44031,7 +44766,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "gu-la-dou",
@@ -44057,7 +44793,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "렌에서 스트라스부르로 이적",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -44071,7 +44807,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 68,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "ghislain-konan",
@@ -44111,7 +44848,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "christopher-op-ri",
@@ -44151,7 +44889,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "ange-yoan-bonny",
@@ -44177,7 +44916,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 파르마에서 인테르 밀란으로 이적, 프랑스 대신 코트디부아르 선택",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 78,
@@ -44191,7 +44930,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 82,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "elye-wahi",
@@ -44217,7 +44957,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아인트라흐트 프랑크푸르트에서 니스로 임대",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 70,
@@ -44231,7 +44971,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "bazoumana-tour",
@@ -44257,7 +44998,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -44271,7 +45012,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "oumar-diakit",
@@ -44297,7 +45039,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -44311,7 +45053,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "seko-fofana",
@@ -44337,7 +45080,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "사우디 알 나스르를 거쳐 포르투로 이적",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -44351,7 +45094,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 80,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "christ-inao-oulai",
@@ -44377,7 +45121,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 64,
@@ -44391,7 +45135,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "jean-micha-l-seri",
@@ -44417,7 +45162,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 55,
@@ -44431,7 +45176,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "mois-s-ram-rez",
@@ -44460,7 +45206,7 @@ window.DATA = {
         "코파 수다메리카나 우승 (인데펜디엔테 델 바예, 2022)"
       ],
       "notableTransfer": "인데펜디엔테 델 바예 → AE 키피시아(그리스)",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -44474,7 +45220,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "gonzalo-valle",
@@ -44503,7 +45250,7 @@ window.DATA = {
         "코파 수다메리카나 우승 (LDU 키토, 2023)"
       ],
       "notableTransfer": "국내 무대 중심 커리어 (LDU 키토)",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 52,
@@ -44517,7 +45264,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "joel-ord-ez",
@@ -44545,7 +45293,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "클뤼프 브뤼허 2029년까지 재계약, PSG·리버풀 관심",
-      "ovr": 78,
+      "ovr": 75,
       "scout": {
         "skill": 78,
         "value": 82,
@@ -44559,7 +45307,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 83,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "f-lix-torres",
@@ -44586,7 +45335,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "코린치안스 → 인테르나시오나우",
-      "ovr": 74,
+      "ovr": 73,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -44600,7 +45349,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 84,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "yaimar-medina",
@@ -44641,7 +45391,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jackson-porozo",
@@ -44682,7 +45433,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "alan-franco",
@@ -44709,7 +45461,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "샤를루아 → 탈레레스 → 아틀레치쿠 미네이루",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -44723,7 +45475,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 72,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "pedro-vite",
@@ -44750,7 +45503,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "인데펜디엔테 델 바예 → 밴쿠버 화이트캡스 → 푸마스 UNAM",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -44764,7 +45517,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "nilson-angulo",
@@ -44791,7 +45545,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "RSC 안데를레흐트 → 선덜랜드",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 66,
@@ -44805,7 +45559,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "alan-minda",
@@ -44832,7 +45587,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "세리클뤼프 브뤼허 → 아틀레치쿠 미네이루",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -44846,7 +45601,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jordy-alc-var",
@@ -44875,7 +45631,7 @@ window.DATA = {
         "코파 수다메리카나 우승 (인데펜디엔테 델 바예)"
       ],
       "notableTransfer": "LDU 키토 → 인데펜디엔테 델 바예",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -44889,7 +45645,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "denil-castillo",
@@ -44916,7 +45673,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "구아야킬 시티 → FC 미트윌란",
-      "ovr": 59,
+      "ovr": 63,
       "scout": {
         "skill": 59,
         "value": 62,
@@ -44930,7 +45687,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 64,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "john-yeboah",
@@ -44957,7 +45715,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "VfL 볼프스부르크 유스 → 베네치아",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -44971,7 +45729,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "anthony-valencia",
@@ -44998,7 +45757,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "인데펜디엔테 델 바예 → 로열 안트베르펀",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -45012,7 +45771,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jordy-caicedo",
@@ -45039,7 +45799,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "CSKA 소피아 → 산투스 → 우라칸",
-      "ovr": 56,
+      "ovr": 61,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -45053,7 +45813,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 60,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "jeremy-ar-valo",
@@ -45080,7 +45841,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "라싱 산탄데르 → VfB 슈투트가르트 (700만 유로, 2026)",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -45094,7 +45855,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mark-flekken",
@@ -45122,7 +45884,7 @@ window.DATA = {
         "FA컵 준우승 (2024 브렌트포드 관련 경력)"
       ],
       "notableTransfer": "2025년 브렌트포드 -> 바이어 레버쿠젠 (약 1,000만 유로)",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 68,
@@ -45136,7 +45898,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "robin-roefs",
@@ -45164,7 +45927,7 @@ window.DATA = {
         "U-21 유럽선수권 4강 (Jong Oranje)"
       ],
       "notableTransfer": "2025년 NEC 네이메헌 -> 선덜랜드",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -45178,7 +45941,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "nathan-ak",
@@ -45208,7 +45972,7 @@ window.DATA = {
         "FA컵 우승"
       ],
       "notableTransfer": "2020년 본머스 -> 맨체스터 시티 (4,100만 파운드)",
-      "ovr": 80,
+      "ovr": 77,
       "scout": {
         "skill": 80,
         "value": 76,
@@ -45222,7 +45986,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 78,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "jorrel-hato",
@@ -45264,7 +46029,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jan-paul-van-hecke",
@@ -45304,7 +46070,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 76,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "mats-wieffer",
@@ -45346,7 +46113,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "marten-de-roon",
@@ -45375,7 +46143,7 @@ window.DATA = {
         "코파 이탈리아 준우승"
       ],
       "notableTransfer": "2017년 미들즈브러 -> 아탈란타 복귀",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -45389,7 +46157,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "teun-koopmeiners",
@@ -45417,7 +46186,7 @@ window.DATA = {
         "UEFA 유로파리그 우승 (2024 아탈란타)"
       ],
       "notableTransfer": "2024년 아탈란타 -> 유벤투스 (약 6,000만 유로)",
-      "ovr": 75,
+      "ovr": 79,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -45431,7 +46200,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 75,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "guus-til",
@@ -45460,7 +46230,7 @@ window.DATA = {
         "요한 크라위프 스할 우승"
       ],
       "notableTransfer": "2022년 스파르타크 모스크바 -> PSV (PSV 정착)",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -45474,7 +46244,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "quinten-timber",
@@ -45502,7 +46273,7 @@ window.DATA = {
         "에레디비시 우승 (2023 페예노르트)"
       ],
       "notableTransfer": "2026년 1월 페예노르트 -> 마르세유 (약 450만 유로)",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -45516,7 +46287,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "justin-kluivert",
@@ -45543,7 +46315,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 로마 -> 본머스 (약 1,100만 유로+옵션)",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -45557,7 +46329,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "brian-brobbey",
@@ -45585,7 +46358,7 @@ window.DATA = {
         "에레디비시 올해의 선수 후보급 활약 (아약스)"
       ],
       "notableTransfer": "2025년 아약스 -> 선덜랜드 (약 2,000만 유로, 최대 2,500만)",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -45599,7 +46372,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "noa-lang",
@@ -45629,7 +46403,7 @@ window.DATA = {
         "세리에 A 우승 스쿼드 (2025 나폴리)"
       ],
       "notableTransfer": "2025년 PSV -> 나폴리(약 2,500만 유로) 후 2026년 갈라타사라이 임대",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -45643,7 +46417,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "crysencio-summerville",
@@ -45672,7 +46447,7 @@ window.DATA = {
         "챔피언십 올해의 선수 (2024 리즈)"
       ],
       "notableTransfer": "2024년 리즈 유나이티드 -> 웨스트햄 (약 2,500만 파운드+)",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -45686,7 +46461,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "wout-weghorst",
@@ -45715,7 +46491,7 @@ window.DATA = {
         "2022 월드컵 8강 (네덜란드)"
       ],
       "notableTransfer": "2024년 호펜하임 -> 아약스 복귀",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 60,
@@ -45729,7 +46505,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "keisuke-osako",
@@ -45757,7 +46534,7 @@ window.DATA = {
         "J리그 컵 우승"
       ],
       "notableTransfer": "산프레체 히로시마 유스 출신, 줄곧 J리그 활약",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -45771,7 +46548,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "tomoki-hayakawa",
@@ -45796,7 +46574,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "나고야→가시마 이적",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -45810,7 +46588,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "ko-itakura",
@@ -45836,7 +46615,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "보루시아 묀헨글라드바흐→아약스 (2025년 약 1050만 유로)",
-      "ovr": 78,
+      "ovr": 75,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -45850,7 +46629,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 82,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "tsuyoshi-watanabe",
@@ -45876,7 +46656,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "신트트라위던→페예노르트 이적",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -45890,7 +46670,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 74,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "yuto-nagatomo",
@@ -45933,7 +46714,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ayumu-seko",
@@ -45973,7 +46755,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "yukinari-sugawara",
@@ -46013,7 +46796,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "shogo-taniguchi",
@@ -46055,7 +46839,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "kaishu-sano",
@@ -46081,7 +46866,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "가시마 앤틀러스→마인츠 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -46095,7 +46880,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ao-tanaka",
@@ -46123,7 +46909,7 @@ window.DATA = {
         "EFL 챔피언십 우승"
       ],
       "notableTransfer": "포르투나 뒤셀도르프→리즈 유나이티드",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -46137,7 +46923,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "yuito-suzuki",
@@ -46163,7 +46950,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "브뢴뷔→프라이부르크 이적",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -46177,7 +46964,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "keito-nakamura",
@@ -46203,7 +46991,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "LASK 린츠→스타드 드 랭스 (2023년 완전 이적)",
-      "ovr": 73,
+      "ovr": 76,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -46217,7 +47005,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 60,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "junya-ito",
@@ -46243,7 +47032,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스타드 드 랭스→헹크",
-      "ovr": 74,
+      "ovr": 79,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -46257,7 +47046,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 62,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "koki-ogawa",
@@ -46283,7 +47073,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "요코하마 F. 마리노스→NEC 네이메헌",
-      "ovr": 65,
+      "ovr": 70,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -46297,7 +47087,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 69,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "kristoffer-nordfeldt",
@@ -46324,7 +47115,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스완지 시티에서 수년간 활약 후 모국 AIK로 복귀",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 55,
@@ -46338,7 +47129,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "jacob-widell-zetterstr-m",
@@ -46365,7 +47157,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "예테보리에서 잉글랜드 더비 카운티로 이적",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -46379,7 +47171,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "carl-starfelt",
@@ -46409,7 +47202,7 @@ window.DATA = {
         "스코티시컵 우승"
       ],
       "notableTransfer": "셀틱에서 셀타 비고로 약 430만 파운드에 이적(2023)",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -46423,7 +47216,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 77,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "hjalmar-ekdal",
@@ -46464,7 +47258,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "daniel-svensson",
@@ -46491,7 +47286,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "노르셸란에서 도르트문트로 완전 이적(2025)",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -46505,7 +47300,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 66,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "gustaf-lagerbielke",
@@ -46546,7 +47342,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "eric-smith",
@@ -46587,7 +47384,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jesper-karlstr-m",
@@ -46614,7 +47412,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "디나모 우치를 거쳐 우디네세 주장으로 활약",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -46628,7 +47426,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ken-sema",
@@ -46655,7 +47454,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "왓퍼드에서 키프로스 파포스로 이적",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 60,
@@ -46669,7 +47468,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "besfort-zeneli",
@@ -46696,7 +47496,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 1월 벨기에 위니옹 생질루아즈로 이적",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -46710,7 +47510,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "taha-ali",
@@ -46737,7 +47538,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "말뫼 FF에서 챔피언스리그 무대 경험",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -46751,7 +47552,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "benjamin-nygren",
@@ -46782,7 +47584,7 @@ window.DATA = {
         "셀틱 올해의 선수"
       ],
       "notableTransfer": "노르셸란에서 셀틱으로 5년 계약 이적",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -46796,7 +47598,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 62,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "gustaf-nilsson",
@@ -46823,7 +47626,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "베헨 비스바덴 등을 거쳐 클뤼프 브뤼허로 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -46837,7 +47640,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "alexander-bernhardsson",
@@ -46864,7 +47668,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "엘프스보리에서 홀슈타인 킬로 이적(2024)",
-      "ovr": 56,
+      "ovr": 61,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -46878,7 +47682,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 60,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "sabri-ben-hessen",
@@ -46904,7 +47709,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -46918,7 +47723,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "abdelmouhib-chamakh",
@@ -46943,7 +47749,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 50,
+      "ovr": 52,
       "scout": {
         "skill": 50,
         "value": 50,
@@ -46957,7 +47763,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 47,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "dylan-bronn",
@@ -46983,7 +47790,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 세르베트 이적",
-      "ovr": 72,
+      "ovr": 69,
       "scout": {
         "skill": 72,
         "value": 68,
@@ -46997,7 +47804,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 80,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "ali-abdi",
@@ -47025,7 +47833,7 @@ window.DATA = {
         "튀니지 컵 2회 (클럽 아프리캥)"
       ],
       "notableTransfer": "2024년 니스 이적 (약 50만 유로)",
-      "ovr": 73,
+      "ovr": 72,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -47039,7 +47847,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 66,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "yan-valery",
@@ -47079,7 +47888,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "omar-rekik",
@@ -47119,7 +47929,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "mohamed-amine-ben-hamida",
@@ -47160,7 +47971,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "moutaz-neffati",
@@ -47199,7 +48011,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "adem-arous",
@@ -47238,7 +48051,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "raed-chikhaoui",
@@ -47277,7 +48091,8 @@ window.DATA = {
         "테크닉": 44,
         "피지컬": 68,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "isma-l-gharbi",
@@ -47303,7 +48118,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 브라가에서 아우크스부르크 임대 (PSG 유스 출신)",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -47317,7 +48132,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "rani-khedira",
@@ -47357,7 +48173,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 74,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "elias-saad",
@@ -47385,7 +48202,7 @@ window.DATA = {
         "2. 분데스리가 우승 (장크트파울리, 2023-24)"
       ],
       "notableTransfer": "2026년 아우크스부르크에서 하노버 96 임대",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -47399,7 +48216,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "firas-chaouat",
@@ -47425,7 +48243,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 클럽 아프리캥 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -47439,7 +48257,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "khalil-ayari",
@@ -47465,7 +48284,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 스타드 튀니지앵에서 PSG 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -47479,7 +48298,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "rayan-elloumi",
@@ -47504,7 +48324,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "밴쿠버 화이트캡스 합류",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 55,
@@ -47518,7 +48338,8 @@ window.DATA = {
         "테크닉": 48,
         "피지컬": 56,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "senne-lammens",
@@ -47546,7 +48367,7 @@ window.DATA = {
         "프리미어리그 25/26 시즌 베스트 이적 선정"
       ],
       "notableTransfer": "2025년 9월 안트베르프에서 맨체스터 유나이티드로 약 1,820만 파운드에 이적 (데드라인 데이)",
-      "ovr": 72,
+      "ovr": 75,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -47560,7 +48381,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 78,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "mike-penders",
@@ -47585,7 +48407,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "헹크에서 첼시로 이적 후 스트라스부르로 임대",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -47599,7 +48421,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "timothy-castagne",
@@ -47627,7 +48450,7 @@ window.DATA = {
         "2018·2022 월드컵, 유로 2024 대표팀"
       ],
       "notableTransfer": "레스터 시티에서 풀럼으로 이적",
-      "ovr": 74,
+      "ovr": 75,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -47641,7 +48464,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 75,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "thomas-meunier",
@@ -47683,7 +48507,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "arthur-theate",
@@ -47709,7 +48534,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "렌에서 아인트라흐트 프랑크푸르트로 이적",
-      "ovr": 73,
+      "ovr": 70,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -47723,7 +48548,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 80,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "koni-de-winter",
@@ -47763,7 +48589,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 80,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "nathan-ngoy",
@@ -47802,7 +48629,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "brandon-mechele",
@@ -47843,7 +48671,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "joaquin-seys",
@@ -47882,7 +48711,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "nicolas-raskin",
@@ -47907,7 +48737,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스탕다르 리에주에서 레인저스로 이적",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -47921,7 +48751,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "hans-vanaken",
@@ -47949,7 +48780,7 @@ window.DATA = {
         "프로 리그 다수 우승"
       ],
       "notableTransfer": "클뤼프 브뤼헤의 핵심 플레이메이커",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -47963,7 +48794,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "axel-witsel",
@@ -47991,7 +48823,7 @@ window.DATA = {
         "유로 다수 출전"
       ],
       "notableTransfer": "아틀레티코 마드리드에서 지로나로 이적",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 59,
@@ -48005,7 +48837,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "diego-moreira",
@@ -48030,7 +48863,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "첼시 거쳐 스트라스부르로 이적",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -48044,7 +48877,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "alexis-saelemaekers",
@@ -48072,7 +48906,7 @@ window.DATA = {
         "세리에 A 우승 (밀란)"
       ],
       "notableTransfer": "볼로냐 임대 후 AC 밀란 복귀",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -48086,7 +48920,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 64,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "dodi-lukebakio",
@@ -48111,7 +48946,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "세비야에서 벤피카로 이적",
-      "ovr": 71,
+      "ovr": 76,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -48125,7 +48960,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 66,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "matias-fernandez-pardo",
@@ -48150,7 +48986,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "헹크에서 릴로 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -48164,7 +49000,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "mohamed-alaa",
@@ -48189,7 +49026,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "엘 구나 소속으로 꾸준히 출전하며 대표팀 백업 골키퍼로 자리매김",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -48203,7 +49040,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "el-mahdy-soliman",
@@ -48228,7 +49066,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 이티하드 알렉산드리아에서 자말렉으로 자유계약 이적",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 49,
@@ -48242,7 +49080,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "mohamed-hany",
@@ -48285,7 +49124,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "yasser-ibrahim",
@@ -48328,7 +49168,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "ramy-rabia",
@@ -48357,7 +49198,7 @@ window.DATA = {
         "U-20 아프리카 네이션스컵 우승(주장)"
       ],
       "notableTransfer": "2025년 6월 알 아흘리에서 알 아인으로 자유계약 이적",
-      "ovr": 70,
+      "ovr": 67,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -48371,7 +49212,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 75,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "hossam-abdelmaguid",
@@ -48413,7 +49255,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "karim-hafez",
@@ -48454,7 +49297,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "tarek-alaa",
@@ -48493,7 +49337,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "zizo",
@@ -48522,7 +49367,7 @@ window.DATA = {
         "이집트 슈퍼컵 우승"
       ],
       "notableTransfer": "2025년 6월 라이벌 자말렉에서 알 아흘리로 충격적인 자유계약 이적",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -48536,7 +49381,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 58,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "marwan-attia",
@@ -48564,7 +49410,7 @@ window.DATA = {
         "CAF 챔피언스리그 우승"
       ],
       "notableTransfer": "2022-23시즌 중반 알 아흘리와 4년 반 계약하며 합류",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -48578,7 +49424,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "mohanad-lasheen",
@@ -48605,7 +49452,7 @@ window.DATA = {
         "CAF 챔피언스리그 우승(피라미즈)"
       ],
       "notableTransfer": "2023년 피라미즈 합류, CAF 무대에서 활약하는 중앙 미드필더",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 60,
@@ -48619,7 +49466,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "mahmoud-saber",
@@ -48644,7 +49492,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "ZED FC 소속으로 두각을 나타낸 신예 중앙 미드필더",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -48658,7 +49506,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "haissem-hassan",
@@ -48683,7 +49532,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스페인 레알 오비에도에서 뛰는 측면 미드필더/윙어",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 64,
@@ -48697,7 +49546,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "hamza-abdelkarim",
@@ -48722,7 +49572,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "FC 바르셀로나 B팀 소속의 이집트 출신 공격수 유망주",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 60,
@@ -48736,7 +49586,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "hossein-hosseini",
@@ -48763,7 +49614,7 @@ window.DATA = {
         "이란 프로리그 우승 (Esteghlal)"
       ],
       "notableTransfer": "Esteghlal에서 장기간 활약 후 Sepahan 합류",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 52,
@@ -48777,7 +49628,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "payam-niazmand",
@@ -48802,7 +49654,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Sepahan에서 명문 Persepolis로 이적",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 52,
@@ -48816,7 +49668,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "shojae-khalilzadeh",
@@ -48843,7 +49696,7 @@ window.DATA = {
         "이란 프로리그 우승"
       ],
       "notableTransfer": "Al-Ahli(카타르) 등 거쳐 Tractor 복귀",
-      "ovr": 70,
+      "ovr": 67,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -48857,7 +49710,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 77,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "ali-nemati",
@@ -48896,7 +49750,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "saleh-hardani",
@@ -48937,7 +49792,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "danial-iri",
@@ -48962,7 +49818,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Malavan 소속의 신예 수비수, 대표팀 첫 발탁권",
-      "ovr": 50,
+      "ovr": 51,
       "scout": {
         "skill": 50,
         "value": 53,
@@ -48976,7 +49832,8 @@ window.DATA = {
         "테크닉": 41,
         "피지컬": 65,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "mehdi-torabi",
@@ -49003,7 +49860,7 @@ window.DATA = {
         "이란 프로리그 우승"
       ],
       "notableTransfer": "Saint-Petersburg(러시아) 임대 거쳐 국내 복귀, 현 Tractor",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -49017,7 +49874,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "rouzbeh-cheshmi",
@@ -49044,7 +49902,7 @@ window.DATA = {
         "이란 프로리그 우승 (Esteghlal)"
       ],
       "notableTransfer": "카타르 무대 거쳐 Esteghlal로 복귀",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 59,
@@ -49058,7 +49916,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "mohammad-ghorbani",
@@ -49083,7 +49942,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "이란 국내 무대에서 UAE Al Wahda로 이적",
-      "ovr": 56,
+      "ovr": 60,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -49097,7 +49956,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 61,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "amirmohammad-razaghnian",
@@ -49122,7 +49982,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Esteghlal 유망주로 빠르게 주전급 도약",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 57,
@@ -49136,7 +49996,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 59,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "mehdi-ghayedi",
@@ -49163,7 +50024,7 @@ window.DATA = {
         "이란 프로리그 우승 (Esteghlal)"
       ],
       "notableTransfer": "Esteghlal에서 UAE Al-Nasr로 이적",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -49177,7 +50038,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "ali-alipour",
@@ -49205,7 +50067,7 @@ window.DATA = {
         "이란 프로리그 득점왕"
       ],
       "notableTransfer": "Marítimo(포르투갈) 거쳐 Persepolis 복귀",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -49219,7 +50081,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "shahriar-moghanlou",
@@ -49244,7 +50107,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Santa Clara(포르투갈) 거쳐 UAE Ittihad Kalba 합류",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -49258,7 +50121,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "amirhossein-hosseinzadeh",
@@ -49285,7 +50149,7 @@ window.DATA = {
         "이란 프로리그 우승"
       ],
       "notableTransfer": "Esteghlal에서 Tractor로 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -49299,7 +50163,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "denis-dargahi",
@@ -49324,7 +50189,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "유럽 무대 거쳐 벨기에 Standard Liège 소속",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -49338,7 +50203,8 @@ window.DATA = {
         "테크닉": 48,
         "피지컬": 56,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "alex-paulsen",
@@ -49367,7 +50233,7 @@ window.DATA = {
         "A-리그 프리미어십(오클랜드 FC, 2024-25)"
       ],
       "notableTransfer": "2024년 오클랜드 FC에서 본머스로 약 85만 파운드(추가 옵션 포함 최대 200만 파운드) 이적, 2025-26시즌 레흐비아 그단스크 임대",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -49381,7 +50247,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "michael-woud",
@@ -49408,7 +50275,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "유럽(네덜란드 빌럼 II 등) 유스를 거쳐 자국 오클랜드 FC로 복귀",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -49422,7 +50289,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "michael-boxall",
@@ -49449,7 +50317,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "MLS 미네소타 유나이티드의 장기 주축 센터백으로 활약",
-      "ovr": 70,
+      "ovr": 67,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -49463,7 +50331,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 78,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "tim-payne",
@@ -49504,7 +50373,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "francis-de-vries",
@@ -49547,7 +50417,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "nando-pijnaker",
@@ -49590,7 +50461,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "callan-elliot",
@@ -49633,7 +50505,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "tommy-smith",
@@ -49674,7 +50547,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "alex-rufer",
@@ -49701,7 +50575,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "웰링턴 피닉스 원클럽 주장으로 장기 활약",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -49715,7 +50589,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "ryan-thomas",
@@ -49742,7 +50617,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "PSV 유스 출신, 네덜란드 PEC 즈볼레에서 활약",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -49756,7 +50631,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "kosta-barbarouses",
@@ -49785,7 +50661,7 @@ window.DATA = {
         "A-리그 다수 우승(멜버른 빅토리/시드니 FC 시절)"
       ],
       "notableTransfer": "멜버른 빅토리·시드니 FC 등을 거친 A-리그 레전드, 현재 웨스턴 시드니 원더러스 소속",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 57,
@@ -49799,7 +50675,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ben-waine",
@@ -49826,7 +50703,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "웰링턴 피닉스에서 잉글랜드 플리머스 아가일을 거쳐 포트 베일로 이적",
-      "ovr": 56,
+      "ovr": 61,
       "scout": {
         "skill": 56,
         "value": 56,
@@ -49840,7 +50717,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 60,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "callum-mccowatt",
@@ -49867,7 +50745,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "웰링턴 피닉스를 거쳐 덴마크 실케보르로 이적",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -49881,7 +50759,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "jesse-randall",
@@ -49910,7 +50789,7 @@ window.DATA = {
         "A-리그 프리미어십(오클랜드 FC, 2024-25)"
       ],
       "notableTransfer": "오클랜드 FC 창단 시즌 공격진의 일원으로 활약",
-      "ovr": 53,
+      "ovr": 57,
       "scout": {
         "skill": 53,
         "value": 53,
@@ -49924,7 +50803,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 57,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "lachlan-bayliss",
@@ -49951,7 +50831,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "A-리그 뉴캐슬 제츠에서 호성적을 내며 2026년 3월 대표팀 데뷔 발탁",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 55,
@@ -49965,7 +50845,8 @@ window.DATA = {
         "테크닉": 48,
         "피지컬": 56,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "unai-simon",
@@ -49994,7 +50875,7 @@ window.DATA = {
         "UEFA 네이션스리그 2023 우승"
       ],
       "notableTransfer": "유스부터 빌바오 원클럽 (200경기 이상)",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -50008,7 +50889,8 @@ window.DATA = {
         "테크닉": 81,
         "피지컬": 76,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "joan-garcia",
@@ -50037,7 +50919,7 @@ window.DATA = {
         "라리가 우승 (바르셀로나)"
       ],
       "notableTransfer": "2025년 에스파뇰→바르셀로나 (방출 조항 €25m)",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -50051,7 +50933,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "pedro-porro",
@@ -50093,7 +50976,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 64,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "eric-garcia",
@@ -50121,7 +51005,7 @@ window.DATA = {
         "라리가 우승 (바르셀로나)"
       ],
       "notableTransfer": "2021년 맨시티→바르셀로나",
-      "ovr": 74,
+      "ovr": 75,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -50135,7 +51019,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 74,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "alejandro-grimaldo",
@@ -50164,7 +51049,7 @@ window.DATA = {
         "DFB-포칼 우승"
       ],
       "notableTransfer": "2023년 벤피카→레버쿠젠 (자유계약)",
-      "ovr": 77,
+      "ovr": 78,
       "scout": {
         "skill": 77,
         "value": 73,
@@ -50178,7 +51063,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 62,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 77
     },
     {
       "id": "marcos-llorente",
@@ -50206,7 +51092,7 @@ window.DATA = {
         "라리가 우승 2021 (아틀레티코)"
       ],
       "notableTransfer": "2019년 레알 마드리드→아틀레티코",
-      "ovr": 72,
+      "ovr": 77,
       "scout": {
         "skill": 72,
         "value": 68,
@@ -50220,7 +51106,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 80,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "aymeric-laporte",
@@ -50249,7 +51136,7 @@ window.DATA = {
         "프리미어리그 다수 우승 (맨시티)"
       ],
       "notableTransfer": "2025년 알 나스르→빌바오 복귀",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 74,
@@ -50263,7 +51150,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "marc-pubill",
@@ -50291,7 +51179,7 @@ window.DATA = {
         "2024 파리 올림픽 금메달 (U-23)"
       ],
       "notableTransfer": "2025년 알메리아→아틀레티코 (약 €16m)",
-      "ovr": 68,
+      "ovr": 74,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -50305,7 +51193,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 70,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "gavi",
@@ -50334,7 +51223,7 @@ window.DATA = {
         "라리가 우승 (바르셀로나)"
       ],
       "notableTransfer": "바르셀로나 유스 출신 원클럽",
-      "ovr": 81,
+      "ovr": 82,
       "scout": {
         "skill": 81,
         "value": 85,
@@ -50348,7 +51237,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 68,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "martin-zubimendi",
@@ -50376,7 +51266,7 @@ window.DATA = {
         "UEFA 유로 2024 우승"
       ],
       "notableTransfer": "2025년 레알 소시에다드→아스널 (€60m 방출조항)",
-      "ovr": 80,
+      "ovr": 79,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -50390,7 +51280,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 76,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "mikel-merino",
@@ -50418,7 +51309,7 @@ window.DATA = {
         "UEFA 유로 2024 우승"
       ],
       "notableTransfer": "2024년 레알 소시에다드→아스널",
-      "ovr": 79,
+      "ovr": 80,
       "scout": {
         "skill": 79,
         "value": 79,
@@ -50432,7 +51323,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 84,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "alex-baena",
@@ -50461,7 +51353,7 @@ window.DATA = {
         "UEFA 유로 2024 (멤버)"
       ],
       "notableTransfer": "2025년 비야레알→아틀레티코 (약 €42m)",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -50475,7 +51367,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 60,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "ferran-torres",
@@ -50505,7 +51398,7 @@ window.DATA = {
         "라리가 우승"
       ],
       "notableTransfer": "2022년 맨시티→바르셀로나",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -50519,7 +51412,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 66,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "yeremy-pino",
@@ -50547,7 +51441,7 @@ window.DATA = {
         "UEFA 네이션스리그 2023 우승"
       ],
       "notableTransfer": "2025년 비야레알→크리스탈 팰리스",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 75,
@@ -50561,7 +51455,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 58,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "borja-iglesias",
@@ -50589,7 +51484,7 @@ window.DATA = {
         "코파 델 레이 우승 (베티스)"
       ],
       "notableTransfer": "2024년 레알 베티스→셀타 비고",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 61,
@@ -50603,7 +51498,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "victor-munoz",
@@ -50629,7 +51525,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "오사수나 소속, 2026년 대표팀 첫 발탁",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -50643,7 +51539,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 59,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "m-rcio-rosa",
@@ -50668,7 +51565,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -50682,7 +51579,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "cj-dos-santos",
@@ -50707,7 +51605,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -50721,7 +51619,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "stopira",
@@ -50760,7 +51659,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "steven-moreira",
@@ -50801,7 +51701,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "wagner-pina",
@@ -50840,7 +51741,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jo-o-paulo",
@@ -50881,7 +51783,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "sidny-lopes-cabral",
@@ -50920,7 +51823,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "kelvin-pires",
@@ -50959,7 +51863,8 @@ window.DATA = {
         "테크닉": 45,
         "피지컬": 69,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "telmo-arcanjo",
@@ -50984,7 +51889,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -50998,7 +51903,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "laros-duarte",
@@ -51023,7 +51929,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -51037,7 +51943,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "yannick-semedo",
@@ -51062,7 +51969,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -51076,7 +51983,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "willy-semedo",
@@ -51101,7 +52009,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -51115,7 +52023,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "nuno-da-costa",
@@ -51140,7 +52049,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 59,
+      "ovr": 64,
       "scout": {
         "skill": 59,
         "value": 53,
@@ -51154,7 +52063,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 63,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "h-lio-varela",
@@ -51179,7 +52089,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -51193,7 +52103,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "nawaf-al-aqidi",
@@ -51221,7 +52132,7 @@ window.DATA = {
         "사우디 프로 리그 우승 (알나스르)"
       ],
       "notableTransfer": "2025년 1월 알파테흐 임대 후 알나스르 복귀, 대표팀 주전 골키퍼로 부상",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -51235,7 +52146,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ahmed-al-kassar",
@@ -51259,7 +52171,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알카드시아 소속으로 대표팀 백업 골키퍼 발탁",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -51273,7 +52185,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "jehad-thikri",
@@ -51313,7 +52226,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "ali-lajami",
@@ -51356,7 +52270,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "hassan-kadesh",
@@ -51397,7 +52312,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "mohammed-abu-al-shamat",
@@ -51436,7 +52352,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "ali-majrashi",
@@ -51475,7 +52392,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "moteb-al-harbi",
@@ -51516,7 +52434,8 @@ window.DATA = {
         "테크닉": 48,
         "피지컬": 72,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "nawaf-boushal",
@@ -51555,7 +52474,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "abdullah-al-khaibari",
@@ -51583,7 +52503,7 @@ window.DATA = {
         "사우디 프로 리그 (알나스르)"
       ],
       "notableTransfer": "알나스르 중원의 핵심 수비형 미드필더로 대표팀 단골 발탁",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -51597,7 +52517,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ziyad-al-johani",
@@ -51622,7 +52543,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알아흘리 소속으로 대표팀 중원 자원 합류",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -51636,7 +52557,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "musab-al-juwayr",
@@ -51662,7 +52584,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알카드시아 소속의 떠오르는 공격형 미드필더, 대표팀 차세대 자원",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -51676,7 +52598,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "khalid-al-ghannam",
@@ -51702,7 +52625,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알에티파크에서 활약하는 측면 공격수로 대표팀 발탁",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -51716,7 +52639,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 65,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "ayman-yahya",
@@ -51743,7 +52667,7 @@ window.DATA = {
         "사우디 프로 리그 (알나스르)"
       ],
       "notableTransfer": "알나스르 소속 측면 공격수로 대표팀 명단 합류",
-      "ovr": 59,
+      "ovr": 64,
       "scout": {
         "skill": 59,
         "value": 59,
@@ -51757,7 +52681,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 63,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "sultan-mandash",
@@ -51784,7 +52709,7 @@ window.DATA = {
         "사우디 프로 리그 (알힐랄)"
       ],
       "notableTransfer": "알힐랄 소속 공격수로 월드컵 명단 합류",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -51798,7 +52723,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "alaa-al-hajji",
@@ -51823,7 +52749,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "승격팀 네옴 SC 소속으로 대표팀 깜짝 발탁",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -51837,7 +52763,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "fernando-muslera",
@@ -51866,7 +52793,7 @@ window.DATA = {
         "갈라타사라이 쉬페르리그 다수 우승"
       ],
       "notableTransfer": "갈라타사라이에서 12년 활약 후 2024년 에스투디안테스로 복귀, 대표팀 은퇴 번복하고 5번째 월드컵 합류",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -51880,7 +52807,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 70,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "santiago-mele",
@@ -51905,7 +52833,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "헤타페·후니오르 등을 거쳐 멕시코 강호 몬테레이에 정착",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -51919,7 +52847,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "guillermo-varela",
@@ -51949,7 +52878,7 @@ window.DATA = {
         "FA컵 2015-16 (맨유)"
       ],
       "notableTransfer": "맨체스터 유나이티드 출신, 2023년 플라멩구 완전 이적 후 코파 리베르타도레스 우승",
-      "ovr": 73,
+      "ovr": 72,
       "scout": {
         "skill": 73,
         "value": 65,
@@ -51963,7 +52892,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 68,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "santiago-bueno",
@@ -52003,7 +52933,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "sebasti-n-c-ceres",
@@ -52031,7 +52962,7 @@ window.DATA = {
         "리가 MX 우승 (클루브 아메리카)"
       ],
       "notableTransfer": "2020년 우루과이를 떠나 멕시코 명문 클루브 아메리카에 정착, 월드컵 예선 주축",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -52045,7 +52976,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 75,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "joaqu-n-piquerez",
@@ -52075,7 +53007,7 @@ window.DATA = {
         "수페르코파 두 브라질 2023"
       ],
       "notableTransfer": "2021년 팔메이라스 이적 직후 코파 리베르타도레스 우승, 결승 선발 출전",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -52089,7 +53021,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 72,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "mat-as-vi-a",
@@ -52117,7 +53050,7 @@ window.DATA = {
         "코파 리베르타도레스 (팔메이라스)"
       ],
       "notableTransfer": "AS로마·본머스를 거쳐 2026년 플라멩구에서 리버 플레이트로 임대",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -52131,7 +53064,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "juan-manuel-sanabria",
@@ -52170,7 +53104,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "rodrigo-aguirre",
@@ -52198,7 +53133,7 @@ window.DATA = {
         "리가 MX 아페르투라 2024 (클루브 아메리카)"
       ],
       "notableTransfer": "클루브 아메리카에서 우승 후 2026년 2월 티그레스 UANL로 이적",
-      "ovr": 65,
+      "ovr": 70,
       "scout": {
         "skill": 65,
         "value": 62,
@@ -52212,7 +53147,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 69,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "federico-vi-as",
@@ -52238,7 +53174,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "클루브 레온 소속으로 라리가 레알 오비에도에 임대, 2025-26 시즌 9골 활약",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -52252,7 +53188,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "maximiliano-ara-jo",
@@ -52280,7 +53217,7 @@ window.DATA = {
         "프리메이라 리가 (스포르팅 CP)"
       ],
       "notableTransfer": "2024년 톨루카에서 스포르팅 CP로 5년 계약 이적",
-      "ovr": 71,
+      "ovr": 74,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -52294,7 +53231,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 64,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "brian-rodr-guez",
@@ -52322,7 +53260,7 @@ window.DATA = {
         "리가 MX 우승 (클루브 아메리카)"
       ],
       "notableTransfer": "LAFC를 거쳐 클루브 아메리카에서 핵심 윙어로 성장",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -52336,7 +53274,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 60,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "agust-n-canobbio",
@@ -52362,7 +53301,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아틀레치쿠 PR을 거쳐 플루미넨시에서 측면 공격형 미드필더로 활약",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -52376,7 +53315,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "emiliano-mart-nez",
@@ -52404,7 +53344,7 @@ window.DATA = {
         "브라질 세리이 A (팔메이라스)"
       ],
       "notableTransfer": "데펜소르 스포르팅에서 팔메이라스로 이적해 중원 핵심으로 성장",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -52418,7 +53358,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "rodrigo-zalazar",
@@ -52444,7 +53385,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "샬케·아인트라흐트 등 분데스리가를 거쳐 포르투갈 브라가에 정착",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -52458,7 +53399,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "brice-samba",
@@ -52486,7 +53428,7 @@ window.DATA = {
         "리그앙 올해의 골키퍼 (2022-23)"
       ],
       "notableTransfer": "2025년 1월 랑스에서 렌으로 이적",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -52500,7 +53442,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "robin-risser",
@@ -52529,7 +53472,7 @@ window.DATA = {
         "리그앙 베스트11 (2025-26)"
       ],
       "notableTransfer": "랑스 유스 출신 주전 도약",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -52543,7 +53486,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ibrahima-konat",
@@ -52572,7 +53516,7 @@ window.DATA = {
         "2022 월드컵 준우승"
       ],
       "notableTransfer": "2026년 여름 리버풀 계약 만료 후 이적 예정",
-      "ovr": 87,
+      "ovr": 82,
       "scout": {
         "skill": 87,
         "value": 87,
@@ -52586,7 +53530,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 89,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 87
     },
     {
       "id": "th-o-hernandez",
@@ -52616,7 +53561,7 @@ window.DATA = {
         "2022 월드컵 준우승"
       ],
       "notableTransfer": "2025년 AC 밀란에서 알 힐랄로 이적",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -52630,7 +53575,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 80,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "lucas-hernandez",
@@ -52660,7 +53606,7 @@ window.DATA = {
         "챔피언스리그 우승 (2024-25)"
       ],
       "notableTransfer": "2023년 바이에른 뮌헨에서 PSG로 이적",
-      "ovr": 78,
+      "ovr": 76,
       "scout": {
         "skill": 78,
         "value": 74,
@@ -52674,7 +53620,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 82,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "lucas-digne",
@@ -52717,7 +53664,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 62,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "malo-gusto",
@@ -52746,7 +53694,7 @@ window.DATA = {
         "UEFA 컨퍼런스리그 우승 (2024-25)"
       ],
       "notableTransfer": "2023년 리옹에서 첼시로 이적",
-      "ovr": 75,
+      "ovr": 77,
       "scout": {
         "skill": 75,
         "value": 79,
@@ -52760,7 +53708,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "maxence-lacroix",
@@ -52788,7 +53737,7 @@ window.DATA = {
         "FA컵 우승 (2024-25)"
       ],
       "notableTransfer": "2024년 볼프스부르크에서 크리스탈 팰리스로 이적",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -52802,7 +53751,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 77,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "n-golo-kant",
@@ -52832,7 +53782,7 @@ window.DATA = {
         "프리미어리그 우승 2회"
       ],
       "notableTransfer": "2023년 첼시에서 알 이티하드 거쳐 페네르바흐체로 이적",
-      "ovr": 81,
+      "ovr": 82,
       "scout": {
         "skill": 81,
         "value": 72,
@@ -52846,7 +53796,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 80,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 81
     },
     {
       "id": "manu-kon",
@@ -52872,7 +53823,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 묀헨글라트바흐에서 로마로 이적",
-      "ovr": 72,
+      "ovr": 75,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -52886,7 +53837,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 84,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "warren-za-re-emery",
@@ -52915,7 +53867,7 @@ window.DATA = {
         "리그앙 우승 다수"
       ],
       "notableTransfer": "PSG 유스 출신 1군 주전",
-      "ovr": 76,
+      "ovr": 77,
       "scout": {
         "skill": 76,
         "value": 80,
@@ -52929,7 +53881,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "bradley-barcola",
@@ -52958,7 +53911,7 @@ window.DATA = {
         "리그앙 우승"
       ],
       "notableTransfer": "2023년 리옹에서 PSG로 이적",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 82,
@@ -52972,7 +53925,8 @@ window.DATA = {
         "테크닉": 81,
         "피지컬": 64,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "d-sir-dou",
@@ -53001,7 +53955,7 @@ window.DATA = {
         "리그앙 우승"
       ],
       "notableTransfer": "2024년 스타드 렌에서 PSG로 이적",
-      "ovr": 79,
+      "ovr": 83,
       "scout": {
         "skill": 79,
         "value": 83,
@@ -53015,7 +53969,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 68,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "maghn-s-akliouche",
@@ -53041,7 +53996,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "모나코 유스 출신 핵심 자원",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -53055,7 +54010,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 58,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jean-philippe-mateta",
@@ -53084,7 +54040,7 @@ window.DATA = {
         "2024 올림픽 은메달"
       ],
       "notableTransfer": "2021년 마인츠에서 크리스탈 팰리스로 이적",
-      "ovr": 71,
+      "ovr": 77,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -53098,7 +54054,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 82,
         "골결정력": 80
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "mory-diaw",
@@ -53127,7 +54084,7 @@ window.DATA = {
         "2025 아프리카 네이션스컵 우승(스쿼드)"
       ],
       "notableTransfer": "2025년 클레르몽에서 르아브르로 이적(3년 계약)",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -53141,7 +54098,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "yehvann-diouf",
@@ -53170,7 +54128,7 @@ window.DATA = {
         "2025 아프리카 네이션스컵 우승(스쿼드)"
       ],
       "notableTransfer": "2025년 랭스에서 니스로 700만 유로 이적",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -53184,7 +54142,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "moussa-niakhate",
@@ -53213,7 +54172,7 @@ window.DATA = {
         "2025 아프리카 네이션스컵 우승"
       ],
       "notableTransfer": "2025년 노팅엄 포레스트에서 리옹으로 약 3,200만 유로(구단 역대 최고액) 이적",
-      "ovr": 74,
+      "ovr": 71,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -53227,7 +54186,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 82,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "el-hadji-malick-diouf",
@@ -53256,7 +54216,7 @@ window.DATA = {
         "2025 아프리카 네이션스컵 우승"
       ],
       "notableTransfer": "2025년 슬라비아 프라하에서 웨스트햄으로 약 1,900만 파운드 이적",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 72,
         "value": 76,
@@ -53270,7 +54230,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "mamadou-sarr",
@@ -53313,7 +54274,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ismail-jakobs",
@@ -53357,7 +54319,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "abdoulaye-seck",
@@ -53400,7 +54363,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "antoine-mendy",
@@ -53441,7 +54405,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "pape-gueye",
@@ -53471,7 +54436,7 @@ window.DATA = {
         "라리가 아프리카 MVP"
       ],
       "notableTransfer": "2024년 마르세유에서 비야레알로 이적",
-      "ovr": 75,
+      "ovr": 76,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -53485,7 +54450,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 83,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "pathe-ciss",
@@ -53514,7 +54480,7 @@ window.DATA = {
         "2025 아프리카 네이션스컵 우승"
       ],
       "notableTransfer": "라요 바예카노 핵심 미드필더로 정착",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -53528,7 +54494,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "bara-sapoko-ndiaye",
@@ -53555,7 +54522,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 감비노스 스타스에서 바이에른 뮌헨 임대 합류",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 60,
@@ -53569,7 +54536,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "assane-diao",
@@ -53596,7 +54564,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 레알 베티스에서 코모로 약 1,200만 유로 이적",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -53610,7 +54578,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 68,
         "골결정력": 73
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ibrahim-mbaye",
@@ -53637,7 +54606,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 12월 FIFA 국적 전환 승인(프랑스→세네갈)",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 66,
@@ -53651,7 +54620,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "fahad-talib",
@@ -53681,7 +54651,7 @@ window.DATA = {
         "이라크 FA컵 우승"
       ],
       "notableTransfer": "알 쿠와 알 자위야 유스 출신, 16세에 1군 데뷔 후 줄곧 잔류",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -53695,7 +54665,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "ahmed-basil",
@@ -53722,7 +54693,7 @@ window.DATA = {
         "이라크 스타스 리그 우승"
       ],
       "notableTransfer": "알 쇼르타 소속, 볼리비아 플레이오프에서 인상적인 활약",
-      "ovr": 60,
+      "ovr": 61,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -53736,7 +54707,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 57,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "zaid-tahseen",
@@ -53776,7 +54748,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "rebin-sulaka",
@@ -53816,7 +54789,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "frans-putros",
@@ -53856,7 +54830,8 @@ window.DATA = {
         "테크닉": 52,
         "피지컬": 76,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "mustafa-saadoon",
@@ -53896,7 +54871,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "kevin-yakob",
@@ -53922,7 +54898,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스웨덴 출생, 덴마크 수페르리가 AGF에서 활약",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -53936,7 +54912,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "aimar-sher",
@@ -53962,7 +54939,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스페치아(이탈리아) 거쳐 노르웨이 사릅스보르 08 합류, 2025년 이라크 귀화",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -53976,7 +54953,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "ibrahim-bayesh",
@@ -54002,7 +54980,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "사우디 등 해외 경험 후 알 쿠와 알 자위야에서 활약",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -54016,7 +54994,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "youssef-amyn",
@@ -54042,7 +55021,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "독일 에센 출생, 독일 유스 거쳐 이라크 선택 후 AEK 라르나카 활약",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 69,
@@ -54056,7 +55035,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "marko-farji",
@@ -54082,7 +55062,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 1월 이탈리아 베네치아와 4년 반 계약 (노르웨이 출생)",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -54096,7 +55076,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "ali-yousef",
@@ -54124,7 +55105,7 @@ window.DATA = {
         "AFC컵 우승 (2017, 2018)"
       ],
       "notableTransfer": "알 쿠와 알 자위야에서 AFC컵 2회 우승 후 알 자우라 활약",
-      "ovr": 59,
+      "ovr": 64,
       "scout": {
         "skill": 59,
         "value": 56,
@@ -54138,7 +55119,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 63,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "egil-selvik",
@@ -54163,7 +55145,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Sarpsborg 08 → Watford (2024)",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -54177,7 +55159,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "sander-tangvik",
@@ -54202,7 +55185,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Rosenborg → Hamburger SV",
-      "ovr": 50,
+      "ovr": 52,
       "scout": {
         "skill": 50,
         "value": 53,
@@ -54216,7 +55199,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 47,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "julian-ryerson",
@@ -54242,7 +55226,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Union Berlin → Borussia Dortmund (2023, 1월)",
-      "ovr": 76,
+      "ovr": 74,
       "scout": {
         "skill": 76,
         "value": 76,
@@ -54256,7 +55240,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 76,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "marcus-holmgren-pedersen",
@@ -54298,7 +55283,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 66,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "david-m-ller-wolfe",
@@ -54338,7 +55324,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "fredrik-andr-bj-rkan",
@@ -54379,7 +55366,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "torbj-rn-heggem",
@@ -54419,7 +55407,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "sondre-lang-s",
@@ -54458,7 +55447,8 @@ window.DATA = {
         "테크닉": 44,
         "피지컬": 68,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "patrick-berg",
@@ -54486,7 +55476,7 @@ window.DATA = {
         "엘리테세리엔 우승 (2020, 2021 등)"
       ],
       "notableTransfer": "Lens → Bodø/Glimt (복귀)",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -54500,7 +55490,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "kristian-thorstvedt",
@@ -54526,7 +55517,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Genk → Sassuolo (2022)",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -54540,7 +55531,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "andreas-schjelderup",
@@ -54566,7 +55558,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Nordsjælland → Benfica (2024)",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -54580,7 +55572,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "thelo-aasgaard",
@@ -54606,7 +55599,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Luton Town → Rangers (2025)",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -54620,7 +55613,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "morten-thorsby",
@@ -54646,7 +55640,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Sampdoria → Union Berlin → Cremonese",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -54660,7 +55654,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jens-petter-hauge",
@@ -54688,7 +55683,7 @@ window.DATA = {
         "엘리테세리엔 우승 (Bodø/Glimt)"
       ],
       "notableTransfer": "AC Milan → Eintracht Frankfurt → Bodø/Glimt (복귀)",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 61,
@@ -54702,7 +55697,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "henrik-falchener",
@@ -54727,7 +55723,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Viking FK 유스 출신",
-      "ovr": 48,
+      "ovr": 49,
       "scout": {
         "skill": 48,
         "value": 50,
@@ -54741,7 +55737,8 @@ window.DATA = {
         "테크닉": 39,
         "피지컬": 63,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 48
     },
     {
       "id": "geronimo-rulli",
@@ -54770,7 +55767,7 @@ window.DATA = {
         "2024 코파 아메리카 우승(스쿼드)"
       ],
       "notableTransfer": "2024년 아약스에서 마르세유로 이적",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -54784,7 +55781,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 72,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "juan-musso",
@@ -54811,7 +55809,7 @@ window.DATA = {
         "2024 UEFA 유로파리그 우승(아탈란타)"
       ],
       "notableTransfer": "2024년 아탈란타에서 아틀레티코 마드리드로 이적",
-      "ovr": 66,
+      "ovr": 67,
       "scout": {
         "skill": 66,
         "value": 63,
@@ -54825,7 +55823,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 63,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "nahuel-molina",
@@ -54869,7 +55868,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 74,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "nicolas-tagliafico",
@@ -54899,7 +55899,7 @@ window.DATA = {
         "2021 코파 아메리카 우승"
       ],
       "notableTransfer": "2022년 아약스에서 리옹으로 이적",
-      "ovr": 76,
+      "ovr": 75,
       "scout": {
         "skill": 76,
         "value": 68,
@@ -54913,7 +55913,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 70,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "gonzalo-montiel",
@@ -54957,7 +55958,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 68,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "leonardo-balerdi",
@@ -54983,7 +55985,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2020년 보루시아 도르트문트에서 마르세유로 이적",
-      "ovr": 70,
+      "ovr": 67,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -54997,7 +55999,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 78,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "facundo-medina",
@@ -55037,7 +56040,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "leandro-paredes",
@@ -55067,7 +56071,7 @@ window.DATA = {
         "2021 코파 아메리카 우승"
       ],
       "notableTransfer": "2024년 로마에서 보카 주니어스로 복귀",
-      "ovr": 75,
+      "ovr": 77,
       "scout": {
         "skill": 75,
         "value": 71,
@@ -55081,7 +56085,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 72,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "exequiel-palacios",
@@ -55125,7 +56130,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 68,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "giovani-lo-celso",
@@ -55155,7 +56161,7 @@ window.DATA = {
         "2021 코파 아메리카 우승"
       ],
       "notableTransfer": "2024년 토트넘에서 레알 베티스로 이적",
-      "ovr": 74,
+      "ovr": 75,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -55169,7 +56175,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 62,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "valentin-barco",
@@ -55195,7 +56202,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 보카 주니어스에서 브라이튼 거쳐 스트라스부르 임대·이적",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -55209,7 +56216,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "thiago-almada",
@@ -55238,7 +56246,7 @@ window.DATA = {
         "2022 FIFA 월드컵 우승(스쿼드)"
       ],
       "notableTransfer": "2025년 보타포구·리옹 거쳐 아틀레티코 마드리드로 이적",
-      "ovr": 75,
+      "ovr": 78,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -55252,7 +56260,8 @@ window.DATA = {
         "테크닉": 87,
         "피지컬": 62,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "nico-paz",
@@ -55278,7 +56287,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 레알 마드리드에서 코모로 이적",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 77,
@@ -55292,7 +56301,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 56,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "nicolas-gonzalez",
@@ -55321,7 +56331,7 @@ window.DATA = {
         "2021 코파 아메리카 우승"
       ],
       "notableTransfer": "2024년 피오렌티나에서 유벤투스로 이적",
-      "ovr": 74,
+      "ovr": 79,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -55335,7 +56345,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 74,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "giuliano-simeone",
@@ -55361,7 +56372,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아틀레티코 마드리드 1군 정착",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -55375,7 +56386,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "jose-manuel-lopez",
@@ -55403,7 +56415,7 @@ window.DATA = {
         "2023 브라질 세리에 A 우승(팔메이라스)"
       ],
       "notableTransfer": "2022년 라누스에서 팔메이라스로 이적",
-      "ovr": 65,
+      "ovr": 70,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -55417,7 +56429,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 69,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "oussama-benbot",
@@ -55444,7 +56457,7 @@ window.DATA = {
         "알제리 리그 프로페시오넬 1 우승"
       ],
       "notableTransfer": "2021년 USM 알제 입단 후 2026년까지 계약 연장",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -55458,7 +56471,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "melvin-mastil",
@@ -55483,7 +56497,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스타드 니오네(스위스 2부) 소속으로 첫 대표팀 발탁",
-      "ovr": 45,
+      "ovr": 47,
       "scout": {
         "skill": 45,
         "value": 45,
@@ -55497,7 +56511,8 @@ window.DATA = {
         "테크닉": 44,
         "피지컬": 42,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 45
     },
     {
       "id": "mohamed-amine-tougai",
@@ -55526,7 +56541,7 @@ window.DATA = {
         "CAF 챔피언스리그 출전"
       ],
       "notableTransfer": "에스페랑스 드 튀니스와 2027년까지 계약 연장",
-      "ovr": 70,
+      "ovr": 68,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -55540,7 +56555,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 79,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "rafik-belghali",
@@ -55580,7 +56596,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "jaouen-hadjam",
@@ -55622,7 +56639,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "zineddine-belaid",
@@ -55661,7 +56679,8 @@ window.DATA = {
         "테크닉": 43,
         "피지컬": 67,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "samir-chergui",
@@ -55700,7 +56719,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "achref-abada",
@@ -55725,7 +56745,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "USM 알제 소속으로 대표팀 발탁",
-      "ovr": 50,
+      "ovr": 51,
       "scout": {
         "skill": 50,
         "value": 50,
@@ -55739,7 +56759,8 @@ window.DATA = {
         "테크닉": 41,
         "피지컬": 65,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "nabil-bentaleb",
@@ -55765,7 +56786,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2023년 8월 릴 이적 (구 토트넘·샬케 출신)",
-      "ovr": 74,
+      "ovr": 75,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -55779,7 +56800,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 70,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "ramiz-zerrouki",
@@ -55807,7 +56829,7 @@ window.DATA = {
         "KNVB컵 우승 (페예노르트)"
       ],
       "notableTransfer": "2025년 페예노르트에서 트벤테로 시즌 임대",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -55821,7 +56843,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "hicham-boudaoui",
@@ -55847,7 +56870,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2019년 파라두에서 OGC 니스로 이적",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -55861,7 +56884,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "yassine-titraoui",
@@ -55886,7 +56910,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스포르팅 샤를루아 소속으로 대표팀 합류",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -55900,7 +56924,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "nadir-benbouali",
@@ -55925,7 +56950,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "죄리 ETO 소속으로 월드컵 명단 발탁",
-      "ovr": 53,
+      "ovr": 57,
       "scout": {
         "skill": 53,
         "value": 53,
@@ -55939,7 +56964,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 57,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "adil-boulbina",
@@ -55966,7 +56992,7 @@ window.DATA = {
         "카타르 스타스 리그 출전"
       ],
       "notableTransfer": "알 두하일(카타르) 이적",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -55980,7 +57006,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "fares-ghedjemis",
@@ -56005,7 +57032,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "프로시노네(이탈리아) 소속으로 대표팀 합류",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 54,
@@ -56019,7 +57046,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 58,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "patrick-pentz",
@@ -56045,7 +57073,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레버쿠젠 → 브뢴뷔 임대 후 완전 이적",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -56059,7 +57087,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "florian-wiegele",
@@ -56084,7 +57113,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "체코 비크토리아 플젠에서 활약",
-      "ovr": 50,
+      "ovr": 52,
       "scout": {
         "skill": 50,
         "value": 50,
@@ -56098,7 +57127,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 47,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "marco-friedl",
@@ -56124,7 +57154,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "바이에른 뮌헨 유스 → 베르더 브레멘 (주장)",
-      "ovr": 72,
+      "ovr": 70,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -56138,7 +57168,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 76,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "philipp-lienhart",
@@ -56164,7 +57195,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레알 마드리드 → 프라이부르크",
-      "ovr": 73,
+      "ovr": 69,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -56178,7 +57209,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 80,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "stefan-posch",
@@ -56204,7 +57236,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "볼로냐 → 마인츠 05",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -56218,7 +57250,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 80,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "phillipp-mwene",
@@ -56258,7 +57291,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "david-affengruber",
@@ -56298,7 +57332,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "alexander-prass",
@@ -56338,7 +57373,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "michael-svoboda",
@@ -56378,7 +57414,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "xaver-schlager",
@@ -56404,7 +57441,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "볼프스부르크 → RB 라이프치히",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -56418,7 +57455,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 78,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "florian-grillitsch",
@@ -56444,7 +57482,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아약스 → 브라가",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -56458,7 +57496,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "romano-schmid",
@@ -56484,7 +57523,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "잘츠부르크 → 베르더 브레멘",
-      "ovr": 66,
+      "ovr": 70,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -56498,7 +57537,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 71,
         "골결정력": 57
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "patrick-wimmer",
@@ -56524,7 +57564,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아르미니아 빌레펠트 → 볼프스부르크",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -56538,7 +57578,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "carney-chukwuemeka",
@@ -56564,7 +57605,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "첼시 → 보루시아 도르트문트",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -56578,7 +57619,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "paul-wanner",
@@ -56604,7 +57646,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "바이에른 뮌헨 → PSV 에인트호번",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -56618,7 +57660,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "sasa-kalajdzic",
@@ -56644,7 +57687,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "울버햄튼 → LASK",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -56658,7 +57701,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 67,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "abdullah-al-fakhouri",
@@ -56686,7 +57730,7 @@ window.DATA = {
         "요르단 프로 리그 우승(알와흐다트)"
       ],
       "notableTransfer": "요르단 명문 알와흐다트에서 주전 골키퍼로 성장",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -56700,7 +57744,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "abdallah-nasib",
@@ -56728,7 +57773,7 @@ window.DATA = {
         "2023 AFC 아시안컵 준우승"
       ],
       "notableTransfer": "이라크 명문 알자우라로 이적해 꾸준히 출전",
-      "ovr": 70,
+      "ovr": 67,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -56742,7 +57787,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 76,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "saed-al-rosan",
@@ -56784,7 +57830,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "saleem-obaid",
@@ -56827,7 +57874,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "mohammad-abualnadi",
@@ -56867,7 +57915,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "husam-abu-dahab",
@@ -56909,7 +57958,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "anas-banawi",
@@ -56935,7 +57985,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알파이살리 수비수, 대표팀 신예로 합류",
-      "ovr": 48,
+      "ovr": 49,
       "scout": {
         "skill": 48,
         "value": 48,
@@ -56949,7 +57999,8 @@ window.DATA = {
         "테크닉": 39,
         "피지컬": 63,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 48
     },
     {
       "id": "ibrahim-saadeh",
@@ -56977,7 +58028,7 @@ window.DATA = {
         "2023 AFC 아시안컵 준우승"
       ],
       "notableTransfer": "이라크 알카르마로 이적해 핵심 미드필더로 활약",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -56991,7 +58042,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "rajaei-ayed",
@@ -57019,7 +58071,7 @@ window.DATA = {
         "2023 AFC 아시안컵 준우승"
       ],
       "notableTransfer": "알후세인 중원의 베테랑 리더",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -57033,7 +58085,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "mahmoud-al-mardi",
@@ -57058,7 +58111,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알후세인 미드필더, 대표팀 명단 합류",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 54,
@@ -57072,7 +58125,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 59,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "amer-jamous",
@@ -57098,7 +58152,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "이라크 알자우라로 이적해 출전 시간 확보",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 60,
@@ -57112,7 +58166,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "mohammad-al-dawoud",
@@ -57140,7 +58195,7 @@ window.DATA = {
         "요르단 프로 리그 우승(알와흐다트)"
       ],
       "notableTransfer": "알와흐다트 중원 베테랑",
-      "ovr": 55,
+      "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 49,
@@ -57154,7 +58209,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 60,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "mohannad-abu-taha",
@@ -57180,7 +58236,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "이라크 명문 알쿠와 알자위야로 이적",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -57194,7 +58250,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "odeh-al-fakhouri",
@@ -57221,7 +58278,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 2월 이집트 피라미드로 이적, CAF 챔피언스리그 데뷔골",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -57235,7 +58292,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "ali-azaizeh",
@@ -57264,7 +58322,7 @@ window.DATA = {
         "AFC U-23 아시안컵 득점왕(4골)"
       ],
       "notableTransfer": "2026년 1월 알샤바브 깜짝 영입(카즈마에서 임대), 독일 태생",
-      "ovr": 59,
+      "ovr": 64,
       "scout": {
         "skill": 59,
         "value": 62,
@@ -57278,7 +58336,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 63,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 59
     },
     {
       "id": "jos-s",
@@ -57306,7 +58365,7 @@ window.DATA = {
         "2024-25 UEFA 네이션스리그(스쿼드)"
       ],
       "notableTransfer": "2021년 올림피아코스에서 울버햄튼 이적",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 55,
@@ -57320,7 +58379,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "rui-silva",
@@ -57348,7 +58408,7 @@ window.DATA = {
         "2024-25 프리메이라리가(스포르팅)"
       ],
       "notableTransfer": "2024년 레알 베티스에서 스포르팅 복귀",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 55,
@@ -57362,7 +58422,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "gon-alo-in-cio",
@@ -57392,7 +58453,7 @@ window.DATA = {
         "2024-25 타사 드 포르투갈"
       ],
       "notableTransfer": "스포르팅 유스 출신, 핵심 센터백으로 성장",
-      "ovr": 80,
+      "ovr": 78,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -57406,7 +58467,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 78,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "jo-o-cancelo",
@@ -57434,7 +58496,7 @@ window.DATA = {
         "2024-25 UEFA 네이션스리그"
       ],
       "notableTransfer": "알 힐랄에서 바르셀로나 임대",
-      "ovr": 79,
+      "ovr": 81,
       "scout": {
         "skill": 79,
         "value": 75,
@@ -57448,7 +58510,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 72,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 79
     },
     {
       "id": "diogo-dalot",
@@ -57477,7 +58540,7 @@ window.DATA = {
         "2022-23 EFL컵(맨유)"
       ],
       "notableTransfer": "2018년 FC 포르투에서 맨유 이적",
-      "ovr": 75,
+      "ovr": 78,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -57491,7 +58554,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 76,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "n-lson-semedo",
@@ -57533,7 +58597,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "renato-veiga",
@@ -57573,7 +58638,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "tom-s-ara-jo",
@@ -57613,7 +58679,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "r-ben-neves",
@@ -57641,7 +58708,7 @@ window.DATA = {
         "2024-25 UEFA 네이션스리그"
       ],
       "notableTransfer": "2023년 울버햄튼에서 알 힐랄 이적",
-      "ovr": 74,
+      "ovr": 76,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -57655,7 +58722,8 @@ window.DATA = {
         "테크닉": 85,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "matheus-nunes",
@@ -57683,7 +58751,7 @@ window.DATA = {
         "2024-25 UEFA 네이션스리그(스쿼드)"
       ],
       "notableTransfer": "2023년 울버햄튼에서 맨시티 이적",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -57697,7 +58765,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 72,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "samu-costa",
@@ -57723,7 +58792,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알메리아에서 마요르카 이적",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -57737,7 +58806,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "pedro-neto",
@@ -57766,7 +58836,7 @@ window.DATA = {
         "2024-25 UEFA 콘퍼런스리그(첼시)"
       ],
       "notableTransfer": "2024년 울버햄튼에서 첼시 이적",
-      "ovr": 74,
+      "ovr": 78,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -57780,7 +58850,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 58,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "jo-o-f-lix",
@@ -57808,7 +58879,7 @@ window.DATA = {
         "2024-25 UEFA 네이션스리그(스쿼드)"
       ],
       "notableTransfer": "아틀레티코 마드리드에서 알 나스르 이적",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -57822,7 +58893,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 73,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "francisco-concei-o",
@@ -57850,7 +58922,7 @@ window.DATA = {
         "2024-25 UEFA 네이션스리그(스쿼드)"
       ],
       "notableTransfer": "FC 포르투에서 유벤투스 이적",
-      "ovr": 67,
+      "ovr": 72,
       "scout": {
         "skill": 67,
         "value": 70,
@@ -57864,7 +58936,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 71,
         "골결정력": 76
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "francisco-trinc-o",
@@ -57893,7 +58966,7 @@ window.DATA = {
         "2024-25 타사 드 포르투갈"
       ],
       "notableTransfer": "바르셀로나에서 스포르팅 이적",
-      "ovr": 66,
+      "ovr": 71,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -57907,7 +58980,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 70,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "lionel-mpasi",
@@ -57936,7 +59010,7 @@ window.DATA = {
         "2023 아프리카네이션스컵(AFCON) 4강 진출 주전 GK"
       ],
       "notableTransfer": "2025년 7월 로데즈에서 르아브르로 이적 (2년 계약)",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -57950,7 +59024,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 74,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "timothy-fayulu",
@@ -57977,7 +59052,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스위스 무대를 거쳐 아르메니아 FC 노아 합류",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -57991,7 +59066,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "matthieu-epolo",
@@ -58018,7 +59094,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스탕다르 리에주 유스 승격 후 1군 데뷔",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -58032,7 +59108,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "axel-tuanzebe",
@@ -58062,7 +59139,7 @@ window.DATA = {
         "애스턴빌라·입스위치 프리미어리그 승격 기여"
       ],
       "notableTransfer": "2025년 6월 입스위치 타운에서 번리로 자유계약 이적",
-      "ovr": 72,
+      "ovr": 69,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -58076,7 +59153,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 80,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "steve-kapuadi",
@@ -58119,7 +59197,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "dylan-batubinsika",
@@ -58162,7 +59241,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "joris-kayembe",
@@ -58205,7 +59285,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "g-d-on-kalulu",
@@ -58248,7 +59329,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "simon-banza",
@@ -58278,7 +59360,7 @@ window.DATA = {
         "2023 AFCON 4강 진출 멤버"
       ],
       "notableTransfer": "브라가→트라브존스포르 임대를 거쳐 2025년 9월 알 자지라로 완전 이적",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -58292,7 +59374,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 74,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "ngal-ayel-mukau",
@@ -58319,7 +59402,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "AECC를 거쳐 릴로 이적, 리그앙에서 입지 확대 중",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -58333,7 +59416,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "samuel-moutoussamy",
@@ -58362,7 +59446,7 @@ window.DATA = {
         "2021 프랑스컵 우승 (낭트)"
       ],
       "notableTransfer": "낭트를 거쳐 그리스 아트로미토스로 이적",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -58376,7 +59460,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "abduvohid-nematov",
@@ -58405,7 +59490,7 @@ window.DATA = {
         "우즈베키스탄 슈퍼리그 준우승"
       ],
       "notableTransfer": "2017년부터 나사프 카르시 원클럽 골키퍼로 성장",
-      "ovr": 55,
+      "ovr": 57,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -58419,7 +59504,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 52,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "botirali-ergashev",
@@ -58446,7 +59532,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "네프치 페르가나의 주전 골키퍼",
-      "ovr": 50,
+      "ovr": 52,
       "scout": {
         "skill": 50,
         "value": 48,
@@ -58460,7 +59546,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 47,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "rustam-ashurmatov",
@@ -58501,7 +59588,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "farrukh-sayfiev",
@@ -58544,7 +59632,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "sherzod-nasrullaev",
@@ -58587,7 +59676,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "umar-eshmurodov",
@@ -58628,7 +59718,8 @@ window.DATA = {
         "테크닉": 45,
         "피지컬": 69,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "abdulla-abdullaev",
@@ -58669,7 +59760,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jakhongir-urozov",
@@ -58710,7 +59802,8 @@ window.DATA = {
         "테크닉": 43,
         "피지컬": 67,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "avazbek-ulmasaliev",
@@ -58737,7 +59830,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "AGMK 소속 수비수",
-      "ovr": 48,
+      "ovr": 49,
       "scout": {
         "skill": 48,
         "value": 48,
@@ -58751,7 +59844,8 @@ window.DATA = {
         "테크닉": 39,
         "피지컬": 63,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 48
     },
     {
       "id": "azizbek-amonov",
@@ -58778,7 +59872,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "부하라 소속, 첫 월드컵 명단 합류",
-      "ovr": 50,
+      "ovr": 54,
       "scout": {
         "skill": 50,
         "value": 50,
@@ -58792,7 +59886,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 54,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "jamshid-iskanderov",
@@ -58819,7 +59914,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "이란 이적설 후 네프치 페르가나 잔류",
-      "ovr": 61,
+      "ovr": 65,
       "scout": {
         "skill": 61,
         "value": 58,
@@ -58833,7 +59928,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "akmal-mozgovoy",
@@ -58862,7 +59958,7 @@ window.DATA = {
         "우즈베키스탄 슈퍼리그 우승"
       ],
       "notableTransfer": "파흐타코르 중원의 핵심 자원",
-      "ovr": 57,
+      "ovr": 61,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -58876,7 +59972,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 62,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "camilo-vargas",
@@ -58906,7 +60003,7 @@ window.DATA = {
         "캄페온 데 캄페오네스"
       ],
       "notableTransfer": "2019년 데포르티보 칼리에서 아틀라스로 이적",
-      "ovr": 72,
+      "ovr": 74,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -58920,7 +60017,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 73,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "david-ospina",
@@ -58951,7 +60049,7 @@ window.DATA = {
         "코파 이탈리아(나폴리)"
       ],
       "notableTransfer": "2014년 니스에서 아스널로, 2019년 나폴리 완전 이적, 2024년 친정 아틀레티코 나시오날 복귀",
-      "ovr": 70,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 62,
@@ -58965,7 +60063,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "lvaro-montero",
@@ -58991,7 +60090,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "미요나리오스에서 벨레스 사르스피엘드로 임대",
-      "ovr": 64,
+      "ovr": 65,
       "scout": {
         "skill": 64,
         "value": 61,
@@ -59005,7 +60104,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 61,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "yerry-mina",
@@ -59035,7 +60135,7 @@ window.DATA = {
         "2018 월드컵 수비수 단일 대회 최다골(3골) 타이기록"
       ],
       "notableTransfer": "2018년 바르셀로나, 같은 해 에버턴 이적 후 2024년 칼리아리 합류",
-      "ovr": 73,
+      "ovr": 70,
       "scout": {
         "skill": 73,
         "value": 69,
@@ -59049,7 +60149,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 85,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "johan-mojica",
@@ -59089,7 +60190,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 39
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "santiago-arias",
@@ -59131,7 +60233,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 80,
         "골결정력": 35
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "willer-ditta",
@@ -59171,7 +60274,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "deiver-machado",
@@ -59211,7 +60315,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "juan-fernando-quintero",
@@ -59240,7 +60345,7 @@ window.DATA = {
         "2014 월드컵 득점"
       ],
       "notableTransfer": "2025년 7월 아메리카 데 칼리에서 리버 플레이트로 세 번째 복귀(약 210만 유로)",
-      "ovr": 74,
+      "ovr": 75,
       "scout": {
         "skill": 74,
         "value": 66,
@@ -59254,7 +60359,8 @@ window.DATA = {
         "테크닉": 86,
         "피지컬": 58,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "jorge-carrascal",
@@ -59280,7 +60386,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 플라멩구와 4년 계약",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -59294,7 +60400,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "kevin-casta-o",
@@ -59323,7 +60430,7 @@ window.DATA = {
         "2024 코파 아메리카 준우승"
       ],
       "notableTransfer": "2025년 크라스노다르에서 리버 플레이트로 이적",
-      "ovr": 70,
+      "ovr": 75,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -59337,7 +60444,8 @@ window.DATA = {
         "테크닉": 79,
         "피지컬": 75,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jhon-c-rdoba",
@@ -59367,7 +60475,7 @@ window.DATA = {
         "크라스노다르 구단 통산 최다 득점자"
       ],
       "notableTransfer": "2021년 헤르타 BSC에서 크라스노다르로 이적",
-      "ovr": 71,
+      "ovr": 77,
       "scout": {
         "skill": 71,
         "value": 63,
@@ -59381,7 +60489,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 84,
         "골결정력": 79
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "cucho-hern-ndez",
@@ -59410,7 +60519,7 @@ window.DATA = {
         "라리가 베스트 일레븐 선정"
       ],
       "notableTransfer": "2025년 2월 콜럼버스 크루에서 레알 베티스로 완전 이적",
-      "ovr": 72,
+      "ovr": 77,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -59424,7 +60533,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 66,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "carlos-andr-s-g-mez",
@@ -59450,7 +60560,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "로체스터(미국)에서 바스쿠 다 가마로 이적",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -59464,7 +60574,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "dean-henderson",
@@ -59493,7 +60604,7 @@ window.DATA = {
         "FA 커뮤니티 실드 (2025)"
       ],
       "notableTransfer": "Manchester United → Crystal Palace (2024, 약 2000만 파운드)",
-      "ovr": 75,
+      "ovr": 78,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -59507,7 +60618,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 78,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "james-trafford",
@@ -59535,7 +60647,7 @@ window.DATA = {
         "챔피언십 한 시즌 최다 클린시트 기록 타이 (29회, Burnley)"
       ],
       "notableTransfer": "Burnley → Manchester City (2025, 약 3100만 파운드, 바이백 발동)",
-      "ovr": 68,
+      "ovr": 69,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -59549,7 +60661,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 65,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "reece-james",
@@ -59580,7 +60693,7 @@ window.DATA = {
         "UEFA 슈퍼컵"
       ],
       "notableTransfer": "첼시 원클럽맨, 2032년까지 재계약 (2026)",
-      "ovr": 80,
+      "ovr": 81,
       "scout": {
         "skill": 80,
         "value": 80,
@@ -59594,7 +60707,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 80,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 80
     },
     {
       "id": "ezri-konsa",
@@ -59620,7 +60734,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Brentford → Aston Villa (2019)",
-      "ovr": 74,
+      "ovr": 72,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -59634,7 +60748,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 78,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "dan-burn",
@@ -59676,7 +60791,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "jarell-quansah",
@@ -59719,7 +60835,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "tino-livramento",
@@ -59761,7 +60878,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 64,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "djed-spence",
@@ -59803,7 +60921,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 37
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "kobbie-mainoo",
@@ -59831,7 +60950,7 @@ window.DATA = {
         "FA컵 (2023-24, Manchester United)"
       ],
       "notableTransfer": "맨유 유스 출신 (원클럽맨)",
-      "ovr": 76,
+      "ovr": 77,
       "scout": {
         "skill": 76,
         "value": 80,
@@ -59845,7 +60964,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 76
     },
     {
       "id": "elliot-anderson",
@@ -59871,7 +60991,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Newcastle United → Nottingham Forest (2024, 약 3500만 파운드)",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 74,
@@ -59885,7 +61005,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 70,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "jordan-henderson",
@@ -59915,7 +61036,7 @@ window.DATA = {
         "FIFA 클럽 월드컵 (2019, Liverpool)"
       ],
       "notableTransfer": "Ajax → Brentford (2025)",
-      "ovr": 65,
+      "ovr": 69,
       "scout": {
         "skill": 65,
         "value": 58,
@@ -59929,7 +61050,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 70,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "ollie-watkins",
@@ -59955,7 +61077,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Brentford → Aston Villa (2020, 약 2800만 파운드)",
-      "ovr": 74,
+      "ovr": 80,
       "scout": {
         "skill": 74,
         "value": 70,
@@ -59969,7 +61091,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 76,
         "골결정력": 83
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "ivan-toney",
@@ -59997,7 +61120,7 @@ window.DATA = {
         "AFC 챔피언스리그 엘리트 (2024-25, Al-Ahli)"
       ],
       "notableTransfer": "Brentford → Al-Ahli (2024, 약 4000만 파운드)",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 65,
@@ -60011,7 +61134,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "dominik-kotarski",
@@ -60038,7 +61162,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 7월 PAOK에서 FC 코펜하겐으로 이적 (5년 계약)",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -60052,7 +61176,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "ivor-pandur",
@@ -60079,7 +61204,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 1월 헐 시티와 3년 반 계약 체결",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 52,
@@ -60093,7 +61218,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "duje-caleta-car",
@@ -60122,7 +61248,7 @@ window.DATA = {
         "2018 FIFA 월드컵 준우승"
       ],
       "notableTransfer": "2025년 8월 리옹에서 레알 소시에다드로 임대 이적",
-      "ovr": 74,
+      "ovr": 70,
       "scout": {
         "skill": 74,
         "value": 74,
@@ -60136,7 +61262,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 84,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 74
     },
     {
       "id": "marin-pongracic",
@@ -60163,7 +61290,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 7월 피오렌티나로 이적",
-      "ovr": 72,
+      "ovr": 70,
       "scout": {
         "skill": 72,
         "value": 72,
@@ -60177,7 +61304,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 84,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "luka-vuskovic",
@@ -60220,7 +61348,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "martin-erlic",
@@ -60263,7 +61392,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mario-pasalic",
@@ -60294,7 +61424,7 @@ window.DATA = {
         "2024 UEFA 유로파리그 우승(아탈란타)"
       ],
       "notableTransfer": "2020-21시즌 앞두고 아탈란타로 완전 이적",
-      "ovr": 78,
+      "ovr": 80,
       "scout": {
         "skill": 78,
         "value": 74,
@@ -60308,7 +61438,8 @@ window.DATA = {
         "테크닉": 79,
         "피지컬": 76,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "nikola-vlasic",
@@ -60338,7 +61469,7 @@ window.DATA = {
         "2018 FIFA 월드컵 준우승"
       ],
       "notableTransfer": "웨스트햄·CSKA 모스크바를 거쳐 토리노에서 핵심 공격형 미드필더로 활약",
-      "ovr": 75,
+      "ovr": 78,
       "scout": {
         "skill": 75,
         "value": 75,
@@ -60352,7 +61483,8 @@ window.DATA = {
         "테크닉": 84,
         "피지컬": 66,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "petar-sucic",
@@ -60379,7 +61511,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 6월 디나모 자그레브에서 인터 밀란으로 약 1400만 유로에 이적",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 70,
@@ -60393,7 +61525,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "ante-budimir",
@@ -60420,7 +61553,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "오사수나 구단 역대 최다 외국인 득점자(60골 이상) — 2025-26 라리가 17골로 득점 3위",
-      "ovr": 73,
+      "ovr": 75,
       "scout": {
         "skill": 73,
         "value": 65,
@@ -60434,7 +61567,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 82,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "igor-matanovic",
@@ -60461,7 +61595,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 7월 아인트라흐트 프랑크푸르트에서 프라이부르크로 약 800만 유로에 이적",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -60475,7 +61609,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "benjamin-asare",
@@ -60505,7 +61640,7 @@ window.DATA = {
         "가나 프리미어리그 이달의 골키퍼"
       ],
       "notableTransfer": "2024년 7월 하츠 오브 오크 합류, 2027년까지 재계약",
-      "ovr": 58,
+      "ovr": 60,
       "scout": {
         "skill": 58,
         "value": 52,
@@ -60519,7 +61654,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 55,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "joseph-anang",
@@ -60546,7 +61682,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "잉글랜드 U-20 출신, 가나 대표팀 전향(2025년 11월 일본전 데뷔)",
-      "ovr": 48,
+      "ovr": 50,
       "scout": {
         "skill": 48,
         "value": 48,
@@ -60560,7 +61696,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 45,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 48
     },
     {
       "id": "abdul-rahman-baba",
@@ -60589,7 +61726,7 @@ window.DATA = {
         "그리스 슈퍼리그 우승(PAOK)"
       ],
       "notableTransfer": "2023년 7월 첼시에서 PAOK로 이적",
-      "ovr": 70,
+      "ovr": 69,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -60603,7 +61740,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 64,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "gideon-mensah",
@@ -60644,7 +61782,8 @@ window.DATA = {
         "테크닉": 59,
         "피지컬": 83,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "marvin-senaya",
@@ -60685,7 +61824,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 75,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jerome-opoku",
@@ -60726,7 +61866,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "jonas-adjetey",
@@ -60767,7 +61908,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "kojo-peprah-oppong",
@@ -60808,7 +61950,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "derrick-luckassen",
@@ -60849,7 +61992,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "elisha-owusu",
@@ -60876,7 +62020,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "프랑스 태생 가나 미드필더, 오세르의 중원 핵심",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 67,
@@ -60890,7 +62034,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "kwasi-sibo",
@@ -60917,7 +62062,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레알 오비에도 소속, 사우디 이적설 속 월드컵 합류",
-      "ovr": 60,
+      "ovr": 64,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -60931,7 +62076,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 65,
         "골결정력": 51
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "augustine-boakye",
@@ -60958,7 +62104,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 7월 볼프스베르거에서 생테티엔으로 이적(4년 계약)",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -60972,7 +62118,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "caleb-yirenkyi",
@@ -61002,7 +62149,7 @@ window.DATA = {
         "덴마크 슈퍼리가 시즌 베스트11"
       ],
       "notableTransfer": "노르셸란 올해의 선수, 덴마크 슈퍼리가 시즌 베스트11",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -61016,7 +62163,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "christopher-bonsu-baah",
@@ -61043,7 +62191,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 7월 헹크에서 알 카디시아로 이적(4년 계약)",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -61057,7 +62205,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "brandon-thomas-asante",
@@ -61084,7 +62233,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "코번트리 시티 소속, 승격 시즌 13골 4도움 후 월드컵 명단 입성",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -61098,7 +62247,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "prince-kwabena-adu",
@@ -61125,7 +62275,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 8월 빅토리아 플젠과 3년 계약, 월드컵 데뷔 예정",
-      "ovr": 54,
+      "ovr": 58,
       "scout": {
         "skill": 54,
         "value": 57,
@@ -61139,7 +62289,8 @@ window.DATA = {
         "테크닉": 50,
         "피지컬": 58,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "c-sar-samudio",
@@ -61164,7 +62315,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "온두라스 CD 마라톤에서 활약하며 대표팀 백업 GK로 합류",
-      "ovr": 52,
+      "ovr": 54,
       "scout": {
         "skill": 52,
         "value": 49,
@@ -61178,7 +62329,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 49,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "fidel-escobar",
@@ -61204,7 +62356,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2018 러시아 월드컵 전 경기 출전 경험, 2023년 코스타리카 사프리사 합류",
-      "ovr": 70,
+      "ovr": 67,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -61218,7 +62370,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 77,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "eric-davis",
@@ -61258,7 +62411,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "roderick-miller",
@@ -61298,7 +62452,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "andr-s-andrade",
@@ -61338,7 +62493,8 @@ window.DATA = {
         "테크닉": 55,
         "피지컬": 79,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "jiovany-ramos",
@@ -61377,7 +62533,8 @@ window.DATA = {
         "테크닉": 45,
         "피지컬": 69,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "jorge-guti-rrez",
@@ -61402,7 +62559,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "베네수엘라 데포르티보 라 과이라에서 활약하는 풀백",
-      "ovr": 50,
+      "ovr": 51,
       "scout": {
         "skill": 50,
         "value": 50,
@@ -61416,7 +62573,8 @@ window.DATA = {
         "테크닉": 41,
         "피지컬": 65,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "edgardo-fari-a",
@@ -61456,7 +62614,8 @@ window.DATA = {
         "테크닉": 44,
         "피지컬": 68,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 53
     },
     {
       "id": "yoel-b-rcenas",
@@ -61482,7 +62641,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "스페인 레알 오비에도 거쳐 멕시코 마사틀란에서 활약",
-      "ovr": 67,
+      "ovr": 71,
       "scout": {
         "skill": 67,
         "value": 64,
@@ -61496,7 +62655,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 67
     },
     {
       "id": "jos-luis-puma-rodr-guez",
@@ -61522,7 +62682,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "헨트 유스 출신, 멕시코 후아레스에서 활약하는 좌측 윙어",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -61536,7 +62696,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 74,
         "골결정력": 60
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "alberto-quintero",
@@ -61562,7 +62723,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "페루 우니베르시타리오 등 거쳐 자국 플라사 아마도르 복귀",
-      "ovr": 56,
+      "ovr": 60,
       "scout": {
         "skill": 56,
         "value": 50,
@@ -61576,7 +62737,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 61,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "tom-s-rodr-guez",
@@ -61602,7 +62764,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알리안사 FC 출신, 코스타리카 사프리사로 임대 이적해 클라우수라 5골",
-      "ovr": 57,
+      "ovr": 62,
       "scout": {
         "skill": 57,
         "value": 57,
@@ -61616,7 +62778,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 61,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 57
     },
     {
       "id": "guillermo-martinez",
@@ -61643,7 +62806,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "베라크루스·티후아나 등을 거쳐 푸마스 UNAM에 정착, 리가 MX 득점 상위권 활약으로 첫 대표팀 정착",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 59,
@@ -61657,7 +62820,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "olwethu-makhanya",
@@ -61686,7 +62850,7 @@ window.DATA = {
         "MLS 서포터스 실드 우승 (2025, 필라델피아 유니언)"
       ],
       "notableTransfer": "2023년 7월 스텔렌보스 FC에서 필라델피아 유니언으로 이적 (구단 최초 U22 이니셔티브 영입)",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -61700,7 +62864,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "thabang-matuludi",
@@ -61727,7 +62892,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "ABC 모체페 리그 더 돌핀스에서 폴로콰네 시티로 입단, 이후 줄곧 폴로콰네 시티 소속 (오를란도 파이리츠 등 이적설)",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -61741,7 +62906,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 57,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "lee-gi-hyuk",
@@ -61768,7 +62934,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "성균관대 출신으로 2022년 강원 FC 입단, 꾸준한 K리그 활약으로 2026 월드컵 깜짝 발탁",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -61782,7 +62948,8 @@ window.DATA = {
         "테크닉": 63,
         "피지컬": 69,
         "골결정력": 41
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "cho-wi-je",
@@ -61809,7 +62976,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "부산 아이파크에서 성장 후 전북 현대로 이적, 조유민 부상 낙마로 6월 1일 대체 발탁되며 생애 첫 월드컵 승선",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -61823,7 +62990,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "jens-castrop",
@@ -61850,7 +63018,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "1.FC 뇌른베르크에서 2025년 보루시아 묀헨글라트바흐로 이적, 한국 어머니를 둔 독일 태생으로 한국 대표 선택 후 첫 월드컵 발탁",
-      "ovr": 71,
+      "ovr": 75,
       "scout": {
         "skill": 71,
         "value": 75,
@@ -61864,7 +63032,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 72,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "kim-jin-gyu",
@@ -61891,7 +63060,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "일본 J리그 사간 도스 등을 거쳐 전북 현대로 복귀, 안정적 활약으로 대표팀 중원 자원으로 정착",
-      "ovr": 66,
+      "ovr": 69,
       "scout": {
         "skill": 66,
         "value": 66,
@@ -61905,7 +63074,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 77,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "jacob-shaffelburg",
@@ -61936,7 +63106,7 @@ window.DATA = {
         "2023 골드컵 준우승 (캐나다)"
       ],
       "notableTransfer": "2025년 12월 내슈빌 SC에서 LAFC로 이적(GAM 100만 달러 트레이드). 토론토 FC 홈그로운 출신.",
-      "ovr": 64,
+      "ovr": 67,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -61950,7 +63120,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 57,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "mladen-jurkas",
@@ -61979,7 +63150,7 @@ window.DATA = {
         "보스니아 프리미어리그 우승 (보라츠 바냐루카)"
       ],
       "notableTransfer": "보라츠 바냐루카 유스 출신, 1군 정착",
-      "ovr": 42,
+      "ovr": 44,
       "scout": {
         "skill": 42,
         "value": 44,
@@ -61993,7 +63164,8 @@ window.DATA = {
         "테크닉": 41,
         "피지컬": 39,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 42
     },
     {
       "id": "ermin-mahmic",
@@ -62020,7 +63192,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "SV 라프니츠 → 슬로반 리베레츠 (2025)",
-      "ovr": 50,
+      "ovr": 53,
       "scout": {
         "skill": 50,
         "value": 53,
@@ -62034,7 +63206,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 43,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 50
     },
     {
       "id": "ayoub-al-oui",
@@ -62064,7 +63237,7 @@ window.DATA = {
         "AFC 아시안컵 2023 우승 멤버 후보군"
       ],
       "notableTransfer": "알가라파 유스 출신, 1군 승격",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -62078,7 +63251,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 60,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "al-hashmi-al-hussain",
@@ -62105,7 +63279,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알아라비 → 칼라오라B/알코르콘B(스페인) 임대 후 복귀",
-      "ovr": 56,
+      "ovr": 61,
       "scout": {
         "skill": 56,
         "value": 59,
@@ -62119,7 +63293,8 @@ window.DATA = {
         "테크닉": 47,
         "피지컬": 71,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 56
     },
     {
       "id": "leo-pereira",
@@ -62150,7 +63325,7 @@ window.DATA = {
         "캄페오나투 카리오카 다수"
       ],
       "notableTransfer": "2020년 아틀레치쿠 파라나엔시에서 플라멩구로 이적해 주전 센터백으로 자리매김",
-      "ovr": 70,
+      "ovr": 72,
       "scout": {
         "skill": 70,
         "value": 67,
@@ -62164,7 +63339,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 78,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "rayan",
@@ -62191,7 +63367,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 초 바스쿠 다 가마에서 본머스로 거액 이적해 유럽 무대 진출",
-      "ovr": 73,
+      "ovr": 76,
       "scout": {
         "skill": 73,
         "value": 77,
@@ -62205,7 +63381,8 @@ window.DATA = {
         "테크닉": 75,
         "피지컬": 58,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "luiz-henrique",
@@ -62236,7 +63413,7 @@ window.DATA = {
         "코파 아메리카 (2024) 멤버"
       ],
       "notableTransfer": "2024년 보타포구에서 제니트로 약 3천만 유로에 이적, 보타포구 리베르타도레스 우승 당시 남미 올해의 선수",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -62250,7 +63427,8 @@ window.DATA = {
         "테크닉": 83,
         "피지컬": 66,
         "골결정력": 74
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "youssef-belammari",
@@ -62282,7 +63460,7 @@ window.DATA = {
         "모로코 왕좌컵 2022-23"
       ],
       "notableTransfer": "2026년 1월 라자 카사블랑카 → 알 아흘리 이적",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -62296,7 +63474,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "redouane-halhal",
@@ -62323,7 +63502,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 8월 메헬렌 합류(2024-25 헬몬트 스포르트 임대 후 복귀)",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -62337,7 +63516,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "samir-el-mourabet",
@@ -62364,7 +63544,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2024년 5월 스트라스부르 첫 프로 계약(2027년까지)",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 67,
@@ -62378,7 +63558,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "ayoube-amaimouni",
@@ -62405,7 +63586,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 1월 프랑크푸르트와 5년 반 장기계약 체결",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 63,
@@ -62419,7 +63600,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 53,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "yassine-gessime",
@@ -62448,7 +63630,7 @@ window.DATA = {
         "FIFA U-20 월드컵 우승(모로코 U20)"
       ],
       "notableTransfer": "2026년 1월 스트라스부르와 4년 반 계약",
-      "ovr": 61,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 64,
@@ -62462,7 +63644,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 54,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 61
     },
     {
       "id": "yassin-fortune",
@@ -62489,7 +63672,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 비젤라(포르투갈 2부)로 이적, FC 시옹에서 6시즌(2018-2024) 주전 경험",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -62503,7 +63686,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 51,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "josue-casimir",
@@ -62530,7 +63714,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 6월 르아브르에서 옥세르(리그 1)로 3년 계약 이적",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -62544,7 +63728,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 64,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "braian-ojeda",
@@ -62574,7 +63759,7 @@ window.DATA = {
         "파라과이 프리메라 디비시온 2018 클라우수라 (올림피아)"
       ],
       "notableTransfer": "2021년 올림피아→노팅엄 포레스트 이적 후 리얼 솔트레이크 임대·완전이적, 2026년 1월 올랜도 시티로 약 130만 달러(GAM)에 이적",
-      "ovr": 64,
+      "ovr": 67,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -62588,7 +63773,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 75,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "gustavo-caballero",
@@ -62618,7 +63804,7 @@ window.DATA = {
         "2025 아페르투라(파라과이) 득점왕 공동 수상"
       ],
       "notableTransfer": "2025년 7월 나시오날 아순시온→산투스(약 160만 달러), 2026년 2월 포츠머스 임대",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -62632,7 +63818,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 55,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "leon-goretzka",
@@ -62664,7 +63851,7 @@ window.DATA = {
         "2017 컨페더레이션스컵"
       ],
       "notableTransfer": "2018년 샬케 04에서 자유계약으로 바이에른 뮌헨 이적",
-      "ovr": 78,
+      "ovr": 81,
       "scout": {
         "skill": 78,
         "value": 74,
@@ -62678,7 +63865,8 @@ window.DATA = {
         "테크닉": 78,
         "피지컬": 85,
         "골결정력": 68
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "felix-nmecha",
@@ -62707,7 +63895,7 @@ window.DATA = {
         "맨체스터 시티 유스 육성"
       ],
       "notableTransfer": "2023년 맨체스터 시티 유스 출신, 볼프스부르크 거쳐 도르트문트 이적",
-      "ovr": 70,
+      "ovr": 71,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -62721,7 +63909,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 74,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "pascal-gro",
@@ -62750,7 +63939,7 @@ window.DATA = {
         "브라이턴 EPL 안착 핵심"
       ],
       "notableTransfer": "2026년 1월 도르트문트에서 친정팀 브라이턴으로 복귀",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 72,
         "value": 64,
@@ -62764,7 +63953,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "nadiem-amiri",
@@ -62793,7 +63983,7 @@ window.DATA = {
         "2025/26 마인츠 핵심 미드필더 활약"
       ],
       "notableTransfer": "레버쿠젠 거쳐 마인츠 05에 정착, 25/26 시즌 미드필더로 다수 득점",
-      "ovr": 71,
+      "ovr": 74,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -62807,7 +63997,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 64,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "angelo-stiller",
@@ -62836,7 +64027,7 @@ window.DATA = {
         "슈투트가르트 중원 핵심"
       ],
       "notableTransfer": "2023년 바이에른 뮌헨 유스/호펜하임 거쳐 슈투트가르트 이적",
-      "ovr": 73,
+      "ovr": 74,
       "scout": {
         "skill": 73,
         "value": 73,
@@ -62850,7 +64041,8 @@ window.DATA = {
         "테크닉": 82,
         "피지컬": 66,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 73
     },
     {
       "id": "assan-ouedraogo",
@@ -62879,7 +64071,7 @@ window.DATA = {
         "U17 월드컵 우승 (독일)"
       ],
       "notableTransfer": "2024년 샬케 04에서 RB 라이프치히로 이적",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -62893,7 +64085,8 @@ window.DATA = {
         "테크닉": 77,
         "피지컬": 73,
         "골결정력": 59
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "jamie-leweling",
@@ -62922,7 +64115,7 @@ window.DATA = {
         "2025/26 슈투트가르트 공격 핵심"
       ],
       "notableTransfer": "우니온 베를린 거쳐 슈투트가르트 정착, 25/26 시즌 7골 9도움",
-      "ovr": 69,
+      "ovr": 73,
       "scout": {
         "skill": 69,
         "value": 69,
@@ -62936,7 +64129,8 @@ window.DATA = {
         "테크닉": 80,
         "피지컬": 62,
         "골결정력": 72
-      }
+      },
+      "ovrBase": 69
     },
     {
       "id": "brandley-kuwas",
@@ -62969,7 +64163,7 @@ window.DATA = {
         "UAE 리그컵 우승 2019-20 (알나스르)"
       ],
       "notableTransfer": "헤라클레스 알멜로(2016-19, 96경기 21골) → 알나스르(UAE) → 마카비 텔아비브(이스라엘) → 기레순스포르(튀르키예) → 2024년 페예노르트 시절 친정 폴렌담 복귀",
-      "ovr": 54,
+      "ovr": 59,
       "scout": {
         "skill": 54,
         "value": 48,
@@ -62983,7 +64177,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 47,
         "골결정력": 56
-      }
+      },
+      "ovrBase": 54
     },
     {
       "id": "parfait-guiagon",
@@ -63014,7 +64209,7 @@ window.DATA = {
         "없음 (시니어 무관)"
       ],
       "notableTransfer": "마카비 텔아비브 → 샤를루아 (2023년 이적, 2028년까지 계약 연장)",
-      "ovr": 62,
+      "ovr": 65,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -63028,7 +64223,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 55,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "junnosuke-suzuki",
@@ -63057,7 +64253,7 @@ window.DATA = {
         "덴마크 수페르리가 (코펜하겐, 2025-26)"
       ],
       "notableTransfer": "2025년 7월 쇼난 벨마레 → FC 코펜하겐 (5년 계약)",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -63071,7 +64267,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 77,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "keisuke-goto",
@@ -63098,7 +64295,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 안데를레흐트 → 신트트라위던 임대",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 71,
@@ -63112,7 +64309,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 72,
         "골결정력": 77
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "kento-shiogai",
@@ -63139,7 +64337,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2026년 1월 NEC 네이메헌 → 볼프스부르크 (4년 반 계약)",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -63153,7 +64351,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 62,
         "골결정력": 67
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "elliot-stroud",
@@ -63182,7 +64381,7 @@ window.DATA = {
         "알스벤스칸 우승 (2025, 멜뷔 AIF)"
       ],
       "notableTransfer": "멜뷔 AIF 유스 출신, 2025 알스벤스칸 우승 주역으로 깜짝 발탁",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 61,
@@ -63196,7 +64395,8 @@ window.DATA = {
         "테크닉": 49,
         "피지컬": 73,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "herman-johansson",
@@ -63225,7 +64425,7 @@ window.DATA = {
         "알스벤스칸 우승 (2025, 멜뷔 AIF)"
       ],
       "notableTransfer": "2025년 12월 멜뷔 AIF에서 FC 댈러스로 이적 (2028-29까지 계약), 에밀 홀름 부상 대체로 월드컵 합류",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -63239,7 +64439,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "mortadha-ben-ouanes",
@@ -63269,7 +64470,7 @@ window.DATA = {
         "튀니지 컵 (에투알 뒤 사헬)"
       ],
       "notableTransfer": "에투알 뒤 사헬 → 카슴파샤 (2021)",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 59,
@@ -63283,7 +64484,8 @@ window.DATA = {
         "테크닉": 64,
         "피지컬": 64,
         "골결정력": 40
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "mohamed-hadj-mahmoud",
@@ -63310,7 +64512,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "에투알 뒤 사헬 → FC 루가노 (2021, 4년 계약)",
-      "ovr": 55,
+      "ovr": 58,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -63324,7 +64526,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 66,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "mostafa-abdel-raouf-ziko",
@@ -63354,7 +64557,7 @@ window.DATA = {
         "이집트컵 2025-26 (피라미즈)"
       ],
       "notableTransfer": "2025년 8월 ZED FC에서 피라미즈 FC로 이적 (2029년까지 계약)",
-      "ovr": 62,
+      "ovr": 64,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -63368,7 +64571,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 55,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "aria-yousefi",
@@ -63395,7 +64599,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "나프트 아흐바즈 유스 출신, 2021년 세파한에서 페르시안 걸프 프로리그 데뷔 후 줄곧 세파한 소속",
-      "ovr": 58,
+      "ovr": 63,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -63409,7 +64613,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 60,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "bamba-dieng",
@@ -63438,7 +64643,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "마르세유(OM) 유스 출신 → 로리앙 임대 후 완전 이적, 2025/26 시즌 종료 후 자유계약 신분으로 팀 이탈 예정",
-      "ovr": 62,
+      "ovr": 67,
       "scout": {
         "skill": 62,
         "value": 62,
@@ -63452,7 +64657,8 @@ window.DATA = {
         "테크닉": 58,
         "피지컬": 66,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "cherif-ndiaye",
@@ -63485,7 +64691,7 @@ window.DATA = {
         "아레나컵 우승 (2020, HNK 고리차)"
       ],
       "notableTransfer": "즈베즈다(츠르베나 즈베즈다)에서 세르비아 리그 2연패 후 아다나 데미르스포르·삼순스포르로 이적하며 쉬페르리그 정착",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -63499,7 +64705,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "akam-hashim",
@@ -63526,7 +64733,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "2025년 8월 알자우라(Al-Zawraa) 입단",
-      "ovr": 48,
+      "ovr": 53,
       "scout": {
         "skill": 48,
         "value": 48,
@@ -63540,7 +64747,8 @@ window.DATA = {
         "테크닉": 53,
         "피지컬": 59,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 48
     },
     {
       "id": "zaid-ismail",
@@ -63567,7 +64775,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "알탈라바(Al-Talaba) 소속",
-      "ovr": 42,
+      "ovr": 47,
       "scout": {
         "skill": 42,
         "value": 42,
@@ -63581,7 +64789,8 @@ window.DATA = {
         "테크닉": 44,
         "피지컬": 44,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 42
     },
     {
       "id": "alessandro-schopf",
@@ -63612,7 +64821,7 @@ window.DATA = {
         "레기오날리가 바이에른 우승(2013-14, 바이에른 뮌헨 II)"
       ],
       "notableTransfer": "샬케 04 → 아르미니아 빌레펠트 → 밴쿠버 화이트캡스(MLS) → 볼프스베르거 AC(2025) 복귀",
-      "ovr": 55,
+      "ovr": 58,
       "scout": {
         "skill": 55,
         "value": 52,
@@ -63626,7 +64835,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 48,
         "골결정력": 58
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "goncalo-guedes",
@@ -63660,7 +64870,7 @@ window.DATA = {
         "프리메이라리가 다수 (벤피카)"
       ],
       "notableTransfer": "벤피카 → PSG(€30m, 2017) → 발렌시아(€40m, 2018) → 울버햄튼(£27.5m, 2022) → 레알 소시에다드(2025)",
-      "ovr": 68,
+      "ovr": 73,
       "scout": {
         "skill": 68,
         "value": 68,
@@ -63674,7 +64884,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 61,
         "골결정력": 70
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "meschak-elia",
@@ -63705,7 +64916,7 @@ window.DATA = {
         "2016 CHAN 우승 및 대회 MVP"
       ],
       "notableTransfer": "TP 마젬베 → 영 보이즈(2020, 약 100만유로) → 알라냐스포르(2025)",
-      "ovr": 70,
+      "ovr": 74,
       "scout": {
         "skill": 70,
         "value": 70,
@@ -63719,7 +64930,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 60,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "charles-pickel",
@@ -63748,7 +64960,7 @@ window.DATA = {
         "세리에B 승격 (크레모네세)"
       ],
       "notableTransfer": "크레모네세(세리에A, 2022) → 에스파뇰(2025)",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 71,
@@ -63762,7 +64974,8 @@ window.DATA = {
         "테크닉": 74,
         "피지컬": 76,
         "골결정력": 46
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "nathanael-mbuku",
@@ -63791,7 +65004,7 @@ window.DATA = {
         "2019 U-17 월드컵 실버부트(6경기 5골)"
       ],
       "notableTransfer": "스타드 랭스 → 아우크스부르크(분데스리가) → 몽펠리에 임대(2025)",
-      "ovr": 64,
+      "ovr": 69,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -63805,7 +65018,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 57,
         "골결정력": 66
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "aaron-tshibola",
@@ -63832,7 +65046,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "레딩 → 애스턴 빌라(2016) → 여러 임대 후 킬마녹",
-      "ovr": 55,
+      "ovr": 58,
       "scout": {
         "skill": 55,
         "value": 52,
@@ -63846,7 +65060,8 @@ window.DATA = {
         "테크닉": 60,
         "피지컬": 66,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "brian-cipenga",
@@ -63873,7 +65088,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "파수스 드 페헤이라(포르투갈) → 카스테욘(2024)",
-      "ovr": 58,
+      "ovr": 62,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -63887,7 +65102,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 63,
         "골결정력": 49
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "bekhruz-karimov",
@@ -63914,7 +65130,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Olympic Tashkent → Surkhon Termez (2025)",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 58,
@@ -63928,7 +65144,8 @@ window.DATA = {
         "테크닉": 46,
         "피지컬": 70,
         "골결정력": 32
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "odiljon-hamrobekov",
@@ -63960,7 +65177,7 @@ window.DATA = {
         "CAFA 네이션스컵 (2025)"
       ],
       "notableTransfer": "Pakhtakor → Tractor SC (이란, 이란 슈퍼컵 2025 우승)",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 67,
@@ -63974,7 +65191,8 @@ window.DATA = {
         "테크닉": 76,
         "피지컬": 72,
         "골결정력": 50
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "azizjon-ganiev",
@@ -64006,7 +65224,7 @@ window.DATA = {
         "CAFA 네이션스컵 (2025)"
       ],
       "notableTransfer": "Nasaf → Shabab Al-Ahli (UAE, 2020) → Al Bataeh",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -64020,7 +65238,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "sherzod-esanov",
@@ -64047,7 +65266,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "Akron Tolyatti (러시아 프리미어리그) → FC Bukhara (2026.1)",
-      "ovr": 52,
+      "ovr": 56,
       "scout": {
         "skill": 52,
         "value": 55,
@@ -64061,7 +65280,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 57,
         "골결정력": 43
-      }
+      },
+      "ovrBase": 52
     },
     {
       "id": "gustavo-puerta",
@@ -64093,7 +65313,7 @@ window.DATA = {
         "남미 U-20 챔피언십 3위 및 주장 (2023)"
       ],
       "notableTransfer": "2023년 보타포고 출신으로 바이엘 레버쿠젠 이적(2023-24 분데스리가 우승 멤버), 2025년 9월 라싱 산탄데르로 완전 이적",
-      "ovr": 62,
+      "ovr": 65,
       "scout": {
         "skill": 62,
         "value": 65,
@@ -64107,7 +65327,8 @@ window.DATA = {
         "테크닉": 67,
         "피지컬": 73,
         "골결정력": 45
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "juan-camilo-portilla",
@@ -64136,7 +65357,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "아르헨티나 탈레레스에서 활약 후 2026년 1월 아틀레치쿠 파라나엔시로 완전 이적(2028년까지 계약)",
-      "ovr": 60,
+      "ovr": 63,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -64150,7 +65371,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 71,
         "골결정력": 43
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "jaminton-campaz",
@@ -64179,7 +65401,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "데포르티보 칼리·톨리마 등 콜롬비아 무대를 거쳐 2024년 1월 아르헨티나 로사리오 센트랄로 이적",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -64193,7 +65415,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 51,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "nico-o-reilly",
@@ -64225,7 +65448,7 @@ window.DATA = {
         "FA 커뮤니티 실드 (2024)"
       ],
       "notableTransfer": "맨시티 아카데미 순혈(2013년 8세 입단), 2024년 1군 데뷔 후 2025년 9월 2030년까지 재계약",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 75,
@@ -64239,7 +65462,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 52
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "noni-madueke",
@@ -64271,7 +65495,7 @@ window.DATA = {
         "에레디비시 우승 (PSV)"
       ],
       "notableTransfer": "2025년 7월 첼시에서 아스널로 초기 이적료 약 4,850만 파운드에 이적, 이적 첫 시즌 PL 우승",
-      "ovr": 78,
+      "ovr": 82,
       "scout": {
         "skill": 78,
         "value": 78,
@@ -64285,7 +65509,8 @@ window.DATA = {
         "테크닉": 81,
         "피지컬": 66,
         "골결정력": 75
-      }
+      },
+      "ovrBase": 78
     },
     {
       "id": "kristijan-jakic",
@@ -64316,7 +65541,7 @@ window.DATA = {
         "크로아티아컵 우승 2020-21"
       ],
       "notableTransfer": "2024년 아인트라흐트 프랑크푸르트 임대 후 아우크스부르크 완전 이적 (4년 계약)",
-      "ovr": 64,
+      "ovr": 67,
       "scout": {
         "skill": 64,
         "value": 64,
@@ -64330,7 +65555,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 75,
         "골결정력": 47
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "nikola-moro",
@@ -64360,7 +65586,7 @@ window.DATA = {
         "코파 이탈리아 우승 2024-25 (볼로냐)"
       ],
       "notableTransfer": "2022년 디나모 모스크바에서 볼로냐 임대 후 2023년 완전 이적",
-      "ovr": 65,
+      "ovr": 68,
       "scout": {
         "skill": 65,
         "value": 65,
@@ -64374,7 +65600,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 76,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 65
     },
     {
       "id": "toni-fruk",
@@ -64404,7 +65631,7 @@ window.DATA = {
         "크로아티아컵 우승 2024-25"
       ],
       "notableTransfer": "2023년 피오렌티나 유스 거쳐 리예카로 이적 (2027년까지 계약)",
-      "ovr": 60,
+      "ovr": 63,
       "scout": {
         "skill": 60,
         "value": 60,
@@ -64418,7 +65645,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 53,
         "골결정력": 63
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "marco-pasalic",
@@ -64448,7 +65676,7 @@ window.DATA = {
         "크로아티아컵 우승 2024-25"
       ],
       "notableTransfer": "2025년 2월 리예카에서 올랜도 시티로 지정선수(DP) 이적 (3년 계약)",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 63,
@@ -64462,7 +65690,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 56,
         "골결정력": 65
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "cristian-martinez",
@@ -64491,7 +65720,7 @@ window.DATA = {
         "2023 CONCACAF 네이션스리그 준우승"
       ],
       "notableTransfer": "2024년 7월 이스라엘 이로니 키르야트 시모나 이적",
-      "ovr": 58,
+      "ovr": 61,
       "scout": {
         "skill": 58,
         "value": 58,
@@ -64505,7 +65734,8 @@ window.DATA = {
         "테크닉": 69,
         "피지컬": 51,
         "골결정력": 61
-      }
+      },
+      "ovrBase": 58
     },
     {
       "id": "cesar-yanis",
@@ -64534,7 +65764,7 @@ window.DATA = {
         "2023 CONCACAF 골드컵 준우승"
       ],
       "notableTransfer": "칠레 코브레살에서 측면 공격수로 활약",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 57,
@@ -64548,7 +65778,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 53,
         "골결정력": 62
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "azarias-londono",
@@ -64579,7 +65810,7 @@ window.DATA = {
         "2025 코파 에콰도르 우승(우니베르시닷 카톨리카)"
       ],
       "notableTransfer": "2025년 1월 알리안사(파나마)서 에콰도르 우니베르시닷 카톨리카로 임대",
-      "ovr": 55,
+      "ovr": 60,
       "scout": {
         "skill": 55,
         "value": 55,
@@ -64593,7 +65824,8 @@ window.DATA = {
         "테크닉": 51,
         "피지컬": 59,
         "골결정력": 64
-      }
+      },
+      "ovrBase": 55
     },
     {
       "id": "danilo-br",
@@ -64637,7 +65869,8 @@ window.DATA = {
         "테크닉": 70,
         "피지컬": 80,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "ahmed-fatouh",
@@ -64661,7 +65894,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 66,
+      "ovr": 72,
       "scout": {
         "skill": 65,
         "value": 58,
@@ -64675,7 +65908,8 @@ window.DATA = {
         "테크닉": 68,
         "피지컬": 68,
         "골결정력": 44
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "hamdy-fathy",
@@ -64713,7 +65947,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 74,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 70
     },
     {
       "id": "nabil-donga",
@@ -64737,7 +65972,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 62,
+      "ovr": 66,
       "scout": {
         "skill": 61,
         "value": 55,
@@ -64751,7 +65986,8 @@ window.DATA = {
         "테크닉": 71,
         "피지컬": 67,
         "골결정력": 53
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "munaf-younus",
@@ -64775,7 +66011,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 63,
+      "ovr": 68,
       "scout": {
         "skill": 62,
         "value": 56,
@@ -64789,7 +66025,8 @@ window.DATA = {
         "테크닉": 54,
         "피지컬": 78,
         "골결정력": 33
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "ahmed-maknazi",
@@ -64813,7 +66050,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 59,
         "value": 54,
@@ -64827,7 +66064,8 @@ window.DATA = {
         "테크닉": 62,
         "피지컬": 62,
         "골결정력": 38
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "nour-baniateyah",
@@ -64851,7 +66089,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 62,
+      "ovr": 63,
       "scout": {
         "skill": 61,
         "value": 55,
@@ -64865,7 +66103,8 @@ window.DATA = {
         "테크닉": 61,
         "피지컬": 59,
         "골결정력": 30
-      }
+      },
+      "ovrBase": 62
     },
     {
       "id": "mohammad-abughoush",
@@ -64889,7 +66128,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 64,
+      "ovr": 68,
       "scout": {
         "skill": 63,
         "value": 58,
@@ -64903,7 +66142,8 @@ window.DATA = {
         "테크닉": 73,
         "피지컬": 69,
         "골결정력": 55
-      }
+      },
+      "ovrBase": 64
     },
     {
       "id": "munir-el-kajoui",
@@ -64928,7 +66168,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 71,
+      "ovr": 73,
       "scout": {
         "skill": 70,
         "value": 58,
@@ -64942,7 +66182,8 @@ window.DATA = {
         "테크닉": 66,
         "피지컬": 74,
         "골결정력": 34
-      }
+      },
+      "ovrBase": 71
     },
     {
       "id": "anass-salah-eddine",
@@ -64967,7 +66208,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 72,
+      "ovr": 73,
       "scout": {
         "skill": 71,
         "value": 70,
@@ -64981,7 +66222,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 64,
         "골결정력": 42
-      }
+      },
+      "ovrBase": 72
     },
     {
       "id": "ahmed-alganehi",
@@ -65005,7 +66247,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 63,
+      "ovr": 67,
       "scout": {
         "skill": 63,
         "value": 58,
@@ -65019,7 +66261,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 68,
         "골결정력": 54
-      }
+      },
+      "ovrBase": 63
     },
     {
       "id": "mohamed-manai",
@@ -65043,7 +66286,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 60,
+      "ovr": 65,
       "scout": {
         "skill": 60,
         "value": 58,
@@ -65057,7 +66300,8 @@ window.DATA = {
         "테크닉": 56,
         "피지컬": 64,
         "골결정력": 69
-      }
+      },
+      "ovrBase": 60
     },
     {
       "id": "diney-borges",
@@ -65081,7 +66325,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 66,
+      "ovr": 72,
       "scout": {
         "skill": 66,
         "value": 60,
@@ -65095,7 +66339,8 @@ window.DATA = {
         "테크닉": 57,
         "피지컬": 81,
         "골결정력": 36
-      }
+      },
+      "ovrBase": 66
     },
     {
       "id": "lutsharel-geertruida",
@@ -65119,7 +66364,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 75,
+      "ovr": 79,
       "scout": {
         "skill": 74,
         "value": 68,
@@ -65133,7 +66378,8 @@ window.DATA = {
         "테크닉": 72,
         "피지컬": 80,
         "골결정력": 48
-      }
+      },
+      "ovrBase": 75
     },
     {
       "id": "elijah-just",
@@ -65157,7 +66403,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "",
-      "ovr": 68,
+      "ovr": 72,
       "scout": {
         "skill": 66,
         "value": 58,
@@ -65171,7 +66417,8 @@ window.DATA = {
         "테크닉": 79,
         "피지컬": 61,
         "골결정력": 71
-      }
+      },
+      "ovrBase": 68
     },
     {
       "id": "kaku",
@@ -65198,7 +66445,7 @@ window.DATA = {
       ],
       "honours": [],
       "notableTransfer": "MLS(NY Red Bulls) 등을 거쳐 UAE Al Ain으로 이적",
-      "ovr": 69,
+      "ovr": 74,
       "scout": {
         "skill": 69,
         "value": 66,
@@ -65212,7 +66459,8 @@ window.DATA = {
         "테크닉": 65,
         "피지컬": 73,
         "골결정력": 78
-      }
+      },
+      "ovrBase": 69
     }
   ],
   "standings": {
