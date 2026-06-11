@@ -319,10 +319,19 @@
     var s = document.createElement("script"); s.async = true; s.src = "//t1.kakaocdn.net/kas/static/ba.min.js";
     el.appendChild(s);
   }
-  // PC 사이드 세로광고(160×600) — 넓은 화면에서만 1회 삽입(고정요소라 재렌더 영향 없음)
+  // 쿠팡 파트너스 iframe 배너(+ 대가성 문구)
+  function insertCoupang(el, w, h) {
+    if (!el) return;
+    el.innerHTML = '<div class="ad-label">광고</div>' +
+      '<iframe src="https://ads-partners.coupang.com/widgets.html?id=996159&template=carousel&trackingCode=AF6139723&subId=&width=' + w + '&height=' + h + '&tsource=" width="' + w + '" height="' + h + '" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>' +
+      '<div class="cpang-note">쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 받을 수 있습니다.</div>';
+  }
+  // PC 사이드 세로광고 — 넓은 화면에서만 1회 삽입(고정요소라 재렌더 영향 없음): 우=애드핏 160×600, 좌=쿠팡 90×728
   if (window.matchMedia && window.matchMedia("(min-width: 1100px)").matches && document.body) {
     var _sa = document.createElement("div"); _sa.id = "sideAd"; document.body.appendChild(_sa);
     insertAdFit(_sa, "DAN-d8Ks9EUQd2zgzDyG", "160", "600");
+    var _sl = document.createElement("div"); _sl.id = "sideAdL"; document.body.appendChild(_sl);
+    insertCoupang(_sl, 90, 728);
   }
   function renderSchedule() {
     var dates = fixtureDates();
