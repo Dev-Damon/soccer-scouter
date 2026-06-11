@@ -2335,7 +2335,7 @@ window.DATA = {
       "name": "멕시코",
       "nameEn": "Mexico",
       "flag": "🇲🇽",
-      "fifaRank": 15,
+      "fifaRank": 14,
       "group": "A",
       "tierSummary": "개최국 멕시코는 산티아고 히메네스와 라울 히메네스의 공격진, 노련한 유럽파 수비를 앞세워 조 1위와 16강 이상을 노리는 중상위권 전력이다.",
       "styleSummary": [
@@ -2591,7 +2591,7 @@ window.DATA = {
       "name": "남아프리카공화국",
       "nameEn": "South Africa",
       "flag": "🇿🇦",
-      "fifaRank": 61,
+      "fifaRank": 60,
       "group": "A",
       "tierSummary": "16년 만에 월드컵 본선에 돌아온 바파나 바파나는 AFCON 4강 신화를 쓴 후고 브로스 사단으로, 슈퍼스타는 없지만 조직력과 골키퍼 능력치가 돋보이는 다크호스 다크호스급 팀이다.",
       "styleSummary": [
@@ -2815,7 +2815,7 @@ window.DATA = {
       "name": "대한민국",
       "nameEn": "South Korea",
       "flag": "🇰🇷",
-      "fifaRank": 22,
+      "fifaRank": 25,
       "group": "A",
       "tierSummary": "손흥민과 김민재라는 월드클래스 듀오를 축으로, 유럽 빅리그에서 뛰는 핵심 선수들이 받쳐주는 아시아 강호로 본선 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
@@ -2993,7 +2993,7 @@ window.DATA = {
       "name": "체코",
       "nameEn": "Czech Republic",
       "flag": "🇨🇿",
-      "fifaRank": 44,
+      "fifaRank": 40,
       "group": "A",
       "tierSummary": "20년 만에 월드컵 본선에 돌아온 다크호스로, 슈크라는 확실한 해결사와 단단한 슬라비아 프라하 기반의 조직력으로 16강을 노리는 중상위권 팀입니다.",
       "styleSummary": [
@@ -3184,7 +3184,7 @@ window.DATA = {
       "name": "캐나다",
       "nameEn": "Canada",
       "flag": "🇨🇦",
-      "fifaRank": 27,
+      "fifaRank": 30,
       "group": "B",
       "tierSummary": "데이비스와 조나단 데이비드가 이끄는 '황금세대'가 자국 개최의 이점을 업고 16강 이상을 노리는, 유럽 빅리그 주전급이 뼈대를 이룬 다크호스다.",
       "styleSummary": [
@@ -3400,7 +3400,7 @@ window.DATA = {
       "name": "보스니아 헤르체고비나",
       "nameEn": "Bosnia and Herzegovina",
       "flag": "🇧🇦",
-      "fifaRank": 71,
+      "fifaRank": 64,
       "group": "B",
       "tierSummary": "2014년 이후 12년 만에 본선에 복귀한 다크호스로, 노장 제코를 구심점 삼아 유럽 각지에서 성장한 디아스포라 자원으로 무장한 중하위 시드 팀이다.",
       "styleSummary": [
@@ -3569,7 +3569,7 @@ window.DATA = {
       "name": "카타르",
       "nameEn": "Qatar",
       "flag": "🇶🇦",
-      "fifaRank": 51,
+      "fifaRank": 56,
       "group": "B",
       "tierSummary": "2회 연속 아시안컵 우승으로 아시아 정상에 오른 강팀이지만, 선수 대부분이 자국 리그 소속이라 유럽 강호들과 맞붙는 본선에서는 도전자에 가깝다.",
       "styleSummary": [
@@ -3787,7 +3787,7 @@ window.DATA = {
       "name": "스위스",
       "nameEn": "Switzerland",
       "flag": "🇨🇭",
-      "fifaRank": 17,
+      "fifaRank": 19,
       "group": "B",
       "tierSummary": "월드클래스 슈퍼스타는 없지만 빅리그 주전들로 빼곡한 탄탄한 조직력의 다크호스로, 토너먼트 16강 단골이지만 8강 벽을 넘는 게 숙제인 팀.",
       "styleSummary": [
@@ -4016,7 +4016,7 @@ window.DATA = {
       "name": "브라질",
       "nameEn": "Brazil",
       "flag": "🇧🇷",
-      "fifaRank": 5,
+      "fifaRank": 6,
       "group": "C",
       "tierSummary": "월드컵 최다 5회 우승의 영원한 우승 후보로, 안첼로티 체제 아래 비니시우스·하피냐가 이끄는 세계 최정상급 공격진을 보유한 우승권 강팀이다.",
       "styleSummary": [
@@ -4265,7 +4265,7 @@ window.DATA = {
       "name": "모로코",
       "nameEn": "Morocco",
       "flag": "🇲🇦",
-      "fifaRank": 11,
+      "fifaRank": 7,
       "group": "C",
       "tierSummary": "2022 월드컵 4강 신화의 뼈대에 AFCON 2025 우승과 브라힘 디아스·엘 칸누스 같은 신성을 더한, C조에서 브라질에 맞설 가장 강력한 다크호스다.",
       "styleSummary": [
@@ -4470,7 +4470,7 @@ window.DATA = {
       "name": "아이티",
       "nameEn": "Haiti",
       "flag": "🇭🇹",
-      "fifaRank": 84,
+      "fifaRank": 83,
       "group": "C",
       "tierSummary": "1974년 이후 52년 만에 본선에 복귀한 카리브의 다크호스로, 프랑스·벨기에·잉글랜드에서 성장한 디아스포라 선수들이 주축인 빠르고 거친 언더독 팀이다.",
       "styleSummary": [
@@ -4686,7 +4686,7 @@ window.DATA = {
       "name": "스코틀랜드",
       "nameEn": "Scotland",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "fifaRank": 36,
+      "fifaRank": 42,
       "group": "C",
       "tierSummary": "1998년 이후 28년 만의 월드컵 본선에 오른 스코틀랜드는 월드클래스 1명(맥토미니)과 풍부한 빅리그 베테랑들로 무장했지만, 브라질·모로코가 버틴 C조에서는 16강이 현실적 목표인 다크호스다.",
       "styleSummary": [
@@ -4914,7 +4914,7 @@ window.DATA = {
       "name": "미국",
       "nameEn": "United States",
       "flag": "🇺🇸",
-      "fifaRank": 14,
+      "fifaRank": 17,
       "group": "D",
       "tierSummary": "유럽 빅리그에서 뛰는 황금세대가 절정에 달한, 개최국 어드밴티지를 등에 업은 다크호스 8강 후보다.",
       "styleSummary": [
@@ -5124,7 +5124,7 @@ window.DATA = {
       "name": "파라과이",
       "nameEn": "Paraguay",
       "flag": "🇵🇾",
-      "fifaRank": 39,
+      "fifaRank": 41,
       "group": "D",
       "tierSummary": "16년 만에 본선에 복귀한 남미의 전통 강호로, 견고한 수비 조직과 노련한 베테랑을 앞세워 16강을 노리는 다크호스다.",
       "styleSummary": [
@@ -5345,7 +5345,7 @@ window.DATA = {
       "name": "오스트레일리아",
       "nameEn": "Australia",
       "flag": "🇦🇺",
-      "fifaRank": 26,
+      "fifaRank": 27,
       "group": "D",
       "tierSummary": "유럽 2부와 J리그·MLS·A리그에 흩어진 견실한 주전들과 소수의 유망주가 떠받치는, 조직력으로 버티는 6회 연속 본선 진출 중위권 팀.",
       "styleSummary": [
@@ -5547,7 +5547,7 @@ window.DATA = {
       "name": "튀르키예",
       "nameEn": "Turkey",
       "flag": "🇹🇷",
-      "fifaRank": 25,
+      "fifaRank": 22,
       "group": "D",
       "tierSummary": "24년 만에 월드컵 본선에 복귀한 다크호스로, 차분한 베테랑 사령탑 칼하노을루를 축으로 아르다 귈레르·케난 이을드즈 등 유럽 빅클럽의 젊은 재능들이 폭발력을 더한 '신구 조화형' 팀이다.",
       "styleSummary": [
@@ -5756,7 +5756,7 @@ window.DATA = {
       "name": "독일",
       "nameEn": "Germany",
       "flag": "🇩🇪",
-      "fifaRank": 9,
+      "fifaRank": 10,
       "group": "E",
       "tierSummary": "무지알라와 비르츠로 대표되는 세계 최고급 공격형 미드필더진에 키미히와 뤼디거의 경험이 더해진 우승 후보권 강팀이지만, 확실한 월드클래스 9번 스트라이커의 부재가 마지막 퍼즐이다.",
       "styleSummary": [
@@ -6188,7 +6188,7 @@ window.DATA = {
       "name": "코트디부아르",
       "nameEn": "Ivory Coast",
       "flag": "🇨🇮",
-      "fifaRank": 42,
+      "fifaRank": 33,
       "group": "E",
       "tierSummary": "12년 만에 본선에 복귀한 2023 아프리카 네이션스컵 챔피언으로, 유럽 빅리그 주전급 자원이 빼곡한 다크호스지만 독일이 버틴 E조에서 16강 경쟁이 만만치 않은 중상위권 전력이다.",
       "styleSummary": [
@@ -6593,7 +6593,7 @@ window.DATA = {
       "name": "네덜란드",
       "nameEn": "Netherlands",
       "flag": "🇳🇱",
-      "fifaRank": 7,
+      "fifaRank": 8,
       "group": "F",
       "tierSummary": "반 다이크와 프렝키 더용을 축으로 한 유럽 강호로, 우승 후보 한 단계 아래의 '강력한 다크호스' 티어다.",
       "styleSummary": [
@@ -7016,7 +7016,7 @@ window.DATA = {
       "name": "스웨덴",
       "nameEn": "Sweden",
       "flag": "🇸🇪",
-      "fifaRank": 43,
+      "fifaRank": 38,
       "group": "F",
       "tierSummary": "조 최하위로 예선을 마치고도 사상 처음으로 플레이오프를 뚫고 본선에 오른 '언더독'이지만, 이사크-요케레스라는 세계 정상급 투톱과 프리미어리그 즐비한 멤버를 보유한 다크호스다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 40,
+      "fifaRank": 45,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -7450,7 +7450,7 @@ window.DATA = {
       "name": "벨기에",
       "nameEn": "Belgium",
       "flag": "🇧🇪",
-      "fifaRank": 8,
+      "fifaRank": 9,
       "group": "G",
       "tierSummary": "황금 세대의 노련함과 도쿠·오나나로 대표되는 신예가 공존하는, 우승까지는 한 끗 모자란 강력한 다크호스다.",
       "styleSummary": [
@@ -7675,7 +7675,7 @@ window.DATA = {
       "name": "이집트",
       "nameEn": "Egypt",
       "flag": "🇪🇬",
-      "fifaRank": 34,
+      "fifaRank": 29,
       "group": "G",
       "tierSummary": "살라라는 세계적 슈퍼스타와 마르무시라는 두 번째 칼날을 앞세웠지만, 스쿼드 26명 중 17명이 자국 리그(특히 알 아흘리) 소속인 '에이스 의존형' 다크호스다.",
       "styleSummary": [
@@ -8115,7 +8115,7 @@ window.DATA = {
       "name": "뉴질랜드",
       "nameEn": "New Zealand",
       "flag": "🇳🇿",
-      "fifaRank": 86,
+      "fifaRank": 85,
       "group": "G",
       "tierSummary": "FIFA 85위의 오세아니아 맹주로, 16년 만에 본선에 복귀한 '언더독' 팀이지만 우디 같은 프리미어리그급 핵심 선수와 유럽파 젊은 피가 섞여 한 방을 노린다.",
       "styleSummary": [
@@ -8334,7 +8334,7 @@ window.DATA = {
       "name": "스페인",
       "nameEn": "Spain",
       "flag": "🇪🇸",
-      "fifaRank": 1,
+      "fifaRank": 2,
       "group": "H",
       "tierSummary": "유로 2024 우승과 압도적 점유율 축구로 무장한, 이번 대회 강력한 우승 후보 중 하나다.",
       "styleSummary": [
@@ -8557,7 +8557,7 @@ window.DATA = {
       "name": "카보베르데",
       "nameEn": "Cape Verde",
       "flag": "🇨🇻",
-      "fifaRank": 68,
+      "fifaRank": 67,
       "group": "H",
       "tierSummary": "사상 첫 월드컵 본선에 오른 인구 50만의 '블루 샤크', 디아스포라 출신 유럽파를 끌어모아 조직력과 수비 안정성으로 무장한 다크호스다.",
       "styleSummary": [
@@ -8760,7 +8760,7 @@ window.DATA = {
       "name": "사우디아라비아",
       "nameEn": "Saudi Arabia",
       "flag": "🇸🇦",
-      "fifaRank": 60,
+      "fifaRank": 61,
       "group": "H",
       "tierSummary": "아시아 전통의 강호이자 2022년 아르헨티나를 꺾은 이변의 주인공으로, 조별리그 통과를 목표로 하는 다크호스이지만 본선 직전 감독 교체와 유럽파 부족이 변수인 도전자급 팀이다.",
       "styleSummary": [
@@ -9448,7 +9448,7 @@ window.DATA = {
       "name": "세네갈",
       "nameEn": "Senegal",
       "flag": "🇸🇳",
-      "fifaRank": 19,
+      "fifaRank": 15,
       "group": "I",
       "tierSummary": "2021년·2025년 아프리카 네이션스컵을 제패한 아프리카 최강 전력 중 하나로, 프리미어리그를 비롯한 빅리그 주축 선수가 즐비한 다크호스급 팀입니다.",
       "styleSummary": [
@@ -9629,7 +9629,7 @@ window.DATA = {
       "name": "이라크",
       "nameEn": "Iraq",
       "flag": "🇮🇶",
-      "fifaRank": 58,
+      "fifaRank": 57,
       "group": "I",
       "tierSummary": "1986년 이후 40년 만에 본선에 복귀한 다크호스로, 베테랑 골키퍼와 노련한 타깃맨을 중심에 두고 유럽파 디아스포라 선수들이 가세한 끈끈한 언더독 팀이다.",
       "styleSummary": [
@@ -9853,7 +9853,7 @@ window.DATA = {
       "name": "노르웨이",
       "nameEn": "Norway",
       "flag": "🇳🇴",
-      "fifaRank": 29,
+      "fifaRank": 31,
       "group": "I",
       "tierSummary": "28년 만의 본선 복귀를 일군 황금세대로, 홀란과 외데고르라는 세계적 스타를 축으로 한 다크호스 다.",
       "styleSummary": [
@@ -10065,7 +10065,7 @@ window.DATA = {
       "name": "아르헨티나",
       "nameEn": "Argentina",
       "flag": "🇦🇷",
-      "fifaRank": 2,
+      "fifaRank": 1,
       "group": "J",
       "tierSummary": "2022년 우승팀이자 현 디펜딩 챔피언으로, 메시의 마지막 월드컵을 우승으로 장식하려는 J조 최강 우승 후보입니다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 35,
+      "fifaRank": 28,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
@@ -10701,7 +10701,7 @@ window.DATA = {
       "name": "요르단",
       "nameEn": "Jordan",
       "flag": "🇯🇴",
-      "fifaRank": 66,
+      "fifaRank": 63,
       "group": "J",
       "tierSummary": "사상 첫 월드컵 본선에 오른 다크호스로, 2023 아시안컵 준우승 멤버를 중심으로 한 끈끈한 수비와 알타마리·올완의 역습이 무기인 도전자 티어 팀입니다.",
       "styleSummary": [
@@ -10920,7 +10920,7 @@ window.DATA = {
       "name": "포르투갈",
       "nameEn": "Portugal",
       "flag": "🇵🇹",
-      "fifaRank": 6,
+      "fifaRank": 5,
       "group": "K",
       "tierSummary": "유럽 정상급 우승 후보로, 호날두의 마지막 월드컵을 PSG 우승 군단과 황금 세대가 떠받치는 K조 압도적 1강이다.",
       "styleSummary": [
@@ -11119,7 +11119,7 @@ window.DATA = {
       "name": "콩고민주공화국",
       "nameEn": "DR Congo",
       "flag": "🇨🇩",
-      "fifaRank": 56,
+      "fifaRank": 46,
       "group": "K",
       "tierSummary": "유럽 5대 리그와 아프리카 무대를 누비는 검증된 베테랑 수비·공격진에 신예 미드필더가 결합된, 조 최약체로 분류되지만 한 방이 있는 '복병형' 다크호스다.",
       "styleSummary": [
@@ -12003,7 +12003,7 @@ window.DATA = {
       "name": "크로아티아",
       "nameEn": "Croatia",
       "flag": "🇭🇷",
-      "fifaRank": 10,
+      "fifaRank": 11,
       "group": "L",
       "tierSummary": "모드리치를 중심으로 한 황금세대가 마지막 불꽃을 태우는 가운데 그바르디올·스타니시치 등 신구 조화로 16강 이상을 노리는 강호급 팀이다.",
       "styleSummary": [
@@ -12221,7 +12221,7 @@ window.DATA = {
       "name": "가나",
       "nameEn": "Ghana",
       "flag": "🇬🇭",
-      "fifaRank": 72,
+      "fifaRank": 73,
       "group": "L",
       "tierSummary": "유럽 빅리그에 흩어진 재능 있는 공격 자원과 노련한 베테랑을 갖췄지만, 잉글랜드·크로아티아가 버틴 죽음의 L조에서 16강을 노리려면 수비 안정과 한 방이 절실한 다크호스다.",
       "styleSummary": [
@@ -12471,7 +12471,7 @@ window.DATA = {
       "name": "파나마",
       "nameEn": "Panama",
       "flag": "🇵🇦",
-      "fifaRank": 30,
+      "fifaRank": 34,
       "group": "L",
       "tierSummary": "유럽·멕시코·MLS·칠레 등 다양한 리그에 흩어진 베테랑 중심의 단단한 다크호스로, 조직력과 투지로 강팀을 괴롭히는 전형적인 콘카카프 강호다.",
       "styleSummary": [
