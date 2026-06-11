@@ -1232,7 +1232,7 @@
     var ra = rosterFor(a), rb = rosterFor(b);
     var ca = ra && espnLineupCoords(ra), cb = rb && espnLineupCoords(rb);
     if (!ca || !cb) return null;
-    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
+    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: mp ? mp.name : nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
     return '<h3>📋 선발 라인업 <span class="muted-note">실시간 · 탭하면 상세</span></h3>' + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
   }
   function renderMatch(id) {
