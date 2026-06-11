@@ -1270,6 +1270,30 @@
     });
     return coords;
   }
+  // 라이브 경기 요약(summary)에서 이 경기 기록 집계 → DB 경기별 행에 즉시 반영(크론과 동일 키)
+  function computeMatchPlayers(d) {
+    var m = {};
+    function mb(nm, field, teamId) {
+      var p = playerByName(nm), k = p ? p.id : ("n:" + nm);
+      var r = m[k] || (m[k] = { key: k, name: p ? p.name : nm, pid: p ? p.id : null, flag: "", team: "", goals: 0, assists: 0, og: 0, yellow: 0, red: 0, apps: 0 });
+      r[field]++;
+      if (!r.flag && teamId) { var t = teamsById[teamId]; if (t) { r.flag = t.flag; r.team = t.name; } }
+    }
+    (d.keyEvents || []).forEach(function (ev) {
+      var ty = ((ev.type && ev.type.type) || "").toLowerCase(), txt = (ev.shortText || ev.text || "");
+      var parts = (ev.participants || ev.athletesInvolved || []).map(function (a) { return (a.athlete || {}).displayName; }).filter(Boolean);
+      var evT = ev.team ? espnTeamId(ev.team.displayName) : null;
+      if (/own.?goal/.test(ty)) { if (parts[0]) mb(parts[0], "og", evT); }
+      else if (/goal|scored/.test(ty) && !/missed|saved|disallow/.test(ty + txt.toLowerCase())) { if (parts[0]) mb(parts[0], "goals", evT); if (parts[1]) mb(parts[1], "assists", evT); }
+      else if (/yellow.?card/.test(ty)) { if (parts[0]) mb(parts[0], "yellow", evT); }
+      else if (/red.?card/.test(ty)) { if (parts[0]) mb(parts[0], "red", evT); }
+    });
+    var seen = {};
+    (d.rosters || []).forEach(function (rs) { (rs.roster || []).forEach(function (pl) { if (pl.starter && pl.athlete && pl.athlete.displayName) seen[pl.athlete.displayName] = 1; }); });
+    (d.keyEvents || []).forEach(function (ev) { if (/substitution/i.test((ev.type && ev.type.type) || "")) { var inA = ((ev.participants || [])[0] || {}).athlete; if (inA && inA.displayName) seen[inA.displayName] = 1; } });
+    Object.keys(seen).forEach(function (nm) { mb(nm, "apps"); });
+    return Object.keys(m).map(function (k) { return m[k]; });
+  }
   function pitchSVG(plA, plB) {
     var W = 720, H = 440, padX = 0.08, span = 0.40;
     function side(players, left, col) {
@@ -1406,7 +1430,12 @@
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
       var eid = espnIdCache[fx.id]; if (eid) delete summaryCache[eid];
-      fetchSummary(fx).then(function (d) { if (d && parseHash().name === "match") renderLineup(slot, d, a, b); });
+      fetchSummary(fx).then(function (d) {
+        if (!d || parseHash().name !== "match") return;
+        renderLineup(slot, d, a, b);
+        var lv = LIVE[fx.id];  // 라이브면 이 경기 기록을 즉시 DB에 반영(기록탭 새로고침 시 최신)
+        if (lv && lv.state === "in" && window.KickComments && KickComments.pushMatchStats) { var pl = computeMatchPlayers(d); if (pl.length) KickComments.pushMatchStats(fx.id, pl); }
+      });
     }
     // fetchLive(스코어 폴링)가 끝날 때마다 즉시 이 경기 점수 갱신(다음 20초 틱 안 기다림)
     window._matchLiveTick = function () { updScore(); var lv = LIVE[fx.id]; if (lv && lv.state === "in") refreshLineup(); };

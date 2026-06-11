@@ -667,11 +667,28 @@
   function myBets() { if (!sb || !user) return Promise.resolve([]); return sb.from("bets").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
-  // 득점왕/기록 — 크론이 DB(app_data)에 적재한 집계를 새로고침 시 읽음
-  function matchStats() { if (!sb) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "match_stats").maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
+  // 득점왕/기록 — 경기별 행(stats:매치id)을 모아 선수별 합산. 크론 + 라이브 보는 클라이언트가 같은 행을 갱신
+  function matchStats() {
+    if (!sb) return Promise.resolve(null);
+    return sb.from("app_data").select("data").like("key", "stats:%").then(function (r) {
+      var rows = r.data || []; if (!rows.length) return null;
+      var agg = {};
+      rows.forEach(function (row) {
+        ((row.data && row.data.players) || []).forEach(function (p) {
+          var k = p.key || p.pid || ("n:" + p.name);
+          var a = agg[k] || (agg[k] = { name: p.name, team: p.team, flag: p.flag, pid: p.pid || null, goals: 0, assists: 0, og: 0, yellow: 0, red: 0, apps: 0 });
+          ["goals", "assists", "og", "yellow", "red", "apps"].forEach(function (f) { a[f] += (p[f] || 0); });
+          if (!a.flag && p.flag) { a.flag = p.flag; a.team = p.team; }
+        });
+      });
+      return { players: Object.keys(agg).map(function (k) { return agg[k]; }) };
+    }).catch(function () { return null; });
+  }
+  // 라이브 경기 보는 사람이 그 경기 기록을 즉시 DB에 갱신(20분 크론 안 기다림)
+  function pushMatchStats(mid, players) { if (!sb || !mid || !players || !players.length) return Promise.resolve(null); return sb.rpc("set_match_stats", { mid: mid, d: { players: players } }).then(function () { return true; }).catch(function () { return null; }); }
 
   window.KickComments = {
-    matchStats: matchStats,
+    matchStats: matchStats, pushMatchStats: pushMatchStats,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
     myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,

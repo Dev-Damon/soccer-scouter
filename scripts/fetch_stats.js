@@ -23,33 +23,47 @@ if(!DATES.length){
   var s=new Set(); base.forEach(d=>{ s.add(d); var n=parseInt(d,10); s.add(String(n-1)); s.add(String(n+1)); });
   DATES=[...s];
 }
+function findFixture(h,a){return D.fixtures.find(f=>f.homeId===h&&f.awayId===a)||D.fixtures.find(f=>f.homeId===a&&f.awayId===h);}
 (async()=>{
-  const stats={};
-  function rec(key,name,p){ return stats[key]||(stats[key]={key, name, teamId:p?p.team:null, flag:'', teamName:'', goals:0,assists:0,og:0,yellow:0,red:0,apps:0}); }
-  function bump(nm, field, evTeam){ var p=matchPlayer(nm); var k=p?p.id:('n:'+nm); var r=rec(k, p?p.name:nm, p); r[field]++; if(!r.flag && evTeam){ r.flag=evTeam.flag; r.teamName=evTeam.name; } }
-  const eids=new Set();
-  for(const dt of DATES){ let d; try{d=JSON.parse(await get(SCORE+dt))}catch(e){continue} (d.events||[]).forEach(e=>{var st=((e.status||{}).type||{}).state; if(st==='post'||st==='in')eids.add(e.id);}); await sleep(110); }
+  const stats={};  // 전체 누적(stats.json 폴백)
+  function rec(key,name){ return stats[key]||(stats[key]={key, name, flag:'', teamName:'', goals:0,assists:0,og:0,yellow:0,red:0,apps:0}); }
+  // eid → 우리 match_id 매핑(경기별 행 키)
+  const eidToMatch={};
+  for(const dt of DATES){
+    let d; try{d=JSON.parse(await get(SCORE+dt))}catch(e){continue}
+    (d.events||[]).forEach(e=>{
+      var st=((e.status||{}).type||{}).state; if(st!=='post'&&st!=='in')return;
+      var c=(e.competitions||[])[0]; if(!c)return; var comp=c.competitors||[];
+      var hC=comp.find(x=>x.homeAway==='home'),aC=comp.find(x=>x.homeAway==='away'); if(!hC||!aC)return;
+      var hT=espnTeam((hC.team||{}).displayName),aT=espnTeam((aC.team||{}).displayName);
+      var fx=(hT&&aT)?findFixture(hT.id,aT.id):null; if(fx) eidToMatch[e.id]=fx.id;
+    });
+    await sleep(110);
+  }
+  const eids=Object.keys(eidToMatch);
   for(const eid of eids){
     let s; try{s=JSON.parse(await get(SUM+eid))}catch(e){continue}
+    const m={};  // 이 경기만
+    function mbump(nm,field,evTeam){ var p=matchPlayer(nm); var k=p?p.id:('n:'+nm); var r=m[k]||(m[k]={key:k, name:p?p.name:nm, teamId:p?p.team:null, flag:'', teamName:'', goals:0,assists:0,og:0,yellow:0,red:0,apps:0}); r[field]++; if(!r.flag&&evTeam){r.flag=evTeam.flag;r.teamName=evTeam.name;} }
     (s.keyEvents||[]).forEach(ev=>{
       var ty=((ev.type||{}).type||'').toLowerCase(), txt=(ev.shortText||ev.text||'');
       var parts=(ev.participants||ev.athletesInvolved||[]).map(a=>(a.athlete||{}).displayName).filter(Boolean);
       var evT=ev.team?espnTeam(ev.team.displayName):null;
-      if(/own.?goal/.test(ty)||/own goal/i.test(txt)){ if(parts[0])bump(parts[0],'og'); }
-      else if((/goal/.test(ty)||/penalty.*scored/.test(ty))&&!/missed|saved|disallow/.test(ty+txt.toLowerCase())){ if(parts[0])bump(parts[0],'goals',evT); if(parts[1])bump(parts[1],'assists',evT); }
-      else if(/yellow.?card/.test(ty)){ if(parts[0])bump(parts[0],'yellow',evT); }
-      else if(/red.?card/.test(ty)){ if(parts[0])bump(parts[0],'red',evT); }
+      if(/own.?goal/.test(ty)||/own goal/i.test(txt)){ if(parts[0])mbump(parts[0],'og',evT); }
+      else if((/goal/.test(ty)||/penalty.*scored/.test(ty))&&!/missed|saved|disallow/.test(ty+txt.toLowerCase())){ if(parts[0])mbump(parts[0],'goals',evT); if(parts[1])mbump(parts[1],'assists',evT); }
+      else if(/yellow.?card/.test(ty)){ if(parts[0])mbump(parts[0],'yellow',evT); }
+      else if(/red.?card/.test(ty)){ if(parts[0])mbump(parts[0],'red',evT); }
     });
-    // 출전 집계: 선발 + 교체 투입
     var appeared=new Set();
     (s.rosters||[]).forEach(rs=>{ (rs.roster||[]).forEach(pl=>{ if(pl.starter && pl.athlete && pl.athlete.displayName) appeared.add(pl.athlete.displayName); }); });
     (s.keyEvents||[]).forEach(ev=>{ if(/substitution/i.test((ev.type||{}).type||'')){ var inA=((ev.participants||[])[0]||{}).athlete; if(inA&&inA.displayName) appeared.add(inA.displayName); } });
-    appeared.forEach(nm=>bump(nm,'apps'));
+    appeared.forEach(nm=>mbump(nm,'apps'));
+    var mout=Object.values(m).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {key:s.key, name:s.name, team:(t?t.name:s.teamName)||'', flag:(t?t.flag:s.flag)||'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red, apps:s.apps}; });
+    await rpc('set_match_stats', { mid: eidToMatch[eid], d: { players: mout } });  // 경기별 행(DB) — 클라이언트도 라이브 중 같은 행 갱신
+    mout.forEach(p=>{ var r=rec(p.key,p.name); ['goals','assists','og','yellow','red','apps'].forEach(f=>r[f]+=p[f]); if(!r.flag){r.flag=p.flag;r.teamName=p.team;} });  // 누적
     await sleep(110);
   }
-  const out=Object.values(stats).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {name:s.name, team:(t?t.name:s.teamName)||'', flag:(t?t.flag:s.flag)||'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red, apps:s.apps}; });
-  fs.writeFileSync('stats.json', JSON.stringify({players:out}));  // 로컬/폴백용(커밋 안 함)
-  var dbres = await rpc('set_match_stats', { d: { players: out } });  // DB에 적재 → 기록탭이 새로고침 시 여기서 읽음
-  console.log('경기:',eids.size,'| 기록선수:',out.length,'| DB:',String(dbres).slice(0,30)||'ok');
-  return out;
+  const out=Object.values(stats).map(s=>({ name:s.name, team:s.teamName||'', flag:s.flag||'', pid:(s.key&&s.key.indexOf('n:')!==0)?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red, apps:s.apps }));
+  fs.writeFileSync('stats.json', JSON.stringify({players:out}));  // 폴백용(커밋 안 함)
+  console.log('경기:',eids.length,'| 기록선수:',out.length,'| 경기별 행 적재 완료');
 })();
