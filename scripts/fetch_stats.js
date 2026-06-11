@@ -1,5 +1,7 @@
 const https = require('https'), fs = require('fs');
+const ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoemNoZ3Zua3dkcm94ZnJnanZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjM1NDcsImV4cCI6MjA5NjU5OTU0N30.eRMPkzUO1aOd3s1R4-JnQQ912BhplhcO6qNut4Ro4Kg';  // 레거시 anon JWT(RLS 보호·공개안전) — 직접 REST는 publishable키 안 받음
 function get(u){return new Promise(r=>{https.get(u,{headers:{'User-Agent':'Mozilla/5.0'}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))}).on('error',()=>r(''))})}
+function rpc(name,body){return new Promise(r=>{var data=JSON.stringify(body);var req=https.request({hostname:'jhzchgvnkwdroxfrgjvm.supabase.co',path:'/rest/v1/rpc/'+name,method:'POST',headers:{apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json','Content-Length':Buffer.byteLength(data)}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))});req.on('error',()=>r('ERR'));req.write(data);req.end();})}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 global.window={}; require('../data.js'); const D=global.window.DATA;
 const teamsById={}, teamsByName={}; D.teams.forEach(t=>{teamsById[t.id]=t; teamsByName[t.name]=t;});
@@ -46,7 +48,8 @@ if(!DATES.length){
     await sleep(110);
   }
   const out=Object.values(stats).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {name:s.name, team:(t?t.name:s.teamName)||'', flag:(t?t.flag:s.flag)||'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red, apps:s.apps}; });
-  fs.writeFileSync('stats.json', JSON.stringify({players:out}));
-  console.log('경기:',eids.size,'| 기록선수:',out.length);
+  fs.writeFileSync('stats.json', JSON.stringify({players:out}));  // 로컬/폴백용(커밋 안 함)
+  var dbres = await rpc('set_match_stats', { d: { players: out } });  // DB에 적재 → 기록탭이 새로고침 시 여기서 읽음
+  console.log('경기:',eids.size,'| 기록선수:',out.length,'| DB:',String(dbres).slice(0,30)||'ok');
   return out;
 })();

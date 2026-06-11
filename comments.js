@@ -667,8 +667,11 @@
   function myBets() { if (!sb || !user) return Promise.resolve([]); return sb.from("bets").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
+  // 득점왕/기록 — 크론이 DB(app_data)에 적재한 집계를 새로고침 시 읽음
+  function matchStats() { if (!sb) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "match_stats").maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
 
   window.KickComments = {
+    matchStats: matchStats,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
     myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,

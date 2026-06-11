@@ -231,7 +231,12 @@
   function ensureStats() {
     if (statsData) return Promise.resolve(statsData);
     if (statsLoading) return statsLoading;
-    statsLoading = fetch("stats.json").then(function (r) { return r.json(); }).then(function (j) { statsData = j; return j; }).catch(function () { statsData = { players: [] }; return statsData; });
+    // DB(크론 적재) 우선 → 새로고침마다 최신. DB 비었으면 stats.json 폴백
+    var fromDb = (window.KickComments && KickComments.matchStats) ? KickComments.matchStats() : Promise.resolve(null);
+    statsLoading = fromDb.then(function (db) {
+      if (db && db.players && db.players.length) return db;
+      return fetch("stats.json").then(function (r) { return r.json(); });
+    }).then(function (j) { statsData = j || { players: [] }; return statsData; }).catch(function () { statsData = { players: [] }; return statsData; });
     return statsLoading;
   }
   function scVal(p) { return scoreCat === "cards" ? ((p.yellow || 0) + (p.red || 0) * 2) : (p[scoreCat] || 0); }
