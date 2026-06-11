@@ -957,3 +957,4 @@ html.light .mf-grass { fill: #2e8b54; }
 .cardbox.r { background: #e5484d; color: #fff; }
 .sc-statsub { font-size: 10px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 .sc-sub { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 3px; }
+.sc-mainline { display: flex; align-items: baseline; gap: 1px; }

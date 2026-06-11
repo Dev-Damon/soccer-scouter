@@ -251,7 +251,7 @@
           statsub = apps ? apps + "경기" : "";
         } else {
           var unit = scoreCat === "goals" ? "골" : scoreCat === "assists" ? "도움" : "자책";
-          statMain = '<span class="sc-num">' + scVal(p) + '</span><span class="sc-unit">' + unit + "</span>";
+          statMain = '<span class="sc-mainline"><span class="sc-num">' + scVal(p) + '</span><span class="sc-unit">' + unit + "</span></span>";
           statsub = apps ? (apps + "경기 · 평균 " + (scVal(p) / apps).toFixed(2)) : "";
         }
         return '<div class="sc-row' + (p.pid ? " clickable" : "") + '"' + (p.pid ? ' data-player="' + esc(p.pid) + '"' : "") + '>' +
@@ -352,8 +352,8 @@
     el.setAttribute("data-done", "1");
     el.innerHTML = '<div class="ad-label">광고</div>';
     var ins = document.createElement("ins"); ins.className = "kakao_ad_area"; ins.style.display = "none";
-    ins.setAttribute("data-ad-unit", unit || "DAN-SWWhds5NegoTMohB");
-    ins.setAttribute("data-ad-width", w || "320"); ins.setAttribute("data-ad-height", h || "50");
+    ins.setAttribute("data-ad-unit", unit || "DAN-njRR43wj48QPOMPj");
+    ins.setAttribute("data-ad-width", w || "320"); ins.setAttribute("data-ad-height", h || "100");
     el.appendChild(ins);
     var s = document.createElement("script"); s.async = true; s.src = "//t1.kakaocdn.net/kas/static/ba.min.js";
     el.appendChild(s);
