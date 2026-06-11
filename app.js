@@ -1297,19 +1297,28 @@
   function pitchSVG(plA, plB) {
     var W = 720, H = 440, padX = 0.08, span = 0.40;
     function side(players, left, col) {
-      return players.map(function (d) {
-        var num = (d.number != null && d.number !== "") ? d.number : "";
-        var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
-        if (nm.length > 5) nm = nm.slice(0, 4) + "…";
-        // 골키퍼(t=0)~최전방(t=1)을 각 팀 절반에 균등 배치(클램프 제거→라인 안 겹침) + 양 팀 바깥으로 더 벌림
-        var t = (86 - d.y) / 74; if (t < 0) t = 0; if (t > 1) t = 1;
-        var px = left ? W * (0.04 + t * 0.36) : W * (0.96 - t * 0.36);  // 좌:4%→40%, 우:96%→60% (중앙 20% 간격)
-        var py = (d.x / 100) * 0.80 * H + 0.10 * H;
-        var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";
-        return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
-          '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-          '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text></g>";
-      }).join("");
+      // 동적 배치: d.y로 라인(밴드) 클러스터링 → 라인 수에 맞춰 가로 균등 + 라인 안에서 세로 균등(입력 좌표 범위 무관, 항상 안 겹침)
+      var sorted = players.slice().sort(function (p, q) { return q.y - p.y; });  // 골키퍼(높은 y) 먼저
+      var bands = [], cur = null;
+      sorted.forEach(function (p) { if (!cur || Math.abs(p.y - cur.ref) > 8) { cur = { ref: p.y, items: [] }; bands.push(cur); } cur.items.push(p); });
+      var n = bands.length, out = [];
+      bands.forEach(function (band, bi) {
+        var t = n <= 1 ? 0.5 : bi / (n - 1);  // 0=골키퍼 ~ 1=최전방
+        var px = left ? W * (0.05 + t * 0.36) : W * (0.95 - t * 0.36);  // 좌5→41%, 우95→59% (중앙 간격 + 양 팀 바깥)
+        var items = band.items.slice().sort(function (p, q) { return p.x - q.x; });
+        var m = items.length;
+        items.forEach(function (d, i) {
+          var py = ((m === 1 ? 0.5 : (i + 0.5) / m) * 0.80 + 0.10) * H;  // 라인 내 세로 균등(겹침 방지)
+          var num = (d.number != null && d.number !== "") ? d.number : "";
+          var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
+          if (nm.length > 5) nm = nm.slice(0, 4) + "…";
+          var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";
+          out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
+            '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
+            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text></g>");
+        });
+      });
+      return out.join("");
     }
     var W2 = 720, H2 = 440;
     var pitch = '<rect class="mf-grass" width="' + W2 + '" height="' + H2 + '"/>' +
