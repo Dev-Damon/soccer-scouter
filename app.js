@@ -1707,7 +1707,7 @@
         if (!subs.length) return "";
         return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(luPlayer).join("") + "</div></div>";
       }).join("");
-      if (subsHtml) html += '<details class="lu-subs-d"><summary>🔄 교체 명단 보기</summary>' + subsHtml + "</details>";
+      if (subsHtml) html += '<details class="lu-subs-d"><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";
     } else {
       html += '<h3>📋 라인업</h3><div class="lu-wait">선발 라인업은 킥오프 약 1시간 전에 공개돼요.</div>';
     }
