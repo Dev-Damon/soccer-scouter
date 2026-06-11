@@ -894,8 +894,7 @@
             '<div class="pl-name">' + esc(p.name) + "</div>" +
             '<div class="detail-name-en">' + esc(p.nameEn) + "</div>" +
             '<div class="pl-badges">' + badge(p) + "</div></div>" +
-          '<div class="ovr"><span class="ovr-l">OVR</span><span class="ovr-v">' + ovr + "</span></div>" +
-          saveBtnHtml("player:" + p.id) +
+          '<div class="ovr">' + saveBtnHtml("player:" + p.id) + '<span class="ovr-v">' + ovr + "</span></div>" +
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
