@@ -1237,12 +1237,14 @@
     if (starters.length < 9) return null;
     var bands = {};
     starters.forEach(function (p) { var abbr = (p.position && p.position.abbreviation) || ""; var bk = espnBand(abbr); (bands[bk] = bands[bk] || []).push({ p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0 }); });
-    var depth = { "0": 88, "1": 70, "1.5": 56, "2": 44, "3": 28, "4": 12 };
-    var out = [];
-    Object.keys(bands).forEach(function (bk) {
+    // 사용된 라인(밴드)만 GK(뒤)→최전방 사이에 '균등 분포' → 공격/미드/수비 간격 일정하게
+    var usedBands = Object.keys(bands).map(Number).sort(function (a, b) { return a - b; });
+    var n = usedBands.length, out = [];
+    usedBands.forEach(function (bk, bi) {
+      var y = n <= 1 ? 50 : 86 - (bi / (n - 1)) * 74;  // 86(골키퍼) ~ 12(최전방) 균등
       var arr = bands[bk];
-      arr.sort(function (x, y) { return (x.sv - y.sv) || (x.fp - y.fp); });
-      arr.forEach(function (it, i) { out.push({ p: it.p, x: arr.length === 1 ? 50 : (i + 0.5) / arr.length * 100, y: depth[bk] != null ? depth[bk] : 44 }); });
+      arr.sort(function (x, y2) { return (x.sv - y2.sv) || (x.fp - y2.fp); });
+      arr.forEach(function (it, i) { out.push({ p: it.p, x: arr.length === 1 ? 50 : (i + 0.5) / arr.length * 100, y: y }); });
     });
     return out;
   }
