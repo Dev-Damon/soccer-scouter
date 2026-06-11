@@ -1041,3 +1041,14 @@ html.light .mf-grass { fill: #2e8b54; }
 .lu-subteam { padding: 10px 13px; }
 .lu-subteam .lu-tn { font-size: 13px; margin-bottom: 6px; }
 .lu-p.clickable { cursor: pointer; }
+/* 나라상세 라이브 배너 */
+.team-live-slot:empty { display: none; }
+.team-live { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 14px; margin: 0 0 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); cursor: pointer; }
+.team-live.clickable:active { transform: scale(.99); }
+.tlv-badge { font-weight: 800; font-size: 12px; padding: 3px 9px; border-radius: 20px; background: var(--bg-soft); color: var(--muted); flex: none; }
+.tlv-badge.live { background: rgba(229,72,77,.14); color: #e5484d; }
+.tlv-score { font-weight: 900; font-size: 18px; color: var(--text); flex: none; }
+.tlv-when { font-weight: 700; font-size: 13px; color: var(--muted); }
+.tlv-vs { font-size: 13px; color: var(--text); font-weight: 600; }
+.tlv-vs img { width: 16px; height: 16px; vertical-align: middle; }
+.tlv-go { margin-left: auto; font-size: 12px; color: var(--accent); font-weight: 700; flex: none; }

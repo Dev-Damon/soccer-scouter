@@ -1110,6 +1110,51 @@
     html += '<div class="adslot"></div>';
     viewEl.innerHTML = html;
     insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
+    loadTeamLive(t);  // 이 팀이 뛰는 중/임박이면 라이브 배너 + 선발 확정 포메이션 반영
+  }
+
+  function teamRelevantFixture(teamId) {
+    var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === teamId || f.awayId === teamId; });
+    var liveF = fxs.filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; })[0];
+    if (liveF) return liveF;
+    var now = Date.now();
+    return fxs.filter(function (f) { var ko = matchKickoff(f); return ko && now >= ko - 7200000 && now < ko + 10800000; }).sort(function (a, b) { return matchKickoff(a) - matchKickoff(b); })[0] || null;
+  }
+  function loadTeamLive(t) {
+    var fx = teamRelevantFixture(t.id); if (!fx) return;
+    var opp = teamsById[fx.homeId === t.id ? fx.awayId : fx.homeId];
+    function renderBanner() {
+      var banner = viewEl.querySelector(".team-live-slot"); if (!banner) return;
+      var lv = LIVE[fx.id], isLive = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
+      var oppName = opp ? (opp.flag + " " + opp.name) : "";
+      var statusH;
+      if (isLive || ended) {
+        var myS = (fx.homeId === t.id) ? lv.hs : lv.as, opS = (fx.homeId === t.id) ? lv.as : lv.hs;
+        statusH = '<span class="tlv-badge' + (isLive ? " live" : "") + '">' + (isLive ? "🔴 LIVE " + esc(lv.clock || "") : "경기 종료") + "</span>" +
+          '<span class="tlv-score">' + (myS | 0) + " : " + (opS | 0) + "</span>";
+      } else { statusH = '<span class="tlv-when">⏱ ' + esc(fxTime(fx) || "곧") + " 킥오프</span>"; }
+      banner.innerHTML = '<div class="team-live clickable" data-match="' + esc(fx.id) + '">' + statusH + '<span class="tlv-vs">vs ' + esc(oppName) + '</span><span class="tlv-go">경기 →</span></div>';
+      twem(banner);
+    }
+    renderBanner();
+    window._teamLiveTick = function () { if (parseHash().name === "team") renderBanner(); };  // 라이브 점수 자동갱신
+    fetchSummary(fx).then(function (d) {
+      if (!d || parseHash().name !== "team") return;
+      var rs = (d.rosters || []).filter(function (r) { return espnTeamId(r.team && r.team.displayName) === t.id; })[0];
+      var coords = rs && espnLineupCoords(rs); if (!coords) return;
+      var pb = viewEl.querySelector(".team-pitch-block"); if (!pb) return;
+      var bandCls = { "0": "gk", "1": "df", "1.5": "df", "2": "mf", "3": "mf", "4": "fw" };
+      var dots = coords.map(function (c) {
+        var enm = (c.p.athlete && c.p.athlete.displayName) || "", mp = playerByName(enm), nm = mp ? mp.name : enm;
+        var pos = (c.p.position && c.p.position.abbreviation) || "", pc = bandCls[espnBand(pos)] || "mf";
+        var num = c.p.jersey != null ? c.p.jersey : "";
+        var x = Math.max(4, Math.min(96, c.x)), y = Math.max(6, Math.min(94, c.y));
+        return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + esc(nm.split(" ").slice(-1)[0]) + "</span></div>";
+      }).join("");
+      var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = '선발 포메이션 <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
+      var pEl = pb.querySelector(".pitch"); if (pEl) pEl.innerHTML = '<div class="pitch-line halfway"></div><div class="pitch-circle"></div>' + dots;
+      twem(pb);
+    }).catch(function () {});
   }
 
   // ===================== 경기 예상 (매치업) =====================
@@ -1463,6 +1508,7 @@
     fetch(ESPN_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
       var res = applyEspn(d);
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
+      if (window._teamLiveTick) window._teamLiveTick();    // 나라상세 라이브 배너 점수 갱신
       if (res.changed && onHomeSchedule()) renderSchedule();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
       scheduleLive(res.anyLive ? 15000 : (res.anyToday ? 180000 : 0));  // 라이브 15초 / 임박 3분 / 없으면 중단
@@ -2459,6 +2505,7 @@
     fetchLive();  // 최신 점수 비동기 요청(도착 시 자동 재렌더)
     if (onHomeSchedule()) renderSchedule();          // 홈이면 현재 점수로 즉시 재렌더
     else if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 갱신
+    if (window._teamLiveTick) window._teamLiveTick();  // 나라상세 라이브 배너
   }
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") onAppReturn(); });
   window.addEventListener("focus", onAppReturn);
