@@ -1277,9 +1277,9 @@
         var num = (d.number != null && d.number !== "") ? d.number : "";
         var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
         if (nm.length > 5) nm = nm.slice(0, 4) + "…";
-        var fx = (90 - d.y) / 70;
-        var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
-        px = left ? Math.min(px, W * 0.43) : Math.max(px, W * 0.57);
+        // 골키퍼(t=0)~최전방(t=1)을 각 팀 절반에 균등 배치(클램프 제거→라인 안 겹침) + 양 팀 바깥으로 더 벌림
+        var t = (86 - d.y) / 74; if (t < 0) t = 0; if (t > 1) t = 1;
+        var px = left ? W * (0.04 + t * 0.36) : W * (0.96 - t * 0.36);  // 좌:4%→40%, 우:96%→60% (중앙 20% 간격)
         var py = (d.x / 100) * 0.80 * H + 0.10 * H;
         var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";
         return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
