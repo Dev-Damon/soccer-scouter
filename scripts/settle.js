@@ -14,9 +14,12 @@ function findFixture(h,a){return D.fixtures.find(f=>f.homeId===h&&f.awayId===a)|
 function ko(fx){try{return Date.parse((fx.kstDate||fx.date)+'T'+(fx.kstTime||fx.time||'00:00')+':00+09:00')||0;}catch(e){return 0;}}
 const dates=[...new Set(D.fixtures.map(f=>(f.kstDate||f.date||'').replace(/-/g,'')).filter(Boolean))];
 const allDates=new Set(); dates.forEach(d=>{allDates.add(d);var n=parseInt(d);allDates.add(String(n-1));allDates.add(String(n+1));});
+// 최근 ±3일만 스캔(ESPN 부하↓) — 막 끝난 경기만 정산하면 됨
+const NOW=Date.now();
+const scanDates=[...allDates].filter(function(d){var t=Date.parse(d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+'T12:00:00+09:00');return !isNaN(t)&&Math.abs(NOW-t)<3*86400000;});
 (async()=>{
   const results=[], seen={};
-  for(const dt of allDates){
+  for(const dt of (scanDates.length?scanDates:[...allDates])){
     let d; try{d=JSON.parse(await get('https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates='+dt))}catch(e){continue}
     (d.events||[]).forEach(e=>{
       if((((e.status||{}).type||{}).state)!=='post')return;

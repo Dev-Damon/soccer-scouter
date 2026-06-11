@@ -1,0 +1,20 @@
+name: 베팅 자동 정산
+on:
+  schedule:
+    - cron: '*/20 * * * *'   # 20분마다 — 종료된 경기 베팅 자동 정산(공개 anon RPC, 시크릿 불필요)
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: bet-settle
+  cancel-in-progress: false
+jobs:
+  settle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 종료 경기 베팅 정산
+        run: node scripts/settle.js
