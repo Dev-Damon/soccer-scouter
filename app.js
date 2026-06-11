@@ -636,7 +636,7 @@
     if (RDIMS.indexOf(rankSort) >= 0) list = list.filter(function (p) { return p.power; });  // 지수 정렬은 레이더 보유 선수만
     list.sort(function (a, b) { var d = rankMetric(b) - rankMetric(a); return d || (b.ovr || 0) - (a.ovr || 0); });
     var shown = list.slice(0, rankLimit);
-    var sorts = [["ovr", "종합"], ["공격력", "공격"], ["골결정력", "골결정"], ["스피드", "스피드"], ["테크닉", "테크닉"], ["피지컬", "피지컬"], ["수비력", "수비"], ["rating", "평점"]];
+    var sorts = [["ovr", "종합"], ["공격력", "공격력"], ["골결정력", "골결정력"], ["스피드", "스피드"], ["테크닉", "테크닉"], ["피지컬", "피지컬"], ["수비력", "수비력"], ["rating", "평점"]];
     var sortUi = '<div class="rank-sorts">' + sorts.map(function (s) { return '<button class="rank-sb' + (rankSort === s[0] ? " on" : "") + '" data-rsort="' + s[0] + '">' + s[1] + "</button>"; }).join("") + "</div>";
     var posF = [["all", "전체"], ["fw", "FW"], ["mf", "MF"], ["df", "DF"], ["gk", "GK"]];
     var posUi = '<div class="rank-pos">' + posF.map(function (s) { return '<button class="rank-pb' + (rankPos === s[0] ? " on" : "") + '" data-rpos="' + s[0] + '">' + s[1] + "</button>"; }).join("") + "</div>";
