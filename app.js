@@ -453,15 +453,18 @@
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var heroAttr = (fx.homeId && fx.awayId) ? ' data-match="' + esc(fx.id) + '"'
       : ' data-team="' + esc(fx.homeId || fx.awayId) + '"';
+    var swap = (fx.awayId === "south-korea");  // 대한민국 무조건 왼쪽
+    var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
+    var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
     return '<div class="hero"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
       '<div class="hero-tag"><span class="dot"></span>오늘의 빅매치 · ' + esc(groupLabel) + "</div>" +
       '<div class="hero-match">' +
-        '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(fx.homeId)) + "</span>" +
-          '<span class="hero-team">' + esc(fx.homeName) + "</span></div>" +
+        '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
+          '<span class="hero-team">' + esc(lName) + "</span></div>" +
         '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>" +
-        '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(fx.awayId)) + "</span>" +
-          '<span class="hero-team">' + esc(fx.awayName) + "</span></div>" +
+        '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(rId)) + "</span>" +
+          '<span class="hero-team">' + esc(rName) + "</span></div>" +
       "</div>" +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
       '<div class="hero-cta">경기 예상 보기 →</div>' +
@@ -478,10 +481,14 @@
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var lv = LIVE[fx.id];
     var live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
+    var swap = (fx.awayId === "south-korea");  // 대한민국은 무조건 왼쪽
+    var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
+    var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
+    var lScore = lv ? (swap ? lv.as : lv.hs) : 0, rScore = lv ? (swap ? lv.hs : lv.as) : 0;
     var mid;
     if (live || ended) {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
-        '<span class="fx-score">' + (lv.hs | 0) + ' <i>-</i> ' + (lv.as | 0) + "</span>" +
+        '<span class="fx-score">' + (lScore | 0) + ' <i>-</i> ' + (rScore | 0) + "</span>" +
         (live ? '<span class="fx-live"><span class="lv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>"
               : '<span class="fx-final">종료</span>');
     } else {
@@ -492,11 +499,11 @@
       ? '<div class="fx-goals">⚽ ' + lv.events.map(function (g) { return esc(g.who) + (g.clk ? " " + esc(g.clk) : ""); }).join(" · ") + "</div>"
       : "";
     return '<div class="fixture' + (clickable ? " clickable" : "") + (live ? " is-live" : "") + '"' + attr + ">" +
-      '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(fx.homeId)) + "</span>" +
-        '<span class="fx-team">' + esc(fx.homeName) + "</span></div>" +
+      '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(lId)) + "</span>" +
+        '<span class="fx-team">' + esc(lName) + "</span></div>" +
       '<div class="fx-mid">' + mid + "</div>" +
-      '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(fx.awayId)) + "</span>" +
-        '<span class="fx-team">' + esc(fx.awayName) + "</span></div>" +
+      '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(rId)) + "</span>" +
+        '<span class="fx-team">' + esc(rName) + "</span></div>" +
       (goals || (meta ? '<div class="fx-meta">' + meta + "</div>" : "")) +
       "</div>";
   }
