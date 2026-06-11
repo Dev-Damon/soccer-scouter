@@ -1167,9 +1167,9 @@
         var px = left ? (padX + fx * span) * W : W - (padX + fx * span) * W;
         var py = (d.x / 100) * 0.80 * H + 0.10 * H;
         var pd = p.id ? ' data-player="' + esc(p.id) + '"' : "";
-        return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="16" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
-          '<text x="' + px.toFixed(0) + '" y="' + (py + 5).toFixed(0) + '" fill="#fff" font-size="15" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-          '<text x="' + px.toFixed(0) + '" y="' + (py + 30).toFixed(0) + '" fill="#e6edf8" font-size="12" font-weight="400" text-anchor="middle">' + esc(nm) + "</text></g>";
+        return '<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
+          '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
+          '<text x="' + px.toFixed(0) + '" y="' + (py + 36).toFixed(0) + '" fill="#fff" font-size="23" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.35);stroke-width:3px">' + esc(nm) + "</text></g>";
       }).join("");
     }
     var pitch = '<rect class="mf-grass" width="' + W + '" height="' + H + '"/>' +
