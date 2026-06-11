@@ -2028,6 +2028,25 @@
     searchEl.value = ""; homeTab = "schedule"; go("");
   });
 
+  // ===== 테마(라이트/다크) 토글 — localStorage, 기본 다크 =====
+  (function () {
+    var KEY = "kt_theme";
+    function apply(t) {
+      document.documentElement.classList.toggle("light", t === "light");
+      var mb = document.getElementById("themeBtn"); if (mb) mb.textContent = t === "light" ? "☀️" : "🌙";
+      var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute("content", t === "light" ? "#f3f5f8" : "#0b1220");
+    }
+    var cur = "dark";
+    try { cur = localStorage.getItem(KEY) || "dark"; } catch (e) {}
+    apply(cur);
+    var btn = document.getElementById("themeBtn");
+    if (btn) btn.addEventListener("click", function () {
+      cur = document.documentElement.classList.contains("light") ? "dark" : "light";
+      try { localStorage.setItem(KEY, cur); } catch (e) {}
+      apply(cur);
+    });
+  })();
+
   // ===== 후원(응원하기) =====
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;

@@ -88,7 +88,7 @@ html, body {
 .hb-sub { margin-top: 9px; font-weight: 900; font-size: 22px; color: var(--text); min-height: 17px; }
 @keyframes wittySlide { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
 .hb-sub.anim { animation: wittySlide 0.45s ease; }
-.hb-dday { margin-top: 13px; display: inline-block; font-size: 13px; font-weight: 800; color: #0b1220; background: var(--accent, #4f8cff); border-radius: 999px; padding: 7px 18px; }
+.hb-dday { margin-top: 13px; display: inline-block; font-size: 13px; font-weight: 800; color: #fff; background: linear-gradient(135deg, #4d8cf5, #3d7ce0); border-radius: 999px; padding: 7px 18px; }
 
 /* Date section header (일정) */
 .date-head {
@@ -614,7 +614,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .hero {
   position: relative; overflow: hidden; cursor: pointer; margin-bottom: 8px;
   border-radius: 22px; padding: 18px 16px 16px;
-  background: linear-gradient(135deg, var(--accent), #2a5bd0);
+  background: linear-gradient(135deg, #4d8cf5, #3a78e0);
   box-shadow: var(--shadow);
 }
 .hero-grid { display: none; }
@@ -875,3 +875,25 @@ img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0
 /* VAR 경기분석 타이틀 */
 .var-title { display:flex; align-items:center; justify-content:center; gap:8px; font-size:18px; font-weight:800; color:var(--text); margin-bottom:10px; }
 .var-tag { font-family: ui-monospace, Menlo, monospace; letter-spacing:1px; font-size:13px; font-weight:900; color:#0b1220; background:linear-gradient(135deg,var(--gold),#ffd34d); border-radius:5px; padding:2px 7px; }
+
+/* ===================== 라이트 모드 ===================== */
+html.light {
+  --bg: #f3f5f8; --bg-soft: #ffffff; --card: #ffffff; --card-2: #f4f7fc;
+  --line: #e3e8f0; --text: #1c2536; --muted: #62718c; --accent: #2f6fe0;
+  --gold: #c98e00; --gray: #7a89a3; --shadow: 0 3px 14px rgba(40, 55, 85, .08);
+}
+html.light body { background: #f3f5f8; }
+html.light .topbar { background: linear-gradient(180deg, #f3f5f8 72%, transparent); }
+html.light .tabbar { background: rgba(255, 255, 255, .94); }
+html.light .tabbar-btn .tb-ic { filter: grayscale(.3) opacity(.7); }
+html.light .group-letter, html.light .avatar { background: linear-gradient(135deg, #e7eefb, #d7e4fb); color: #2f6fe0; }
+html.light .ds-arrow { background: #ffffff; border-color: #d3dae6; color: #1c2536; }
+html.light .donate-sheet { background: #ffffff; }
+html.light .search:focus { box-shadow: 0 0 0 3px rgba(47, 111, 224, .15); }
+html.light .brk-stage .m32 { background: #ffffff; }
+html.light .adslot { background: #eef1f6; }
+html.light .var-tag { color: #fff; }
+
+/* 테마 토글 버튼 (☀️/🌙) */
+.theme-btn { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 999px; width: 36px; height: 36px; font-size: 15px; line-height: 1; cursor: pointer; flex: none; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+.theme-btn:active { transform: scale(.94); }
