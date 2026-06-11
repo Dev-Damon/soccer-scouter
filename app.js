@@ -2270,7 +2270,7 @@
       var binp = bsl.querySelector(".bet-amt");
       var amt = Math.max(0, Math.min(parseInt(binp ? binp.value : bsl._betStake, 10) || 0, bsl._betStakeMax || 0));
       if (amt < 10) { alert("최소 10 KP부터 베팅할 수 있어요."); return; }
-      if (!confirm(amt.toLocaleString() + " KP를 베팅할까요? (한 경기 1회, 취소 불가)")) return;
+      if (!confirm(amt.toLocaleString() + " KP를 베팅할까요? (킥오프 전까지 취소 가능)")) return;
       var bch = my.getAttribute("data-betch");
       KickComments.placeBet(bsl._betFx, bch, amt).then(function () { bsl._betReload(); if (KickComments.predVote) KickComments.predVote(bsl._betFx, bch); var psl = document.querySelector(".pred-slot"); if (psl && psl._predReload) psl._predReload(); }).catch(function (err) { alert("베팅 실패: " + ((err && err.message) || "다시 시도해주세요")); });
       return;
