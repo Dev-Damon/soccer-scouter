@@ -88,6 +88,13 @@
     return m.name || m.full_name || m.nickname || (u && u.email) || "익명";
   }
   function avatarOf(u) { var m = (u && u.user_metadata) || {}; return m.avatar_url || m.picture || null; }
+  // 본명 노출 방지: 가운데 글자 * 마스킹 (홍길동→홍*동, 남궁민수→남**수, John→J**n)
+  function maskName(n) {
+    n = String(n || "").trim(); if (!n) return "익명";
+    return n.split(/\s+/).map(function (w) { return w.length <= 1 ? w : w.length === 2 ? w[0] + "*" : w[0] + new Array(w.length - 1).join("*") + w[w.length - 1]; }).join(" ");
+  }
+  // 로그인 사용자(user_id 있음) 표시명은 마스킹, 익명(랜덤닉)은 그대로
+  function dispName(name, userId) { return userId ? maskName(name) : (name || "익명"); }
 
   var mounts = [];
   function client() {
@@ -186,8 +193,9 @@
     var root = isReply ? (c.parent_id || c.id) : c.id;
     var react = '<button class="cmt-rx up' + (rr.mine === 1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="1">▲ ' + rr.like + "</button>" +
       '<button class="cmt-rx down' + (rr.mine === -1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="-1">▼ ' + rr.dislike + "</button>";
-    return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(c.name || "익명") + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
-      '<div class="cmt-top"><span class="cmt-name">' + esc(c.name || "익명") + "</span>" +
+    var dn = dispName(c.name, c.user_id);
+    return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(dn) + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
+      '<div class="cmt-top"><span class="cmt-name">' + esc(dn) + "</span>" +
         '<span class="cmt-time">' + timeago(c.created_at) + "</span></div>" +
       '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
       '<div class="cmt-act">' + react +
@@ -214,7 +222,7 @@
       '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var an = anonGet();
-    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick cmt-nick-full" maxlength="20" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">🎲</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">🌶</button><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
+    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick cmt-nick-full" maxlength="20" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">순한맛</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">매운맛</button><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
     var form = '<div class="cmt-form">' + anonRow + '<textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
@@ -537,7 +545,8 @@
       ".cmt-anon input{flex:1;min-width:0;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:8px;padding:8px 10px;font-size:13px}",
       ".cmt-anon{flex-wrap:wrap}",
       ".cmt-anon input.cmt-nick-full{flex:0 0 100%}",
-      ".cmt-dice,.cmt-spicy{flex:none;width:40px;background:var(--bg-soft,#0f1a2a);border:1px solid var(--line,#1e2a3a);border-radius:8px;font-size:16px;cursor:pointer;line-height:1}",
+      ".cmt-dice,.cmt-spicy{flex:none;padding:0 11px;background:var(--bg-soft,#0f1a2a);border:1px solid var(--line,#1e2a3a);border-radius:8px;font-size:12px;font-weight:700;color:var(--text,#fff);cursor:pointer;line-height:1;white-space:nowrap}",
+      ".cmt-spicy{color:#e5644d;border-color:#e5644d}",
       ".cmt-replybox{margin:6px 0 0 0}",
       ".cmt-ta{flex:1;min-height:44px;resize:vertical;background:var(--bg-soft,#0f1a2a);color:var(--text,#fff);border:1px solid var(--line,#1e2a3a);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px}",
       ".cmt-send,.cmt-rsend{align-self:flex-end;background:var(--accent,#2ee6a6);color:#fff;font-weight:800;border:0;border-radius:10px;padding:0 16px;height:44px;cursor:pointer}",
@@ -630,7 +639,7 @@
   }
 
   window.KickComments = {
-    predCounts: predCounts, predMine: predMine, predVote: predVote,
+    predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

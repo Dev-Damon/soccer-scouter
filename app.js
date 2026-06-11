@@ -2278,9 +2278,10 @@
     function msgsEl() { return panel.querySelector(".chat-msgs"); }
     function ncolor(name) { var cols = ["#5b9dff", "#e5748a", "#5bbf8a", "#f0a93b", "#b18cff", "#46c2d6", "#e0739e"], h = 0, i; for (i = 0; i < (name || "").length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0; return cols[h % cols.length]; }
     function bubble(m) {
-      var col = ncolor(m.name), ch0 = (m.name || "?").trim().charAt(0).toUpperCase() || "?";
+      var nm = (window.KickComments && KickComments.dispName) ? KickComments.dispName(m.name, m.user_id) : (m.name || "익명");
+      var col = ncolor(m.name), ch0 = (nm || "?").trim().charAt(0).toUpperCase() || "?";
       return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
-        '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(m.name) + "</span> " +
+        '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " +
         '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }
     function loadRender(forceBottom) {
