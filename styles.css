@@ -388,10 +388,12 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .ds-tier { display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 9px; font-size: 15px; font-weight: 700; color: var(--text); text-decoration: none; font-family: inherit; text-align: left; cursor: pointer; }
 .ds-tier b { color: #f5b301; }
 .ds-tier:active { background: #15294e; }
-.ds-fall.hl { border: 1px solid #f5b301; border-radius: 10px; padding: 12px; background: rgba(245,179,1,.08); margin-top: 14px; }
-.ds-toast { background: #15294e; border: 1px solid #2a3a5c; color: #eaf0fb; border-radius: 10px; padding: 11px 13px; font-size: 12.5px; line-height: 1.5; margin-top: 12px; text-align: center; }
-.ds-fall { font-size: 13px; color: var(--muted); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-.ds-fall b { color: var(--text); }
+.ds-status:not(:empty) { margin-top: 14px; }
+.ds-loading { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 13px; padding: 10px; }
+.ds-spin { width: 15px; height: 15px; border: 2px solid var(--line); border-top-color: #f5b301; border-radius: 50%; animation: dsspin .7s linear infinite; }
+@keyframes dsspin { to { transform: rotate(360deg); } }
+.ds-fall { font-size: 13px; line-height: 1.7; color: var(--text); padding: 13px; border: 1px solid #f5b301; border-radius: 10px; background: rgba(245,179,1,.08); }
+.ds-fall b { color: #f5b301; }
 .ds-copy { background: var(--bg-soft); border: 1px solid var(--line); color: var(--text); border-radius: 7px; padding: 3px 10px; font-size: 12px; font-weight: 700; cursor: pointer; margin-left: 4px; }
 .ds-note { margin-top: 14px; font-size: 11.5px; line-height: 1.5; }
 /* 게시판 */

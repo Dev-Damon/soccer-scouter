@@ -2022,22 +2022,19 @@
     function tossLink(amt) { return "supertoss://send?amount=" + amt + "&bank=%ED%86%A0%EC%8A%A4%EB%B1%85%ED%81%AC&accountNo=" + ACCT + "&origin=qr"; }
     var ov = null;
     function close() { if (ov) ov.classList.remove("on"); }
-    var tossBusy = false, toastTimer = null;
-    function toast(msg) {
-      if (!ov) return;
-      var sheet = ov.querySelector(".donate-sheet"), ex = sheet.querySelector(".ds-toast"); if (ex) ex.parentNode.removeChild(ex);
-      var t = document.createElement("div"); t.className = "ds-toast"; t.textContent = msg; sheet.appendChild(t); twem(t);
-      clearTimeout(toastTimer); toastTimer = setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 5000);
-    }
+    var tossBusy = false;
     function tryToss(amt) {
-      if (tossBusy) return; tossBusy = true; setTimeout(function () { tossBusy = false; }, 1600);
+      if (tossBusy) return; tossBusy = true; setTimeout(function () { tossBusy = false; }, 1800);
+      var st = ov && ov.querySelector(".ds-status");
+      if (st) st.innerHTML = '<div class="ds-loading"><span class="ds-spin"></span>토스 앱 여는 중…</div>';
       var start = Date.now();
       window.location.href = tossLink(amt);
       setTimeout(function () {
-        if (!document.hidden && (Date.now() - start) < 2500) {   // 토스 앱이 안 열림(미설치)
-          var fb = ov && ov.querySelector(".ds-fall"); if (fb) fb.classList.add("hl");
-          toast("토스 앱이 안 열렸어요 😅 토스가 없으면 아래 계좌로 후원해주세요 🙏");
-        }
+        if (!st) return;
+        if (!document.hidden && (Date.now() - start) < 2500) {   // 토스 미설치 → 계좌 '영구' 표시
+          st.innerHTML = '<div class="ds-fall">토스 앱이 없으신가요? 😅 계좌로 후원해주세요<br><b>' + BANK + " " + ACCT + '</b> <button class="ds-copy" data-acct="' + ACCT + '">복사</button></div>';
+          twem(st);
+        } else { st.innerHTML = ""; }   // 토스 열림 → 로딩 제거
       }, 1400);
     }
     function open() {
@@ -2047,8 +2044,8 @@
         ov.innerHTML = '<div class="donate-sheet"><button class="ds-x" aria-label="닫기">✕</button>' +
           '<div class="ds-title">⚽ 개발자에게 한 골!</div>' +
           '<div class="ds-sub">여러분의 응원이 킥톡을 계속 뛰게 합니다 🙌</div>' + tiers +
-          '<div class="ds-fall">토스가 없다면 계좌로 — <b>' + BANK + " " + ACCT + '</b> <button class="ds-copy" data-acct="' + ACCT + '">복사</button></div>' +
-          '<div class="ds-note muted-note">금액을 누르면 토스 송금창이 열려요(토스 앱 필요). 토스가 없으면 위 계좌로! 보내주신 마음은 서버비·개선에 쓰입니다 💙</div></div>';
+          '<div class="ds-status"></div>' +
+          '<div class="ds-note muted-note">금액을 누르면 토스 송금창이 열려요. 보내주신 마음은 서버비·개선에 쓰입니다 💙</div></div>';
         document.body.appendChild(ov);
         ov.addEventListener("click", function (e) {
           if (e.target === ov || e.target.closest(".ds-x")) { close(); return; }
@@ -2058,6 +2055,7 @@
           if (tr) { tryToss(+tr.getAttribute("data-amt")); return; }
         });
       }
+      var st0 = ov.querySelector(".ds-status"); if (st0) st0.innerHTML = "";   // 열 때마다 초기화(계좌 숨김)
       ov.classList.add("on"); twem(ov);
     }
     btn.addEventListener("click", open);
