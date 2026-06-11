@@ -1331,14 +1331,19 @@
     }
     updScore();
     var lvNow = LIVE[fx.id], ko = matchKickoff(fx);
-    if ((lvNow && lvNow.state === "in") || (ko && Date.now() >= ko - 600000 && Date.now() < ko + 8400000)) {
+    // 킥오프 2시간 전 ~ 종료 후까지 타이머 가동(선발 라인업 뜨자마자 자동 교체 + 라이브 스코어)
+    if ((lvNow && lvNow.state === "in") || (ko && Date.now() >= ko - 7200000 && Date.now() < ko + 8400000)) {
       if (window.fetch) fetchLive();  // 전역 스코어 폴링 시동
+      if (window.fetch) refreshLineup();  // 진입 즉시 1회
+      var _tick = 0;
       matchLiveTimer = setInterval(function () {
         if (parseHash().name !== "match") { stopMatchLive(); return; }
+        _tick++;
         updScore();
         var lv = LIVE[fx.id];
-        if (lv && lv.state === "in") refreshLineup();
+        if (lv && lv.state === "in") refreshLineup();                 // 라이브: 매 20초
         else if (lv && lv.state === "post") { refreshLineup(); stopMatchLive(); }
+        else if (_tick % 3 === 0) refreshLineup();                    // 킥오프 전: 60초마다 라인업 폴링 → 뜨면 자동 반영
       }, 20000);
     }
   }
