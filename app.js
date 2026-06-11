@@ -245,19 +245,19 @@
       var rows = players.slice(0, 50).map(function (p, i) {
         var pl = p.pid && playersById[p.pid];
         var meta = pl ? (esc(pl.club || "") + (pl.league ? " · " + esc(pl.league) : "")) : esc(p.team || "");
-        var apps = p.apps || 0, main, statsub;
+        var apps = p.apps || 0, statMain, statsub;
         if (scoreCat === "cards") {
-          main = '🟨' + (p.yellow || 0) + (p.red ? '  🟥' + p.red : "");
+          statMain = '<span class="sc-cards">' + (p.yellow ? '<span class="cardbox y">' + p.yellow + "</span>" : "") + (p.red ? '<span class="cardbox r">' + p.red + "</span>" : "") + "</span>";
           statsub = apps ? apps + "경기" : "";
         } else {
           var unit = scoreCat === "goals" ? "골" : scoreCat === "assists" ? "도움" : "자책";
-          main = scVal(p) + unit;
+          statMain = '<span class="sc-num">' + scVal(p) + '</span><span class="sc-unit">' + unit + "</span>";
           statsub = apps ? (apps + "경기 · 평균 " + (scVal(p) / apps).toFixed(2)) : "";
         }
         return '<div class="sc-row' + (p.pid ? " clickable" : "") + '"' + (p.pid ? ' data-player="' + esc(p.pid) + '"' : "") + '>' +
           '<span class="sc-rank">' + (i + 1) + "</span><span class=\"sc-flag\">" + esc(p.flag || "") + "</span>" +
           '<span class="sc-name">' + esc(p.name) + '<span class="sc-team">' + meta + "</span></span>" +
-          '<span class="sc-stat"><b class="sc-val">' + main + "</b>" + (statsub ? '<span class="sc-statsub">' + statsub + "</span>" : "") + "</span></div>";
+          '<span class="sc-stat">' + statMain + (statsub ? '<span class="sc-statsub">' + statsub + "</span>" : "") + "</span></div>";
       }).join("");
       viewEl.innerHTML = html + '<div class="sc-list">' + rows + "</div>"; twem(viewEl);
     });

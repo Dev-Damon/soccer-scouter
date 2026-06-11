@@ -614,7 +614,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .dchip.on { background: var(--text); border-color: var(--text); }
 .dchip.on .dchip-dow, .dchip.on .dchip-day, .dchip.on .dchip-mo { color: var(--bg); }
 /* 대한민국 경기일: 태극기 + 빨강 강조 */
-.dchip.kor { border-color: #e5484d; background: rgba(229,72,77,.07); }
+.dchip.kor { border-color: var(--muted); }
 .dchip.kor.on { background: var(--text); border-color: var(--text); }
 .dchip-kor { position: absolute; top: -18px; left: 0; right: 0; text-align: center; font-size: 14px; line-height: 1; }
 .dchip-kor img { width: 16px; height: 16px; vertical-align: middle; }
@@ -949,6 +949,11 @@ html.light .mf-grass { fill: #2e8b54; }
 .sc-name { flex: 1; min-width: 0; font-weight: 700; font-size: 14px; display: flex; flex-direction: column; gap: 1px; }
 .sc-team { font-size: 11px; color: var(--muted); font-weight: 500; }
 .sc-stat { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 1px; min-width: 66px; }
-.sc-val { font-weight: 900; font-size: 16px; color: var(--accent); }
+.sc-num { font-weight: 900; font-size: 19px; color: var(--accent); line-height: 1; }
+.sc-unit { font-weight: 500; font-size: 11.5px; color: var(--muted); margin-left: 2px; }
+.sc-cards { display: flex; gap: 5px; align-items: center; }
+.cardbox { display: inline-grid; place-items: center; width: 17px; height: 23px; border-radius: 3px; font-size: 12px; font-weight: 900; }
+.cardbox.y { background: #f5c518; color: #4a3a00; }
+.cardbox.r { background: #e5484d; color: #fff; }
 .sc-statsub { font-size: 10px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 .sc-sub { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 3px; }
