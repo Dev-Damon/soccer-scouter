@@ -333,6 +333,7 @@
     var _sl = document.createElement("div"); _sl.id = "sideAdL"; document.body.appendChild(_sl);
     insertCoupang(_sl, 90, 728);
   }
+  function pageAd() { if (!viewEl || viewEl.querySelector(".adslot")) return; var d = document.createElement("div"); d.className = "adslot"; viewEl.appendChild(d); insertAdFit(d); }
   function renderSchedule() {
     var dates = fixtureDates();
     if (!dates.length) {
@@ -587,7 +588,7 @@
     if (teams.length) html += '<div class="sv-sub">나라</div><div class="grid">' + teams.map(function (t) { return '<div class="player-row" data-team="' + esc(t.id) + '"><span class="rank-flag" style="font-size:24px">' + esc(t.flag || "🏳") + '</span><div class="player-main"><div class="player-name">' + esc(t.name) + '</div><div class="player-sub">대표팀</div></div></div>'; }).join("") + "</div>";
     if (matches.length) html += '<div class="sv-sub">경기</div><div class="grid">' + matches.map(function (fx) { var ta = teamsById[fx.homeId], tb = teamsById[fx.awayId]; var nm = (ta ? ta.flag + " " + ta.name : "?") + " vs " + (tb ? tb.flag + " " + tb.name : "?"); return '<div class="player-row" data-match="' + esc(fx.id) + '"><div class="player-main"><div class="player-name">' + esc(nm) + '</div><div class="player-sub">' + esc((fmtDate(fxDate(fx)) || {}).d || fx.date || "") + "</div></div></div>"; }).join("") + "</div>";
     if (players.length) html += '<div class="sv-sub">선수</div><div class="grid">' + players.map(function (p) { return playerRow(p, true); }).join("") + "</div>";
-    viewEl.innerHTML = html; twem(viewEl);
+    viewEl.innerHTML = html; twem(viewEl); pageAd();
   }
 
   // ===================== 선수 랭킹 (검색 탭 기본 화면) =====================
@@ -657,7 +658,7 @@
       });
       html += "</div>";
       viewEl.innerHTML = html;
-      paintRanking();
+      paintRanking(); pageAd();
       if (window.KickComments && KickComments.configured()) {
         KickComments.ready().then(function () { return KickComments.ratingStats(); }).then(function (m) {
           RANK_STATS = m || {};
@@ -697,7 +698,7 @@
     } else {
       html += '<div class="empty">검색 결과가 없어요.<br>다른 이름이나 소속 클럽으로 찾아보세요.</div>';
     }
-    viewEl.innerHTML = html;
+    viewEl.innerHTML = html; pageAd();
   }
 
   function renderGradeList(grade) {
@@ -1632,7 +1633,7 @@
       '<div class="my-tabs">' +
         '<button class="my-tabbtn' + (myTab === "mine" ? " on" : "") + '" data-mytab="mine">내가 쓴 댓글 ' + myCache.mine.length + "</button>" +
         '<button class="my-tabbtn' + (myTab === "tagged" ? " on" : "") + '" data-mytab="tagged">나를 태그한 댓글 ' + myCache.tagged.length + "</button></div>" +
-      '<div class="my-list">' + listH + "</div></div>";
+      '<div class="my-list">' + listH + "</div></div>"; pageAd();
   }
   function renderMyLogin() {
     return KickComments.providers().then(function (P) {
@@ -1782,7 +1783,7 @@
     var posts = pin.concat(rest);
     var listHtml = posts.length ? posts.map(postItem).join("") : '<div class="empty">아직 글이 없어요. 첫 글을 남겨보세요!</div>';
     viewEl.innerHTML = '<div class="bd"><h2 class="bd-h">📋 게시판</h2>' + chips + form + sortUi + '<div class="pf-list">' + listHtml + "</div></div>";
-    twem(viewEl);
+    twem(viewEl); pageAd();
   }
   function renderBoard() {
     backBtn.hidden = true; tabsEl.hidden = true;
