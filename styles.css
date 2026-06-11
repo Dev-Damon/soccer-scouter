@@ -336,7 +336,8 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .lu-tn { font-weight: 800; font-size: 14.5px; margin: 10px 0 8px; }
 .lu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; }
 .lu-list.subs { opacity: .72; }
-.lu-p { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 13.5px; }
+.lu-p { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 13.5px; min-width: 0; }
+.lu-list { overflow: hidden; }
 .lu-num { width: 22px; text-align: center; font-weight: 800; color: var(--muted); flex: none; }
 .lu-nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lu-pos { font-size: 11px; color: var(--muted); flex: none; }
@@ -778,8 +779,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .prob-seg.a { background: linear-gradient(90deg, var(--accent), #3a6fd8); }
 .prob-seg.d { background: var(--surface-3, #6b7a92); color: #fff; }
 .prob-seg.b { background: linear-gradient(90deg, #c0473f, #e5484d); }
-.prob-legend { display: flex; justify-content: space-between; color: var(--muted); font-size: 11.5px; margin-top: 6px; }
-.prob-legend span:nth-child(2) { color: var(--muted); }
+.prob-legend { position: relative; display: flex; justify-content: space-between; color: var(--muted); font-size: 11.5px; margin-top: 6px; }
+.pl-draw { position: absolute; transform: translateX(-50%); }  /* 무 라벨이 무승부 막대 중앙 따라가게 */
 
 .cmp-row { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); }
 .cmp-row:last-child { border-bottom: 0; }
