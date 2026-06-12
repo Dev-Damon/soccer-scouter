@@ -1602,6 +1602,7 @@
 
   // ===================== 라이브 경기 (ESPN 공개 API · 분단위 폴링, 백엔드/키 불필요) =====================
   var LIVE = {};            // fixtureId -> {state:'in'|'post', clock, hs, as, events}
+  var _pushedResults = {};  // 결과 중복 저장 방지
   var liveTimer = null;
   var ESPN_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
   // ESPN 표기 → 앱 팀 id 보정(슬러그가 안 맞는 케이스만)
@@ -1657,8 +1658,20 @@
         events: parseGoals(c)
       };
       if (JSON.stringify(LIVE[fid]) !== JSON.stringify(rec)) { LIVE[fid] = rec; changed = true; }
+      if (state === "post" && window.KickComments && KickComments.pushResult && !_pushedResults[fid]) { _pushedResults[fid] = 1; KickComments.pushResult(fid, rec.hs, rec.as); }  // 결과 영구 저장
     });
     return { changed: changed, anyLive: anyLive, anyToday: anyToday };
+  }
+  // 저장된 종료경기 결과를 LIVE에 병합(ESPN이 안 줘도 카드에 결과 유지)
+  function loadStoredResults() {
+    if (!window.KickComments || !KickComments.matchResults) return;
+    KickComments.ready().then(KickComments.matchResults).then(function (res) {
+      var changed = false;
+      Object.keys(res || {}).forEach(function (mid) {
+        if (!LIVE[mid] && res[mid] && res[mid].hs != null) { LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: [], stored: true }; changed = true; }
+      });
+      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
+    }).catch(function () {});
   }
   function onHomeSchedule() {
     return parseHash().name === "home" && !searchEl.value.trim() && homeTab === "schedule";
@@ -2953,6 +2966,7 @@
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
   fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분)
+  loadStoredResults();  // 저장된 종료경기 결과 병합(ESPN이 내려도 카드에 결과 유지)
   // 모바일은 백그라운드에서 타이머가 멈춤 → 앱으로 돌아오는 즉시 점수 재요청 + 화면 즉시 재렌더(스테일 방지)
   function onAppReturn() {
     if (!window.fetch) return;
