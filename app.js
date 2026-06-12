@@ -1955,22 +1955,28 @@
       '<div class="rs-vals">' + (off != null ? '공식 <b class="rs-off">' + off.toFixed(1) + "</b>" : "팬 평점") + "</div>" +
       '<div class="rs-hint">탭해서 내 평점 주기</div>' +
       '<div class="rs-scale">' + scale0 + "</div>" +
+      '<button class="rs-mvp" data-rs-mvp>🏆 이 경기 최고의 선수로 뽑기</button>' +
       '<button class="rs-detail">선수 상세 보기 →</button></div>';
     document.body.appendChild(bg);
     function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); }
     ktModalOpen(close);  // 뒤로가기 시 페이지가 아니라 팝업이 닫히도록
     function load() {
-      KickComments.ready().then(function () { return KickComments.matchRatings(matchId); }).then(function (rd) {
+      KickComments.ready().then(function () { return Promise.all([KickComments.matchRatings(matchId), KickComments.matchMvp ? KickComments.matchMvp(matchId) : null]); }).then(function (arr) {
+        var rd = arr[0] || {}, md = arr[1] || { votes: {}, mine: null };
         var ur = (rd.byPlayer && rd.byPlayer[pid]) || null, mine = (rd.mine && rd.mine[pid]) || 0; bg._mine = mine;
         bg.querySelector(".rs-vals").innerHTML = (off != null ? '공식 <b class="rs-off">' + off.toFixed(1) + "</b>" : "") + (off != null && ur ? " · " : "") + (ur ? '유저 <b class="rs-usr">' + ur.avg.toFixed(1) + "</b> (" + ur.cnt + "명)" : (off == null ? "아직 유저 평점 없음" : ""));
         bg.querySelector(".rs-hint").textContent = "탭해서 내 평점" + (mine ? " · 현재 " + mine + "점 (다시 누르면 취소)" : "");
         Array.prototype.forEach.call(bg.querySelectorAll(".rs-n"), function (btn) { btn.classList.toggle("on", +btn.getAttribute("data-rs-score") === mine); });
+        var isMvp = md.mine === pid; bg._mvpMine = md.mine;  // 이 경기 최고의 선수(MVP) — 경기당 1명
+        var mvpBtn = bg.querySelector(".rs-mvp");
+        if (mvpBtn) { var vc = (md.votes && md.votes[pid]) || 0; mvpBtn.classList.toggle("on", isMvp); mvpBtn.innerHTML = (isMvp ? "🏆 내가 뽑은 최고의 선수 ✓ (취소)" : "🏆 이 경기 최고의 선수로 뽑기") + (vc ? ' <span class="rs-mvpn">' + vc + "표</span>" : ""); }
       }).catch(function () {});
     }
     bg.addEventListener("click", function (e) {
       if (e.target === bg || e.target.closest(".rs-x")) { if (ktModalClose) history.back(); else close(); return; }
       var n = e.target.closest("[data-rs-score]");
       if (n) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var sc = +n.getAttribute("data-rs-score"); (bg._mine === sc ? KickComments.unrateMatchPlayer(matchId, pid) : KickComments.rateMatchPlayer(matchId, pid, sc)).then(load); return; }
+      if (e.target.closest(".rs-mvp")) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } (bg._mvpMine === pid ? KickComments.unvoteMvp(matchId) : KickComments.voteMvp(matchId, pid)).then(function () { ktToast(bg._mvpMine === pid ? "최고의 선수 취소" : "🏆 최고의 선수로 뽑았어요!"); load(); }); return; }
       if (e.target.closest(".rs-detail")) { ktModalClose = null; close(); location.hash = "#player/" + pid; return; }
     });
     load();
