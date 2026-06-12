@@ -1333,9 +1333,16 @@
           var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
           if (nm.length > 5) nm = nm.slice(0, 4) + "…";
           var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";
+          var rbsvg = "";
+          if (d.rating != null) {
+            var rc = d.rating >= 7.0 ? "#1aa55b" : d.rating >= 6.5 ? "#c99a1c" : "#cc6b22";
+            var bx = px + 6, by = py - 25;
+            rbsvg = '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="25" height="15" rx="3" fill="' + rc + '" stroke="#0b1220" stroke-width="1"/>' +
+              '<text x="' + (bx + 12.5).toFixed(0) + '" y="' + (by + 11.5).toFixed(0) + '" fill="#fff" font-size="11.5" font-weight="800" text-anchor="middle">' + d.rating.toFixed(1) + "</text>";
+          }
           out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text></g>");
+            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text>" + rbsvg + "</g>");
         });
       });
       return out.join("");
@@ -1357,7 +1364,7 @@
     function toPl(t) { return (t.lineup || []).map(function (d) { var p = playersById[d.playerId] || {}; return { name: p.name || "", number: p.number, x: d.x, y: d.y, pid: p.id }; }); }
     return '<h3>📋 예상 라인업 <span class="muted-note">탭하면 선수 상세</span></h3>' + mfHead(a, a.formation, b, b.formation) + pitchSVG(toPl(a), toPl(b));
   }
-  function espnPitch(d, a, b) {
+  function espnPitch(d, a, b, matchId) {
     var rosters = d.rosters || [];
     function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
     var ra = rosterFor(a), rb = rosterFor(b);
@@ -1367,7 +1374,7 @@
     function coordFn(rs) { return ended ? espnLineupCoords(rs) : currentLineupCoords(rs, d.keyEvents); }
     var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
-    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: mp ? mp.name : nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
+    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn) }; }); }
     return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
@@ -1856,7 +1863,8 @@
   }
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
-    "match-2": { byName: { "황희찬": 6.7, "엄지성": 7.0, "오현규": 7.5, "김진규": 6.7, "박진섭": 6.7, "사딜레크": 6.6, "흘로제크": 7.0, "호리": 6.5, "히틸": 6.4 } }
+    // 교체선수 평점=사진(실제). 선발(잔디)은 사진 받기 전 임시 데모값 — 추후 교체.
+    "match-2": { byName: { "황희찬": 6.7, "엄지성": 7.0, "오현규": 7.5, "김진규": 6.7, "박진섭": 6.7, "사딜레크": 6.6, "흘로제크": 7.0, "호리": 6.5, "히틸": 6.4, "황인범": 7.4, "손흥민": 6.8, "이강인": 7.1, "김민재": 7.0, "김승규": 6.9, "설영우": 6.7, "크레이치": 7.2 } }
   };
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
   function ratingBox(r) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(1) + "</span>"; }
@@ -1925,7 +1933,7 @@
     twem(slot);
     // 실제 선발 라인업이 오면 포메이션 피치도 '예상→실시간'으로 자동 교체
     if (hasLineup) {
-      try { var ep = espnPitch(d, a, b); var mb = viewEl.querySelector(".mf-block"); if (ep && mb) { mb.innerHTML = ep; mb.style.display = ""; twem(mb); } } catch (e) {}
+      try { var ep = espnPitch(d, a, b, matchId); var mb = viewEl.querySelector(".mf-block"); if (ep && mb) { mb.innerHTML = ep; mb.style.display = ""; twem(mb); } } catch (e) {}
     }
   }
   // ===== 경기 평점·MVP =====
