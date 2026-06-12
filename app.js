@@ -1336,9 +1336,9 @@
           var rbsvg = "";
           if (d.rating != null) {
             var rc = d.rating >= 7.0 ? "#1aa55b" : d.rating >= 6.5 ? "#c99a1c" : "#cc6b22";
-            var bx = px + 6, by = py - 25;
-            rbsvg = '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="25" height="15" rx="3" fill="' + rc + '" stroke="#0b1220" stroke-width="1"/>' +
-              '<text x="' + (bx + 12.5).toFixed(0) + '" y="' + (by + 11.5).toFixed(0) + '" fill="#fff" font-size="11.5" font-weight="800" text-anchor="middle">' + d.rating.toFixed(1) + "</text>";
+            var bx = px + 5, by = py - 27;
+            rbsvg = '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="29" height="18" rx="3.5" fill="' + rc + '" stroke="#0b1220" stroke-width="1" class="rbox-tap" style="cursor:pointer"/>' +
+              '<text x="' + (bx + 14.5).toFixed(0) + '" y="' + (by + 13.5).toFixed(0) + '" fill="#fff" font-size="13.5" font-weight="800" text-anchor="middle" style="pointer-events:none">' + d.rating.toFixed(1) + "</text>";
           }
           var ico = (d.goal ? "⚽" : "") + (d.subOff ? "⇄" : "");  // 골·교체 표시(어시스트 X)
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
@@ -1900,7 +1900,7 @@
     var info = subInfo && subInfo[enm];  // 교체 투입 정보(들어온 분·나간 선수)
     var gi = (goals && goals[enm]) ? ' <span class="lu-goal">⚽' + (goals[enm] > 1 ? goals[enm] : "") + "</span>" : "";  // 득점 표시
     var rb = ratingBox(ratingOf(matchId, nm));
-    var sub = info ? '<span class="lu-subin">▲ ' + esc(info.clk) + " · " + esc(info.outKo) + " ⬇</span>" : "";
+    var sub = info ? '<span class="lu-subin">⇄ ' + esc(info.clk) + " · " + esc(info.outKo) + "</span>" : "";  // 라인업과 동일한 ⇄ 아이콘
     return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
   }
   function enToKo(name) { var mp = playerByName(name || ""); return mp ? mp.name : (name || ""); }
