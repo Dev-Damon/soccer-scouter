@@ -662,6 +662,7 @@
       numBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
       '<div class="player-sub">' + sub + "</div></div>" +
+      (clubLeague && p.ovr ? '<span class="pr-ovr">' + p.ovr + "<i>OVR</i></span>" : "") +
       badge(p, hideScore) + "</div>";
   }
 

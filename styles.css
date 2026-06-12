@@ -547,6 +547,8 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
   border: 1px solid transparent;
 }
 .badge .score { opacity: .8; font-weight: 700; }
+.pr-ovr { flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; font-weight: 900; font-size: 17px; color: var(--accent); min-width: 32px; }
+.pr-ovr i { font-size: 8px; font-weight: 800; color: var(--muted); font-style: normal; letter-spacing: .5px; margin-top: 2px; }
 .g-월드클래스 { background: rgba(245,179,1,.14); color: var(--gold); border-color: rgba(245,179,1,.35); }
 .g-주전급 { background: rgba(46,204,113,.13); color: var(--green); border-color: rgba(46,204,113,.32); }
 .g-로테이션 { background: rgba(26,188,156,.12); color: var(--teal); border-color: rgba(26,188,156,.3); }
