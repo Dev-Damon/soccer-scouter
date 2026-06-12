@@ -1900,20 +1900,23 @@
     var pl = playersById[pid]; if (!pl || !window.KickComments) return;
     var off = ratingOf(matchId, pl.name);
     var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
-    bg.innerHTML = '<div class="rate-sheet"><div class="rs-hint">불러오는 중…</div></div>';
+    // 처음부터 전체 레이아웃 렌더(크기 고정) → 데이터는 값만 나중에 채움(팝업 크기 안 변함)
+    var scale0 = ""; for (var s0 = 1; s0 <= 10; s0++) scale0 += '<button class="rs-n" data-rs-score="' + s0 + '">' + s0 + "</button>";
+    bg.innerHTML = '<div class="rate-sheet">' +
+      '<div class="rs-head"><b>' + esc(pl.name) + "</b>" + (pl.number != null ? ' <span class="rs-num">#' + pl.number + "</span>" : "") + '<button class="rs-x" aria-label="닫기">✕</button></div>' +
+      '<div class="rs-vals">' + (off != null ? '공식 <b class="rs-off">' + off.toFixed(1) + "</b>" : "팬 평점") + "</div>" +
+      '<div class="rs-hint">탭해서 내 평점 주기</div>' +
+      '<div class="rs-scale">' + scale0 + "</div>" +
+      '<button class="rs-detail">선수 상세 보기 →</button></div>';
     document.body.appendChild(bg);
     function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); }
     ktModalOpen(close);  // 뒤로가기 시 페이지가 아니라 팝업이 닫히도록
     function load() {
       KickComments.ready().then(function () { return KickComments.matchRatings(matchId); }).then(function (rd) {
         var ur = (rd.byPlayer && rd.byPlayer[pid]) || null, mine = (rd.mine && rd.mine[pid]) || 0; bg._mine = mine;
-        var scale = ""; for (var s = 1; s <= 10; s++) scale += '<button class="rs-n' + (s === mine ? " on" : "") + '" data-rs-score="' + s + '">' + s + "</button>";
-        bg.querySelector(".rate-sheet").innerHTML =
-          '<div class="rs-head"><b>' + esc(pl.name) + "</b>" + (pl.number != null ? ' <span class="rs-num">#' + pl.number + "</span>" : "") + '<button class="rs-x" aria-label="닫기">✕</button></div>' +
-          '<div class="rs-vals">' + (off != null ? '공식 <b class="rs-off">' + off.toFixed(1) + "</b>" : "") + (off != null && ur ? " · " : "") + (ur ? '유저 <b class="rs-usr">' + ur.avg.toFixed(1) + "</b> (" + ur.cnt + "명)" : (off == null ? "아직 유저 평점 없음" : "")) + "</div>" +
-          '<div class="rs-hint">탭해서 내 평점' + (mine ? " · 현재 " + mine + "점 (다시 누르면 취소)" : "") + "</div>" +
-          '<div class="rs-scale">' + scale + "</div>" +
-          '<button class="rs-detail">선수 상세 보기 →</button>';
+        bg.querySelector(".rs-vals").innerHTML = (off != null ? '공식 <b class="rs-off">' + off.toFixed(1) + "</b>" : "") + (off != null && ur ? " · " : "") + (ur ? '유저 <b class="rs-usr">' + ur.avg.toFixed(1) + "</b> (" + ur.cnt + "명)" : (off == null ? "아직 유저 평점 없음" : ""));
+        bg.querySelector(".rs-hint").textContent = "탭해서 내 평점" + (mine ? " · 현재 " + mine + "점 (다시 누르면 취소)" : "");
+        Array.prototype.forEach.call(bg.querySelectorAll(".rs-n"), function (btn) { btn.classList.toggle("on", +btn.getAttribute("data-rs-score") === mine); });
       }).catch(function () {});
     }
     bg.addEventListener("click", function (e) {
@@ -2136,13 +2139,26 @@
       '<div class="my-iw">' + esc(ti.label) + "</div>" +
       '<div class="my-ib">' + esc(c.body) + "</div></div>";
   }
+  function betItem(bet) {
+    var fx = fixturesById[bet.match_id];
+    var matchLabel = fx ? ((fx.homeName || "") + " vs " + (fx.awayName || "")) : bet.match_id;
+    var pick = bet.choice === "draw" ? "무승부" : bet.choice === "home" ? (fx ? fx.homeName : "홈") : (fx ? fx.awayName : "원정");
+    var stH;
+    if (bet.status === "won") stH = '<span class="bh-st bh-won">✅ 적중 +' + (bet.payout || 0).toLocaleString() + "</span>";
+    else if (bet.status === "lost") stH = '<span class="bh-st bh-lost">❌ 실패 −' + (bet.stake || 0).toLocaleString() + "</span>";
+    else stH = '<span class="bh-st bh-pending">⏳ 대기중</span>';
+    return '<div class="bh-row"' + (fx ? ' data-go="match/' + esc(bet.match_id) + '"' : "") + '>' +
+      '<div class="bh-top"><span class="bh-match">⚽ ' + esc(matchLabel) + "</span>" + stH + "</div>" +
+      '<div class="bh-sub"><b>' + esc(pick) + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + "</div></div>";
+  }
   function paintMy() {
     if (!myCache) return;
     var nick = (window.KickComments && KickComments.nick()) || "익명";
     var av = window.KickComments && KickComments.avatar();
     var avH = av ? '<img class="my-av" src="' + esc(av) + '" alt="">' : '<span class="my-av ph">' + esc(nick.slice(0, 1)) + "</span>";
-    var list = myTab === "mine" ? myCache.mine : myCache.tagged;
-    var listH = list.length ? list.map(myItem).join("") : '<div class="empty">' + (myTab === "mine" ? "작성한 댓글이 없어요." : "나를 태그한 댓글이 없어요.") + "</div>";
+    var listH;
+    if (myTab === "bets") { listH = (myCache.bets || []).length ? myCache.bets.map(betItem).join("") : '<div class="empty">베팅 내역이 없어요.<br>경기에서 포인트로 베팅해보세요! 💰</div>'; }
+    else { var list = myTab === "mine" ? myCache.mine : myCache.tagged; listH = list.length ? list.map(myItem).join("") : '<div class="empty">' + (myTab === "mine" ? "작성한 댓글이 없어요." : "나를 태그한 댓글이 없어요.") + "</div>"; }
     var pts = myCache.points, ptCard = "", rankH = "";
     if (pts && pts.points != null && KickComments.tierOf) {
       var tr = KickComments.tierOf(pts.points);
@@ -2173,7 +2189,8 @@
       '<div class="my-editbox"></div>' +
       '<div class="my-tabs">' +
         '<button class="my-tabbtn' + (myTab === "mine" ? " on" : "") + '" data-mytab="mine">내가 쓴 댓글 ' + myCache.mine.length + "</button>" +
-        '<button class="my-tabbtn' + (myTab === "tagged" ? " on" : "") + '" data-mytab="tagged">나를 태그한 댓글 ' + myCache.tagged.length + "</button></div>" +
+        '<button class="my-tabbtn' + (myTab === "tagged" ? " on" : "") + '" data-mytab="tagged">나를 태그한 댓글 ' + myCache.tagged.length + "</button>" +
+        '<button class="my-tabbtn' + (myTab === "bets" ? " on" : "") + '" data-mytab="bets">💰 베팅 ' + ((myCache.bets || []).length) + "</button></div>" +
       '<div class="my-list">' + listH + "</div>" + rankH + "</div>"; pageAd();
   }
   function renderMyLogin() {
@@ -2191,9 +2208,9 @@
     KickComments.ready().then(function (user) {
       if (parseHash().name !== "my") return;
       if (!user) return renderMyLogin();
-      Promise.all([KickComments.myComments(), KickComments.taggedComments(), KickComments.myPoints(), KickComments.pointsRanking(20)]).then(function (res) {
+      Promise.all([KickComments.myComments(), KickComments.taggedComments(), KickComments.myPoints(), KickComments.pointsRanking(20), KickComments.myBets ? KickComments.myBets() : Promise.resolve([])]).then(function (res) {
         if (parseHash().name !== "my") return;
-        myCache = { mine: res[0] || [], tagged: res[1] || [], points: res[2], ranking: res[3] || [] };
+        myCache = { mine: res[0] || [], tagged: res[1] || [], points: res[2], ranking: res[3] || [], bets: res[4] || [] };
         paintMy();
       });
     });
