@@ -1719,7 +1719,7 @@
         if (summaryCache[eid]) return summaryCache[eid];
         return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
           summaryCache[eid] = d;
-          if (hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header });  // 확정 라인업 DB 저장(영구·백업)
+          if (hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames });  // 확정 라인업+상대전적 DB 저장(영구·백업)
           return d;
         }).catch(function () { return dbGet(); });  // ESPN 실패 → DB 백업
       });
@@ -1888,6 +1888,14 @@
   }
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
+    // MEX-RSA 평점(사진, SofaScore) — 풀네임 키(히메네스/차베스 중복 방지)
+    "match-1": {
+      team: { "mexico": 7.12, "south-africa": 6.17 },
+      byName: {
+        "헤수스 가야르도": 6.9, "훌리안 키뇨네스": 8.6, "요한 바스케스": 6.9, "알바로 피달고": 7.1, "라울 랑헬": 7.3, "에리크 리라": 7.4, "세사르 몬테스": 8.8, "브라이언 구티에레스": 6.9, "라울 히메네스": 7.6, "이스라엘 레예스": 7.2, "로베르토 알바라도": 8.2, "힐베르토 모라": 6.6,
+        "쿨리소 무다우": 6.5, "테보호 모코에나": 6.5, "이크람 레이너스": 6.1, "은코시나티 시비시": 6.0, "스페펠로 시톨레": 4.9, "이메 오콘": 6.3, "호넨 윌리엄스": 6.3, "라일 포스터": 5.9, "제이든 아담스": 6.6, "음베케젤리 음보카지": 6.4, "오브리 모디바": 5.9, "탈렌테 음바타": 6.5
+      }
+    },
     // KOR-CZE 평점(사진, SofaScore 2026-06-12) — 선발+교체 전체. 다른 경기는 사진 받으면 동일 추가.
     "match-2": {
       team: { "south-korea": 7.15, "czech-republic": 6.62 },
