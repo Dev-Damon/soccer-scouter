@@ -513,7 +513,7 @@
   }
 
   // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
-  var LIVE_DEMO = 2;  // ★임시: 데몬님이 직접 보도록 더미 라이브 2경기 노출(진짜 라이브 없을 때만). 확인 후 0으로 되돌릴 것.
+  var LIVE_DEMO = 0;  // 0=실제 라이브만. (?live=1/2 파라미터로는 여전히 더미 테스트 가능)
   function liveSection() {
     var realLive = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
     var tn = +((location.search.match(/[?&]live=(\d)/) || [])[1] || 0);  // ?live=1 / ?live=2 → 더미 라이브카드 테스트
