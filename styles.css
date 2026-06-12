@@ -1142,7 +1142,19 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .chat-tier { font-size: 9px; font-weight: 800; border: 1px solid; border-radius: 4px; padding: 0 4px; margin-right: 3px; vertical-align: middle; }
 /* 럭키 드로우(가챠) */
 .pt-gacha { font-size: 12.5px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 0; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; cursor: pointer; }
+.pt-deco { background: linear-gradient(135deg, #7c5cff, #16b8a8); }
 .gacha { text-align: center; }
+/* 칭호(꾸미기) 배지 + 상점 */
+.title-badge { display: inline-block; font-size: 9.5px; font-weight: 800; line-height: 1.4; padding: 1px 6px; border-radius: 6px; border: 1px solid currentColor; vertical-align: middle; margin-right: 3px; }
+.tshop .ts-hint { font-size: 11.5px; color: var(--muted); margin: 2px 0 10px; line-height: 1.5; }
+.ts-body { max-height: 56vh; overflow-y: auto; }
+.ts-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 2px; border-bottom: 1px solid var(--line); }
+.ts-row .title-badge { font-size: 12px; padding: 3px 9px; }
+.ts-btn { flex: none; min-width: 78px; font-size: 12px; font-weight: 800; padding: 7px 12px; border-radius: 9px; border: 0; cursor: pointer; }
+.ts-btn.buy { background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; }
+.ts-btn.equip { background: var(--accent); color: #06281d; }
+.ts-btn.on { background: var(--line); color: var(--muted); }
+.ts-btn.unequip { width: 100%; margin-top: 12px; background: none; border: 1px solid var(--line); color: var(--muted); }
 .gc-title { font-size: 18px; font-weight: 900; color: var(--text); margin-bottom: 10px; }
 .gc-reel { font-size: 46px; font-weight: 900; color: var(--text); height: 58px; line-height: 58px; letter-spacing: 1px; }
 .gc-reel.win { color: #1aa55b; } .gc-reel.miss { color: var(--muted); } .gc-reel.jackpot { color: #f5b301; animation: jackpotPulse .45s 3; }
@@ -1169,15 +1181,25 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .gc-odds { font-size: 11.5px; color: var(--muted); background: var(--bg-soft); border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.7; }
 .gc-odds.hidden { display: none; }
 /* 메인 지금 라이브 */
-.live-sec { margin: 10px 0; }
-.live-sec-h { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; color: #e5484d; margin-bottom: 7px; }
+.live-sec { margin: 12px 0; }
+.live-sec-h { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; color: #e5484d; margin-bottom: 8px; }
 .live-sec-n { font-size: 11px; font-weight: 700; color: var(--muted); }
-.live-cards { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; }
-.livec { flex: 0 0 auto; min-width: 238px; background: var(--card); border: 1px solid rgba(229,72,77,.55); border-radius: 12px; padding: 11px 13px; cursor: pointer; }
-.livec-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.livec-tm { font-size: 13px; font-weight: 700; color: var(--text); flex: 1; min-width: 0; }
-.livec-tm.r { text-align: right; }
-.livec-sc { font-size: 17px; font-weight: 900; color: var(--text); flex: none; }
-.livec-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 7px; }
-.livec-live { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 800; color: #e5484d; }
-.livec-go { font-size: 11px; color: var(--accent); font-weight: 700; }
+.lv-pip { width: 8px; height: 8px; border-radius: 50%; background: #e5484d; flex: none; animation: lvpip 1.3s infinite; }
+@keyframes lvpip { 0% { box-shadow: 0 0 0 0 rgba(229,72,77,.6); } 70% { box-shadow: 0 0 0 7px rgba(229,72,77,0); } 100% { box-shadow: 0 0 0 0 rgba(229,72,77,0); } }
+/* 1경기=풀폭 / 2경기=좌우 절반 */
+.live-cards { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.live-cards.two { grid-template-columns: 1fr 1fr; }
+.livec { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(229,72,77,.13), var(--card) 58%); border: 1.5px solid rgba(229,72,77,.55); border-radius: 14px; padding: 10px 12px; cursor: pointer; animation: livecpulse 2s infinite; }
+@keyframes livecpulse { 0%,100% { box-shadow: 0 2px 10px rgba(0,0,0,.18); } 50% { box-shadow: 0 0 15px 1px rgba(229,72,77,.38), 0 2px 10px rgba(0,0,0,.18); } }
+.livec::before { content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.16), transparent); transform: skewX(-18deg); animation: livecshine 3.4s infinite; pointer-events: none; }
+@keyframes livecshine { 0% { left: -60%; } 42%,100% { left: 135%; } }
+.livec-glow { display: none; }
+.livec-h { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 900; color: #fff; background: #e5484d; padding: 2px 7px; border-radius: 6px; margin-bottom: 7px; letter-spacing: .3px; position: relative; z-index: 1; }
+.livec-h .lv-pip { width: 6px; height: 6px; background: #fff; animation: lvpipw 1.3s infinite; }
+@keyframes lvpipw { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,.8); } 70% { box-shadow: 0 0 0 5px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+.livec-tm { display: flex; align-items: center; gap: 7px; padding: 2px 0; position: relative; z-index: 1; }
+.livec-tm .lv-flag { font-size: 16px; flex: none; }
+.livec-tm .lv-nm { font-size: 13px; font-weight: 700; color: var(--text); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.livec-tm .lv-sc { font-size: 19px; font-weight: 900; color: var(--text); flex: none; min-width: 16px; text-align: right; }
+.livec-tm.win .lv-nm, .livec-tm.win .lv-sc { color: #e5484d; }
+.livec-go { font-size: 10.5px; color: var(--accent); font-weight: 800; text-align: right; margin-top: 6px; position: relative; z-index: 1; }

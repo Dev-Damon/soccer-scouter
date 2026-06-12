@@ -528,11 +528,14 @@
       var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
       var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
       var lS = swap ? lv.as : lv.hs, rS = swap ? lv.hs : lv.as;
+      var lead = (lS | 0) > (rS | 0), trail = (rS | 0) > (lS | 0);
       return '<div class="livec" data-match="' + esc(fx.id) + '">' +
-        '<div class="livec-row"><span class="livec-tm">' + esc(flagOf(lId)) + " " + esc(lName) + '</span><span class="livec-sc">' + (lS | 0) + " : " + (rS | 0) + "</span><span class=\"livec-tm r\">" + esc(rName) + " " + esc(flagOf(rId)) + "</span></div>" +
-        '<div class="livec-foot"><span class="livec-live"><span class="lv-dot"></span>LIVE ' + esc(lv.clock || "") + '</span><span class="livec-go">경기 상세 →</span></div></div>';
+        '<div class="livec-h"><span class="lv-pip"></span>LIVE <b>' + esc(lv.clock || "") + "</b></div>" +
+        '<div class="livec-tm' + (lead ? " win" : "") + '"><span class="lv-flag">' + esc(flagOf(lId)) + '</span><span class="lv-nm">' + esc(lName) + '</span><span class="lv-sc">' + (lS | 0) + "</span></div>" +
+        '<div class="livec-tm' + (trail ? " win" : "") + '"><span class="lv-flag">' + esc(flagOf(rId)) + '</span><span class="lv-nm">' + esc(rName) + '</span><span class="lv-sc">' + (rS | 0) + "</span></div>" +
+        '<div class="livec-go">경기 상세 →</div></div>';
     }).join("");
-    return '<div class="live-sec"><div class="live-sec-h"><span class="lv-dot"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
+    return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards" + (live.length > 1 ? " two" : "") + "\">" + cards + "</div></div>";
   }
   function heroCard(fx) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
@@ -2223,16 +2226,54 @@
       }
     });
   }
+  function openTitleShop() {
+    if (!window.KickComments || !KickComments.user || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+    var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
+    bg.innerHTML = '<div class="rate-sheet tshop"><div class="rs-head"><b>🎨 칭호 꾸미기</b><button class="rs-x">✕</button></div>' +
+      '<div class="ts-hint">칭호를 사면 댓글·채팅 이름 옆에 표시돼요. 한 번 사면 영구 보유 🎀</div>' +
+      '<div class="ts-body"><div class="empty">불러오는 중…</div></div></div>';
+    document.body.appendChild(bg);
+    function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); if (parseHash().name === "my") renderMy(); }
+    ktModalOpen(close);
+    function render() {
+      var body = bg.querySelector(".ts-body"); if (!body) return;
+      Promise.all([KickComments.cosmetics(), KickComments.myCosmetics()]).then(function (a) {
+        var cat = a[0] || [], mine = a[1] || {}, owned = mine.owned_titles || [], cur = mine.title || null;
+        if (!cat.length) { body.innerHTML = '<div class="empty">준비된 칭호가 없어요.</div>'; return; }
+        var rows = cat.map(function (t) {
+          var has = owned.indexOf(t.id) >= 0, on = cur === t.id;
+          var btn = on ? '<button class="ts-btn on" disabled>장착중 ✓</button>'
+            : has ? '<button class="ts-btn equip" data-tid="' + esc(t.id) + '">장착</button>'
+            : '<button class="ts-btn buy" data-tid="' + esc(t.id) + '">' + (t.cost || 0).toLocaleString() + " KP</button>";
+          return '<div class="ts-row"><span class="title-badge" style="color:' + t.color + '">' + esc(t.label) + "</span>" + btn + "</div>";
+        }).join("");
+        body.innerHTML = rows + (cur ? '<button class="ts-btn unequip" data-tid="">칭호 떼기</button>' : "");
+      }).catch(function () { body.innerHTML = '<div class="empty">불러오기 실패 — 다시 시도</div>'; });
+    }
+    render();
+    bg.addEventListener("click", function (e) {
+      if (e.target === bg || e.target.closest(".rs-x")) { if (ktModalClose) history.back(); else close(); return; }
+      var b = e.target.closest(".ts-btn[data-tid]"); if (!b) return;
+      var tid = b.getAttribute("data-tid"); b.disabled = true; b.textContent = "…";
+      KickComments.buyOrEquipTitle(tid || null).then(function (r) {
+        if (r && r.error === "not_enough") { ktToast("포인트가 부족해요 😢"); render(); return; }
+        if (r && r.error) { ktToast("다시 시도해주세요"); render(); return; }
+        ktToast(tid ? (r && r.bought ? "🎀 칭호 구매 + 장착!" : "✅ 칭호 장착!") : "칭호를 뗐어요"); render();
+      }).catch(function () { ktToast("로그인이 필요해요"); render(); });
+    });
+  }
   function loadCheers() {
     var slot = viewEl.querySelector(".cheer-slot"); if (!slot || !window.KickComments || !KickComments.recentCheers) return;
     var ct = /[?&]cheer=1/.test(location.search);  // ?cheer=1 → 더미 응원 미리보기
-    var src = ct ? Promise.resolve([
+    var dummy = [
       { id: "d1", team: "south-korea", name: "축구도사", message: "대한민국 오늘 무조건 이긴다 🇰🇷🔥" },
       { id: "d2", team: "brazil", name: "삼바매니아", message: "헥사 가즈아!! 브라질 화이팅" },
       { id: "d3", team: "south-korea", name: "손케이드", message: "손흥민 멀티골 가자 ⚽⚽" },
       { id: "d4", team: null, name: "중립축구팬", message: "오늘 경기 꿀잼 각이다" }
-    ]) : KickComments.recentCheers(15);
-    src.then(function (list) {
+    ];
+    // ★ Supabase 준비 후에 조회 (ready 전엔 sb=null → 빈배열 → 응원 사라져 보이던 버그)
+    var ready = (!ct && KickComments.ready) ? KickComments.ready() : Promise.resolve();
+    ready.then(function () { return ct ? dummy : KickComments.recentCheers(15); }).then(function (list) {
       if (parseHash().name !== "home") return;
       var isAdmin = KickComments.isAdmin && KickComments.isAdmin();
       var items = (list || []).map(function (c) {
@@ -2299,7 +2340,7 @@
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
         '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
-        '<div class="pt-checkrow">' + checkBtn + '<button class="pt-gacha" data-gacha>🎰 럭키 드로우</button></div>' + ladder + "</div>";
+        '<div class="pt-checkrow">' + checkBtn + '<button class="pt-gacha" data-gacha>🎰 럭키 드로우</button><button class="pt-gacha pt-deco" data-titleshop>🎨 칭호 꾸미기</button></div>' + ladder + "</div>";
     }
     if (myCache.ranking && myCache.ranking.length) {
       var myUid = (KickComments.user() || {}).id;
@@ -2607,6 +2648,7 @@
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
     if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
     if (e.target.closest("[data-gacha]")) { openGacha(); return; }
+    if (e.target.closest("[data-titleshop]")) { openTitleShop(); return; }
     if (e.target.closest("[data-cheer-send]")) { openCheerCompose(); return; }
     var _chd = e.target.closest("[data-cheerdel]"); if (_chd) { if (window.KickComments && KickComments.deleteCheer) KickComments.deleteCheer(_chd.getAttribute("data-cheerdel")).then(function () { loadCheers(); }); return; }
     if ((my = e.target.closest("[data-betcancel]"))) {
@@ -2944,8 +2986,9 @@
         var tr = KickComments.tierOf(m._pts), kp = KickComments.fmtKP ? KickComments.fmtKP(m._pts) : m._pts;
         tierH = '<span class="chat-tier" style="color:' + tr.c + ';border-color:' + tr.c + '">' + esc(tr.name) + " " + esc(kp) + "</span> ";
       }
+      var titH = (m._title && KickComments.titleBadge) ? KickComments.titleBadge(m._title) : "";  // 칭호(꾸미기)
       return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
-        '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " + tierH +
+        '<span class="yc-body">' + titH + '<span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " + tierH +
         '<span class="yc-time">' + esc(chatTime(m.created_at)) + "</span> " +
         '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }
