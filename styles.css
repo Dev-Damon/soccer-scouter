@@ -1092,3 +1092,11 @@ html.light .mr-star { color: #cdd5e0; }
 .cw-nm { font-weight: 700; color: var(--text); }
 .cw-lb { font-size: 12px; color: var(--muted); flex: none; }
 .cw-out .cw-lb { color: #e5484d; font-weight: 700; }
+/* 선수 평점 박스 + 교체 투입 정보 */
+.lu-pmain { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.lu-pmain .lu-nm { flex: none; }
+.lu-subin { font-size: 10.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rbox { flex: none; min-width: 30px; text-align: center; font-weight: 800; font-size: 12px; padding: 2px 5px; border-radius: 5px; color: #fff; }
+.rbox.rb-good { background: #1aa55b; }
+.rbox.rb-ok { background: #c99a1c; }
+.rbox.rb-low { background: #cc6b22; }
