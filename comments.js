@@ -635,8 +635,13 @@
         var list = (r.data || []).slice().reverse();
         var uids = [], seen = {}; list.forEach(function (m) { if (m.user_id && !seen[m.user_id]) { seen[m.user_id] = 1; uids.push(m.user_id); } });
         if (!uids.length) return list;
-        return sb.from("profiles").select("user_id,points,title,best_streak").in("user_id", uids).then(function (pr) {  // 채팅 티어+칭호+훈장
-          var pm = {}, tmm = {}, smm = {}; (pr.data || []).forEach(function (x) { pm[x.user_id] = x.points; if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
+        return Promise.all([  // 티어 포인트는 배팅대기금 포함(points_for) + 칭호·훈장은 profiles
+          sb.rpc("points_for", { ids: uids }),
+          sb.from("profiles").select("user_id,title,best_streak").in("user_id", uids)
+        ]).then(function (arr) {
+          var pm = {}, tmm = {}, smm = {};
+          ((arr[0] && arr[0].data) || []).forEach(function (x) { pm[x.user_id] = x.points; });
+          ((arr[1] && arr[1].data) || []).forEach(function (x) { if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
           list.forEach(function (m) { if (m.user_id != null && pm[m.user_id] != null) m._pts = pm[m.user_id]; if (m.user_id != null && tmm[m.user_id]) m._title = tmm[m.user_id]; if (m.user_id != null && smm[m.user_id]) m._streak = smm[m.user_id]; });
           return list;
         }).catch(function () { return list; });
