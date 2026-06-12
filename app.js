@@ -1477,6 +1477,7 @@
         "</div>" +
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
+        '<div class="adslot"></div>' +
         '<div class="block h2h-slot"></div>' +
         '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
         '<div class="block card-slot" style="display:none"></div>' +
@@ -1492,7 +1493,6 @@
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
-        '<div class="adslot"></div>' +
         '<div class="cmt-slot"></div>' +
         ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
@@ -2333,7 +2333,7 @@
   }
 
   // ===================== 관리자 페이지 (#admin) =====================
-  var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act", adminChatQ = "", _chatSearchT = null;
+  var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act", adminChatQ = "", _chatSearchT = null, _adminScrollY = null;
   function loadAdminChat() {
     var box = viewEl.querySelector(".chat-admin-results"); if (!box || !window.KickComments) return;
     KickComments.chatSearch(adminChatQ).then(function (list) {
@@ -2409,11 +2409,12 @@
       (adminTab === "chat" ? '<input class="mgr-search mgr-chatsearch" placeholder="채팅 내용·닉네임 검색 (비우면 최근 60개)" value="' + esc(adminChatQ) + '">' : "") +
       '<div class="mgr-list">' + html + "</div></div>";
     if (adminTab === "chat") loadAdminChat();
+    if (_adminScrollY != null) { var _sy = _adminScrollY; _adminScrollY = null; requestAnimationFrame(function () { window.scrollTo(0, _sy); }); }  // 삭제 후 그 자리 유지
   }
   function renderAdmin() {
     backBtn.hidden = true; tabsEl.hidden = true;
     if (!window.KickComments || !KickComments.configured()) { viewEl.innerHTML = '<div class="empty">준비 중입니다.</div>'; return; }
-    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
+    if (adminCache) { _adminScrollY = window.scrollY; } else { viewEl.innerHTML = '<div class="empty">불러오는 중…</div>'; }  // 재렌더(삭제 등)면 스크롤 보존
     KickComments.ready().then(function () {
       if (parseHash().name !== "admin") return;
       if (!KickComments.isAdmin()) { viewEl.innerHTML = '<div class="empty">접근 권한이 없습니다.</div>'; return; }

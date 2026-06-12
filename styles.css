@@ -222,7 +222,7 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .my-save { background: var(--accent); color: #06281d; font-weight: 800; border: 0; border-radius: 10px; padding: 0 16px; cursor: pointer; flex: none; }
 .my-tabs { display: flex; gap: 8px; margin: 16px 0 12px; }
 .my-tabbtn { flex: 1; background: none; border: 1px solid var(--line); color: var(--muted); font-size: 13px; font-weight: 700; padding: 9px; border-radius: 10px; cursor: pointer; }
-.my-tabbtn.on { background: var(--accent); color: #06281d; border-color: var(--accent); }
+.my-tabbtn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 .my-list { display: flex; flex-direction: column; gap: 10px; }
 .my-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; cursor: pointer; }
 .my-item:active { transform: scale(0.99); }
