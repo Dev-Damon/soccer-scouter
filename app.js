@@ -1350,11 +1350,14 @@
     var rosters = d.rosters || [];
     function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
     var ra = rosterFor(a), rb = rosterFor(b);
-    // 교체 반영(currentLineupCoords)은 교체 이벤트 없으면 선발과 동일 → 라이브 중 교체 시 자동 갱신
-    var ca = ra && currentLineupCoords(ra, d.keyEvents), cb = rb && currentLineupCoords(rb, d.keyEvents);
+    // 라이브 중엔 '현재 뛰는 선수'(교체 반영), 종료 후엔 '선발 라인업'으로 복귀(교체는 명단에 표기)
+    var st = (((d.header || {}).competitions || [])[0] || {}).status;
+    var ended = !!(st && st.type && st.type.state === "post");
+    function coordFn(rs) { return ended ? espnLineupCoords(rs) : currentLineupCoords(rs, d.keyEvents); }
+    var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
     function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: mp ? mp.name : nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
-    return '<h3>📋 라인업 <span class="muted-note">실시간 · 탭하면 상세</span></h3>' + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
+    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
   function loadCardWatch(slot, a, b) {
