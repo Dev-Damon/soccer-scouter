@@ -662,7 +662,6 @@
       numBadge(p) +
       '<div class="player-main"><div class="player-name">' + esc(p.name) + "</div>" +
       '<div class="player-sub">' + sub + "</div></div>" +
-      (clubLeague && p.ovr ? '<span class="pr-ovr">' + p.ovr + "<i>OVR</i></span>" : "") +
       badge(p, hideScore) + "</div>";
   }
 
@@ -1152,7 +1151,7 @@
 
     // 전체 선수단
     var rosterHtml = roster.length
-      ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, true, true); }).join("") + "</div>"
+      ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, false, true); }).join("") + "</div>"
       : '<div class="empty">선수 데이터를 채우는 중입니다.</div>';
     html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
     html += '<div class="adslot"></div>';
