@@ -1356,6 +1356,31 @@
     function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); return { name: mp ? mp.name : nm, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id }; }); }
     return '<h3>📋 라인업 <span class="muted-note">실시간 · 탭하면 상세</span></h3>' + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
   }
+  // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
+  function loadCardWatch(slot, a, b) {
+    if (!slot || !window.KickComments || !KickComments.matchStats) return;
+    var setA = {}, setB = {};
+    teamIds(a).forEach(function (id) { setA[id] = 1; }); teamIds(b).forEach(function (id) { setB[id] = 1; });
+    KickComments.matchStats().then(function (data) {
+      if (parseHash().name !== "match") return;
+      var players = (data && data.players) || [];
+      function cards(setX) {
+        return players.filter(function (p) { return p.pid && setX[p.pid] && ((p.yellow || 0) > 0 || (p.red || 0) > 0); })
+          .map(function (p) {
+            var out = (p.red || 0) >= 1 || (p.yellow || 0) >= 2, lb, cls;
+            if ((p.red || 0) >= 1) { lb = "🟥 출전정지 예상"; cls = "cw-out"; }
+            else if ((p.yellow || 0) >= 2) { lb = "🟨🟨 경고누적 출전정지 예상"; cls = "cw-out"; }
+            else { lb = "🟨 경고 1장 (다음 1장 시 정지)"; cls = "cw-warn"; }
+            return { name: p.name, lb: lb, cls: cls, out: out };
+          }).sort(function (x, y) { return (y.out ? 1 : 0) - (x.out ? 1 : 0); });
+      }
+      var ca = cards(setA), cb = cards(setB);
+      if (!ca.length && !cb.length) { slot.style.display = "none"; return; }
+      function blk(team, list) { return list.length ? '<div class="cw-team">' + esc(team.flag) + " " + esc(team.name) + "</div>" + list.map(function (p) { return '<div class="cw-row ' + p.cls + '"><span class="cw-nm">' + esc(p.name) + '</span><span class="cw-lb">' + p.lb + "</span></div>"; }).join("") : ""; }
+      slot.innerHTML = "<h3>⚠️ 출전정지·경고 누적 <span class=\"muted-note\">카드 기준 · 다음 경기 예상</span></h3>" + blk(a, ca) + blk(b, cb);
+      slot.style.display = ""; twem(slot);
+    }).catch(function () { slot.style.display = "none"; });
+  }
   function renderMatch(id) {
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
@@ -1407,6 +1432,7 @@
         '<div class="block bet-slot"></div>' +
         '<div class="block h2h-slot"></div>' +
         '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
+        '<div class="block card-slot" style="display:none"></div>' +
         '<div class="block lineup-slot"></div>' +
         '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
@@ -1430,6 +1456,7 @@
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
+    loadCardWatch(viewEl.querySelector(".card-slot"), a, b);
     insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
