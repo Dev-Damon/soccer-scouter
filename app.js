@@ -1899,32 +1899,41 @@
     html += '<div class="mr-hint muted-note">숫자 탭 = 선수 평점(10점) · 🏆 = MVP 투표(경기당 1명)</div>';
     html += '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="mr-list">' + idsA.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
     html += '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="mr-list">' + idsB.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
-    html += officialSection(a, b, idsA, idsB) + "</div>";
+    html += '<div class="of-slot"><div class="of-wrap"><div class="sec-h">📊 킥톡 평점</div><div class="of-src muted-note">경기 기록 불러오는 중…</div></div></div></div>';
     viewEl.innerHTML = html; twem(viewEl);
+    loadOfficial(mrCtx.matchId, a, b);
   }
-  // 공식 평점(참고) — 현재 더미(데모) 데이터. 추후 ratings.json 연동.
-  function dummyRating(pid) {
-    var p = playersById[pid] || {}, ovr = p.ovr || 72, h = 0, s = String(pid);
-    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 997;
-    var base = 5.9 + (ovr - 65) * 0.045 + (h % 13) / 10;
-    return Math.max(5.5, Math.min(9.3, Math.round(base * 10) / 10));
-  }
-  function officialSection(a, b, idsA, idsB) {
-    var all = idsA.concat(idsB), rmap = {}, potm = null, top = 0;
-    all.forEach(function (pid) { var r = dummyRating(pid); rmap[pid] = r; if (r > top) { top = r; potm = pid; } });
-    function rows(ids) {
-      return ids.slice().sort(function (x, y) { return rmap[y] - rmap[x]; }).map(function (pid) {
-        var p = playersById[pid] || {}, r = rmap[pid];
-        return '<div class="of-row"><span class="of-nm">' + (pid === potm ? "⭐ " : "") + esc(p.name || "") +
-          '</span><span class="of-bar"><span style="width:' + (r / 10 * 100).toFixed(0) + '%"></span></span><span class="of-r">' + r.toFixed(1) + "</span></div>";
-      }).join("");
-    }
-    var pp = playersById[potm] || {};
-    return '<div class="of-wrap"><div class="sec-h">📊 공식 평점 <span class="muted-note">참고용 · 데모 데이터</span></div>' +
-      '<div class="of-mom">🏅 이 경기 MOM(최우수) <b>' + esc(pp.name || "") + '</b> <span class="of-r">' + (rmap[potm] || 0).toFixed(1) + "</span></div>" +
-      '<div class="of-src muted-note">출처: 데모(더미) — 실제 공식 평점은 경기 종료 후 연동 예정</div>' +
-      '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="of-list">' + rows(idsA) + "</div>" +
-      '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="of-list">' + rows(idsB) + "</div></div>";
+  // 킥톡 평점 — 실제 경기 기록(골·도움·카드)으로 산출. DB 경기별 기록 사용.
+  function ofTags(p) { var t = ""; if (p.goals) t += " ⚽" + (p.goals > 1 ? p.goals : ""); if (p.assists) t += " 🅰" + (p.assists > 1 ? p.assists : ""); if (p.yellow) t += " 🟨"; if (p.red) t += " 🟥"; if (p.og) t += " 자책"; return t ? '<span class="of-ev">' + t + "</span>" : ""; }
+  function loadOfficial(matchId, a, b) {
+    var slot = viewEl.querySelector(".of-slot"); if (!slot || !window.KickComments || !KickComments.matchStatsOne) return;
+    var setA = {}, setB = {};
+    teamIds(a).forEach(function (id) { setA[id] = 1; }); teamIds(b).forEach(function (id) { setB[id] = 1; });
+    KickComments.matchStatsOne(matchId).then(function (data) {
+      if (parseHash().name !== "rate") return;
+      var players = ((data && data.players) || []).filter(function (p) { return (p.apps || 0) > 0 || p.goals || p.assists || p.yellow || p.red || p.og; });
+      if (!players.length) { slot.innerHTML = '<div class="of-wrap"><div class="sec-h">📊 킥톡 평점</div><div class="of-src muted-note">경기 기록이 집계되면 표시돼요 (경기 종료 후 최대 20분).</div></div>'; return; }
+      var rated = players.map(function (p) {
+        var r = 6.4 + (p.goals || 0) * 1.1 + (p.assists || 0) * 0.6 - (p.yellow || 0) * 0.3 - (p.red || 0) * 1.3 - (p.og || 0) * 1.2;
+        r = Math.max(5.0, Math.min(9.8, Math.round(r * 10) / 10));
+        var side = (p.pid && setA[p.pid]) ? "A" : (p.pid && setB[p.pid]) ? "B" : (p.team === a.name ? "A" : p.team === b.name ? "B" : "?");
+        return { name: p.name, side: side, r: r, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
+      });
+      var potm = rated.slice().sort(function (x, y) { return y.r - x.r; })[0];
+      function rows(side) {
+        var list = rated.filter(function (p) { return p.side === side; }).sort(function (x, y) { return y.r - x.r; });
+        return list.length ? list.map(function (p) {
+          return '<div class="of-row"><span class="of-nm">' + (p === potm ? "⭐ " : "") + esc(p.name) + ofTags(p) +
+            '</span><span class="of-bar"><span style="width:' + (p.r / 10 * 100).toFixed(0) + '%"></span></span><span class="of-r">' + p.r.toFixed(1) + "</span></div>";
+        }).join("") : '<div class="of-src muted-note">기록 없음</div>';
+      }
+      slot.innerHTML = '<div class="of-wrap"><div class="sec-h">📊 킥톡 평점 <span class="muted-note">경기 기록 기반</span></div>' +
+        '<div class="of-mom">🏅 이 경기 MOM <b>' + esc(potm.name) + '</b> <span class="of-r">' + potm.r.toFixed(1) + "</span></div>" +
+        '<div class="of-src muted-note">골·도움·카드 등 실제 경기 기록으로 산출한 킥톡 자체 지수예요.</div>' +
+        '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="of-list">' + rows("A") + "</div>" +
+        '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="of-list">' + rows("B") + "</div></div>";
+      twem(slot);
+    }).catch(function () {});
   }
   function refreshMatchRatings() {
     if (!mrCtx) return;

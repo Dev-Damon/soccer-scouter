@@ -694,9 +694,11 @@
   }
   // 라이브 경기 보는 사람이 그 경기 기록을 즉시 DB에 갱신(20분 크론 안 기다림)
   function pushMatchStats(mid, players) { if (!sb || !mid || !players || !players.length) return Promise.resolve(null); return sb.rpc("set_match_stats", { mid: mid, d: { players: players } }).then(function () { return true; }).catch(function () { return null; }); }
+  // 한 경기 기록(평점 산출용)
+  function matchStatsOne(mid) { if (!sb || !mid) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "stats:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
 
   window.KickComments = {
-    matchStats: matchStats, pushMatchStats: pushMatchStats,
+    matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
     myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,
