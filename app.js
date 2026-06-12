@@ -1756,8 +1756,11 @@
     paint({ total: 0 });
     slot._predFx = fx.id; slot._predPaint = paint;
     function refresh() {
-      var betP = (KickComments.user && KickComments.user() && KickComments.myBet) ? KickComments.myBet(fx.id) : Promise.resolve(null);
-      Promise.all([KickComments.predCounts(fx.id), betP]).then(function (r) { if (document.body.contains(slot)) paint(r[0], r[1]); });
+      // 클라이언트 ready 후 조회(카카오 인앱브라우저 등에서 초기화 전 호출돼 0%로 뜨던 것 방지)
+      KickComments.ready().then(function () {
+        var betP = (KickComments.user && KickComments.user() && KickComments.myBet) ? KickComments.myBet(fx.id) : Promise.resolve(null);
+        return Promise.all([KickComments.predCounts(fx.id), betP]);
+      }).then(function (r) { if (document.body.contains(slot)) paint(r[0], r[1]); }).catch(function () {});
     }
     slot._predReload = refresh;
     refresh();
@@ -1900,6 +1903,7 @@
     bg.innerHTML = '<div class="rate-sheet"><div class="rs-hint">불러오는 중…</div></div>';
     document.body.appendChild(bg);
     function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); }
+    ktModalOpen(close);  // 뒤로가기 시 페이지가 아니라 팝업이 닫히도록
     function load() {
       KickComments.ready().then(function () { return KickComments.matchRatings(matchId); }).then(function (rd) {
         var ur = (rd.byPlayer && rd.byPlayer[pid]) || null, mine = (rd.mine && rd.mine[pid]) || 0; bg._mine = mine;
@@ -1913,10 +1917,10 @@
       }).catch(function () {});
     }
     bg.addEventListener("click", function (e) {
-      if (e.target === bg || e.target.closest(".rs-x")) { close(); return; }
+      if (e.target === bg || e.target.closest(".rs-x")) { if (ktModalClose) history.back(); else close(); return; }
       var n = e.target.closest("[data-rs-score]");
       if (n) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var sc = +n.getAttribute("data-rs-score"); (bg._mine === sc ? KickComments.unrateMatchPlayer(matchId, pid) : KickComments.rateMatchPlayer(matchId, pid, sc)).then(load); return; }
-      if (e.target.closest(".rs-detail")) { close(); location.hash = "#player/" + pid; return; }
+      if (e.target.closest(".rs-detail")) { ktModalClose = null; close(); location.hash = "#player/" + pid; return; }
     });
     load();
   }
