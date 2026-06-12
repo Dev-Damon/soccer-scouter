@@ -2068,7 +2068,19 @@
   }
 
   // ===================== 관리자 페이지 (#admin) =====================
-  var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act";
+  var adminCache = null, adminTab = "reports", adminQ = "", memberSort = "act", adminChatQ = "", _chatSearchT = null;
+  function loadAdminChat() {
+    var box = viewEl.querySelector(".chat-admin-results"); if (!box || !window.KickComments) return;
+    KickComments.chatSearch(adminChatQ).then(function (list) {
+      if (parseHash().name !== "admin" || adminTab !== "chat") return;
+      box.innerHTML = list.length ? list.map(function (m) {
+        var d = m.created_at ? new Date(m.created_at) : null;
+        var ts = d && !isNaN(d.getTime()) ? ((d.getMonth() + 1) + "/" + d.getDate() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2)) : "";
+        return '<div class="mgr-item"><div class="mgr-ib"><b>' + esc(m.name || "익명") + '</b> <span class="yc-time">' + esc(ts) + '</span><br>' + esc(m.body || "") + '</div><div class="mgr-act"><button class="mgr-del" data-chatdel="' + esc(m.id) + '">삭제</button></div></div>';
+      }).join("") : '<div class="empty">메시지가 없습니다.</div>';
+      twem(box);
+    });
+  }
   function fmtJoin(iso) { try { var s = new Date(iso).toLocaleString("sv-SE", { timeZone: "Asia/Seoul" }), p = s.split(" "); return '<span class="mb-d">' + p[0].replace(/-/g, ".") + '</span><span class="mb-t">' + (p[1] || "") + "</span>"; } catch (e) { return ""; } }
   function membersTableHtml() {
     var us = (adminCache.users || []).slice();
@@ -2115,6 +2127,8 @@
       }).join("") : '<div class="empty">신고된 댓글이 없습니다.</div>';
     } else if (adminTab === "members") {
       html = membersTableHtml();
+    } else if (adminTab === "chat") {
+      html = '<div class="chat-admin-results"><div class="empty">불러오는 중…</div></div>';
     } else {
       var cs = adminCache.comments;
       if (adminQ) { var q = adminQ.toLowerCase(); cs = cs.filter(function (c) { return (c.body || "").toLowerCase().indexOf(q) >= 0 || (c.name || "").toLowerCase().indexOf(q) >= 0; }); }
@@ -2124,9 +2138,12 @@
       '<div class="my-tabs">' +
         '<button class="mgr-tab my-tabbtn' + (adminTab === "reports" ? " on" : "") + '" data-adtab="reports">신고 내역 ' + adminCache.reports.length + "</button>" +
         '<button class="mgr-tab my-tabbtn' + (adminTab === "all" ? " on" : "") + '" data-adtab="all">전체 댓글 ' + adminCache.comments.length + "</button>" +
-        '<button class="mgr-tab my-tabbtn' + (adminTab === "members" ? " on" : "") + '" data-adtab="members">회원 ' + ((adminCache.users || []).length) + "</button></div>" +
+        '<button class="mgr-tab my-tabbtn' + (adminTab === "members" ? " on" : "") + '" data-adtab="members">회원 ' + ((adminCache.users || []).length) + "</button>" +
+        '<button class="mgr-tab my-tabbtn' + (adminTab === "chat" ? " on" : "") + '" data-adtab="chat">💬 채팅</button></div>' +
       (adminTab === "all" ? '<input class="mgr-search" placeholder="댓글·작성자 검색" value="' + esc(adminQ) + '">' : "") +
+      (adminTab === "chat" ? '<input class="mgr-search mgr-chatsearch" placeholder="채팅 내용·닉네임 검색 (비우면 최근 60개)" value="' + esc(adminChatQ) + '">' : "") +
       '<div class="mgr-list">' + html + "</div></div>";
+    if (adminTab === "chat") loadAdminChat();
   }
   function renderAdmin() {
     backBtn.hidden = true; tabsEl.hidden = true;
@@ -2284,6 +2301,7 @@
   // ===================== 이벤트 =====================
   viewEl.addEventListener("input", function (e) {
     if (e.target.classList && e.target.classList.contains("bet-amt")) { updBetWin(e.target.closest(".bet-slot")); return; }
+    if (e.target.closest(".mgr-chatsearch")) { adminChatQ = e.target.value; clearTimeout(_chatSearchT); _chatSearchT = setTimeout(loadAdminChat, 280); return; }
     if (e.target.closest(".mgr-search") && adminCache) {
       adminQ = e.target.value;
       var q = adminQ.toLowerCase();
@@ -2383,6 +2401,10 @@
     if ((ad = e.target.closest(".mb-sort"))) { memberSort = ad.getAttribute("data-msort"); paintAdmin(); return; }
     if ((ad = e.target.closest("[data-adtab]"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); window.scrollTo(0, 0); return; }
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
+    if ((ad = e.target.closest("[data-chatdel]"))) {
+      if (!confirm("이 채팅을 삭제할까요?")) return;
+      ad.disabled = true; KickComments.chatDelete(ad.getAttribute("data-chatdel")).then(function (ok) { if (ok) loadAdminChat(); else { ad.disabled = false; alert("삭제 실패"); } }); return;
+    }
     if ((ad = e.target.closest(".mgr-del"))) {
       if (!confirm("이 댓글을 삭제할까요? (관리자 강제삭제)")) return;
       ad.disabled = true; KickComments.adminDeleteComment(ad.getAttribute("data-cid")).then(function () { renderAdmin(); }); return;
@@ -2622,11 +2644,18 @@
     var ch = null, open = false, pollT = null, lastSig = "";
     function msgsEl() { return panel.querySelector(".chat-msgs"); }
     function ncolor(name) { var cols = ["#5b9dff", "#e5748a", "#5bbf8a", "#f0a93b", "#b18cff", "#46c2d6", "#e0739e"], h = 0, i; for (i = 0; i < (name || "").length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0; return cols[h % cols.length]; }
+    function chatTime(iso) {
+      if (!iso) return ""; var d = new Date(iso); if (isNaN(d.getTime())) return "";
+      var hh = ("0" + d.getHours()).slice(-2), mm = ("0" + d.getMinutes()).slice(-2), n = new Date();
+      var today = d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth() && d.getDate() === n.getDate();
+      return (today ? "" : (d.getMonth() + 1) + "/" + d.getDate() + " ") + hh + ":" + mm;
+    }
     function bubble(m) {
       var nm = (window.KickComments && KickComments.dispName) ? KickComments.dispName(m.name, m.user_id) : (m.name || "익명");
       var col = ncolor(m.name), ch0 = (nm || "?").trim().charAt(0).toUpperCase() || "?";
       return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
         '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " +
+        '<span class="yc-time">' + esc(chatTime(m.created_at)) + "</span> " +
         '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }
     function loadRender(forceBottom) {

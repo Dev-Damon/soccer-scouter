@@ -622,6 +622,14 @@
     return sb.from("chat_messages").select("*").order("created_at", { ascending: false }).limit(limit || 100)
       .then(function (r) { return (r.data || []).slice().reverse(); }).catch(function () { return []; });
   }
+  // 관리자 채팅 검색/삭제(RLS: 관리자 UID만)
+  function chatSearch(q) {
+    if (!client()) return Promise.resolve([]);
+    var qy = sb.from("chat_messages").select("*").order("created_at", { ascending: false }).limit(60);
+    if (q && q.trim()) { var s = q.trim().replace(/[,()*%\\]/g, ""); if (s) qy = qy.or("name.ilike.%" + s + "%,body.ilike.%" + s + "%"); }
+    return qy.then(function (r) { return r.data || []; }).catch(function () { return []; });
+  }
+  function chatDelete(id) { if (!sb) return Promise.resolve(false); return sb.from("chat_messages").delete().eq("id", id).then(function (r) { return !r.error; }).catch(function () { return false; }); }
   function anonChatName() {
     var n; try { n = localStorage.getItem("kc_chatnick"); } catch (e) {}
     if (!n) { n = "익명" + Math.floor(1000 + Math.random() * 9000); try { localStorage.setItem("kc_chatnick", n); } catch (e) {} }  // 채팅은 익명+숫자
@@ -707,6 +715,7 @@
     listPosts: listPosts, getPost: getPost, bumpView: bumpView, createPost: createPost,
     deletePost: deletePost, updatePost: updatePost, togglePostLike: togglePostLike, togglePostReaction: togglePostReaction,
     listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost,
-    chatRecent: chatRecent, chatSend: chatSend, chatSubscribe: chatSubscribe, chatUnsubscribe: chatUnsubscribe
+    chatRecent: chatRecent, chatSend: chatSend, chatSubscribe: chatSubscribe, chatUnsubscribe: chatUnsubscribe,
+    chatSearch: chatSearch, chatDelete: chatDelete
   };
 })();

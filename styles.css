@@ -453,6 +453,7 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .yc-av { flex: none; width: 20px; height: 20px; border-radius: 50%; color: #fff; font-size: 10px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
 .yc-body { flex: 1; min-width: 0; word-break: break-word; }
 .yc-name { font-weight: 700; margin-right: 5px; }
+.yc-time { font-size: 10.5px; color: var(--muted); margin-right: 4px; }
 .yc-msg { color: var(--text); }
 .chat-empty { color: var(--muted); text-align: center; margin: auto; font-size: 13px; line-height: 1.6; }
 .chat-msg { display: flex; gap: 7px; align-items: flex-start; }
