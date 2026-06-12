@@ -2349,7 +2349,7 @@
         '<div class="pt-tl-hint">베팅 적중 + 매일 출석(+200)으로 포인트를 모으면 자동 승급해요. (현금화 ✕, 재미용)</div></details>' : "";
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
-        '<div class="pt-sub">' + ((KickComments.streakBadge && pts.best_streak >= 3) ? KickComments.streakBadge(pts.best_streak) : "") + "🔥 연승 " + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
+        '<div class="pt-sub">' + ((KickComments.streakBadge && pts.best_streak >= 2) ? KickComments.streakBadge(pts.best_streak) : "") + "🔥 연승 " + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
         checkBtn +
         '<div class="pt-checkrow"><button class="pt-gacha" data-gacha>🎰 럭키 드로우</button><button class="pt-gacha pt-deco" data-titleshop>🎨 칭호 꾸미기</button></div>' + ladder + "</div>";
     }

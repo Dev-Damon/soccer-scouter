@@ -704,7 +704,7 @@
   function titleBadge(id) { var t = titleInfo(id); return t ? '<span class="title-badge" style="color:' + t.color + '">' + esc(t.label) + "</span> " : ""; }
   function buyOrEquipTitle(id) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("buy_or_equip_title", { tid: id }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
   // 예측 연속적중 훈장 — 최고 연속(best_streak) 기준 메달
-  function streakMedal(n) { n = n || 0; if (n >= 10) return { e: "🏆", n: n, c: "#e5484d" }; if (n >= 7) return { e: "🥇", n: n, c: "#e8a90c" }; if (n >= 5) return { e: "🥈", n: n, c: "#8fa0b8" }; if (n >= 3) return { e: "🥉", n: n, c: "#cd7f32" }; return null; }
+  function streakMedal(n) { n = n || 0; if (n >= 7) return { e: "🏆", n: n, c: "#e5484d" }; if (n >= 5) return { e: "🥇", n: n, c: "#e8a90c" }; if (n >= 3) return { e: "🥈", n: n, c: "#8fa0b8" }; if (n >= 2) return { e: "🥉", n: n, c: "#cd7f32" }; return null; }
   function streakBadge(n) { var m = streakMedal(n); return m ? '<span class="streak-medal" style="border-color:' + m.c + '" title="최고 ' + m.n + '연속 적중">' + m.e + m.n + "</span> " : ""; }
   function myCosmetics() { if (!sb || !user) return Promise.resolve(null); return sb.from("profiles").select("title,owned_titles").eq("user_id", user.id).maybeSingle().then(function (r) { return r.data || null; }).catch(function () { return null; }); }
   ready().then(cosmetics).catch(function () {});  // 카탈로그 미리 로드(댓글/채팅 칭호 표시용) — sb 준비 후에
