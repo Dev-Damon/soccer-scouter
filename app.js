@@ -1332,7 +1332,7 @@
           var num = (d.number != null && d.number !== "") ? d.number : "";
           var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
           if (nm.length > 5) nm = nm.slice(0, 4) + "…";
-          var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";
+          var pd = d.rate ? ' data-rate="' + esc(d.pid) + '" data-rmatch="' + esc(d.rate) + '" style="cursor:pointer"' : (d.pid ? ' data-player="' + esc(d.pid) + '"' : "");
           var rbsvg = "";
           if (d.rating != null) {
             var rc = d.rating >= 7.0 ? "#1aa55b" : d.rating >= 6.5 ? "#c99a1c" : "#cc6b22";
@@ -1378,7 +1378,7 @@
     var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
     var em = matchEventMap(d.keyEvents);
-    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm] }; }); }
+    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
     return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
@@ -1891,6 +1891,34 @@
       else if (/substitution/i.test(ty) && parts.length >= 2) { subOff[parts[1].displayName] = (ev.clock && ev.clock.displayValue) || "1"; }
     });
     return { goals: goals, subOff: subOff };
+  }
+  // 평점 미니시트(종료경기 잔디 선수 탭) — 공식+유저평균 보고 1~10 채점
+  function openRateSheet(pid, matchId) {
+    var pl = playersById[pid]; if (!pl || !window.KickComments) return;
+    var off = ratingOf(matchId, pl.name);
+    var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
+    bg.innerHTML = '<div class="rate-sheet"><div class="rs-hint">불러오는 중…</div></div>';
+    document.body.appendChild(bg);
+    function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); }
+    function load() {
+      KickComments.ready().then(function () { return KickComments.matchRatings(matchId); }).then(function (rd) {
+        var ur = (rd.byPlayer && rd.byPlayer[pid]) || null, mine = (rd.mine && rd.mine[pid]) || 0; bg._mine = mine;
+        var scale = ""; for (var s = 1; s <= 10; s++) scale += '<button class="rs-n' + (s === mine ? " on" : "") + '" data-rs-score="' + s + '">' + s + "</button>";
+        bg.querySelector(".rate-sheet").innerHTML =
+          '<div class="rs-head"><b>' + esc(pl.name) + "</b>" + (pl.number != null ? ' <span class="rs-num">#' + pl.number + "</span>" : "") + '<button class="rs-x" aria-label="닫기">✕</button></div>' +
+          '<div class="rs-vals">' + (off != null ? '공식 <b class="rs-off">' + off.toFixed(1) + "</b>" : "") + (off != null && ur ? " · " : "") + (ur ? '유저 <b class="rs-usr">' + ur.avg.toFixed(1) + "</b> (" + ur.cnt + "명)" : (off == null ? "아직 유저 평점 없음" : "")) + "</div>" +
+          '<div class="rs-hint">탭해서 내 평점' + (mine ? " · 현재 " + mine + "점 (다시 누르면 취소)" : "") + "</div>" +
+          '<div class="rs-scale">' + scale + "</div>" +
+          '<button class="rs-detail">선수 상세 보기 →</button>';
+      }).catch(function () {});
+    }
+    bg.addEventListener("click", function (e) {
+      if (e.target === bg || e.target.closest(".rs-x")) { close(); return; }
+      var n = e.target.closest("[data-rs-score]");
+      if (n) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var sc = +n.getAttribute("data-rs-score"); (bg._mine === sc ? KickComments.unrateMatchPlayer(matchId, pid) : KickComments.rateMatchPlayer(matchId, pid, sc)).then(load); return; }
+      if (e.target.closest(".rs-detail")) { close(); location.hash = "#player/" + pid; return; }
+    });
+    load();
   }
   function luPlayer(p, matchId, subInfo, goals) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
@@ -2567,6 +2595,8 @@
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");
     if (mg) { go("manager/" + mg.getAttribute("data-manager")); return; }
+    var rt = e.target.closest("[data-rate]");  // 종료경기 잔디 선수 탭 → 평점 시트
+    if (rt) { openRateSheet(rt.getAttribute("data-rate"), rt.getAttribute("data-rmatch")); return; }
     var pl = e.target.closest("[data-player]");
     if (pl) { go("player/" + pl.getAttribute("data-player")); return; }
     var tm = e.target.closest("[data-team]");
