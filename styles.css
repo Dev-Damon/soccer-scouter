@@ -1068,3 +1068,5 @@ html.light .mf-grass { fill: #2e8b54; }
 html.light .tag.weak { color: #c5302b; }
 html.light .rate-star { color: #cdd5e0; }
 html.light .mr-star { color: #cdd5e0; }
+.lu-eflag { margin-right: 5px; flex: none; display: inline-flex; align-items: center; }
+.lu-eflag img.emoji { width: 17px; height: 17px; }

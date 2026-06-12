@@ -1827,7 +1827,11 @@
     else if (/substitution/.test(ty)) { icon = "🔄"; txt = (parts[0] ? jn(parts[0]) + " ⬆" : "") + (parts[1] ? " " + jn(parts[1]) + " ⬇" : ""); }
     else return "";
     if (!(txt || "").trim()) txt = ev.shortText || ev.text || "";
-    return '<div class="lu-ev"><span class="lu-ec">' + esc(clk) + '</span><span class="lu-ei">' + icon + '</span><span class="lu-et">' + esc(txt) + "</span></div>";
+    var evT = ev.team ? espnTeamId(ev.team.displayName) : null;
+    var flag = (evT && teamsById[evT]) ? teamsById[evT].flag : "";  // 어느 나라 이벤트인지(타국 경기 구분)
+    return '<div class="lu-ev"><span class="lu-ec">' + esc(clk) + '</span><span class="lu-ei">' + icon + "</span>" +
+      (flag ? '<span class="lu-eflag">' + esc(flag) + "</span>" : "") +
+      '<span class="lu-et">' + esc(txt) + "</span></div>";
   }
   function renderLineup(slot, d, a, b) {
     var rosters = d.rosters || [];
