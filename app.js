@@ -1361,7 +1361,7 @@
     if (!slot || !window.KickComments || !KickComments.matchStats) return;
     var setA = {}, setB = {};
     teamIds(a).forEach(function (id) { setA[id] = 1; }); teamIds(b).forEach(function (id) { setB[id] = 1; });
-    KickComments.matchStats().then(function (data) {
+    (KickComments.ready ? KickComments.ready() : Promise.resolve()).then(function () { return KickComments.matchStats(); }).then(function (data) {
       if (parseHash().name !== "match") return;
       var players = (data && data.players) || [];
       function cards(setX) {
