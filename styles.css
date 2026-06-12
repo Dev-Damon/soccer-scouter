@@ -336,7 +336,12 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .lu-tn { font-weight: 800; font-size: 14.5px; margin: 10px 0 8px; }
 .lu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; }
 .lu-list.subs { opacity: .72; }
-.lu-p { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 13.5px; min-width: 0; }
+.lu-p { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13.5px; min-width: 0; }
+.lu-list.subs { align-items: start; }            /* 교체명단: 행 위로 정렬(짧은 행이 가운데 떠보이지 않게) */
+.lu-list.subs .lu-p { align-items: flex-start; }
+.lu-list.subs .lu-num { line-height: 1.5; }
+.lu-list.subs .rbox { margin-top: 1px; }
+.lu-pmain { gap: 1px; }
 .lu-list { overflow: hidden; }
 .lu-num { width: 22px; text-align: center; font-weight: 800; color: var(--muted); flex: none; }
 .lu-nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

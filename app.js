@@ -1382,6 +1382,12 @@
     return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
+  // 예상전략 텍스트에서 포메이션(4-3-3 등) 언급 제거 — 예상≠확정일 수 있어서
+  function stripFormation(t) {
+    return String(t || "")
+      .replace(/\s*\d(?:-\d){2,3}\s*(?:을 바탕으로|를 바탕으로|에서는|에서|기반으로|기반|을|를|으로|로)?/g, " ")
+      .replace(/\s{2,}/g, " ").replace(/\s+([,.])/g, "$1").trim();
+  }
   function loadCardWatch(slot, a, b) {
     if (!slot || !window.KickComments || !KickComments.matchStats) return;
     var setA = {}, setB = {};
@@ -1434,9 +1440,9 @@
       cmpRow("종합", pr.pa, pr.pb);
     var pv = fx.preview, previewHtml = "";
     if (pv) {
-      var wpts = (pv.watchPoints || []).map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
-      var strat = (pv.homeStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(a.name) + '</div><div class="strat-txt">' + esc(pv.homeStrategy) + "</div></div>" : "") +
-        (pv.awayStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(b.name) + '</div><div class="strat-txt">' + esc(pv.awayStrategy) + "</div></div>" : "");
+      var wpts = (pv.watchPoints || []).map(function (p) { return "<li>" + esc(stripFormation(p)) + "</li>"; }).join("");
+      var strat = (pv.homeStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(a.name) + '</div><div class="strat-txt">' + esc(stripFormation(pv.homeStrategy)) + "</div></div>" : "") +
+        (pv.awayStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(b.name) + '</div><div class="strat-txt">' + esc(stripFormation(pv.awayStrategy)) + "</div></div>" : "");
       previewHtml = (wpts ? '<div class="block"><h3>관전 포인트</h3><ul class="watch-list">' + wpts + "</ul></div>" : "") +
         (strat ? '<div class="block"><h3>예상 전략</h3><div class="strat">' + strat + "</div></div>" : "");
     }
