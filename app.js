@@ -1865,15 +1865,41 @@
   function matchKickoff(fx) { try { var ms = Date.parse(fxDate(fx) + "T" + (fxTime(fx) || "00:00") + ":00+09:00"); return isNaN(ms) ? null : ms; } catch (e) { return null; } }
   function matchEnded(fx) { var lv = LIVE[fx.id]; if (lv && lv.state === "post") return true; var ko = matchKickoff(fx); return ko ? Date.now() > ko + 130 * 60000 : false; }
   function teamIds(t) { var ids = []; (t.lineup || []).forEach(function (d) { if (playersById[d.playerId] && ids.indexOf(d.playerId) < 0) ids.push(d.playerId); }); return ids; }
-  function mrRow(pid, rd, md) {
-    var p = playersById[pid]; if (!p) return "";
-    var r = rd.byPlayer[pid], my = rd.mine[pid] || 0, cnt = r ? r.cnt : 0, avg = r ? r.avg.toFixed(1) : "";
-    var pts = ""; for (var s = 1; s <= 10; s++) pts += '<span class="mr-pt' + (s <= my ? " on" : "") + '" data-rate-pid="' + esc(pid) + '" data-score="' + s + '">' + s + "</span>";
-    var votes = md.votes[pid] || 0;
-    return '<div class="mr-row"><div class="mr-top"><span class="mr-nm" data-player="' + esc(pid) + '">' + esc(p.name) + "</span>" +
-      '<button class="mr-mvp' + (md.mine === pid ? " on" : "") + '" data-mvp-pid="' + esc(pid) + '">🏆 ' + votes + "</button></div>" +
-      '<div class="mr-pts">' + pts + "</div>" +
-      '<div class="mr-avg">' + (my ? '<b>내 평점 ' + my + '</b> · ' : "") + (cnt ? "평균 " + avg + "/10 (" + cnt + "명)" : '<span class="muted-note">아직 평점 없음 · 탭해서 평가</span>') + "</div></div>";
+  function ofTags(p) { var t = ""; if (p.goals) t += " ⚽" + (p.goals > 1 ? p.goals : ""); if (p.assists) t += " 🅰" + (p.assists > 1 ? p.assists : ""); if (p.yellow) t += " 🟨"; if (p.red) t += " 🟥"; if (p.og) t += " 자책"; return t ? '<span class="of-ev">' + t + "</span>" : ""; }
+  // 출장 선수만 + MVP 1탭 투표 + 킥톡 평점(기록+민심 blend). (공식 평점 유료 연동 시 r 자리에 드롭인)
+  function loadMvpBoard(matchId, a, b, md) {
+    var slot = viewEl.querySelector(".mvp-slot"); if (!slot || !KickComments.matchStatsOne) return;
+    var setA = {}, setB = {};
+    teamIds(a).forEach(function (id) { setA[id] = 1; }); teamIds(b).forEach(function (id) { setB[id] = 1; });
+    KickComments.matchStatsOne(matchId).then(function (data) {
+      if (parseHash().name !== "rate") return;
+      var played = ((data && data.players) || []).filter(function (p) { return p.pid && ((p.apps || 0) > 0 || p.goals || p.assists || p.yellow || p.red || p.og); });
+      if (!played.length) { slot.innerHTML = '<div class="mr-hint muted-note">선발 라인업이 나오면 출장 선수와 함께 열려요. (보통 킥오프 ~1시간 전)</div>'; return; }
+      var votes = (md && md.votes) || {}, total = (md && md.total) || 0, mine = md && md.mine;
+      var rated = played.map(function (p) {
+        var ev = (p.goals || 0) * 1.1 + (p.assists || 0) * 0.6 - (p.yellow || 0) * 0.3 - (p.red || 0) * 1.3 - (p.og || 0) * 1.2;
+        var vb = total > 0 ? (votes[p.pid] || 0) / total * 1.5 : 0;  // 민심 보너스
+        var r = Math.max(5.0, Math.min(9.9, Math.round((6.4 + ev + vb) * 10) / 10));
+        var side = setA[p.pid] ? "A" : setB[p.pid] ? "B" : (p.team === a.name ? "A" : "B");
+        return { pid: p.pid, name: p.name, side: side, r: r, v: votes[p.pid] || 0, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
+      });
+      var mom = rated.slice().sort(function (x, y) { return y.r - x.r; })[0];
+      var head = mom ? '<div class="mr-lead">🏅 이 경기 MOM <b>' + esc(mom.name) + "</b> · 킥톡 평점 " + mom.r.toFixed(1) + (total ? ' <span class="muted-note">(MVP ' + total + "표)</span>" : "") + "</div>" : "";
+      head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점 = 기록(골·도움·카드) + 민심(MVP 득표) 자동.</div>';
+      function card(p) {
+        var voted = mine === p.pid, pct = total > 0 ? Math.round(p.v / total * 100) : 0;
+        return '<div class="mvp-card' + (voted ? " voted" : "") + (p === mom ? " mom" : "") + '">' +
+          '<div class="mvp-top"><span class="mvp-nm" data-player="' + esc(p.pid) + '">' + (p === mom ? "⭐ " : "") + esc(p.name) + ofTags(p) + '</span><span class="mvp-rt">' + p.r.toFixed(1) + "</span></div>" +
+          '<div class="mvp-vbar"><span style="width:' + pct + '%"></span></div>' +
+          '<div class="mvp-bot"><span class="mvp-vn">' + p.v + "표 · " + pct + '%</span><button class="mvp-btn' + (voted ? " on" : "") + '" data-mvp-pid="' + esc(p.pid) + '">' + (voted ? "✓ 내 MVP" : "🏆 MVP 투표") + "</button></div></div>";
+      }
+      function teamBlock(side, team) {
+        var list = rated.filter(function (p) { return p.side === side; }).sort(function (x, y) { return y.r - x.r; });
+        return '<div class="sec-h">' + esc(team.flag) + " " + esc(team.name) + '</div><div class="mvp-list">' + (list.length ? list.map(card).join("") : '<div class="mr-hint muted-note">기록 없음</div>') + "</div>";
+      }
+      slot.innerHTML = head + teamBlock("A", a) + teamBlock("B", b);
+      twem(slot);
+    }).catch(function () {});
   }
   function renderMatchRate(matchId) {
     backBtn.hidden = false; tabsEl.hidden = true;
@@ -1883,65 +1909,23 @@
     if (fx.awayId === "south-korea" && a && b) { var sw = a; a = b; b = sw; }
     if (!a || !b) { viewEl.innerHTML = '<div class="empty">아직 팀이 확정되지 않은 경기예요.</div>'; return; }
     var title = '<div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
-    if (!matchEnded(fx)) {
-      viewEl.innerHTML = '<div class="detail">' + title + '<div class="empty">⏱ 경기가 끝난 뒤 평점·MVP 투표가 열려요.<br>킥오프: ' + esc(fxDate(fx)) + " " + esc(fxTime(fx) || "") + '<br><br><button class="mbtn" data-match="' + esc(fx.id) + '">경기 분석으로 돌아가기</button></div></div>';
-      return;
-    }
     mrCtx = { matchId: matchId, a: a, b: b };
     viewEl.innerHTML = '<div class="detail">' + title + '<div class="h2h-loading">불러오는 중…</div></div>';
-    KickComments.ready().then(function () { return Promise.all([KickComments.matchRatings(matchId), KickComments.matchMvp(matchId)]); })
-      .then(function (res) { if (parseHash().name === "rate") paintMatchRate(res[0], res[1]); })
+    KickComments.ready().then(function () { return KickComments.matchMvp(matchId); })
+      .then(function (md) { if (parseHash().name === "rate") paintMatchRate(md); })
       .catch(function () { viewEl.innerHTML = '<div class="detail">' + title + '<div class="empty">평점을 불러오지 못했어요.</div></div>'; });
   }
-  function paintMatchRate(rd, md) {
+  function paintMatchRate(md) {
     if (!mrCtx) return;
-    mrCtx.mvpMine = md.mine; mrCtx.mine = rd.mine || {};
-    var a = mrCtx.a, b = mrCtx.b, idsA = teamIds(a), idsB = teamIds(b), leader = null, lead = 0;
-    idsA.concat(idsB).forEach(function (pid) { var v = md.votes[pid] || 0; if (v > lead) { lead = v; leader = pid; } });
-    var html = '<div class="detail"><div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + "</div>";
-    if (leader && lead > 0 && playersById[leader]) html += '<div class="mr-lead">🏆 현재 MVP <b>' + esc(playersById[leader].name) + "</b> · " + lead + '표 <span class="muted-note">(총 ' + md.total + "표)</span></div>";
-    html += '<div class="mr-hint muted-note">숫자 탭 = 선수 평점(10점) · 🏆 = MVP 투표(경기당 1명)</div>';
-    html += '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="mr-list">' + idsA.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
-    html += '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="mr-list">' + idsB.map(function (pid) { return mrRow(pid, rd, md); }).join("") + "</div>";
-    html += '<div class="of-slot"><div class="of-wrap"><div class="sec-h">📊 킥톡 평점</div><div class="of-src muted-note">경기 기록 불러오는 중…</div></div></div></div>';
-    viewEl.innerHTML = html; twem(viewEl);
-    loadOfficial(mrCtx.matchId, a, b);
-  }
-  // 킥톡 평점 — 실제 경기 기록(골·도움·카드)으로 산출. DB 경기별 기록 사용.
-  function ofTags(p) { var t = ""; if (p.goals) t += " ⚽" + (p.goals > 1 ? p.goals : ""); if (p.assists) t += " 🅰" + (p.assists > 1 ? p.assists : ""); if (p.yellow) t += " 🟨"; if (p.red) t += " 🟥"; if (p.og) t += " 자책"; return t ? '<span class="of-ev">' + t + "</span>" : ""; }
-  function loadOfficial(matchId, a, b) {
-    var slot = viewEl.querySelector(".of-slot"); if (!slot || !window.KickComments || !KickComments.matchStatsOne) return;
-    var setA = {}, setB = {};
-    teamIds(a).forEach(function (id) { setA[id] = 1; }); teamIds(b).forEach(function (id) { setB[id] = 1; });
-    KickComments.matchStatsOne(matchId).then(function (data) {
-      if (parseHash().name !== "rate") return;
-      var players = ((data && data.players) || []).filter(function (p) { return (p.apps || 0) > 0 || p.goals || p.assists || p.yellow || p.red || p.og; });
-      if (!players.length) { slot.innerHTML = '<div class="of-wrap"><div class="sec-h">📊 킥톡 평점</div><div class="of-src muted-note">경기 기록이 집계되면 표시돼요 (경기 종료 후 최대 20분).</div></div>'; return; }
-      var rated = players.map(function (p) {
-        var r = 6.4 + (p.goals || 0) * 1.1 + (p.assists || 0) * 0.6 - (p.yellow || 0) * 0.3 - (p.red || 0) * 1.3 - (p.og || 0) * 1.2;
-        r = Math.max(5.0, Math.min(9.8, Math.round(r * 10) / 10));
-        var side = (p.pid && setA[p.pid]) ? "A" : (p.pid && setB[p.pid]) ? "B" : (p.team === a.name ? "A" : p.team === b.name ? "B" : "?");
-        return { name: p.name, side: side, r: r, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
-      });
-      var potm = rated.slice().sort(function (x, y) { return y.r - x.r; })[0];
-      function rows(side) {
-        var list = rated.filter(function (p) { return p.side === side; }).sort(function (x, y) { return y.r - x.r; });
-        return list.length ? list.map(function (p) {
-          return '<div class="of-row"><span class="of-nm">' + (p === potm ? "⭐ " : "") + esc(p.name) + ofTags(p) +
-            '</span><span class="of-bar"><span style="width:' + (p.r / 10 * 100).toFixed(0) + '%"></span></span><span class="of-r">' + p.r.toFixed(1) + "</span></div>";
-        }).join("") : '<div class="of-src muted-note">기록 없음</div>';
-      }
-      slot.innerHTML = '<div class="of-wrap"><div class="sec-h">📊 킥톡 평점 <span class="muted-note">경기 기록 기반</span></div>' +
-        '<div class="of-mom">🏅 이 경기 MOM <b>' + esc(potm.name) + '</b> <span class="of-r">' + potm.r.toFixed(1) + "</span></div>" +
-        '<div class="of-src muted-note">골·도움·카드 등 실제 경기 기록으로 산출한 킥톡 자체 지수예요.</div>' +
-        '<div class="sec-h">' + esc(a.flag) + " " + esc(a.name) + '</div><div class="of-list">' + rows("A") + "</div>" +
-        '<div class="sec-h">' + esc(b.flag) + " " + esc(b.name) + '</div><div class="of-list">' + rows("B") + "</div></div>";
-      twem(slot);
-    }).catch(function () {});
+    mrCtx.mvpMine = md && md.mine;
+    var a = mrCtx.a, b = mrCtx.b;
+    viewEl.innerHTML = '<div class="detail"><div class="sec-h">⭐ 선수 평점 · MVP</div><div class="mr-match">' + esc(a.flag) + " " + esc(a.name) + " vs " + esc(b.name) + " " + esc(b.flag) + '</div><div class="mvp-slot"><div class="mr-hint muted-note">집계 중…</div></div></div>';
+    twem(viewEl);
+    loadMvpBoard(mrCtx.matchId, a, b, md);
   }
   function refreshMatchRatings() {
     if (!mrCtx) return;
-    Promise.all([KickComments.matchRatings(mrCtx.matchId), KickComments.matchMvp(mrCtx.matchId)]).then(function (res) { paintMatchRate(res[0], res[1]); });
+    KickComments.matchMvp(mrCtx.matchId).then(function (md) { if (parseHash().name === "rate") { mrCtx.mvpMine = md && md.mine; loadMvpBoard(mrCtx.matchId, mrCtx.a, mrCtx.b, md); } });
   }
   function compLabel(e) {
     var ln = e.leagueName || e.competitionName || "";
@@ -2469,9 +2453,7 @@
       if (saved) { sbtn.classList.remove("pop"); void sbtn.offsetWidth; sbtn.classList.add("pop"); }  // 저장 시 팝 애니메이션
       return;
     }
-    var rst = e.target.closest(".mr-pt");
-    if (rst) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var rpid = rst.getAttribute("data-rate-pid"), sc = +rst.getAttribute("data-score"); ((mrCtx.mine && mrCtx.mine[rpid] === sc) ? KickComments.unrateMatchPlayer(mrCtx.matchId, rpid) : KickComments.rateMatchPlayer(mrCtx.matchId, rpid, sc)).then(refreshMatchRatings); return; }
-    var mvb = e.target.closest(".mr-mvp");
+    var mvb = e.target.closest("[data-mvp-pid]");
     if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var mpid = mvb.getAttribute("data-mvp-pid"); (mrCtx.mvpMine === mpid ? KickComments.unvoteMvp(mrCtx.matchId) : KickComments.voteMvp(mrCtx.matchId, mpid)).then(refreshMatchRatings); return; }
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
