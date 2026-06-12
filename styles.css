@@ -1217,11 +1217,11 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .hero.live-hero .hero-tag { font-size: 10.5px; }
 .hero.live-hero .hero-flag { font-size: 25px; }
 .hero.live-hero .hero-team { font-size: 12.5px; }
-.hero.live-hero .hero-match { margin: 6px 0 4px; gap: 6px; }
-.hero.live-hero .hero-side { gap: 3px; }
-.hero.live-hero .hero-score { font-size: 21px; margin: 2px 0 0; }
+.hero.live-hero .hero-match { margin: 4px 0 2px; gap: 6px; }
+.hero.live-hero .hero-side { gap: 2px; }
+.hero.live-hero .hero-score { font-size: 21px; margin: 1px 0 0; }
 .hero.live-hero .hero-livebadge { font-size: 10.5px; padding: 2px 8px; }
 .hero.live-hero .hero-clock { font-size: 10.5px; }
-.hero.live-hero .hero-meta { font-size: 10px; margin-top: 1px; }
-.hero.live-hero .hero-cta { margin-top: 5px; font-size: 11px; }
+.hero.live-hero .hero-meta { display: none; }  /* 경기장 줄 숨겨 높이 절약 */
+.hero.live-hero .hero-cta { margin-top: 3px; font-size: 11px; }
 .live-cards { gap: 9px; }
