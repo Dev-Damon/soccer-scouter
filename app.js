@@ -1488,7 +1488,7 @@
         '<div class="block card-slot" style="display:none"></div>' +
         '<div class="block lineup-slot"></div>' +
         '<div class="mom-slot"></div>' +
-        '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>' +
+        (matchEnded(fx) ? "" : '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>') +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
@@ -2077,18 +2077,21 @@
       if (parseHash().name !== "match") return;
       var votes = (md && md.votes) || {}, total = (md && md.total) || 0;
       var arr = Object.keys(votes).map(function (pid) { var p = playersById[pid]; return { pid: pid, name: p ? p.name : pid, team: p ? p.team : null, v: votes[pid] }; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 3);
-      if (!arr.length) { slot.style.display = "none"; return; }
-      var medals = ["🥇", "🥈", "🥉"];
-      var rows = arr.map(function (x, i) {
-        var pct = total ? Math.round(x.v / total * 100) : 0, t = x.team && teamsById[x.team];
-        return '<div class="mom-row' + (i === 0 ? " top" : "") + '"><span class="mom-medal">' + medals[i] + "</span>" +
-          '<span class="mom-nm">' + (t ? esc(t.flag) + " " : "") + esc(x.name) + "</span>" +
-          '<span class="mom-bar"><span style="width:' + pct + '%"></span></span>' +
-          '<span class="mom-vn">' + x.v + "표 · " + pct + "%</span></div>";
-      }).join("");
+      var medals = ["🥇", "🥈", "🥉"], body;
+      if (!arr.length) {
+        body = '<div class="mom-empty">아직 투표가 없어요.<br>이 경기 최고의 선수에게 첫 표를 남겨보세요! 🏆</div>';
+      } else {
+        body = arr.map(function (x, i) {
+          var pct = total ? Math.round(x.v / total * 100) : 0, t = x.team && teamsById[x.team];
+          return '<div class="mom-row' + (i === 0 ? " top" : "") + '"><span class="mom-medal">' + medals[i] + "</span>" +
+            '<span class="mom-nm">' + (t ? esc(t.flag) + " " : "") + esc(x.name) + "</span>" +
+            '<span class="mom-bar"><span style="width:' + pct + '%"></span></span>' +
+            '<span class="mom-vn">' + x.v + "표 · " + pct + "%</span></div>";
+        }).join("");
+      }
       slot.style.display = "";
-      slot.innerHTML = '<div class="block mom-card"><h3>🏅 팬이 뽑은 최고의 선수 <span class="mom-tot">' + total + "명 투표</span></h3>" + rows +
-        '<button class="mom-go" data-rate-go="' + esc(fx.id) + '">전체 평점 · MVP 보기 →</button></div>';
+      slot.innerHTML = '<div class="block mom-card"><h3>🏅 이 경기 최고의 선수 (MVP)' + (total ? ' <span class="mom-tot">' + total + "명 투표</span>" : "") + "</h3>" + body +
+        '<button class="mom-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 매기기 · MVP 투표 →</button></div>';
       twem(slot);
     }).catch(function () { slot.style.display = "none"; });
   }
@@ -2114,7 +2117,7 @@
         return { pid: p.pid, name: p.name, side: side, r: r, v: votes[p.pid] || 0, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
       });
       var mom = rated.slice().sort(function (x, y) { return y.r - x.r; })[0];
-      var head = mom ? '<div class="mr-lead">🏅 이 경기 MOM <b>' + esc(mom.name) + "</b> · 킥톡 평점 " + mom.r.toFixed(1) + (total ? ' <span class="muted-note">(MVP ' + total + "표)</span>" : "") + "</div>" : "";
+      var head = mom ? '<div class="mr-lead">🏅 이 경기 MVP <b>' + esc(mom.name) + "</b> · 킥톡 평점 " + mom.r.toFixed(1) + (total ? ' <span class="muted-note">(' + total + "표)</span>" : "") + "</div>" : "";
       head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점 = 기록(골·도움·카드) + 민심(MVP 득표) 자동.</div>';
       function card(p) {
         var voted = mine === p.pid, pct = total > 0 ? Math.round(p.v / total * 100) : 0;
@@ -2844,7 +2847,7 @@
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
-    var rgo = e.target.closest(".rate-go"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
+    var rgo = e.target.closest("[data-rate-go]"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
     var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
     var mt = e.target.closest("[data-match]");
