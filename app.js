@@ -2784,8 +2784,8 @@
       KickComments.updatePost(sitem.getAttribute("data-pid"), spost ? spost.category : "자유", snb, spost ? spost.pinned : false).then(function () { renderBoard(); });
       return;
     }
-    if ((ad = e.target.closest(".mb-sort"))) { memberSort = ad.getAttribute("data-msort"); paintAdmin(); return; }
-    if ((ad = e.target.closest("[data-adtab]"))) { adminTab = ad.getAttribute("data-adtab"); paintAdmin(); window.scrollTo(0, 0); return; }
+    if ((ad = e.target.closest(".mb-sort"))) { _adminScrollY = window.scrollY; memberSort = ad.getAttribute("data-msort"); paintAdmin(); return; }
+    if ((ad = e.target.closest("[data-adtab]"))) { _adminScrollY = window.scrollY; adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }  // 탭 전환도 그 자리 유지(맨위로 안 감)
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
     if ((ad = e.target.closest("[data-chatdel]"))) {
       if (!confirm("이 채팅을 삭제할까요?")) return;
