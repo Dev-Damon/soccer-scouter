@@ -1487,6 +1487,7 @@
         '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
         '<div class="block card-slot" style="display:none"></div>' +
         '<div class="block lineup-slot"></div>' +
+        '<div class="mom-slot"></div>' +
         '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>' +
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
@@ -1509,6 +1510,7 @@
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
+    loadMomPodium(viewEl.querySelector(".mom-slot"), fx);
     loadCardWatch(viewEl.querySelector(".card-slot"), a, b);
     insertAdFit(viewEl.querySelector(".adslot")); insertAdFit(viewEl.querySelector(".ad2"), "DAN-SWWhds5NegoTMohB", "320", "50"); coupangBottom();
 
@@ -2067,6 +2069,29 @@
   }
   // ===== 경기 평점·MVP =====
   var mrCtx = null;
+  // 라인업 아래 '팬이 뽑은 최고의 선수' 포디움 (종료 경기 + 득표 있을 때만)
+  function loadMomPodium(slot, fx) {
+    if (!slot || !window.KickComments || !KickComments.matchMvp) return;
+    if (!matchEnded(fx)) { slot.style.display = "none"; return; }
+    KickComments.ready().then(function () { return KickComments.matchMvp(fx.id); }).then(function (md) {
+      if (parseHash().name !== "match") return;
+      var votes = (md && md.votes) || {}, total = (md && md.total) || 0;
+      var arr = Object.keys(votes).map(function (pid) { var p = playersById[pid]; return { pid: pid, name: p ? p.name : pid, team: p ? p.team : null, v: votes[pid] }; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 3);
+      if (!arr.length) { slot.style.display = "none"; return; }
+      var medals = ["🥇", "🥈", "🥉"];
+      var rows = arr.map(function (x, i) {
+        var pct = total ? Math.round(x.v / total * 100) : 0, t = x.team && teamsById[x.team];
+        return '<div class="mom-row' + (i === 0 ? " top" : "") + '"><span class="mom-medal">' + medals[i] + "</span>" +
+          '<span class="mom-nm">' + (t ? esc(t.flag) + " " : "") + esc(x.name) + "</span>" +
+          '<span class="mom-bar"><span style="width:' + pct + '%"></span></span>' +
+          '<span class="mom-vn">' + x.v + "표 · " + pct + "%</span></div>";
+      }).join("");
+      slot.style.display = "";
+      slot.innerHTML = '<div class="block mom-card"><h3>🏅 팬이 뽑은 최고의 선수 <span class="mom-tot">' + total + "명 투표</span></h3>" + rows +
+        '<button class="mom-go" data-rate-go="' + esc(fx.id) + '">전체 평점 · MVP 보기 →</button></div>';
+      twem(slot);
+    }).catch(function () { slot.style.display = "none"; });
+  }
   function matchKickoff(fx) { try { var ms = Date.parse(fxDate(fx) + "T" + (fxTime(fx) || "00:00") + ":00+09:00"); return isNaN(ms) ? null : ms; } catch (e) { return null; } }
   function matchEnded(fx) { var lv = LIVE[fx.id]; if (lv && lv.state === "post") return true; var ko = matchKickoff(fx); return ko ? Date.now() > ko + 130 * 60000 : false; }
   function teamIds(t) { var ids = []; (t.lineup || []).forEach(function (d) { if (playersById[d.playerId] && ids.indexOf(d.playerId) < 0) ids.push(d.playerId); }); return ids; }

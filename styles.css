@@ -1099,6 +1099,18 @@ html.light .mr-star.on { color: #f5b301; }
 .mvp-rt { font-weight: 900; font-size: 17px; color: var(--text); flex: none; }
 .mvp-vbar { height: 6px; background: var(--bg-soft); border-radius: 4px; overflow: hidden; margin: 7px 0; }
 .mvp-vbar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #6aa8ff); }
+/* 라인업 아래 MOM 포디움 */
+.mom-card h3 { display: flex; align-items: center; }
+.mom-tot { margin-left: auto; font-size: 11px; font-weight: 700; color: var(--muted); }
+.mom-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+.mom-medal { font-size: 17px; flex: none; width: 22px; text-align: center; }
+.mom-nm { font-size: 13.5px; font-weight: 700; color: var(--text); flex: none; max-width: 38%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mom-row.top .mom-nm { color: #e8a90c; font-weight: 800; }
+.mom-bar { flex: 1; height: 8px; background: var(--bg-soft); border-radius: 4px; overflow: hidden; }
+.mom-bar span { display: block; height: 100%; background: linear-gradient(90deg, #f5b301, #e5566a); }
+.mom-row.top .mom-bar span { background: linear-gradient(90deg, #f5b301, #e8a90c); }
+.mom-vn { flex: none; font-size: 11px; font-weight: 700; color: var(--muted); min-width: 56px; text-align: right; }
+.mom-go { width: 100%; margin-top: 10px; padding: 9px; border-radius: 9px; border: 1px solid var(--line); background: none; color: var(--accent); font-weight: 700; font-size: 12.5px; cursor: pointer; }
 .mvp-bot { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .mvp-vn { font-size: 12px; color: var(--muted); }
 .mvp-btn { font-size: 12.5px; font-weight: 800; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); background: none; cursor: pointer; flex: none; }
