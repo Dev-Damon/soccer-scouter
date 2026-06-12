@@ -678,7 +678,7 @@
   // 득점왕/기록 — 경기별 행(stats:매치id)을 모아 선수별 합산. 크론 + 라이브 보는 클라이언트가 같은 행을 갱신
   function matchStats() {
     if (!sb) return Promise.resolve(null);
-    return sb.from("app_data").select("data").like("key", "stats:%").then(function (r) {
+    return sb.from("app_data").select("key,data").gte("key", "stats:").lt("key", "stats;").then(function (r) {
       var rows = r.data || []; if (!rows.length) return null;
       var agg = {};
       rows.forEach(function (row) {
