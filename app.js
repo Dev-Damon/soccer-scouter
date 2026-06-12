@@ -246,7 +246,18 @@
     ensureStats().then(function (j) {
       if (parseHash().name !== "home" || homeTab !== "scorers") return;
       var subs = '<div class="rank-sorts">' + SCORE_CATS.map(function (c) { return '<button class="rank-sb' + (scoreCat === c[0] ? " on" : "") + '" data-scat="' + c[0] + '">' + c[1] + "</button>"; }).join("") + "</div>";
-      var players = (j.players || []).filter(function (p) { return scVal(p) > 0; }).sort(function (a, b) { var d = scVal(b) - scVal(a); return d || (b.goals || 0) - (a.goals || 0); });
+      var players = (j.players || []).filter(function (p) { return scVal(p) > 0; }).sort(function (a, b) {
+        var d = scVal(b) - scVal(a); if (d) return d;
+        // 타이브레이크: 득점=도움多, 도움=골多 → 적은 경기수 → 이름 (월드컵 골든부트 기준)
+        if (scoreCat === "goals") { var sa = (b.assists || 0) - (a.assists || 0); if (sa) return sa; }
+        else if (scoreCat === "assists") { var sg = (b.goals || 0) - (a.goals || 0); if (sg) return sg; }
+        var ap = (a.apps || 0) - (b.apps || 0); if (ap) return ap;
+        return (a.name || "").localeCompare(b.name || "");
+      });
+      // 공동순위: 같은 값이면 같은 등수(1,1,1,…,4,…)
+      var _rk = 0, _pv = null;
+      players.forEach(function (p, i) { var v = scVal(p); if (_pv === null || v !== _pv) { _rk = i + 1; _pv = v; } p._rank = _rk; });
+      var _rcount = {}; players.forEach(function (p) { _rcount[p._rank] = (_rcount[p._rank] || 0) + 1; });
       var html = '<div class="sec-h">👟 월드컵 기록 <span class="muted-note">실시간 집계 · ESPN</span></div>' + subs;
       if (!players.length) { html += '<div class="empty">아직 기록이 없어요.<br>경기가 시작되면 골·도움·카드가 자동으로 채워져요! ⚽</div>'; viewEl.innerHTML = html; twem(viewEl); return; }
       var rows = players.slice(0, 50).map(function (p, i) {
@@ -262,7 +273,7 @@
           statsub = apps ? (apps + "경기 · 평균 " + (scVal(p) / apps).toFixed(2)) : "";
         }
         return '<div class="sc-row' + (p.pid ? " clickable" : "") + '"' + (p.pid ? ' data-player="' + esc(p.pid) + '"' : "") + '>' +
-          '<span class="sc-rank">' + (i + 1) + "</span><span class=\"sc-flag\">" + esc(p.flag || "") + "</span>" +
+          '<span class="sc-rank' + (_rcount[p._rank] > 1 ? " tie" : "") + '"' + (_rcount[p._rank] > 1 ? ' title="공동 ' + p._rank + '위"' : "") + ">" + (_rcount[p._rank] > 1 ? "=" : "") + p._rank + '</span><span class="sc-flag">' + esc(p.flag || "") + "</span>" +
           '<span class="sc-name">' + esc(p.name) + '<span class="sc-team">' + meta + "</span></span>" +
           '<span class="sc-stat">' + statMain + (statsub ? '<span class="sc-statsub">' + statsub + "</span>" : "") + "</span></div>";
       }).join("");
