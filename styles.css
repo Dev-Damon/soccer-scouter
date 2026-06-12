@@ -1199,20 +1199,6 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .live-sec-n { font-size: 11px; font-weight: 700; color: var(--muted); }
 .lv-pip { width: 8px; height: 8px; border-radius: 50%; background: #e5484d; flex: none; animation: lvpip 1.3s infinite; }
 @keyframes lvpip { 0% { box-shadow: 0 0 0 0 rgba(229,72,77,.6); } 70% { box-shadow: 0 0 0 7px rgba(229,72,77,0); } 100% { box-shadow: 0 0 0 0 rgba(229,72,77,0); } }
-/* 1경기=풀폭 / 2경기=좌우 절반 */
-.live-cards { display: grid; grid-template-columns: 1fr; gap: 10px; }
-.live-cards.two { grid-template-columns: 1fr 1fr; }
-.livec { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(229,72,77,.13), var(--card) 58%); border: 1.5px solid rgba(229,72,77,.55); border-radius: 14px; padding: 10px 12px; cursor: pointer; animation: livecpulse 2s infinite; }
-@keyframes livecpulse { 0%,100% { box-shadow: 0 2px 10px rgba(0,0,0,.18); } 50% { box-shadow: 0 0 15px 1px rgba(229,72,77,.38), 0 2px 10px rgba(0,0,0,.18); } }
-.livec::before { content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.16), transparent); transform: skewX(-18deg); animation: livecshine 3.4s infinite; pointer-events: none; }
-@keyframes livecshine { 0% { left: -60%; } 42%,100% { left: 135%; } }
-.livec-glow { display: none; }
-.livec-h { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 900; color: #fff; background: #e5484d; padding: 2px 7px; border-radius: 6px; margin-bottom: 7px; letter-spacing: .3px; position: relative; z-index: 1; }
-.livec-h .lv-pip { width: 6px; height: 6px; background: #fff; animation: lvpipw 1.3s infinite; }
-@keyframes lvpipw { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,.8); } 70% { box-shadow: 0 0 0 5px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
-.livec-tm { display: flex; align-items: center; gap: 7px; padding: 2px 0; position: relative; z-index: 1; }
-.livec-tm .lv-flag { font-size: 16px; flex: none; }
-.livec-tm .lv-nm { font-size: 13px; font-weight: 700; color: var(--text); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.livec-tm .lv-sc { font-size: 19px; font-weight: 900; color: var(--text); flex: none; min-width: 16px; text-align: right; }
-.livec-tm.win .lv-nm, .livec-tm.win .lv-sc { color: #e5484d; }
-.livec-go { font-size: 10.5px; color: var(--accent); font-weight: 800; text-align: right; margin-top: 6px; position: relative; z-index: 1; }
+/* 라이브 = 빅매치(heroCard) 카드 재사용 · 2경기면 세로로 나열 */
+.live-cards { display: flex; flex-direction: column; gap: 12px; }
+.live-cards .hero { margin: 0; }

@@ -526,21 +526,11 @@
       live = realLive;
     }
     if (!live.length) return "";
-    var cards = live.map(function (fx, i) {
-      var lv = dummy ? dummy[i] : LIVE[fx.id], swap = (fx.awayId === "south-korea");
-      var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
-      var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
-      var lS = swap ? lv.as : lv.hs, rS = swap ? lv.hs : lv.as;
-      var lead = (lS | 0) > (rS | 0), trail = (rS | 0) > (lS | 0);
-      return '<div class="livec" data-match="' + esc(fx.id) + '">' +
-        '<div class="livec-h"><span class="lv-pip"></span>LIVE <b>' + esc(lv.clock || "") + "</b></div>" +
-        '<div class="livec-tm' + (lead ? " win" : "") + '"><span class="lv-flag">' + esc(flagOf(lId)) + '</span><span class="lv-nm">' + esc(lName) + '</span><span class="lv-sc">' + (lS | 0) + "</span></div>" +
-        '<div class="livec-tm' + (trail ? " win" : "") + '"><span class="lv-flag">' + esc(flagOf(rId)) + '</span><span class="lv-nm">' + esc(rName) + '</span><span class="lv-sc">' + (rS | 0) + "</span></div>" +
-        '<div class="livec-go">경기 상세 →</div></div>';
-    }).join("");
-    return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards" + (live.length > 1 ? " two" : "") + "\">" + cards + "</div></div>";
+    // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열
+    var cards = live.map(function (fx, i) { return heroCard(fx, dummy ? dummy[i] : LIVE[fx.id]); }).join("");
+    return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
   }
-  function heroCard(fx) {
+  function heroCard(fx, lvOverride) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var heroAttr = (fx.homeId && fx.awayId) ? ' data-match="' + esc(fx.id) + '"'
@@ -548,7 +538,7 @@
     var swap = (fx.awayId === "south-korea");  // 대한민국 무조건 왼쪽
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
-    var lv = LIVE[fx.id], live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
+    var lv = lvOverride || LIVE[fx.id], live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
     var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
     var mid = live
       ? '<div class="hero-mid"><span class="hero-livebadge"><span class="hlv-dot"></span>LIVE</span><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-clock">' + esc(lv.clock || "") + "</span></div>"
