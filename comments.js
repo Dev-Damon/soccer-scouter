@@ -687,6 +687,10 @@
   // 럭키 드로우(가챠) — 하루 첫판 무료, 이후 100KP. 서버에서 추첨(원자적).
   function luckyDraw() { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("lucky_draw").then(function (r) { if (r.error) throw r.error; return r.data; }); }
   function freeDrawAvailable() { if (!sb || !user) return Promise.resolve(false); return sb.rpc("free_draw_available").then(function (r) { return !!r.data; }).catch(function () { return false; }); }
+  // 응원 메시지(전광판) — 300KP로 메인에 한 줄 노출
+  function postCheer(msg, team) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("post_cheer", { msg: msg, team: team || null }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
+  function recentCheers(lim) { if (!client()) return Promise.resolve([]); return sb.from("cheers").select("*").order("created_at", { ascending: false }).limit(lim || 20).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
+  function deleteCheer(id) { if (!sb) return Promise.resolve(false); return sb.from("cheers").delete().eq("id", id).then(function (r) { return !r.error; }).catch(function () { return false; }); }
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
   // 종료 경기 결과로 즉시 정산(멱등·킥오프 가드) — 크론 안 기다리고 보는 사람이 트리거
@@ -720,7 +724,7 @@
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, luckyDraw: luckyDraw, freeDrawAvailable: freeDrawAvailable, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, luckyDraw: luckyDraw, freeDrawAvailable: freeDrawAvailable, postCheer: postCheer, recentCheers: recentCheers, deleteCheer: deleteCheer, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

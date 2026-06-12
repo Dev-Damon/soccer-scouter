@@ -1151,3 +1151,16 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .gc-odds { font-size: 11px; margin-bottom: 13px; }
 .gc-draw { width: 100%; padding: 13px; border-radius: 12px; border: 0; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; font-weight: 900; font-size: 16px; cursor: pointer; margin-bottom: 8px; }
 .gc-draw:disabled { opacity: .6; }
+/* 응원 메시지 전광판 */
+.cheer-slot:empty { display: none; }
+.cheer-bar { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; margin: 10px 0; overflow: hidden; }
+.cheer-marquee { flex: 1; overflow: hidden; min-width: 0; }
+.cheer-track { display: inline-flex; gap: 26px; white-space: nowrap; animation: cheerScroll 28s linear infinite; }
+.cheer-track:hover { animation-play-state: paused; }
+@keyframes cheerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ch-item { font-size: 13px; color: var(--text); }
+.ch-item b { color: var(--accent); }
+.ch-empty { font-size: 13px; color: var(--muted); }
+.ch-del { background: none; border: 0; color: #e5484d; cursor: pointer; font-size: 11px; }
+.cheer-send { flex: none; font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px; border: 0; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; cursor: pointer; }
+.ch-input { width: 100%; box-sizing: border-box; padding: 11px 13px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-soft); color: var(--text); font-size: 15px; margin: 10px 0 12px; }

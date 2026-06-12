@@ -456,10 +456,11 @@
     }
     listHtml += '<div class="adslot cpang-m"></div>';  // 모바일 쿠팡(320x50)
 
-    viewEl.innerHTML = topBanner() + strip + heroHtml + listHtml;
+    viewEl.innerHTML = topBanner() + strip + heroHtml + '<div class="cheer-slot"></div>' + listHtml;
     insertAdFit(viewEl.querySelector(".home-ad"));
     insertCoupang(viewEl.querySelector(".cpang-m"), 320, 100);
     startWittyTicker();
+    loadCheers();
 
     // 스트립 스크롤: 직전 위치가 있으면 그대로 유지(클릭해도 안 튐), 없으면(첫 진입) 선택 칩이 보이게 중앙 정렬
     var stripEl = viewEl.querySelector(".datestrip");
@@ -2196,6 +2197,43 @@
       }
     });
   }
+  function loadCheers() {
+    var slot = viewEl.querySelector(".cheer-slot"); if (!slot || !window.KickComments || !KickComments.recentCheers) return;
+    KickComments.recentCheers(15).then(function (list) {
+      if (parseHash().name !== "home") return;
+      var isAdmin = KickComments.isAdmin && KickComments.isAdmin();
+      var items = (list || []).map(function (c) {
+        var t = c.team && teamsById[c.team], flag = t ? esc(t.flag) + " " : "📣 ";
+        return '<span class="ch-item">' + flag + "<b>" + esc(c.name || "익명") + "</b> " + esc(c.message) + (isAdmin ? ' <button class="ch-del" data-cheerdel="' + esc(c.id) + '">✕</button>' : "") + "</span>";
+      }).join("");
+      slot.innerHTML = '<div class="cheer-bar"><div class="cheer-marquee">' + (items ? '<div class="cheer-track">' + items + items + "</div>" : '<span class="ch-empty">첫 응원 메시지를 남겨보세요! 📣</span>') + "</div>" +
+        '<button class="cheer-send" data-cheer-send>📣 응원</button></div>';
+      twem(slot);
+    }).catch(function () {});
+  }
+  function openCheerCompose() {
+    if (!window.KickComments || !KickComments.user || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+    var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
+    bg.innerHTML = '<div class="rate-sheet"><div class="rs-head"><b>📣 응원 메시지 띄우기</b><button class="rs-x">✕</button></div>' +
+      '<div class="rs-hint">메인 전광판에 한 줄 노출돼요 · 300 KP (최대 60자)</div>' +
+      '<input class="ch-input" maxlength="60" placeholder="예: 대한민국 화이팅!! 🇰🇷">' +
+      '<button class="gc-draw ch-post">300 KP로 응원 보내기 📣</button></div>';
+    document.body.appendChild(bg);
+    function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); }
+    ktModalOpen(close);
+    setTimeout(function () { var i = bg.querySelector(".ch-input"); if (i) i.focus(); }, 100);
+    bg.addEventListener("click", function (e) {
+      if (e.target === bg || e.target.closest(".rs-x")) { if (ktModalClose) history.back(); else close(); return; }
+      if (e.target.closest(".ch-post")) {
+        var inp = bg.querySelector(".ch-input"), msg = (inp.value || "").trim(); if (!msg) { inp.focus(); return; }
+        var btn = e.target.closest(".ch-post"); btn.disabled = true; btn.textContent = "전송 중…";
+        KickComments.postCheer(msg, null).then(function (r) {
+          if (r && r.ok) { ktToast("📣 응원 등록! (잔액 " + (r.points || 0).toLocaleString() + " KP)"); if (ktModalClose) history.back(); else close(); if (parseHash().name === "home") loadCheers(); }
+          else { btn.disabled = false; btn.textContent = "300 KP로 응원 보내기 📣"; ktToast(r && r.error === "not_enough" ? "포인트가 부족해요 (300 KP)" : "다시 시도해주세요"); }
+        }).catch(function () { btn.disabled = false; btn.textContent = "300 KP로 응원 보내기 📣"; ktToast("로그인이 필요해요"); });
+      }
+    });
+  }
   function betItem(bet) {
     var fx = fixturesById[bet.match_id];
     var matchLabel = fx ? ((fx.homeName || "") + " vs " + (fx.awayName || "")) : bet.match_id;
@@ -2533,6 +2571,8 @@
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
     if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
     if (e.target.closest("[data-gacha]")) { openGacha(); return; }
+    if (e.target.closest("[data-cheer-send]")) { openCheerCompose(); return; }
+    var _chd = e.target.closest("[data-cheerdel]"); if (_chd) { if (window.KickComments && KickComments.deleteCheer) KickComments.deleteCheer(_chd.getAttribute("data-cheerdel")).then(function () { loadCheers(); }); return; }
     if ((my = e.target.closest("[data-betcancel]"))) {
       if (!confirm("베팅을 취소하고 포인트를 돌려받을까요?")) return;
       var bsc = my.closest(".bet-slot");
