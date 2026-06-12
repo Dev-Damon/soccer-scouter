@@ -675,6 +675,8 @@
   function myBets() { if (!sb || !user) return Promise.resolve([]); return sb.from("bets").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
+  // 종료 경기 결과로 즉시 정산(멱등·킥오프 가드) — 크론 안 기다리고 보는 사람이 트리거
+  function settleWithResult(mid, result) { if (!sb || !mid || !result) return Promise.resolve(null); return sb.rpc("settle_with_result", { mid: mid, res: result }).then(function (r) { return r.data; }).catch(function () { return null; }); }
   // 득점왕/기록 — 경기별 행(stats:매치id)을 모아 선수별 합산. 크론 + 라이브 보는 클라이언트가 같은 행을 갱신
   function matchStats() {
     if (!sb) return Promise.resolve(null);
@@ -701,7 +703,7 @@
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, tierOf: tierOf,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

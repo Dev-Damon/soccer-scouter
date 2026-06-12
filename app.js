@@ -1463,7 +1463,12 @@
     var aIsHome = (a.id === fx.homeId);
     loadPrediction(viewEl.querySelector(".pred-slot"), fx, a, b, aIsHome);
     loadBetting(viewEl.querySelector(".bet-slot"), fx, a, b, aIsHome);
-    if (matchEnded(fx) && window.KickComments && KickComments.settleMatch) KickComments.settleMatch(fx.id);  // 종료경기 정산 트리거(권위결과 기준)
+    if (matchEnded(fx) && window.KickComments) {  // 종료경기 정산 트리거(크론 안 기다리고 즉시)
+      var _lv = LIVE[fx.id];
+      if (_lv && _lv.state === "post" && _lv.hs != null && _lv.as != null && KickComments.settleWithResult) {
+        KickComments.settleWithResult(fx.id, _lv.hs > _lv.as ? "home" : _lv.hs < _lv.as ? "away" : "draw");  // 최종 스코어로 즉시 정산(멱등)
+      } else if (KickComments.settleMatch) { KickComments.settleMatch(fx.id); }
+    }
     function updScore() {
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
