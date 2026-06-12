@@ -97,11 +97,12 @@
   function dispName(name, userId) { return userId ? maskName(name) : (name || "익명"); }
   // 포인트 등급(티어)
   var TIERS = [
-    { min: 0, name: "브론즈", c: "#cd7f32" }, { min: 3000, name: "실버", c: "#8fa0b8" },
-    { min: 8000, name: "골드", c: "#e8a90c" }, { min: 20000, name: "플래티넘", c: "#16b8a8" },
-    { min: 50000, name: "다이아", c: "#5b9bd5" }, { min: 120000, name: "챌린저", c: "#e5484d" }
+    { min: 0, name: "브론즈", c: "#cd7f32" }, { min: 2000, name: "실버", c: "#8fa0b8" },
+    { min: 5000, name: "골드", c: "#e8a90c" }, { min: 20000, name: "플래티넘", c: "#16b8a8" },
+    { min: 50000, name: "다이아", c: "#5b9bd5" }, { min: 200000, name: "챌린저", c: "#e5484d" }
   ];
   function tierOf(pts) { var t = TIERS[0], i; for (i = 0; i < TIERS.length; i++) if ((pts || 0) >= TIERS[i].min) t = TIERS[i]; return t; }
+  function fmtKP(p) { p = p || 0; return p < 1000 ? String(p) : Math.floor(p / 1000) + "k"; }  // 3456→3k, 소수점 버림
 
   var mounts = [];
   function client() {
@@ -208,7 +209,7 @@
       '<button class="cmt-rx down' + (rr.mine === -1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="-1">▼ ' + rr.dislike + "</button>";
     var dn = dispName(c.name, c.user_id);
     var tier = (c._pts != null) ? tierOf(c._pts) : null;
-    var tierBadge = tier ? '<span class="cmt-tier" style="color:' + tier.c + ';border-color:' + tier.c + '">' + tier.name + "</span>" : "";
+    var tierBadge = tier ? '<span class="cmt-tier" style="color:' + tier.c + ';border-color:' + tier.c + '">' + tier.name + ' <b class="cmt-kp">' + fmtKP(c._pts) + "</b></span>" : "";
     return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(dn) + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
       '<div class="cmt-top">' + tierBadge + '<span class="cmt-name">' + esc(dn) + "</span>" +
         '<span class="cmt-time">' + timeago(c.created_at) + "</span></div>" +
@@ -578,6 +579,7 @@
       ".cmt-top{display:flex;align-items:baseline;gap:8px}",
       ".cmt-name{font-weight:500;font-size:13.5px}",
       ".cmt-tier{font-size:10px;font-weight:800;border:1px solid;border-radius:5px;padding:1px 5px;margin-right:5px;vertical-align:middle}",
+      ".cmt-kp{font-weight:700;opacity:.8;font-size:9.5px}",
       ".cmt-time{color:var(--muted,#9fb0c3);font-size:11.5px}",
       ".cmt-body{font-size:14px;line-height:1.5;margin:3px 0;white-space:pre-wrap;word-break:break-word}",
       ".cmt-act{display:flex;gap:12px}",
@@ -706,7 +708,7 @@
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; },
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

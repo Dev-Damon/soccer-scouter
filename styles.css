@@ -1131,3 +1131,11 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .bh-st { font-size: 12px; font-weight: 800; flex: none; }
 .bh-won { color: #1aa55b; } .bh-lost { color: #e5484d; } .bh-pending { color: var(--muted); }
 .bh-sub { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+/* 등급 안내 래더 */
+.pt-tiers { margin-top: 11px; border-top: 1px solid var(--line); padding-top: 9px; }
+.pt-tiers summary { cursor: pointer; font-size: 12.5px; font-weight: 700; color: var(--text); }
+.pt-tl { display: flex; justify-content: space-between; padding: 5px 6px; font-size: 12.5px; border-radius: 6px; margin-top: 3px; }
+.pt-tl.on { background: var(--bg-soft); }
+.pt-tl-n { font-weight: 800; }
+.pt-tl-m { color: var(--muted); }
+.pt-tl-hint { font-size: 11px; color: var(--muted); margin-top: 7px; line-height: 1.5; }

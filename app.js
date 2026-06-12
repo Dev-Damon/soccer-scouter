@@ -2189,10 +2189,13 @@
     if (pts && pts.points != null && KickComments.tierOf) {
       var tr = KickComments.tierOf(pts.points);
       var checkBtn = pts.checked ? '<span class="pt-checked">✅ 오늘 출석 완료</span>' : '<button class="pt-checkin" data-checkin>📅 출석 체크 <b>+200</b></button>';
+      var ladder = KickComments.tiers ? '<details class="pt-tiers"><summary>🏅 등급 안내 (탭)</summary>' +
+        KickComments.tiers().map(function (t) { var on = t.name === tr.name; return '<div class="pt-tl' + (on ? " on" : "") + '"><span class="pt-tl-n" style="color:' + t.c + '">' + t.name + (on ? " · 현재" : "") + '</span><span class="pt-tl-m">' + (t.min === 0 ? "0" : t.min.toLocaleString()) + " KP~</span></div>"; }).join("") +
+        '<div class="pt-tl-hint">베팅 적중 + 매일 출석(+200)으로 포인트를 모으면 자동 승급해요. (현금화 ✕, 재미용)</div></details>' : "";
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
         '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
-        '<div class="pt-checkrow">' + checkBtn + "</div></div>";
+        '<div class="pt-checkrow">' + checkBtn + "</div>" + ladder + "</div>";
     }
     if (myCache.ranking && myCache.ranking.length) {
       var myUid = (KickComments.user() || {}).id;
