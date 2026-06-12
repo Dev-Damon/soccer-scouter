@@ -2120,19 +2120,22 @@
       if (!played.length) { slot.innerHTML = '<div class="mr-hint muted-note">선발 라인업이 나오면 출장 선수와 함께 열려요. (보통 킥오프 ~1시간 전)</div>'; return; }
       var votes = (md && md.votes) || {}, total = (md && md.total) || 0, mine = md && md.mine;
       var rated = played.map(function (p) {
+        var off = ratingOf(matchId, p.name);  // SofaScore 공식 평점(MATCH_RATINGS) — 라인업과 동일
         var ev = (p.goals || 0) * 1.1 + (p.assists || 0) * 0.6 - (p.yellow || 0) * 0.3 - (p.red || 0) * 1.3 - (p.og || 0) * 1.2;
         var vb = total > 0 ? (votes[p.pid] || 0) / total * 1.5 : 0;  // 민심 보너스
-        var r = Math.max(5.0, Math.min(9.9, Math.round((6.4 + ev + vb) * 10) / 10));
+        var blend = Math.max(5.0, Math.min(9.9, Math.round((6.4 + ev + vb) * 10) / 10));
+        var r = (off != null) ? off : blend;  // 공식 있으면 SofaScore, 없으면 킥톡 blend
         var side = setA[p.pid] ? "A" : setB[p.pid] ? "B" : (p.team === a.name ? "A" : "B");
-        return { pid: p.pid, name: p.name, side: side, r: r, v: votes[p.pid] || 0, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
+        return { pid: p.pid, name: p.name, side: side, r: r, off: off, v: votes[p.pid] || 0, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
       });
       var mom = rated.slice().sort(function (x, y) { return y.r - x.r; })[0];
-      var head = mom ? '<div class="mr-lead">🏅 이 경기 MVP <b>' + esc(mom.name) + "</b> · 킥톡 평점 " + mom.r.toFixed(1) + (total ? ' <span class="muted-note">(' + total + "표)</span>" : "") + "</div>" : "";
-      head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점 = 기록(골·도움·카드) + 민심(MVP 득표) 자동.</div>';
+      var head = mom ? '<div class="mr-lead">🏅 이 경기 MVP <b>' + esc(mom.name) + "</b> · " + (mom.off != null ? "평점 " : "킥톡 평점 ") + mom.r.toFixed(1) + (total ? ' <span class="muted-note">(' + total + "표)</span>" : "") + "</div>" : "";
+      head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점은 SofaScore 공식(있으면), 없으면 기록(골·도움·카드)+민심 자동.</div>';
       function card(p) {
         var voted = mine === p.pid, pct = total > 0 ? Math.round(p.v / total * 100) : 0;
+        var rc = p.r >= 7.0 ? "#1aa55b" : p.r >= 6.5 ? "#e8a90c" : "#e5566a";  // SofaScore식 색
         return '<div class="mvp-card' + (voted ? " voted" : "") + (p === mom ? " mom" : "") + '">' +
-          '<div class="mvp-top"><span class="mvp-nm" data-player="' + esc(p.pid) + '">' + (p === mom ? "⭐ " : "") + esc(p.name) + ofTags(p) + '</span><span class="mvp-rt">' + p.r.toFixed(1) + "</span></div>" +
+          '<div class="mvp-top"><span class="mvp-nm" data-player="' + esc(p.pid) + '">' + (p === mom ? "⭐ " : "") + esc(p.name) + ofTags(p) + '</span><span class="mvp-rt" style="color:' + rc + '">' + p.r.toFixed(1) + "</span></div>" +
           '<div class="mvp-vbar"><span style="width:' + pct + '%"></span></div>' +
           '<div class="mvp-bot"><span class="mvp-vn">' + p.v + "표 · " + pct + '%</span><button class="mvp-btn' + (voted ? " on" : "") + '" data-mvp-pid="' + esc(p.pid) + '">' + (voted ? "✓ 내 MVP" : "🏆 MVP 투표") + "</button></div></div>";
       }
@@ -2374,9 +2377,9 @@
     if (bet.status === "won") stH = '<span class="bh-st bh-won">✅ 적중 +' + (bet.payout || 0).toLocaleString() + "</span>";
     else if (bet.status === "lost") stH = '<span class="bh-st bh-lost">❌ 실패 −' + (bet.stake || 0).toLocaleString() + "</span>";
     else stH = '<span class="bh-st bh-pending">⏳ 대기중</span>';
-    return '<div class="bh-row"' + (fx ? ' data-go="match/' + esc(bet.match_id) + '"' : "") + '>' +
+    return '<div class="bh-row' + (fx ? " bh-clk" : "") + '"' + (fx ? ' data-go="match/' + esc(bet.match_id) + '"' : "") + '>' +
       '<div class="bh-top"><span class="bh-match">⚽ ' + esc(matchLabel) + "</span>" + stH + "</div>" +
-      '<div class="bh-sub"><b>' + esc(pick) + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + "</div></div>";
+      '<div class="bh-sub">🎯 내 선택 <b class="bh-pick">' + esc(pick) + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + (fx ? ' <span class="bh-go">경기 상세 →</span>' : "") + "</div></div>";
   }
   function paintMy() {
     if (!myCache) return;
@@ -2837,7 +2840,7 @@
       return;
     }
     if ((my = e.target.closest(".my-tabbtn"))) { myTab = my.getAttribute("data-mytab"); paintMy(); return; }
-    if ((my = e.target.closest(".my-item[data-go]"))) { go(my.getAttribute("data-go")); return; }
+    if ((my = e.target.closest(".my-item[data-go], .bh-row[data-go]"))) { go(my.getAttribute("data-go")); return; }
     var dc = e.target.closest("[data-date]");
     if (dc) { selectedDate = dc.getAttribute("data-date"); renderSchedule(); return; }
     var rc = e.target.closest(".rchip");

@@ -1164,6 +1164,9 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .bh-st { font-size: 12px; font-weight: 800; flex: none; }
 .bh-won { color: #1aa55b; } .bh-lost { color: #e5484d; } .bh-pending { color: var(--muted); }
 .bh-sub { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.bh-pick { color: var(--accent); font-weight: 800; }
+.bh-go { color: var(--accent); font-weight: 700; font-size: 11.5px; margin-left: 2px; }
+.bh-clk:active { opacity: .7; }
 /* 등급 안내 래더 */
 .pt-tiers { margin-top: 11px; border-top: 1px solid var(--line); padding-top: 9px; }
 .pt-tiers summary { cursor: pointer; font-size: 12.5px; font-weight: 700; color: var(--text); }
