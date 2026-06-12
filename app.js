@@ -2165,6 +2165,37 @@
       '<div class="my-iw">' + esc(ti.label) + "</div>" +
       '<div class="my-ib">' + esc(c.body) + "</div></div>";
   }
+  function openGacha() {
+    if (!window.KickComments || !KickComments.user || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+    var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
+    bg.innerHTML = '<div class="rate-sheet gacha"><div class="gc-title">🎰 럭키 드로우</div>' +
+      '<div class="gc-reel">?</div><div class="gc-msg">하루 첫 판은 무료! 버튼을 눌러 뽑아보세요</div>' +
+      '<div class="gc-odds muted-note">꽝 / 50 / 100 / 200 / 500 / 잭팟 1000 KP</div>' +
+      '<button class="gc-draw">뽑기 🎲</button><button class="gc-close rs-detail">닫기</button></div>';
+    document.body.appendChild(bg);
+    function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); if (parseHash().name === "my") renderMy(); }
+    ktModalOpen(close);
+    var spinning = false;
+    bg.addEventListener("click", function (e) {
+      if (e.target.closest(".gc-close")) { if (ktModalClose) history.back(); else close(); return; }
+      if (e.target.closest(".gc-draw") && !spinning) {
+        spinning = true;
+        var reel = bg.querySelector(".gc-reel"), msg = bg.querySelector(".gc-msg"), btn = bg.querySelector(".gc-draw");
+        btn.disabled = true; msg.textContent = "두구두구…"; reel.className = "gc-reel";
+        var vals = [0, 50, 100, 200, 500, 1000], i = 0;
+        var spin = setInterval(function () { reel.textContent = vals[(i++) % vals.length]; }, 80);
+        KickComments.luckyDraw().then(function (res) {
+          setTimeout(function () {
+            clearInterval(spin); spinning = false; btn.disabled = false;
+            if (!res || res.error) { msg.textContent = (res && res.error === "not_enough") ? "포인트가 부족해요 (100 KP 필요)" : "잠시 후 다시 시도"; reel.textContent = "?"; return; }
+            reel.textContent = res.reward; reel.className = "gc-reel " + (res.jackpot ? "jackpot" : res.reward === 0 ? "miss" : "win");
+            msg.innerHTML = (res.free ? "🆓 무료 · " : "") + (res.reward === 0 ? "꽝! 다음 기회에 😅" : ((res.jackpot ? "🎉 잭팟!! " : "🎁 ") + "+" + res.reward + " KP")) + ' <span class="muted-note">(잔액 ' + (res.points || 0).toLocaleString() + " KP)</span>";
+            btn.textContent = "다시 뽑기 (100 KP)";
+          }, 1100);
+        }).catch(function () { clearInterval(spin); spinning = false; btn.disabled = false; msg.textContent = "오류 — 다시 시도"; });
+      }
+    });
+  }
   function betItem(bet) {
     var fx = fixturesById[bet.match_id];
     var matchLabel = fx ? ((fx.homeName || "") + " vs " + (fx.awayName || "")) : bet.match_id;
@@ -2195,7 +2226,7 @@
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
         '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
-        '<div class="pt-checkrow">' + checkBtn + "</div>" + ladder + "</div>";
+        '<div class="pt-checkrow">' + checkBtn + '<button class="pt-gacha" data-gacha>🎰 럭키 드로우</button></div>' + ladder + "</div>";
     }
     if (myCache.ranking && myCache.ranking.length) {
       var myUid = (KickComments.user() || {}).id;
@@ -2501,6 +2532,7 @@
     if ((my = e.target.closest(".bet-loginbtn"))) { if (window.KickComments && KickComments.signIn) KickComments.signIn(my.getAttribute("data-p") || "google"); return; }
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
     if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
+    if (e.target.closest("[data-gacha]")) { openGacha(); return; }
     if ((my = e.target.closest("[data-betcancel]"))) {
       if (!confirm("베팅을 취소하고 포인트를 돌려받을까요?")) return;
       var bsc = my.closest(".bet-slot");
