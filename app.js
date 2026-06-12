@@ -514,10 +514,17 @@
 
   // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
   function liveSection() {
-    var live = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
+    var tn = +((location.search.match(/[?&]live=(\d)/) || [])[1] || 0);  // ?live=1 / ?live=2 → 더미 라이브카드 테스트
+    var live, dummy = null;
+    if (tn) {
+      live = (DATA.fixtures || []).filter(function (f) { return f.homeId && f.awayId; }).slice(0, tn);
+      dummy = [{ hs: 1, as: 0, clock: "67'", state: "in" }, { hs: 2, as: 2, clock: "81'", state: "in" }];
+    } else {
+      live = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
+    }
     if (!live.length) return "";
-    var cards = live.map(function (fx) {
-      var lv = LIVE[fx.id], swap = (fx.awayId === "south-korea");
+    var cards = live.map(function (fx, i) {
+      var lv = dummy ? dummy[i] : LIVE[fx.id], swap = (fx.awayId === "south-korea");
       var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
       var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
       var lS = swap ? lv.as : lv.hs, rS = swap ? lv.hs : lv.as;
@@ -1493,6 +1500,7 @@
         "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
+        '<div class="adslot ad2"></div>' +
         '<div class="cmt-slot"></div>' +
         ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
@@ -1504,7 +1512,7 @@
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
     loadCardWatch(viewEl.querySelector(".card-slot"), a, b);
-    insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
+    insertAdFit(viewEl.querySelector(".adslot")); insertAdFit(viewEl.querySelector(".ad2"), "DAN-SWWhds5NegoTMohB", "320", "50"); coupangBottom();
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
@@ -2217,12 +2225,21 @@
   }
   function loadCheers() {
     var slot = viewEl.querySelector(".cheer-slot"); if (!slot || !window.KickComments || !KickComments.recentCheers) return;
-    KickComments.recentCheers(15).then(function (list) {
+    var ct = /[?&]cheer=1/.test(location.search);  // ?cheer=1 → 더미 응원 미리보기
+    var src = ct ? Promise.resolve([
+      { id: "d1", team: "south-korea", name: "축구도사", message: "대한민국 오늘 무조건 이긴다 🇰🇷🔥" },
+      { id: "d2", team: "brazil", name: "삼바매니아", message: "헥사 가즈아!! 브라질 화이팅" },
+      { id: "d3", team: "south-korea", name: "손케이드", message: "손흥민 멀티골 가자 ⚽⚽" },
+      { id: "d4", team: null, name: "중립축구팬", message: "오늘 경기 꿀잼 각이다" }
+    ]) : KickComments.recentCheers(15);
+    src.then(function (list) {
       if (parseHash().name !== "home") return;
       var isAdmin = KickComments.isAdmin && KickComments.isAdmin();
       var items = (list || []).map(function (c) {
         var t = c.team && teamsById[c.team], flag = t ? esc(t.flag) + " " : "📣 ";
-        return '<span class="ch-item">' + flag + "<b>" + esc(c.name || "익명") + "</b> " + esc(c.message) + (isAdmin ? ' <button class="ch-del" data-cheerdel="' + esc(c.id) + '">✕</button>' : "") + "</span>";
+        var nm = KickComments.dispName ? KickComments.dispName(c.name, c.user_id) : (c.name || "익명");
+        var msg = KickComments.mask ? KickComments.mask(c.message) : c.message;  // 욕설 마스킹
+        return '<span class="ch-item">' + flag + "<b>" + esc(nm) + "</b> " + esc(msg) + (isAdmin ? ' <button class="ch-del" data-cheerdel="' + esc(c.id) + '">✕</button>' : "") + "</span>";
       }).join("");
       slot.innerHTML = '<div class="cheer-bar"><div class="cheer-marquee">' + (items ? '<div class="cheer-track">' + items + items + "</div>" : '<span class="ch-empty">첫 응원 메시지를 남겨보세요! 📣</span>') + "</div>" +
         '<button class="cheer-send" data-cheer-send>📣 응원</button></div>';

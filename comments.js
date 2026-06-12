@@ -23,7 +23,7 @@
   };
 
   // 간단 욕설 마스킹(필요 시 확장). RLS/신고와 병행.
-  var BADWORDS = ["시발", "씨발", "씨발", "개새끼", "병신", "좆", "니애미", "fuck", "shit", "asshole"];
+  var BADWORDS = ["시발", "씨발", "씨바", "시바", "쌍놈", "쌍년", "개새끼", "개색", "개세끼", "병신", "븅신", "좆", "좇", "존나", "니애미", "느금", "씹", "보지", "자지", "썅", "꺼져", "닥쳐", "지랄", "썅놈", "fuck", "fuckin", "shit", "bitch", "asshole", "nigger"];
 
   var sb = null;
   var user = null;
@@ -688,9 +688,17 @@
   function luckyDraw() { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("lucky_draw").then(function (r) { if (r.error) throw r.error; return r.data; }); }
   function freeDrawAvailable() { if (!sb || !user) return Promise.resolve(false); return sb.rpc("free_draw_available").then(function (r) { return !!r.data; }).catch(function () { return false; }); }
   // 응원 메시지(전광판) — 300KP로 메인에 한 줄 노출
-  function postCheer(msg, team) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("post_cheer", { msg: msg, team: team || null }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
+  function postCheer(msg, team) { if (!sb || !user) return Promise.reject(new Error("login")); msg = mask(String(msg || "").trim()).slice(0, 80); if (!msg) return Promise.reject(new Error("empty")); return sb.rpc("post_cheer", { msg: msg, team: team || null }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
   function recentCheers(lim) { if (!client()) return Promise.resolve([]); return sb.from("cheers").select("*").order("created_at", { ascending: false }).limit(lim || 20).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function deleteCheer(id) { if (!sb) return Promise.resolve(false); return sb.from("cheers").delete().eq("id", id).then(function (r) { return !r.error; }).catch(function () { return false; }); }
+  // 꾸미기(칭호) — 상점 카탈로그 + 구매/장착 + 표시
+  var _cosCat = null;
+  function cosmetics() { if (_cosCat) return Promise.resolve(_cosCat); if (!client()) return Promise.resolve([]); return sb.from("cosmetics").select("*").order("sort").then(function (r) { _cosCat = r.data || []; return _cosCat; }).catch(function () { return []; }); }
+  function titleInfo(id) { if (!id || !_cosCat) return null; for (var i = 0; i < _cosCat.length; i++) if (_cosCat[i].id === id) return _cosCat[i]; return null; }
+  function titleBadge(id) { var t = titleInfo(id); return t ? '<span class="title-badge" style="color:' + t.color + '">' + esc(t.label) + "</span> " : ""; }
+  function buyOrEquipTitle(id) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("buy_or_equip_title", { tid: id }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
+  function myCosmetics() { if (!sb || !user) return Promise.resolve(null); return sb.from("profiles").select("title,owned_titles").eq("user_id", user.id).maybeSingle().then(function (r) { return r.data || null; }).catch(function () { return null; }); }
+  cosmetics();  // 카탈로그 미리 로드(댓글/채팅 칭호 표시용)
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
   // 종료 경기 결과로 즉시 정산(멱등·킥오프 가드) — 크론 안 기다리고 보는 사람이 트리거
@@ -724,7 +732,7 @@
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, luckyDraw: luckyDraw, freeDrawAvailable: freeDrawAvailable, postCheer: postCheer, recentCheers: recentCheers, deleteCheer: deleteCheer, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, luckyDraw: luckyDraw, freeDrawAvailable: freeDrawAvailable, postCheer: postCheer, recentCheers: recentCheers, deleteCheer: deleteCheer, cosmetics: cosmetics, titleBadge: titleBadge, titleInfo: titleInfo, buyOrEquipTitle: buyOrEquipTitle, myCosmetics: myCosmetics, mask: mask, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },
