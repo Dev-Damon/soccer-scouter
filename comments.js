@@ -699,9 +699,12 @@
   function pushMatchStats(mid, players) { if (!sb || !mid || !players || !players.length) return Promise.resolve(null); return sb.rpc("set_match_stats", { mid: mid, d: { players: players } }).then(function () { return true; }).catch(function () { return null; }); }
   // 한 경기 기록(평점 산출용)
   function matchStatsOne(mid) { if (!sb || !mid) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "stats:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
+  // 확정 라인업 DB 저장/조회(영구 보존 + 종료경기 빠른 로딩, ESPN 백업)
+  function pushLineup(mid, d) { if (!sb || !mid || !d) return Promise.resolve(null); return sb.rpc("set_match_lineup", { mid: mid, d: d }).then(function () { return true; }).catch(function () { return null; }); }
+  function getLineup(mid) { if (!sb || !mid) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "lineup:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
 
   window.KickComments = {
-    matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne,
+    matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
     myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf,
     mount: mount, configured: configured, ready: ready,

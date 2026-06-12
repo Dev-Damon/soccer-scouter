@@ -1709,12 +1709,24 @@
     }).catch(function () { return null; });
   }
   var summaryCache = {};
+  function hasLineupData(d) { return !!(d && (d.rosters || []).some(function (rs) { return (rs.roster || []).some(function (p) { return p.starter; }); })); }
   function fetchSummary(fx) {
-    return resolveEspnId(fx).then(function (eid) {
-      if (!eid) return null;
-      if (summaryCache[eid]) return summaryCache[eid];
-      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) { summaryCache[eid] = d; return d; });
-    });
+    var KC = window.KickComments;
+    function dbGet() { return (KC && KC.getLineup) ? KC.getLineup(fx.id).then(function (db) { return (db && db.rosters) ? db : null; }) : Promise.resolve(null); }
+    function fromEspn() {
+      return resolveEspnId(fx).then(function (eid) {
+        if (!eid) return dbGet();
+        if (summaryCache[eid]) return summaryCache[eid];
+        return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+          summaryCache[eid] = d;
+          if (hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header });  // 확정 라인업 DB 저장(영구·백업)
+          return d;
+        }).catch(function () { return dbGet(); });  // ESPN 실패 → DB 백업
+      });
+    }
+    // 종료 경기는 DB 저장본 우선(빠름, ESPN 안 거침). 라이브/예정은 ESPN(실시간) + DB 저장.
+    if (matchEnded(fx)) return dbGet().then(function (db) { return db || fromEspn(); });
+    return fromEspn();
   }
   var H2HPRE = null, h2hLoading = null;
   function ensureH2H() {   // 사전수집 h2h.json 1회 로드(첫 경기 진입 때)

@@ -60,6 +60,7 @@ function findFixture(h,a){return D.fixtures.find(f=>f.homeId===h&&f.awayId===a)|
     appeared.forEach(nm=>mbump(nm,'apps'));
     var mout=Object.values(m).map(s=>{ var t=s.teamId&&teamsByName[s.teamId]; return {key:s.key, name:s.name, team:(t?t.name:s.teamName)||'', flag:(t?t.flag:s.flag)||'', pid:s.teamId?s.key:null, goals:s.goals, assists:s.assists, og:s.og, yellow:s.yellow, red:s.red, apps:s.apps}; });
     await rpc('set_match_stats', { mid: eidToMatch[eid], d: { players: mout } });  // 경기별 행(DB) — 클라이언트도 라이브 중 같은 행 갱신
+    if((s.rosters||[]).some(rs=>(rs.roster||[]).some(p=>p.starter))){ await rpc('set_match_lineup', { mid: eidToMatch[eid], d: { rosters: s.rosters, keyEvents: s.keyEvents, header: s.header } }); }  // 확정 라인업 DB 저장(영구·백업)
     mout.forEach(p=>{ var r=rec(p.key,p.name); ['goals','assists','og','yellow','red','apps'].forEach(f=>r[f]+=p[f]); if(!r.flag){r.flag=p.flag;r.teamName=p.team;} });  // 누적
     await sleep(110);
   }
