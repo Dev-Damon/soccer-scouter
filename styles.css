@@ -1100,3 +1100,5 @@ html.light .mr-star { color: #cdd5e0; }
 .rbox.rb-good { background: #1aa55b; }
 .rbox.rb-ok { background: #c99a1c; }
 .rbox.rb-low { background: #cc6b22; }
+.lu-goal { font-size: 11px; }
+.lu-goal img.emoji { width: 13px; height: 13px; vertical-align: -2px; }

@@ -1340,9 +1340,11 @@
             rbsvg = '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="25" height="15" rx="3" fill="' + rc + '" stroke="#0b1220" stroke-width="1"/>' +
               '<text x="' + (bx + 12.5).toFixed(0) + '" y="' + (by + 11.5).toFixed(0) + '" fill="#fff" font-size="11.5" font-weight="800" text-anchor="middle">' + d.rating.toFixed(1) + "</text>";
           }
+          var ico = (d.goal ? "⚽" : "") + (d.subOff ? "⇄" : "");  // 골·교체 표시(어시스트 X)
+          var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
           out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text>" + rbsvg + "</g>");
+            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text>" + rbsvg + icoSvg + "</g>");
         });
       });
       return out.join("");
@@ -1375,7 +1377,8 @@
     function coordFn(rs) { return ended ? espnLineupCoords(rs) : currentLineupCoords(rs, d.keyEvents); }
     var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
-    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn) }; }); }
+    var em = matchEventMap(d.keyEvents);
+    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm] }; }); }
     return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
@@ -1878,15 +1881,27 @@
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
   function ratingBox(r, dec) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(dec || 1) + "</span>"; }
   function teamRatingOf(matchId, teamId) { var m = MATCH_RATINGS[matchId]; return (m && m.team && m.team[teamId] != null) ? m.team[teamId] : null; }
-  function luPlayer(p, matchId, subInfo) {
+  // 골/교체 표시용 — keyEvents에서 득점자·교체나간선수 추출(ESPN 이름 기준)
+  function matchEventMap(keyEvents) {
+    var goals = {}, subOff = {};
+    (keyEvents || []).forEach(function (ev) {
+      var ty = ((ev.type && ev.type.type) || "").toLowerCase();
+      var parts = (ev.participants || []).map(function (x) { return x.athlete; }).filter(Boolean);
+      if (/goal|scored/.test(ty) && !/own.?goal|missed|saved/.test(ty)) { if (parts[0]) goals[parts[0].displayName] = (goals[parts[0].displayName] || 0) + 1; }
+      else if (/substitution/i.test(ty) && parts.length >= 2) { subOff[parts[1].displayName] = (ev.clock && ev.clock.displayValue) || "1"; }
+    });
+    return { goals: goals, subOff: subOff };
+  }
+  function luPlayer(p, matchId, subInfo, goals) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
     var enm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
     var mp = playerByName(enm), nm = mp ? mp.name : enm;
     var pos = (p.position && (p.position.abbreviation || p.position.name)) || "";
     var info = subInfo && subInfo[enm];  // 교체 투입 정보(들어온 분·나간 선수)
+    var gi = (goals && goals[enm]) ? ' <span class="lu-goal">⚽' + (goals[enm] > 1 ? goals[enm] : "") + "</span>" : "";  // 득점 표시
     var rb = ratingBox(ratingOf(matchId, nm));
     var sub = info ? '<span class="lu-subin">▲ ' + esc(info.clk) + " · " + esc(info.outKo) + " ⬇</span>" : "";
-    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + "</span>" + sub + "</span>" + (pos && !info ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
+    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
   }
   function enToKo(name) { var mp = playerByName(name || ""); return mp ? mp.name : (name || ""); }
   function luEvent(ev) {
@@ -1920,6 +1935,7 @@
       var inN = parts[0].displayName, clk = (ev.clock && ev.clock.displayValue) || "";
       if (inN) subInfo[inN] = { clk: clk, outKo: enToKo(parts[1].displayName) };
     });
+    var _em = matchEventMap(d.keyEvents);  // 득점/교체 표시용
     var hasLineup = rosters.some(function (r) { return (r.roster || []).some(function (p) { return p.starter; }); });
     var events = (d.keyEvents || []).filter(function (ev) { var ty = (ev.type && ev.type.type) || ""; return /goal|scored|yellow|red|substitution/.test(ty); });
     if (!hasLineup && !events.length) { slot.style.display = "none"; return; }
@@ -1932,7 +1948,7 @@
         var subs = (rs.roster || []).filter(function (p) { return !p.starter; });
         if (!subs.length) return "";
         subs.sort(function (x, y) { var xi = subInfo[(x.athlete && x.athlete.displayName) || ""] ? 0 : 1, yi = subInfo[(y.athlete && y.athlete.displayName) || ""] ? 0 : 1; return xi - yi; });  // 투입된 선수 먼저
-        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo); }).join("") + "</div></div>";
+        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals); }).join("") + "</div></div>";
       }).join("");
       if (subsHtml) html += '<details class="lu-subs-d"' + (fx && matchEnded(fx) ? " open" : "") + '><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";  // 종료 후엔 펼친 채로
     } else {
