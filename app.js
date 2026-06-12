@@ -2253,7 +2253,7 @@
       if (parseHash().name !== "admin" || adminTab !== "chat") return;
       box.innerHTML = list.length ? list.map(function (m) {
         var d = m.created_at ? new Date(m.created_at) : null;
-        var ts = d && !isNaN(d.getTime()) ? ((d.getMonth() + 1) + "/" + d.getDate() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2)) : "";
+        var ts = d && !isNaN(d.getTime()) ? ((d.getMonth() + 1) + "." + d.getDate() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2)) : "";
         return '<div class="mgr-item"><div class="mgr-ib"><b>' + esc(m.name || "익명") + '</b> <span class="yc-time">' + esc(ts) + '</span><br>' + esc(m.body || "") + '</div><div class="mgr-act"><button class="mgr-del" data-chatdel="' + esc(m.id) + '">삭제</button></div></div>';
       }).join("") : '<div class="empty">메시지가 없습니다.</div>';
       twem(box);
@@ -2826,13 +2826,18 @@
       if (!iso) return ""; var d = new Date(iso); if (isNaN(d.getTime())) return "";
       var hh = ("0" + d.getHours()).slice(-2), mm = ("0" + d.getMinutes()).slice(-2), n = new Date();
       var today = d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth() && d.getDate() === n.getDate();
-      return (today ? "" : (d.getMonth() + 1) + "/" + d.getDate() + " ") + hh + ":" + mm;
+      return (today ? "" : (d.getMonth() + 1) + "." + d.getDate() + " ") + hh + ":" + mm;
     }
     function bubble(m) {
       var nm = (window.KickComments && KickComments.dispName) ? KickComments.dispName(m.name, m.user_id) : (m.name || "익명");
       var col = ncolor(m.name), ch0 = (nm || "?").trim().charAt(0).toUpperCase() || "?";
+      var tierH = "";
+      if (m._pts != null && window.KickComments && KickComments.tierOf) {
+        var tr = KickComments.tierOf(m._pts), kp = KickComments.fmtKP ? KickComments.fmtKP(m._pts) : m._pts;
+        tierH = '<span class="chat-tier" style="color:' + tr.c + ';border-color:' + tr.c + '">' + esc(tr.name) + " " + esc(kp) + "</span> ";
+      }
       return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
-        '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " +
+        '<span class="yc-body"><span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " + tierH +
         '<span class="yc-time">' + esc(chatTime(m.created_at)) + "</span> " +
         '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }

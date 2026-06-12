@@ -1139,3 +1139,4 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .pt-tl-n { font-weight: 800; }
 .pt-tl-m { color: var(--muted); }
 .pt-tl-hint { font-size: 11px; color: var(--muted); margin-top: 7px; line-height: 1.5; }
+.chat-tier { font-size: 9px; font-weight: 800; border: 1px solid; border-radius: 4px; padding: 0 4px; margin-right: 3px; vertical-align: middle; }

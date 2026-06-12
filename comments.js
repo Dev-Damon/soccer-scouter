@@ -622,7 +622,16 @@
   function chatRecent(limit) {
     if (!client()) return Promise.resolve([]);
     return sb.from("chat_messages").select("*").order("created_at", { ascending: false }).limit(limit || 100)
-      .then(function (r) { return (r.data || []).slice().reverse(); }).catch(function () { return []; });
+      .then(function (r) {
+        var list = (r.data || []).slice().reverse();
+        var uids = [], seen = {}; list.forEach(function (m) { if (m.user_id && !seen[m.user_id]) { seen[m.user_id] = 1; uids.push(m.user_id); } });
+        if (!uids.length) return list;
+        return sb.from("profiles").select("user_id,points").in("user_id", uids).then(function (pr) {  // 채팅에 티어뱃지용 포인트
+          var pm = {}; (pr.data || []).forEach(function (x) { pm[x.user_id] = x.points; });
+          list.forEach(function (m) { if (m.user_id != null && pm[m.user_id] != null) m._pts = pm[m.user_id]; });
+          return list;
+        }).catch(function () { return list; });
+      }).catch(function () { return []; });
   }
   // 관리자 채팅 검색/삭제(RLS: 관리자 UID만)
   function chatSearch(q) {
@@ -708,7 +717,7 @@
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; },
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },
