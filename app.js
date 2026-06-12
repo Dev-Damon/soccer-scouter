@@ -513,14 +513,17 @@
   }
 
   // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
+  var LIVE_DEMO = 1;  // ★임시: 데몬님이 직접 보도록 더미 라이브 1경기 노출(진짜 라이브 없을 때만). 확인 후 0으로 되돌릴 것.
   function liveSection() {
+    var realLive = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
     var tn = +((location.search.match(/[?&]live=(\d)/) || [])[1] || 0);  // ?live=1 / ?live=2 → 더미 라이브카드 테스트
+    if (!tn && LIVE_DEMO && !realLive.length) tn = LIVE_DEMO;  // ★임시 데모: 진짜 라이브 없을 때만 더미 노출 (확인 후 LIVE_DEMO=0)
     var live, dummy = null;
     if (tn) {
       live = (DATA.fixtures || []).filter(function (f) { return f.homeId && f.awayId; }).slice(0, tn);
       dummy = [{ hs: 1, as: 0, clock: "67'", state: "in" }, { hs: 2, as: 2, clock: "81'", state: "in" }];
     } else {
-      live = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
+      live = realLive;
     }
     if (!live.length) return "";
     var cards = live.map(function (fx, i) {
@@ -2282,9 +2285,13 @@
         var msg = KickComments.mask ? KickComments.mask(c.message) : c.message;  // 욕설 마스킹
         return '<span class="ch-item">' + flag + "<b>" + esc(nm) + "</b> " + esc(msg) + (isAdmin ? ' <button class="ch-del" data-cheerdel="' + esc(c.id) + '">✕</button>' : "") + "</span>";
       }).join("");
-      slot.innerHTML = '<div class="cheer-bar"><div class="cheer-marquee">' + (items ? '<div class="cheer-track">' + items + items + "</div>" : '<span class="ch-empty">첫 응원 메시지를 남겨보세요! 📣</span>') + "</div>" +
+      slot.innerHTML = '<div class="cheer-bar"><div class="cheer-marquee">' + (items ? '<div class="cheer-track">' + items + "</div>" : '<span class="ch-empty">첫 응원 메시지를 남겨보세요! 📣</span>') + "</div>" +
         '<button class="cheer-send" data-cheer-send>📣 응원</button></div>';
       twem(slot);
+      if (items) {  // 넘칠 때만 복제+흐름 애니메이션 (하나면 그냥 1개 정적표시 — 2개로 보이던 버그 수정)
+        var mq = slot.querySelector(".cheer-marquee"), tr = slot.querySelector(".cheer-track");
+        if (tr && mq && tr.scrollWidth > mq.clientWidth + 8) { tr.innerHTML += tr.innerHTML; tr.classList.add("anim"); }
+      }
     }).catch(function () {});
   }
   function openCheerCompose() {
@@ -2333,14 +2340,20 @@
     var pts = myCache.points, ptCard = "", rankH = "";
     if (pts && pts.points != null && KickComments.tierOf) {
       var tr = KickComments.tierOf(pts.points);
-      var checkBtn = pts.checked ? '<span class="pt-checked">✅ 오늘 출석 완료</span>' : '<button class="pt-checkin" data-checkin>📅 출석 체크 <b>+200</b></button>';
+      var cpos = pts.cpos || 0, cdots = "";
+      for (var _di = 1; _di <= 5; _di++) { var _rw = _di === 3 ? "+500" : _di === 5 ? "+800" : ""; cdots += '<span class="ci-dot' + (_di <= cpos ? " on" : "") + (_rw ? " rw" : "") + '">' + (_rw ? "<i>" + _rw + "</i>" : "") + "</span>"; }
+      var checkBtn = '<div class="ci-box"><div class="ci-h">🔥 연속 출석 <b>' + (pts.cstreak || 0) + "일째</b><span class=\"ci-tag\">3·5일 보너스</span></div>" +
+        '<div class="ci-dots">' + cdots + "</div>" +
+        (pts.checked ? '<div class="pt-checked">✅ 오늘 출석 완료 · 내일 또 만나요!</div>'
+                     : '<button class="pt-checkin" data-checkin>📅 오늘 출석하고 <b>+200 KP</b> 받기</button>') + "</div>";
       var ladder = KickComments.tiers ? '<details class="pt-tiers"><summary>🏅 등급 안내 (탭)</summary>' +
         KickComments.tiers().map(function (t) { var on = t.name === tr.name; return '<div class="pt-tl' + (on ? " on" : "") + '"><span class="pt-tl-n" style="color:' + t.c + '">' + t.name + (on ? " · 현재" : "") + '</span><span class="pt-tl-m">' + (t.min === 0 ? "0" : t.min.toLocaleString()) + " KP~</span></div>"; }).join("") +
         '<div class="pt-tl-hint">베팅 적중 + 매일 출석(+200)으로 포인트를 모으면 자동 승급해요. (현금화 ✕, 재미용)</div></details>' : "";
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
         '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
-        '<div class="pt-checkrow">' + checkBtn + '<button class="pt-gacha" data-gacha>🎰 럭키 드로우</button><button class="pt-gacha pt-deco" data-titleshop>🎨 칭호 꾸미기</button></div>' + ladder + "</div>";
+        checkBtn +
+        '<div class="pt-checkrow"><button class="pt-gacha" data-gacha>🎰 럭키 드로우</button><button class="pt-gacha pt-deco" data-titleshop>🎨 칭호 꾸미기</button></div>' + ladder + "</div>";
     }
     if (myCache.ranking && myCache.ranking.length) {
       var myUid = (KickComments.user() || {}).id;
@@ -2646,7 +2659,13 @@
     if ((my = e.target.closest("[data-pred]"))) { var ps = my.closest(".pred-slot"); if (ps && ps._predFx && ps._predOpen && window.KickComments) KickComments.predVote(ps._predFx, my.getAttribute("data-pred")).then(ps._predPaint); return; }
     if ((my = e.target.closest(".bet-loginbtn"))) { if (window.KickComments && KickComments.signIn) KickComments.signIn(my.getAttribute("data-p") || "google"); return; }
     if (e.target.closest("[data-bet-guide]")) { showBetGuide(); return; }
-    if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) { ktToast(r && r.got ? "🎉 출석 체크 완료 +200 KP!" : "오늘은 이미 출석했어요 😊"); renderMy(); }); return; }
+    if (e.target.closest("[data-checkin]")) { if (window.KickComments && KickComments.dailyCheckin) KickComments.dailyCheckin().then(function (r) {
+      if (!r || !r.got) { ktToast("오늘은 이미 출석했어요 😊"); }
+      else if (r.bonus >= 800) { ktToast("🎊 5일 연속 달성! +200 +🎁800 = +1,000 KP!"); }
+      else if (r.bonus >= 500) { ktToast("🔥 3일 연속! +200 +🎁500 = +700 KP!"); }
+      else { ktToast("🎉 출석 완료 +200 KP! (연속 " + (r.streak || 1) + "일째)"); }
+      renderMy();
+    }); return; }
     if (e.target.closest("[data-gacha]")) { openGacha(); return; }
     if (e.target.closest("[data-titleshop]")) { openTitleShop(); return; }
     if (e.target.closest("[data-cheer-send]")) { openCheerCompose(); return; }

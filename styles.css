@@ -1036,11 +1036,23 @@ html.light .mf-grass { fill: #2e8b54; }
 .pt-rk-name { flex: 1; min-width: 0; font-weight: 600; color: var(--text); }
 .pt-rk-pts { font-weight: 800; color: var(--accent); flex: none; }
 /* 출석 체크 버튼 */
-.pt-checkrow { margin-top: 11px; }
-.pt-checkin { width: 100%; padding: 11px; border: none; border-radius: 10px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 800; cursor: pointer; }
+.pt-checkrow { margin-top: 11px; display: flex; gap: 8px; }
+.pt-checkrow .pt-gacha { flex: 1; }
+/* 출석 체크 카드 + 연속 보너스 */
+.ci-box { margin-top: 11px; background: linear-gradient(135deg, rgba(124,92,255,.10), var(--bg-soft)); border: 1px solid var(--line); border-radius: 14px; padding: 11px 12px 12px; }
+.ci-h { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+.ci-h b { color: #e5566a; }
+.ci-tag { margin-left: auto; font-size: 10px; font-weight: 700; color: var(--muted); background: var(--card); border: 1px solid var(--line); padding: 2px 7px; border-radius: 999px; }
+.ci-dots { display: flex; align-items: flex-end; justify-content: space-between; gap: 4px; margin-bottom: 11px; padding: 0 2px; }
+.ci-dot { position: relative; flex: 1; height: 9px; border-radius: 999px; background: var(--line); transition: background .2s; }
+.ci-dot.on { background: linear-gradient(90deg, #f5b301, #e5566a); }
+.ci-dot.rw { background: var(--line); }
+.ci-dot.rw.on { background: linear-gradient(90deg, #f5b301, #e5566a); }
+.ci-dot.rw i { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-size: 9px; font-weight: 900; font-style: normal; color: #e5566a; white-space: nowrap; }
+.pt-checkin { width: 100%; padding: 12px; border: none; border-radius: 11px; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; font-size: 14.5px; font-weight: 800; cursor: pointer; box-shadow: 0 3px 10px rgba(229,86,106,.32); }
 .pt-checkin b { font-weight: 900; }
 .pt-checkin:active { transform: scale(.99); }
-.pt-checked { display: block; text-align: center; padding: 11px; border-radius: 10px; background: var(--bg-soft); color: var(--muted); font-size: 13.5px; font-weight: 700; }
+.pt-checked { display: block; text-align: center; padding: 11px; border-radius: 11px; background: var(--card); border: 1px solid var(--line); color: #16b8a8; font-size: 13.5px; font-weight: 800; }
 /* 베팅액 입력/스텝퍼 */
 .bet-step { flex: none; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg-soft); color: var(--text); font-size: 13px; font-weight: 800; cursor: pointer; }
 .bet-step:active { transform: scale(.96); }
@@ -1167,8 +1179,9 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .cheer-slot:empty { display: none; }
 .cheer-bar { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; margin: 10px 0; overflow: hidden; }
 .cheer-marquee { flex: 1; overflow: hidden; min-width: 0; }
-.cheer-track { display: inline-flex; gap: 26px; white-space: nowrap; animation: cheerScroll 28s linear infinite; }
-.cheer-track:hover { animation-play-state: paused; }
+.cheer-track { display: inline-flex; gap: 26px; white-space: nowrap; }
+.cheer-track.anim { animation: cheerScroll 28s linear infinite; }
+.cheer-track.anim:hover { animation-play-state: paused; }
 @keyframes cheerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ch-item { font-size: 13px; color: var(--text); }
 .ch-item b { color: var(--accent); }
