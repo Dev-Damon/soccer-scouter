@@ -1920,7 +1920,7 @@
     });
     load();
   }
-  function luPlayer(p, matchId, subInfo, goals) {
+  function luPlayer(p, matchId, subInfo, goals, ended) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
     var enm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
     var mp = playerByName(enm), nm = mp ? mp.name : enm;
@@ -1929,7 +1929,8 @@
     var gi = (goals && goals[enm]) ? ' <span class="lu-goal">⚽' + (goals[enm] > 1 ? goals[enm] : "") + "</span>" : "";  // 득점 표시
     var rb = ratingBox(ratingOf(matchId, nm));
     var sub = info ? '<span class="lu-subin">⇄ ' + esc(info.clk) + " · " + esc(info.outKo) + "</span>" : "";  // 라인업과 동일한 ⇄ 아이콘
-    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
+    var tap = mp ? (ended ? ' data-rate="' + esc(mp.id) + '" data-rmatch="' + esc(matchId) + '"' : ' data-player="' + esc(mp.id) + '"') : "";  // 종료=평점시트, 아니면 상세
+    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + tap + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
   }
   function enToKo(name) { var mp = playerByName(name || ""); return mp ? mp.name : (name || ""); }
   function luEvent(ev) {
@@ -1976,7 +1977,7 @@
         var subs = (rs.roster || []).filter(function (p) { return !p.starter; });
         if (!subs.length) return "";
         subs.sort(function (x, y) { var xi = subInfo[(x.athlete && x.athlete.displayName) || ""] ? 0 : 1, yi = subInfo[(y.athlete && y.athlete.displayName) || ""] ? 0 : 1; return xi - yi; });  // 투입된 선수 먼저
-        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals); }).join("") + "</div></div>";
+        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx)); }).join("") + "</div></div>";
       }).join("");
       if (subsHtml) html += '<details class="lu-subs-d"' + (fx && matchEnded(fx) ? " open" : "") + '><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";  // 종료 후엔 펼친 채로
     } else {
