@@ -1905,7 +1905,7 @@
         subs.sort(function (x, y) { var xi = subInfo[(x.athlete && x.athlete.displayName) || ""] ? 0 : 1, yi = subInfo[(y.athlete && y.athlete.displayName) || ""] ? 0 : 1; return xi - yi; });  // 투입된 선수 먼저
         return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo); }).join("") + "</div></div>";
       }).join("");
-      if (subsHtml) html += '<details class="lu-subs-d"><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";
+      if (subsHtml) html += '<details class="lu-subs-d"' + (fx && matchEnded(fx) ? " open" : "") + '><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";  // 종료 후엔 펼친 채로
     } else {
       html += '<h3>📋 라인업</h3><div class="lu-wait">선발 라인업은 킥오프 약 1시간 전에 공개돼요.</div>';
     }
