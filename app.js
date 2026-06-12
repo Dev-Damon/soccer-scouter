@@ -1357,7 +1357,7 @@
     return '<div class="mf-wrap"><svg viewBox="0 0 ' + W2 + " " + H2 + '" class="mf-pitch">' + pitch + side(plA, true, "#4f8cff") + side(plB, false, "#e5566a") + "</svg></div>";
   }
   function mfHead(a, fa, b, fb, matchId) {
-    var tra = ratingBox(teamRatingOf(matchId, a.id)), trb = ratingBox(teamRatingOf(matchId, b.id));
+    var tra = ratingBox(teamRatingOf(matchId, a.id), 2), trb = ratingBox(teamRatingOf(matchId, b.id), 2);
     return '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + (tra ? " " + tra : "") + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + (trb ? trb + " " : "") + esc(b.name) + " " + esc(b.flag) + "</span></div>";
   }
   function matchFormation(a, b) {
@@ -1876,7 +1876,7 @@
     }
   };
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
-  function ratingBox(r) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(1) + "</span>"; }
+  function ratingBox(r, dec) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(dec || 1) + "</span>"; }
   function teamRatingOf(matchId, teamId) { var m = MATCH_RATINGS[matchId]; return (m && m.team && m.team[teamId] != null) ? m.team[teamId] : null; }
   function luPlayer(p, matchId, subInfo) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
