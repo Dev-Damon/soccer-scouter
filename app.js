@@ -1356,8 +1356,9 @@
       '<rect x="' + (W2 - 84) + '" y="' + (H2 / 2 - 82) + '" width="78" height="164" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>';
     return '<div class="mf-wrap"><svg viewBox="0 0 ' + W2 + " " + H2 + '" class="mf-pitch">' + pitch + side(plA, true, "#4f8cff") + side(plB, false, "#e5566a") + "</svg></div>";
   }
-  function mfHead(a, fa, b, fb) {
-    return '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + esc(b.name) + " " + esc(b.flag) + "</span></div>";
+  function mfHead(a, fa, b, fb, matchId) {
+    var tra = ratingBox(teamRatingOf(matchId, a.id)), trb = ratingBox(teamRatingOf(matchId, b.id));
+    return '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + (tra ? " " + tra : "") + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + (trb ? trb + " " : "") + esc(b.name) + " " + esc(b.flag) + "</span></div>";
   }
   function matchFormation(a, b) {
     if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
@@ -1375,7 +1376,7 @@
     var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
     function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn) }; }); }
-    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation) + pitchSVG(toPl(ca), toPl(cb));
+    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
   function loadCardWatch(slot, a, b) {
@@ -1863,11 +1864,20 @@
   }
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
-    // 교체선수 평점=사진(실제). 선발(잔디)은 사진 받기 전 임시 데모값 — 추후 교체.
-    "match-2": { byName: { "황희찬": 6.7, "엄지성": 7.0, "오현규": 7.5, "김진규": 6.7, "박진섭": 6.7, "사딜레크": 6.6, "흘로제크": 7.0, "호리": 6.5, "히틸": 6.4, "황인범": 7.4, "손흥민": 6.8, "이강인": 7.1, "김민재": 7.0, "김승규": 6.9, "설영우": 6.7, "크레이치": 7.2 } }
+    // KOR-CZE 평점(사진, SofaScore 2026-06-12) — 선발+교체 전체. 다른 경기는 사진 받으면 동일 추가.
+    "match-2": {
+      team: { "south-korea": 7.15, "czech-republic": 6.62 },
+      byName: {
+        "김승규": 7.4, "이기혁": 6.9, "이태석": 7.2, "백승호": 7.1, "이재성": 7.0, "김민재": 6.9, "황인범": 8.9, "이강인": 8.1, "손흥민": 6.4, "이한범": 6.8, "설영우": 6.6,
+        "황희찬": 6.7, "엄지성": 7.0, "오현규": 7.5, "김진규": 6.7, "박진섭": 6.7,
+        "마테이 코바르시": 7.0, "블라디미르 초우팔": 6.4, "슈테판 할로우페크": 6.0, "루카시 프로보트": 6.9, "토마시 소우첵": 6.6, "로빈 흐라나치": 6.2, "알렉산드르 소이카": 6.7, "파벨 슐츠": 6.7, "야로슬라프 젤레니": 6.8, "파트리크 슈크": 6.4, "라디슬라프 크레이치": 7.1,
+        "미할 사딜레크": 6.6, "아담 흘로제크": 7.0, "토마시 호리": 6.5, "모이미르 히틸": 6.4
+      }
+    }
   };
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
   function ratingBox(r) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(1) + "</span>"; }
+  function teamRatingOf(matchId, teamId) { var m = MATCH_RATINGS[matchId]; return (m && m.team && m.team[teamId] != null) ? m.team[teamId] : null; }
   function luPlayer(p, matchId, subInfo) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
     var enm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
