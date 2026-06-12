@@ -506,18 +506,25 @@
     var swap = (fx.awayId === "south-korea");  // 대한민국 무조건 왼쪽
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
-    return '<div class="hero"' + heroAttr + ">" +
+    var lv = LIVE[fx.id], live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
+    var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
+    var mid = live
+      ? '<div class="hero-mid"><span class="hero-livebadge"><span class="hlv-dot"></span>LIVE</span><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-clock">' + esc(lv.clock || "") + "</span></div>"
+      : ended
+      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료</span></div>'
+      : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
+    return '<div class="hero' + (live ? " hero-live" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
-      '<div class="hero-tag"><span class="dot"></span>오늘의 빅매치 · ' + esc(groupLabel) + "</div>" +
+      '<div class="hero-tag"><span class="dot"></span>' + (live ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
           '<span class="hero-team">' + esc(lName) + "</span></div>" +
-        '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>" +
+        mid +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(rId)) + "</span>" +
           '<span class="hero-team">' + esc(rName) + "</span></div>" +
       "</div>" +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
-      '<div class="hero-cta">경기 예상 보기 →</div>' +
+      '<div class="hero-cta">' + (live ? "경기 보기 →" : "경기 예상 보기 →") + "</div>" +
       "</div>";
   }
 
