@@ -177,9 +177,9 @@
           var pm = {}; (pr.data || []).forEach(function (x) { pm[x.user_id] = x.points; });
           list.forEach(function (c) { if (c.user_id && pm[c.user_id] != null) c._pts = pm[c.user_id]; });
         }).catch(function () {}) : Promise.resolve();
-        var titP = uids.length ? sb.from("profiles").select("user_id,title").in("user_id", uids).then(function (pr) {  // 칭호(꾸미기)
-          var tmm = {}; (pr.data || []).forEach(function (x) { if (x.title) tmm[x.user_id] = x.title; });
-          list.forEach(function (c) { if (c.user_id && tmm[c.user_id]) c._title = tmm[c.user_id]; });
+        var titP = uids.length ? sb.from("profiles").select("user_id,title,best_streak").in("user_id", uids).then(function (pr) {  // 칭호(꾸미기) + 연속적중 훈장
+          var tmm = {}, smm = {}; (pr.data || []).forEach(function (x) { if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
+          list.forEach(function (c) { if (c.user_id && tmm[c.user_id]) c._title = tmm[c.user_id]; if (c.user_id && smm[c.user_id]) c._streak = smm[c.user_id]; });
         }).catch(function () {}) : Promise.resolve();
         return Promise.all([sb.from("comment_reactions").select("comment_id,user_id,value").in("comment_id", ids), ptsP, titP])
           .then(function (arr) {
@@ -215,8 +215,9 @@
     var tier = (c._pts != null) ? tierOf(c._pts) : null;
     var tierBadge = tier ? '<span class="cmt-tier" style="color:' + tier.c + ';border-color:' + tier.c + '">' + tier.name + ' <b class="cmt-kp">' + fmtKP(c._pts) + "</b></span>" : "";
     var titB = c._title ? titleBadge(c._title) : "";  // 칭호(꾸미기)
+    var medB = c._streak ? streakBadge(c._streak) : "";  // 연속적중 훈장
     return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(dn) + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
-      '<div class="cmt-top">' + titB + tierBadge + '<span class="cmt-name">' + esc(dn) + "</span>" +
+      '<div class="cmt-top">' + titB + tierBadge + medB + '<span class="cmt-name">' + esc(dn) + "</span>" +
         '<span class="cmt-time">' + timeago(c.created_at) + "</span></div>" +
       '<div class="cmt-body">' + mentionize(esc(c.body)) + "</div>" +
       '<div class="cmt-act">' + react +
@@ -631,9 +632,9 @@
         var list = (r.data || []).slice().reverse();
         var uids = [], seen = {}; list.forEach(function (m) { if (m.user_id && !seen[m.user_id]) { seen[m.user_id] = 1; uids.push(m.user_id); } });
         if (!uids.length) return list;
-        return sb.from("profiles").select("user_id,points,title").in("user_id", uids).then(function (pr) {  // 채팅에 티어뱃지용 포인트+칭호
-          var pm = {}, tmm = {}; (pr.data || []).forEach(function (x) { pm[x.user_id] = x.points; if (x.title) tmm[x.user_id] = x.title; });
-          list.forEach(function (m) { if (m.user_id != null && pm[m.user_id] != null) m._pts = pm[m.user_id]; if (m.user_id != null && tmm[m.user_id]) m._title = tmm[m.user_id]; });
+        return sb.from("profiles").select("user_id,points,title,best_streak").in("user_id", uids).then(function (pr) {  // 채팅 티어+칭호+훈장
+          var pm = {}, tmm = {}, smm = {}; (pr.data || []).forEach(function (x) { pm[x.user_id] = x.points; if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
+          list.forEach(function (m) { if (m.user_id != null && pm[m.user_id] != null) m._pts = pm[m.user_id]; if (m.user_id != null && tmm[m.user_id]) m._title = tmm[m.user_id]; if (m.user_id != null && smm[m.user_id]) m._streak = smm[m.user_id]; });
           return list;
         }).catch(function () { return list; });
       }).catch(function () { return []; });
@@ -740,7 +741,7 @@
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,
     predCounts: predCounts, predMine: predMine, predVote: predVote, dispName: dispName, maskName: maskName,
-    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, luckyDraw: luckyDraw, freeDrawAvailable: freeDrawAvailable, postCheer: postCheer, recentCheers: recentCheers, deleteCheer: deleteCheer, cosmetics: cosmetics, titleBadge: titleBadge, titleInfo: titleInfo, buyOrEquipTitle: buyOrEquipTitle, myCosmetics: myCosmetics, mask: mask, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
+    myPoints: myPoints, dailyCheckin: dailyCheckin, placeBet: placeBet, luckyDraw: luckyDraw, freeDrawAvailable: freeDrawAvailable, postCheer: postCheer, recentCheers: recentCheers, deleteCheer: deleteCheer, cosmetics: cosmetics, titleBadge: titleBadge, titleInfo: titleInfo, buyOrEquipTitle: buyOrEquipTitle, myCosmetics: myCosmetics, mask: mask, streakMedal: streakMedal, streakBadge: streakBadge, myBet: myBet, myBets: myBets, cancelBet: cancelBet, pointsRanking: pointsRanking, settleMatch: settleMatch, settleWithResult: settleWithResult, tierOf: tierOf, tiers: function () { return TIERS; }, fmtKP: fmtKP,
     mount: mount, configured: configured, ready: ready,
     user: function () { return user; },
     nick: function () { return user ? uname(user) : null; },

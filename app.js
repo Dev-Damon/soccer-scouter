@@ -513,7 +513,7 @@
   }
 
   // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
-  var LIVE_DEMO = 1;  // ★임시: 데몬님이 직접 보도록 더미 라이브 1경기 노출(진짜 라이브 없을 때만). 확인 후 0으로 되돌릴 것.
+  var LIVE_DEMO = 2;  // ★임시: 데몬님이 직접 보도록 더미 라이브 2경기 노출(진짜 라이브 없을 때만). 확인 후 0으로 되돌릴 것.
   function liveSection() {
     var realLive = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
     var tn = +((location.search.match(/[?&]live=(\d)/) || [])[1] || 0);  // ?live=1 / ?live=2 → 더미 라이브카드 테스트
@@ -527,10 +527,10 @@
     }
     if (!live.length) return "";
     // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열
-    var cards = live.map(function (fx, i) { return heroCard(fx, dummy ? dummy[i] : LIVE[fx.id]); }).join("");
+    var cards = live.map(function (fx, i) { return heroCard(fx, dummy ? dummy[i] : LIVE[fx.id], true); }).join("");
     return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
   }
-  function heroCard(fx, lvOverride) {
+  function heroCard(fx, lvOverride, asLiveCard) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
     var heroAttr = (fx.homeId && fx.awayId) ? ' data-match="' + esc(fx.id) + '"'
@@ -545,7 +545,7 @@
       : ended
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료</span></div>'
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
-    return '<div class="hero' + (live ? " hero-live" : "") + '"' + heroAttr + ">" +
+    return '<div class="hero' + (live ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
       '<div class="hero-tag"><span class="dot"></span>' + (live ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + "</div>" +
       '<div class="hero-match">' +
@@ -2341,7 +2341,7 @@
         '<div class="pt-tl-hint">베팅 적중 + 매일 출석(+200)으로 포인트를 모으면 자동 승급해요. (현금화 ✕, 재미용)</div></details>' : "";
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
         '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
-        '<div class="pt-sub">🔥 연승 ' + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
+        '<div class="pt-sub">' + ((KickComments.streakBadge && pts.best_streak >= 3) ? KickComments.streakBadge(pts.best_streak) : "") + "🔥 연승 " + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
         checkBtn +
         '<div class="pt-checkrow"><button class="pt-gacha" data-gacha>🎰 럭키 드로우</button><button class="pt-gacha pt-deco" data-titleshop>🎨 칭호 꾸미기</button></div>' + ladder + "</div>";
     }
@@ -2996,8 +2996,9 @@
         tierH = '<span class="chat-tier" style="color:' + tr.c + ';border-color:' + tr.c + '">' + esc(tr.name) + " " + esc(kp) + "</span> ";
       }
       var titH = (m._title && KickComments.titleBadge) ? KickComments.titleBadge(m._title) : "";  // 칭호(꾸미기)
+      var medH = (m._streak && KickComments.streakBadge) ? KickComments.streakBadge(m._streak) : "";  // 연속적중 훈장
       return '<div class="yc-row"><span class="yc-av" style="background:' + col + '">' + esc(ch0) + "</span>" +
-        '<span class="yc-body">' + titH + '<span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " + tierH +
+        '<span class="yc-body">' + titH + '<span class="yc-name" style="color:' + col + '">' + esc(nm) + "</span> " + tierH + medH +
         '<span class="yc-time">' + esc(chatTime(m.created_at)) + "</span> " +
         '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }

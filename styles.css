@@ -1199,6 +1199,15 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .live-sec-n { font-size: 11px; font-weight: 700; color: var(--muted); }
 .lv-pip { width: 8px; height: 8px; border-radius: 50%; background: #e5484d; flex: none; animation: lvpip 1.3s infinite; }
 @keyframes lvpip { 0% { box-shadow: 0 0 0 0 rgba(229,72,77,.6); } 70% { box-shadow: 0 0 0 7px rgba(229,72,77,0); } 100% { box-shadow: 0 0 0 0 rgba(229,72,77,0); } }
-/* 라이브 = 빅매치(heroCard) 카드 재사용 · 2경기면 세로로 나열 */
+/* 라이브 = 빅매치 카드 '구성'만 재사용, 배경은 레드/라이트 · 2경기면 세로 나열 */
 .live-cards { display: flex; flex-direction: column; gap: 12px; }
 .live-cards .hero { margin: 0; }
+.hero.live-hero { background: linear-gradient(135deg, rgba(229,72,77,.14), var(--card) 60%); border: 1.5px solid rgba(229,72,77,.5); box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+.hero.live-hero .hero-tag { color: #e5484d; }
+.hero.live-hero .hero-team, .hero.live-hero .hero-score, .hero.live-hero .hero-kick { color: var(--text); }
+.hero.live-hero .hero-clock { color: #e5484d; }
+.hero.live-hero .hero-vs { color: var(--muted); }
+.hero.live-hero .hero-meta { color: var(--muted); }
+.hero.live-hero .hero-cta { color: var(--accent); }
+.hero.live-hero.hero-live { box-shadow: 0 0 0 1.5px rgba(229,72,77,.55), 0 4px 18px rgba(229,72,77,.28); animation: livecpulse2 2s infinite; }
+@keyframes livecpulse2 { 0%,100% { box-shadow: 0 0 0 1.5px rgba(229,72,77,.5), 0 2px 12px rgba(0,0,0,.18); } 50% { box-shadow: 0 0 16px 1px rgba(229,72,77,.4), 0 2px 12px rgba(0,0,0,.18); } }
