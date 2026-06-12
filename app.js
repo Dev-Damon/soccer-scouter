@@ -231,11 +231,13 @@
   function ensureStats() {
     if (statsData) return Promise.resolve(statsData);
     if (statsLoading) return statsLoading;
-    // DB(크론 적재) 우선 → 새로고침마다 최신. DB 비었으면 stats.json 폴백
-    var fromDb = (window.KickComments && KickComments.matchStats) ? KickComments.matchStats() : Promise.resolve(null);
-    statsLoading = fromDb.then(function (db) {
+    // DB(크론+라이브 클라이언트 적재) 우선 → 새로고침마다 최신. 단 클라이언트 ready 후 조회(아니면 sb null로 폴백 캐싱됨)
+    var ready = (window.KickComments && KickComments.ready) ? KickComments.ready() : Promise.resolve();
+    statsLoading = ready.then(function () {
+      return (window.KickComments && KickComments.matchStats) ? KickComments.matchStats() : null;
+    }).then(function (db) {
       if (db && db.players && db.players.length) return db;
-      return fetch("stats.json").then(function (r) { return r.json(); });
+      return fetch("stats.json").then(function (r) { return r.json(); });  // DB 비었을 때만 폴백
     }).then(function (j) { statsData = j || { players: [] }; return statsData; }).catch(function () { statsData = { players: [] }; return statsData; });
     return statsLoading;
   }
