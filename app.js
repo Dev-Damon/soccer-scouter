@@ -2378,7 +2378,8 @@
     else { var list = myTab === "mine" ? myCache.mine : myCache.tagged; listH = list.length ? list.map(myItem).join("") : '<div class="empty">' + (myTab === "mine" ? "작성한 댓글이 없어요." : "나를 태그한 댓글이 없어요.") + "</div>"; }
     var pts = myCache.points, ptCard = "", rankH = "";
     if (pts && pts.points != null && KickComments.tierOf) {
-      var tr = KickComments.tierOf(pts.points);
+      var tp = (pts.tpoints != null ? pts.tpoints : pts.points);  // 등급·표시는 배팅 대기금 포함(아직 내 돈)
+      var tr = KickComments.tierOf(tp);
       var cpos = pts.cpos || 0, cdots = "";
       for (var _di = 1; _di <= 5; _di++) { var _rw = _di === 3 ? "+500" : _di === 5 ? "+800" : ""; cdots += '<span class="ci-dot' + (_di <= cpos ? " on" : "") + (_rw ? " rw" : "") + '">' + (_rw ? "<i>" + _rw + "</i>" : "") + "</span>"; }
       var checkBtn = '<div class="ci-box"><div class="ci-h">🔥 연속 출석 <b>' + (pts.cstreak || 0) + "일째</b><span class=\"ci-tag\">3·5일 보너스</span></div>" +
@@ -2389,7 +2390,8 @@
         KickComments.tiers().map(function (t) { var on = t.name === tr.name; return '<div class="pt-tl' + (on ? " on" : "") + '"><span class="pt-tl-n" style="color:' + t.c + '">' + t.name + (on ? " · 현재" : "") + '</span><span class="pt-tl-m">' + (t.min === 0 ? "0" : t.min.toLocaleString()) + " KP~</span></div>"; }).join("") +
         '<div class="pt-tl-hint">베팅 적중 + 매일 출석(+200)으로 포인트를 모으면 자동 승급해요. (현금화 ✕, 재미용)</div></details>' : "";
       ptCard = '<div class="pt-card"><div class="pt-top"><span class="pt-tier" style="background:' + tr.c + '">' + tr.name + "</span>" +
-        '<span class="pt-bal">' + pts.points.toLocaleString() + ' <small>KP</small></span></div>' +
+        '<span class="pt-bal">' + tp.toLocaleString() + ' <small>KP</small></span></div>' +
+        (pts.pending > 0 ? '<div class="pt-pend">💰 베팅 대기중 ' + pts.pending.toLocaleString() + " KP 포함 (정산 전엔 내 포인트)</div>" : "") +
         '<div class="pt-sub">' + ((KickComments.streakBadge && pts.best_streak >= 2) ? KickComments.streakBadge(pts.best_streak) : "") + "🔥 연승 " + (pts.streak || 0) + " · 최고 " + (pts.best_streak || 0) + '연승 <button class="pt-guide" data-bet-guide>게임 방법 ⓘ</button></div>' +
         checkBtn +
         '<div class="pt-checkrow"><button class="pt-gacha" data-gacha>🎰 럭키 드로우</button><button class="pt-gacha pt-deco" data-titleshop>🎨 칭호 꾸미기</button></div>' + ladder + "</div>";
