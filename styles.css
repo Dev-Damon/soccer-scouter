@@ -1215,9 +1215,10 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 /* 라이브카드 세로 컴팩트 — 높이 최소화 */
 .hero.live-hero { padding: 9px 14px 10px; border-radius: 15px; }
 .hero.live-hero .hero-tag { font-size: 10.5px; }
+.hero-taglive { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; background: #e5181f; color: #fff; font-weight: 900; font-size: 10.5px; padding: 2px 9px; border-radius: 999px; letter-spacing: .4px; animation: heroLivePulse 1.4s infinite; }
 .hero.live-hero .hero-flag { font-size: 25px; }
 .hero.live-hero .hero-team { font-size: 12.5px; }
-.hero.live-hero .hero-match { margin: 4px 0 2px; gap: 6px; }
+.hero.live-hero .hero-match { margin: 6px 0 2px; gap: 6px; }
 .hero.live-hero .hero-side { gap: 2px; }
 .hero.live-hero .hero-score { font-size: 21px; margin: 1px 0 0; }
 .hero.live-hero .hero-livebadge { font-size: 10.5px; padding: 2px 8px; }
