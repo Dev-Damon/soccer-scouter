@@ -443,7 +443,7 @@ table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 .chat-fab img { width: 27px; height: 27px; filter: brightness(0) invert(1); }  /* 말풍선 아이콘 흰색으로 */
 .chat-fab.open { background: radial-gradient(circle at 34% 28%, #6b7da8, #3a4d77 72%); box-shadow: 0 6px 18px rgba(0,0,0,.4), inset 0 2px 1px rgba(255,255,255,.3); }
 html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #21cf9d 72%); box-shadow: 0 6px 18px rgba(33,207,157,.4), inset 0 2px 1px rgba(255,255,255,.6), inset 0 -3px 5px rgba(0,0,0,.15); }
-.chat-panel { position: fixed; right: 14px; bottom: 140px; z-index: 60; width: min(360px, calc(100vw - 28px)); height: min(62vh, 480px); background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 34px rgba(0,0,0,.55); }
+.chat-panel { position: fixed; left: 12px; right: 12px; bottom: 140px; z-index: 60; max-width: 380px; margin-left: auto; height: min(62vh, 480px); background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 34px rgba(0,0,0,.55); }
 .chat-panel[hidden] { display: none; }
 .chat-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: 14.5px; }
 .chat-head img { width: 18px; height: 18px; vertical-align: -3px; }
