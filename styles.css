@@ -1141,7 +1141,7 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .pt-tl-hint { font-size: 11px; color: var(--muted); margin-top: 7px; line-height: 1.5; }
 .chat-tier { font-size: 9px; font-weight: 800; border: 1px solid; border-radius: 4px; padding: 0 4px; margin-right: 3px; vertical-align: middle; }
 /* 럭키 드로우(가챠) */
-.pt-gacha { font-size: 12.5px; font-weight: 800; padding: 7px 13px; border-radius: 999px; border: 0; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; cursor: pointer; }
+.pt-gacha { font-size: 12.5px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 0; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; cursor: pointer; }
 .gacha { text-align: center; }
 .gc-title { font-size: 18px; font-weight: 900; color: var(--text); margin-bottom: 10px; }
 .gc-reel { font-size: 46px; font-weight: 900; color: var(--text); height: 58px; line-height: 58px; letter-spacing: 1px; }
@@ -1164,3 +1164,20 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .ch-del { background: none; border: 0; color: #e5484d; cursor: pointer; font-size: 11px; }
 .cheer-send { flex: none; font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px; border: 0; background: linear-gradient(135deg, #f5b301, #e5566a); color: #fff; cursor: pointer; }
 .ch-input { width: 100%; box-sizing: border-box; padding: 11px 13px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-soft); color: var(--text); font-size: 15px; margin: 10px 0 12px; }
+/* 가챠 확률 토글 */
+.gc-oddsbtn { font-size: 11px; font-weight: 600; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; cursor: pointer; vertical-align: middle; margin-left: 6px; }
+.gc-odds { font-size: 11.5px; color: var(--muted); background: var(--bg-soft); border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.7; }
+.gc-odds.hidden { display: none; }
+/* 메인 지금 라이브 */
+.live-sec { margin: 10px 0; }
+.live-sec-h { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; color: #e5484d; margin-bottom: 7px; }
+.live-sec-n { font-size: 11px; font-weight: 700; color: var(--muted); }
+.live-cards { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; }
+.livec { flex: 0 0 auto; min-width: 238px; background: var(--card); border: 1px solid rgba(229,72,77,.55); border-radius: 12px; padding: 11px 13px; cursor: pointer; }
+.livec-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.livec-tm { font-size: 13px; font-weight: 700; color: var(--text); flex: 1; min-width: 0; }
+.livec-tm.r { text-align: right; }
+.livec-sc { font-size: 17px; font-weight: 900; color: var(--text); flex: none; }
+.livec-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 7px; }
+.livec-live { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 800; color: #e5484d; }
+.livec-go { font-size: 11px; color: var(--accent); font-weight: 700; }

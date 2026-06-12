@@ -456,7 +456,7 @@
     }
     listHtml += '<div class="adslot cpang-m"></div>';  // 모바일 쿠팡(320x50)
 
-    viewEl.innerHTML = topBanner() + strip + heroHtml + '<div class="cheer-slot"></div>' + listHtml;
+    viewEl.innerHTML = topBanner() + liveSection() + strip + heroHtml + '<div class="cheer-slot"></div>' + listHtml;
     insertAdFit(viewEl.querySelector(".home-ad"));
     insertCoupang(viewEl.querySelector(".cpang-m"), 320, 100);
     startWittyTicker();
@@ -512,6 +512,21 @@
     return best;
   }
 
+  // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
+  function liveSection() {
+    var live = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
+    if (!live.length) return "";
+    var cards = live.map(function (fx) {
+      var lv = LIVE[fx.id], swap = (fx.awayId === "south-korea");
+      var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
+      var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
+      var lS = swap ? lv.as : lv.hs, rS = swap ? lv.hs : lv.as;
+      return '<div class="livec" data-match="' + esc(fx.id) + '">' +
+        '<div class="livec-row"><span class="livec-tm">' + esc(flagOf(lId)) + " " + esc(lName) + '</span><span class="livec-sc">' + (lS | 0) + " : " + (rS | 0) + "</span><span class=\"livec-tm r\">" + esc(rName) + " " + esc(flagOf(rId)) + "</span></div>" +
+        '<div class="livec-foot"><span class="livec-live"><span class="lv-dot"></span>LIVE ' + esc(lv.clock || "") + '</span><span class="livec-go">경기 상세 →</span></div></div>';
+    }).join("");
+    return '<div class="live-sec"><div class="live-sec-h"><span class="lv-dot"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
+  }
   function heroCard(fx) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
@@ -2169,16 +2184,19 @@
   function openGacha() {
     if (!window.KickComments || !KickComments.user || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
     var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
-    bg.innerHTML = '<div class="rate-sheet gacha"><div class="gc-title">🎰 럭키 드로우</div>' +
-      '<div class="gc-reel">?</div><div class="gc-msg">하루 첫 판은 무료! 버튼을 눌러 뽑아보세요</div>' +
-      '<div class="gc-odds muted-note">꽝 / 50 / 100 / 200 / 500 / 잭팟 1000 KP</div>' +
+    bg.innerHTML = '<div class="rate-sheet gacha"><div class="gc-title">🎰 럭키 드로우 <button class="gc-oddsbtn">확률 ⓘ</button></div>' +
+      '<div class="gc-odds hidden">🎲 당첨 확률<br>꽝 25% · 50KP 38% · 100KP 20% · 200KP 10% · 500KP 5% · 🎉잭팟 1000KP 2%</div>' +
+      '<div class="gc-reel">?</div><div class="gc-msg">버튼을 눌러 뽑아보세요!</div>' +
       '<button class="gc-draw">뽑기 🎲</button><button class="gc-close rs-detail">닫기</button></div>';
     document.body.appendChild(bg);
     function close() { if (bg.parentNode) bg.parentNode.removeChild(bg); if (parseHash().name === "my") renderMy(); }
     ktModalOpen(close);
     var spinning = false;
+    function setBtn() { var btn = bg.querySelector(".gc-draw"); if (!btn || spinning) return; KickComments.freeDrawAvailable().then(function (free) { if (!spinning) btn.textContent = free ? "🆓 오늘의 무료 뽑기 🎲" : "뽑기 · 100 KP 🎲"; }); }
+    setBtn();
     bg.addEventListener("click", function (e) {
       if (e.target.closest(".gc-close")) { if (ktModalClose) history.back(); else close(); return; }
+      if (e.target.closest(".gc-oddsbtn")) { bg.querySelector(".gc-odds").classList.toggle("hidden"); return; }
       if (e.target.closest(".gc-draw") && !spinning) {
         spinning = true;
         var reel = bg.querySelector(".gc-reel"), msg = bg.querySelector(".gc-msg"), btn = bg.querySelector(".gc-draw");
@@ -2188,12 +2206,12 @@
         KickComments.luckyDraw().then(function (res) {
           setTimeout(function () {
             clearInterval(spin); spinning = false; btn.disabled = false;
-            if (!res || res.error) { msg.textContent = (res && res.error === "not_enough") ? "포인트가 부족해요 (100 KP 필요)" : "잠시 후 다시 시도"; reel.textContent = "?"; return; }
+            if (!res || res.error) { msg.textContent = (res && res.error === "not_enough") ? "포인트가 부족해요 (100 KP 필요)" : "잠시 후 다시 시도"; reel.textContent = "?"; setBtn(); return; }
             reel.textContent = res.reward; reel.className = "gc-reel " + (res.jackpot ? "jackpot" : res.reward === 0 ? "miss" : "win");
             msg.innerHTML = (res.free ? "🆓 무료 · " : "") + (res.reward === 0 ? "꽝! 다음 기회에 😅" : ((res.jackpot ? "🎉 잭팟!! " : "🎁 ") + "+" + res.reward + " KP")) + ' <span class="muted-note">(잔액 ' + (res.points || 0).toLocaleString() + " KP)</span>";
-            btn.textContent = "다시 뽑기 (100 KP)";
+            btn.textContent = "다시 뽑기 · 100 KP 🎲";  // 무료 1회 소진됨
           }, 1100);
-        }).catch(function () { clearInterval(spin); spinning = false; btn.disabled = false; msg.textContent = "오류 — 다시 시도"; });
+        }).catch(function () { clearInterval(spin); spinning = false; btn.disabled = false; msg.textContent = "오류 — 다시 시도"; setBtn(); });
       }
     });
   }
