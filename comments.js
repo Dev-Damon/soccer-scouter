@@ -707,7 +707,7 @@
   function streakMedal(n) { n = n || 0; if (n >= 10) return { e: "🏆", n: n, c: "#e5484d" }; if (n >= 7) return { e: "🥇", n: n, c: "#e8a90c" }; if (n >= 5) return { e: "🥈", n: n, c: "#8fa0b8" }; if (n >= 3) return { e: "🥉", n: n, c: "#cd7f32" }; return null; }
   function streakBadge(n) { var m = streakMedal(n); return m ? '<span class="streak-medal" style="border-color:' + m.c + '" title="최고 ' + m.n + '연속 적중">' + m.e + m.n + "</span> " : ""; }
   function myCosmetics() { if (!sb || !user) return Promise.resolve(null); return sb.from("profiles").select("title,owned_titles").eq("user_id", user.id).maybeSingle().then(function (r) { return r.data || null; }).catch(function () { return null; }); }
-  cosmetics();  // 카탈로그 미리 로드(댓글/채팅 칭호 표시용)
+  ready().then(cosmetics).catch(function () {});  // 카탈로그 미리 로드(댓글/채팅 칭호 표시용) — sb 준비 후에
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }
   function settleMatch(mid) { if (!sb) return Promise.resolve(null); return sb.rpc("settle_match", { mid: mid }).then(function (r) { return r.data; }).catch(function () { return null; }); }
   // 종료 경기 결과로 즉시 정산(멱등·킥오프 가드) — 크론 안 기다리고 보는 사람이 트리거
