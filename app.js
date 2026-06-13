@@ -1577,10 +1577,10 @@
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
           '<div class="vs-team" data-team="' + esc(a.id) + '"><span class="vs-flag">' + esc(a.flag) + "</span>" +
-            '<span class="vs-name">' + esc(a.name) + '</span><span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span></div>" +
+            '<span class="vs-name">' + esc(a.name) + '</span><span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
           '<div class="vs-center"><div class="vs-x">VS</div></div>' +
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
-            '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
+            '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
         "</div>" +
         '<div class="vs-goals"></div>' +
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
