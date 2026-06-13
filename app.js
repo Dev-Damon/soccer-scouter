@@ -1508,6 +1508,7 @@
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
+        '<div class="vs-goals"></div>' +
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
         '<div class="adslot"></div>' +
@@ -1560,6 +1561,8 @@
         c.innerHTML = '<div class="vs-score">' + (as_ | 0) + ' <span>-</span> ' + (bs_ | 0) + "</div>" +
           '<div class="vs-clock' + (lv.state === "in" ? " live" : "") + '">' + (lv.state === "post" ? "경기 종료" : esc(lv.clock || "LIVE")) + "</div>";
       }
+      var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
+      if (gw) { var lg = teamGoals(fx, lv, a.name), rg = teamGoals(fx, lv, b.name); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
     }
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
@@ -1982,13 +1985,27 @@
       fetchSummary(fx).then(function (d) { if (!d) { slot.style.display = "none"; return; } renderH2H(slot, d, fx, a, b); }).catch(function () { slot.style.display = "none"; });
     });
   }
+  // 라인업 즉시 표시용 캐시: 로컬(재방문 즉시) + 직접 DB조회(신규 사용자도 빠르게, SDK 대기 X)
+  function lineupCacheGet(mid) { try { var c = JSON.parse(localStorage.getItem("kt_lu_" + mid) || "null"); return (c && c.d) ? c.d : null; } catch (e) { return null; } }
+  function lineupCacheSet(mid, d) { try { if (hasLineupData(d)) localStorage.setItem("kt_lu_" + mid, JSON.stringify({ t: Date.now(), d: { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames } })); } catch (e) {} }
+  function directLineupFetch(mid) {
+    if (!window.fetch) return Promise.resolve(null);
+    return fetch(SB_URL + "/rest/v1/app_data?key=eq." + encodeURIComponent("lineup:" + mid) + "&select=data", { headers: { apikey: SB_PUB, Authorization: "Bearer " + SB_PUB } })
+      .then(function (r) { return r.json(); }).then(function (rows) { return (rows && rows[0] && rows[0].data) ? rows[0].data : null; }).catch(function () { return null; });
+  }
   function loadLineup(slot, fx, a, b) {
     if (!slot || !window.fetch) return;
-    slot.innerHTML = '<h3>📋 라인업</h3><div class="h2h-loading">불러오는 중…</div>';
-    fetchSummary(fx).then(function (d) {
-      if (!d) { slot.style.display = "none"; return; }
-      renderLineup(slot, d, a, b, fx);
-    }).catch(function () { slot.style.display = "none"; });
+    var cached = lineupCacheGet(fx.id), freshDone = false;
+    if (cached && hasLineupData(cached)) renderLineup(slot, cached, a, b, fx);  // ① 로컬캐시 즉시
+    else slot.innerHTML = '<h3>📋 라인업</h3><div class="h2h-loading">불러오는 중…</div>';
+    directLineupFetch(fx.id).then(function (db) {  // ② 직접 DB조회(신규 사용자도 빠름)
+      if (db && hasLineupData(db) && !freshDone) { lineupCacheSet(fx.id, db); renderLineup(slot, db, a, b, fx); }
+    });
+    fetchSummary(fx).then(function (d) {  // ③ 최신(라이브 ESPN/DB) — 도착하면 덮어씀
+      freshDone = true;
+      if (!d) { if (!cached) slot.style.display = "none"; return; }
+      lineupCacheSet(fx.id, d); renderLineup(slot, d, a, b, fx);
+    }).catch(function () { if (!cached) slot.style.display = "none"; });
   }
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
