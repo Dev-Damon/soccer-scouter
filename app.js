@@ -952,13 +952,15 @@
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
     var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
-    var goals = ((lv && lv.events) || []).map(function (g) {
-      var p = playerByName(g.who); if (!p) return null;
+    var leftG = [], rightG = [];  // 득점자 좌(홈쪽)/우(원정쪽) 분리 — 경기카드처럼
+    ((lv && lv.events) || []).forEach(function (g) {
+      var p = playerByName(g.who); if (!p) return;
       var team = g.og ? (p.team === fx.homeName ? fx.awayName : fx.homeName) : p.team;  // 자책골은 상대팀 득점
-      var tid = team === fx.homeName ? fx.homeId : fx.awayId;
-      return { flag: flagOf(tid), nm: String(p.name || "").split(" ").slice(-1)[0] + (g.og ? " (OG)" : ""), clk: g.clk || "" };
-    }).filter(Boolean);
-    var W = 720, H = 470 + goals.length * 34 + (momName ? 56 : 0);
+      var txt = "⚽ " + String(p.name || "").split(" ").slice(-1)[0] + (g.og ? " (OG)" : "") + (g.clk ? " " + g.clk : "");
+      (team === lName ? leftG : rightG).push(txt);
+    });
+    var maxN = Math.max(leftG.length, rightG.length), gEnd = maxN ? 300 + maxN * 32 : 290;
+    var W = 720, H = gEnd + (momName ? 42 : 0) + 78;
     var cv = document.createElement("canvas"); cv.width = W; cv.height = H; var c = cv.getContext("2d");
     var light = document.documentElement.classList.contains("light");  // 앱 테마 따라감
     var C = light ? { b1: "#ffffff", b2: "#eef2f8", b3: "#e1e8f3", name: "#1c2536", sub: "#62718c", faint: "#8a97ab", acc: "#2f6fe0", gold: "#c98e00", barTxt: "#ffffff" }
@@ -971,13 +973,14 @@
     c.fillStyle = C.name; c.font = "bold 25px -apple-system,sans-serif"; c.fillText(String(lName).slice(0, 9), 150, 248); c.fillText(String(rName).slice(0, 9), 570, 248);
     c.fillStyle = C.name; c.font = "900 74px -apple-system,sans-serif"; c.fillText((lS | 0) + " : " + (rS | 0), 360, 205);
     c.fillStyle = C.sub; c.font = "600 21px -apple-system,sans-serif"; c.fillText(lv && lv.state === "post" ? "경기 종료" : ((lv && lv.clock) || "진행 중"), 360, 246);
-    var y = 320;
-    if (goals.length) {
-      c.fillStyle = C.faint; c.font = "bold 18px -apple-system,sans-serif"; c.fillText("⚽ 득점", 360, y); y += 34;
-      c.font = "500 24px -apple-system,sans-serif"; c.fillStyle = C.name;
-      goals.forEach(function (gl) { c.fillText(gl.flag + "  " + gl.nm + (gl.clk ? "  " + gl.clk : ""), 360, y); y += 34; });
+    if (maxN) {
+      c.font = "500 22px -apple-system,sans-serif"; c.fillStyle = C.name;
+      for (var gi = 0; gi < maxN; gi++) {
+        if (leftG[gi]) c.fillText(leftG[gi], 162, 300 + gi * 32);
+        if (rightG[gi]) c.fillText(rightG[gi], 558, 300 + gi * 32);
+      }
     }
-    if (momName) { y += 6; c.fillStyle = C.gold; c.font = "bold 24px -apple-system,sans-serif"; c.fillText("🏅 팬 MVP  " + momName, 360, y); }
+    if (momName) { c.fillStyle = C.gold; c.font = "bold 24px -apple-system,sans-serif"; c.fillText("🏅 팬 MVP  " + momName, 360, gEnd + 24); }
     rr(c, 40, H - 70, W - 80, 50, 25); c.fillStyle = C.acc; c.fill();
     c.fillStyle = C.barTxt; c.font = "900 23px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 라인업·평점·응원 같이 보기", W / 2, H - 37);
     return cv;
