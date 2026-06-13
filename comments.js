@@ -245,7 +245,7 @@
       '<button class="cmt-sortbtn' + (sortMode === "likes" ? " on" : "") + '" data-sort="likes">좋아요순</button>' +
       '<button class="cmt-sortbtn' + (sortMode === "latest" ? " on" : "") + '" data-sort="latest">최신순</button></div>';
     var an = anonGet();
-    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick cmt-nick-full" maxlength="20" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">순한맛</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">매운맛</button><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
+    var anonRow = user ? "" : '<div class="cmt-anon"><input class="cmt-nick cmt-nick-full" maxlength="' + NICK_MAXLEN + '" placeholder="닉네임" value="' + esc(an.name || funName()) + '"><button class="cmt-dice" title="순한맛 랜덤 닉네임" type="button">순한맛</button><button class="cmt-spicy" title="매운맛 랜덤 닉네임" type="button">매운맛</button><input class="cmt-pw" type="password" maxlength="20" placeholder="비밀번호" value="' + esc(an.pw || "") + '"></div>';
     var form = '<div class="cmt-form">' + anonRow + '<textarea class="cmt-ta" maxlength="300" placeholder="댓글을 남겨보세요"></textarea><button class="cmt-send">등록</button></div><div class="cmt-count"><span>0</span>/300</div>';
     var head = user
       ? '<div class="cmt-me">' + esc(uname(user)) + ' · <button class="cmt-out">로그아웃</button></div>' + form
@@ -319,6 +319,9 @@
   var SP_ACT = ["수건도둑", "마이크 독점러", "새치기 장인", "라면국물 흡입러", "무한리필 학살자", "와이파이 빌런", "단톡방 잠수왕", "치킨다리 강탈범", "오프사이드 함정러", "헛발슛 장인", "할리우드 액션왕", "셀카 30장러", "탕수육 부먹파", "민초 수호자", "역주행 드리블러", "백패스 셔틀", "알람 무시러", "카톡 감옥수", "떡밥 투척러", "야식 요정", "지박령", "터줏대감", "푸드파이터", "잔반 처리반", "오버액션 장인", "새벽감성러", "월급 요정", "갈취왕", "절대강자", "침대 수호자", "단무지 추가러", "컵라면 국물러", "닫힘버튼 연타러", "노쇼 예약러", "줄임말 번역가", "지각 마스터"];
   var SP_NAME = ["엄준식", "김철수", "박영희", "이만수", "최봉구", "정대만", "옥동자", "감자", "도라에몽", "김첨지", "맹구", "훈이", "영구", "길동"];
   function spicyName() { return SP_LOC[Math.floor(Math.random() * SP_LOC.length)] + " " + SP_ACT[Math.floor(Math.random() * SP_ACT.length)] + " " + SP_NAME[Math.floor(Math.random() * SP_NAME.length)]; }
+  // 비로그인 닉네임 입력칸 최대 글자수 = 매운맛 생성기 최장 닉네임(자동 동기화)
+  function _maxLen(a) { return a.reduce(function (x, s) { return Math.max(x, s.length); }, 0); }
+  var NICK_MAXLEN = _maxLen(SP_LOC) + _maxLen(SP_ACT) + _maxLen(SP_NAME) + 2;
   function anonGet() { try { return JSON.parse(localStorage.getItem("kc_anon") || "{}"); } catch (e) { return {}; } }
   function anonSet(n, p) { try { localStorage.setItem("kc_anon", JSON.stringify({ name: n, pw: p })); } catch (e) {} }
   function cmtErr(em) { return /banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 작성하고 있어요. 잠시 후 다시 시도해주세요." : /duplicate/.test(em) ? "방금 같은 내용을 작성했어요. (도배 방지)" : /has_link/.test(em) ? "링크는 작성할 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이 포함되어 등록할 수 없어요." : /spam_campaign/.test(em) ? "스팸으로 감지되어 차단되었어요." : /row-level|policy/.test(em) ? "닉네임/비밀번호를 확인해주세요." : "등록 실패: " + em; }
