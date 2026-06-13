@@ -571,9 +571,21 @@
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(rId)) + "</span>" +
           '<span class="hero-team">' + esc(rName) + "</span></div>" +
       "</div>" +
+      goalsHtml(fx, lv, "hero-goals") +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
       '<div class="hero-cta">' + (live ? "경기 보기 →" : ended ? "경기 결과 보기 →" : "경기 예상 보기 →") + "</div>" +
       "</div>";
+  }
+
+  // 득점자 줄(국기로 어느 나라 골인지 표시) — 카드/히어로 공용
+  function goalsHtml(fx, lv, cls) {
+    if (!lv || !lv.events || !lv.events.length) return "";
+    var items = lv.events.map(function (g) {
+      var p = playerByName(g.who), nm = p ? p.name : (g.who || "");
+      var fl = p ? (p.team === fx.homeName ? flagOf(fx.homeId) : p.team === fx.awayName ? flagOf(fx.awayId) : "") : "";
+      return (fl ? esc(fl) + " " : "") + esc(nm) + (g.clk ? " " + esc(g.clk) : "");
+    }).join(" · ");
+    return '<div class="' + cls + '">⚽ ' + items + "</div>";
   }
 
   function fixtureCard(fx) {
@@ -600,9 +612,7 @@
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span>';
     }
-    var goals = (lv && lv.events && lv.events.length)
-      ? '<div class="fx-goals">⚽ ' + lv.events.map(function (g) { return esc(enToKo(g.who)) + (g.clk ? " " + esc(g.clk) : ""); }).join(" · ") + "</div>"
-      : "";
+    var goals = goalsHtml(fx, lv, "fx-goals");
     return '<div class="fixture' + (clickable ? " clickable" : "") + (live ? " is-live" : "") + '"' + attr + ">" +
       '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(lId)) + "</span>" +
         '<span class="fx-team">' + esc(lName) + "</span></div>" +
