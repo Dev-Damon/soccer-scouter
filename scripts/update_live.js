@@ -1,9 +1,11 @@
-// 라이브 상태 공유캐시 갱신 — launchd가 1분마다 실행. 보는 사람 0명이어도 live_state를 항상 최신으로 유지.
-// (브라우저 클라이언트도 20초마다 갱신하지만, 시청자 없을 때 대비한 서버측 백업)
+// 라이브 + 종료경기 DB 갱신 — launchd가 1분마다 실행.
+// ① 진행중(in): live_state 공유캐시 갱신(시청자 0명이어도 신규 사용자에게 즉시) ② 종료(post): 결과(스코어+득점자) match_results + 라인업 lineup:<id> 영구저장
+// (브라우저 클라가 보는 동안도 갱신하지만, 시청자 없을 때 종료된 경기가 DB에 안 들어가던 문제 해결)
 const https = require('https'), path = require('path');
-const ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoemNoZ3Zua3dkcm94ZnJnanZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjM1NDcsImV4cCI6MjA5NjU5OTU0N30.eRMPkzUO1aOd3s1R4-JnQQ912BhplhcO6qNut4Ro4Kg';  // 레거시 anon JWT(RLS 보호·공개안전) — 직접 REST는 이 키 필요
+const ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoemNoZ3Zua3dkcm94ZnJnanZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjM1NDcsImV4cCI6MjA5NjU5OTU0N30.eRMPkzUO1aOd3s1R4-JnQQ912BhplhcO6qNut4Ro4Kg';  // 레거시 anon JWT(RLS 보호·공개안전) — 직접 REST 필요
 function get(u){return new Promise(r=>{https.get(u,{headers:{'User-Agent':'Mozilla/5.0'}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))}).on('error',()=>r(''))})}
 function rpc(name,body){return new Promise(r=>{var data=JSON.stringify(body);var req=https.request({hostname:'jhzchgvnkwdroxfrgjvm.supabase.co',path:'/rest/v1/rpc/'+name,method:'POST',headers:{apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json','Content-Length':Buffer.byteLength(data)}},res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>r(d))});req.on('error',()=>r('ERR'));req.write(data);req.end();})}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 global.window={}; require(path.join(__dirname,'..','data.js')); const D=global.window.DATA;
 const teamsById={}; D.teams.forEach(t=>teamsById[t.id]=t);
 function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z ]/g,'').trim();}
@@ -11,17 +13,35 @@ const T_ALIAS={czechia:'czech-republic',korearepublic:'south-korea',usa:'united-
 function espnTeam(nm){var s=norm(nm).replace(/ /g,'');var slug=norm(nm).replace(/ /g,'-');slug=T_ALIAS[s]||slug;return teamsById[slug]||null;}
 const fixByPair={}; D.fixtures.forEach(f=>{if(f.homeId&&f.awayId)fixByPair[[f.homeId,f.awayId].sort().join('|')]=f.id;});
 function parseGoals(c){var o=[];(c.details||[]).forEach(d=>{var t=(d.type&&d.type.text)||'';if(/disallow/i.test(t))return;var og=d.ownGoal===true||/own.?goal/i.test(t);var g=d.scoringPlay===true||/goal/i.test(t);if(!g)return;o.push({who:((d.athletesInvolved||[])[0]||{}).displayName||'',clk:(d.clock||{}).displayValue||'',og:og});});return o;}
-const SCORE='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+const SCORE='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=';
+const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=';
 (async()=>{
-  var raw; try{ raw=await get(SCORE); var d=JSON.parse(raw); }catch(e){ console.log(new Date().toISOString(),'ESPN fetch 실패, skip'); return; }
-  var live={};
-  (d.events||[]).forEach(e=>{
-    var c=(e.competitions||[])[0]; if(!c)return; if(((e.status||{}).type||{}).state!=='in')return;
-    var comp=c.competitors||[]; var H=comp.find(x=>x.homeAway==='home'),A=comp.find(x=>x.homeAway==='away'); if(!H||!A)return;
-    var hT=espnTeam((H.team||{}).displayName),aT=espnTeam((A.team||{}).displayName); if(!hT||!aT)return;
-    var fid=fixByPair[[hT.id,aT.id].sort().join('|')]; if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
-    live[fid]={state:'in',hs:fx.homeId===hT.id?+H.score:+A.score,as:fx.homeId===hT.id?+A.score:+H.score,clock:(e.status||{}).displayClock||'',events:parseGoals(c)};
-  });
-  var res=await rpc('set_live_state',{d:{t:Date.now(),live:live}});
-  console.log(new Date().toISOString(),'live_state 갱신:',Object.keys(live).length,'경기',res&&res!=='null'&&res!==''?('| '+res.slice(0,80)):'OK');
+  // 오늘+어제(UTC) 스캔 (KST 경계 자정 넘는 경기 포함)
+  var now=new Date(), dates=[];
+  for(var i=0;i<2;i++){var dt=new Date(now.getTime()-i*86400000);dates.push(dt.toISOString().slice(0,10).replace(/-/g,''));}
+  var live={}, posts={};  // posts: fid -> {eid,hs,as,ev}
+  for(const dt of dates){
+    var raw=await get(SCORE+dt), d; try{d=JSON.parse(raw)}catch(e){continue}
+    (d.events||[]).forEach(e=>{
+      var c=(e.competitions||[])[0]; if(!c)return; var st=((e.status||{}).type||{}).state; if(st!=='in'&&st!=='post')return;
+      var comp=c.competitors||[]; var H=comp.find(x=>x.homeAway==='home'),A=comp.find(x=>x.homeAway==='away'); if(!H||!A)return;
+      var hT=espnTeam((H.team||{}).displayName),aT=espnTeam((A.team||{}).displayName); if(!hT||!aT)return;
+      var fid=fixByPair[[hT.id,aT.id].sort().join('|')]; if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
+      var hs=fx.homeId===hT.id?+H.score:+A.score, as=fx.homeId===hT.id?+A.score:+H.score, ev=parseGoals(c);
+      if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:(e.status||{}).displayClock||'',events:ev};
+      else posts[fid]={eid:e.id,hs:hs,as:as,ev:ev};
+    });
+    await sleep(80);
+  }
+  await rpc('set_live_state',{d:{t:Date.now(),live:live}});  // ① 라이브 공유캐시
+  var nr=0;
+  for(const fid of Object.keys(posts)){  // ② 종료경기 결과+라인업 영구저장
+    var p=posts[fid];
+    await rpc('set_match_result',{mid:fid,h:p.hs,a:p.as,ev:p.ev});
+    try{ var s=JSON.parse(await get(SUM+p.eid));
+      if((s.rosters||[]).some(rs=>(rs.roster||[]).some(x=>x.starter))) await rpc('set_match_lineup',{mid:fid,d:{rosters:s.rosters,keyEvents:s.keyEvents,header:s.header,headToHeadGames:s.headToHeadGames}});
+    }catch(e){}
+    nr++; await sleep(100);
+  }
+  console.log(new Date().toISOString(),'live:',Object.keys(live).length,'/ 종료저장:',nr,'경기');
 })();
