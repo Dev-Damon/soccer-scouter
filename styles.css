@@ -131,7 +131,8 @@ html, body {
 .fx-live .lv-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: lvblink 1.1s infinite ease-in-out; }
 @keyframes lvblink { 50% { opacity: .2; } }
 .fx-final { margin-top: 1px; font-size: 10.5px; font-weight: 800; color: var(--muted); }
-.fx-goals { grid-column: 1 / -1; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--text); font-size: 12px; text-align: center; }
+.fx-goals { grid-column: 1 / -1; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--text); font-size: 12px; display: flex; justify-content: space-between; gap: 10px; line-height: 1.6; }
+.fx-g-l { text-align: left; } .fx-g-r { text-align: right; margin-left: auto; }
 
 /* Group block (조별) */
 .group-card {
@@ -660,8 +661,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .hero-fin { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.85); margin-top: 3px; }
 .hero.hero-live { box-shadow: 0 0 0 2px rgba(229,24,31,.75), 0 10px 34px rgba(229,24,31,.4); }
 .hero-meta { position: relative; text-align: center; color: #dbe7ff; font-size: 11.5px; margin-top: 2px; }
-.hero-goals { position: relative; text-align: center; color: #fff; font-size: 12px; font-weight: 700; margin-top: 6px; line-height: 1.5; }
-.hero.live-hero .hero-goals { color: var(--text); }
+.hero-sg { font-size: 11px; font-weight: 700; color: #eaf2ff; line-height: 1.6; margin-top: 3px; text-align: center; }
+.hero.live-hero .hero-sg { color: var(--text); }
 .hero-cta { position: relative; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 800; color: #fff; }
 
 /* 하단 탭바 */

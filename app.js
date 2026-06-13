@@ -561,31 +561,27 @@
       : ended
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료</span></div>'
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
+    var lvG = teamGoals(fx, lv, lName), rvG = teamGoals(fx, lv, rName);  // 좌/우 팀별 득점자(자기 쪽에 표시)
     return '<div class="hero' + (live ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
       '<div class="hero-tag"><span class="dot"></span>' + (live ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>" : "") + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
-          '<span class="hero-team">' + esc(lName) + "</span></div>" +
+          '<span class="hero-team">' + esc(lName) + "</span>" + (lvG ? '<div class="hero-sg">' + lvG + "</div>" : "") + "</div>" +
         mid +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(rId)) + "</span>" +
-          '<span class="hero-team">' + esc(rName) + "</span></div>" +
+          '<span class="hero-team">' + esc(rName) + "</span>" + (rvG ? '<div class="hero-sg">' + rvG + "</div>" : "") + "</div>" +
       "</div>" +
-      goalsHtml(fx, lv, "hero-goals") +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
       '<div class="hero-cta">' + (live ? "경기 보기 →" : ended ? "경기 결과 보기 →" : "경기 예상 보기 →") + "</div>" +
       "</div>";
   }
 
-  // 득점자 줄(국기로 어느 나라 골인지 표시) — 카드/히어로 공용
-  function goalsHtml(fx, lv, cls) {
+  // 특정 팀의 득점자만 추려서 줄바꿈 목록으로(성만). 한국골은 한국쪽, 상대골은 상대쪽에 배치용.
+  function teamGoals(fx, lv, teamName) {
     if (!lv || !lv.events || !lv.events.length) return "";
-    var items = lv.events.map(function (g) {
-      var p = playerByName(g.who), nm = (p ? p.name : (g.who || "")).split(" ").slice(-1)[0];  // 성만(간결)
-      var fl = p ? (p.team === fx.homeName ? flagOf(fx.homeId) : p.team === fx.awayName ? flagOf(fx.awayId) : "") : "";
-      return (fl ? esc(fl) + " " : "") + esc(nm) + (g.clk ? " " + esc(g.clk) : "");
-    }).join(" · ");
-    return '<div class="' + cls + '">⚽ ' + items + "</div>";
+    return lv.events.filter(function (g) { var p = playerByName(g.who); return p && p.team === teamName; })
+      .map(function (g) { var p = playerByName(g.who), nm = (p ? p.name : g.who).split(" ").slice(-1)[0]; return "⚽ " + esc(nm) + (g.clk ? " " + esc(g.clk) : ""); }).join("<br>");
   }
 
   function fixtureCard(fx) {
@@ -612,7 +608,8 @@
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span>';
     }
-    var goals = goalsHtml(fx, lv, "fx-goals");
+    var lG = teamGoals(fx, lv, lName), rG = teamGoals(fx, lv, rName);  // 좌(홈쪽)/우(원정쪽) 득점자
+    var goals = (lG || rG) ? '<div class="fx-goals"><div class="fx-g-l">' + lG + '</div><div class="fx-g-r">' + rG + "</div></div>" : "";
     return '<div class="fixture' + (clickable ? " clickable" : "") + (live ? " is-live" : "") + '"' + attr + ">" +
       '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(lId)) + "</span>" +
         '<span class="fx-team">' + esc(lName) + "</span></div>" +
