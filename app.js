@@ -960,23 +960,26 @@
     }).filter(Boolean);
     var W = 720, H = 470 + goals.length * 34 + (momName ? 56 : 0);
     var cv = document.createElement("canvas"); cv.width = W; cv.height = H; var c = cv.getContext("2d");
-    var bg = c.createLinearGradient(0, 0, W, H); bg.addColorStop(0, "#1b2d60"); bg.addColorStop(.55, "#0c1530"); bg.addColorStop(1, "#070d18"); c.fillStyle = bg; c.fillRect(0, 0, W, H);
-    c.textAlign = "left"; c.fillStyle = "#fff"; c.font = "900 30px -apple-system,sans-serif"; c.fillText("KICKTALK", 40, 60);
-    c.fillStyle = "#4f8cff"; c.font = "bold 19px -apple-system,sans-serif"; c.fillText("2026 월드컵 · 경기 결과", 205, 58);
+    var light = document.documentElement.classList.contains("light");  // 앱 테마 따라감
+    var C = light ? { b1: "#ffffff", b2: "#eef2f8", b3: "#e1e8f3", name: "#1c2536", sub: "#62718c", faint: "#8a97ab", acc: "#2f6fe0", gold: "#c98e00", barTxt: "#ffffff" }
+                  : { b1: "#1b2d60", b2: "#0c1530", b3: "#070d18", name: "#eaf0fb", sub: "#9fb0cc", faint: "#7e8da6", acc: "#4f8cff", gold: "#f5b301", barTxt: "#0a1020" };
+    var bg = c.createLinearGradient(0, 0, W, H); bg.addColorStop(0, C.b1); bg.addColorStop(.55, C.b2); bg.addColorStop(1, C.b3); c.fillStyle = bg; c.fillRect(0, 0, W, H);
+    c.textAlign = "left"; c.fillStyle = C.name; c.font = "900 30px -apple-system,sans-serif"; c.fillText("KICKTALK", 40, 60);
+    c.fillStyle = C.acc; c.font = "bold 19px -apple-system,sans-serif"; c.fillText("2026 월드컵 · 경기 결과", 205, 58);
     c.textAlign = "center";
     c.font = "62px -apple-system,sans-serif"; c.fillText(flagOf(lId), 150, 198); c.fillText(flagOf(rId), 570, 198);
-    c.fillStyle = "#eaf0fb"; c.font = "bold 25px -apple-system,sans-serif"; c.fillText(String(lName).slice(0, 9), 150, 248); c.fillText(String(rName).slice(0, 9), 570, 248);
-    c.fillStyle = "#fff"; c.font = "900 74px -apple-system,sans-serif"; c.fillText((lS | 0) + " : " + (rS | 0), 360, 205);
-    c.fillStyle = "#9fb0cc"; c.font = "600 21px -apple-system,sans-serif"; c.fillText(lv && lv.state === "post" ? "경기 종료" : ((lv && lv.clock) || "진행 중"), 360, 246);
+    c.fillStyle = C.name; c.font = "bold 25px -apple-system,sans-serif"; c.fillText(String(lName).slice(0, 9), 150, 248); c.fillText(String(rName).slice(0, 9), 570, 248);
+    c.fillStyle = C.name; c.font = "900 74px -apple-system,sans-serif"; c.fillText((lS | 0) + " : " + (rS | 0), 360, 205);
+    c.fillStyle = C.sub; c.font = "600 21px -apple-system,sans-serif"; c.fillText(lv && lv.state === "post" ? "경기 종료" : ((lv && lv.clock) || "진행 중"), 360, 246);
     var y = 320;
     if (goals.length) {
-      c.fillStyle = "#7e8da6"; c.font = "bold 18px -apple-system,sans-serif"; c.fillText("⚽ 득점", 360, y); y += 34;
-      c.font = "500 24px -apple-system,sans-serif"; c.fillStyle = "#e6edf8";
+      c.fillStyle = C.faint; c.font = "bold 18px -apple-system,sans-serif"; c.fillText("⚽ 득점", 360, y); y += 34;
+      c.font = "500 24px -apple-system,sans-serif"; c.fillStyle = C.name;
       goals.forEach(function (gl) { c.fillText(gl.flag + "  " + gl.nm + (gl.clk ? "  " + gl.clk : ""), 360, y); y += 34; });
     }
-    if (momName) { y += 6; c.fillStyle = "#f5b301"; c.font = "bold 24px -apple-system,sans-serif"; c.fillText("🏅 팬 MVP  " + momName, 360, y); }
-    rr(c, 40, H - 70, W - 80, 50, 25); c.fillStyle = "#4f8cff"; c.fill();
-    c.fillStyle = "#0a1020"; c.font = "900 23px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 라인업·평점·응원 같이 보기", W / 2, H - 37);
+    if (momName) { y += 6; c.fillStyle = C.gold; c.font = "bold 24px -apple-system,sans-serif"; c.fillText("🏅 팬 MVP  " + momName, 360, y); }
+    rr(c, 40, H - 70, W - 80, 50, 25); c.fillStyle = C.acc; c.fill();
+    c.fillStyle = C.barTxt; c.font = "900 23px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 라인업·평점·응원 같이 보기", W / 2, H - 37);
     return cv;
   }
   function shareMatchResult(fx) {
