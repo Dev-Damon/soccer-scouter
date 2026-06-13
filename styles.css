@@ -1089,7 +1089,7 @@ html.light .mf-grass { fill: #2e8b54; }
 /* 라이트모드 가독성 보정 */
 html.light .tag.weak { color: #c5302b; }
 html.light .rate-star { color: #cdd5e0; }
-html.light .rate-star.on { color: var(--gold, #f5b301); }
+html.light .rate-star.on { color: #ffb300; }  /* 라이트모드 별은 더 밝은 골드(다크모드용 #c98e00 아님) */
 html.light .mr-star { color: #cdd5e0; }
 html.light .mr-star.on { color: #f5b301; }
 .lu-eflag { margin-right: 5px; flex: none; display: inline-flex; align-items: center; }
