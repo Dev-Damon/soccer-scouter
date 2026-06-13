@@ -928,7 +928,7 @@
   }
   function shareMatch(fx) {
     if (!fx || !fx.homeId || !fx.awayId) return;
-    var url = "https://kicktalk.xyz/m/" + fx.homeId + "-vs-" + fx.awayId + ".html?s=2";  // 경기별 OG 페이지(카톡 썸네일). ?s= = 카톡 스크랩 캐시키 — 디자인 바뀌면 올려서 재스크랩 유도
+    var url = "https://kicktalk.xyz/m/" + fx.homeId + "-vs-" + fx.awayId + ".html";  // 경기별 OG 페이지(카톡 썸네일) — 깔끔한 URL. 처음 공유되는 경기는 캐시 없어 새 디자인 정상 표시
     var txt = fx.homeName + " vs " + fx.awayName + " — 라인업·실시간·평점 | 킥톡";
     if (navigator.share) { navigator.share({ text: txt, url: url }).catch(function () {}); }  // title 생략 — title+text 중복 시 카톡에 텍스트 2번 나옴
     else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function () { ktToast("🔗 링크 복사됨! 카톡·커뮤니티에 붙여넣기"); }).catch(function () { ktToast(url); }); }
