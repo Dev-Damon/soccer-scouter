@@ -44,4 +44,27 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
     nr++; await sleep(100);
   }
   console.log(new Date().toISOString(),'live:',Object.keys(live).length,'/ 종료저장:',nr,'경기');
+
+  // ③ 종료경기 OG 카드 자동 재생성+배포 — 결과가 새/변경된 경기만(경기별 ?v 증가로 카톡 캐시 무효화)
+  try{
+    const fs=require('fs'), {execFileSync}=require('child_process');
+    const ROOT=path.join(__dirname,'..'), verF=path.join(ROOT,'ogm','og_ver.json');
+    let ver={}; try{ver=JSON.parse(fs.readFileSync(verF,'utf8'))}catch(e){}
+    const changed=[];
+    for(const fid of Object.keys(posts)){
+      const p=posts[fid], sig=p.hs+'-'+p.as+'-'+(p.ev||[]).length;
+      const cur=ver[fid]||{sig:'',v:3};
+      if(cur.sig!==sig){ ver[fid]={sig:sig, v:(cur.v||3)+1}; changed.push(fid); }
+    }
+    if(changed.length){
+      fs.writeFileSync(verF,JSON.stringify(ver,null,1));
+      for(const fid of changed) execFileSync('node',[path.join(__dirname,'gen_og_render.js'),fid],{cwd:ROOT,timeout:90000,stdio:'ignore'});
+      execFileSync('node',[path.join(__dirname,'gen_match_pages.js')],{cwd:ROOT,timeout:60000,stdio:'ignore'});  // ?v 갱신 반영
+      execFileSync('git',['add','ogm','m','sitemap.xml'],{cwd:ROOT,stdio:'ignore'});
+      execFileSync('git',['commit','-m','OG 자동재생성(종료경기 결과반영): '+changed.join(',')],{cwd:ROOT,stdio:'ignore'});
+      execFileSync('git',['pull','--rebase','origin','main'],{cwd:ROOT,stdio:'ignore'});
+      execFileSync('git',['push','origin','main'],{cwd:ROOT,stdio:'ignore'});
+      console.log('OG 자동배포:',changed.join(','));
+    }
+  }catch(e){ console.log('OG 자동배포 실패(라이브갱신은 정상):',e.message); }
 })();

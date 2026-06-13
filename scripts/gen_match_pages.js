@@ -5,6 +5,7 @@ const ROOT = path.join(__dirname, "..");
 global.window = {}; require(path.join(ROOT, "data.js")); const D = global.window.DATA;
 const SITE = "https://kicktalk.xyz";
 const teamById = {}; D.teams.forEach(t => teamById[t.id] = t);
+var OGVER = {}; try { OGVER = JSON.parse(fs.readFileSync(path.join(ROOT, "ogm", "og_ver.json"), "utf8")); } catch (e) {}  // 경기별 OG 버전(결과 바뀌면 데몬이 증가→카톡 캐시 무효화)
 function e(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 const KDAY = ["일", "월", "화", "수", "목", "금", "토"];
 function kstLabel(f) {
@@ -31,7 +32,8 @@ D.fixtures.forEach(function (f) {
     (wp.length ? "<h2>관전 포인트</h2><ul class=wp>" + wp.slice(0, 3).map(function (w) { return "<li>" + e(w) + "</li>"; }).join("") + "</ul>" : "") +
     "<a class=cta href='" + appurl + "'>킥톡에서 실시간 점수·라인업·선수평점 보기 →</a>" +
     "<p class=sub>예상 라인업 · 실시간 스코어 · 선수 평점/MVP 투표 · 응원 메시지 · 포인트 베팅</p>";
-  var ogimg = SITE + "/ogm/" + slug + ".png?v=3";  // 경기별 전용 OG 이미지(앱 경기카드 라이트). ?v= 올리면 카톡 OG 캐시 무효화
+  var ogv = (OGVER[mid] && OGVER[mid].v) || 3;  // 경기별 OG 버전(기본 3, 결과 바뀌면 데몬이 +1)
+  var ogimg = SITE + "/ogm/" + slug + ".png?v=" + ogv;  // 경기별 전용 OG 이미지(앱 경기카드 라이트). ?v= 올리면 카톡 OG 캐시 무효화
   var pageHtml =
     "<!DOCTYPE html><html lang=ko><head><meta charset=UTF-8>" +
     "<meta name=viewport content='width=device-width,initial-scale=1'>" +
