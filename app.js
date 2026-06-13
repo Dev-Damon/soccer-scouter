@@ -572,7 +572,7 @@
           '<span class="hero-team">' + esc(rName) + "</span></div>" +
       "</div>" +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
-      '<div class="hero-cta">' + (live ? "경기 보기 →" : "경기 예상 보기 →") + "</div>" +
+      '<div class="hero-cta">' + (live ? "경기 보기 →" : ended ? "경기 결과 보기 →" : "경기 예상 보기 →") + "</div>" +
       "</div>";
   }
 
@@ -1675,7 +1675,7 @@
         events: parseGoals(c)
       };
       if (JSON.stringify(LIVE[fid]) !== JSON.stringify(rec)) { LIVE[fid] = rec; changed = true; }
-      if (state === "post" && window.KickComments && KickComments.pushResult && !_pushedResults[fid]) { _pushedResults[fid] = 1; KickComments.pushResult(fid, rec.hs, rec.as); }  // 결과 영구 저장
+      if (state === "post" && window.KickComments && KickComments.pushResult && !_pushedResults[fid]) { _pushedResults[fid] = 1; KickComments.pushResult(fid, rec.hs, rec.as, rec.events); }  // 결과+득점자 영구 저장
     });
     return { changed: changed, anyLive: anyLive, anyToday: anyToday };
   }
@@ -1685,7 +1685,7 @@
     KickComments.ready().then(KickComments.matchResults).then(function (res) {
       var changed = false;
       Object.keys(res || {}).forEach(function (mid) {
-        if (!LIVE[mid] && res[mid] && res[mid].hs != null) { LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: [], stored: true }; changed = true; }
+        if (!LIVE[mid] && res[mid] && res[mid].hs != null) { LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true; }
       });
       if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
     }).catch(function () {});
