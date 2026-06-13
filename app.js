@@ -454,15 +454,15 @@
     var dayFixtures = (DATA.fixtures || []).filter(function (f) { return fxDate(f) === selectedDate; })
       .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
 
-    // 빅매치 히어로: 양 팀 모두 알려진 경기 중 FIFA 합산 랭킹이 가장 높은(숫자 작은) 경기
-    var hero = pickBigMatch(dayFixtures);
+    // 빅매치 히어로: 양 팀 모두 알려진 경기 중 FIFA 합산 랭킹이 가장 높은 경기 (라이브 경기는 상단 라이브카드로 빠지므로 제외)
+    var hero = pickBigMatch(dayFixtures.filter(function (f) { return !isLiveFix(f); }));
     var heroHtml = hero ? heroCard(hero) : "";
 
     // 그 날의 경기 리스트
     var listHtml = '<div class="sec-h">' + fmtDate(selectedDate).d + " " +
       (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
       ' · ' + dayFixtures.length + '경기 <span class="kst-note">한국시간</span></div>';
-    dayFixtures.forEach(function (fx) { if (!hero || fx !== hero) listHtml += fixtureCard(fx); });
+    dayFixtures.forEach(function (fx) { if ((!hero || fx !== hero) && !isLiveFix(fx)) listHtml += fixtureCard(fx); });  // 라이브 경기는 상단 라이브카드에만
 
     listHtml += '<div class="adslot home-ad"></div>';
     // 주요 소식 (팀 뉴스가 있을 때만)
@@ -544,20 +544,32 @@
 
   // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
   var LIVE_DEMO = 0;  // 0=실제 라이브만. (?live=1/2 파라미터로는 여전히 더미 테스트 가능)
+  // 시각 기준 라이브: 킥오프 정각~+130분이면(종료/ESPN post 아니면) 라이브로 간주 → ESPN 'in' 늦어도 정각부터 카드 표시
+  function isTimeLive(f) {
+    if (!f || !f.homeId || !f.awayId) return false;
+    var lv = LIVE[f.id]; if (lv && lv.state === "post") return false;
+    var ko = matchKickoff(f); if (!ko) return false;
+    var now = Date.now(); return now >= ko && now < ko + 130 * 60000;
+  }
+  function isLiveFix(f) { var lv = LIVE[f.id]; return (lv && lv.state === "in") || isTimeLive(f); }
+  function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
+  function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
   function liveSection() {
-    var realLive = (DATA.fixtures || []).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "in"; });
     var tn = +((location.search.match(/[?&]live=(\d)/) || [])[1] || 0);  // ?live=1 / ?live=2 → 더미 라이브카드 테스트
-    if (!tn && LIVE_DEMO && !realLive.length) tn = LIVE_DEMO;  // ★임시 데모: 진짜 라이브 없을 때만 더미 노출 (확인 후 LIVE_DEMO=0)
+    if (!tn && LIVE_DEMO && !liveFixtures().length) tn = LIVE_DEMO;
     var live, dummy = null;
     if (tn) {
       live = (DATA.fixtures || []).filter(function (f) { return f.homeId && f.awayId; }).slice(0, tn);
       dummy = [{ hs: 1, as: 0, clock: "67'", state: "in" }, { hs: 2, as: 2, clock: "81'", state: "in" }];
     } else {
-      live = realLive;
+      live = liveFixtures();
     }
     if (!live.length) return "";
-    // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열
-    var cards = live.map(function (fx, i) { return heroCard(fx, dummy ? dummy[i] : LIVE[fx.id], true); }).join("");
+    // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열. ESPN 데이터 없으면 '곧 시작' 0:0 표시
+    var cards = live.map(function (fx, i) {
+      var lv = dummy ? dummy[i] : (LIVE[fx.id] || { state: "in", hs: 0, as: 0, clock: "" });
+      return heroCard(fx, lv, true);
+    }).join("");
     return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
   }
   function heroCard(fx, lvOverride, asLiveCard) {
@@ -1837,16 +1849,26 @@
     if (liveTimer) clearTimeout(liveTimer);
     if (delay) liveTimer = setTimeout(fetchLive, delay);
   }
+  var _lastLiveKey = "";
+  // 폴링 간격: 라이브(ESPN/시각) 15초 · 킥오프 20분전 임박 20초 · 그 외 2분(완전 정지 안 함 → 새로고침 없이 자동 표시)
+  function nextLiveDelay(anyLive) {
+    if (anyLive || liveFixtures().length) return 15000;
+    var now = Date.now(), soon = false;
+    (DATA.fixtures || []).forEach(function (f) { if (!f.homeId || !f.awayId) return; var ko = matchKickoff(f); if (!ko) return; if (now >= ko - 1200000 && now < ko) soon = true; });
+    return soon ? 20000 : 120000;
+  }
   function fetchLive() {
     if (!window.fetch) return;
     fetch(ESPN_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
       var res = applyEspn(d);
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
       if (window._teamLiveTick) window._teamLiveTick();    // 나라상세 라이브 배너 점수 갱신
-      if (res.changed && onHomeSchedule()) renderSchedule();
+      var lk = liveKey();
+      if ((res.changed || lk !== _lastLiveKey) && onHomeSchedule()) renderSchedule();  // 라이브 집합이 바뀌면(정각 시작 등) 새로고침 없이 자동 갱신
+      _lastLiveKey = lk;
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
-      scheduleLive(res.anyLive ? 15000 : (res.anyToday ? 180000 : 0));  // 라이브 15초 / 임박 3분 / 없으면 중단
-    }).catch(function () { scheduleLive(180000); });
+      scheduleLive(nextLiveDelay(res.anyLive));
+    }).catch(function () { scheduleLive(60000); });
   }
 
   // ===================== 조별 순위표 (ESPN standings · 실시간) =====================
