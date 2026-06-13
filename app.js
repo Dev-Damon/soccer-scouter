@@ -927,7 +927,7 @@
     if (!fx || !fx.homeId || !fx.awayId) return;
     var url = "https://kicktalk.xyz/m/" + fx.homeId + "-vs-" + fx.awayId + ".html";  // 경기별 OG 페이지(카톡 썸네일)
     var txt = fx.homeName + " vs " + fx.awayName + " — 라인업·실시간·평점 | 킥톡";
-    if (navigator.share) { navigator.share({ title: txt, text: txt, url: url }).catch(function () {}); }
+    if (navigator.share) { navigator.share({ text: txt, url: url }).catch(function () {}); }  // title 생략 — title+text 중복 시 카톡에 텍스트 2번 나옴
     else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function () { ktToast("🔗 링크 복사됨! 카톡·커뮤니티에 붙여넣기"); }).catch(function () { ktToast(url); }); }
     else ktToast(url);
   }
@@ -1580,7 +1580,7 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
         '<div class="vs-goals"></div>' +
-        (matchEnded(fx) ? '<button class="result-share" data-result-share="' + esc(fx.id) + '">📸 경기 결과 이미지로 공유</button>' : "") +
+        /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
         '<div class="adslot"></div>' +
