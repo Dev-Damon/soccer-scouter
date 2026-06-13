@@ -581,7 +581,7 @@
   function goalsHtml(fx, lv, cls) {
     if (!lv || !lv.events || !lv.events.length) return "";
     var items = lv.events.map(function (g) {
-      var p = playerByName(g.who), nm = p ? p.name : (g.who || "");
+      var p = playerByName(g.who), nm = (p ? p.name : (g.who || "")).split(" ").slice(-1)[0];  // 성만(간결)
       var fl = p ? (p.team === fx.homeName ? flagOf(fx.homeId) : p.team === fx.awayName ? flagOf(fx.awayId) : "") : "";
       return (fl ? esc(fl) + " " : "") + esc(nm) + (g.clk ? " " + esc(g.clk) : "");
     }).join(" · ");
