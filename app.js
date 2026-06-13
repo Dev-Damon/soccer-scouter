@@ -1925,7 +1925,7 @@
   }
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
-    // MEX-RSA 평점(사진, SofaScore) — 풀네임 키(히메네스/차베스 중복 방지)
+    // MEX-RSA 평점(사진, 공식 사진) — 풀네임 키(히메네스/차베스 중복 방지)
     "match-1": {
       team: { "mexico": 7.12, "south-africa": 6.17 },
       byName: {
@@ -1933,7 +1933,7 @@
         "쿨리소 무다우": 6.5, "테보호 모코에나": 6.5, "이크람 레이너스": 6.1, "은코시나티 시비시": 6.0, "스페펠로 시톨레": 4.9, "이메 오콘": 6.3, "호넨 윌리엄스": 6.3, "라일 포스터": 5.9, "제이든 아담스": 6.6, "음베케젤리 음보카지": 6.4, "오브리 모디바": 5.9, "탈렌테 음바타": 6.5
       }
     },
-    // KOR-CZE 평점(사진, SofaScore 2026-06-12) — 선발+교체 전체. 다른 경기는 사진 받으면 동일 추가.
+    // KOR-CZE 평점(사진, 공식 사진 2026-06-12) — 선발+교체 전체. 다른 경기는 사진 받으면 동일 추가.
     "match-2": {
       team: { "south-korea": 7.15, "czech-republic": 6.62 },
       byName: {
@@ -1943,7 +1943,7 @@
         "미할 사딜레크": 6.6, "아담 흘로제크": 7.0, "토마시 호리": 6.5, "모이미르 히틸": 6.4
       }
     },
-    // CAN-BIH 평점(선명한 사진 재확인, SofaScore) — 캐나다 6.76 / 보스니아 6.88. 선발+교체 전체.
+    // CAN-BIH 평점(선명한 사진 재확인, 공식 사진) — 캐나다 6.76 / 보스니아 6.88. 선발+교체 전체.
     "match-7": {
       team: { "canada": 6.76, "bosnia-and-herzegovina": 6.88 },
       byName: {
@@ -2120,24 +2120,24 @@
       if (!played.length) { slot.innerHTML = '<div class="mr-hint muted-note">선발 라인업이 나오면 출장 선수와 함께 열려요. (보통 킥오프 ~1시간 전)</div>'; return; }
       var votes = (md && md.votes) || {}, total = (md && md.total) || 0, mine = md && md.mine;
       var rated = played.map(function (p) {
-        var off = ratingOf(matchId, p.name);  // SofaScore 공식 평점(MATCH_RATINGS) — 라인업과 동일
+        var off = ratingOf(matchId, p.name);  // 공식 사진 공식 평점(MATCH_RATINGS) — 라인업과 동일
         var ev = (p.goals || 0) * 1.1 + (p.assists || 0) * 0.6 - (p.yellow || 0) * 0.3 - (p.red || 0) * 1.3 - (p.og || 0) * 1.2;
         var vb = total > 0 ? (votes[p.pid] || 0) / total * 1.5 : 0;  // 민심 보너스
         var blend = Math.max(5.0, Math.min(9.9, Math.round((6.4 + ev + vb) * 10) / 10));
-        var r = (off != null) ? off : blend;  // 공식 있으면 SofaScore, 없으면 킥톡 blend
+        var r = (off != null) ? off : blend;  // 공식 있으면 공식 사진, 없으면 킥톡 blend
         var side = setA[p.pid] ? "A" : setB[p.pid] ? "B" : (p.team === a.name ? "A" : "B");
         return { pid: p.pid, name: p.name, side: side, r: r, off: off, v: votes[p.pid] || 0, goals: p.goals, assists: p.assists, yellow: p.yellow, red: p.red, og: p.og };
       });
       var mom = rated.slice().sort(function (x, y) { return y.r - x.r; })[0];
       var head = mom ? '<div class="mr-lead">🏅 이 경기 MVP <b>' + esc(mom.name) + "</b> · " + (mom.off != null ? "평점 " : "킥톡 평점 ") + mom.r.toFixed(1) + (total ? ' <span class="muted-note">(' + total + "표)</span>" : "") + "</div>" : "";
-      head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점은 SofaScore 공식(있으면), 없으면 기록(골·도움·카드)+민심 자동.</div>';
+      head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점은 경기 활약(골·도움·카드)과 민심을 반영해요.</div>';
       function card(p) {
         var voted = mine === p.pid, pct = total > 0 ? Math.round(p.v / total * 100) : 0;
-        var rc = p.r >= 7.0 ? "#1aa55b" : p.r >= 6.5 ? "#e8a90c" : "#e5566a";  // SofaScore식 색
+        var rc = p.r >= 7.0 ? "#1aa55b" : p.r >= 6.5 ? "#e8a90c" : "#e5566a";  // 공식 사진식 색
         return '<div class="mvp-card' + (voted ? " voted" : "") + (p === mom ? " mom" : "") + '">' +
           '<div class="mvp-top"><span class="mvp-nm" data-player="' + esc(p.pid) + '">' + (p === mom ? "⭐ " : "") + esc(p.name) + ofTags(p) + '</span><span class="mvp-rt" style="color:' + rc + '">' + p.r.toFixed(1) + "</span></div>" +
           '<div class="mvp-vbar"><span style="width:' + pct + '%"></span></div>' +
-          '<div class="mvp-bot"><span class="mvp-vn">' + p.v + "표 · " + pct + '%</span><button class="mvp-btn' + (voted ? " on" : "") + '" data-mvp-pid="' + esc(p.pid) + '">' + (voted ? "✓ 내 MVP" : "🏆 MVP 투표") + "</button></div></div>";
+          '<div class="mvp-bot"><span class="mvp-vn">' + p.v + "표 · " + pct + '%</span><button class="mvp-btn' + (voted ? " on" : "") + '" data-mvp-pid="' + esc(p.pid) + '" title="' + (voted ? "내 MVP (다시 누르면 취소)" : "MVP 투표") + '">🏆</button></div></div>';
       }
       function teamBlock(side, team) {
         var list = rated.filter(function (p) { return p.side === side; }).sort(function (x, y) { return y.r - x.r; });
