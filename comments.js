@@ -340,7 +340,7 @@
     if (!nick) { alert("닉네임을 입력해주세요."); return; }
     if (!pw) { alert("비밀번호를 입력해주세요. (내 댓글 삭제할 때 필요해요)"); return; }
     anonSet(nick, pw);
-    sha256(pw).then(function (h) { base.user_id = null; base.name = nick.slice(0, 12); base.pw_hash = h; base.avatar = null; doInsert(m, ta, base); });
+    sha256(pw).then(function (h) { base.user_id = null; base.name = mask(nick); base.pw_hash = h; base.avatar = null; doInsert(m, ta, base); });  // 표시 글자수 제한 해제(입력칸 maxlength=20이 제한 담당), 욕설만 마스킹
   }
 
   function del(m, id, isAnon) {
