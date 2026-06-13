@@ -2260,7 +2260,7 @@
     var v = (st.value != null) ? st.value : parseFloat(st.displayValue);
     return isNaN(v) ? null : v;
   }
-  function matchStatsHtml(a, b, bs) {
+  function matchStatsHtml(a, b, bs, live) {
     var teams = (bs && bs.teams) || []; if (teams.length < 2) return "";
     function tid(t) { return espnTeamId(t.team && t.team.displayName); }
     var aT = tid(teams[0]) === a.id ? teams[0] : teams[1], bT = (aT === teams[0]) ? teams[1] : teams[0];
@@ -2281,7 +2281,7 @@
       return '<div class="ms-row"><div class="ms-top"><span class="ms-v' + (aw ? " win" : "") + '">' + at + '</span><span class="ms-l">' + esc(d.l) + '</span><span class="ms-v' + (bw ? " win" : "") + '">' + bt + "</span></div>" + bar + "</div>";
     }).join("");
     if (!rows) return "";
-    return '<div class="mstat"><div class="mstat-h">📊 경기 통계</div>' +
+    return '<div class="mstat"><div class="mstat-h">📊 경기 통계' + (live ? ' <span class="ms-live">● 실시간</span>' : "") + "</div>" +
       '<div class="mstat-leg"><span class="ms-tm">' + esc(a.flag) + " " + esc(a.name) + '</span><span class="ms-tm">' + esc(b.name) + " " + esc(b.flag) + "</span></div>" + rows + "</div>";
   }
   function renderLineup(slot, d, a, b, fx) {
@@ -2315,7 +2315,7 @@
     } else {
       html += '<h3>📋 라인업</h3><div class="lu-wait">선발 라인업은 킥오프 약 1시간 전에 공개돼요.</div>';
     }
-    if (fx && matchEnded(fx) && a && b) html += matchStatsHtml(a, b, d.boxscore);  // 교체명단 아래 경기 통계(ESPN)
+    if (fx && (matchEnded(fx) || isLiveFix(fx)) && a && b) html += matchStatsHtml(a, b, d.boxscore, !matchEnded(fx) && isLiveFix(fx));  // 교체명단 아래 경기 통계(ESPN) — 라이브 중에도 표시(실시간)
     if (events.length) html += '<div class="lu-events"><h3>⚽ 주요 이벤트</h3>' + events.map(luEvent).join("") + "</div>";
     slot.innerHTML = html;
     twem(slot);
