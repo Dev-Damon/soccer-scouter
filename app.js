@@ -12,7 +12,10 @@
   // 잔디 표시명: 같은 팀에 성(姓)이 겹치는 선수만 풀네임(예: 산티아고/라울 히메네스), 나머지는 성만(공간 절약)
   var _surnameDup = {};
   (function () { var byKey = {}; DATA.players.forEach(function (p) { var sur = String(p.name || "").split(" ").slice(-1)[0]; var k = p.team + "|" + sur; (byKey[k] = byKey[k] || []).push(p.id); }); Object.keys(byKey).forEach(function (k) { if (byKey[k].length > 1) byKey[k].forEach(function (id) { _surnameDup[id] = true; }); }); })();
-  function pitchName(name, pid) { return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
+  // 성 대신 '알려진 이름/별칭'으로 표시할 선수(예: 비니시우스 주니오르 → 비니시우스). 승인된 항목만 추가.
+  var PITCH_OVERRIDE = { "vinicius-junior": "비니시우스" };
+  function pitchSurname(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return String(name || "").split(" ").slice(-1)[0]; }
+  function pitchName(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
   function pitchNameHtml(name, pid) { return pitchName(name, pid).split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
@@ -593,7 +596,7 @@
       var p = playerByName(g.who); if (!p) return false;
       return g.og ? (p.team === oppName) : (p.team === teamName);  // 자책골은 상대 선수가 우리 쪽 득점 → 우리 쪽에 표시
     }).map(function (g) {
-      var p = playerByName(g.who), nm = (p ? p.name : g.who).split(" ").slice(-1)[0];
+      var p = playerByName(g.who), nm = p ? pitchSurname(p.name, p.id) : g.who.split(" ").slice(-1)[0];
       var label = esc(nm) + (g.og ? " (자책골)" : "") + (g.clk ? " " + esc(g.clk) : "");
       return side === "r" ? ("⚽ " + label) : (label + " ⚽");  // 공이 가운데쪽: 좌팀=뒤, 우팀=앞
     }).join("<br>");
@@ -959,7 +962,7 @@
     ((lv && lv.events) || []).forEach(function (g) {
       var p = playerByName(g.who); if (!p) return;
       var team = g.og ? (p.team === fx.homeName ? fx.awayName : fx.homeName) : p.team;  // 자책골은 상대팀 득점
-      var txt = "⚽ " + String(p.name || "").split(" ").slice(-1)[0] + (g.og ? " (OG)" : "") + (g.clk ? " " + g.clk : "");
+      var txt = "⚽ " + pitchSurname(p.name, p.id) + (g.og ? " (OG)" : "") + (g.clk ? " " + g.clk : "");
       (team === lName ? leftG : rightG).push(txt);
     });
     var maxN = Math.max(leftG.length, rightG.length), gEnd = maxN ? 300 + maxN * 32 : 290;
