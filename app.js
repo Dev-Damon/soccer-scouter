@@ -581,8 +581,14 @@
   // 특정 팀의 득점자만 추려서 줄바꿈 목록으로(성만). 한국골은 한국쪽, 상대골은 상대쪽에 배치용.
   function teamGoals(fx, lv, teamName) {
     if (!lv || !lv.events || !lv.events.length) return "";
-    return lv.events.filter(function (g) { var p = playerByName(g.who); return p && p.team === teamName; })
-      .map(function (g) { var p = playerByName(g.who), nm = (p ? p.name : g.who).split(" ").slice(-1)[0]; return "⚽ " + esc(nm) + (g.clk ? " " + esc(g.clk) : ""); }).join("<br>");
+    var oppName = (teamName === fx.homeName) ? fx.awayName : fx.homeName;
+    return lv.events.filter(function (g) {
+      var p = playerByName(g.who); if (!p) return false;
+      return g.og ? (p.team === oppName) : (p.team === teamName);  // 자책골은 상대 선수가 우리 쪽 득점 → 우리 쪽에 표시
+    }).map(function (g) {
+      var p = playerByName(g.who), nm = (p ? p.name : g.who).split(" ").slice(-1)[0];
+      return "⚽ " + esc(nm) + (g.og ? " (OG)" : "") + (g.clk ? " " + esc(g.clk) : "");
+    }).join("<br>");
   }
 
   function fixtureCard(fx) {
@@ -1653,15 +1659,17 @@
     var out = [];
     (c.details || []).forEach(function (d) {
       var txt = (d.type && d.type.text) || "";
-      var isGoal = d.scoringPlay === true || (/goal/i.test(txt) && !/disallow|own goal/i.test(txt));
+      if (/disallow/i.test(txt)) return;
+      var isOG = d.ownGoal === true || /own.?goal/i.test(txt) || /own.?goal/i.test((d.type && d.type.id) || "");
+      var isGoal = d.scoringPlay === true || /goal/i.test(txt);
       if (!isGoal) return;
       var who = (d.athletesInvolved && d.athletesInvolved[0] && d.athletesInvolved[0].displayName) || "";
-      out.push({ who: who, clk: (d.clock && d.clock.displayValue) || "" });
+      out.push({ who: who, clk: (d.clock && d.clock.displayValue) || "", og: isOG });
     });
     return out;
   }
   function applyEspn(d) {
-    var changed = false, anyLive = false, anyToday = false;
+    var changed = false, anyLive = false, anyToday = false, seen = {};
     (d.events || []).forEach(function (e) {
       var c = (e.competitions || [])[0]; if (!c) return;
       var comp = c.competitors || [];
@@ -1671,6 +1679,7 @@
       var hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName);
       if (!hid || !aid) return;
       var fid = fixByPair[[hid, aid].sort().join("|")]; if (!fid) return;
+      seen[fid] = 1;
       var fx = fixturesById[fid]; if (!fx) return;
       var st = (e.status && e.status.type) || {}; var state = st.state;
       if (state === "in") anyLive = true;
@@ -1685,7 +1694,22 @@
       if (JSON.stringify(LIVE[fid]) !== JSON.stringify(rec)) { LIVE[fid] = rec; changed = true; }
       if (state === "post" && window.KickComments && KickComments.pushResult && !_pushedResults[fid]) { _pushedResults[fid] = 1; KickComments.pushResult(fid, rec.hs, rec.as, rec.events); }  // 결과+득점자 영구 저장
     });
+    // 캐시로 복원했던 '진행중'인데 이번 ESPN 응답엔 없는 경기(=끝났거나 목록서 내려감) → 제거(유령 라이브카드 방지)
+    Object.keys(LIVE).forEach(function (fid) { if (LIVE[fid] && LIVE[fid].state === "in" && LIVE[fid].cached && !seen[fid]) { delete LIVE[fid]; changed = true; } });
+    saveLiveCache();
     return { changed: changed, anyLive: anyLive, anyToday: anyToday };
+  }
+  // 라이브 상태 캐시(앱 열자마자 라이브카드 즉시 표시 → fetchLive가 곧 갱신)
+  var LIVE_CACHE_KEY = "kt_live_v1";
+  function saveLiveCache() {
+    try { var m = {}; Object.keys(LIVE).forEach(function (k) { if (LIVE[k] && LIVE[k].state === "in") m[k] = LIVE[k]; }); localStorage.setItem(LIVE_CACHE_KEY, JSON.stringify({ t: Date.now(), live: m })); } catch (e) {}
+  }
+  function restoreLiveCache() {
+    try {
+      var c = JSON.parse(localStorage.getItem(LIVE_CACHE_KEY) || "{}");
+      if (!c.live || (Date.now() - (c.t || 0)) > 3 * 3600 * 1000) return;  // 3시간 지난 캐시는 신뢰 X
+      Object.keys(c.live).forEach(function (k) { if (!LIVE[k]) { LIVE[k] = c.live[k]; LIVE[k].cached = true; } });
+    } catch (e) {}
   }
   // 저장된 종료경기 결과를 LIVE에 병합(ESPN이 안 줘도 카드에 결과 유지)
   function loadStoredResults() {
@@ -3029,9 +3053,10 @@
     });
   }
 
+  restoreLiveCache();   // ★route 전에 캐시된 라이브 상태 복원 → 첫 렌더부터 라이브카드 보이게
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
-  fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분)
+  fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분) — 곧 최신값으로 갱신
   loadStoredResults();  // 저장된 종료경기 결과 병합(ESPN이 내려도 카드에 결과 유지)
   // 모바일은 백그라운드에서 타이머가 멈춤 → 앱으로 돌아오는 즉시 점수 재요청 + 화면 즉시 재렌더(스테일 방지)
   function onAppReturn() {
