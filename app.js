@@ -918,6 +918,14 @@
     c.textAlign = "center"; c.fillStyle = "#0a1020"; c.font = "900 25px -apple-system,sans-serif"; c.fillText("kicktalk.xyz  ·  전 선수 능력치 무료 분석", W / 2, H - 46);
     return cv;
   }
+  function shareMatch(fx) {
+    if (!fx || !fx.homeId || !fx.awayId) return;
+    var url = "https://kicktalk.xyz/m/" + fx.homeId + "-vs-" + fx.awayId + ".html";  // 경기별 OG 페이지(카톡 썸네일)
+    var txt = fx.homeName + " vs " + fx.awayName + " — 라인업·실시간·평점 | 킥톡";
+    if (navigator.share) { navigator.share({ title: txt, text: txt, url: url }).catch(function () {}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function () { ktToast("🔗 링크 복사됨! 카톡·커뮤니티에 붙여넣기"); }).catch(function () { ktToast(url); }); }
+    else ktToast(url);
+  }
   function sharePlayerCard(p) {
     if (!p || !p.power) return;
     playerCardCanvas(p).toBlob(function (blob) {
@@ -1498,7 +1506,7 @@
 
     viewEl.innerHTML =
       '<div class="detail match-view">' +
-        saveBtnHtml("match:" + fx.id) +
+        '<div class="match-top-btns">' + saveBtnHtml("match:" + fx.id) + '<button class="share-btn" data-share-match="' + esc(fx.id) + '" aria-label="공유">📤</button></div>' +
         '<div class="var-title"><span class="var-tag">VAR</span> 경기 분석</div>' +
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
@@ -2945,6 +2953,8 @@
     if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var mpid = mvb.getAttribute("data-mvp-pid"); (mrCtx.mvpMine === mpid ? KickComments.unvoteMvp(mrCtx.matchId) : KickComments.voteMvp(mrCtx.matchId, mpid)).then(refreshMatchRatings); return; }
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
+    var shm = e.target.closest("[data-share-match]");
+    if (shm) { var shf = fixturesById[shm.getAttribute("data-share-match")]; if (shf) shareMatch(shf); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
     var rgo = e.target.closest("[data-rate-go]"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
