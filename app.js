@@ -946,6 +946,52 @@
       var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
     }, "image/png");
   }
+  // 경기 결과 공유 카드(캔버스) — 스코어·득점자·팬MVP
+  function matchCardCanvas(fx, lv, momName) {
+    var swap = (fx.awayId === "south-korea");
+    var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
+    var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
+    var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
+    var goals = ((lv && lv.events) || []).map(function (g) {
+      var p = playerByName(g.who); if (!p) return null;
+      var team = g.og ? (p.team === fx.homeName ? fx.awayName : fx.homeName) : p.team;  // 자책골은 상대팀 득점
+      var tid = team === fx.homeName ? fx.homeId : fx.awayId;
+      return { flag: flagOf(tid), nm: String(p.name || "").split(" ").slice(-1)[0] + (g.og ? " (OG)" : ""), clk: g.clk || "" };
+    }).filter(Boolean);
+    var W = 720, H = 470 + goals.length * 34 + (momName ? 56 : 0);
+    var cv = document.createElement("canvas"); cv.width = W; cv.height = H; var c = cv.getContext("2d");
+    var bg = c.createLinearGradient(0, 0, W, H); bg.addColorStop(0, "#1b2d60"); bg.addColorStop(.55, "#0c1530"); bg.addColorStop(1, "#070d18"); c.fillStyle = bg; c.fillRect(0, 0, W, H);
+    c.textAlign = "left"; c.fillStyle = "#fff"; c.font = "900 30px -apple-system,sans-serif"; c.fillText("KICKTALK", 40, 60);
+    c.fillStyle = "#4f8cff"; c.font = "bold 19px -apple-system,sans-serif"; c.fillText("2026 월드컵 · 경기 결과", 205, 58);
+    c.textAlign = "center";
+    c.font = "62px -apple-system,sans-serif"; c.fillText(flagOf(lId), 150, 198); c.fillText(flagOf(rId), 570, 198);
+    c.fillStyle = "#eaf0fb"; c.font = "bold 25px -apple-system,sans-serif"; c.fillText(String(lName).slice(0, 9), 150, 248); c.fillText(String(rName).slice(0, 9), 570, 248);
+    c.fillStyle = "#fff"; c.font = "900 74px -apple-system,sans-serif"; c.fillText((lS | 0) + " : " + (rS | 0), 360, 205);
+    c.fillStyle = "#9fb0cc"; c.font = "600 21px -apple-system,sans-serif"; c.fillText(lv && lv.state === "post" ? "경기 종료" : ((lv && lv.clock) || "진행 중"), 360, 246);
+    var y = 320;
+    if (goals.length) {
+      c.fillStyle = "#7e8da6"; c.font = "bold 18px -apple-system,sans-serif"; c.fillText("⚽ 득점", 360, y); y += 34;
+      c.font = "500 24px -apple-system,sans-serif"; c.fillStyle = "#e6edf8";
+      goals.forEach(function (gl) { c.fillText(gl.flag + "  " + gl.nm + (gl.clk ? "  " + gl.clk : ""), 360, y); y += 34; });
+    }
+    if (momName) { y += 6; c.fillStyle = "#f5b301"; c.font = "bold 24px -apple-system,sans-serif"; c.fillText("🏅 팬 MVP  " + momName, 360, y); }
+    rr(c, 40, H - 70, W - 80, 50, 25); c.fillStyle = "#4f8cff"; c.fill();
+    c.fillStyle = "#0a1020"; c.font = "900 23px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 라인업·평점·응원 같이 보기", W / 2, H - 37);
+    return cv;
+  }
+  function shareMatchResult(fx) {
+    var lv = LIVE[fx.id];
+    (window.KickComments && KickComments.matchMvp ? KickComments.matchMvp(fx.id) : Promise.resolve({})).then(function (md) {
+      var votes = (md && md.votes) || {}, top = Object.keys(votes).sort(function (a, b) { return votes[b] - votes[a]; })[0];
+      var momName = (top && playersById[top]) ? playersById[top].name : "";
+      matchCardCanvas(fx, lv, momName).toBlob(function (blob) {
+        if (!blob) return;
+        var fname = fx.id + "-kicktalk.png";
+        try { var file = new File([blob], fname, { type: "image/png" }); if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: fx.homeName + " vs " + fx.awayName + " 결과", text: "킥톡 · kicktalk.xyz" }).catch(function () {}); return; } } catch (e) {}
+        var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
+      }, "image/png");
+    });
+  }
   // ===== 선수 비교(레이더 겹쳐보기) =====
   var CMP_KEYS = ["공격력", "골결정력", "스피드", "수비력", "피지컬", "테크닉"];
   var cmpA = null;
@@ -1526,6 +1572,7 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span></div>" +
         "</div>" +
         '<div class="vs-goals"></div>' +
+        (matchEnded(fx) ? '<button class="result-share" data-result-share="' + esc(fx.id) + '">📸 경기 결과 이미지로 공유</button>' : "") +
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
         '<div class="adslot"></div>' +
@@ -2963,6 +3010,8 @@
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var shm = e.target.closest("[data-share-match]");
     if (shm) { var shf = fixturesById[shm.getAttribute("data-share-match")]; if (shf) shareMatch(shf); return; }
+    var rsh = e.target.closest("[data-result-share]");
+    if (rsh) { var rsf = fixturesById[rsh.getAttribute("data-result-share")]; if (rsf) shareMatchResult(rsf); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
     var rgo = e.target.closest("[data-rate-go]"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
