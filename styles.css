@@ -134,8 +134,8 @@ html, body {
 .fx-live .lv-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: lvblink 1.1s infinite ease-in-out; }
 @keyframes lvblink { 50% { opacity: .2; } }
 .fx-final { margin-top: 1px; font-size: 10.5px; font-weight: 800; color: var(--muted); }
-.fx-goals { grid-column: 1 / -1; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--text); font-size: 12px; display: flex; justify-content: space-between; gap: 10px; line-height: 1.6; }
-.fx-g-l { text-align: left; } .fx-g-r { text-align: right; margin-left: auto; }
+.fx-goals { grid-column: 1 / -1; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--text); font-size: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; line-height: 1.6; }
+.fx-g-l { text-align: right; } .fx-g-r { text-align: left; }   /* 득점자 가운데로 수렴 */
 
 /* Group block (조별) */
 .group-card {
@@ -666,7 +666,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .hero.hero-live { box-shadow: 0 0 0 2px rgba(229,24,31,.75), 0 10px 34px rgba(229,24,31,.4); }
 .hero-meta { position: relative; text-align: center; color: #dbe7ff; font-size: 11.5px; margin-top: 2px; }
 .hero-gsplit { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
-.hg-l, .hg-r { font-size: 11px; font-weight: 700; color: #eaf2ff; line-height: 1.6; text-align: center; }
+.hg-l, .hg-r { font-size: 11px; font-weight: 700; color: #eaf2ff; line-height: 1.6; }
+.hg-l { text-align: right; } .hg-r { text-align: left; }   /* 득점자 가운데로 수렴 */
 .hero.live-hero .hg-l, .hero.live-hero .hg-r { color: var(--text); }
 .hero-cta { position: relative; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 800; color: #fff; }
 
@@ -796,7 +797,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .vs-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; }
 .vs-goals { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
 .vs-goals:empty { display: none; }
-.vg-l, .vg-r { text-align: center; font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.7; }
+.vg-l, .vg-r { font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.7; }
+.vg-l { text-align: right; } .vg-r { text-align: left; }   /* 득점자 가운데로 수렴 */
 .result-share { width: 100%; margin: 10px 0 2px; padding: 11px; border-radius: 11px; border: 0; background: linear-gradient(135deg, #4f8cff, #6aa8ff); color: #fff; font-weight: 800; font-size: 13.5px; cursor: pointer; }
 .result-share:active { transform: scale(.99); }
 .vs-team { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }

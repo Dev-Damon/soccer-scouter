@@ -568,7 +568,7 @@
       : ended
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료</span></div>'
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
-    var lvG = teamGoals(fx, lv, lName), rvG = teamGoals(fx, lv, rName);  // 좌/우 팀별 득점자(자기 쪽에 표시)
+    var lvG = teamGoals(fx, lv, lName, "l"), rvG = teamGoals(fx, lv, rName, "r");  // 좌/우 팀별 득점자(가운데로 수렴)
     return '<div class="hero' + (live && asLiveCard ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
       '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>" : "") + "</div>" +
@@ -586,7 +586,7 @@
   }
 
   // 특정 팀의 득점자만 추려서 줄바꿈 목록으로(성만). 한국골은 한국쪽, 상대골은 상대쪽에 배치용.
-  function teamGoals(fx, lv, teamName) {
+  function teamGoals(fx, lv, teamName, side) {
     if (!lv || !lv.events || !lv.events.length) return "";
     var oppName = (teamName === fx.homeName) ? fx.awayName : fx.homeName;
     return lv.events.filter(function (g) {
@@ -594,7 +594,8 @@
       return g.og ? (p.team === oppName) : (p.team === teamName);  // 자책골은 상대 선수가 우리 쪽 득점 → 우리 쪽에 표시
     }).map(function (g) {
       var p = playerByName(g.who), nm = (p ? p.name : g.who).split(" ").slice(-1)[0];
-      return "⚽ " + esc(nm) + (g.og ? " (OG)" : "") + (g.clk ? " " + esc(g.clk) : "");
+      var label = esc(nm) + (g.og ? " (자책골)" : "") + (g.clk ? " " + esc(g.clk) : "");
+      return side === "r" ? ("⚽ " + label) : (label + " ⚽");  // 공이 가운데쪽: 좌팀=뒤, 우팀=앞
     }).join("<br>");
   }
 
@@ -622,7 +623,7 @@
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span>';
     }
-    var lG = teamGoals(fx, lv, lName), rG = teamGoals(fx, lv, rName);  // 좌(홈쪽)/우(원정쪽) 득점자
+    var lG = teamGoals(fx, lv, lName, "l"), rG = teamGoals(fx, lv, rName, "r");  // 좌(홈쪽)/우(원정쪽) 득점자(가운데로 수렴)
     var goals = (lG || rG) ? '<div class="fx-goals"><div class="fx-g-l">' + lG + '</div><div class="fx-g-r">' + rG + "</div></div>" : "";
     return '<div class="fixture' + (clickable ? " clickable" : "") + (live ? " is-live" : "") + '"' + attr + ">" +
       '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(lId)) + "</span>" +
@@ -1636,7 +1637,7 @@
           '<div class="vs-clock' + (lv.state === "in" ? " live" : "") + '">' + (lv.state === "post" ? "경기 종료" : esc(lv.clock || "LIVE")) + "</div>";
       }
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
-      if (gw) { var lg = teamGoals(fx, lv, a.name), rg = teamGoals(fx, lv, b.name); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
+      if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
     }
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
