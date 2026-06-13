@@ -31,7 +31,7 @@ D.fixtures.forEach(function (f) {
     (wp.length ? "<h2>관전 포인트</h2><ul class=wp>" + wp.slice(0, 3).map(function (w) { return "<li>" + e(w) + "</li>"; }).join("") + "</ul>" : "") +
     "<a class=cta href='" + appurl + "'>킥톡에서 실시간 점수·라인업·선수평점 보기 →</a>" +
     "<p class=sub>예상 라인업 · 실시간 스코어 · 선수 평점/MVP 투표 · 응원 메시지 · 포인트 베팅</p>";
-  var ogimg = SITE + "/ogm/" + slug + ".png?v=2";  // 경기별 전용 OG 이미지(라이트). ?v= 올리면 카톡 OG 캐시 무효화
+  var ogimg = SITE + "/ogm/" + slug + ".png?v=3";  // 경기별 전용 OG 이미지(앱 경기카드 라이트). ?v= 올리면 카톡 OG 캐시 무효화
   var pageHtml =
     "<!DOCTYPE html><html lang=ko><head><meta charset=UTF-8>" +
     "<meta name=viewport content='width=device-width,initial-scale=1'>" +
