@@ -990,11 +990,15 @@
     (window.KickComments && KickComments.matchMvp ? KickComments.matchMvp(fx.id) : Promise.resolve({})).then(function (md) {
       var votes = (md && md.votes) || {}, top = Object.keys(votes).sort(function (a, b) { return votes[b] - votes[a]; })[0];
       var momName = (top && playersById[top]) ? playersById[top].name : "";
+      var hs = lv ? (lv.hs | 0) : 0, as = lv ? (lv.as | 0) : 0;
+      var url = (fx.homeId && fx.awayId) ? "https://kicktalk.xyz/m/" + fx.homeId + "-vs-" + fx.awayId + ".html" : "https://kicktalk.xyz";
+      var txt = fx.homeName + " " + hs + " : " + as + " " + fx.awayName + " — 경기 결과·평점·MVP | 킥톡\n" + url;  // 공유 시 URL 텍스트 동봉
       matchCardCanvas(fx, lv, momName).toBlob(function (blob) {
         if (!blob) return;
         var fname = fx.id + "-kicktalk.png";
-        try { var file = new File([blob], fname, { type: "image/png" }); if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: fx.homeName + " vs " + fx.awayName + " 결과", text: "킥톡 · kicktalk.xyz" }).catch(function () {}); return; } } catch (e) {}
+        try { var file = new File([blob], fname, { type: "image/png" }); if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: fx.homeName + " vs " + fx.awayName + " 결과", text: txt, url: url }).catch(function () {}); return; } } catch (e) {}
         var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
+        if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { ktToast("🖼️ 이미지 저장 + 🔗 링크 복사됨"); }).catch(function () {});  // 다운로드 폴백: URL도 클립보드에
       }, "image/png");
     });
   }
