@@ -1663,10 +1663,12 @@
     }
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
+      var wasOpen = !!((slot.querySelector(".lu-subs-d") || {}).open);  // 교체명단 펼침 상태 보존(라이브 새로고침 시 접힘 방지)
       var eid = espnIdCache[fx.id]; if (eid) delete summaryCache[eid];
       fetchSummary(fx).then(function (d) {
         if (!d || parseHash().name !== "match") return;
         renderLineup(slot, d, a, b, fx);
+        var _det = slot.querySelector(".lu-subs-d"); if (_det && wasOpen) _det.open = true;  // 펼침 복원
         var lv = LIVE[fx.id];  // 라이브면 이 경기 기록을 즉시 DB에 반영(기록탭 새로고침 시 최신)
         if (lv && lv.state === "in" && window.KickComments && KickComments.pushMatchStats) { var pl = computeMatchPlayers(d); if (pl.length) KickComments.pushMatchStats(fx.id, pl); }
       });
