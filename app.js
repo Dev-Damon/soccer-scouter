@@ -572,6 +572,8 @@
     }).join("");
     return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
   }
+  // 라이브 시계 라벨: 숫자 시계는 "LIVE 67'", 텍스트 상태(전반 종료 등)는 그대로
+  function liveClk(c) { c = c || ""; return /^\d/.test(c) ? "LIVE " + esc(c) : (c ? esc(c) : "LIVE"); }
   function heroCard(fx, lvOverride, asLiveCard) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
@@ -592,7 +594,7 @@
     var lvG = teamGoals(fx, lv, lName, "l"), rvG = teamGoals(fx, lv, rName, "r");  // 좌/우 팀별 득점자(가운데로 수렴)
     return '<div class="hero' + (live && asLiveCard ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
-      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>" : "") + "</div>" +
+      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>' + liveClk(lv.clock) + "</span>" : "") + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
           '<span class="hero-team">' + esc(lName) + "</span></div>" +
@@ -638,7 +640,7 @@
     if (live || ended) {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-score">' + (lScore | 0) + ' <i>-</i> ' + (rScore | 0) + "</span>" +
-        (live ? '<span class="fx-live"><span class="lv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>"
+        (live ? '<span class="fx-live"><span class="lv-dot"></span>' + liveClk(lv.clock) + "</span>"
               : '<span class="fx-final">종료</span>');
     } else {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
@@ -1298,7 +1300,7 @@
       var statusH;
       if (isLive || ended) {
         var myS = (fx.homeId === t.id) ? lv.hs : lv.as, opS = (fx.homeId === t.id) ? lv.as : lv.hs;
-        statusH = '<span class="tlv-badge' + (isLive ? " live" : "") + '">' + (isLive ? "🔴 LIVE " + esc(lv.clock || "") : "경기 종료") + "</span>" +
+        statusH = '<span class="tlv-badge' + (isLive ? " live" : "") + '">' + (isLive ? "🔴 " + liveClk(lv.clock) : "경기 종료") + "</span>" +
           '<span class="tlv-score">' + (myS | 0) + " : " + (opS | 0) + "</span>";
       } else { statusH = '<span class="tlv-when">⏱ ' + esc(fxTime(fx) || "곧") + " 킥오프</span>"; }
       banner.innerHTML = '<div class="team-live clickable" data-match="' + esc(fx.id) + '">' + statusH + '<span class="tlv-vs">vs ' + esc(oppName) + '</span><span class="tlv-go">경기 →</span></div>';
@@ -1790,8 +1792,9 @@
       if (state === "in" || state === "post" || state === "pre") anyToday = true;
       if (state === "pre") { if (LIVE[fid]) { delete LIVE[fid]; changed = true; } return; }
       var hs = +H.score, as = +A.score;
+      var ht = state === "in" && (st.name === "STATUS_HALFTIME" || st.detail === "HT" || st.description === "Halftime");  // 하프타임 감지
       var rec = {
-        state: state, clock: (e.status && e.status.displayClock) || "",
+        state: state, clock: ht ? "전반 종료" : ((e.status && e.status.displayClock) || ""),
         hs: (fx.homeId === hid) ? hs : as, as: (fx.homeId === hid) ? as : hs,
         events: parseGoals(c)
       };

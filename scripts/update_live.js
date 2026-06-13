@@ -23,12 +23,13 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
   for(const dt of dates){
     var raw=await get(SCORE+dt), d; try{d=JSON.parse(raw)}catch(e){continue}
     (d.events||[]).forEach(e=>{
-      var c=(e.competitions||[])[0]; if(!c)return; var st=((e.status||{}).type||{}).state; if(st!=='in'&&st!=='post')return;
+      var c=(e.competitions||[])[0]; if(!c)return; var ty=((e.status||{}).type||{}); var st=ty.state; if(st!=='in'&&st!=='post')return;
+      var ht=(ty.name==='STATUS_HALFTIME'||ty.detail==='HT'||ty.description==='Halftime');  // 하프타임
       var comp=c.competitors||[]; var H=comp.find(x=>x.homeAway==='home'),A=comp.find(x=>x.homeAway==='away'); if(!H||!A)return;
       var hT=espnTeam((H.team||{}).displayName),aT=espnTeam((A.team||{}).displayName); if(!hT||!aT)return;
       var fid=fixByPair[[hT.id,aT.id].sort().join('|')]; if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
       var hs=fx.homeId===hT.id?+H.score:+A.score, as=fx.homeId===hT.id?+A.score:+H.score, ev=parseGoals(c);
-      if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:(e.status||{}).displayClock||'',events:ev};
+      if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:ht?'전반 종료':((e.status||{}).displayClock||''),events:ev};
       else posts[fid]={eid:e.id,hs:hs,as:as,ev:ev};
     });
     await sleep(80);
