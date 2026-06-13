@@ -428,6 +428,7 @@
   // 종료경기 결과(스코어) 영구 저장 — ESPN이 스코어보드에서 내려도 카드에 결과 유지
   function matchResults() { if (!client()) return Promise.resolve({}); return sb.from("app_data").select("data").eq("key", "match_results").maybeSingle().then(function (r) { return (r.data && r.data.data) || {}; }).catch(function () { return {}; }); }
   function pushResult(mid, h, a, ev) { if (!sb) return Promise.resolve(); return sb.rpc("set_match_result", { mid: mid, h: h, a: a, ev: ev || [] }).catch(function () {}); }
+  function pushLiveState(d) { if (!sb) return Promise.resolve(); return sb.rpc("set_live_state", { d: d }).catch(function () {}); }  // 라이브 상태 공유캐시(신규 사용자도 빠르게)
   function listReports() {
     if (!isAdmin()) return Promise.resolve([]);
     return sb.from("comment_reports").select("*,comments(*)").order("created_at", { ascending: false }).limit(300)
@@ -759,7 +760,7 @@
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },
     isAdmin: isAdmin, adminDashboard: adminDashboard, adminUsers: adminUsers, listReports: listReports, listAllComments: listAllComments,
-    matchRatings: matchRatings, rateMatchPlayer: rateMatchPlayer, unrateMatchPlayer: unrateMatchPlayer, matchMvp: matchMvp, voteMvp: voteMvp, unvoteMvp: unvoteMvp, matchResults: matchResults, pushResult: pushResult,
+    matchRatings: matchRatings, rateMatchPlayer: rateMatchPlayer, unrateMatchPlayer: unrateMatchPlayer, matchMvp: matchMvp, voteMvp: voteMvp, unvoteMvp: unvoteMvp, matchResults: matchResults, pushResult: pushResult, pushLiveState: pushLiveState,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
     ratingStats: ratingStats, playerRating: playerRating, ratePlayer: ratePlayer,

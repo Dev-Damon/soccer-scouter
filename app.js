@@ -1634,6 +1634,8 @@
   // ===================== 라이브 경기 (ESPN 공개 API · 분단위 폴링, 백엔드/키 불필요) =====================
   var LIVE = {};            // fixtureId -> {state:'in'|'post', clock, hs, as, events}
   var _pushedResults = {};  // 결과 중복 저장 방지
+  var _livePushAt = 0;      // 라이브 공유캐시 push throttle
+  var SB_PUB = "sb_publishable_AsDWJPjKDg1S5wqezB9Vtw_uxKFmE26", SB_URL = "https://jhzchgvnkwdroxfrgjvm.supabase.co";
   var liveTimer = null;
   var ESPN_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
   // ESPN 표기 → 앱 팀 id 보정(슬러그가 안 맞는 케이스만)
@@ -1697,7 +1699,25 @@
     // 캐시로 복원했던 '진행중'인데 이번 ESPN 응답엔 없는 경기(=끝났거나 목록서 내려감) → 제거(유령 라이브카드 방지)
     Object.keys(LIVE).forEach(function (fid) { if (LIVE[fid] && LIVE[fid].state === "in" && LIVE[fid].cached && !seen[fid]) { delete LIVE[fid]; changed = true; } });
     saveLiveCache();
+    // 공유 캐시(DB)에도 라이브 상태 저장 → 새로 접속한 사용자도 빠르게 받음. 변동 있을 때 20초 throttle.
+    if (changed && window.KickComments && KickComments.pushLiveState && Date.now() - _livePushAt > 20000) {
+      _livePushAt = Date.now();
+      var lm = {}; Object.keys(LIVE).forEach(function (k) { if (LIVE[k] && LIVE[k].state === "in") lm[k] = { state: "in", hs: LIVE[k].hs, as: LIVE[k].as, clock: LIVE[k].clock, events: LIVE[k].events }; });
+      KickComments.pushLiveState({ t: Date.now(), live: lm });
+    }
     return { changed: changed, anyLive: anyLive, anyToday: anyToday };
+  }
+  // 신규 사용자용: 부팅 시 공유 라이브상태를 DB에서 바로 fetch(SDK 대기 X) → 라이브카드 즉시 표시
+  function bootLiveState() {
+    if (!window.fetch) return;
+    fetch(SB_URL + "/rest/v1/app_data?key=eq.live_state&select=data", { headers: { apikey: SB_PUB, Authorization: "Bearer " + SB_PUB } })
+      .then(function (r) { return r.json(); }).then(function (rows) {
+        var d = rows && rows[0] && rows[0].data; if (!d || !d.live) return;
+        if (Date.now() - (d.t || 0) > 5 * 60000) return;  // 5분 지난 캐시 무시(유령 방지)
+        var changed = false;
+        Object.keys(d.live).forEach(function (k) { if (!LIVE[k] && d.live[k] && d.live[k].state === "in") { LIVE[k] = d.live[k]; LIVE[k].cached = true; changed = true; } });
+        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
+      }).catch(function () {});
   }
   // 라이브 상태 캐시(앱 열자마자 라이브카드 즉시 표시 → fetchLive가 곧 갱신)
   var LIVE_CACHE_KEY = "kt_live_v1";
@@ -3053,9 +3073,10 @@
     });
   }
 
-  restoreLiveCache();   // ★route 전에 캐시된 라이브 상태 복원 → 첫 렌더부터 라이브카드 보이게
+  restoreLiveCache();   // ★route 전에 캐시된 라이브 상태 복원 → 첫 렌더부터(재방문 사용자) 라이브카드 보이게
   route();
   twem(document.body); // 상단바·탭바·초기 화면의 이모지 변환
+  bootLiveState();      // 신규 사용자: DB 공유캐시에서 라이브 상태 즉시 fetch(SDK 대기 X)
   fetchLive();          // 라이브 경기 폴링 시작(ESPN 공개 API, 경기중 60초/임박 3분) — 곧 최신값으로 갱신
   loadStoredResults();  // 저장된 종료경기 결과 병합(ESPN이 내려도 카드에 결과 유지)
   // 모바일은 백그라운드에서 타이머가 멈춤 → 앱으로 돌아오는 즉시 점수 재요청 + 화면 즉시 재렌더(스테일 방지)
