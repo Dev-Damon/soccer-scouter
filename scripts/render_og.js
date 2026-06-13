@@ -10,9 +10,12 @@ function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').repla
 // d = {home:{name,flag,rank}, away:{name,flag,rank}, hs, as, ended, dt, leftG:[{name,clk,og}], rightG:[...]}
 // 디자인 = 앱 경기카드(라이트). 자책골은 빨간 공 + "(자책골)".
 function cardHtml(d) {
-  function scorer(g) {  // ⚽ 이름 (자책골) 시간 — 경기카드처럼(가운데 정렬, 공 왼쪽)
-    return '<div class="sc-row"><span class="ball' + (g.og ? ' og' : '') + '">⚽</span>' +
-      '<span class="sc-txt">' + esc(g.name) + (g.og ? ' (자책골)' : '') + (g.clk ? ' ' + esc(g.clk) : '') + '</span></div>';
+  function gtxt(g) { return esc(g.name) + (g.og ? ' (자책골)' : '') + (g.clk ? ' ' + esc(g.clk) : ''); }
+  function scorerL(g) {  // 좌측팀: 우측정렬 — 텍스트 → 공(가운데쪽)
+    return '<div class="sc-row"><span class="sc-txt">' + gtxt(g) + '</span><span class="ball' + (g.og ? ' og' : '') + '">⚽</span></div>';
+  }
+  function scorerR(g) {  // 우측팀: 좌측정렬 — 공(가운데쪽) → 텍스트
+    return '<div class="sc-row"><span class="ball' + (g.og ? ' og' : '') + '">⚽</span><span class="sc-txt">' + gtxt(g) + '</span></div>';
   }
   function team(t) {
     return '<div class="team"><span class="flag">' + t.flag + '</span>' +
@@ -41,8 +44,10 @@ function cardHtml(d) {
     '.sub{font-size:30px;font-weight:700;color:#62718c;}' +
     '.kick{font-size:28px;font-weight:700;color:#62718c;}' +
     '.vs-x{font-size:64px;font-weight:900;color:#8a97ab;letter-spacing:3px;}' +
-    '.goals{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;padding:6px 0 18px;min-height:90px;}' +
-    '.gcol{display:flex;flex-direction:column;gap:11px;align-items:center;justify-content:flex-start;}' +
+    '.goals{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px;padding:6px 0 18px;min-height:90px;}' +
+    '.gcol{display:flex;flex-direction:column;gap:11px;justify-content:flex-start;}' +
+    '.gcol.l{align-items:flex-end;}' +   /* 좌측팀: 가운데쪽으로 정렬 */
+    '.gcol.r{align-items:flex-start;}' +  /* 우측팀: 가운데쪽으로 정렬 */
     '.sc-row{display:flex;align-items:center;gap:11px;font-size:30px;font-weight:600;color:#2b3850;}' +
     '.ball{font-size:26px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;}' +
     '.ball.og{font-size:0;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 36% 32%, #ff6a5e, #e2231a 70%);box-shadow:inset -3px -3px 6px rgba(0,0,0,.25);}' +
@@ -52,8 +57,8 @@ function cardHtml(d) {
     '<div class="brand"><b>KICKTALK</b><small>2026 월드컵 · 경기</small></div>' +
     '<div class="head">' + team(d.home) +
       '<div class="center">' + center + '</div>' + team(d.away) + '</div>' +
-    '<div class="goals"><div class="gcol">' + (d.leftG || []).map(scorer).join('') + '</div>' +
-      '<div class="gcol">' + (d.rightG || []).map(scorer).join('') + '</div></div>' +
+    '<div class="goals"><div class="gcol l">' + (d.leftG || []).map(scorerL).join('') + '</div>' +
+      '<div class="gcol r">' + (d.rightG || []).map(scorerR).join('') + '</div></div>' +
     '<div class="foot">kicktalk.xyz · 라인업 · 실시간 점수 · 선수 평점 · 응원</div>' +
     '</div></body></html>';
 }
