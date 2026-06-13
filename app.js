@@ -3171,10 +3171,19 @@
     new MutationObserver(function () { twem(viewEl); }).observe(viewEl, { childList: true });
   }
 
-  // 서비스워커 (PWA, http(s)에서만)
+  // 서비스워커 (PWA, http(s)에서만) — 새 버전 배포 시 자동 새로고침(캐시된 옛 화면 방지)
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("sw.js").catch(function () {});
+      navigator.serviceWorker.register("sw.js").then(function (reg) {
+        try { reg.update(); } catch (e) {}
+        reg.addEventListener("updatefound", function () {
+          var nw = reg.installing; if (!nw) return;
+          nw.addEventListener("statechange", function () {
+            // 새 SW 설치완료 + 기존 컨트롤러 있음(=재방문자 업데이트) → 새 코드/CSS로 자동 리로드
+            if (nw.state === "installed" && navigator.serviceWorker.controller) location.reload();
+          });
+        });
+      }).catch(function () {});
     });
   }
 
