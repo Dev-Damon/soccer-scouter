@@ -2379,7 +2379,7 @@
     else stH = '<span class="bh-st bh-pending">⏳ 대기중</span>';
     return '<div class="bh-row' + (fx ? " bh-clk" : "") + '"' + (fx ? ' data-go="match/' + esc(bet.match_id) + '"' : "") + '>' +
       '<div class="bh-top"><span class="bh-match">⚽ ' + esc(matchLabel) + "</span>" + stH + "</div>" +
-      '<div class="bh-sub">🎯 내 선택 <b class="bh-pick">' + esc(pick) + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + (fx ? ' <span class="bh-go">경기 상세 →</span>' : "") + "</div></div>";
+      '<div class="bh-sub">🎯 <b class="bh-pick">' + esc(pick) + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + (fx ? ' <span class="bh-go">경기 상세 →</span>' : "") + "</div></div>";
   }
   function paintMy() {
     if (!myCache) return;
