@@ -3321,7 +3321,8 @@
       var tierH = "";
       if (m._pts != null && window.KickComments && KickComments.tierOf) {
         var tr = KickComments.tierOf(m._pts), kp = KickComments.fmtKP ? KickComments.fmtKP(m._pts) : m._pts;
-        tierH = '<span class="chat-tier" style="color:' + tr.c + ';border-color:' + tr.c + '">' + esc(tr.name) + " " + esc(kp) + "</span> ";
+        var tInfo = "포인트 등급 — 보유 포인트(KP)로 결정돼요. 댓글·출석·베팅 적중으로 모아요. (대기중 베팅 포함)";
+        tierH = '<span class="chat-tier badge-info" data-binfo="' + tInfo + '" title="' + tInfo + '" style="color:' + tr.c + ';border-color:' + tr.c + '">' + esc(tr.name) + " " + esc(kp) + "</span> ";
       }
       var titH = (m._title && KickComments.titleBadge) ? KickComments.titleBadge(m._title) : "";  // 칭호(꾸미기)
       var medH = (m._streak && KickComments.streakBadge) ? KickComments.streakBadge(m._streak) : "";  // 연속적중 훈장
@@ -3379,9 +3380,14 @@
     setTimeout(function () { t.classList.remove("show"); setTimeout(function () { t.remove(); }, 300); }, 3500);
   }
   // 배지(등급·칭호·훈장) 탭하면 설명 토스트(모바일). 데스크톱은 title 호버로도 표시.
+  // 연타 방지 = 쓰로틀(throttle): 한 번 뜨면 2.5초간 재실행 차단.
+  var _binfoCool = 0;
   document.addEventListener("click", function (e) {
     var bi = e.target.closest("[data-binfo]");
-    if (bi) { e.stopPropagation(); e.preventDefault(); ktToast(bi.getAttribute("data-binfo")); }
+    if (!bi) return;
+    e.stopPropagation(); e.preventDefault();
+    var now = Date.now(); if (now < _binfoCool) return; _binfoCool = now + 2500;
+    ktToast(bi.getAttribute("data-binfo"));
   }, true);
   // 출석은 MY 탭의 '출석 체크' 버튼으로 직접(자동지급 X)
 })();
