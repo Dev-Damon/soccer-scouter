@@ -9,6 +9,10 @@
   DATA.fixtures = DATA.fixtures || [];
   var playersById = {};
   DATA.players.forEach(function (p) { playersById[p.id] = p; });
+  // 잔디 표시명: 같은 팀에 성(姓)이 겹치는 선수만 풀네임(예: 산티아고/라울 히메네스), 나머지는 성만(공간 절약)
+  var _surnameDup = {};
+  (function () { var byKey = {}; DATA.players.forEach(function (p) { var sur = String(p.name || "").split(" ").slice(-1)[0]; var k = p.team + "|" + sur; (byKey[k] = byKey[k] || []).push(p.id); }); Object.keys(byKey).forEach(function (k) { if (byKey[k].length > 1) byKey[k].forEach(function (id) { _surnameDup[id] = true; }); }); })();
+  function pitchName(name, pid) { return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
   var fixturesById = {};
@@ -1155,7 +1159,7 @@
         var pdAttr = pl ? ' data-player="' + esc(d.playerId) + '"' : "";
         html += '<div class="pd ' + pc + (pl ? " tappable" : "") + '"' + pdAttr + ' style="left:' + x + "%;top:" + y + '%" title="' + esc(nm) + '">' +
           '<span class="pd-dot">' + esc(num) + "</span>" +
-          '<span class="pd-name">' + esc(nm.split(" ").slice(-1)[0]) + "</span></div>";
+          '<span class="pd-name">' + esc(pitchName(nm, pl && pl.id)) + "</span></div>";
       });
       html += "</div></div>";
     }
@@ -1233,7 +1237,7 @@
           var pos = (c.p.position && c.p.position.abbreviation) || "", pc = bandCls[espnBand(pos)] || "mf";
           var num = c.p.jersey != null ? c.p.jersey : "";
           var x = Math.max(4, Math.min(96, c.x)), y = Math.max(6, Math.min(94, c.y));
-          return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + esc(nm.split(" ").slice(-1)[0]) + "</span></div>";
+          return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + esc(pitchName(nm, mp && mp.id)) + "</span></div>";
         }).join("");
         var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = (live ? "현재 라인업" : "선발 포메이션") + ' <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
         var pEl = pb.querySelector(".pitch"); if (pEl) pEl.innerHTML = '<div class="pitch-line halfway"></div><div class="pitch-circle"></div>' + dots;
@@ -1387,8 +1391,9 @@
         items.forEach(function (d, i) {
           var py = ((m === 1 ? 0.5 : (i + 0.5) / m) * 0.80 + 0.10) * H;  // 라인 내 세로 균등(겹침 방지)
           var num = (d.number != null && d.number !== "") ? d.number : "";
-          var nm = (d.name || "").replace(/\(.*?\)/g, "").trim().split(/\s+/).pop();
-          if (nm.length > 5) nm = nm.slice(0, 4) + "…";
+          var raw = (d.name || "").replace(/\(.*?\)/g, "").trim();
+          var nm = pitchName(raw, d.pid);  // 성 중복 선수만 풀네임(예: 산티아고/라울 히메네스)
+          if (!(d.pid && _surnameDup[d.pid]) && nm.length > 5) nm = nm.slice(0, 4) + "…";  // 성만일 때만 길면 축약
           var pd = d.rate ? ' data-rate="' + esc(d.pid) + '" data-rmatch="' + esc(d.rate) + '" style="cursor:pointer"' : (d.pid ? ' data-player="' + esc(d.pid) + '"' : "");
           var rbsvg = "";
           if (d.rating != null) {
@@ -2306,8 +2311,7 @@
       var cmp = compLabel(e), rnd = roundLabel(e.roundName);
       var meta = (e.gameDate || "").slice(0, 4) + " · " + cmp + (rnd && cmp !== "친선" ? " " + rnd : "");
       rows += '<div class="h2h-row"><span class="h2h-res ' + rk + '">' + rl + "</span>" +
-        '<div class="h2h-line"><span class="h2h-score"><b>' + esc(perspName) + "</b> " + sc + " " + esc(oppName) + "</span>" +
-        '<span class="h2h-meta">' + esc(meta) + "</span></div></div>";
+        '<span class="h2h-line"><b>' + esc(perspName) + "</b> " + sc + " " + esc(oppName) + '<span class="h2h-meta"> · ' + esc(meta) + "</span></span></div>";
     });
     slot.style.display = "";
     slot.innerHTML = '<h3>최근 상대전적 <span class="muted-note">최근 ' + blk.events.length + "경기 · " + esc(perspName) + " 기준 " + w + "승 " + dr + "무 " + l + "패</span></h3>" +
