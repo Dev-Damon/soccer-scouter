@@ -1585,7 +1585,7 @@
         '<div class="block card-slot" style="display:none"></div>' +
         '<div class="block lineup-slot"></div>' +
         '<div class="mom-slot"></div>' +
-        (matchEnded(fx) ? "" : '<div class="block"><button class="rate-go" data-rate-go="' + esc(fx.id) + '">⭐ 선수 평점 · MVP →</button></div>') +
+        /* 선수 평점·MVP 버튼은 종료 후에만(MOM 포디움이 진입점) — 예정/진행 경기엔 표시 안 함 */
         '<div class="block"><h3>승부 예상</h3>' +
           '<div class="prob">' +
             '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
