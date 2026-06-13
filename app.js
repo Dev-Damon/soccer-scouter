@@ -1367,7 +1367,7 @@
   function normName(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z ]/g, "").trim(); }
   var _nameMap = null;
   function playerByName(nm) {
-    if (!_nameMap) { _nameMap = {}; (DATA.players || []).forEach(function (p) { if (!p.nameEn) return; var n = normName(p.nameEn); _nameMap[n] = p; var sur = "_s" + n.split(" ").pop(); if (!_nameMap[sur]) _nameMap[sur] = p; }); }
+    if (!_nameMap) { _nameMap = {}; (DATA.players || []).forEach(function (p) { if (!p.nameEn) return; [p.nameEn, p.aliasEn].forEach(function (en) { if (!en) return; var n = normName(en); _nameMap[n] = p; var sur = "_s" + n.split(" ").pop(); if (!_nameMap[sur]) _nameMap[sur] = p; }); }); }  // 별칭(aliasEn)도 매칭 — 예: 카쿠=Alejandro Romero Gamarra
     var n = normName(nm); return _nameMap[n] || _nameMap["_s" + n.split(" ").pop()] || null;
   }
   // ESPN 포지션 약어 → 깊이밴드(0=GK,1=수비,2=미드,3=공미,4=공격) + 좌우값
@@ -1388,7 +1388,7 @@
     return s;
   }
   function espnLineupCoords(rs) {
-    var starters = (rs.roster || []).filter(function (p) { return p.starter; });
+    var starters = (rs.roster || []).filter(function (p) { return p.starter && p.athlete && p.athlete.displayName; });  // 이름 없는 슬롯 제외(빈 동그라미 방지)
     if (starters.length < 9) return null;
     var bands = {};
     starters.forEach(function (p) { var abbr = (p.position && p.position.abbreviation) || ""; var bk = espnBand(abbr); (bands[bk] = bands[bk] || []).push({ p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0 }); });

@@ -9,7 +9,7 @@ const SBP = 'sb_publishable_AsDWJPjKDg1S5wqezB9Vtw_uxKFmE26';  // GET 읽기 가
 global.window = {}; require(path.join(ROOT, 'data.js')); const D = global.window.DATA;
 const teamsById = {}; D.teams.forEach(t => teamsById[t.id] = t);
 function normName(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z ]/g, '').trim(); }
-const nameMap = {}; (D.players || []).forEach(p => { if (!p.nameEn) return; const n = normName(p.nameEn); nameMap[n] = p; const s = '_s' + n.split(' ').pop(); if (!nameMap[s]) nameMap[s] = p; });
+const nameMap = {}; (D.players || []).forEach(p => { if (!p.nameEn) return; [p.nameEn, p.aliasEn].forEach(en => { if (!en) return; const n = normName(en); nameMap[n] = p; const s = '_s' + n.split(' ').pop(); if (!nameMap[s]) nameMap[s] = p; }); });
 function pbn(nm) { const n = normName(nm); return nameMap[n] || nameMap['_s' + n.split(' ').pop()] || null; }
 // 잔디/득점자 표시명 오버라이드(app.js PITCH_OVERRIDE와 동일하게 유지)
 const OG_OVERRIDE = { "vinicius-junior": "비니시우스", "virgil-van-dijk": "반 다이크", "micky-van-de-ven": "반 데 벤", "jan-paul-van-hecke": "판 헤케", "marten-de-roon": "더 론", "kevin-de-bruyne": "데 브라위너", "charles-de-ketelaere": "데 케텔라레", "maxim-de-cuyper": "더 카위퍼르", "koni-de-winter": "더 빈터르" };
