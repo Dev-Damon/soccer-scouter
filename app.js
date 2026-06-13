@@ -341,21 +341,23 @@
     var today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
     var fxs = DATA.fixtures || [];
     var opening = fxs.map(fxDate).filter(Boolean).sort()[0], dday;
+    // 다음 대한민국 경기 픽스처(디데이 클릭 시 이동)
+    var krFxs = fxs.filter(isKoreaFx).filter(fxDate).sort(function (a, b) { return fxDate(a) < fxDate(b) ? -1 : 1; }), nextKr = null;
+    for (var ki = 0; ki < krFxs.length; ki++) { if (fxDate(krFxs[ki]) >= today) { nextKr = krFxs[ki]; break; } }
     if (opening && today < opening) {
       var d = ddayCount(opening, today);
       dday = "🏆 2026 월드컵 개막 " + (d <= 0 ? "D-DAY" : "D-" + d);
     } else {
-      var krDates = fxs.filter(isKoreaFx).map(fxDate).filter(Boolean).sort(), next = null;
-      for (var i = 0; i < krDates.length; i++) { if (krDates[i] >= today) { next = krDates[i]; break; } }
-      if (next) { var d2 = ddayCount(next, today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
+      if (nextKr) { var d2 = ddayCount(fxDate(nextKr), today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
       else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
     }
+    var ddayTap = nextKr ? ' data-match="' + esc(nextKr.id) + '"' : "";  // 클릭 시 다음 한국경기 상세로
     var witty = WITTY[wittyIdx];  // 현재 회전 중인 문구(렌더돼도 끊김 없이 이어짐)
     return '<div class="hero-banner">' +
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
       '<div class="hb-sub">' + esc(witty) + "</div>" +
-      '<div class="hb-dday">' + dday + "</div></div>";
+      '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div></div>";
   }
 
   // 위트 문구 3초마다 슬라이드 전환 — 렌더(날짜 클릭)와 '독립적'으로 타이머 1개만 돈다(클릭해도 리셋 X)

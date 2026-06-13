@@ -90,6 +90,9 @@ html, body {
 @keyframes wittySlide { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
 .hb-sub.anim { animation: wittySlide 0.45s ease; }
 .hb-dday { margin-top: 13px; display: inline-block; font-size: 13px; font-weight: 800; color: #fff; background: linear-gradient(135deg, #4d8cf5, #3d7ce0); border-radius: 999px; padding: 7px 18px; }
+.hb-dday.clickable { cursor: pointer; box-shadow: 0 2px 10px rgba(61,124,224,.35); transition: transform .12s, box-shadow .12s; }
+.hb-dday.clickable:active { transform: scale(.96); }
+.hb-dday.clickable:hover { box-shadow: 0 4px 16px rgba(61,124,224,.5); }
 
 /* Date section header (일정) */
 .date-head {
