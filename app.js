@@ -13,7 +13,13 @@
   var _surnameDup = {};
   (function () { var byKey = {}; DATA.players.forEach(function (p) { var sur = String(p.name || "").split(" ").slice(-1)[0]; var k = p.team + "|" + sur; (byKey[k] = byKey[k] || []).push(p.id); }); Object.keys(byKey).forEach(function (k) { if (byKey[k].length > 1) byKey[k].forEach(function (id) { _surnameDup[id] = true; }); }); })();
   // 성 대신 '알려진 이름/별칭'으로 표시할 선수(예: 비니시우스 주니오르 → 비니시우스). 승인된 항목만 추가.
-  var PITCH_OVERRIDE = { "vinicius-junior": "비니시우스" };
+  var PITCH_OVERRIDE = {
+    "vinicius-junior": "비니시우스",
+    // 성 앞 관사(van/de) 포함 표시 — 관사 빼면 누군지 애매
+    "virgil-van-dijk": "반 다이크", "micky-van-de-ven": "반 데 벤", "jan-paul-van-hecke": "판 헤케",
+    "marten-de-roon": "더 론", "kevin-de-bruyne": "데 브라위너", "charles-de-ketelaere": "데 케텔라레",
+    "maxim-de-cuyper": "더 카위퍼르", "koni-de-winter": "더 빈터르"
+  };
   function pitchSurname(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return String(name || "").split(" ").slice(-1)[0]; }
   function pitchName(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
   function pitchNameHtml(name, pid) { return pitchName(name, pid).split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈
