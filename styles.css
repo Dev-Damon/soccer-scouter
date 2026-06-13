@@ -799,6 +799,25 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .vs-goals:empty { display: none; }
 .vg-l, .vg-r { font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.7; }
 .vg-l { text-align: right; } .vg-r { text-align: left; }   /* 득점자 가운데로 수렴 */
+/* 경기 통계 패널(ESPN) — 교체명단 아래 */
+.mstat { margin-top: 16px; }
+.mstat-h { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.mstat-leg { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-weight: 800; font-size: 13.5px; color: var(--text); }
+.mstat-leg .ms-tm img.emoji { width: 20px; height: 20px; vertical-align: -3px; }
+.ms-row { margin-bottom: 11px; }
+.ms-top { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; margin-bottom: 5px; }
+.ms-v { font-size: 13.5px; font-weight: 700; color: var(--muted); }
+.ms-v:first-child { text-align: left; } .ms-v:last-child { text-align: right; }
+.ms-v.win { color: var(--text); font-weight: 800; }
+.ms-l { text-align: center; font-size: 12px; font-weight: 600; color: var(--muted); }
+.ms-bar { height: 7px; }
+.ms-bar.sp { display: flex; border-radius: 4px; overflow: hidden; }
+.ms-bar.sp .l { background: var(--accent); } .ms-bar.sp .r { background: #e5574d; }
+.ms-bar.mr { display: flex; gap: 8px; }
+.ms-h { flex: 1; height: 100%; background: var(--line); border-radius: 4px; position: relative; overflow: hidden; }
+.ms-h i { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
+.ms-h.l i { right: 0; background: var(--accent); }
+.ms-h.r i { left: 0; background: #e5574d; }
 .result-share { width: 100%; margin: 10px 0 2px; padding: 11px; border-radius: 11px; border: 0; background: linear-gradient(135deg, #4f8cff, #6aa8ff); color: #fff; font-weight: 800; font-size: 13.5px; cursor: pointer; }
 .result-share:active { transform: scale(.99); }
 .vs-team { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }

@@ -1901,7 +1901,7 @@
         if (summaryCache[eid]) return summaryCache[eid];
         return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
           summaryCache[eid] = d;
-          if (hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames });  // 확정 라인업+상대전적 DB 저장(영구·백업)
+          if (hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames, boxscore: d.boxscore });  // 확정 라인업+상대전적+경기통계 DB 저장(영구·백업)
           return d;
         }).catch(function () { return dbGet(); });  // ESPN 실패 → DB 백업
       });
@@ -2062,7 +2062,7 @@
   }
   // 라인업 즉시 표시용 캐시: 로컬(재방문 즉시) + 직접 DB조회(신규 사용자도 빠르게, SDK 대기 X)
   function lineupCacheGet(mid) { try { var c = JSON.parse(localStorage.getItem("kt_lu_" + mid) || "null"); return (c && c.d) ? c.d : null; } catch (e) { return null; } }
-  function lineupCacheSet(mid, d) { try { if (hasLineupData(d)) localStorage.setItem("kt_lu_" + mid, JSON.stringify({ t: Date.now(), d: { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames } })); } catch (e) {} }
+  function lineupCacheSet(mid, d) { try { if (hasLineupData(d)) localStorage.setItem("kt_lu_" + mid, JSON.stringify({ t: Date.now(), d: { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames, boxscore: d.boxscore } })); } catch (e) {} }
   function directLineupFetch(mid) {
     if (!window.fetch) return Promise.resolve(null);
     return fetch(SB_URL + "/rest/v1/app_data?key=eq." + encodeURIComponent("lineup:" + mid) + "&select=data", { headers: { apikey: SB_PUB, Authorization: "Bearer " + SB_PUB } })
@@ -2207,6 +2207,51 @@
       (flag ? '<span class="lu-eflag">' + esc(flag) + "</span>" : "") +
       '<span class="lu-et">' + esc(txt) + "</span></div>";
   }
+  // 경기 통계(ESPN boxscore) — 종료 경기, 교체명단 아래. 점유율=분할바, 나머지=가운데 미러바.
+  var STAT_DEFS = [
+    { k: "possessionPct", l: "점유율", pct: 1, split: 1 },
+    { k: "totalShots", l: "슈팅" },
+    { k: "shotsOnTarget", l: "유효 슈팅" },
+    { k: "saves", l: "선방" },
+    { k: "wonCorners", l: "코너킥" },
+    { k: "foulsCommitted", l: "파울" },
+    { k: "offsides", l: "오프사이드" },
+    { k: "totalPasses", l: "패스" },
+    { k: "passPct", l: "패스 성공률", pct: 1, mul: 100 },
+    { k: "totalTackles", l: "태클" },
+    { k: "interceptions", l: "인터셉트" },
+    { k: "yellowCards", l: "경고" },
+  ];
+  function statOf(team, key) {
+    var st = (team.statistics || []).filter(function (x) { return x.name === key; })[0];
+    if (!st) return null;
+    var v = (st.value != null) ? st.value : parseFloat(st.displayValue);
+    return isNaN(v) ? null : v;
+  }
+  function matchStatsHtml(a, b, bs) {
+    var teams = (bs && bs.teams) || []; if (teams.length < 2) return "";
+    function tid(t) { return espnTeamId(t.team && t.team.displayName); }
+    var aT = tid(teams[0]) === a.id ? teams[0] : teams[1], bT = (aT === teams[0]) ? teams[1] : teams[0];
+    var rows = STAT_DEFS.map(function (d) {
+      var av = statOf(aT, d.k), bv = statOf(bT, d.k);
+      if (av == null && bv == null) return "";
+      av = av || 0; bv = bv || 0;
+      av = Math.round(av * (d.mul || 1)); bv = Math.round(bv * (d.mul || 1));
+      var at = d.pct ? av + "%" : av, bt = d.pct ? bv + "%" : bv;
+      var aw = av >= bv, bw = bv >= av, bar;
+      if (d.split) {
+        var tot = av + bv || 1;
+        bar = '<div class="ms-bar sp"><span class="l" style="width:' + (av / tot * 100) + '%"></span><span class="r" style="width:' + (bv / tot * 100) + '%"></span></div>';
+      } else {
+        var mx = Math.max(av, bv) || 1;
+        bar = '<div class="ms-bar mr"><span class="ms-h l"><i style="width:' + (av / mx * 100) + '%"></i></span><span class="ms-h r"><i style="width:' + (bv / mx * 100) + '%"></i></span></div>';
+      }
+      return '<div class="ms-row"><div class="ms-top"><span class="ms-v' + (aw ? " win" : "") + '">' + at + '</span><span class="ms-l">' + esc(d.l) + '</span><span class="ms-v' + (bw ? " win" : "") + '">' + bt + "</span></div>" + bar + "</div>";
+    }).join("");
+    if (!rows) return "";
+    return '<div class="mstat"><div class="mstat-h">📊 경기 통계</div>' +
+      '<div class="mstat-leg"><span class="ms-tm">' + esc(a.flag) + " " + esc(a.name) + '</span><span class="ms-tm">' + esc(b.name) + " " + esc(b.flag) + "</span></div>" + rows + "</div>";
+  }
   function renderLineup(slot, d, a, b, fx) {
     var rosters = d.rosters || [];
     var matchId = fx ? fx.id : null;
@@ -2238,6 +2283,7 @@
     } else {
       html += '<h3>📋 라인업</h3><div class="lu-wait">선발 라인업은 킥오프 약 1시간 전에 공개돼요.</div>';
     }
+    if (fx && matchEnded(fx) && a && b) html += matchStatsHtml(a, b, d.boxscore);  // 교체명단 아래 경기 통계(ESPN)
     if (events.length) html += '<div class="lu-events"><h3>⚽ 주요 이벤트</h3>' + events.map(luEvent).join("") + "</div>";
     slot.innerHTML = html;
     twem(slot);

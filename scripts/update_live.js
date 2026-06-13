@@ -39,7 +39,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
     var p=posts[fid];
     await rpc('set_match_result',{mid:fid,h:p.hs,a:p.as,ev:p.ev});
     try{ var s=JSON.parse(await get(SUM+p.eid));
-      if((s.rosters||[]).some(rs=>(rs.roster||[]).some(x=>x.starter))) await rpc('set_match_lineup',{mid:fid,d:{rosters:s.rosters,keyEvents:s.keyEvents,header:s.header,headToHeadGames:s.headToHeadGames}});
+      if((s.rosters||[]).some(rs=>(rs.roster||[]).some(x=>x.starter))) await rpc('set_match_lineup',{mid:fid,d:{rosters:s.rosters,keyEvents:s.keyEvents,header:s.header,headToHeadGames:s.headToHeadGames,boxscore:s.boxscore}});
     }catch(e){}
     nr++; await sleep(100);
   }
