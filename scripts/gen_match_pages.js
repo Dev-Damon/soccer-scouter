@@ -22,13 +22,15 @@ D.fixtures.forEach(function (f) {
   var kst = kstLabel(f), grp = f.group ? f.group + "조" : (f.stage || "");
   var venue = [f.venue, f.city].filter(Boolean).join(", ");
   var canonical = SITE + "/m/" + slug + ".html", appurl = SITE + "/#match/" + mid;
-  var title = hn + " vs " + an + " 라인업·실시간·평점 | 킥톡 2026 월드컵";
-  var desc = hn + " vs " + an + " (" + kst + " KST" + (grp ? " · " + grp : "") + "). 예상·확정 라인업, 실시간 점수, 선수 평점·MVP, 응원까지 킥톡에서 같이 봐요.";
+  var title = hn + " vs " + an + " 중계·라인업·선수평점 | 킥톡 2026 월드컵";
+  var desc = hn + " vs " + an + " " + kst + " KST 킥오프" + (grp ? " (" + grp + ")" : "") + ". 예상·확정 라인업, 실시간 중계 스코어, 선수 평점·MVP 투표, 응원·하이라이트까지 킥톡에서 한눈에.";
   var wp = ((f.preview || {}).watchPoints) || [];
   var ld = JSON.stringify({ "@context": "https://schema.org", "@type": "SportsEvent", name: hn + " vs " + an, sport: "축구", startDate: f.date, location: { "@type": "Place", name: venue || "2026 월드컵" }, url: canonical, competitor: [{ "@type": "SportsTeam", name: hn }, { "@type": "SportsTeam", name: an }] });
   var body =
     "<h1>" + e(hf) + " " + e(hn) + " <span class=vs>vs</span> " + e(an) + " " + e(af) + "</h1>" +
     "<p class=meta>" + e(kst) + " KST" + (grp ? " · " + e(grp) : "") + (venue ? " · " + e(venue) : "") + "</p>" +
+    "<h2>" + e(hn + " vs " + an) + " 경기 정보·중계</h2>" +
+    "<p>" + e(hn + " vs " + an) + " 경기는 " + e(kst) + " KST" + (grp ? " " + e(grp) : "") + "에 열립니다. 예상·확정 라인업과 실시간 중계 스코어, 경기 후 선수 평점·MVP 투표를 킥톡에서 무료로 확인하세요." + (venue ? " 경기장: " + e(venue) + "." : "") + "</p>" +
     (wp.length ? "<h2>관전 포인트</h2><ul class=wp>" + wp.slice(0, 3).map(function (w) { return "<li>" + e(w) + "</li>"; }).join("") + "</ul>" : "") +
     "<a class=cta href='" + appurl + "'>킥톡에서 실시간 점수·라인업·선수평점 보기 →</a>" +
     "<p class=sub>예상 라인업 · 실시간 스코어 · 선수 평점/MVP 투표 · 응원 메시지 · 포인트 베팅</p>";
@@ -39,7 +41,7 @@ D.fixtures.forEach(function (f) {
     "<meta name=viewport content='width=device-width,initial-scale=1'>" +
     "<title>" + e(title) + "</title><meta name=description content='" + e(desc) + "'>" +
     "<link rel=canonical href='" + canonical + "'><meta name=robots content='index,follow'>" +
-    "<meta property=og:type content=website><meta property=og:title content='" + e(hn + " vs " + an + " — 라인업·실시간·평점 | 킥톡") + "'>" +
+    "<meta property=og:type content=website><meta property=og:title content='" + e(hn + " vs " + an + " — 중계·라인업·평점 | 킥톡") + "'>" +
     "<meta property=og:description content='" + e(desc) + "'><meta property=og:url content='" + canonical + "'>" +
     "<meta property=og:image content='" + ogimg + "'><meta property=og:image:width content='1200'><meta property=og:image:height content='630'>" +
     "<meta name=twitter:card content='summary_large_image'><meta name=twitter:title content='" + e(hn + " vs " + an + " | 킥톡") + "'><meta name=twitter:description content='" + e(desc) + "'><meta name=twitter:image content='" + ogimg + "'>" +
