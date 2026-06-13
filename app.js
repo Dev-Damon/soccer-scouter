@@ -3378,5 +3378,10 @@
     setTimeout(function () { t.classList.add("show"); }, 10);
     setTimeout(function () { t.classList.remove("show"); setTimeout(function () { t.remove(); }, 300); }, 3500);
   }
+  // 배지(등급·칭호·훈장) 탭하면 설명 토스트(모바일). 데스크톱은 title 호버로도 표시.
+  document.addEventListener("click", function (e) {
+    var bi = e.target.closest("[data-binfo]");
+    if (bi) { e.stopPropagation(); e.preventDefault(); ktToast(bi.getAttribute("data-binfo")); }
+  }, true);
   // 출석은 MY 탭의 '출석 체크' 버튼으로 직접(자동지급 X)
 })();

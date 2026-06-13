@@ -213,7 +213,8 @@
       '<button class="cmt-rx down' + (rr.mine === -1 ? " on" : "") + '" data-id="' + esc(c.id) + '" data-v="-1">▼ ' + rr.dislike + "</button>";
     var dn = dispName(c.name, c.user_id);
     var tier = (c._pts != null) ? tierOf(c._pts) : null;
-    var tierBadge = tier ? '<span class="cmt-tier" style="color:' + tier.c + ';border-color:' + tier.c + '">' + tier.name + ' <b class="cmt-kp">' + fmtKP(c._pts) + "</b></span>" : "";
+    var tierInfo = "포인트 등급 — 보유 포인트(KP)로 결정돼요. 댓글·출석·베팅 적중으로 모아요. (대기중 베팅 포함)";
+    var tierBadge = tier ? '<span class="cmt-tier badge-info" data-binfo="' + tierInfo + '" title="' + tierInfo + '" style="color:' + tier.c + ';border-color:' + tier.c + '">' + tier.name + ' <b class="cmt-kp">' + fmtKP(c._pts) + "</b></span>" : "";
     var titB = c._title ? titleBadge(c._title) : "";  // 칭호(꾸미기)
     var medB = c._streak ? streakBadge(c._streak) : "";  // 연속적중 훈장
     return '<div class="cmt' + (isReply ? " reply" : "") + '" data-id="' + esc(c.id) + '" data-name="' + esc(dn) + '" data-root="' + esc(root) + '" data-uid="' + esc(c.user_id) + '">' +
@@ -710,11 +711,11 @@
   var _cosCat = null;
   function cosmetics() { if (_cosCat) return Promise.resolve(_cosCat); if (!client()) return Promise.resolve([]); return sb.from("cosmetics").select("*").order("sort").then(function (r) { _cosCat = r.data || []; return _cosCat; }).catch(function () { return []; }); }
   function titleInfo(id) { if (!id || !_cosCat) return null; for (var i = 0; i < _cosCat.length; i++) if (_cosCat[i].id === id) return _cosCat[i]; return null; }
-  function titleBadge(id) { var t = titleInfo(id); return t ? '<span class="title-badge" style="color:' + t.color + '">' + esc(t.label) + "</span> " : ""; }
+  function titleBadge(id) { var t = titleInfo(id); var info = "칭호 — 포인트 상점(MY)에서 구매하는 꾸미기예요."; return t ? '<span class="title-badge badge-info" data-binfo="' + info + '" title="' + info + '" style="color:' + t.color + '">' + esc(t.label) + "</span> " : ""; }
   function buyOrEquipTitle(id) { if (!sb || !user) return Promise.reject(new Error("login")); return sb.rpc("buy_or_equip_title", { tid: id }).then(function (r) { if (r.error) throw r.error; return r.data; }); }
   // 예측 연속적중 훈장 — 최고 연속(best_streak) 기준 메달
   function streakMedal(n) { n = n || 0; if (n >= 7) return { e: "🏆", n: n, c: "#e5484d" }; if (n >= 5) return { e: "🥇", n: n, c: "#e8a90c" }; if (n >= 3) return { e: "🥈", n: n, c: "#8fa0b8" }; if (n >= 2) return { e: "🥉", n: n, c: "#cd7f32" }; return null; }
-  function streakBadge(n) { var m = streakMedal(n); return m ? '<span class="streak-medal" style="border-color:' + m.c + '" title="최고 ' + m.n + '연속 적중">' + m.e + m.n + "</span> " : ""; }
+  function streakBadge(n) { var m = streakMedal(n); var info = "연속 적중 훈장 — 베팅 " + (m ? m.n : 0) + "연속 적중! (2회🥉 3회🥈 5회🥇 7회🏆)"; return m ? '<span class="streak-medal badge-info" data-binfo="' + info + '" style="border-color:' + m.c + '" title="' + info + '">' + m.e + m.n + "</span> " : ""; }
   function myCosmetics() { if (!sb || !user) return Promise.resolve(null); return sb.from("profiles").select("title,owned_titles").eq("user_id", user.id).maybeSingle().then(function (r) { return r.data || null; }).catch(function () { return null; }); }
   ready().then(cosmetics).catch(function () {});  // 카탈로그 미리 로드(댓글/채팅 칭호 표시용) — sb 준비 후에
   function pointsRanking(lim) { if (!sb) return Promise.resolve([]); return sb.rpc("points_ranking", { lim: lim || 50 }).then(function (r) { return r.data || []; }).catch(function () { return []; }); }

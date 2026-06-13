@@ -803,6 +803,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .mstat { margin-top: 16px; }
 .mstat-h { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
 .ms-live { font-size: 12px; font-weight: 800; color: #e5574d; margin-left: 6px; animation: msblink 1.4s ease-in-out infinite; }
+.badge-info { cursor: pointer; }
 @keyframes msblink { 50% { opacity: .35; } }
 .mstat-leg { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-weight: 800; font-size: 13.5px; color: var(--text); }
 .mstat-leg .ms-tm img.emoji { width: 20px; height: 20px; vertical-align: -3px; }
