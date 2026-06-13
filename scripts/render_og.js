@@ -6,19 +6,26 @@ const CHROME = '/Users/damon/Library/Caches/ms-playwright/chromium-1148/chrome-m
 const ROOT = path.dirname(__dirname);
 
 function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+// 이모지 → twemoji SVG URL(앱과 동일: jdecked/twemoji@15.1.0). 국기·공을 앱과 똑같이 렌더.
+function twUrl(emoji) {
+  var cps = []; for (const ch of String(emoji)) { var c = ch.codePointAt(0); if (c !== 0xfe0f) cps.push(c.toString(16)); }
+  return 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/' + cps.join('-') + '.svg';
+}
 
 // d = {home:{name,flag,rank}, away:{name,flag,rank}, hs, as, ended, dt, leftG:[{name,clk,og}], rightG:[...]}
 // 디자인 = 앱 경기카드(라이트). 자책골은 빨간 공 + "(자책골)".
 function cardHtml(d) {
   function gtxt(g) { return esc(g.name) + (g.og ? ' (자책골)' : '') + (g.clk ? ' ' + esc(g.clk) : ''); }
+  var ball = '<img class="ball" src="' + twUrl('⚽') + '">';  // 일반 골: 트웨모지 공(앱과 동일)
+  var ogball = '<span class="ball og"></span>';               // 자책골: 빨간 disc
   function scorerL(g) {  // 좌측팀: 우측정렬 — 텍스트 → 공(가운데쪽)
-    return '<div class="sc-row"><span class="sc-txt">' + gtxt(g) + '</span><span class="ball' + (g.og ? ' og' : '') + '">⚽</span></div>';
+    return '<div class="sc-row"><span class="sc-txt">' + gtxt(g) + '</span>' + (g.og ? ogball : ball) + '</div>';
   }
   function scorerR(g) {  // 우측팀: 좌측정렬 — 공(가운데쪽) → 텍스트
-    return '<div class="sc-row"><span class="ball' + (g.og ? ' og' : '') + '">⚽</span><span class="sc-txt">' + gtxt(g) + '</span></div>';
+    return '<div class="sc-row">' + (g.og ? ogball : ball) + '<span class="sc-txt">' + gtxt(g) + '</span></div>';
   }
   function team(t) {
-    return '<div class="team"><span class="flag">' + t.flag + '</span>' +
+    return '<div class="team"><img class="flag" src="' + twUrl(t.flag) + '">' +
       '<span class="tname">' + esc(t.name) + '</span>' +
       (t.rank ? '<span class="trank">FIFA ' + esc(t.rank) + '위</span>' : '') + '</div>';
   }
@@ -35,7 +42,7 @@ function cardHtml(d) {
     '.brand small{font-size:22px;font-weight:700;color:#62718c;margin-left:14px;}' +
     '.head{flex:1;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;}' +
     '.team{display:flex;flex-direction:column;align-items:center;gap:14px;}' +
-    '.flag{font-size:104px;line-height:1;filter:drop-shadow(0 3px 7px rgba(30,50,90,.18));}' +
+    '.flag{width:104px;height:104px;object-fit:contain;filter:drop-shadow(0 3px 7px rgba(30,50,90,.18));}' +
     '.tname{font-size:46px;font-weight:800;}' +
     '.trank{font-size:25px;color:#8a97ab;font-weight:600;}' +
     '.center{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:260px;}' +
@@ -49,7 +56,8 @@ function cardHtml(d) {
     '.gcol.l{align-items:flex-end;}' +   /* 좌측팀: 가운데쪽으로 정렬 */
     '.gcol.r{align-items:flex-start;}' +  /* 우측팀: 가운데쪽으로 정렬 */
     '.sc-row{display:flex;align-items:center;gap:11px;font-size:30px;font-weight:600;color:#2b3850;}' +
-    '.ball{font-size:26px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;}' +
+    '.ball{width:26px;height:26px;object-fit:contain;display:inline-block;vertical-align:middle;}' +
+    'img.ball{flex:none;}' +
     '.ball.og{font-size:0;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 36% 32%, #ff6a5e, #e2231a 70%);box-shadow:inset -3px -3px 6px rgba(0,0,0,.25);}' +
     '.foot{height:64px;display:flex;align-items:center;justify-content:center;background:#2f6fe0;color:#fff;' +
       'font-size:26px;font-weight:800;margin:0 -56px;}' +
