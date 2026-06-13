@@ -376,6 +376,20 @@
     var s = document.createElement("script"); s.async = true; s.src = "//t1.kakaocdn.net/kas/static/ba.min.js";
     el.appendChild(s);
   }
+  // Google AdSense — 수동 반응형 단위(자동광고 X = 앵커·전면광고 없이 UX 방해 최소). 승인 후 콘솔에서 광고단위ID 발급 → ADSENSE_SLOT에 입력하면 활성화.
+  var ADSENSE_CLIENT = "ca-pub-1649642792791162", ADSENSE_SLOT = "";
+  function insertAdSense(el) {
+    if (!el || !ADSENSE_SLOT || el.getAttribute("data-done")) return;
+    el.setAttribute("data-done", "1");
+    el.innerHTML = '<div class="ad-label">광고</div>';
+    var ins = document.createElement("ins"); ins.className = "adsbygoogle"; ins.style.display = "block";
+    ins.setAttribute("data-ad-client", ADSENSE_CLIENT);
+    ins.setAttribute("data-ad-slot", ADSENSE_SLOT);
+    ins.setAttribute("data-ad-format", "auto");
+    ins.setAttribute("data-full-width-responsive", "true");
+    el.appendChild(ins);
+    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+  }
   // 쿠팡 파트너스 iframe 배너(+ 대가성 문구)
   function insertCoupang(el, w, h) {
     if (!el) return;
@@ -1507,12 +1521,13 @@
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
           '<button class="mbtn" data-team="' + esc(b.id) + '">' + esc(b.flag) + " " + esc(b.name) + " 분석</button>" +
         "</div>" +
+        '<div class="adslot adsense-slot"></div>' +  // AdSense(승인 후 활성) — 페이지 맨 끝, 방해 최소
       "</div>";
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
     loadMomPodium(viewEl.querySelector(".mom-slot"), fx);
     loadCardWatch(viewEl.querySelector(".card-slot"), a, b);
-    insertAdFit(viewEl.querySelector(".adslot")); insertAdFit(viewEl.querySelector(".ad2"), "DAN-SWWhds5NegoTMohB", "320", "50"); coupangBottom();
+    insertAdFit(viewEl.querySelector(".adslot")); insertAdFit(viewEl.querySelector(".ad2"), "DAN-SWWhds5NegoTMohB", "320", "50"); insertAdSense(viewEl.querySelector(".adsense-slot")); coupangBottom();
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
