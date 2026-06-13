@@ -148,7 +148,9 @@
   }
 
   // ---- 라우팅(해시 기반) ----
-  function go(hash) { window.location.hash = hash; }
+  var _scrollMem = {}, _isPop = false;  // 화면별 스크롤 위치 기억 → 뒤로가기 시 그 자리 복원
+  try { history.scrollRestoration = "manual"; } catch (e) {}  // 브라우저 자동복원 끄고 우리가 제어
+  function go(hash) { _isPop = false; window.location.hash = hash; }  // 새 화면 진입(앞으로)=맨위
   function parseHash() {
     var h = (window.location.hash || "").replace(/^#/, "");
     if (!h) return { name: "home" };
@@ -2909,7 +2911,13 @@
   function stopMatchLive() { if (matchLiveTimer) { clearInterval(matchLiveTimer); matchLiveTimer = null; } window._matchLiveTick = null; }
   function route() {
     var r = parseHash();
-    window.scrollTo(0, 0);
+    // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위. (라인업 등 비동기 로딩 대비 지연 재적용)
+    var _restoreY = (_isPop && _scrollMem.hasOwnProperty(location.hash)) ? (_scrollMem[location.hash] || 0) : 0;
+    _isPop = false;
+    if (_restoreY) {
+      requestAnimationFrame(function () { window.scrollTo(0, _restoreY); });
+      setTimeout(function () { window.scrollTo(0, _restoreY); }, 280);
+    } else window.scrollTo(0, 0);
     stopMatchLive();
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
     if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
@@ -3198,7 +3206,7 @@
   // ===== 모달 뒤로가기 닫기 (응원하기·채팅) — 열 때 history state push, 뒤로가기면 페이지 대신 모달 닫기 =====
   var ktModalClose = null;
   function ktModalOpen(closeFn) { ktModalClose = closeFn; try { history.pushState({ ktModal: 1 }, ""); } catch (e) {} }
-  window.addEventListener("popstate", function () { if (ktModalClose) { var f = ktModalClose; ktModalClose = null; f(); } });
+  window.addEventListener("popstate", function () { if (ktModalClose) { var f = ktModalClose; ktModalClose = null; f(); return; } _isPop = true; });  // 모달 아닌 실제 뒤로가기 → 스크롤 복원
 
   // ===== 후원(응원하기) =====
   (function () {
@@ -3247,7 +3255,10 @@
     btn.addEventListener("click", open);
   })();
 
-  window.addEventListener("hashchange", route);
+  window.addEventListener("hashchange", function (e) {
+    try { var oh = (e.oldURL && e.oldURL.indexOf("#") >= 0) ? e.oldURL.slice(e.oldURL.indexOf("#")) : "#"; _scrollMem[oh] = window.scrollY; } catch (_) {}  // 떠나는 화면 스크롤 저장
+    route();
+  });
 
   // 동적 영역이 다시 그려질 때마다 이모지→이미지 변환(국기 포함)
   if (window.MutationObserver) {
