@@ -150,6 +150,18 @@
   // ---- 라우팅(해시 기반) ----
   var _scrollMem = {}, _isPop = false;  // 화면별 스크롤 위치 기억 → 뒤로가기 시 그 자리 복원
   try { history.scrollRestoration = "manual"; } catch (e) {}  // 브라우저 자동복원 끄고 우리가 제어
+  function hkey() { return location.hash || "#"; }  // 홈은 해시가 ""라 "#"로 정규화
+  // 비동기 콘텐츠(라인업·순위표·뉴스)가 늦게 로딩돼 페이지가 자라도, 목표 위치 도달할 때까지 ~1.2초 재시도
+  function restoreScroll(y) {
+    if (!y) { window.scrollTo(0, 0); return; }
+    var start = null;
+    function step(ts) {
+      if (start == null) start = ts;
+      window.scrollTo(0, y);
+      if (window.scrollY < y - 2 && ts - start < 1200) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
   function go(hash) { _isPop = false; window.location.hash = hash; }  // 새 화면 진입(앞으로)=맨위
   function parseHash() {
     var h = (window.location.hash || "").replace(/^#/, "");
@@ -2911,13 +2923,10 @@
   function stopMatchLive() { if (matchLiveTimer) { clearInterval(matchLiveTimer); matchLiveTimer = null; } window._matchLiveTick = null; }
   function route() {
     var r = parseHash();
-    // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위. (라인업 등 비동기 로딩 대비 지연 재적용)
-    var _restoreY = (_isPop && _scrollMem.hasOwnProperty(location.hash)) ? (_scrollMem[location.hash] || 0) : 0;
+    // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위.
+    var _restoreY = (_isPop && _scrollMem.hasOwnProperty(hkey())) ? (_scrollMem[hkey()] || 0) : 0;
     _isPop = false;
-    if (_restoreY) {
-      requestAnimationFrame(function () { window.scrollTo(0, _restoreY); });
-      setTimeout(function () { window.scrollTo(0, _restoreY); }, 280);
-    } else window.scrollTo(0, 0);
+    restoreScroll(_restoreY);
     stopMatchLive();
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
     if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
