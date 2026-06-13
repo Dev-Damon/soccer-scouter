@@ -13,6 +13,7 @@
   var _surnameDup = {};
   (function () { var byKey = {}; DATA.players.forEach(function (p) { var sur = String(p.name || "").split(" ").slice(-1)[0]; var k = p.team + "|" + sur; (byKey[k] = byKey[k] || []).push(p.id); }); Object.keys(byKey).forEach(function (k) { if (byKey[k].length > 1) byKey[k].forEach(function (id) { _surnameDup[id] = true; }); }); })();
   function pitchName(name, pid) { return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
+  function pitchNameHtml(name, pid) { return pitchName(name, pid).split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
   var fixturesById = {};
@@ -1159,7 +1160,7 @@
         var pdAttr = pl ? ' data-player="' + esc(d.playerId) + '"' : "";
         html += '<div class="pd ' + pc + (pl ? " tappable" : "") + '"' + pdAttr + ' style="left:' + x + "%;top:" + y + '%" title="' + esc(nm) + '">' +
           '<span class="pd-dot">' + esc(num) + "</span>" +
-          '<span class="pd-name">' + esc(pitchName(nm, pl && pl.id)) + "</span></div>";
+          '<span class="pd-name">' + pitchNameHtml(nm, pl && pl.id) + "</span></div>";
       });
       html += "</div></div>";
     }
@@ -1237,7 +1238,7 @@
           var pos = (c.p.position && c.p.position.abbreviation) || "", pc = bandCls[espnBand(pos)] || "mf";
           var num = c.p.jersey != null ? c.p.jersey : "";
           var x = Math.max(4, Math.min(96, c.x)), y = Math.max(6, Math.min(94, c.y));
-          return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + esc(pitchName(nm, mp && mp.id)) + "</span></div>";
+          return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + pitchNameHtml(nm, mp && mp.id) + "</span></div>";
         }).join("");
         var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = (live ? "현재 라인업" : "선발 포메이션") + ' <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
         var pEl = pb.querySelector(".pitch"); if (pEl) pEl.innerHTML = '<div class="pitch-line halfway"></div><div class="pitch-circle"></div>' + dots;
@@ -1394,6 +1395,9 @@
           var raw = (d.name || "").replace(/\(.*?\)/g, "").trim();
           var nm = pitchName(raw, d.pid);  // 성 중복 선수만 풀네임(예: 산티아고/라울 히메네스)
           if (!(d.pid && _surnameDup[d.pid]) && nm.length > 5) nm = nm.slice(0, 4) + "…";  // 성만일 때만 길면 축약
+          var _nmW = nm.split(" "), _multi = _nmW.length > 1;  // 풀네임은 단어마다 줄바꿈(SVG tspan)
+          var nmSvg = _multi ? _nmW.map(function (w, i) { return '<tspan x="' + px.toFixed(0) + '" dy="' + (i ? 14 : 0) + '">' + esc(w) + "</tspan>"; }).join("") : esc(nm);
+          var nameFont = _multi ? 14 : 18;
           var pd = d.rate ? ' data-rate="' + esc(d.pid) + '" data-rmatch="' + esc(d.rate) + '" style="cursor:pointer"' : (d.pid ? ' data-player="' + esc(d.pid) + '"' : "");
           var rbsvg = "";
           if (d.rating != null) {
@@ -1406,7 +1410,7 @@
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
           out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="18" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + esc(nm) + "</text>" + rbsvg + icoSvg + "</g>");
+            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="' + nameFont + '" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + nmSvg + "</text>" + rbsvg + icoSvg + "</g>");
         });
       });
       return out.join("");
