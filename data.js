@@ -39966,7 +39966,7 @@ window.DATA = {
     },
     {
       "id": "derson",
-      "name": "에데르송 (미드필더)",
+      "name": "에데르송",
       "nameEn": "Éderson",
       "team": "브라질",
       "club": "페네르바체",
@@ -65829,7 +65829,7 @@ window.DATA = {
     },
     {
       "id": "danilo-br",
-      "name": "다닐루 (보타포구)",
+      "name": "다닐루",
       "nameEn": "Danilo",
       "team": "브라질",
       "club": "보타포구",

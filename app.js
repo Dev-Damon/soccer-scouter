@@ -15,14 +15,14 @@
   // 성 대신 '알려진 이름/별칭'으로 표시할 선수(예: 비니시우스 주니오르 → 비니시우스). 승인된 항목만 추가.
   var PITCH_OVERRIDE = {
     "vinicius-junior": "비니시우스",
-    // 성 앞 관사(van/de) 포함 표시 — 관사 빼면 누군지 애매
-    "virgil-van-dijk": "반 다이크", "micky-van-de-ven": "반 데 벤", "jan-paul-van-hecke": "판 헤케",
-    "marten-de-roon": "더 론", "kevin-de-bruyne": "데 브라위너", "charles-de-ketelaere": "데 케텔라레",
-    "maxim-de-cuyper": "더 카위퍼르", "koni-de-winter": "더 빈터르"
+    // 성 앞 관사(van/de) 포함 — 오버라이드명은 렌더 시 한 줄(줄바꿈/축약 안 함)
+    "virgil-van-dijk": "반 다이크", "micky-van-de-ven": "반 데 벤", "jan-paul-van-hecke": "판 헤케",
+    "marten-de-roon": "더 론", "kevin-de-bruyne": "데 브라위너", "charles-de-ketelaere": "데 케텔라레",
+    "maxim-de-cuyper": "더 카위퍼르", "koni-de-winter": "더 빈터르"
   };
   function pitchSurname(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return String(name || "").split(" ").slice(-1)[0]; }
   function pitchName(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
-  function pitchNameHtml(name, pid) { return pitchName(name, pid).split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈
+  function pitchNameHtml(name, pid) { var nm = pitchName(name, pid); if (pid && PITCH_OVERRIDE[pid]) return esc(nm); return nm.split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈(오버라이드명은 한 줄)
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
   var fixturesById = {};
@@ -1462,8 +1462,9 @@
           var num = (d.number != null && d.number !== "") ? d.number : "";
           var raw = (d.name || "").replace(/\(.*?\)/g, "").trim();
           var nm = pitchName(raw, d.pid);  // 성 중복 선수만 풀네임(예: 산티아고/라울 히메네스)
-          if (!(d.pid && _surnameDup[d.pid]) && nm.length > 5) nm = nm.slice(0, 4) + "…";  // 성만일 때만 길면 축약
-          var _nmW = nm.split(" "), _multi = _nmW.length > 1;  // 풀네임은 단어마다 줄바꿈(SVG tspan)
+          var _ov = d.pid && PITCH_OVERRIDE[d.pid];  // 오버라이드명(반 다이크 등)은 축약·줄바꿈 안 함
+          if (!_ov && !(d.pid && _surnameDup[d.pid]) && nm.length > 5) nm = nm.slice(0, 4) + "…";  // 성만일 때만 길면 축약
+          var _nmW = nm.split(" "), _multi = _nmW.length > 1 && !_ov;  // 풀네임은 단어마다 줄바꿈(SVG tspan), 오버라이드명은 한 줄
           var nmSvg = _multi ? _nmW.map(function (w, i) { return '<tspan x="' + px.toFixed(0) + '" dy="' + (i ? 14 : 0) + '">' + esc(w) + "</tspan>"; }).join("") : esc(nm);
           var nameFont = _multi ? 14 : 18;
           var pd = d.rate ? ' data-rate="' + esc(d.pid) + '" data-rmatch="' + esc(d.rate) + '" style="cursor:pointer"' : (d.pid ? ' data-player="' + esc(d.pid) + '"' : "");
