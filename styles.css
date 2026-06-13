@@ -661,8 +661,9 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .hero-fin { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.85); margin-top: 3px; }
 .hero.hero-live { box-shadow: 0 0 0 2px rgba(229,24,31,.75), 0 10px 34px rgba(229,24,31,.4); }
 .hero-meta { position: relative; text-align: center; color: #dbe7ff; font-size: 11.5px; margin-top: 2px; }
-.hero-sg { font-size: 11px; font-weight: 700; color: #eaf2ff; line-height: 1.6; margin-top: 3px; text-align: center; }
-.hero.live-hero .hero-sg { color: var(--text); }
+.hero-gsplit { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.hg-l, .hg-r { font-size: 11px; font-weight: 700; color: #eaf2ff; line-height: 1.6; text-align: center; }
+.hero.live-hero .hg-l, .hero.live-hero .hg-r { color: var(--text); }
 .hero-cta { position: relative; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 800; color: #fff; }
 
 /* 하단 탭바 */

@@ -567,11 +567,12 @@
       '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>" : "") + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
-          '<span class="hero-team">' + esc(lName) + "</span>" + (lvG ? '<div class="hero-sg">' + lvG + "</div>" : "") + "</div>" +
+          '<span class="hero-team">' + esc(lName) + "</span></div>" +
         mid +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(rId)) + "</span>" +
-          '<span class="hero-team">' + esc(rName) + "</span>" + (rvG ? '<div class="hero-sg">' + rvG + "</div>" : "") + "</div>" +
+          '<span class="hero-team">' + esc(rName) + "</span></div>" +
       "</div>" +
+      ((lvG || rvG) ? '<div class="hero-gsplit"><div class="hg-l">' + lvG + '</div><div class="hg-r">' + rvG + "</div></div>" : "") +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
       '<div class="hero-cta">' + (live ? "경기 보기 →" : ended ? "경기 결과 보기 →" : "경기 예상 보기 →") + "</div>" +
       "</div>";
