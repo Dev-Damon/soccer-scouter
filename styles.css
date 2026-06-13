@@ -811,7 +811,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .ms-v.win { color: var(--text); font-weight: 800; }
 .ms-l { text-align: center; font-size: 12px; font-weight: 600; color: var(--muted); }
 .ms-bar { height: 7px; }
-.ms-bar.sp { display: flex; border-radius: 4px; overflow: hidden; }
+.ms-bar.sp { display: flex; height: 11px; border-radius: 6px; overflow: hidden; }   /* 점유율 바만 굵게 */
 .ms-bar.sp .l { background: var(--accent); } .ms-bar.sp .r { background: #e5574d; }
 .ms-bar.mr { display: flex; gap: 8px; }
 .ms-h { flex: 1; height: 100%; background: var(--line); border-radius: 4px; position: relative; overflow: hidden; }
