@@ -631,6 +631,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .dchip-mo { font-size: 10px; }
 .dchip.on { background: var(--text); border-color: var(--text); }
 .dchip.on .dchip-dow, .dchip.on .dchip-day, .dchip.on .dchip-mo { color: var(--bg); }
+.dchip.today:not(.on) { background: rgba(79, 140, 255, .10); border-color: rgba(79, 140, 255, .35); }   /* 오늘 날짜 아주 살짝 음영(선택 안 됐을 때) */
 /* 대한민국 경기일: 태극기 + 빨강 강조 */
 .dchip.kor { border-color: var(--muted); }
 .dchip.kor.on { background: var(--text); border-color: var(--text); }

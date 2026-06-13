@@ -453,11 +453,12 @@
     var prevScroll = prevStrip ? prevStrip.scrollLeft : null;
 
     // 날짜 스트립
+    var _todayKST = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
     var strip = '<div class="datestrip-wrap"><button class="ds-arrow l" aria-label="이전 날짜">‹</button><div class="datestrip">';
     dates.forEach(function (d) {
       var f = fmtDate(d);
       var korDay = (DATA.fixtures || []).some(function (fx) { return fxDate(fx) === d && (fx.homeId === "south-korea" || fx.awayId === "south-korea"); });
-      strip += '<button class="dchip' + (d === selectedDate ? " on" : "") + (korDay ? " kor" : "") + '" data-date="' + esc(d) + '">' +
+      strip += '<button class="dchip' + (d === selectedDate ? " on" : "") + (korDay ? " kor" : "") + (d === _todayKST ? " today" : "") + '" data-date="' + esc(d) + '">' +
         (korDay ? '<span class="dchip-kor">🇰🇷</span>' : "") +
         '<span class="dchip-dow">' + esc(f.dow) + "</span>" +
         '<span class="dchip-day">' + f.day + "</span>" +
