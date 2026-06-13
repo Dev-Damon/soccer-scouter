@@ -1500,27 +1500,25 @@
       .replace(/\s*\d(?:-\d){2,3}\s*(?:을 바탕으로|를 바탕으로|에서는|에서|기반으로|기반|을|를|으로|로)?/g, " ")
       .replace(/\s{2,}/g, " ").replace(/\s+([,.])/g, "$1").trim();
   }
-  function loadCardWatch(slot, a, b) {
+  function loadCardWatch(slot, a, b, fx) {
     if (!slot || !window.KickComments || !KickComments.matchStats) return;
+    if (fx && matchEnded(fx)) { slot.style.display = "none"; return; }  // 종료 경기엔 출전정지·경고 안 보임
     var setA = {}, setB = {};
     teamIds(a).forEach(function (id) { setA[id] = 1; }); teamIds(b).forEach(function (id) { setB[id] = 1; });
     (KickComments.ready ? KickComments.ready() : Promise.resolve()).then(function () { return KickComments.matchStats(); }).then(function (data) {
       if (parseHash().name !== "match") return;
       var players = (data && data.players) || [];
-      function cards(setX) {
-        return players.filter(function (p) { return p.pid && setX[p.pid] && ((p.yellow || 0) > 0 || (p.red || 0) > 0); })
+      function cards(setX) {  // 출전정지(레드 or 옐2장)만 — 경고 1장(at-risk)은 제외
+        return players.filter(function (p) { return p.pid && setX[p.pid] && ((p.yellow || 0) >= 2 || (p.red || 0) >= 1); })
           .map(function (p) {
-            var out = (p.red || 0) >= 1 || (p.yellow || 0) >= 2, lb, cls;
-            if ((p.red || 0) >= 1) { lb = "🟥 출전정지 예상"; cls = "cw-out"; }
-            else if ((p.yellow || 0) >= 2) { lb = "🟨🟨 경고누적 출전정지 예상"; cls = "cw-out"; }
-            else { lb = "🟨 경고 1장 (다음 1장 시 정지)"; cls = "cw-warn"; }
-            return { name: p.name, lb: lb, cls: cls, out: out };
-          }).sort(function (x, y) { return (y.out ? 1 : 0) - (x.out ? 1 : 0); });
+            var lb = (p.red || 0) >= 1 ? "🟥 출전정지" : "🟨🟨 경고누적 출전정지";
+            return { name: p.name, lb: lb, cls: "cw-out" };
+          });
       }
       var ca = cards(setA), cb = cards(setB);
       if (!ca.length && !cb.length) { slot.style.display = "none"; return; }
       function blk(team, list) { return list.length ? '<div class="cw-team">' + esc(team.flag) + " " + esc(team.name) + "</div>" + list.map(function (p) { return '<div class="cw-row ' + p.cls + '"><span class="cw-nm">' + esc(p.name) + '</span><span class="cw-lb">' + p.lb + "</span></div>"; }).join("") : ""; }
-      slot.innerHTML = "<h3>⚠️ 출전정지·경고 누적 <span class=\"muted-note\">카드 기준 · 다음 경기 예상</span></h3>" + blk(a, ca) + blk(b, cb);
+      slot.innerHTML = "<h3>⚠️ 출전정지 <span class=\"muted-note\">카드 누적 · 다음 경기</span></h3>" + blk(a, ca) + blk(b, cb);
       slot.style.display = ""; twem(slot);
     }).catch(function () { slot.style.display = "none"; });
   }
@@ -1605,7 +1603,7 @@
     loadH2H(viewEl.querySelector(".h2h-slot"), fx, a, b);
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
     loadMomPodium(viewEl.querySelector(".mom-slot"), fx);
-    loadCardWatch(viewEl.querySelector(".card-slot"), a, b);
+    loadCardWatch(viewEl.querySelector(".card-slot"), a, b, fx);
     insertAdFit(viewEl.querySelector(".adslot")); insertAdFit(viewEl.querySelector(".ad2"), "DAN-SWWhds5NegoTMohB", "320", "50"); insertAdSense(viewEl.querySelector(".adsense-slot")); coupangBottom();
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
@@ -2099,6 +2097,16 @@
         "알리 아흐메드": 6.6, "제이콥 섀펄버그": 6.7, "프로미스 데이비드": 6.5, "사일 라린": 7.6,
         "니콜라 바실리": 6.3, "아마르 메미치": 6.3, "이반 바시치": 7.4, "벤야민 타히로비치": 6.5, "에스미르 바이락타레비치": 6.0, "세아드 콜라시나츠": 7.9, "타리크 무하레모비치": 7.8, "니콜라 카티치": 8.1, "아마르 데디치": 6.9, "요보 루키치": 7.4, "에르메딘 데미로비치": 6.8,
         "아르민 기고비치": 6.8, "사메드 바즈다르": 6.2, "이반 슌이치": 6.4, "케림 알라이베고비치": 6.5, "제니스 부르니치": 6.7
+      }
+    },
+    // USA-PAR 평점(사진, SofaScore) — 미국 7.13 / 파라과이 6.32. 선발+교체.
+    "match-19": {
+      team: { "united-states": 7.13, "paraguay": 6.32 },
+      byName: {
+        "매트 프리즈": 6.0, "알렉스 프리먼": 7.2, "크리스 리처즈": 6.9, "팀 림": 7.6, "안토니 로빈슨": 6.8, "타일러 애덤스": 7.0, "말릭 틸먼": 7.5, "세르히뇨 데스트": 6.7, "웨스턴 매케니": 7.3, "크리스천 풀리식": 7.4, "폴라린 발로건": 9.1,
+        "세바스티안 베르할터": 6.8, "티모시 웨아": 6.5, "리카르도 페피": 6.4, "조반니 레이나": 7.8,
+        "오를란도 힐": 6.1, "후안 호세 카세레스": 6.3, "오마르 알데레테": 5.9, "구스타보 고메스": 5.9, "후니오르 알론소": 5.3, "디에고 고메스": 6.2, "안드레스 쿠바스": 6.9, "다미안 보바디야": 5.4, "미겔 알미론": 6.5, "훌리오 엔시소": 7.3, "안토니오 사나브리아": 6.4,
+        "마우리시우": 7.4, "알렉스 아르세": 6.1, "구스타보 벨라스케스": 6.3, "라몬 소사": 6.6, "카쿠": 6.5
       }
     }
   };
