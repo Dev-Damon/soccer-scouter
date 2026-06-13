@@ -557,14 +557,14 @@
     var mid = (live && asLiveCard)
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + "</span></div>"  // LIVE·시간은 태그줄로 올림
       : live
-      ? '<div class="hero-mid"><span class="hero-livebadge"><span class="hlv-dot"></span>LIVE</span><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-clock">' + esc(lv.clock || "") + "</span></div>"
+      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 중 ' + esc(lv.clock || "") + "</span></div>"  // 빅매치는 라이브 강조 X(전용 라이브카드가 위에 있음)
       : ended
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료</span></div>'
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
     var lvG = teamGoals(fx, lv, lName), rvG = teamGoals(fx, lv, rName);  // 좌/우 팀별 득점자(자기 쪽에 표시)
-    return '<div class="hero' + (live ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
+    return '<div class="hero' + (live && asLiveCard ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
-      '<div class="hero-tag"><span class="dot"></span>' + (live ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>" : "") + "</div>" +
+      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>LIVE ' + esc(lv.clock || "") + "</span>" : "") + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
           '<span class="hero-team">' + esc(lName) + "</span>" + (lvG ? '<div class="hero-sg">' + lvG + "</div>" : "") + "</div>" +
