@@ -409,6 +409,7 @@
   function isAdmin() { return !!(user && user.id === ADMIN_UID); }
   function adminDashboard() { if (!isAdmin()) return Promise.resolve(null); return sb.rpc("admin_dashboard").then(function (r) { return r.data || null; }).catch(function () { return null; }); }
   function adminUsers() { if (!isAdmin()) return Promise.resolve([]); return sb.rpc("admin_users").then(function (r) { return r.data || []; }).catch(function () { return []; }); }
+  function adminUserDetail(uid) { if (!isAdmin() || !uid) return Promise.resolve(null); return sb.rpc("admin_user_detail", { uid: uid }).then(function (r) { return r.data || null; }).catch(function () { return null; }); }
   // 경기 평점·MVP (match_id = fixture id)
   function matchRatings(matchId) {
     return sb.from("match_player_ratings").select("player_id,score,user_id").eq("match_id", matchId).then(function (r) {
@@ -763,7 +764,7 @@
     signOut: function () { return sb ? sb.auth.signOut() : Promise.resolve(); },
     setNickname: setNickname, myComments: myComments, taggedComments: taggedComments,
     providers: function () { return loadProviders(); },
-    isAdmin: isAdmin, adminDashboard: adminDashboard, adminUsers: adminUsers, listReports: listReports, listAllComments: listAllComments,
+    isAdmin: isAdmin, adminDashboard: adminDashboard, adminUsers: adminUsers, adminUserDetail: adminUserDetail, listReports: listReports, listAllComments: listAllComments,
     matchRatings: matchRatings, rateMatchPlayer: rateMatchPlayer, unrateMatchPlayer: unrateMatchPlayer, matchMvp: matchMvp, voteMvp: voteMvp, unvoteMvp: unvoteMvp, matchResults: matchResults, pushResult: pushResult, pushLiveState: pushLiveState,
     adminDeleteComment: adminDeleteComment, ignoreReport: ignoreReport,
     banUser: banUser, unbanUser: unbanUser, unhideComment: unhideComment,
