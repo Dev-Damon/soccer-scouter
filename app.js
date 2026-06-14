@@ -2356,6 +2356,10 @@
       if (d.split) {
         var tot = av + bv || 1;
         bar = '<div class="ms-bar sp"><span class="l" style="width:' + (av / tot * 100) + '%"></span><span class="r" style="width:' + (bv / tot * 100) + '%"></span></div>';
+      } else if (d.pct) {
+        // 퍼센트 지표(패스 성공률 등)는 상대비교가 아니라 각자 실제 %로 채움(90%면 막대 90%)
+        var pa = Math.max(0, Math.min(100, av)), pb = Math.max(0, Math.min(100, bv));
+        bar = '<div class="ms-bar mr"><span class="ms-h l"><i style="width:' + pa + '%"></i></span><span class="ms-h r"><i style="width:' + pb + '%"></i></span></div>';
       } else {
         var sm = av + bv || 1;  // 소파스코어식: 각 막대 = 값/합(비율). 한쪽이 0 아니면 양쪽 다 안 참.
         bar = '<div class="ms-bar mr"><span class="ms-h l"><i style="width:' + (av / sm * 100) + '%"></i></span><span class="ms-h r"><i style="width:' + (bv / sm * 100) + '%"></i></span></div>';

@@ -40852,43 +40852,43 @@ window.DATA = {
       "ovrBase": 45
     },
     {
-      "id": "leverton-pierre",
-      "name": "르베르통 피에르",
-      "nameEn": "Leverton Pierre",
+      "id": "garven-metusala",
+      "name": "가르벵 메튀살라",
+      "nameEn": "Garven Metusala",
       "team": "아이티",
-      "club": "비젤라",
-      "league": "프리메이라 리가 (포르투갈)",
-      "position": "MF",
-      "age": 28,
+      "club": "콜로라도 스프링스 스위치백스",
+      "league": "USL 챔피언십 (미국)",
+      "position": "DF",
+      "age": 26,
       "caps": null,
       "intlGoals": null,
       "grade": "로테이션",
-      "oneLiner": "포르투갈 무대 경험을 갖춘 중원 자원, 박스-투-박스형 미드필더",
+      "oneLiner": "미국 2부에서 뛰는 수비수, 대표팀 수비 뎁스를 채우는 백업 자원",
       "strengths": [
-        "활동량",
-        "전진 패스",
+        "대인 수비",
+        "제공권",
         "체력"
       ],
       "weaknesses": [
         "2부 리그 소속",
-        "결정적 장면 영향력 제한"
+        "빌드업 정교함"
       ],
       "honours": [],
-      "notableTransfer": "포르투갈 비젤라에서 활약하며 대표팀 중원 한 축 담당",
+      "notableTransfer": "미국 USL 콜로라도 스프링스 스위치백스 소속으로 대표팀 발탁",
       "ovr": 59,
       "scout": {
         "skill": 55,
         "value": 55,
-        "fame": 39
+        "fame": 38
       },
       "number": 14,
       "power": {
-        "공격력": 54,
-        "수비력": 59,
-        "스피드": 51,
-        "테크닉": 64,
-        "피지컬": 60,
-        "골결정력": 46
+        "공격력": 42,
+        "수비력": 62,
+        "스피드": 56,
+        "테크닉": 56,
+        "피지컬": 64,
+        "골결정력": 38
       },
       "ovrBase": 55
     },
