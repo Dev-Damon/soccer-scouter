@@ -3427,13 +3427,15 @@
             if (nw.state === "installed" && navigator.serviceWorker.controller) reloadSafe();
           });
         });
-        // ★열려있는 세션도 주기적으로 새 버전 확인 → 새로고침 안 하는 사람도 자동 적용(90초마다 + 탭 복귀 시)
-        setInterval(function () { try { reg.update(); } catch (e) {} }, 90000);
+        // ★열려있는 세션도 새 배포 자동 반영 — 부하 최소화: '탭 복귀 시'가 주(主), 화면 켜둔 채 안 떠나는 경우만 백업으로 15분 간격(숨김 상태선 체크 안 함)
+        var lastUpd = 0;
+        function checkUpd() { var now = +new Date(); if (now - lastUpd < 60000) return; lastUpd = now; try { reg.update(); } catch (e) {} }
         document.addEventListener("visibilitychange", function () {
           if (document.visibilityState !== "visible") return;
           if (pendingReload) { location.reload(); return; }
-          try { reg.update(); } catch (e) {}
+          checkUpd();
         });
+        setInterval(function () { if (document.visibilityState === "visible") checkUpd(); }, 900000);  // 15분 백업(보이는 동안만)
       }).catch(function () {});
     });
   }
