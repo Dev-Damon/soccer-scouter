@@ -212,9 +212,9 @@
     var fit = viewEl.querySelector(".brk2-fit"), st = fit && fit.querySelector(".brk-stage");
     if (!fit || !st) return;
     var SW = +st.getAttribute("data-sw"), H = +st.getAttribute("data-h");
-    var sc = Math.min(1.6, fit.clientWidth / SW);
+    var sc = Math.min(3, fit.clientWidth / SW);  // 너비에 맞춰 꽉 채움(넓으면 늘어남). 과도확대만 방지(×3 상한)
     st.style.transform = "scale(" + sc + ")"; st.style.transformOrigin = "top left";
-    st.style.marginLeft = Math.max(0, (fit.clientWidth - SW * sc) / 2) + "px";  // 상한에 걸려 남는 폭은 가운데 정렬
+    st.style.marginLeft = Math.max(0, (fit.clientWidth - SW * sc) / 2) + "px";  // ×3 넘는 초광폭에서만 가운데 정렬
     fit.style.height = Math.ceil(H * sc) + "px";
   }
   window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) fitBracket(); });

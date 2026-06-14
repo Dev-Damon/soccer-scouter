@@ -30630,7 +30630,7 @@ window.DATA = {
         "2026 예선 아르메니아전 해트트릭"
       ],
       "notableTransfer": "2020년 1월 스포르팅에서 맨유로 약 €55m(추가 옵션 포함 최대 €80m)에 이적.",
-      "ovr": 87,
+      "ovr": 96,
       "scout": {
         "skill": 86,
         "value": 82,
@@ -30645,7 +30645,7 @@ window.DATA = {
         "피지컬": 74,
         "골결정력": 83
       },
-      "ovrBase": 86
+      "ovrBase": 96
     },
     {
       "id": "vitinha",
