@@ -16445,6 +16445,7 @@ window.DATA = {
       "id": "alisson",
       "name": "알리송",
       "nameEn": "Alisson",
+      "aliasEn": "Alisson Becker",
       "team": "브라질",
       "club": "리버풀",
       "league": "프리미어리그 (잉글랜드)",
