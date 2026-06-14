@@ -1327,7 +1327,7 @@
         if (!d || parseHash().name !== "team") return;
         var rs = (d.rosters || []).filter(function (r) { return espnTeamId(r.team && r.team.displayName) === t.id; })[0];
         var live = LIVE[fx.id] && LIVE[fx.id].state === "in";
-        var coords = rs && (live ? currentLineupCoords(rs, d.keyEvents) : espnLineupCoords(rs)); if (!coords) return;
+        var coords = rs && espnLineupCoords(rs); if (!coords) return;  // 항상 선발(교체된 득점자도 보이게)
         var pb = viewEl.querySelector(".team-pitch-block"); if (!pb) return;
         var bandCls = { "0": "gk", "1": "df", "1.5": "df", "2": "mf", "3": "mf", "4": "fw" };
         var dots = coords.map(function (c) {
@@ -1337,7 +1337,7 @@
           var x = Math.max(4, Math.min(96, c.x)), y = Math.max(6, Math.min(94, c.y));
           return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + pitchNameHtml(nm, mp && mp.id) + "</span></div>";
         }).join("");
-        var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = (live ? "현재 라인업" : "선발 포메이션") + ' <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
+        var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = (live ? "선발 라인업" : "선발 포메이션") + ' <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
         var pEl = pb.querySelector(".pitch"); if (pEl) pEl.innerHTML = '<div class="pitch-line halfway"></div><div class="pitch-circle"></div>' + dots;
         twem(pb);
       }).catch(function () {});
@@ -1393,7 +1393,7 @@
       '<div class="news-list">' + kn.map(newsItemHtml).join("") + "</div></div>";
   }
   // 경기 예상 라인업 피치(두 팀 마주보기) — 자체 t.lineup 기반(경기 전에도 항상)
-  function normName(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z ]/g, "").trim(); }
+  function normName(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ı/g, "i").replace(/ø/g, "o").replace(/ł/g, "l").replace(/đ/g, "d").replace(/ð/g, "d").replace(/æ/g, "ae").replace(/œ/g, "oe").replace(/ß/g, "ss").replace(/þ/g, "th").replace(/[^a-z ]/g, "").trim(); }  // 터키 ı 등 NFD로 안 풀리는 글자 매핑(매칭 실패 방지)
   var _nameMap = null;
   function playerByName(nm) {
     if (!_nameMap) { _nameMap = {}; (DATA.players || []).forEach(function (p) { if (!p.nameEn) return; [p.nameEn, p.aliasEn].forEach(function (en) { if (!en) return; var n = normName(en); _nameMap[n] = p; var sur = "_s" + n.split(" ").pop(); if (!_nameMap[sur]) _nameMap[sur] = p; }); }); }  // 별칭(aliasEn)도 매칭 — 예: 카쿠=Alejandro Romero Gamarra
@@ -1535,15 +1535,14 @@
     var rosters = d.rosters || [];
     function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
     var ra = rosterFor(a), rb = rosterFor(b);
-    // 라이브 중엔 '현재 뛰는 선수'(교체 반영), 종료 후엔 '선발 라인업'으로 복귀(교체는 명단에 표기)
+    // 잔디는 항상 '선발 라인업'(교체는 명단+화살표로 표기) — 득점 후 교체된 선수도 잔디에 남아 골이 보이게(라이브/종료 동일)
     var st = (((d.header || {}).competitions || [])[0] || {}).status;
     var ended = !!(st && st.type && st.type.state === "post");
-    function coordFn(rs) { return ended ? espnLineupCoords(rs) : currentLineupCoords(rs, d.keyEvents); }
-    var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
+    var ca = ra && espnLineupCoords(ra), cb = rb && espnLineupCoords(rb);
     if (!ca || !cb) return null;
     var em = matchEventMap(d.keyEvents);
     function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
-    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
+    return '<h3>📋 선발 라인업 <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 교체는 명단 참고") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
   // 예상전략 텍스트에서 포메이션(4-3-3 등) 언급 제거 — 예상≠확정일 수 있어서

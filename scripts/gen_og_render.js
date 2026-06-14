@@ -8,7 +8,7 @@ const ROOT = path.dirname(__dirname);
 const SBP = 'sb_publishable_AsDWJPjKDg1S5wqezB9Vtw_uxKFmE26';  // GET 읽기 가능(공개안전)
 global.window = {}; require(path.join(ROOT, 'data.js')); const D = global.window.DATA;
 const teamsById = {}; D.teams.forEach(t => teamsById[t.id] = t);
-function normName(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z ]/g, '').trim(); }
+function normName(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i').replace(/ø/g, 'o').replace(/ł/g, 'l').replace(/đ/g, 'd').replace(/ð/g, 'd').replace(/æ/g, 'ae').replace(/œ/g, 'oe').replace(/ß/g, 'ss').replace(/þ/g, 'th').replace(/[^a-z ]/g, '').trim(); }
 const nameMap = {}; (D.players || []).forEach(p => { if (!p.nameEn) return; [p.nameEn, p.aliasEn].forEach(en => { if (!en) return; const n = normName(en); nameMap[n] = p; const s = '_s' + n.split(' ').pop(); if (!nameMap[s]) nameMap[s] = p; }); });
 function pbn(nm) { const n = normName(nm); return nameMap[n] || nameMap['_s' + n.split(' ').pop()] || null; }
 // 잔디/득점자 표시명 오버라이드(app.js PITCH_OVERRIDE와 동일하게 유지)
