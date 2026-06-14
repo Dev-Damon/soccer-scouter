@@ -2725,20 +2725,25 @@
   function betItem(bet) {
     var fx = fixturesById[bet.match_id];
     var matchLabel = fx ? ((fx.homeName || "") + " vs " + (fx.awayName || "")) : bet.match_id;
-    var pick = bet.choice === "draw" ? "무승부" : bet.choice === "home" ? (fx ? fx.homeName : "홈") : (fx ? fx.awayName : "원정");
+    var home = (fx && teamsById[fx.homeId]) || {}, away = (fx && teamsById[fx.awayId]) || {};
+    function teamDisp(t, nm) { return (t.flag ? esc(t.flag) + " " : "") + esc(nm || ""); }  // 국기+나라이름
+    // 내 선택 — 국기 포함(무승부는 국기 제외)
+    var pickH = bet.choice === "draw" ? "무승부"
+      : bet.choice === "home" ? teamDisp(home, fx ? fx.homeName : "홈")
+      : teamDisp(away, fx ? fx.awayName : "원정");
     var stH;
     if (bet.status === "won") stH = '<span class="bh-st bh-won">✅ 적중 +' + (bet.payout || 0).toLocaleString() + "</span>";
     else if (bet.status === "lost") stH = '<span class="bh-st bh-lost">❌ 실패 −' + (bet.stake || 0).toLocaleString() + "</span>";
     else stH = '<span class="bh-st bh-pending">⏳ 대기중</span>';
-    // 최종 결과(스코어+승팀) — 내가 고른 것과 나란히 보이게
+    // 최종 결과 — 승팀(국기+이름) 먼저, 스코어는 괄호. 무승부는 국기 없이.
     var lv = LIVE[bet.match_id], resH = "";
     if (lv && lv.hs != null && lv.as != null && fx) {
-      var win = lv.hs > lv.as ? (fx.homeName || "홈") : lv.hs < lv.as ? (fx.awayName || "원정") : "무승부";
-      resH = ' · 결과 <b class="bh-score">' + lv.hs + ":" + lv.as + "</b> (" + esc(win) + ")";
+      var winDisp = lv.hs > lv.as ? teamDisp(home, fx.homeName) : lv.hs < lv.as ? teamDisp(away, fx.awayName) : "무승부";
+      resH = ' · 결과 ' + winDisp + ' <b class="bh-score">(' + lv.hs + ":" + lv.as + ")</b>";
     }
     return '<div class="bh-row' + (fx ? " bh-clk" : "") + '"' + (fx ? ' data-go="match/' + esc(bet.match_id) + '"' : "") + '>' +
       '<div class="bh-top"><span class="bh-match">⚽ ' + esc(matchLabel) + "</span>" + stH + "</div>" +
-      '<div class="bh-sub">🎯 내 선택 <b class="bh-pick">' + esc(pick) + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + resH + (fx ? ' <span class="bh-go">경기 상세 →</span>' : "") + "</div></div>";
+      '<div class="bh-sub">🎯 내 선택 <b class="bh-pick">' + pickH + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + resH + (fx ? ' <span class="bh-go">경기 상세 →</span>' : "") + "</div></div>";
   }
   function paintMy() {
     if (!myCache) return;
