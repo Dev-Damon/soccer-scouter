@@ -297,8 +297,9 @@
       var _rk = 0, _pv = null;
       players.forEach(function (p, i) { var v = scVal(p); if (_pv === null || v !== _pv) { _rk = i + 1; _pv = v; } p._rank = _rk; });
       var _rcount = {}; players.forEach(function (p) { _rcount[p._rank] = (_rcount[p._rank] || 0) + 1; });
-      var html = '<div class="sec-h">👟 월드컵 기록 <span class="muted-note">실시간 집계 · ESPN</span></div>' + subs;
-      if (!players.length) { html += '<div class="empty">아직 기록이 없어요.<br>경기가 시작되면 골·도움·카드가 자동으로 채워져요! ⚽</div>'; viewEl.innerHTML = html; twem(viewEl); return; }
+      function scAds() { insertAdFit(viewEl.querySelector(".ad-top")); insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50"); }  // 맨위 320x100 / 맨밑 320x50
+      var html = '<div class="adslot ad-top"></div><div class="sec-h">👟 월드컵 기록 <span class="muted-note">실시간 집계 · ESPN</span></div>' + subs;
+      if (!players.length) { html += '<div class="empty">아직 기록이 없어요.<br>경기가 시작되면 골·도움·카드가 자동으로 채워져요! ⚽</div>'; viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>'; twem(viewEl); scAds(); return; }
       var rows = players.slice(0, 50).map(function (p, i) {
         var pl = p.pid && playersById[p.pid];
         var meta = pl ? (esc(pl.club || "") + (pl.league ? " · " + esc(pl.league) : "")) : esc(p.team || "");
@@ -316,7 +317,7 @@
           '<span class="sc-name">' + esc(p.name) + '<span class="sc-team">' + meta + "</span></span>" +
           '<span class="sc-stat">' + statMain + (statsub ? '<span class="sc-statsub">' + statsub + "</span>" : "") + "</span></div>";
       }).join("");
-      viewEl.innerHTML = html + '<div class="sc-list">' + rows + "</div>"; twem(viewEl);
+      viewEl.innerHTML = html + '<div class="sc-list">' + rows + "</div><div class=\"adslot ad-bot\"></div>"; twem(viewEl); scAds();
     });
   }
 
@@ -696,7 +697,7 @@
       return b.s.pts - a.s.pts || b.s.gd - a.s.gd || b.s.gf - a.s.gf ||
         (((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999));
     };
-    var html = '<div class="stand-note">' +
+    var html = '<div class="adslot ad-top"></div><div class="stand-note">' +
       (hasData ? "조별 순위 · 결과 실시간 반영 · 1·2위 직행 + 각 조 3위 중 상위 8팀 진출" : "순위 불러오는 중… (개막 전이라 0)") +
       "</div>";
     var thirds = [];
@@ -736,7 +737,8 @@
         "<td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
     });
     html += "</tbody></table></div>";
-    viewEl.innerHTML = html;
+    viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
+    insertAdFit(viewEl.querySelector(".ad-top")); insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");  // 맨위 320x100 / 맨밑 320x50
   }
 
   // ===================== 공통: 선수 행 =====================
