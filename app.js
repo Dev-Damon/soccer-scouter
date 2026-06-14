@@ -2604,7 +2604,7 @@
     if (!window.KickComments || !KickComments.user || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
     var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
     bg.innerHTML = '<div class="rate-sheet gacha"><div class="gc-title">🎰 럭키 드로우 <button class="gc-oddsbtn">확률 ⓘ</button></div>' +
-      '<div class="gc-odds hidden">🎲 당첨 확률<br>꽝 25% · 50KP 38% · 100KP 20% · 200KP 10% · 500KP 5% · 🎉잭팟 1000KP 2%</div>' +
+      '<div class="gc-odds hidden">🎲 당첨 확률<br>꽝 35% · 50KP 33% · 100KP 18% · 200KP 8% · 500KP 4% · 🎉잭팟 1000KP 2%</div>' +
       '<div class="gc-reel">?</div><div class="gc-msg">버튼을 눌러 뽑아보세요!</div>' +
       '<button class="gc-draw">뽑기 🎲</button><button class="gc-close rs-detail">닫기</button></div>';
     document.body.appendChild(bg);
