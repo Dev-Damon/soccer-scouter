@@ -1327,7 +1327,7 @@
         if (!d || parseHash().name !== "team") return;
         var rs = (d.rosters || []).filter(function (r) { return espnTeamId(r.team && r.team.displayName) === t.id; })[0];
         var live = LIVE[fx.id] && LIVE[fx.id].state === "in";
-        var coords = rs && espnLineupCoords(rs); if (!coords) return;  // 항상 선발(교체된 득점자도 보이게)
+        var coords = rs && (live ? currentLineupCoords(rs, d.keyEvents) : espnLineupCoords(rs)); if (!coords) return;  // 경기중=실시간 라인업 / 종료=선발
         var pb = viewEl.querySelector(".team-pitch-block"); if (!pb) return;
         var bandCls = { "0": "gk", "1": "df", "1.5": "df", "2": "mf", "3": "mf", "4": "fw" };
         var dots = coords.map(function (c) {
@@ -1337,7 +1337,7 @@
           var x = Math.max(4, Math.min(96, c.x)), y = Math.max(6, Math.min(94, c.y));
           return '<div class="pd ' + pc + (mp ? " tappable" : "") + '"' + (mp ? ' data-player="' + esc(mp.id) + '"' : "") + ' style="left:' + x + "%;top:" + y + '%"><span class="pd-dot">' + esc(num) + '</span><span class="pd-name">' + pitchNameHtml(nm, mp && mp.id) + "</span></div>";
         }).join("");
-        var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = (live ? "선발 라인업" : "선발 포메이션") + ' <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
+        var hEl = pb.querySelector(".team-pitch-h"); if (hEl) hEl.innerHTML = (live ? "현재 라인업" : "선발 포메이션") + ' <span class="muted-note">실시간 · ' + esc(rs.formation || "") + "</span>";
         var pEl = pb.querySelector(".pitch"); if (pEl) pEl.innerHTML = '<div class="pitch-line halfway"></div><div class="pitch-circle"></div>' + dots;
         twem(pb);
       }).catch(function () {});
@@ -1535,14 +1535,15 @@
     var rosters = d.rosters || [];
     function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
     var ra = rosterFor(a), rb = rosterFor(b);
-    // 잔디는 항상 '선발 라인업'(교체는 명단+화살표로 표기) — 득점 후 교체된 선수도 잔디에 남아 골이 보이게(라이브/종료 동일)
+    // ★규칙: 경기중=실시간 라인업(현재 뛰는 선수, currentLineupCoords) / 종료=선발 라인업(espnLineupCoords). 교체된 선수는 교체명단에 표시. (이 규칙 바꾸지 말 것)
     var st = (((d.header || {}).competitions || [])[0] || {}).status;
     var ended = !!(st && st.type && st.type.state === "post");
-    var ca = ra && espnLineupCoords(ra), cb = rb && espnLineupCoords(rb);
+    function coordFn(rs) { return ended ? espnLineupCoords(rs) : currentLineupCoords(rs, d.keyEvents); }
+    var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
     var em = matchEventMap(d.keyEvents);
     function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
-    return '<h3>📋 선발 라인업 <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 교체는 명단 참고") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
+    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
   // 예상전략 텍스트에서 포메이션(4-3-3 등) 언급 제거 — 예상≠확정일 수 있어서
@@ -2256,17 +2257,19 @@
     });
     load();
   }
-  function luPlayer(p, matchId, subInfo, goals, ended) {
+  function luPlayer(p, matchId, subInfo, goals, ended, outInfo) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
     var enm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
     var mp = playerByName(enm), nm = mp ? mp.name : enm;
     var pos = (p.position && (p.position.abbreviation || p.position.name)) || "";
     var info = subInfo && subInfo[enm];  // 교체 투입 정보(들어온 분·나간 선수)
+    var oinfo = outInfo && outInfo[enm];  // 교체로 빠진 선발(경기중 잔디엔 없음 → 명단에 표시)
     var gi = (goals && goals[enm]) ? ' <span class="lu-goal">⚽' + (goals[enm] > 1 ? goals[enm] : "") + "</span>" : "";  // 득점 표시
     var rb = ratingBox(ratingOf(matchId, nm));
-    var sub = info ? '<span class="lu-subin">⇄ ' + esc(info.clk) + " · " + esc(info.outKo) + "</span>" : "";  // 라인업과 동일한 ⇄ 아이콘
+    var sub = info ? '<span class="lu-subin">⇄ ' + esc(info.clk) + " · " + esc(info.outKo) + "</span>"
+            : oinfo ? '<span class="lu-subin lu-subout">↓ ' + esc(oinfo.clk) + " · " + esc(oinfo.inKo) + " 교체</span>" : "";
     var tap = mp ? (ended ? ' data-rate="' + esc(mp.id) + '" data-rmatch="' + esc(matchId) + '"' : ' data-player="' + esc(mp.id) + '"') : "";  // 종료=평점시트, 아니면 상세
-    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + tap + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
+    return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + tap + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info && !oinfo ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
   }
   function enToKo(name) { var mp = playerByName(name || ""); return mp ? mp.name : (name || ""); }
   function luEvent(ev) {
@@ -2337,13 +2340,14 @@
     var rosters = d.rosters || [];
     var matchId = fx ? fx.id : null;
     // 교체 투입 정보 파싱(들어온 선수 → 몇분·나간 선수)
-    var subInfo = {};
+    var subInfo = {}, outInfo = {};
     (d.keyEvents || []).forEach(function (ev) {
       if (!/substitution/i.test((ev.type && ev.type.type) || "")) return;
       var parts = (ev.participants || []).map(function (x) { return x.athlete; }).filter(Boolean);
       if (parts.length < 2) return;
-      var inN = parts[0].displayName, clk = (ev.clock && ev.clock.displayValue) || "";
-      if (inN) subInfo[inN] = { clk: clk, outKo: enToKo(parts[1].displayName) };
+      var inN = parts[0].displayName, outN = parts[1].displayName, clk = (ev.clock && ev.clock.displayValue) || "";
+      if (inN) subInfo[inN] = { clk: clk, outKo: enToKo(outN) };
+      if (outN) outInfo[outN] = { clk: clk, inKo: enToKo(inN) };  // 교체로 빠진 선발 → 명단에 표시(경기중)
     });
     var _em = matchEventMap(d.keyEvents);  // 득점/교체 표시용
     var hasLineup = rosters.some(function (r) { return (r.roster || []).some(function (p) { return p.starter; }); });
@@ -2356,9 +2360,14 @@
         var t = teamsById[espnTeamId(rs.team && rs.team.displayName)];
         var nm = t ? (t.flag + " " + t.name) : ((rs.team && rs.team.displayName) || "");
         var subs = (rs.roster || []).filter(function (p) { return !p.starter; });
+        // 경기중엔 잔디가 '현재 선수'라 교체로 빠진 선발이 잔디에 없음 → 명단 맨 위에 추가(골·교체시각 보이게). 종료 땐 잔디가 선발이라 불필요.
+        if (!(fx && matchEnded(fx))) {
+          var outS = (rs.roster || []).filter(function (p) { return p.starter && outInfo[(p.athlete && p.athlete.displayName) || ""]; });
+          subs = outS.concat(subs);
+        }
         if (!subs.length) return "";
-        subs.sort(function (x, y) { var xi = subInfo[(x.athlete && x.athlete.displayName) || ""] ? 0 : 1, yi = subInfo[(y.athlete && y.athlete.displayName) || ""] ? 0 : 1; return xi - yi; });  // 투입된 선수 먼저
-        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx)); }).join("") + "</div></div>";
+        subs.sort(function (x, y) { function rank(p) { var n = (p.athlete && p.athlete.displayName) || ""; return outInfo[n] ? 0 : (subInfo[n] ? 1 : 2); } return rank(x) - rank(y); });  // 빠진 선발 → 투입선수 → 미출전 순
+        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx), outInfo); }).join("") + "</div></div>";
       }).join("");
       if (subsHtml) html += '<details class="lu-subs-d"' + (fx && matchEnded(fx) ? " open" : "") + '><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";  // 종료 후엔 펼친 채로
     } else {

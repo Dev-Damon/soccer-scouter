@@ -1172,6 +1172,7 @@ html.light .mr-star.on { color: #f5b301; }
 .lu-pmain { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .lu-pmain .lu-nm { flex: none; }
 .lu-subin { font-size: 10.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lu-subout { color: #e5574d; }   /* 교체로 빠진 선발(↓) */
 .rbox { flex: none; align-self: center; min-width: 30px; text-align: center; font-weight: 800; font-size: 12px; padding: 2px 5px; border-radius: 5px; color: #fff; }
 .rbox.rb-good { background: #1aa55b; }
 .rbox.rb-ok { background: #c99a1c; }
