@@ -86,7 +86,7 @@ html, body {
 .hero-banner { padding: 14px 2px 16px; margin: 0 0 6px; text-align: center; }
 .hb-kicker { font-size: 18px; font-weight: 800; color: var(--accent, #4f8cff); letter-spacing: 1px; }
 .hb-title { font-size: 17px; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; color: var(--muted); margin-top: 7px; }
-.hb-sub { margin-top: 9px; font-weight: 900; font-size: 22px; color: var(--text); min-height: 17px; }
+.hb-sub { margin-top: 9px; font-weight: 900; font-size: 22px; line-height: 1.25; color: var(--text); height: 55px; display: flex; align-items: center; justify-content: center; }  /* 2줄 높이 고정 — 회전 문구가 1줄/2줄 바뀌어도 아래 UI 안 흔들림 */
 @keyframes wittySlide { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
 .hb-sub.anim { animation: wittySlide 0.45s ease; }
 .hb-dday { margin-top: 13px; display: inline-block; font-size: 13px; font-weight: 800; color: #fff; background: linear-gradient(135deg, #4d8cf5, #3d7ce0); border-radius: 999px; padding: 7px 18px; }
