@@ -1331,7 +1331,7 @@
         var pb = viewEl.querySelector(".team-pitch-block"); if (!pb) return;
         var bandCls = { "0": "gk", "1": "df", "1.5": "df", "2": "mf", "3": "mf", "4": "fw" };
         var dots = coords.map(function (c) {
-          var enm = (c.p.athlete && c.p.athlete.displayName) || "", mp = playerByName(enm), nm = mp ? mp.name : enm;
+          var enm = (c.p.athlete && c.p.athlete.displayName) || "", mp = playerByName(enm, t.name, c.p.jersey), nm = mp ? mp.name : enm;
           var pos = (c.p.position && c.p.position.abbreviation) || "", pc = bandCls[espnBand(pos)] || "mf";
           var num = c.p.jersey != null ? c.p.jersey : "";
           var x = Math.max(4, Math.min(96, c.x)), y = Math.max(6, Math.min(94, c.y));
@@ -1394,10 +1394,19 @@
   }
   // 경기 예상 라인업 피치(두 팀 마주보기) — 자체 t.lineup 기반(경기 전에도 항상)
   function normName(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ı/g, "i").replace(/ø/g, "o").replace(/ł/g, "l").replace(/đ/g, "d").replace(/ð/g, "d").replace(/æ/g, "ae").replace(/œ/g, "oe").replace(/ß/g, "ss").replace(/þ/g, "th").replace(/[^a-z ]/g, "").trim(); }  // 터키 ı 등 NFD로 안 풀리는 글자 매핑(매칭 실패 방지)
-  var _nameMap = null;
-  function playerByName(nm) {
-    if (!_nameMap) { _nameMap = {}; (DATA.players || []).forEach(function (p) { if (!p.nameEn) return; [p.nameEn, p.aliasEn].forEach(function (en) { if (!en) return; var n = normName(en); _nameMap[n] = p; var sur = "_s" + n.split(" ").pop(); if (!_nameMap[sur]) _nameMap[sur] = p; }); }); }  // 별칭(aliasEn)도 매칭 — 예: 카쿠=Alejandro Romero Gamarra
-    var n = normName(nm); return _nameMap[n] || _nameMap["_s" + n.split(" ").pop()] || null;
+  var _nameMap = null, _teamNameMap = null, _teamNumMap = null;
+  function playerByName(nm, teamKo, jersey) {
+    if (!_nameMap) {
+      _nameMap = {}; _teamNameMap = {}; _teamNumMap = {};
+      (DATA.players || []).forEach(function (p) { if (!p.nameEn) return; if (p.team && p.number != null) _teamNumMap[p.team + "|" + p.number] = p; [p.nameEn, p.aliasEn].forEach(function (en) { if (!en) return; var n = normName(en); var sur = n.split(" ").pop(); _nameMap[n] = p; if (!_nameMap["_s" + sur]) _nameMap["_s" + sur] = p; if (p.team) { var tk = p.team + "|"; _teamNameMap[tk + n] = p; if (!_teamNameMap[tk + "_s" + sur]) _teamNameMap[tk + "_s" + sur] = p; } }); });
+    }  // 별칭(aliasEn)도 매칭 — 예: 카쿠=Alejandro Romero Gamarra. teamKo 주어지면 동명이인(에밀리아노 마르티네스 아르헨/우루) 팀 우선 매칭. jersey는 같은팀 동명이인(브라질 에데르송 GK/MF) 등번호로 구분
+    var n = normName(nm), sur = n.split(" ").pop();
+    if (teamKo) {
+      var tk = teamKo + "|";
+      if (jersey != null && jersey !== "") { var jp = _teamNumMap[tk + jersey]; if (jp) { var jn = normName(jp.nameEn), ja = jp.aliasEn ? normName(jp.aliasEn) : ""; if (jn === n || ja === n || jn.split(" ").pop() === sur || (ja && ja.split(" ").pop() === sur)) return jp; } }  // 등번호 일치 + 이름도 일관될 때만(오매칭 방지)
+      var tm = _teamNameMap[tk + n] || _teamNameMap[tk + "_s" + sur]; if (tm) return tm;
+    }
+    return _nameMap[n] || _nameMap["_s" + sur] || null;
   }
   // ESPN 포지션 약어 → 깊이밴드(0=GK,1=수비,2=미드,3=공미,4=공격) + 좌우값
   function espnBand(abbr) {
@@ -1542,8 +1551,8 @@
     var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
     var em = matchEventMap(d.keyEvents);
-    function toPl(coords) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
-    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca), toPl(cb));
+    function toPl(coords, teamKo) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm, teamKo, c.p.jersey); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
+    return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca, a.name), toPl(cb, b.name));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
   // 예상전략 텍스트에서 포메이션(4-3-3 등) 언급 제거 — 예상≠확정일 수 있어서
@@ -2267,10 +2276,10 @@
     });
     load();
   }
-  function luPlayer(p, matchId, subInfo, goals, ended, outInfo) {
+  function luPlayer(p, matchId, subInfo, goals, ended, outInfo, teamKo) {
     var num = (p.jersey != null && p.jersey !== "") ? p.jersey : "";
     var enm = (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || "";
-    var mp = playerByName(enm), nm = mp ? mp.name : enm;
+    var mp = playerByName(enm, teamKo, p.jersey), nm = mp ? mp.name : enm;
     var pos = (p.position && (p.position.abbreviation || p.position.name)) || "";
     var info = subInfo && subInfo[enm];  // 교체 투입 정보(들어온 분·나간 선수)
     var oinfo = outInfo && outInfo[enm];  // 교체로 빠진 선발(경기중 잔디엔 없음 → 명단에 표시)
@@ -2281,10 +2290,11 @@
     var tap = mp ? (ended ? ' data-rate="' + esc(mp.id) + '" data-rmatch="' + esc(matchId) + '"' : ' data-player="' + esc(mp.id) + '"') : "";  // 종료=평점시트, 아니면 상세
     return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + tap + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info && !oinfo ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
   }
-  function enToKo(name) { var mp = playerByName(name || ""); return mp ? mp.name : (name || ""); }
+  function enToKo(name, teamKo) { var mp = playerByName(name || "", teamKo); return mp ? mp.name : (name || ""); }
   function luEvent(ev) {
-    function nk(a) { return enToKo((a && a.displayName) || ""); }
-    function jn(a) { var n = (a && a.displayName) || "", mp = playerByName(n); var num = (mp && mp.number != null) ? mp.number : ((a && a.jersey != null && a.jersey !== "") ? a.jersey : ""); return (num !== "" ? num + "번 " : "") + enToKo(n); }
+    var evTeamKo = ev.team ? ((teamsById[espnTeamId(ev.team.displayName)] || {}).name) : null;  // 이벤트 팀 → 동명이인 매칭
+    function nk(a) { return enToKo((a && a.displayName) || "", evTeamKo); }
+    function jn(a) { var n = (a && a.displayName) || "", mp = playerByName(n, evTeamKo); var num = (mp && mp.number != null) ? mp.number : ((a && a.jersey != null && a.jersey !== "") ? a.jersey : ""); return (num !== "" ? num + "번 " : "") + enToKo(n, evTeamKo); }
     var ty = ((ev.type && ev.type.type) || "").toLowerCase(), clk = (ev.clock && ev.clock.displayValue) || "";
     var parts = (ev.participants || ev.athletesInvolved || []).map(function (a) { return a.athlete; }).filter(Boolean);
     var icon, txt;
@@ -2356,8 +2366,9 @@
       var parts = (ev.participants || []).map(function (x) { return x.athlete; }).filter(Boolean);
       if (parts.length < 2) return;
       var inN = parts[0].displayName, outN = parts[1].displayName, clk = (ev.clock && ev.clock.displayValue) || "";
-      if (inN) subInfo[inN] = { clk: clk, outKo: enToKo(outN) };
-      if (outN) outInfo[outN] = { clk: clk, inKo: enToKo(inN) };  // 교체로 빠진 선발 → 명단에 표시(경기중)
+      var evKo = ev.team ? ((teamsById[espnTeamId(ev.team.displayName)] || {}).name) : null;
+      if (inN) subInfo[inN] = { clk: clk, outKo: enToKo(outN, evKo) };
+      if (outN) outInfo[outN] = { clk: clk, inKo: enToKo(inN, evKo) };  // 교체로 빠진 선발 → 명단에 표시(경기중)
     });
     var _em = matchEventMap(d.keyEvents);  // 득점/교체 표시용
     var hasLineup = rosters.some(function (r) { return (r.roster || []).some(function (p) { return p.starter; }); });
@@ -2377,7 +2388,7 @@
         }
         if (!subs.length) return "";
         subs.sort(function (x, y) { function rank(p) { var n = (p.athlete && p.athlete.displayName) || ""; return outInfo[n] ? 0 : (subInfo[n] ? 1 : 2); } return rank(x) - rank(y); });  // 빠진 선발 → 투입선수 → 미출전 순
-        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx), outInfo); }).join("") + "</div></div>";
+        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx), outInfo, t && t.name); }).join("") + "</div></div>";
       }).join("");
       if (subsHtml) html += '<details class="lu-subs-d"' + (fx && matchEnded(fx) ? " open" : "") + '><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";  // 종료 후엔 펼친 채로
     } else {
