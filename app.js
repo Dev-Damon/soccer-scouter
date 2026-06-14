@@ -207,6 +207,17 @@
   }
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
+  // 대진표를 기기 너비에 맞춰 동적 스케일(리사이즈·회전 시 재계산). 폭에 꽉 채우되 너무 커지지 않게 상한.
+  function fitBracket() {
+    var fit = viewEl.querySelector(".brk2-fit"), st = fit && fit.querySelector(".brk-stage");
+    if (!fit || !st) return;
+    var SW = +st.getAttribute("data-sw"), H = +st.getAttribute("data-h");
+    var sc = Math.min(1.6, fit.clientWidth / SW);
+    st.style.transform = "scale(" + sc + ")"; st.style.transformOrigin = "top left";
+    st.style.marginLeft = Math.max(0, (fit.clientWidth - SW * sc) / 2) + "px";  // 상한에 걸려 남는 폭은 가운데 정렬
+    fit.style.height = Math.ceil(H * sc) + "px";
+  }
+  window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) fitBracket(); });
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승. 화면 폭에 맞춰 세로 스크롤.
   function renderBracket() {
     var SW = 360, H = 560, i, CY = H / 2;
@@ -224,6 +235,7 @@
     for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", "8강"); }
     vbox("lsf", X4, CY, Wp); box(X4, CY, Wp, 14, "con", "4강");
     vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
+    box(XF, CY + Wf / 2 + 16, 62, 15, "thirdpl", "🥉 3·4위전");
     vbox("rsf", XR4, CY, Wp); box(XR4, CY, Wp, 14, "con", "4강");
     for (i = 0; i < 2; i++) { vbox("r8_" + i, XR8, c8cy[i], Wp); box(XR8, c8cy[i], Wp, 14, "con", "8강"); }
     for (i = 0; i < 4; i++) { vbox("r16_" + i, XR16, c16cy[i], Wp); box(XR16, c16cy[i], Wp, 14, "con", "16강"); }
@@ -236,10 +248,9 @@
     for (i = 0; i < 2; i++) { eH("r16_" + (2 * i), "r8_" + i, -1); eH("r16_" + (2 * i + 1), "r8_" + i, -1); }
     eH("r8_0", "rsf", -1); eH("r8_1", "rsf", -1); eH("rsf", "fin", -1);
     var svg = '<svg class="brk-svg" width="' + SW + '" height="' + H + '" viewBox="0 0 ' + SW + " " + H + '">' + P.map(function (d) { return '<path class="brk-edge" d="' + d + '" fill="none" stroke-width="1.4"/>'; }).join("") + "</svg>";
-    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다. 지금은 자리표시(○조 순위)예요.</div>' +
-      '<div class="brk2-fit"><div class="brk-stage" style="width:' + SW + "px;height:" + H + 'px">' + svg + boxes.join("") + "</div></div>";
-    var fit = viewEl.querySelector(".brk2-fit"), st = viewEl.querySelector(".brk-stage");
-    if (fit && st) { var sc = Math.min(1.5, fit.clientWidth / SW); st.style.transform = "scale(" + sc + ")"; st.style.transformOrigin = "top left"; fit.style.height = Math.ceil(H * sc) + "px"; }
+    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다.</div>' +
+      '<div class="brk2-fit"><div class="brk-stage" data-sw="' + SW + '" data-h="' + H + '" style="width:' + SW + "px;height:" + H + 'px">' + svg + boxes.join("") + "</div></div>";
+    fitBracket();
     twem(viewEl);
   }
 
