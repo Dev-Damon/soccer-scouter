@@ -16308,7 +16308,7 @@ window.DATA = {
       "team": "브라질",
       "club": "산투스",
       "league": "브라질 세리에 A (브라질)",
-      "position": "공격형 미드필더",
+      "position": "공격수",
       "age": 34,
       "caps": 128,
       "intlGoals": 79,
