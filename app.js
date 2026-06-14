@@ -207,29 +207,22 @@
   }
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
-  // 대진표를 기기 너비에 맞춰 동적 스케일(리사이즈·회전 시 재계산). 폭에 꽉 채우되 너무 커지지 않게 상한.
-  function fitBracket() {
-    var fit = viewEl.querySelector(".brk2-fit"), st = fit && fit.querySelector(".brk-stage");
-    if (!fit || !st) return;
-    var SW = +st.getAttribute("data-sw"), H = +st.getAttribute("data-h");
-    var sc = Math.min(3, fit.clientWidth / SW);  // 너비에 맞춰 꽉 채움(넓으면 늘어남). 과도확대만 방지(×3 상한)
-    st.style.transform = "scale(" + sc + ")"; st.style.transformOrigin = "top left";
-    st.style.marginLeft = Math.max(0, (fit.clientWidth - SW * sc) / 2) + "px";  // ×3 넘는 초광폭에서만 가운데 정렬
-    fit.style.height = Math.ceil(H * sc) + "px";
-  }
-  window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) fitBracket(); });
-  // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승. 화면 폭에 맞춰 세로 스크롤.
-  function renderBracket() {
-    var SW = 360, H = 560, i, CY = H / 2;
+  // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
+  // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
+  function layoutBracket() {
+    var fit = viewEl.querySelector(".brk2-fit"); if (!fit) return;
+    var W = Math.max(320, Math.floor(fit.clientWidth)), H = 560, CY = H / 2, i;
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
-    var XL = 44, X16 = 102, X8 = 128, X4 = 148, XF = 180, XR4 = 212, XR8 = 232, XR16 = 258, XR = 316;
-    var cardW = 58, Wp = 22, Wf = 42, OFF = 15;
+    var cardW = 58, Wp = 22, Wf = 42, OFF = 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백
+    var span = (W / 2) - edge;  // R32열 → 중앙(결승)까지 가로 거리(넓을수록 길어짐 = 연결선만 늘어남)
+    var XL = edge, X16 = edge + span * 0.426, X8 = edge + span * 0.618, X4 = edge + span * 0.765, XF = W / 2;  // 비율은 원본 360px 디자인과 동일
+    var XR = W - edge, XR16 = W - X16, XR8 = W - X8, XR4 = W - X4;
     var boxes = [], BX = {}, P = [];
     function box(cx, cy, w, h, cls, html) { boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
     function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
     function tcard(s, cx, cy) { var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : ""; box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : "")); }
-    function pair(id, mn, cx, cy, edge) { var m = R32M[mn]; tcard(m.a, cx, cy - OFF); tcard(m.b, cx, cy + OFF); vbox(id, cx, cy, cardW); P.push("M" + edge + " " + (cy - OFF) + " V" + (cy + OFF)); }  // 두 팀카드 잇는 세로바
+    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; tcard(m.a, cx, cy - OFF); tcard(m.b, cx, cy + OFF); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
     for (i = 0; i < 8; i++) pair("lr" + i, BL_R32[i], XL, r32cy[i], XL + cardW / 2);
     for (i = 0; i < 4; i++) { vbox("l16_" + i, X16, c16cy[i], Wp); box(X16, c16cy[i], Wp, 14, "con", "16강"); }
     for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", "8강"); }
@@ -247,11 +240,15 @@
     for (i = 0; i < 4; i++) { eH("rr" + (2 * i), "r16_" + i, -1); eH("rr" + (2 * i + 1), "r16_" + i, -1); }
     for (i = 0; i < 2; i++) { eH("r16_" + (2 * i), "r8_" + i, -1); eH("r16_" + (2 * i + 1), "r8_" + i, -1); }
     eH("r8_0", "rsf", -1); eH("r8_1", "rsf", -1); eH("rsf", "fin", -1);
-    var svg = '<svg class="brk-svg" width="' + SW + '" height="' + H + '" viewBox="0 0 ' + SW + " " + H + '">' + P.map(function (d) { return '<path class="brk-edge" d="' + d + '" fill="none" stroke-width="1.4"/>'; }).join("") + "</svg>";
-    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다.</div>' +
-      '<div class="brk2-fit"><div class="brk-stage" data-sw="' + SW + '" data-h="' + H + '" style="width:' + SW + "px;height:" + H + 'px">' + svg + boxes.join("") + "</div></div>";
-    fitBracket();
-    twem(viewEl);
+    var svg = '<svg class="brk-svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '">' + P.map(function (d) { return '<path class="brk-edge" d="' + d + '" fill="none" stroke-width="1.4"/>'; }).join("") + "</svg>";
+    fit.innerHTML = '<div class="brk-stage" style="width:' + W + "px;height:" + H + 'px">' + svg + boxes.join("") + "</div>";
+    fit.style.height = H + "px";
+    twem(fit);
+  }
+  window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) layoutBracket(); });
+  function renderBracket() {
+    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다.</div><div class="brk2-fit"></div>';
+    layoutBracket();
   }
 
   function renderHome() {
