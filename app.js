@@ -2822,6 +2822,7 @@
         return '<div class="mgr-item"><div class="mgr-ib"><b>' + esc(m.name || "익명") + '</b> <span class="yc-time">' + esc(ts) + '</span><br>' + esc(m.body || "") + '</div><div class="mgr-act"><button class="mgr-del" data-chatdel="' + esc(m.id) + '">삭제</button></div></div>';
       }).join("") : '<div class="empty">메시지가 없습니다.</div>';
       twem(box);
+      if (_adminScrollY != null) { var _sy = _adminScrollY; _adminScrollY = null; requestAnimationFrame(function () { window.scrollTo(0, _sy); }); }  // 채팅 비동기 로드 완료 후 스크롤 복원(맨위로 안 감)
     });
   }
   function fmtJoin(iso) { try { var s = new Date(iso).toLocaleString("sv-SE", { timeZone: "Asia/Seoul" }), p = s.split(" "); return '<span class="mb-d">' + p[0].replace(/-/g, ".") + '</span><span class="mb-t">' + (p[1] || "") + "</span>"; } catch (e) { return ""; } }
@@ -2886,8 +2887,8 @@
       (adminTab === "all" ? '<input class="mgr-search" placeholder="댓글·작성자 검색" value="' + esc(adminQ) + '">' : "") +
       (adminTab === "chat" ? '<input class="mgr-search mgr-chatsearch" placeholder="채팅 내용·닉네임 검색 (비우면 최근 60개)" value="' + esc(adminChatQ) + '">' : "") +
       '<div class="mgr-list">' + html + "</div></div>";
-    if (adminTab === "chat") loadAdminChat();
-    if (_adminScrollY != null) { var _sy = _adminScrollY; _adminScrollY = null; requestAnimationFrame(function () { window.scrollTo(0, _sy); }); }  // 삭제 후 그 자리 유지
+    if (adminTab === "chat") { loadAdminChat(); return; }  // 채팅은 비동기라 loadAdminChat 완료 후 스크롤 복원
+    if (_adminScrollY != null) { var _sy = _adminScrollY; _adminScrollY = null; requestAnimationFrame(function () { window.scrollTo(0, _sy); }); }  // 삭제·탭전환 후 그 자리 유지
   }
   function renderAdmin() {
     backBtn.hidden = true; tabsEl.hidden = true;
@@ -3033,7 +3034,7 @@
     ov.addEventListener("click", function (e) {
       if (e.target === ov || e.target.closest(".sn-close")) { close(); return; }
       if (e.target.closest(".sn-share")) {
-        var url = "https://kicktalk.xyz/", txt = "⚽ 킥톡 — 2026 월드컵 같이 보기";
+        var url = "https://kicktalk.xyz/", txt = "⚽ 킥톡 — 실시간 경기 + 모든 선수 정보 | '저 선수 누구지?' 싶을 때 라인업·능력치·평점까지 바로";
         if (navigator.share) { navigator.share({ text: txt, url: url }).catch(function () {}); close(); }
         else { try { navigator.clipboard.writeText(txt + " " + url); ktToast("링크가 복사됐어요! 친구에게 붙여넣기 하세요 📋"); } catch (e2) {} close(); }
       }
