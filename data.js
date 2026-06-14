@@ -6723,9 +6723,9 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "jurrien-timber",
-          "name": "유리언 팀버",
-          "number": 5,
+          "playerId": "micky-van-de-ven",
+          "name": "미키 반 데 벤",
+          "number": 15,
           "pos": "DF",
           "x": 80,
           "y": 72
@@ -9726,17 +9726,17 @@ window.DATA = {
           "y": 72
         },
         {
-          "playerId": "manaf-younis",
-          "name": "마나프 유니스",
-          "number": 3,
+          "playerId": "munaf-younus",
+          "name": "무나프 유누스",
+          "number": 6,
           "pos": "DF",
           "x": 40,
           "y": 72
         },
         {
-          "playerId": "ahmed-yahya",
-          "name": "아흐메드 야흐야",
-          "number": 4,
+          "playerId": "frans-putros",
+          "name": "프란스 푸트로스",
+          "number": 26,
           "pos": "DF",
           "x": 60,
           "y": 72
