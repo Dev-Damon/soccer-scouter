@@ -247,8 +247,9 @@
   }
   window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) layoutBracket(); });
   function renderBracket() {
-    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다.</div><div class="brk2-fit"></div>';
+    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다.</div><div class="brk2-fit"></div><div class="adslot"></div>';
     layoutBracket();
+    insertAdFit(viewEl.querySelector(".adslot"));  // 대진표 하단 애드핏 320x100
   }
 
   function renderHome() {
