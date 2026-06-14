@@ -1930,21 +1930,26 @@
   var espnIdCache = {};
   function resolveEspnId(fx) {
     if (espnIdCache[fx.id] !== undefined) return Promise.resolve(espnIdCache[fx.id]);
-    var dt = (fx.date || "").replace(/-/g, "");
-    if (!dt || !window.fetch) return Promise.resolve(null);
+    var d0 = fx.date || fx.kstDate; if (!d0 || !window.fetch) return Promise.resolve(null);
     var key = [fx.homeId, fx.awayId].sort().join("|");
-    return fetch(ESPN_URL + "?dates=" + dt, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+    // 경기일 ±1일 모두 조회 — ESPN이 UTC/현지 경계 때문에 fx.date와 다른 날짜에 넣을 수 있음(KST 새벽 경기)
+    var base = Date.parse(d0 + "T12:00:00Z");
+    function ds(t) { return new Date(t).toISOString().slice(0, 10).replace(/-/g, ""); }
+    var dates = [ds(base), ds(base - 86400000), ds(base + 86400000)];
+    return Promise.all(dates.map(function (dd) { return fetch(ESPN_URL + "?dates=" + dd, { cache: "no-store" }).then(function (r) { return r.json(); }).catch(function () { return {}; }); })).then(function (arr) {
       var found = null;
-      (d.events || []).forEach(function (e) {
-        var c = (e.competitions || [])[0]; if (!c) return;
-        var comp = c.competitors || [];
-        var H = comp.filter(function (t) { return t.homeAway === "home"; })[0] || comp[0];
-        var A = comp.filter(function (t) { return t.homeAway === "away"; })[0] || comp[1];
-        if (!H || !A) return;
-        var hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName);
-        if (hid && aid && [hid, aid].sort().join("|") === key) found = e.id;
+      arr.forEach(function (d) {
+        (d.events || []).forEach(function (e) {
+          var c = (e.competitions || [])[0]; if (!c) return;
+          var comp = c.competitors || [];
+          var H = comp.filter(function (t) { return t.homeAway === "home"; })[0] || comp[0];
+          var A = comp.filter(function (t) { return t.homeAway === "away"; })[0] || comp[1];
+          if (!H || !A) return;
+          var hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName);
+          if (hid && aid && [hid, aid].sort().join("|") === key) found = e.id;
+        });
       });
-      espnIdCache[fx.id] = found;
+      if (found) espnIdCache[fx.id] = found;  // 못 찾으면 캐시 안 함(다음에 재시도)
       return found;
     }).catch(function () { return null; });
   }
