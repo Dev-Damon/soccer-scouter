@@ -7,6 +7,7 @@
   --text: #eaf0fb;
   --muted: #9fb0cc;
   --accent: #4f8cff;
+  --brk-line: #3d5689;
   --gold: #f5b301;
   --green: #2ecc71;
   --teal: #1abc9c;
@@ -510,7 +511,13 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk2-fit { overflow: hidden; position: relative; }
 .brk-stage { position: relative; font-size: 10.5px; }
 .brk-svg { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; }
+.brk-svg .brk-edge { stroke: var(--brk-line); }
 .brk-stage .bx { position: absolute; box-sizing: border-box; z-index: 1; display: flex; flex-direction: column; justify-content: center; }
+/* 세로형 대진표 팀카드 — 조/순위 2줄 */
+.brk-stage .tc { align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 7px; padding: 2px 1px; line-height: 1.1; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+.brk-stage .tc b { font-size: 10.5px; font-weight: 800; color: var(--text); white-space: nowrap; }
+.brk-stage .tc i { font-size: 9.5px; font-style: normal; font-weight: 700; color: var(--muted); }
+.brk-stage .con { font-size: 8.5px; padding: 1px 0; }
 .brk-stage .m32 { background: var(--card); border: 1px solid #3d5689; border-radius: 6px; overflow: hidden; }
 .brk-stage .m32 .tm { padding: 3px 7px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
 .brk-stage .m32 .tm + .tm { border-top: 1px solid #3d5689; }
@@ -952,7 +959,7 @@ img.emoji { height: 1em; width: 1em; margin: 0 .05em 0 .08em; vertical-align: -0
 /* ===================== 라이트 모드 ===================== */
 html.light {
   --bg: #f3f5f8; --bg-soft: #ffffff; --card: #ffffff; --card-2: #f4f7fc;
-  --line: #e3e8f0; --text: #1c2536; --muted: #62718c; --accent: #2f6fe0;
+  --line: #e3e8f0; --text: #1c2536; --muted: #62718c; --accent: #2f6fe0; --brk-line: #b6cef2;
   --gold: #c98e00; --gray: #7a89a3; --shadow: 0 3px 14px rgba(40, 55, 85, .08);
 }
 html.light body { background: #f3f5f8; }

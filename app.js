@@ -207,25 +207,27 @@
   }
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
+  // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승. 화면 폭에 맞춰 세로 스크롤.
   function renderBracket() {
-    var H = 470, SW = 760, i, CY = H / 2;
+    var SW = 360, H = 560, i, CY = H / 2;
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
-    var Wm = 112, Hm = 46, Wp = 42, Hp = 25, Wf = 56, Hf = 56, Wt = 64, Ht = 24;
-    var XL = 62, X16 = 176, X8 = 250, X4 = 315, XF = 380, XR4 = 445, XR8 = 510, XR16 = 584, XR = 698;
+    var XL = 44, X16 = 102, X8 = 128, X4 = 148, XF = 180, XR4 = 212, XR8 = 232, XR16 = 258, XR = 316;
+    var cardW = 58, Wp = 22, Wf = 42, OFF = 15;
     var boxes = [], BX = {}, P = [];
-    function add(id, cx, cy, w, h, cls, html) { BX[id] = { cx: cx, cy: cy, w: w }; boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
-    function m32html(mn) { var m = R32M[mn]; return '<div class="tm">' + brkSlot(m.a) + '</div><div class="tm">' + brkSlot(m.b) + "</div>"; }
-    for (i = 0; i < 8; i++) add("lr" + i, XL, r32cy[i], Wm, Hm, "m32 l", m32html(BL_R32[i]));
-    for (i = 0; i < 4; i++) add("l16_" + i, X16, c16cy[i], Wp, Hp, "con", "16강");
-    for (i = 0; i < 2; i++) add("l8_" + i, X8, c8cy[i], Wp, Hp, "con", "8강");
-    add("lsf", X4, CY, Wp, Hp, "csf", "4강");
-    add("fin", XF, CY, Wf, Hf, "fin", '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
-    add("third", XF, CY + 88, Wt, Ht, "third", "🥉 3·4위전");
-    add("rsf", XR4, CY, Wp, Hp, "csf", "4강");
-    for (i = 0; i < 2; i++) add("r8_" + i, XR8, c8cy[i], Wp, Hp, "con", "8강");
-    for (i = 0; i < 4; i++) add("r16_" + i, XR16, c16cy[i], Wp, Hp, "con", "16강");
-    for (i = 0; i < 8; i++) add("rr" + i, XR, r32cy[i], Wm, Hm, "m32 r", m32html(BR_R32[i]));
+    function box(cx, cy, w, h, cls, html) { boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
+    function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
+    function tcard(s, cx, cy) { var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : ""; box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : "")); }
+    function pair(id, mn, cx, cy, edge) { var m = R32M[mn]; tcard(m.a, cx, cy - OFF); tcard(m.b, cx, cy + OFF); vbox(id, cx, cy, cardW); P.push("M" + edge + " " + (cy - OFF) + " V" + (cy + OFF)); }  // 두 팀카드 잇는 세로바
+    for (i = 0; i < 8; i++) pair("lr" + i, BL_R32[i], XL, r32cy[i], XL + cardW / 2);
+    for (i = 0; i < 4; i++) { vbox("l16_" + i, X16, c16cy[i], Wp); box(X16, c16cy[i], Wp, 14, "con", "16강"); }
+    for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", "8강"); }
+    vbox("lsf", X4, CY, Wp); box(X4, CY, Wp, 14, "con", "4강");
+    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
+    vbox("rsf", XR4, CY, Wp); box(XR4, CY, Wp, 14, "con", "4강");
+    for (i = 0; i < 2; i++) { vbox("r8_" + i, XR8, c8cy[i], Wp); box(XR8, c8cy[i], Wp, 14, "con", "8강"); }
+    for (i = 0; i < 4; i++) { vbox("r16_" + i, XR16, c16cy[i], Wp); box(XR16, c16cy[i], Wp, 14, "con", "16강"); }
+    for (i = 0; i < 8; i++) pair("rr" + i, BR_R32[i], XR, r32cy[i], XR - cardW / 2);
     function eH(c, p, dir) { var cc = BX[c], pp = BX[p], cr = dir > 0 ? cc.cx + cc.w / 2 : cc.cx - cc.w / 2, pl = dir > 0 ? pp.cx - pp.w / 2 : pp.cx + pp.w / 2, mx = (cr + pl) / 2; P.push("M" + cr + " " + cc.cy + " H" + mx + " V" + pp.cy + " H" + pl); }
     for (i = 0; i < 4; i++) { eH("lr" + (2 * i), "l16_" + i, 1); eH("lr" + (2 * i + 1), "l16_" + i, 1); }
     for (i = 0; i < 2; i++) { eH("l16_" + (2 * i), "l8_" + i, 1); eH("l16_" + (2 * i + 1), "l8_" + i, 1); }
@@ -233,11 +235,11 @@
     for (i = 0; i < 4; i++) { eH("rr" + (2 * i), "r16_" + i, -1); eH("rr" + (2 * i + 1), "r16_" + i, -1); }
     for (i = 0; i < 2; i++) { eH("r16_" + (2 * i), "r8_" + i, -1); eH("r16_" + (2 * i + 1), "r8_" + i, -1); }
     eH("r8_0", "rsf", -1); eH("r8_1", "rsf", -1); eH("rsf", "fin", -1);
-    var svg = '<svg class="brk-svg" width="' + SW + '" height="' + H + '" viewBox="0 0 ' + SW + " " + H + '">' + P.map(function (d) { return '<path d="' + d + '" fill="none" stroke="#3d5689" stroke-width="2"/>'; }).join("") + "</svg>";
-    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다. 지금은 자리표시(○조 순위)예요. 좌우로 스크롤·확대하면 자세히 볼 수 있어요.</div>' +
+    var svg = '<svg class="brk-svg" width="' + SW + '" height="' + H + '" viewBox="0 0 ' + SW + " " + H + '">' + P.map(function (d) { return '<path class="brk-edge" d="' + d + '" fill="none" stroke-width="1.4"/>'; }).join("") + "</svg>";
+    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다. 지금은 자리표시(○조 순위)예요.</div>' +
       '<div class="brk2-fit"><div class="brk-stage" style="width:' + SW + "px;height:" + H + 'px">' + svg + boxes.join("") + "</div></div>";
     var fit = viewEl.querySelector(".brk2-fit"), st = viewEl.querySelector(".brk-stage");
-    if (fit && st) { var sc = Math.min(2.4, fit.clientWidth / SW); st.style.transform = "scale(" + sc + ")"; st.style.transformOrigin = "top left"; fit.style.height = Math.ceil(H * sc) + "px"; }
+    if (fit && st) { var sc = Math.min(1.5, fit.clientWidth / SW); st.style.transform = "scale(" + sc + ")"; st.style.transformOrigin = "top left"; fit.style.height = Math.ceil(H * sc) + "px"; }
     twem(viewEl);
   }
 
