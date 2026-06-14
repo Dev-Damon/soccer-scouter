@@ -37063,29 +37063,29 @@ window.DATA = {
       "ovrBase": 61
     },
     {
-      "id": "marcelo-flores",
-      "name": "마르셀로 플로레스",
-      "nameEn": "Marcelo Flores",
+      "id": "jayden-nelson",
+      "name": "제이든 넬슨",
+      "nameEn": "Jayden Nelson",
       "team": "캐나다",
-      "club": "티그레스 UANL",
-      "league": "리가 MX (멕시코)",
-      "position": "MF",
-      "age": 22,
+      "club": "오스틴 FC",
+      "league": "MLS (미국)",
+      "position": "윙어",
+      "age": 23,
       "caps": null,
       "intlGoals": null,
       "grade": "유망주",
-      "oneLiner": "아스널 유스 출신 창의적 공격형 미드필더, 잠재력 풍부",
+      "oneLiner": "부상당한 마르셀로 플로레스를 대신해 합류한 토론토 출신 왼쪽 윙어, 빠른 스피드와 돌파가 강점",
       "strengths": [
-        "창의성",
-        "드리블",
-        "킥 능력"
+        "스피드",
+        "1대1 돌파",
+        "측면 침투"
       ],
       "weaknesses": [
-        "피지컬",
+        "마무리 결정력",
         "출전 시간 확보"
       ],
       "honours": [],
-      "notableTransfer": "Arsenal 유스 출신, Tigres UANL 합류",
+      "notableTransfer": "2025년 12월 밴쿠버 화이트캡스에서 오스틴 FC로 트레이드 이적",
       "ovr": 61,
       "scout": {
         "skill": 57,
@@ -37094,12 +37094,12 @@ window.DATA = {
       },
       "number": 26,
       "power": {
-        "공격력": 56,
-        "수비력": 61,
-        "스피드": 53,
+        "공격력": 60,
+        "수비력": 42,
+        "스피드": 74,
         "테크닉": 66,
-        "피지컬": 62,
-        "골결정력": 48
+        "피지컬": 55,
+        "골결정력": 52
       },
       "ovrBase": 57
     },
