@@ -2331,7 +2331,7 @@
     { k: "foulsCommitted", l: "파울" },
     { k: "offsides", l: "오프사이드" },
     { k: "totalPasses", l: "패스" },
-    { k: "passPct", l: "패스 성공률", pct: 1, mul: 100 },
+    { k: "passPct", l: "패스 성공률", pct: 1, ratio: ["accuratePasses", "totalPasses"] },  // ESPN passPct는 소수1자리 반올림(0.9) → 정확도 위해 성공/시도로 직접 계산
     { k: "totalTackles", l: "태클" },
     { k: "interceptions", l: "인터셉트" },
     { k: "yellowCards", l: "경고" },
@@ -2346,8 +2346,9 @@
     var teams = (bs && bs.teams) || []; if (teams.length < 2) return "";
     function tid(t) { return espnTeamId(t.team && t.team.displayName); }
     var aT = tid(teams[0]) === a.id ? teams[0] : teams[1], bT = (aT === teams[0]) ? teams[1] : teams[0];
+    function ratioPct(t, r) { var den = statOf(t, r[1]); if (!den) return null; var num = statOf(t, r[0]); return num == null ? null : num / den * 100; }
     var rows = STAT_DEFS.map(function (d) {
-      var av = statOf(aT, d.k), bv = statOf(bT, d.k);
+      var av = d.ratio ? ratioPct(aT, d.ratio) : statOf(aT, d.k), bv = d.ratio ? ratioPct(bT, d.ratio) : statOf(bT, d.k);
       if (av == null && bv == null) return "";
       av = av || 0; bv = bv || 0;
       av = Math.round(av * (d.mul || 1)); bv = Math.round(bv * (d.mul || 1));
