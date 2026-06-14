@@ -2736,14 +2736,19 @@
     else if (bet.status === "lost") stH = '<span class="bh-st bh-lost">❌ 실패 −' + (bet.stake || 0).toLocaleString() + "</span>";
     else stH = '<span class="bh-st bh-pending">⏳ 대기중</span>';
     // 최종 결과 — 승팀(국기+이름) 먼저, 스코어는 괄호. 무승부는 국기 없이.
-    var lv = LIVE[bet.match_id], resH = "";
+    var lv = LIVE[bet.match_id], resRow = "";
     if (lv && lv.hs != null && lv.as != null && fx) {
       var winDisp = lv.hs > lv.as ? teamDisp(home, fx.homeName) : lv.hs < lv.as ? teamDisp(away, fx.awayName) : "무승부";
-      resH = ' · 결과 ' + winDisp + ' <b class="bh-score">(' + lv.hs + ":" + lv.as + ")</b>";
+      resRow = '<span class="bh-k">결과</span><span class="bh-v">' + winDisp + ' <b class="bh-score">(' + lv.hs + ":" + lv.as + ")</b></span>";
     }
+    // 시안 A — 카드 키·값 정렬(항목별 줄맞춤)
     return '<div class="bh-row' + (fx ? " bh-clk" : "") + '"' + (fx ? ' data-go="match/' + esc(bet.match_id) + '"' : "") + '>' +
       '<div class="bh-top"><span class="bh-match">⚽ ' + esc(matchLabel) + "</span>" + stH + "</div>" +
-      '<div class="bh-sub">🎯 내 선택 <b class="bh-pick">' + pickH + "</b> · " + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + resH + (fx ? ' <span class="bh-go">경기 상세 →</span>' : "") + "</div></div>";
+      '<div class="bh-kv">' +
+        '<span class="bh-k">내 선택</span><span class="bh-v"><b class="bh-pick">' + pickH + "</b></span>" +
+        '<span class="bh-k">베팅</span><span class="bh-v">' + (bet.stake || 0).toLocaleString() + " KP · 배당 " + bet.odds + "</span>" +
+        resRow +
+      "</div>" + (fx ? '<div class="bh-go">경기 상세 →</div>' : "") + "</div>";
   }
   function paintMy() {
     if (!myCache) return;

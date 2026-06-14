@@ -1209,14 +1209,16 @@ html.light .mr-star.on { color: #f5b301; }
 g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 /* 베팅 내역 */
 .bh-row { padding: 11px 12px; border: 1px solid var(--line); border-radius: 11px; margin-bottom: 8px; cursor: pointer; }
-.bh-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.bh-match { font-weight: 700; font-size: 13.5px; color: var(--text); }
-.bh-st { font-size: 12px; font-weight: 800; flex: none; }
+.bh-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 9px; border-bottom: 1px solid var(--line); margin-bottom: 9px; }
+.bh-match { font-weight: 800; font-size: 14px; color: var(--text); }
+.bh-st { font-size: 12.5px; font-weight: 800; flex: none; }
 .bh-won { color: #1aa55b; } .bh-lost { color: #e5484d; } .bh-pending { color: var(--muted); }
-.bh-sub { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.bh-kv { display: grid; grid-template-columns: 52px 1fr; row-gap: 5px; font-size: 13.5px; align-items: baseline; }
+.bh-kv .bh-k { color: var(--muted); font-weight: 700; }
+.bh-kv .bh-v { font-weight: 700; color: var(--text); }
 .bh-pick { color: var(--accent); font-weight: 800; }
 .bh-score { color: var(--text); font-weight: 800; font-variant-numeric: tabular-nums; }
-.bh-go { color: var(--accent); font-weight: 700; font-size: 11.5px; margin-left: 2px; }
+.bh-go { color: var(--accent); font-weight: 700; font-size: 11.5px; text-align: right; margin-top: 8px; }
 .bh-clk:active { opacity: .7; }
 /* 등급 안내 래더 */
 .pt-tiers { margin-top: 11px; border-top: 1px solid var(--line); padding-top: 9px; }
