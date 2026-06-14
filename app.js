@@ -3413,13 +3413,26 @@
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     window.addEventListener("load", function () {
       navigator.serviceWorker.register("sw.js").then(function (reg) {
+        var pendingReload = false;
+        function reloadSafe() {  // 입력 중이면 방해 않고 보류 → 입력 끝/탭 복귀 때 적용
+          var ae = document.activeElement;
+          if (ae && /INPUT|TEXTAREA/.test(ae.tagName)) { pendingReload = true; return; }
+          location.reload();
+        }
         try { reg.update(); } catch (e) {}
         reg.addEventListener("updatefound", function () {
           var nw = reg.installing; if (!nw) return;
           nw.addEventListener("statechange", function () {
-            // 새 SW 설치완료 + 기존 컨트롤러 있음(=재방문자 업데이트) → 새 코드/CSS로 자동 리로드
-            if (nw.state === "installed" && navigator.serviceWorker.controller) location.reload();
+            // 새 SW 설치완료 + 기존 컨트롤러 있음(=업데이트) → 새 코드/CSS로 자동 리로드
+            if (nw.state === "installed" && navigator.serviceWorker.controller) reloadSafe();
           });
+        });
+        // ★열려있는 세션도 주기적으로 새 버전 확인 → 새로고침 안 하는 사람도 자동 적용(90초마다 + 탭 복귀 시)
+        setInterval(function () { try { reg.update(); } catch (e) {} }, 90000);
+        document.addEventListener("visibilitychange", function () {
+          if (document.visibilityState !== "visible") return;
+          if (pendingReload) { location.reload(); return; }
+          try { reg.update(); } catch (e) {}
         });
       }).catch(function () {});
     });
