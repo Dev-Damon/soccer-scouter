@@ -1691,7 +1691,7 @@
       });
     }
     // fetchLive(스코어 폴링)가 끝날 때마다 즉시 이 경기 점수 갱신(다음 20초 틱 안 기다림)
-    window._matchLiveTick = function () { updScore(); var lv = LIVE[fx.id]; if (lv && lv.state === "in") refreshLineup(); };
+    window._matchLiveTick = function () { updScore(); var lv = LIVE[fx.id]; if ((lv && lv.state === "in") || isTimeLive(fx)) refreshLineup(); };  // 시각상 라이브면 LIVE 미설정이어도 라인업·통계 갱신
     updScore();
     var lvNow = LIVE[fx.id], ko = matchKickoff(fx);
     // 킥오프 2시간 전 ~ 종료 후까지 타이머 가동(선발 라인업 뜨자마자 자동 교체 + 라이브 스코어)
@@ -1879,8 +1879,14 @@
   }
   function fetchLive() {
     if (!window.fetch) return;
-    fetch(ESPN_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
-      var res = applyEspn(d);
+    // 오늘+어제(UTC) 둘 다 조회 — KST 새벽 경기는 어제UTC라, today만 보면 라이브가 영영 안 잡힘(데몬은 2일 스캔)
+    function dstr(t) { return new Date(t).toISOString().slice(0, 10).replace(/-/g, ""); }
+    var now = Date.now();
+    var urls = [ESPN_URL + "?dates=" + dstr(now), ESPN_URL + "?dates=" + dstr(now - 86400000)];
+    Promise.all(urls.map(function (u) { return fetch(u, { cache: "no-store" }).then(function (r) { return r.json(); }).catch(function () { return {}; }); })).then(function (arr) {
+      var merged = { events: [] };
+      arr.forEach(function (d) { if (d && d.events) merged.events = merged.events.concat(d.events); });
+      var res = applyEspn(merged);
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
       if (window._teamLiveTick) window._teamLiveTick();    // 나라상세 라이브 배너 점수 갱신
       var lk = liveKey();
