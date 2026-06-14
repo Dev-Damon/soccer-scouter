@@ -181,6 +181,7 @@
     if (parts[0] === "saved") return { name: "saved" };
     if (parts[0] === "my") return { name: "my" };
     if (parts[0] === "admin") return { name: "admin" };
+    if (parts[0] === "adminuser") return { name: "adminuser", id: parts[1] };
     return { name: "home" };
   }
 
@@ -2854,34 +2855,34 @@
   }
   var ADM_RSN = { checkin: "출석", draw: "럭키드로우", bet: "베팅", bet_win: "베팅 적중", bet_refund: "베팅 취소", cheer: "응원", purchase: "칭호 구매" };
   function admDT(iso) { try { var d = new Date(iso); return (d.getMonth() + 1) + "." + d.getDate() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2); } catch (e) { return ""; } }
-  function openUserDetail(uid) {
-    if (!window.KickComments || !KickComments.adminUserDetail) return;
-    var ov = document.createElement("div"); ov.className = "usr-modal";
-    ov.innerHTML = '<div class="usr-card"><div class="empty">불러오는 중…</div></div>';
-    document.body.appendChild(ov);
-    ov.addEventListener("click", function (e) {
-      if (e.target === ov || e.target.closest(".usr-x")) { ov.remove(); return; }
-      var t = e.target.closest(".usr-tab"); if (!t) return;
-      var k = t.getAttribute("data-ut");
-      Array.prototype.forEach.call(ov.querySelectorAll(".usr-tab"), function (x) { x.classList.toggle("on", x === t); });
-      Array.prototype.forEach.call(ov.querySelectorAll(".usr-body"), function (p) { p.classList.toggle("hidden", p.getAttribute("data-pane") !== k); });
-    });
+  function renderAdminUser(uid) {
+    backBtn.hidden = false; tabsEl.hidden = true;
+    if (!window.KickComments || !KickComments.adminUserDetail) { viewEl.innerHTML = '<div class="empty">권한이 없습니다.</div>'; return; }
+    viewEl.innerHTML = '<div class="empty">불러오는 중…</div>';
     KickComments.adminUserDetail(uid).then(function (d) {
-      if (!d) { ov.querySelector(".usr-card").innerHTML = '<button class="usr-x">✕</button><div class="empty">불러오기 실패</div>'; return; }
+      if (parseHash().name !== "adminuser") return;
+      if (!d) { viewEl.innerHTML = '<div class="empty">불러오기 실패</div>'; return; }
       var led = d.ledger || [], bets = d.bets || [], cmts = d.comments || [], chats = d.chats || [];
       var ledH = led.length ? led.map(function (l) { var up = l.delta >= 0; return '<div class="ul-row"><div class="ul-top"><span class="ul-rsn">' + esc(ADM_RSN[l.reason] || l.reason) + '</span><span class="ul-d ' + (up ? "up" : "dn") + '">' + (up ? "+" : "") + (l.delta || 0).toLocaleString() + '</span></div><div class="ul-meta">잔액 ' + (l.balance_after != null ? l.balance_after.toLocaleString() : "?") + " KP · " + admDT(l.created_at) + "</div></div>"; }).join("") : '<div class="empty">포인트 변동 내역 없음</div>';
       var betH = bets.length ? bets.map(function (b) { var fx = fixturesById[b.match_id]; var lbl = fx ? ((fx.homeName || "") + " vs " + (fx.awayName || "")) : b.match_id; var st = b.status === "won" ? '<span class="up">적중 +' + (b.payout || 0).toLocaleString() + "</span>" : b.status === "lost" ? '<span class="dn">실패 −' + (b.stake || 0).toLocaleString() + "</span>" : '<span class="muted-note">대기중</span>'; return '<div class="ud-item"><div class="ud-b">' + esc(lbl) + '</div><div class="ud-meta">' + esc(b.choice) + " · " + (b.stake || 0).toLocaleString() + "KP · 배당 " + b.odds + " · " + st + "</div></div>"; }).join("") : '<div class="empty">베팅 없음</div>';
       var cmtH = cmts.length ? cmts.map(function (c) { return '<div class="ud-item"><div class="ud-b">' + esc(c.body) + (c.hidden ? ' <span class="mgr-badge">숨김</span>' : "") + '</div><div class="ud-meta">' + esc(threadInfo(c.thread_key).label) + " · " + admDT(c.created_at) + "</div></div>"; }).join("") : '<div class="empty">댓글 없음</div>';
       var chatH = chats.length ? chats.map(function (c) { return '<div class="ud-item"><div class="ud-b">' + esc(c.body) + '</div><div class="ud-meta">' + admDT(c.created_at) + "</div></div>"; }).join("") : '<div class="empty">채팅 없음</div>';
-      ov.querySelector(".usr-card").innerHTML = '<button class="usr-x">✕</button>' +
+      viewEl.innerHTML = '<div class="usr-page"><div class="usr-back" data-go="admin">← 회원 목록</div>' +
         '<div class="usr-hd"><div class="usr-nm">' + esc(d.name) + '</div><div class="usr-pt">' + (d.points || 0).toLocaleString() + ' KP</div></div>' +
         '<div class="usr-sub">가입 ' + admDT(d.joined) + " · 연승 " + (d.streak || 0) + "(최고 " + (d.best_streak || 0) + ")" + (d.title ? " · 칭호 " + esc(d.title) : "") + "</div>" +
         '<div class="usr-tabs"><button class="usr-tab on" data-ut="led">포인트내역 ' + led.length + '</button><button class="usr-tab" data-ut="bet">베팅 ' + bets.length + '</button><button class="usr-tab" data-ut="cmt">댓글 ' + cmts.length + '</button><button class="usr-tab" data-ut="chat">채팅 ' + chats.length + "</button></div>" +
         '<div class="usr-body" data-pane="led">' + ledH + "</div>" +
         '<div class="usr-body hidden" data-pane="bet">' + betH + "</div>" +
         '<div class="usr-body hidden" data-pane="cmt">' + cmtH + "</div>" +
-        '<div class="usr-body hidden" data-pane="chat">' + chatH + "</div>";
-      twem(ov);
+        '<div class="usr-body hidden" data-pane="chat">' + chatH + "</div></div>";
+      twem(viewEl);
+      var page = viewEl.querySelector(".usr-page");
+      page.addEventListener("click", function (e) {
+        var t = e.target.closest(".usr-tab"); if (!t) return;
+        var k = t.getAttribute("data-ut");
+        Array.prototype.forEach.call(page.querySelectorAll(".usr-tab"), function (x) { x.classList.toggle("on", x === t); });
+        Array.prototype.forEach.call(page.querySelectorAll(".usr-body"), function (p) { p.classList.toggle("hidden", p.getAttribute("data-pane") !== k); });
+      });
     });
   }
   function adminItem(c, extra) {
@@ -3113,6 +3114,7 @@
     if (r.name === "saved") { setTabbar("saved"); return renderSaved(); }
     if (r.name === "my") { setTabbar("my"); return renderMy(); }
     if (r.name === "admin") { setTabbar(""); return renderAdmin(); }
+    if (r.name === "adminuser") { setTabbar(""); return renderAdminUser(r.id); }
     // 홈
     setTabbar("home");
     if (searchEl.value.trim()) { tabsEl.hidden = true; return renderSearchResults(searchEl.value.trim().toLowerCase()); }
@@ -3235,7 +3237,8 @@
       KickComments.updatePost(sitem.getAttribute("data-pid"), spost ? spost.category : "자유", snb, spost ? spost.pinned : false).then(function () { renderBoard(); });
       return;
     }
-    if ((ad = e.target.closest(".mb-clk"))) { var _auid = ad.getAttribute("data-auid"); if (_auid) openUserDetail(_auid); return; }  // 회원 클릭 → 상세
+    if ((ad = e.target.closest(".mb-clk"))) { var _auid = ad.getAttribute("data-auid"); if (_auid) go("#adminuser/" + _auid); return; }  // 회원 클릭 → 상세 페이지
+    if (e.target.closest(".usr-back")) { go("admin"); return; }  // 상세→회원목록
     if ((ad = e.target.closest(".mb-sort"))) { _adminScrollY = window.scrollY; memberSort = ad.getAttribute("data-msort"); paintAdmin(); return; }
     if ((ad = e.target.closest("[data-adtab]"))) { _adminScrollY = window.scrollY; adminTab = ad.getAttribute("data-adtab"); paintAdmin(); return; }  // 탭 전환도 그 자리 유지(맨위로 안 감)
     if ((ad = e.target.closest(".mgr-go"))) { go(ad.getAttribute("data-go")); return; }
