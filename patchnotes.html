@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>try{if(localStorage.getItem("kt_theme")!=="dark")document.documentElement.classList.add("light");}catch(e){}</script>
   <title>패치노트 · 킥톡 KickTalk</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg" />
   <style>
     :root{--bg:#0b1220;--line:#1e2a3a;--text:#e8eef6;--muted:#9fb0c3;--accent:#2ee6a6;--card:#131c2e}
+    html.light{--bg:#f3f5f8;--line:#e3e8f0;--text:#1c2536;--muted:#62718c;--accent:#2f6fe0;--card:#ffffff}
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font-family:"Apple SD Gothic Neo",system-ui,-apple-system,sans-serif;line-height:1.7;-webkit-text-size-adjust:100%}
     .wrap{max-width:760px;margin:0 auto;padding:24px 18px 64px}
@@ -21,8 +23,10 @@
     .tag{font-size:11px;font-weight:800;padding:2px 9px;border-radius:999px}
     .tag.launch{background:rgba(46,230,166,.15);color:#2ee6a6;border:1px solid rgba(46,230,166,.4)}
     .tag.new{background:rgba(79,140,255,.15);color:#7ab0ff;border:1px solid rgba(79,140,255,.4)}
+    html.light .tag.launch{background:rgba(16,160,110,.12);color:#0e8f63;border-color:rgba(16,160,110,.35)}
+    html.light .tag.new{background:rgba(47,111,224,.12);color:#2f6fe0;border-color:rgba(47,111,224,.35)}
     ul{margin:0;padding-left:18px}
-    li{color:#cdd8e6;font-size:14px;margin:5px 0}
+    li{color:var(--text);font-size:14px;margin:5px 0}
     li b{color:var(--text)}
     .note{color:var(--muted);font-size:12.5px;margin-top:6px}
     .foot{margin-top:30px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
