@@ -1108,7 +1108,7 @@
     var facts = [
       ["포지션", posClass(p.position).toUpperCase()],
       ["나이", (p.age != null ? p.age + "세" : "-")],
-      ["대표팀", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
+      ["A매치 기록", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
     ];
     var factsHtml = facts.map(function (f) {
       return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
