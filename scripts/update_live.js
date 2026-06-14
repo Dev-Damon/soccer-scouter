@@ -49,6 +49,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
   // ③ 종료경기 OG 카드 자동 재생성+배포 — 결과가 새/변경된 경기만(경기별 ?v 증가로 카톡 캐시 무효화)
   try{
     const fs=require('fs'), {execFileSync}=require('child_process');
+    const NODE=process.execPath;  // launchd PATH에 node 없어 execFileSync('node')가 ENOENT 나던 버그 → 절대경로 사용
     const ROOT=path.join(__dirname,'..'), verF=path.join(ROOT,'ogm','og_ver.json');
     let ver={}; try{ver=JSON.parse(fs.readFileSync(verF,'utf8'))}catch(e){}
     const changed=[];
@@ -58,9 +59,10 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
       if(cur.sig!==sig){ ver[fid]={sig:sig, v:(cur.v||3)+1}; changed.push(fid); }
     }
     if(changed.length){
+      // ★렌더가 성공한 뒤에만 og_ver 기록 — 렌더 실패 시 og_ver를 미리 올려 영구 스킵되던 버그 방지(다음 실행서 재시도)
+      for(const fid of changed) execFileSync(NODE,[path.join(__dirname,'gen_og_render.js'),fid],{cwd:ROOT,timeout:90000,stdio:'ignore'});
       fs.writeFileSync(verF,JSON.stringify(ver,null,1));
-      for(const fid of changed) execFileSync('node',[path.join(__dirname,'gen_og_render.js'),fid],{cwd:ROOT,timeout:90000,stdio:'ignore'});
-      execFileSync('node',[path.join(__dirname,'gen_match_pages.js')],{cwd:ROOT,timeout:60000,stdio:'ignore'});  // ?v 갱신 반영
+      execFileSync(NODE,[path.join(__dirname,'gen_match_pages.js')],{cwd:ROOT,timeout:60000,stdio:'ignore'});  // ?v 갱신 반영
       execFileSync('git',['add','ogm','m','sitemap.xml'],{cwd:ROOT,stdio:'ignore'});
       execFileSync('git',['commit','-m','OG 자동재생성(종료경기 결과반영): '+changed.join(',')],{cwd:ROOT,stdio:'ignore'});
       execFileSync('git',['pull','--rebase','origin','main'],{cwd:ROOT,stdio:'ignore'});
