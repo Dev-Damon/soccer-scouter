@@ -3009,6 +3009,36 @@
 
   var matchLiveTimer = null;
   function stopMatchLive() { if (matchLiveTimer) { clearInterval(matchLiveTimer); matchLiveTimer = null; } window._matchLiveTick = null; }
+  // 공유 넛지 — 앱을 충분히 써본 사용자(경기·선수 상세 3회 이상)에게 하루 1회 '친구에게 공유' 권유. 첫 방문자에겐 안 뜸.
+  function _kday() { try { return new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" }); } catch (e) { return ""; } }
+  function bumpEngage() {
+    try {
+      var n = (+localStorage.getItem("kt_engage") || 0) + 1; localStorage.setItem("kt_engage", n);
+      if (n < 3) return;                                            // 3회 이상 본 사람만
+      if (localStorage.getItem("kt_share_seen") === _kday()) return;  // 하루 1회
+      if (document.querySelector(".share-nudge")) return;
+      localStorage.setItem("kt_share_seen", _kday());
+      showShareNudge();
+    } catch (e) {}
+  }
+  function showShareNudge() {
+    var ov = document.createElement("div"); ov.className = "share-nudge";
+    ov.innerHTML = '<div class="sn-card"><div class="sn-emoji">⚽👍</div>' +
+      '<div class="sn-title">킥톡 재밌게 보고 계신가요?</div>' +
+      '<div class="sn-desc">친구에게 공유하면 같이 월드컵을 즐길 수 있어요!</div>' +
+      '<div class="sn-btns"><button class="sn-share">친구에게 공유하기</button>' +
+      '<button class="sn-close">오늘 하루 안 보기</button></div></div>';
+    document.body.appendChild(ov);
+    function close() { ov.remove(); }
+    ov.addEventListener("click", function (e) {
+      if (e.target === ov || e.target.closest(".sn-close")) { close(); return; }
+      if (e.target.closest(".sn-share")) {
+        var url = "https://kicktalk.xyz/", txt = "⚽ 킥톡 — 2026 월드컵 같이 보기";
+        if (navigator.share) { navigator.share({ text: txt, url: url }).catch(function () {}); close(); }
+        else { try { navigator.clipboard.writeText(txt + " " + url); ktToast("링크가 복사됐어요! 친구에게 붙여넣기 하세요 📋"); } catch (e2) {} close(); }
+      }
+    });
+  }
   function route() {
     var r = parseHash();
     // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위.
@@ -3016,11 +3046,11 @@
     _isPop = false;
     restoreScroll(_restoreY);
     stopMatchLive();
-    if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); return; }
+    if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); bumpEngage(); return; }
     if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
     if (r.name === "rate") { setTabbar(""); renderMatchRate(r.id); return; }
     if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
-    if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); return; }
+    if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); bumpEngage(); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;

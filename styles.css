@@ -1298,3 +1298,14 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .hero.live-hero .hero-meta { display: none; }  /* 경기장 줄 숨겨 높이 절약 */
 .hero.live-hero .hero-cta { margin-top: 3px; font-size: 11px; }
 .live-cards { gap: 9px; }
+
+/* 공유 넛지 모달(앱 경험 후 하루 1회) */
+.share-nudge{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:24px;animation:snFade .2s ease}
+@keyframes snFade{from{opacity:0}to{opacity:1}}
+.share-nudge .sn-card{background:var(--card);border:1px solid var(--line);border-radius:18px;max-width:340px;width:100%;padding:26px 22px;text-align:center;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.share-nudge .sn-emoji{font-size:38px;margin-bottom:8px}
+.share-nudge .sn-title{font-size:18px;font-weight:900;color:var(--text);margin-bottom:6px}
+.share-nudge .sn-desc{font-size:13.5px;color:var(--muted);line-height:1.55;margin-bottom:18px}
+.share-nudge .sn-btns{display:flex;flex-direction:column;gap:9px}
+.share-nudge .sn-share{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px;font-size:14.5px;font-weight:800;cursor:pointer}
+.share-nudge .sn-close{background:transparent;color:var(--muted);border:none;padding:6px;font-size:13px;cursor:pointer}
