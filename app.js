@@ -1672,12 +1672,13 @@
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
           '<div class="vs-team" data-team="' + esc(a.id) + '"><span class="vs-flag">' + esc(a.flag) + "</span>" +
-            '<span class="vs-name">' + esc(a.name) + '</span><span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
+            '<span class="vs-name">' + esc(a.name) + "</span>" + (TEAM_MV[a.id] != null ? '<span class="vs-mv">' + fmtMV(TEAM_MV[a.id]) + "</span>" : "") + '<span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
           '<div class="vs-center"><div class="vs-x">VS</div></div>' +
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
-            '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
+            '<span class="vs-name">' + esc(b.name) + "</span>" + (TEAM_MV[b.id] != null ? '<span class="vs-mv">' + fmtMV(TEAM_MV[b.id]) + "</span>" : "") + '<span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
         "</div>" +
         '<div class="vs-goals"></div>' +
+        ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx)) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
@@ -2205,6 +2206,10 @@
       lineupCacheSet(fx.id, d); renderLineup(slot, d, a, b, fx);
     }).catch(function () { if (!cached) slot.style.display = "none"; });
   }
+  // 경기 하이라이트 URL — 종료 경기에 직접 입력(네이버/치지직). 경기 상세 헤더 밑 슬림 버튼으로 연결.
+  var MATCH_HIGHLIGHTS = {
+    "match-8": "https://chzzk.naver.com/video/13697795"  // 카타르-스위스
+  };
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
     // 평점(사진, 2026-06-15) — 등번호로 ESPN 라인업 대조.
