@@ -1899,7 +1899,10 @@
     KickComments.ready().then(KickComments.matchResults).then(function (res) {
       var changed = false;
       Object.keys(res || {}).forEach(function (mid) {
-        if (!LIVE[mid] && res[mid] && res[mid].hs != null) { LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true; }
+        // DB에 결과 있으면 = 종료된 경기. LIVE가 비었거나 '아직 in(스테일)'이면 post로 덮어씀(ESPN이 스코어보드서 내려 안 잡히던 끝난 경기가 라이브로 멈춰있던 버그 해결)
+        if (!(res[mid] && res[mid].hs != null)) return;
+        if (LIVE[mid] && LIVE[mid].state === "post") return;
+        LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
       if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
     }).catch(function () {});
@@ -1929,6 +1932,7 @@
       var merged = { events: [] };
       arr.forEach(function (d) { if (d && d.events) merged.events = merged.events.concat(d.events); });
       var res = applyEspn(merged);
+      loadStoredResults();  // 매 폴링마다 DB 결과와 대조 → 끝난 경기(ESPN서 내려간)도 스테일 라이브 안 되게 post로 정리
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
       if (window._teamLiveTick) window._teamLiveTick();    // 나라상세 라이브 배너 점수 갱신
       var lk = liveKey();
