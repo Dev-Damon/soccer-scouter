@@ -1366,3 +1366,17 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .mvcmp-bar .l { background: var(--accent); } .mvcmp-bar .r { background: #e5574d; }
 .mvcmp-note { text-align: center; font-size: 12px; color: var(--muted); font-weight: 700; margin-top: 8px; }
 .mvcmp-note b { color: var(--text); }
+/* 시장가치 순위 페이지 */
+.mvr-h { font-size: 18px; font-weight: 900; color: var(--text); margin: 2px 2px 2px; }
+.mvr-sub { font-size: 12px; color: var(--muted); margin: 0 2px 14px; }
+.mvr-row { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 9px; padding: 7px 4px; cursor: pointer; border-radius: 8px; }
+.mvr-row:hover { background: var(--bg-soft); }
+.mvr-rk { font-size: 12px; font-weight: 800; color: var(--muted); text-align: center; }
+.mvr-mid { min-width: 0; }
+.mvr-nm { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.mvr-nm img.emoji { width: 18px; height: 18px; vertical-align: -3px; }
+.mvr-bar { height: 9px; background: var(--line); border-radius: 5px; overflow: hidden; }
+.mvr-bar > i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+.mvr-v { font-size: 13px; font-weight: 900; color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mvr-row.me { background: rgba(79,140,255,.12); }
+.mv-card.clk, .mvcmp.clk { cursor: pointer; }

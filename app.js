@@ -182,6 +182,7 @@
     if (parts[0] === "my") return { name: "my" };
     if (parts[0] === "admin") return { name: "admin" };
     if (parts[0] === "adminuser") return { name: "adminuser", id: parts[1] };
+    if (parts[0] === "mvrank") return { name: "mvrank", id: parts[1] };
     return { name: "home" };
   }
 
@@ -1249,9 +1250,22 @@
     var hi = av >= bv ? a : b, ratio = Math.max(av, bv) / Math.max(0.01, Math.min(av, bv));
     var rtxt = ratio >= 1.05 ? " · 약 " + (ratio >= 10 ? Math.round(ratio) : ratio.toFixed(1)) + "배" : "";
     var note = av === bv ? "💰 스쿼드 몸값 대등" : '💰 스쿼드 몸값 <b>' + esc(hi.name) + " 우세</b>" + rtxt;
-    return '<div class="block mvcmp"><div class="mvcmp-top"><span class="mvcmp-l">' + esc(a.flag) + " " + fmtMV(av) + '</span><span class="mvcmp-r">' + fmtMV(bv) + " " + esc(b.flag) + "</span></div>" +
+    return '<div class="block mvcmp clk" data-mvrank="' + esc(a.id) + '"><div class="mvcmp-top"><span class="mvcmp-l">' + esc(a.flag) + " " + fmtMV(av) + '</span><span class="mvcmp-r">' + fmtMV(bv) + " " + esc(b.flag) + "</span></div>" +
       '<div class="mvcmp-bar"><span class="l" style="width:' + lp + '%"></span><span class="r" style="width:' + (100 - lp) + '%"></span></div>' +
       '<div class="mvcmp-note">' + note + "</div></div>";
+  }
+  // 나라별 스쿼드 총 시장가치 순위 페이지 — 가로 막대 그래프, 선택 나라 강조. 행 탭하면 그 나라 상세로.
+  function renderMvRank(hid) {
+    backBtn.hidden = false; tabsEl.hidden = true;
+    var arr = (DATA.teams || []).filter(function (t) { return TEAM_MV[t.id] != null; }).sort(function (a, b) { return TEAM_MV[b.id] - TEAM_MV[a.id]; });
+    var max = arr.length ? TEAM_MV[arr[0].id] : 1;
+    var rows = arr.map(function (t, i) {
+      var v = TEAM_MV[t.id];
+      return '<div class="mvr-row' + (t.id === hid ? " me" : "") + '" data-team="' + esc(t.id) + '"><span class="mvr-rk">' + (i + 1) + '</span><div class="mvr-mid"><div class="mvr-nm">' + esc(t.flag) + " " + esc(t.name) + '</div><div class="mvr-bar"><i style="width:' + (v / max * 100) + '%"></i></div></div><span class="mvr-v">' + fmtMV(v) + "</span></div>";
+    }).join("");
+    viewEl.innerHTML = '<div class="mvr"><div class="mvr-h">💰 스쿼드 총 시장가치 순위</div><div class="mvr-sub">2026 월드컵 ' + arr.length + "개국 · Transfermarkt 집계 · 참고용</div>" + rows + "</div>";
+    twem(viewEl);
+    if (hid) { var el = viewEl.querySelector(".mvr-row.me"); if (el) el.scrollIntoView({ block: "center" }); }
   }
   function renderTeam(id) {
     var t = teamsById[id];
@@ -1286,10 +1300,10 @@
     // 스쿼드 총 시장가치(€) — 보도된 나라별 총액
     var mv = TEAM_MV[t.id];
     if (mv != null) {
-      html += '<div class="block mv-card"><span class="mv-ic">💰</span><div class="mv-main">' +
+      html += '<div class="block mv-card clk" data-mvrank="' + esc(t.id) + '"><span class="mv-ic">💰</span><div class="mv-main">' +
         '<div class="mv-k">스쿼드 총 시장가치</div>' +
-        '<div class="mv-v">' + fmtMV(mv) + ' <span class="mv-rank">세계 ' + mvRank(t.id) + '위</span></div>' +
-        '<div class="mv-src">Transfermarkt 집계 · 참고용</div></div></div>';
+        '<div class="mv-v">' + fmtMV(mv) + ' <span class="mv-rank">참전국 중 ' + mvRank(t.id) + '위</span></div>' +
+        '<div class="mv-src">Transfermarkt 집계 · 참고용 · 순위 보기 ›</div></div></div>';
     }
 
     // 최신 뉴스 (있으면)
@@ -3234,6 +3248,7 @@
     if (r.name === "my") { setTabbar("my"); return renderMy(); }
     if (r.name === "admin") { setTabbar(""); return renderAdmin(); }
     if (r.name === "adminuser") { setTabbar(""); return renderAdminUser(r.id); }
+    if (r.name === "mvrank") { setTabbar(""); return renderMvRank(r.id); }
     // 홈
     setTabbar("home");
     if (searchEl.value.trim()) { tabsEl.hidden = true; return renderSearchResults(searchEl.value.trim().toLowerCase()); }
@@ -3436,6 +3451,8 @@
     if (rt) { openRateSheet(rt.getAttribute("data-rate"), rt.getAttribute("data-rmatch")); return; }
     var pl = e.target.closest("[data-player]");
     if (pl) { go("player/" + pl.getAttribute("data-player")); return; }
+    var mvr = e.target.closest("[data-mvrank]");  // 몸값 카드 → 시장가치 순위 페이지
+    if (mvr) { go("mvrank/" + (mvr.getAttribute("data-mvrank") || "")); return; }
     var tm = e.target.closest("[data-team]");
     if (tm) { go("team/" + tm.getAttribute("data-team")); return; }
   });
