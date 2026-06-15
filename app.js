@@ -2221,9 +2221,13 @@
   }
   // 경기 하이라이트 URL — 종료 경기에 직접 입력(네이버/치지직). 경기 상세 헤더 밑 슬림 버튼으로 연결.
   var MATCH_HIGHLIGHTS = {
+    "match-1": "https://chzzk.naver.com/video/13663676",   // 멕시코-남아공
+    "match-2": "https://chzzk.naver.com/video/13666274",   // 대한민국-체코
     "match-8": "https://chzzk.naver.com/video/13697795",   // 카타르-스위스
-    "match-31": "https://chzzk.naver.com/video/13714387",  // 일본-네덜란드
-    "match-25": "https://chzzk.naver.com/video/13713371"   // 독일-퀴라소
+    "match-25": "https://chzzk.naver.com/video/13713371",  // 독일-퀴라소
+    "match-26": "https://chzzk.naver.com/video/13714960",  // 코트디부아르-에콰도르
+    "match-31": "https://chzzk.naver.com/video/13714387",  // 일본-네덜란드(=네덜란드-일본)
+    "match-32": "https://chzzk.naver.com/video/13715746"   // 스웨덴-튀니지
   };
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
