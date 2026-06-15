@@ -822,13 +822,18 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .mstat-leg { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-weight: 800; font-size: 13.5px; color: var(--text); }
 .mstat-leg .ms-tm img.emoji { width: 20px; height: 20px; vertical-align: -3px; }
 .ms-row { margin-bottom: 11px; }
-.ms-top { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; margin-bottom: 5px; }
+.ms-top { display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; margin-bottom: 5px; }
 .ms-v { font-size: 13.5px; font-weight: 700; color: var(--muted); }
 .ms-v:first-child { text-align: left; } .ms-v:last-child { text-align: right; }
 .ms-v.win { color: var(--text); font-weight: 800; }
 .ms-l { text-align: center; font-size: 12px; font-weight: 600; color: var(--muted); }
+/* 점유율 % — 팀 색상 알약 배지 */
+.ms-pill { display: inline-block; padding: 3px 13px; border-radius: 999px; font-size: 14px; font-weight: 800; line-height: 1.3; }
+.ms-v.ms-pill-l, .ms-v.ms-pill-r { color: #fff; }
+.ms-pill-l { background: var(--accent); }
+.ms-pill-r { background: #e5574d; }
 .ms-bar { height: 7px; }
-.ms-bar.sp { display: flex; height: 11px; border-radius: 6px; overflow: hidden; }   /* 점유율 바만 굵게 */
+.ms-bar.sp { display: flex; height: 18px; border-radius: 9px; overflow: hidden; }   /* 점유율 게이지 — 굵게 */
 .ms-bar.sp .l { background: var(--accent); } .ms-bar.sp .r { background: #e5574d; }
 .ms-bar.mr { display: flex; gap: 8px; }
 .ms-h { flex: 1; height: 100%; background: var(--line); border-radius: 4px; position: relative; overflow: hidden; }

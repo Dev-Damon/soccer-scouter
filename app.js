@@ -2426,7 +2426,8 @@
         var sm = av + bv || 1;  // 소파스코어식: 각 막대 = 값/합(비율). 한쪽이 0 아니면 양쪽 다 안 참.
         bar = '<div class="ms-bar mr"><span class="ms-h l"><i style="width:' + (av / sm * 100) + '%"></i></span><span class="ms-h r"><i style="width:' + (bv / sm * 100) + '%"></i></span></div>';
       }
-      return '<div class="ms-row"><div class="ms-top"><span class="ms-v' + (aw ? " win" : "") + '">' + at + '</span><span class="ms-l">' + esc(d.l) + '</span><span class="ms-v' + (bw ? " win" : "") + '">' + bt + "</span></div>" + bar + "</div>";
+      var pl = d.split ? " ms-pill ms-pill-l" : "", pr = d.split ? " ms-pill ms-pill-r" : "";  // 점유율은 팀색 알약 배지
+      return '<div class="ms-row"><div class="ms-top"><span class="ms-v' + pl + (aw ? " win" : "") + '">' + at + '</span><span class="ms-l">' + esc(d.l) + '</span><span class="ms-v' + pr + (bw ? " win" : "") + '">' + bt + "</span></div>" + bar + "</div>";
     }).join("");
     if (!rows) return "";
     return '<div class="mstat"><div class="mstat-h">📊 경기 통계' + (live ? ' <span class="ms-live">● 실시간</span>' : "") + "</div>" +
