@@ -1901,7 +1901,7 @@
       Object.keys(res || {}).forEach(function (mid) {
         if (!LIVE[mid] && res[mid] && res[mid].hs != null) { LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true; }
       });
-      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
+      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); var _r = parseHash(); if (_r.name === "player") renderPlayer(_r.id); }  // 선수 페이지면 A매치 WC득점 반영 위해 재렌더
     }).catch(function () {});
   }
   function onHomeSchedule() {
