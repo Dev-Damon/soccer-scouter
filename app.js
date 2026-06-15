@@ -1100,6 +1100,21 @@
       '<button class="cmp-change" data-cmp-change="' + esc(A.id) + '">↺ 다른 선수와 비교</button></div>';
     twem(viewEl);
   }
+  // 이번 월드컵 종료경기 득점자 → 선수별 골 수(매치결과 ev에서 집계, 자책골 제외). A매치 득점 기록에 가산.
+  function wcGoalsByPid() {
+    var m = {};
+    Object.keys(LIVE).forEach(function (mid) {
+      var lv = LIVE[mid]; if (!lv || !lv.events || !lv.events.length) return;
+      var fx = fixturesById[mid]; if (!fx) return;
+      var hk = (teamsById[fx.homeId] || {}).name, ak = (teamsById[fx.awayId] || {}).name;
+      lv.events.forEach(function (g) {
+        if (g.og || !g.who) return;  // 자책골 제외
+        var p = playerByName(g.who, hk) || playerByName(g.who, ak) || playerByName(g.who);
+        if (p) m[p.id] = (m[p.id] || 0) + 1;
+      });
+    });
+    return m;
+  }
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -1112,7 +1127,7 @@
     var facts = [
       ["포지션", posClass(p.position).toUpperCase()],
       ["나이", (p.age != null ? p.age + "세" : "-")],
-      ["A매치 기록", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")],
+      ["A매치 기록", (function () { var wg = wcGoalsByPid()[p.id] || 0; var tg = (p.intlGoals != null ? p.intlGoals : 0) + wg; if (p.caps == null && !wg) return "-"; return (p.caps != null ? p.caps + "경기 · " : "") + tg + "골" + (wg > 0 ? ' <span class="wc-add">이번 월드컵 +' + wg + "</span>" : ""); })()],
     ];
     var factsHtml = facts.map(function (f) {
       return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
