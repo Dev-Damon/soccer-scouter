@@ -1213,6 +1213,18 @@
   var _mvRank = null;
   function mvRank(id) { if (!_mvRank) { _mvRank = {}; Object.keys(TEAM_MV).sort(function (a, b) { return TEAM_MV[b] - TEAM_MV[a]; }).forEach(function (k, i) { _mvRank[k] = i + 1; }); } return _mvRank[id]; }
   function fmtMV(m) { if (m == null) return ""; if (m >= 1000) return "€" + (m / 1000).toFixed(2).replace(/\.?0+$/, "") + "B"; return "€" + m + "M"; }
+  // 경기 헤더 밑 양팀 스쿼드 몸값 비교(시안2) — 분할 막대 + 우세 배수
+  function mvCompareHtml(a, b) {
+    var av = TEAM_MV[a.id], bv = TEAM_MV[b.id];
+    if (av == null || bv == null) return "";
+    var tot = av + bv, lp = Math.round(av / tot * 100);
+    var hi = av >= bv ? a : b, ratio = Math.max(av, bv) / Math.max(0.01, Math.min(av, bv));
+    var rtxt = ratio >= 1.05 ? " · 약 " + (ratio >= 10 ? Math.round(ratio) : ratio.toFixed(1)) + "배" : "";
+    var note = av === bv ? "💰 스쿼드 몸값 대등" : '💰 스쿼드 몸값 <b>' + esc(hi.name) + " 우세</b>" + rtxt;
+    return '<div class="block mvcmp"><div class="mvcmp-top"><span class="mvcmp-l">' + esc(a.flag) + " " + fmtMV(av) + '</span><span class="mvcmp-r">' + fmtMV(bv) + " " + esc(b.flag) + "</span></div>" +
+      '<div class="mvcmp-bar"><span class="l" style="width:' + lp + '%"></span><span class="r" style="width:' + (100 - lp) + '%"></span></div>' +
+      '<div class="mvcmp-note">' + note + "</div></div>";
+  }
   function renderTeam(id) {
     var t = teamsById[id];
     if (!t) { viewEl.innerHTML = '<div class="empty">팀을 찾을 수 없어요.</div>'; return; }
@@ -1672,11 +1684,12 @@
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
           '<div class="vs-team" data-team="' + esc(a.id) + '"><span class="vs-flag">' + esc(a.flag) + "</span>" +
-            '<span class="vs-name">' + esc(a.name) + "</span>" + (TEAM_MV[a.id] != null ? '<span class="vs-mv">' + fmtMV(TEAM_MV[a.id]) + "</span>" : "") + '<span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
+            '<span class="vs-name">' + esc(a.name) + '</span><span class="vs-rank">FIFA ' + esc(a.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
           '<div class="vs-center"><div class="vs-x">VS</div></div>' +
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
-            '<span class="vs-name">' + esc(b.name) + "</span>" + (TEAM_MV[b.id] != null ? '<span class="vs-mv">' + fmtMV(TEAM_MV[b.id]) + "</span>" : "") + '<span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
+            '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
         "</div>" +
+        mvCompareHtml(a, b) +
         '<div class="vs-goals"></div>' +
         ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx)) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
@@ -2208,7 +2221,9 @@
   }
   // 경기 하이라이트 URL — 종료 경기에 직접 입력(네이버/치지직). 경기 상세 헤더 밑 슬림 버튼으로 연결.
   var MATCH_HIGHLIGHTS = {
-    "match-8": "https://chzzk.naver.com/video/13697795"  // 카타르-스위스
+    "match-8": "https://chzzk.naver.com/video/13697795",   // 카타르-스위스
+    "match-31": "https://chzzk.naver.com/video/13714387",  // 일본-네덜란드
+    "match-25": "https://chzzk.naver.com/video/13713371"   // 독일-퀴라소
   };
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
