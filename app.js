@@ -350,7 +350,11 @@
       if (ka !== kb) return ka - kb;
       var da = a.nw.date || "", db = b.nw.date || ""; return da < db ? 1 : da > db ? -1 : 0;
     });
-    return all.slice(0, limit || 8);
+    // 나라당 최대 2개로 균형 — 1차는 나라당 2개까지(정렬순), 칸 남으면(나라 적거나 기사 적으면) 2차로 남은 기사 채움
+    var lim = limit || 8, perCountry = 2, byTeam = {}, picked = [];
+    all.forEach(function (x) { var c = byTeam[x.t.id] || 0; if (c < perCountry && picked.length < lim) { picked.push(x); byTeam[x.t.id] = c + 1; x._u = 1; } });
+    if (picked.length < lim) all.forEach(function (x) { if (!x._u && picked.length < lim) { picked.push(x); x._u = 1; } });
+    return picked;
   }
 
   var WITTY = [
