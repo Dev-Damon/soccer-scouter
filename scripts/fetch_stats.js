@@ -5,9 +5,9 @@ function rpc(name,body){return new Promise(r=>{var data=JSON.stringify(body);var
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 global.window={}; require('../data.js'); const D=global.window.DATA;
 const teamsById={}, teamsByName={}; D.teams.forEach(t=>{teamsById[t.id]=t; teamsByName[t.name]=t;});
-function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z ]/g,'').trim();}
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/ı/g,'i').replace(/ø/g,'o').replace(/ł/g,'l').replace(/đ/g,'d').replace(/ð/g,'d').replace(/æ/g,'ae').replace(/œ/g,'oe').replace(/ß/g,'ss').replace(/þ/g,'th').replace(/[^a-z ]/g,'').trim();}  // 앱 normName과 동일(특수문자 매핑) — 기록 매칭 누락 방지
 const byName={};
-D.players.forEach(p=>{ if(!p.nameEn)return; var n=norm(p.nameEn); byName[n]=p; var parts=n.split(' '); if(parts.length>1){var sur='__sur_'+parts[parts.length-1]; if(!byName[sur])byName[sur]=p;} });
+D.players.forEach(p=>{ [p.nameEn,p.aliasEn].forEach(en=>{ if(!en)return; var n=norm(en); byName[n]=p; var parts=n.split(' '); if(parts.length>1){var sur='__sur_'+parts[parts.length-1]; if(!byName[sur])byName[sur]=p;} }); });  // aliasEn도 매칭(앱과 동일)
 function matchPlayer(nm){ var n=norm(nm); if(byName[n])return byName[n]; return byName['__sur_'+n.split(' ').pop()]||null; }
 // ESPN 팀명 → 우리 팀(국기) — 이름 매칭 안 된 선수도 국기는 붙게
 const T_ALIAS={"czechia":"czech-republic","korearepublic":"south-korea","usa":"united-states","turkiye":"turkey","caboverde":"cape-verde","cotedivoire":"ivory-coast","congodr":"dr-congo","bosniaherzegovina":"bosnia-and-herzegovina"};

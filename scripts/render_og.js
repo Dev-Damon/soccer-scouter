@@ -1,7 +1,9 @@
 // OG 공유 카드 이미지 생성(HTML→Playwright 스크린샷, 1200x630) — 국기/공 이모지 네이티브 렌더.
 // 1310 디자인: 파란 스코어보드 + 득점자 좌우 가운데수렴 + 자책골 빨간공.
-const { chromium } = require('/tmp/node_modules/playwright-core');
-const fs = require('fs'), path = require('path');
+const fs = require('fs'), path = require('path'), os = require('os');
+// playwright-core를 안 지워지는 곳(~/.kkpw)에서 우선 로드 — /tmp는 자정 정리로 비워져 데몬 OG 생성이 깨지던 문제 방지. 없으면 /tmp 폴백.
+const _pw = fs.existsSync(path.join(os.homedir(), '.kkpw/node_modules/playwright-core')) ? path.join(os.homedir(), '.kkpw/node_modules/playwright-core') : '/tmp/node_modules/playwright-core';
+const { chromium } = require(_pw);
 const CHROME = '/Users/damon/Library/Caches/ms-playwright/chromium-1148/chrome-mac/Chromium.app/Contents/MacOS/Chromium';
 const ROOT = path.dirname(__dirname);
 

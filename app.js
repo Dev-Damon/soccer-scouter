@@ -286,7 +286,15 @@
     ensureStats().then(function (j) {
       if (parseHash().name !== "home" || homeTab !== "scorers") return;
       var subs = '<div class="rank-sorts">' + SCORE_CATS.map(function (c) { return '<button class="rank-sb' + (scoreCat === c[0] ? " on" : "") + '" data-scat="' + c[0] + '">' + c[1] + "</button>"; }).join("") + "</div>";
-      var players = (j.players || []).filter(function (p) { return scVal(p) > 0; }).sort(function (a, b) {
+      // 골·자책골을 경기결과(match_results)와 대조해 보정 — fetch_stats가 놓친 득점도 반영(경기상세와 항상 일치)
+      var statsP = (j.players || []).slice(), gr = goalsFromResults(), byPid = {};
+      statsP.forEach(function (p) { if (p.pid) byPid[p.pid] = p; });
+      Object.keys(gr).forEach(function (pid) {
+        var pl = playersById[pid]; if (!pl) return;
+        if (byPid[pid]) { byPid[pid].goals = Math.max(byPid[pid].goals || 0, gr[pid].g); byPid[pid].og = Math.max(byPid[pid].og || 0, gr[pid].og); }
+        else { var t = teamsById[teamIdByName(pl.team)] || {}; statsP.push({ pid: pid, name: pl.name, team: pl.team, flag: t.flag || "", goals: gr[pid].g, assists: 0, og: gr[pid].og, yellow: 0, red: 0, apps: gr[pid].g > 0 ? 1 : 0 }); }
+      });
+      var players = statsP.filter(function (p) { return scVal(p) > 0; }).sort(function (a, b) {
         var d = scVal(b) - scVal(a); if (d) return d;
         // 타이브레이크: 득점=도움多, 도움=골多 → 적은 경기수 → 이름 (월드컵 골든부트 기준)
         if (scoreCat === "goals") { var sa = (b.assists || 0) - (a.assists || 0); if (sa) return sa; }
@@ -1101,11 +1109,31 @@
     twem(viewEl);
   }
   // 이번 월드컵 출전·득점(기록탭 통계 = 크론 집계)을 A매치 기록에 가산. 통계 로드 후 비동기로 갱신.
+  // ★단일 진실원천(경기 득점): 종료경기 결과(match_results, 데몬이 1분마다 갱신·앱과 동일 매칭)에서 선수별 골 집계.
+  // 기록탭/A매치 골은 이 값과 대조(더 큰 값)해서, fetch_stats 누락으로 '경기상세엔 있는데 기록엔 없는' 불일치를 원천 차단.
+  function goalsFromResults() {
+    var m = {};
+    Object.keys(LIVE).forEach(function (mid) {
+      var lv = LIVE[mid]; if (!lv || !lv.events || !lv.events.length) return;
+      var fx = fixturesById[mid]; if (!fx) return;
+      var hk = (teamsById[fx.homeId] || {}).name, ak = (teamsById[fx.awayId] || {}).name;
+      lv.events.forEach(function (g) {
+        if (!g.who) return;
+        var pl = playerByName(g.who, hk) || playerByName(g.who, ak) || playerByName(g.who);
+        if (!pl) return;
+        var e = m[pl.id] || (m[pl.id] = { g: 0, og: 0 });
+        if (g.og) e.og++; else e.g++;
+      });
+    });
+    return m;
+  }
   function applyWcAmatch(p, id) {
     ensureStats().then(function (j) {
       var hh = parseHash(); if (hh.name !== "player" || hh.id !== id) return;
       var st = ((j && j.players) || []).filter(function (x) { return x.pid === p.id; })[0];
-      var wa = st ? (st.apps || 0) : 0, wg = st ? (st.goals || 0) : 0;
+      var gr = goalsFromResults()[p.id] || { g: 0 };
+      var wg = Math.max(st ? (st.goals || 0) : 0, gr.g);  // 골: 경기결과와 대조(누락 방지)
+      var wa = Math.max(st ? (st.apps || 0) : 0, wg > 0 ? 1 : 0);  // 득점=출전 보장
       if (!wa && !wg) return;
       var vEl = null, fs = viewEl.querySelectorAll(".facts .fact");
       Array.prototype.forEach.call(fs, function (f) { var k = f.querySelector(".k"); if (k && k.textContent.indexOf("A매치") >= 0) vEl = f.querySelector(".v"); });
