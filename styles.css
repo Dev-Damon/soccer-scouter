@@ -1348,3 +1348,11 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .usr-page{padding:2px 2px 20px}
 .usr-back{color:var(--accent);font-weight:700;font-size:13px;cursor:pointer;display:inline-block;padding:4px 0 12px}
 .wc-add{display:inline-block;margin-left:6px;font-size:10.5px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:1px 6px;vertical-align:middle}
+/* 나라 스쿼드 총 시장가치 카드 */
+.mv-card { display: flex; align-items: center; gap: 12px; }
+.mv-ic { font-size: 28px; flex: none; }
+.mv-main { min-width: 0; }
+.mv-k { font-size: 12px; color: var(--muted); font-weight: 700; }
+.mv-v { font-size: 24px; font-weight: 900; color: var(--text); letter-spacing: -0.5px; margin-top: 1px; }
+.mv-rank { font-size: 12.5px; font-weight: 800; color: var(--accent); margin-left: 6px; vertical-align: middle; }
+.mv-src { font-size: 10.5px; color: var(--muted); margin-top: 2px; }

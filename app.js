@@ -1208,6 +1208,11 @@
     }).join("");
     return '<div class="block"><h3>📅 경기 일정</h3><div class="ts-list">' + rows + "</div></div>";
   }
+  // 나라별 스쿼드 총 시장가치(€M) — Transfermarkt 집계(공개 보도, 2026-06 기준). 전체 DB가 아닌 '보도된 나라별 총액'을 출처 표기해 인용.
+  var TEAM_MV = { france: 1520, england: 1360, spain: 1220, portugal: 1010, germany: 947, brazil: 928.2, argentina: 807.5, netherlands: 754.2, norway: 589.9, belgium: 547.5, "ivory-coast": 522.1, senegal: 478.1, turkey: 473.7, morocco: 447.7, sweden: 406.08, croatia: 387.3, "united-states": 385.6, ecuador: 368.7, uruguay: 359.3, switzerland: 332.5, colombia: 302.35, japan: 270.85, algeria: 256.9, austria: 245.2, ghana: 234.5, canada: 198.65, mexico: 191.85, "czech-republic": 188.18, scotland: 170.25, paraguay: 153.65, "bosnia-and-herzegovina": 146.4, "dr-congo": 143.9, "south-korea": 139.05, egypt: 116.48, uzbekistan: 85.33, australia: 77.45, tunisia: 69.95, haiti: 55.9, "cape-verde": 49.25, "south-africa": 49.25, "saudi-arabia": 40.68, panama: 34.55, "new-zealand": 34.45, iran: 32.05, curacao: 25.78, iraq: 21.2, jordan: 20.3, qatar: 19.93 };
+  var _mvRank = null;
+  function mvRank(id) { if (!_mvRank) { _mvRank = {}; Object.keys(TEAM_MV).sort(function (a, b) { return TEAM_MV[b] - TEAM_MV[a]; }).forEach(function (k, i) { _mvRank[k] = i + 1; }); } return _mvRank[id]; }
+  function fmtMV(m) { if (m == null) return ""; if (m >= 1000) return "€" + (m / 1000).toFixed(2).replace(/\.?0+$/, "") + "B"; return "€" + m + "M"; }
   function renderTeam(id) {
     var t = teamsById[id];
     if (!t) { viewEl.innerHTML = '<div class="empty">팀을 찾을 수 없어요.</div>'; return; }
@@ -1237,6 +1242,15 @@
         "</div>" +
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
+
+    // 스쿼드 총 시장가치(€) — 보도된 나라별 총액
+    var mv = TEAM_MV[t.id];
+    if (mv != null) {
+      html += '<div class="block mv-card"><span class="mv-ic">💰</span><div class="mv-main">' +
+        '<div class="mv-k">스쿼드 총 시장가치</div>' +
+        '<div class="mv-v">' + fmtMV(mv) + ' <span class="mv-rank">세계 ' + mvRank(t.id) + '위</span></div>' +
+        '<div class="mv-src">Transfermarkt 집계 · 참고용</div></div></div>';
+    }
 
     // 최신 뉴스 (있으면)
     if (t.news && t.news.length) {
