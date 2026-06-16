@@ -1985,6 +1985,15 @@
     if (delay) liveTimer = setTimeout(fetchLive, delay);
   }
   var _lastLiveKey = "";
+  var _lastFetchDone = Date.now();   // 마지막으로 fetchLive가 '완료'(then/catch)된 시각 — 워치독이 체인 끊김 감지용
+  // 모바일에서 기기가 잠들면 fetch가 영영 안 끝나는 경우가 있음 → AbortController로 타임아웃 강제(반드시 then/catch 도달 → 다음 폴링 예약)
+  function fetchTimeout(u, opts, ms) {
+    opts = opts || {};
+    if (!window.AbortController) return fetch(u, opts);
+    var ac = new AbortController(), o = {}; for (var k in opts) o[k] = opts[k]; o.signal = ac.signal;
+    var t = setTimeout(function () { ac.abort(); }, ms || 10000);
+    return fetch(u, o).then(function (r) { clearTimeout(t); return r; }, function (e) { clearTimeout(t); throw e; });
+  }
   // 폴링 간격: 라이브(ESPN/시각) 15초 · 킥오프 20분전 임박 20초 · 그 외 2분(완전 정지 안 함 → 새로고침 없이 자동 표시)
   function nextLiveDelay(anyLive) {
     if (anyLive || liveFixtures().length) return 15000;
@@ -1998,7 +2007,8 @@
     function dstr(t) { return new Date(t).toISOString().slice(0, 10).replace(/-/g, ""); }
     var now = Date.now();
     var urls = [ESPN_URL + "?dates=" + dstr(now), ESPN_URL + "?dates=" + dstr(now - 86400000)];
-    Promise.all(urls.map(function (u) { return fetch(u, { cache: "no-store" }).then(function (r) { return r.json(); }).catch(function () { return {}; }); })).then(function (arr) {
+    Promise.all(urls.map(function (u) { return fetchTimeout(u, { cache: "no-store" }, 10000).then(function (r) { return r.json(); }).catch(function () { return {}; }); })).then(function (arr) {
+      _lastFetchDone = Date.now();
       var merged = { events: [] };
       arr.forEach(function (d) { if (d && d.events) merged.events = merged.events.concat(d.events); });
       var res = applyEspn(merged);
@@ -2010,8 +2020,14 @@
       _lastLiveKey = lk;
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
       scheduleLive(nextLiveDelay(res.anyLive));
-    }).catch(function () { scheduleLive(60000); });
+    }).catch(function () { _lastFetchDone = Date.now(); scheduleLive(60000); });
   }
+  // 워치독: 라이브 중인데 폴링 체인이 45초+ 멈춰있으면(타이머 정지·fetch 행 등) 강제 재시동 — 화면 보이는 동안만, 라이브 있을 때만(상시 부하 X)
+  setInterval(function () {
+    if (typeof document !== "undefined" && document.visibilityState !== "visible") return;
+    if (!liveFixtures().length) return;
+    if (Date.now() - _lastFetchDone > 45000) fetchLive();
+  }, 20000);
 
   // ===================== 조별 순위표 (ESPN standings · 실시간) =====================
   var STAND = {};            // teamId -> {p,w,d,l,gf,ga,gd,pts}
