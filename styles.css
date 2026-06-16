@@ -420,6 +420,8 @@ html.light .mgr-act button.mgr-ban { background: #e5a23d; }
 .ds-fall { font-size: 13px; line-height: 1.7; color: var(--text); padding: 13px; border: 1px solid #f5b301; border-radius: 10px; background: rgba(245,179,1,.08); }
 .ds-fall b { color: #f5b301; }
 .ds-copy { background: var(--bg-soft); border: 1px solid var(--line); color: var(--text); border-radius: 7px; padding: 3px 10px; font-size: 12px; font-weight: 700; cursor: pointer; margin-left: 4px; }
+.ds-kakao { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 10px 0; padding: 11px; background: #FEE500; color: #191600; border-radius: 10px; font-size: 14px; font-weight: 800; text-decoration: none; }
+.ds-kakao:active { background: #f2d900; }
 .ds-note { margin-top: 14px; font-size: 11.5px; line-height: 1.5; }
 /* 게시판 */
 .bd-h { font-size: 18px; margin: 4px 0 12px; }

@@ -3582,6 +3582,7 @@
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;
     var ACCT = "100004130027", BANK = "토스뱅크";
+    var KAKAO_3900 = "https://qr.kakaopay.com/28100601119492440100760579e06997";  // 3,900원 카카오페이 송금 QR(고정금액)
     var TIERS = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
     function tossLink(amt) { return "supertoss://send?amount=" + amt + "&bank=%ED%86%A0%EC%8A%A4%EB%B1%85%ED%81%AC&accountNo=" + ACCT + "&origin=qr"; }
     var ov = null;
@@ -3595,8 +3596,10 @@
       window.location.href = tossLink(amt);
       setTimeout(function () {
         if (!st) return;
-        if (!document.hidden && (Date.now() - start) < 2500) {   // 토스 미설치 → 계좌 '영구' 표시
-          st.innerHTML = '<div class="ds-fall">토스 앱이 없으신가요? 😅 계좌로 후원해주세요<br><b>' + BANK + " " + ACCT + '</b> <button class="ds-copy" data-acct="' + ACCT + '">복사</button></div>';
+        if (!document.hidden && (Date.now() - start) < 2500) {   // 토스 미설치 → 카카오페이(3900) 또는 계좌 fallback
+          var kk = (amt === 3900) ? '<a class="ds-kakao" href="' + KAKAO_3900 + '" target="_blank" rel="noopener">💛 카카오페이로 후원 (3,900원)</a>' : "";
+          st.innerHTML = '<div class="ds-fall">토스 앱이 없으신가요? 😅 ' + (kk ? "카카오페이나 계좌로 후원해주세요" : "계좌로 후원해주세요") + kk +
+            '<br><b>' + BANK + " " + ACCT + '</b> <button class="ds-copy" data-acct="' + ACCT + '">복사</button></div>';
           twem(st);
         } else { st.innerHTML = ""; }   // 토스 열림 → 로딩 제거
       }, 1400);
