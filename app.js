@@ -695,7 +695,7 @@
       '<div class="fx-mid">' + mid + "</div>" +
       '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(rId)) + "</span>" +
         '<span class="fx-team">' + esc(rName) + "</span></div>" +
-      (goals || (meta ? '<div class="fx-meta">' + meta + "</div>" : "")) +
+      goals + (meta ? '<div class="fx-meta">' + meta + "</div>" : "") +
       "</div>";
   }
 
