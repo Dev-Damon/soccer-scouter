@@ -2279,14 +2279,23 @@
   }
   // 경기 하이라이트 URL — 종료 경기에 직접 입력(네이버/치지직). 경기 상세 헤더 밑 슬림 버튼으로 연결.
   var MATCH_HIGHLIGHTS = {
+    // 모두 치지직 JTBC 풀 하이라이트(KBS 아님). api.chzzk 검색으로 매치별 (JTBC) 영상 매칭.
     "match-1": "https://chzzk.naver.com/video/13663676",   // 멕시코-남아공
     "match-2": "https://chzzk.naver.com/video/13666274",   // 대한민국-체코
+    "match-7": "https://chzzk.naver.com/video/13680813",   // 캐나다-보스니아
     "match-8": "https://chzzk.naver.com/video/13697795",   // 카타르-스위스
-    "match-25": "https://chzzk.naver.com/video/13713371",  // 독일-퀴라소
+    "match-13": "https://chzzk.naver.com/video/13698656",  // 브라질-모로코
+    "match-14": "https://chzzk.naver.com/video/13699342",  // 아이티-스코틀랜드
     "match-19": "https://chzzk.naver.com/video/13682431",  // 미국-파라과이
+    "match-20": "https://chzzk.naver.com/video/13700637",  // 호주-튀르키예
+    "match-25": "https://chzzk.naver.com/video/13713371",  // 독일-퀴라소
     "match-26": "https://chzzk.naver.com/video/13714960",  // 코트디부아르-에콰도르
-    "match-31": "https://chzzk.naver.com/video/13714387",  // 일본-네덜란드(=네덜란드-일본)
-    "match-32": "https://chzzk.naver.com/video/13715746"   // 스웨덴-튀니지
+    "match-31": "https://chzzk.naver.com/video/13714387",  // 네덜란드-일본
+    "match-32": "https://chzzk.naver.com/video/13716097",  // 스웨덴-튀니지
+    "match-37": "https://chzzk.naver.com/video/13728955",  // 벨기에-이집트
+    "match-38": "https://chzzk.naver.com/video/13730200",  // 이란-뉴질랜드
+    "match-43": "https://chzzk.naver.com/video/13727569",  // 스페인-카보베르데
+    "match-44": "https://chzzk.naver.com/video/13729415"   // 사우디-우루과이
   };
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
   var MATCH_RATINGS = {
