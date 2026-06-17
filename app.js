@@ -2148,8 +2148,11 @@
         }).catch(function () { return dbGet(); });  // ESPN 실패 → DB 백업
       });
     }
-    // 종료 경기는 DB 저장본 우선(빠름, ESPN 안 거침). 라이브/예정은 ESPN(실시간) + DB 저장.
-    if (matchEnded(fx)) return dbGet().then(function (db) { return db || fromEspn(); });
+    // 종료 경기는 DB 저장본 우선(빠름). 단 DB에 경기통계(boxscore)가 없으면 ESPN으로 폴백 — 통계 없는 DB본이 통계를 가리던 버그 수정.
+    if (matchEnded(fx)) return dbGet().then(function (db) {
+      var hasStats = db && db.boxscore && db.boxscore.teams && db.boxscore.teams.length >= 2;
+      return hasStats ? db : fromEspn().then(function (e) { return (e && e.rosters) ? e : (db || e); });
+    });
     return fromEspn();
   }
   var H2HPRE = null, h2hLoading = null;
