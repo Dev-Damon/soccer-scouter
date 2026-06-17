@@ -543,15 +543,21 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .m32 .tm + .tm { border-top: 1px solid #3d5689; }
 .brk-stage .m32.r .tm { text-align: right; }
 .brk-stage .con, .brk-stage .csf { background: #2c4d8f; border: 1px solid #5b86d4; border-radius: 999px; color: #eaf2ff; font-weight: 800; text-align: center; align-items: center; }
-/* 킥톡 예측 대진표 — 팀 플래그/이름 */
-.brk-stage .tc.pred { flex-direction: row; gap: 2px; padding: 2px 3px; }
-.brk-stage .bxf { font-size: 12px; line-height: 1; }
-.brk-stage .bxf img { width: 13px; height: 13px; vertical-align: -2px; }
-.brk-stage .tc.pred .bxn { font-size: 8px; font-weight: 800; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.brk-stage .con .bxf { font-size: 13px; }
-.brk-stage .con .bxf img { width: 14px; height: 14px; }
+/* 킥톡 예측 대진표 — 팀 플래그/라벨 */
+.brk-stage .tc.pred { flex-direction: row; align-items: center; gap: 3px; padding: 2px 3px; }
+.brk-stage .bxf { font-size: 13px; line-height: 1; }
+.brk-stage .bxf img { width: 14px; height: 14px; vertical-align: -2px; }
+.brk-stage .tc.pred .bxg { display: flex; flex-direction: column; line-height: 1.05; min-width: 0; }
+.brk-stage .tc.pred .bxg b { font-size: 9px; font-weight: 800; color: var(--text); white-space: nowrap; }
+.brk-stage .tc.pred .bxg i { font-size: 8px; font-style: normal; font-weight: 700; color: var(--muted); }
+/* 16강부터 국기만 — 더 크게 */
+.brk-stage .con { min-height: 20px !important; }
+.brk-stage .con .bxf { font-size: 17px; }
+.brk-stage .con .bxf img { width: 19px; height: 19px; }
+.brk-stage .thirdpl .bxf { font-size: 12px; }
+.brk-stage .thirdpl .bxf img { width: 13px; height: 13px; vertical-align: -2px; }
 .brk-stage .fin .champf { margin-top: 2px; }
-.brk-stage .fin .champf img { width: 22px !important; height: 22px !important; }
+.brk-stage .fin .champf img { width: 24px !important; height: 24px !important; }
 .brk-stage .csf { background: #36599e; border-color: #6f97e0; }
 .brk-stage .third { background: #141f38; border: 1px solid #2d3f63; border-radius: 7px; color: #9fb0cc; font-weight: 700; text-align: center; align-items: center; }
 .brk-stage .fin { background: linear-gradient(135deg,#ffd86b,#f5b301); border-radius: 8px; color: #0a1530; text-align: center; align-items: center; z-index: 3; box-shadow: 0 2px 10px rgba(245,179,1,.35); }

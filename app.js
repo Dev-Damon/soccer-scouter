@@ -243,7 +243,8 @@
     }
     var lf = side(BL_R32, "l"), rf = side(BR_R32, "r");
     node.fin = win(lf, rf);
-    return { r32: r32, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf };
+    var lLose = node.lsf === node.l8_0 ? node.l8_1 : node.l8_0, rLose = node.rsf === node.r8_0 ? node.r8_1 : node.r8_0;  // 3·4위전 = 양 4강 패자
+    return { r32: r32, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf, third: [lLose, rLose] };
   }
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
@@ -260,8 +261,9 @@
     function box(cx, cy, w, h, cls, html) { boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
     function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
     function tcard(s, cx, cy, tid) {
-      if (PRED && tid) { var tm = teamsById[tid]; box(cx, cy, cardW, 26, "tc pred", tm ? ('<span class="bxf">' + esc(tm.flag) + '</span><span class="bxn">' + esc(tm.name) + "</span>") : esc(brkSlot(s))); return; }
-      var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : ""; box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
+      var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : "";
+      if (PRED && tid) { var tm = teamsById[tid]; box(cx, cy, cardW, 28, "tc pred", '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxg"><b>' + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : "") + "</span>"); return; }
+      box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
     }
     function conTxt(id, lbl) { if (PRED && PRED.node[id]) { var t = teamsById[PRED.node[id]]; return t ? '<span class="bxf">' + esc(t.flag) + "</span>" : lbl; } return lbl; }
     function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; tcard(m.a, cx, cy - OFF, pt && pt.a); tcard(m.b, cx, cy + OFF, pt && pt.b); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
@@ -270,7 +272,7 @@
     for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", conTxt("l8_" + i, "8강")); }
     vbox("lsf", X4, CY, Wp); box(X4, CY, Wp, 14, "con", conTxt("lsf", "4강"));
     vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", PRED && PRED.champion ? '<div class="trophy">🏆</div><div class="bxf champf">' + esc((teamsById[PRED.champion] || {}).flag || "") + "</div>" : '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
-    box(XF, CY + Wf / 2 + 16, 62, 15, "thirdpl", "🥉 3·4위전");
+    box(XF, CY + Wf / 2 + 16, 74, 16, "thirdpl", (PRED && PRED.third) ? ('🥉 <span class="bxf">' + esc((teamsById[PRED.third[0]] || {}).flag || "") + '</span><span class="bxf">' + esc((teamsById[PRED.third[1]] || {}).flag || "") + "</span>") : "🥉 3·4위전");
     vbox("rsf", XR4, CY, Wp); box(XR4, CY, Wp, 14, "con", conTxt("rsf", "4강"));
     for (i = 0; i < 2; i++) { vbox("r8_" + i, XR8, c8cy[i], Wp); box(XR8, c8cy[i], Wp, 14, "con", conTxt("r8_" + i, "8강")); }
     for (i = 0; i < 4; i++) { vbox("r16_" + i, XR16, c16cy[i], Wp); box(XR16, c16cy[i], Wp, 14, "con", conTxt("r16_" + i, "16강")); }
@@ -538,14 +540,14 @@
       .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
 
     // 빅매치 히어로: 양 팀 모두 알려진 경기 중 FIFA 합산 랭킹이 가장 높은 경기 (라이브 경기는 상단 라이브카드로 빠지므로 제외)
-    var hero = pickBigMatch(dayFixtures.filter(function (f) { return !isLiveFix(f); }));
+    var hero = pickBigMatch(dayFixtures.filter(function (f) { return !isLiveOrBcast(f); }));
     var heroHtml = hero ? heroCard(hero) : "";
 
     // 그 날의 경기 리스트
     var listHtml = '<div class="sec-h">' + fmtDate(selectedDate).d + " " +
       (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
       ' · ' + dayFixtures.length + '경기 <span class="kst-note">한국시간</span></div>';
-    dayFixtures.forEach(function (fx) { if ((!hero || fx !== hero) && !isLiveFix(fx)) listHtml += fixtureCard(fx); });  // 라이브 경기는 상단 라이브카드에만
+    dayFixtures.forEach(function (fx) { if ((!hero || fx !== hero) && !isLiveOrBcast(fx)) listHtml += fixtureCard(fx); });  // 라이브/방송중 경기는 상단 라이브카드에만
 
     listHtml += '<div class="adslot home-ad"></div>';
     // 주요 소식 (팀 뉴스가 있을 때만)
@@ -635,6 +637,7 @@
     var now = Date.now(); return now >= ko && now < ko + 130 * 60000;
   }
   function isLiveFix(f) { var lv = LIVE[f.id]; return (lv && lv.state === "in") || isTimeLive(f); }
+  function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM.mid === f.id); }  // ESPN 라이브 or JTBC 방송 감지
   function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
   function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
   function liveSection() {
@@ -646,6 +649,7 @@
       dummy = [{ hs: 1, as: 0, clock: "67'", state: "in" }, { hs: 2, as: 2, clock: "81'", state: "in" }];
     } else {
       live = liveFixtures();
+      if (LIVE_STREAM && LIVE_STREAM.mid) { var _bf = fixturesById[LIVE_STREAM.mid]; if (_bf && live.indexOf(_bf) < 0) live = [_bf].concat(live); }  // JTBC 방송 감지 경기도 메인 라이브카드에
     }
     if (!live.length) return "";
     // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열. ESPN 데이터 없으면 '곧 시작' 0:0 표시
@@ -2024,6 +2028,7 @@
     if (JSON.stringify(next) === JSON.stringify(LIVE_STREAM)) return;
     LIVE_STREAM = next;
     if (window._matchLiveTick) window._matchLiveTick();
+    if (onHomeSchedule()) renderSchedule();  // 메인 일정에 방송중 라이브카드 즉시 반영
   }
   // 열려있는 클라가 서버의 ls 변동을 주기적으로 받도록 live_state 재조회(60초 throttle).
   var _lsFetchAt = 0;
