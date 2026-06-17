@@ -544,12 +544,12 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .m32.r .tm { text-align: right; }
 .brk-stage .con, .brk-stage .csf { background: #2c4d8f; border: 1px solid #5b86d4; border-radius: 999px; color: #eaf2ff; font-weight: 800; text-align: center; align-items: center; }
 /* 킥톡 예측 대진표 — 팀 플래그/라벨 */
-.brk-stage .tc.pred { flex-direction: row; align-items: center; gap: 3px; padding: 2px 3px; }
-.brk-stage .bxf { font-size: 13px; line-height: 1; }
-.brk-stage .bxf img { width: 14px; height: 14px; vertical-align: -2px; }
-.brk-stage .tc.pred .bxg { display: flex; flex-direction: column; line-height: 1.05; min-width: 0; }
-.brk-stage .tc.pred .bxg b { font-size: 9px; font-weight: 800; color: var(--text); white-space: nowrap; }
-.brk-stage .tc.pred .bxg i { font-size: 8px; font-style: normal; font-weight: 700; color: var(--muted); }
+.brk-stage .tc.pred { flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 2px 2px; overflow: hidden; }
+.brk-stage .bxf { font-size: 15px; line-height: 1; }
+.brk-stage .bxf img { width: 16px; height: 16px; vertical-align: -2px; }
+.brk-stage .tc.pred .bxl { font-size: 8px; font-weight: 800; color: var(--muted); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.brk-stage .tc.pred.win { border-color: #2ecf83; background: rgba(46,207,131,.14); box-shadow: 0 0 0 1px #2ecf83 inset; }
+.brk-stage .tc.pred.win .bxl { color: #1c8b56; font-weight: 900; }
 /* 16강부터 국기만 — 더 크게 */
 .brk-stage .con { min-height: 20px !important; }
 .brk-stage .con .bxf { font-size: 17px; }

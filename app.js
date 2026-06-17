@@ -234,9 +234,9 @@
     }
     function win(a, b) { if (!a) return b; if (!b) return a; if (a === PRED_CHAMP || b === PRED_CHAMP) return PRED_CHAMP; return brkStrength(a) >= brkStrength(b) ? a : b; }
     var r32 = {}; BRACKET.r32.forEach(function (m) { r32[m.m] = { a: slotTeam(m.a), b: slotTeam(m.b) }; });
-    var node = {};
+    var node = {}, r32win = {};
     function side(arr, pfx) {
-      var w = arr.map(function (mn) { return win(r32[mn].a, r32[mn].b); });
+      var w = arr.map(function (mn) { var wn = win(r32[mn].a, r32[mn].b); r32win[mn] = wn; return wn; });
       var l16 = []; for (var i = 0; i < 4; i++) { node[pfx + "16_" + i] = win(w[2 * i], w[2 * i + 1]); l16.push(node[pfx + "16_" + i]); }
       var l8 = []; for (i = 0; i < 2; i++) { node[pfx + "8_" + i] = win(l16[2 * i], l16[2 * i + 1]); l8.push(node[pfx + "8_" + i]); }
       node[pfx + "sf"] = win(l8[0], l8[1]); return node[pfx + "sf"];
@@ -244,7 +244,7 @@
     var lf = side(BL_R32, "l"), rf = side(BR_R32, "r");
     node.fin = win(lf, rf);
     var lLose = node.lsf === node.l8_0 ? node.l8_1 : node.l8_0, rLose = node.rsf === node.r8_0 ? node.r8_1 : node.r8_0;  // 3·4위전 = 양 4강 패자
-    return { r32: r32, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf, third: [lLose, rLose] };
+    return { r32: r32, r32win: r32win, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf, third: [lLose, rLose] };
   }
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
@@ -253,20 +253,26 @@
     var W = Math.max(320, Math.floor(fit.clientWidth)), H = 560, CY = H / 2, i;
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
-    var cardW = 58, Wp = 22, Wf = 42, OFF = 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백
+    var cardW = 58, Wp = 22, Wf = 42, OFF = PRED ? 18 : 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백 (예측 모드는 세로카드라 간격↑)
     var span = (W / 2) - edge;  // R32열 → 중앙(결승)까지 가로 거리(넓을수록 길어짐 = 연결선만 늘어남)
     var XL = edge, X16 = edge + span * 0.426, X8 = edge + span * 0.618, X4 = edge + span * 0.765, XF = W / 2;  // 비율은 원본 360px 디자인과 동일
     var XR = W - edge, XR16 = W - X16, XR8 = W - X8, XR4 = W - X4;
     var boxes = [], BX = {}, P = [];
     function box(cx, cy, w, h, cls, html) { boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
     function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
-    function tcard(s, cx, cy, tid) {
+    function tcard(s, cx, cy, tid, isWin) {
       var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : "";
-      if (PRED && tid) { var tm = teamsById[tid]; box(cx, cy, cardW, 28, "tc pred", '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxg"><b>' + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : "") + "</span>"); return; }
+      if (PRED && tid) {
+        var tm = teamsById[tid];
+        var lbl = (g.indexOf("·") >= 0) ? r : (g + " " + r);  // 3위 슬롯(A·B·C·D·F)은 길어서 "3위"만 → 삐져나옴 방지
+        // 국기 위 + 라벨 아래(세로), 승자는 강조(win)
+        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl">' + esc(lbl) + "</span>");
+        return;
+      }
       box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
     }
     function conTxt(id, lbl) { if (PRED && PRED.node[id]) { var t = teamsById[PRED.node[id]]; return t ? '<span class="bxf">' + esc(t.flag) + "</span>" : lbl; } return lbl; }
-    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; tcard(m.a, cx, cy - OFF, pt && pt.a); tcard(m.b, cx, cy + OFF, pt && pt.b); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
+    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; var wn = PRED && PRED.r32win[mn]; tcard(m.a, cx, cy - OFF, pt && pt.a, pt && wn === pt.a); tcard(m.b, cx, cy + OFF, pt && pt.b, pt && wn === pt.b); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
     for (i = 0; i < 8; i++) pair("lr" + i, BL_R32[i], XL, r32cy[i], XL + cardW / 2);
     for (i = 0; i < 4; i++) { vbox("l16_" + i, X16, c16cy[i], Wp); box(X16, c16cy[i], Wp, 14, "con", conTxt("l16_" + i, "16강")); }
     for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", conTxt("l8_" + i, "8강")); }
