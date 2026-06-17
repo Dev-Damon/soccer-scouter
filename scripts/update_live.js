@@ -70,4 +70,10 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
       console.log('OG 자동배포:',changed.join(','));
     }
   }catch(e){ console.log('OG 자동배포 실패(라이브갱신은 정상):',e.message); }
+
+  // ④ 종료경기 하이라이트(치지직 JTBC 풀) 자동수집 — 별도 스크립트(자체 커밋/배포). 링크 없는 종료경기만 치지직 조회, 다 채워지면 무작업. 라이브갱신과 독립.
+  try {
+    const {execFileSync}=require('child_process');
+    execFileSync(process.execPath,[path.join(__dirname,'fetch_highlights.js')],{cwd:path.join(__dirname,'..'),timeout:90000,stdio:'ignore'});
+  } catch(e){ console.log('하이라이트 자동수집 실패(라이브갱신은 정상):',e.message); }
 })();
