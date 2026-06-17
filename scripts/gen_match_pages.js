@@ -33,7 +33,8 @@ D.fixtures.forEach(function (f) {
     "<p>" + e(hn + " vs " + an) + " 경기는 " + e(kst) + " KST" + (grp ? " " + e(grp) : "") + "에 열립니다. 예상·확정 라인업과 실시간 중계 스코어, 경기 후 선수 평점·MVP 투표를 킥톡에서 무료로 확인하세요." + (venue ? " 경기장: " + e(venue) + "." : "") + "</p>" +
     (wp.length ? "<h2>관전 포인트</h2><ul class=wp>" + wp.slice(0, 3).map(function (w) { return "<li>" + e(w) + "</li>"; }).join("") + "</ul>" : "") +
     "<a class=cta href='" + appurl + "'>킥톡에서 실시간 점수·라인업·선수평점 보기 →</a>" +
-    "<p class=sub>예상 라인업 · 실시간 스코어 · 선수 평점/MVP 투표 · 응원 메시지 · 포인트 베팅</p>";
+    "<p class=sub>예상 라인업 · 실시간 스코어 · 선수 평점/MVP 투표 · 응원 메시지 · 포인트 베팅</p>" +
+    "<p class=tlinks><a href='" + SITE + "/t/" + f.homeId + ".html'>" + e(hn) + " 선수단</a> · <a href='" + SITE + "/t/" + f.awayId + ".html'>" + e(an) + " 선수단</a></p>";
   var ogv = (OGVER[mid] && OGVER[mid].v) || 3;  // 경기별 OG 버전(기본 3, 결과 바뀌면 데몬이 +1)
   var ogimg = SITE + "/ogm/" + slug + ".png?v=" + ogv;  // 경기별 전용 OG 이미지(앱 경기카드 라이트). ?v= 올리면 카톡 OG 캐시 무효화
   var pageHtml =
@@ -46,8 +47,9 @@ D.fixtures.forEach(function (f) {
     "<meta property=og:image content='" + ogimg + "'><meta property=og:image:width content='1200'><meta property=og:image:height content='630'>" +
     "<meta name=twitter:card content='summary_large_image'><meta name=twitter:title content='" + e(hn + " vs " + an + " | 킥톡") + "'><meta name=twitter:description content='" + e(desc) + "'><meta name=twitter:image content='" + ogimg + "'>" +
     "<script type=application/ld+json>" + ld + "</script>" +
-    "<style>body{margin:0;background:#070d18;color:#eaf0fb;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;line-height:1.6}.wrap{max-width:680px;margin:0 auto;padding:20px;text-align:center}a{color:#4f8cff;text-decoration:none}.brand{font-weight:800;padding:8px 0;font-size:15px}h1{font-size:26px;margin:18px 0 6px}.vs{color:#9fb0cc;font-size:18px;font-weight:600}.meta{color:#9fb0cc;font-size:14px;margin:0 0 8px}h2{font-size:14px;color:#9fb0cc;margin:22px 0 8px}ul.wp{list-style:none;padding:0;text-align:left}ul.wp li{background:#111c30;border:1px solid #243049;border-radius:8px;padding:9px 12px;margin-bottom:6px;font-size:14px}.cta{display:inline-block;background:#4f8cff;color:#06122a;font-weight:800;border-radius:11px;padding:13px 20px;margin:20px 0 8px}.sub{color:#6f7d96;font-size:12.5px}</style></head>" +
-    "<body><div class=wrap><div class=brand>⚽ <a href='" + SITE + "/'>킥톡 KickTalk</a></div>" + body + "</div>" +
+    "<style>body{margin:0;background:#070d18;color:#eaf0fb;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;line-height:1.6}.wrap{max-width:680px;margin:0 auto;padding:20px;text-align:center}a{color:#4f8cff;text-decoration:none}.brand{font-weight:800;padding:8px 0;font-size:15px}h1{font-size:26px;margin:18px 0 6px}.vs{color:#9fb0cc;font-size:18px;font-weight:600}.meta{color:#9fb0cc;font-size:14px;margin:0 0 8px}h2{font-size:14px;color:#9fb0cc;margin:22px 0 8px}ul.wp{list-style:none;padding:0;text-align:left}ul.wp li{background:#111c30;border:1px solid #243049;border-radius:8px;padding:9px 12px;margin-bottom:6px;font-size:14px}.cta{display:inline-block;background:#4f8cff;color:#06122a;font-weight:800;border-radius:11px;padding:13px 20px;margin:20px 0 8px}.sub{color:#6f7d96;font-size:12.5px}.tlinks{font-size:13.5px;margin-top:14px}.ft{margin-top:26px;padding-top:14px;border-top:1px solid #243049;color:#6f7d96;font-size:12.5px}.ft a{color:#9fb0cc}</style></head>" +
+    "<body><div class=wrap><div class=brand>⚽ <a href='" + SITE + "/'>킥톡 KickTalk</a></div>" + body +
+    "<div class=ft><a href='" + SITE + "/'>홈</a> · <a href='" + SITE + "/about.html'>소개</a> · <a href='" + SITE + "/privacy.html'>개인정보처리방침</a> · <a href='" + SITE + "/terms.html'>서비스 약관</a></div></div>" +
     "<script>setTimeout(function(){location.replace('" + appurl + "');},1400);</script>" +  // 사람은 앱으로(크롤러는 OG만 읽음)
     "</body></html>";
   fs.writeFileSync(path.join(ROOT, "m", slug + ".html"), pageHtml);

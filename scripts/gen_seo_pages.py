@@ -64,7 +64,7 @@ for t in D["teams"]:
     open(f"t/{tid}.html","w",encoding="utf-8").write(page(title,desc,f"https://kicktalk.xyz/t/{tid}.html",ld,body,f"{tn} 2026 월드컵 대표팀 | 킥톡"))
     nt+=1
 # sitemap
-urls=["https://kicktalk.xyz/","https://kicktalk.xyz/privacy.html","https://kicktalk.xyz/terms.html"]
+urls=["https://kicktalk.xyz/","https://kicktalk.xyz/about.html","https://kicktalk.xyz/privacy.html","https://kicktalk.xyz/terms.html"]
 urls+=[f"https://kicktalk.xyz/t/{t['id']}.html" for t in D["teams"]]
 # 선수페이지는 양산형 얇은 콘텐츠라 sitemap 제외 + noindex(애드센스 low-value 회피). 팀/경기 페이지로만 색인.
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
