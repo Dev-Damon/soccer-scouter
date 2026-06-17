@@ -377,6 +377,8 @@ html.light .mgr-act button.mgr-ban { background: #e5a23d; }
 .mf-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; margin: 6px 0 8px; gap: 8px; }
 .mf-head b { font-weight: 800; }
 .mf-a { color: #4f8cff; } .mf-b { color: #e5566a; text-align: right; }
+.mf-tm { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 2px; }
+.mf-tm:active { opacity: .65; }
 .mf-pitch { width: 100%; height: auto; display: block; border-radius: 10px; }
 .mf-p { cursor: pointer; }
 /* 경기 평점·MVP */

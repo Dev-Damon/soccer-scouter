@@ -1656,7 +1656,7 @@
   }
   function mfHead(a, fa, b, fb, matchId) {
     var tra = ratingBox(teamRatingOf(matchId, a.id), 2), trb = ratingBox(teamRatingOf(matchId, b.id), 2);
-    return '<div class="mf-head"><span class="mf-a">' + esc(a.flag) + " " + esc(a.name) + (tra ? " " + tra : "") + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + (trb ? trb + " " : "") + esc(b.name) + " " + esc(b.flag) + "</span></div>";
+    return '<div class="mf-head"><span class="mf-a"><span class="mf-tm" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + '</span>' + (tra ? " " + tra : "") + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + (trb ? trb + " " : "") + '<span class="mf-tm" data-team="' + esc(b.id) + '">' + esc(b.name) + " " + esc(b.flag) + "</span></span></div>";
   }
   function matchFormation(a, b) {
     if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
