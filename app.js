@@ -265,9 +265,11 @@
       var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : "";
       if (PRED && tid) {
         var tm = teamsById[tid];
-        // 3위 슬롯은 실제 올라온 팀의 조로 표시(예 "C조 3위"). 1·2위는 그대로.
-        var lbl = (g.indexOf("·") >= 0) ? ((tm && tm.group ? tm.group + "조 " : "") + r) : (g + " " + r);
-        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl">' + esc(lbl) + "</span>", teamAttr(tid));
+        // 3위 슬롯: 원래 후보 조 목록(A·B·C·D·F 3위) 유지하되, 실제 올라온 조만 굵게·강조색. 1·2위는 그대로.
+        var labelHtml, is3 = g.indexOf("·") >= 0;
+        if (is3) { var tg = tm && tm.group; labelHtml = g.split("·").map(function (x) { return x === tg ? '<b class="hl3">' + esc(x) + "</b>" : esc(x); }).join("·") + " " + esc(r); }
+        else labelHtml = esc(g + " " + r);
+        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl' + (is3 ? " bxl3" : "") + '">' + labelHtml + "</span>", teamAttr(tid));
         return;
       }
       box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));

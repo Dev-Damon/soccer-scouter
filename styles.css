@@ -548,6 +548,8 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .bxf { font-size: 15px; line-height: 1; }
 .brk-stage .bxf img { width: 16px; height: 16px; vertical-align: -2px; }
 .brk-stage .tc.pred .bxl { font-size: 8px; font-weight: 800; color: var(--muted); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.brk-stage .tc.pred .bxl3 { font-size: 6.5px; white-space: normal; line-height: 1.05; text-overflow: clip; }  /* 3위 후보 조 목록 — 줄바꿈 허용 */
+.brk-stage .tc.pred .bxl3 .hl3 { color: #e5574d; font-weight: 900; font-size: 8px; }  /* 실제 올라온 조 강조 */
 .brk-stage .tc.pred.win { border-color: #2ecf83; background: rgba(46,207,131,.14); box-shadow: 0 0 0 1px #2ecf83 inset; }
 .brk-stage .tc.pred.win .bxl { color: #1c8b56; font-weight: 900; }
 .brk-stage .bx[data-team] { cursor: pointer; }  /* 예측 국기 클릭→나라상세 */
