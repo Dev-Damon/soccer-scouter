@@ -1361,6 +1361,10 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 /* 경기 상세 — 슬림 하이라이트 버튼 + 양팀 몸값 인라인 */
 .hl-btn { display: flex; align-items: center; justify-content: center; gap: 6px; background: #03c75a; color: #fff; border-radius: 9px; padding: 7px; font-size: 13px; font-weight: 800; text-decoration: none; margin-top: 12px; margin-bottom: 8px; }
 .hl-btn:active { opacity: .85; }
+.live-btn { display: flex; align-items: center; justify-content: center; gap: 7px; background: #e8132b; color: #fff; border-radius: 9px; padding: 7px; font-size: 13px; font-weight: 800; text-decoration: none; margin-top: 12px; margin-bottom: 8px; }
+.live-btn:active { opacity: .85; }
+.live-btn .lb-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: lbpulse 1.1s ease-in-out infinite; }
+@keyframes lbpulse { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 /* 경기 헤더 밑 몸값 비교 카드(시안2) */
 .mvcmp-top { display: flex; justify-content: space-between; font-weight: 800; font-size: 13.5px; margin-bottom: 8px; }
 .mvcmp-l { color: var(--accent); } .mvcmp-r { color: #e5574d; }

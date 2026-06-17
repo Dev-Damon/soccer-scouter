@@ -34,7 +34,27 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
     });
     await sleep(80);
   }
-  await rpc('set_live_state',{d:{t:Date.now(),live:live}});  // ① 라이브 공유캐시
+  // ①-b 치지직 JTBC 라이브 송출 감지 → ls(경기상세 "라이브 보기" 버튼). KBS 채널은 안 봄(JTBC 단일채널만).
+  var ls=null;
+  try{
+    const JTBC_CH='8ecd602c251f30fd7f09463e9f55609f';  // 치지직 "북중미 월드컵 JTBC"
+    const KO_ALIAS={'south-korea':['대한민국','한국'],'turkey':['튀르키예','터키'],'south-africa':['남아프리카공화국','남아공'],'bosnia-and-herzegovina':['보스니아 헤르체고비나','보스니아'],'dr-congo':['콩고민주공화국','콩고'],'saudi-arabia':['사우디아라비아','사우디'],'united-states':['미국'],'cape-verde':['카보베르데','카부베르데']};
+    const koNames=id=>[(teamsById[id]||{}).name].concat(KO_ALIAS[id]||[]).filter(Boolean);
+    const koOf=fx=>{const dt=(fx.kstDate||fx.date),tm=(fx.kstTime||fx.time||'00:00');const t=Date.parse(dt+'T'+tm+':00+09:00');return isNaN(t)?0:t;};
+    var st; try{st=JSON.parse(await get('https://api.chzzk.naver.com/polling/v3/channels/'+JTBC_CH+'/live-status'))}catch(e){}
+    var c=st&&st.content;
+    if(c&&c.status==='OPEN'&&c.liveTitle){
+      var title=c.liveTitle, nowT=Date.now();
+      var fx=D.fixtures.find(f=>{
+        if(!f.homeId||!f.awayId)return false;
+        var ok=koNames(f.homeId).some(n=>title.includes(n))&&koNames(f.awayId).some(n=>title.includes(n));
+        if(!ok)return false; var ko=koOf(f); return ko&&nowT>=ko-60*60000&&nowT<ko+180*60000;  // 킥오프 60분전~180분후만
+      });
+      if(fx) ls={mid:fx.id,url:'https://chzzk.naver.com/live/'+JTBC_CH,title:title};
+    }
+  }catch(e){ console.log('JTBC 라이브 감지 실패(라이브갱신은 정상):',e.message); }
+  await rpc('set_live_state',{d:{t:Date.now(),live:live,ls:ls}});  // ① 라이브 공유캐시(+ ls: JTBC 송출링크)
+  if(ls) console.log('JTBC 라이브 감지:',ls.mid,'-',ls.title);
   var nr=0;
   for(const fid of Object.keys(posts)){  // ② 종료경기 결과+라인업 영구저장
     var p=posts[fid];
