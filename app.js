@@ -1205,7 +1205,7 @@
   }
   // 선수 키·몸무게(cm/kg) — scripts/fetch_bio.js가 ESPN bio에서 자동수집해 마커 사이 갱신(경기 출전선수 위주).
   var PLAYER_BIO = {};  // 키·몸무게(cm/kg) — bio.json에서 로드(scripts/fetch_bio.js 생성), app.js 경량화
-  (function(){ if(!window.fetch) return; fetch("bio.json").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_BIO, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
+  (function(){ if(!window.fetch) return; fetch("bio.json?b=2").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_BIO, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
