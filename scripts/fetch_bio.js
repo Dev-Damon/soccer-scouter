@@ -43,16 +43,11 @@ async function eventIds(){
   }
   console.log('bio 수집:',ok,'누락:',miss);
   // app.js BIO 블록 병합 갱신
-  let src=fs.readFileSync(APP,'utf8');
-  const m=src.match(/\/\* BIO-AUTO-START \*\/([\s\S]*?)\/\* BIO-AUTO-END \*\//);
-  if(!m){console.log('BIO-AUTO 마커 없음');process.exit(1);}
-  const existing={}; const re=/"([^"]+)":\s*\{([^}]*)\}/g; let x;
-  while((x=re.exec(m[1]))){ const o={}; (x[2].match(/[hw]:\s*\d+/g)||[]).forEach(s=>{var kv=s.split(':');o[kv[0].trim()]=+kv[1];}); existing[x[1]]=o; }
+  // bio.json 병합 갱신(app.js 아님 — 경량화)
+  const BIOF=path.join(ROOT,'bio.json');
+  let existing={}; try{ existing=JSON.parse(fs.readFileSync(BIOF,'utf8'))||{}; }catch(e){}
   Object.assign(existing,bio);
-  const ids=Object.keys(existing).sort();
-  const lines=ids.map(pid=>{ const o=existing[pid]; const parts=[]; if(o.h)parts.push('h:'+o.h); if(o.w)parts.push('w:'+o.w); return '    "'+pid+'": {'+parts.join(', ')+'}'; });
-  const block='\n'+lines.join(',\n')+'\n    ';
-  src=src.replace(/(\/\* BIO-AUTO-START \*\/)[\s\S]*?(\/\* BIO-AUTO-END \*\/)/, '$1'+block.replace(/\$/g,'$$$$')+'$2');
-  fs.writeFileSync(APP,src);
-  console.log('app.js PLAYER_BIO 갱신 — 총',ids.length,'명');
+  const sorted={}; Object.keys(existing).sort().forEach(k=>sorted[k]=existing[k]);
+  fs.writeFileSync(BIOF,JSON.stringify(sorted));
+  console.log('bio.json 갱신 — 총',Object.keys(sorted).length,'명');
 })();
