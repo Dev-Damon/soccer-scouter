@@ -141,6 +141,16 @@
     var c = posClass(p && p.position);
     return c === "fw" ? 0 : c === "mf" ? 1 : c === "df" ? 2 : 3;
   }
+  // 나라상세 선수단 정렬: "pos"=포지션순(공→미→수→GK, 동일포지션 점수높은순, 기본) / "score"=점수순
+  var squadSort = "pos", _squadTeamId = null;
+  function sortRosterBy(list, mode) {
+    return list.slice().sort(function (a, b) {
+      if (mode === "score") { var d = (b.ovr || 0) - (a.ovr || 0); return d || (posRank(a) - posRank(b)); }
+      var ra = posRank(a), rb = posRank(b);
+      if (ra !== rb) return ra - rb;
+      return (b.ovr || 0) - (a.ovr || 0);
+    });
+  }
   // 한글 코스 포지션(선수 상세용): 공격수/미드필더/수비수/골키퍼
   function posKo(pos) {
     var c = posClass(pos);
@@ -1273,14 +1283,9 @@
     backBtn.hidden = false;
     tabsEl.hidden = true;
 
-    // 주 정렬: 포메이션 순서(공격→미드→수비→GK), 같은 포지션 안에서는 점수 높은순.
-    // 점수(ovr)는 정렬용으로 쓰되 나라상세 배지에는 노출하지 않는다.
-    var roster = DATA.players.filter(function (p) { return p.team === t.name; })
-      .sort(function (a, b) {
-        var ra = posRank(a), rb = posRank(b);
-        if (ra !== rb) return ra - rb;
-        return (b.ovr || 0) - (a.ovr || 0);
-      });
+    // 선수단 정렬: squadSort("pos" 기본 / "score") — 헤더 토글로 전환.
+    _squadTeamId = t.id;
+    var roster = sortRosterBy(DATA.players.filter(function (p) { return p.team === t.name; }), squadSort);
 
     // 컨트리 히어로
     var html = '<div class="detail">' +
@@ -1388,11 +1393,15 @@
 
     html += "</div>";
 
-    // 전체 선수단
+    // 전체 선수단 (+ 정렬 토글: 포지션순/점수순)
     var rosterHtml = roster.length
-      ? '<div class="grid">' + roster.map(function (p) { return playerRow(p, false, true); }).join("") + "</div>"
+      ? '<div class="grid squad-grid">' + roster.map(function (p) { return playerRow(p, false, true); }).join("") + "</div>"
       : '<div class="empty">선수 데이터를 채우는 중입니다.</div>';
-    html += '<div class="sec-h">전체 선수단 · ' + roster.length + "명</div>" + rosterHtml;
+    html += '<div class="sec-h squad-h"><span>전체 선수단 · ' + roster.length + '명</span>' +
+      (roster.length ? '<span class="squad-sort">' +
+        '<button class="ssort' + (squadSort === "pos" ? " on" : "") + '" data-squadsort="pos">포지션순</button>' +
+        '<button class="ssort' + (squadSort === "score" ? " on" : "") + '" data-squadsort="score">점수순</button>' +
+      '</span>' : "") + "</div>" + rosterHtml;
     html += '<div class="adslot"></div>';
     viewEl.innerHTML = html;
     insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
@@ -3382,6 +3391,22 @@
       if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); else alert("로그인이 필요해요."); return; }
       var rpid = my.getAttribute("data-pid"), rsc = parseInt(my.getAttribute("data-s"), 10);
       KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
+      return;
+    }
+    var _ss = e.target.closest("[data-squadsort]");
+    if (_ss) {  // 나라상세 선수단 정렬 토글 — 그리드만 갱신(스크롤 유지)
+      var mode = _ss.getAttribute("data-squadsort");
+      if (mode !== squadSort && _squadTeamId) {
+        squadSort = mode;
+        var _t = teamsById[_squadTeamId];
+        if (_t) {
+          var sorted = sortRosterBy(DATA.players.filter(function (p) { return p.team === _t.name; }), mode);
+          var grid = viewEl.querySelector(".squad-grid");
+          if (grid) grid.innerHTML = sorted.map(function (p) { return playerRow(p, false, true); }).join("");
+          var btns = viewEl.querySelectorAll("[data-squadsort]");
+          for (var i = 0; i < btns.length; i++) btns[i].classList.toggle("on", btns[i].getAttribute("data-squadsort") === mode);
+        }
+      }
       return;
     }
     if ((my = e.target.closest("[data-pred]"))) { var ps = my.closest(".pred-slot"); if (ps && ps._predFx && ps._predOpen && window.KickComments) KickComments.predVote(ps._predFx, my.getAttribute("data-pred")).then(ps._predPaint); return; }

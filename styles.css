@@ -626,6 +626,10 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가로 오버플로 방지 */
 .muted-note { color: var(--muted); font-size: 11px; font-weight: 600; }
 .sec-h { color: var(--muted); font-size: 15px; font-weight: 700; margin: 20px 4px 10px; letter-spacing: .2px; }
+.squad-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.squad-sort { display: inline-flex; gap: 0; background: var(--bg-soft, #0f1a2a); border: 1px solid var(--line, #1e2a3a); border-radius: 999px; padding: 2px; }
+.ssort { background: none; border: 0; color: var(--muted, #9fb0c3); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; cursor: pointer; line-height: 1; white-space: nowrap; }
+.ssort.on { background: var(--accent, #2ee6a6); color: #06231a; }
 
 /* 날짜 스트립 */
 .datestrip-wrap { position: relative; }
