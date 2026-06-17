@@ -1206,6 +1206,9 @@
   // 선수 키·몸무게(cm/kg) — scripts/fetch_bio.js가 ESPN bio에서 자동수집해 마커 사이 갱신(경기 출전선수 위주).
   var PLAYER_BIO = {};  // 키·몸무게(cm/kg) — bio.json에서 로드(scripts/fetch_bio.js 생성), app.js 경량화
   (function(){ if(!window.fetch) return; fetch("bio.json?b=2").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_BIO, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
+  // 골키퍼 국가대표 실점·무실점 — gk.json(나무위키 등 정확 소스 수집). {pid:{g:경기,c:실점,cs:무실점}}
+  var PLAYER_GK = {};
+  (function(){ if(!window.fetch) return; fetch("gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -2408,7 +2411,8 @@
     "match-49": "https://chzzk.naver.com/video/13744157", // 프랑스-세네갈
     "match-50": "https://chzzk.naver.com/video/13744863", // 이라크-노르웨이
     "match-55": "https://chzzk.naver.com/video/13745669", // 아르헨티나-알제리
-    "match-56": "https://chzzk.naver.com/video/13746888" // 오스트리아-요르단
+    "match-56": "https://chzzk.naver.com/video/13746888", // 오스트리아-요르단
+    "match-67": "https://chzzk.naver.com/video/13760610" // 잉글랜드-크로아티아
     /* HL-AUTO-END */
   };
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
