@@ -17,16 +17,21 @@ const CODE_TO_ID = {
   ARG:'argentina', ALG:'algeria', AUT:'austria', JOR:'jordan', POR:'portugal', COD:'dr-congo', UZB:'uzbekistan',
   COL:'colombia', ENG:'england', CRO:'croatia', GHA:'ghana', PAN:'panama'
 };
+function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<[^>]+>/g,' ').replace(/&[a-z]+;/g,' ').replace(/\s+/g,' ').trim());}
 (async()=>{
-  const h = await get('https://football-ranking.com/fifa-world-rankings');
-  const rows = h.match(/<tr[\s\S]*?<\/tr>/g) || [];
-  function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<[^>]+>/g,' ').replace(/&[a-z]+;/g,' ').replace(/\s+/g,' ').trim());}
+  // 페이지네이션(페이지당 50팀) — 1~4페이지(200위)면 본선 48개국 전부 커버
   const rankByCode = {};
-  rows.forEach(r=>{
-    const c = cells(r); if (c.length < 2) return;
-    const rk = parseInt((c[0]||'').match(/\d+/)); const cm = (c[1]||'').match(/\(([A-Z]{3})\)/);
-    if (rk && cm) rankByCode[cm[1]] = rk;
-  });
+  for (var pg = 1; pg <= 4; pg++) {
+    const h = await get('https://football-ranking.com/fifa-rankings?page=' + pg);
+    const rows = h.match(/<tr[\s\S]*?<\/tr>/g) || [];
+    var n0 = Object.keys(rankByCode).length;
+    rows.forEach(r=>{
+      const c = cells(r); if (c.length < 2) return;
+      const rk = parseInt((c[0]||'').match(/^\s*(\d+)/)); const cm = (c[1]||'').match(/\(([A-Z]{3})\)/);
+      if (rk && cm) rankByCode[cm[1]] = rk;
+    });
+    if (Object.keys(rankByCode).length === n0) break;  // 새 항목 없으면 마지막 페이지
+  }
   if (Object.keys(rankByCode).length < 50) { console.log('파싱 실패(행', Object.keys(rankByCode).length, ')'); process.exit(1); }
   let src = fs.readFileSync(DATA, 'utf8');
   const changes = []; const missing = [];

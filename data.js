@@ -2591,7 +2591,7 @@ window.DATA = {
       "name": "남아프리카공화국",
       "nameEn": "South Africa",
       "flag": "🇿🇦",
-      "fifaRank": 60,
+      "fifaRank": 61,
       "group": "A",
       "tierSummary": "16년 만에 월드컵 본선에 돌아온 바파나 바파나는 AFCON 4강 신화를 쓴 후고 브로스 사단으로, 슈퍼스타는 없지만 조직력과 골키퍼 능력치가 돋보이는 다크호스 다크호스급 팀이다.",
       "styleSummary": [
@@ -3400,7 +3400,7 @@ window.DATA = {
       "name": "보스니아 헤르체고비나",
       "nameEn": "Bosnia and Herzegovina",
       "flag": "🇧🇦",
-      "fifaRank": 64,
+      "fifaRank": 63,
       "group": "B",
       "tierSummary": "2014년 이후 12년 만에 본선에 복귀한 다크호스로, 노장 제코를 구심점 삼아 유럽 각지에서 성장한 디아스포라 자원으로 무장한 중하위 시드 팀이다.",
       "styleSummary": [
@@ -4470,7 +4470,7 @@ window.DATA = {
       "name": "아이티",
       "nameEn": "Haiti",
       "flag": "🇭🇹",
-      "fifaRank": 83,
+      "fifaRank": 85,
       "group": "C",
       "tierSummary": "1974년 이후 52년 만에 본선에 복귀한 카리브의 다크호스로, 프랑스·벨기에·잉글랜드에서 성장한 디아스포라 선수들이 주축인 빠르고 거친 언더독 팀이다.",
       "styleSummary": [
@@ -5952,7 +5952,7 @@ window.DATA = {
       "name": "퀴라소",
       "nameEn": "Curaçao",
       "flag": "🇨🇼",
-      "fifaRank": 82,
+      "fifaRank": 83,
       "group": "E",
       "tierSummary": "인구·면적 모두 역대 최소 규모로 월드컵 본선에 오른 동화 같은 팀으로, 네덜란드 리그 출신 디아스포라 선수들이 주축인 다크호스다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 45,
+      "fifaRank": 56,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -8115,7 +8115,7 @@ window.DATA = {
       "name": "뉴질랜드",
       "nameEn": "New Zealand",
       "flag": "🇳🇿",
-      "fifaRank": 85,
+      "fifaRank": 82,
       "group": "G",
       "tierSummary": "FIFA 85위의 오세아니아 맹주로, 16년 만에 본선에 복귀한 '언더독' 팀이지만 우디 같은 프리미어리그급 핵심 선수와 유럽파 젊은 피가 섞여 한 방을 노린다.",
       "styleSummary": [
@@ -8557,7 +8557,7 @@ window.DATA = {
       "name": "카보베르데",
       "nameEn": "Cape Verde",
       "flag": "🇨🇻",
-      "fifaRank": 67,
+      "fifaRank": 64,
       "group": "H",
       "tierSummary": "사상 첫 월드컵 본선에 오른 인구 50만의 '블루 샤크', 디아스포라 출신 유럽파를 끌어모아 조직력과 수비 안정성으로 무장한 다크호스다.",
       "styleSummary": [
@@ -8760,7 +8760,7 @@ window.DATA = {
       "name": "사우디아라비아",
       "nameEn": "Saudi Arabia",
       "flag": "🇸🇦",
-      "fifaRank": 61,
+      "fifaRank": 59,
       "group": "H",
       "tierSummary": "아시아 전통의 강호이자 2022년 아르헨티나를 꺾은 이변의 주인공으로, 조별리그 통과를 목표로 하는 다크호스이지만 본선 직전 감독 교체와 유럽파 부족이 변수인 도전자급 팀이다.",
       "styleSummary": [
@@ -9629,7 +9629,7 @@ window.DATA = {
       "name": "이라크",
       "nameEn": "Iraq",
       "flag": "🇮🇶",
-      "fifaRank": 57,
+      "fifaRank": 60,
       "group": "I",
       "tierSummary": "1986년 이후 40년 만에 본선에 복귀한 다크호스로, 베테랑 골키퍼와 노련한 타깃맨을 중심에 두고 유럽파 디아스포라 선수들이 가세한 끈끈한 언더독 팀이다.",
       "styleSummary": [
@@ -10701,7 +10701,7 @@ window.DATA = {
       "name": "요르단",
       "nameEn": "Jordan",
       "flag": "🇯🇴",
-      "fifaRank": 63,
+      "fifaRank": 67,
       "group": "J",
       "tierSummary": "사상 첫 월드컵 본선에 오른 다크호스로, 2023 아시안컵 준우승 멤버를 중심으로 한 끈끈한 수비와 알타마리·올완의 역습이 무기인 도전자 티어 팀입니다.",
       "styleSummary": [
