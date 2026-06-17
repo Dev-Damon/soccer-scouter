@@ -2322,7 +2322,8 @@
     "match-43": "https://chzzk.naver.com/video/13727569", // 스페인-카보베르데
     "match-44": "https://chzzk.naver.com/video/13729415", // 사우디아라비아-우루과이
     "match-49": "https://chzzk.naver.com/video/13744157", // 프랑스-세네갈
-    "match-50": "https://chzzk.naver.com/video/13744863" // 이라크-노르웨이
+    "match-50": "https://chzzk.naver.com/video/13744863", // 이라크-노르웨이
+    "match-55": "https://chzzk.naver.com/video/13745669" // 아르헨티나-알제리
     /* HL-AUTO-END */
   };
   // 선수 평점 — 무료 공식소스 없어 사진에서 수동 입력(재활용 ratingBox). 나중에 유료API 붙이면 같은 박스 재사용.
