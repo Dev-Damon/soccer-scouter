@@ -35422,7 +35422,7 @@ window.DATA = {
       "league": "J리그 (일본)",
       "position": "골키퍼",
       "age": 35,
-      "caps": 80,
+      "caps": 87,
       "intlGoals": 0,
       "grade": "주전급",
       "oneLiner": "네 번째 월드컵을 향하는 베테랑 수문장, 조현우와 주전 경쟁 중인 안정감의 상징",

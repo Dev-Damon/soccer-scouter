@@ -258,30 +258,35 @@
     var XL = edge, X16 = edge + span * 0.426, X8 = edge + span * 0.618, X4 = edge + span * 0.765, XF = W / 2;  // 비율은 원본 360px 디자인과 동일
     var XR = W - edge, XR16 = W - X16, XR8 = W - X8, XR4 = W - X4;
     var boxes = [], BX = {}, P = [];
-    function box(cx, cy, w, h, cls, html) { boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
+    function box(cx, cy, w, h, cls, html, attr) { boxes.push('<div class="bx ' + cls + '"' + (attr || "") + ' style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
+    function teamAttr(tid) { var t = teamsById[tid]; return t ? ' data-team="' + esc(tid) + '" title="' + esc(t.name) + '"' : ""; }  // 클릭→나라상세 + 마우스오버 툴팁
     function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
     function tcard(s, cx, cy, tid, isWin) {
       var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : "";
       if (PRED && tid) {
         var tm = teamsById[tid];
-        var lbl = (g.indexOf("·") >= 0) ? r : (g + " " + r);  // 3위 슬롯(A·B·C·D·F)은 길어서 "3위"만 → 삐져나옴 방지
-        // 국기 위 + 라벨 아래(세로), 승자는 강조(win)
-        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl">' + esc(lbl) + "</span>");
+        // 3위 슬롯은 실제 올라온 팀의 조로 표시(예 "C조 3위"). 1·2위는 그대로.
+        var lbl = (g.indexOf("·") >= 0) ? ((tm && tm.group ? tm.group + "조 " : "") + r) : (g + " " + r);
+        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl">' + esc(lbl) + "</span>", teamAttr(tid));
         return;
       }
       box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
     }
-    function conTxt(id, lbl) { if (PRED && PRED.node[id]) { var t = teamsById[PRED.node[id]]; return t ? '<span class="bxf">' + esc(t.flag) + "</span>" : lbl; } return lbl; }
+    function conBox(id, cx, cy, w, lbl) {  // 16강~4강 노드: 예측 승자 국기(클릭가능) or 라벨
+      var tid = PRED && PRED.node[id], t = tid && teamsById[tid];
+      box(cx, cy, w, 14, "con", t ? '<span class="bxf">' + esc(t.flag) + "</span>" : lbl, t ? teamAttr(tid) : "");
+      vbox(id, cx, cy, w);
+    }
     function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; var wn = PRED && PRED.r32win[mn]; tcard(m.a, cx, cy - OFF, pt && pt.a, pt && wn === pt.a); tcard(m.b, cx, cy + OFF, pt && pt.b, pt && wn === pt.b); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
     for (i = 0; i < 8; i++) pair("lr" + i, BL_R32[i], XL, r32cy[i], XL + cardW / 2);
-    for (i = 0; i < 4; i++) { vbox("l16_" + i, X16, c16cy[i], Wp); box(X16, c16cy[i], Wp, 14, "con", conTxt("l16_" + i, "16강")); }
-    for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", conTxt("l8_" + i, "8강")); }
-    vbox("lsf", X4, CY, Wp); box(X4, CY, Wp, 14, "con", conTxt("lsf", "4강"));
-    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", PRED && PRED.champion ? '<div class="trophy">🏆</div><div class="bxf champf">' + esc((teamsById[PRED.champion] || {}).flag || "") + "</div>" : '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
+    for (i = 0; i < 4; i++) conBox("l16_" + i, X16, c16cy[i], Wp, "16강");
+    for (i = 0; i < 2; i++) conBox("l8_" + i, X8, c8cy[i], Wp, "8강");
+    conBox("lsf", X4, CY, Wp, "4강");
+    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", PRED && PRED.champion ? '<div class="trophy">🏆</div><div class="bxf champf">' + esc((teamsById[PRED.champion] || {}).flag || "") + "</div>" : '<div class="trophy">🏆</div><div class="finlbl">결승</div>', PRED && PRED.champion ? teamAttr(PRED.champion) : "");
     box(XF, CY + Wf / 2 + 16, 74, 16, "thirdpl", (PRED && PRED.third) ? ('🥉 <span class="bxf">' + esc((teamsById[PRED.third[0]] || {}).flag || "") + '</span><span class="bxf">' + esc((teamsById[PRED.third[1]] || {}).flag || "") + "</span>") : "🥉 3·4위전");
-    vbox("rsf", XR4, CY, Wp); box(XR4, CY, Wp, 14, "con", conTxt("rsf", "4강"));
-    for (i = 0; i < 2; i++) { vbox("r8_" + i, XR8, c8cy[i], Wp); box(XR8, c8cy[i], Wp, 14, "con", conTxt("r8_" + i, "8강")); }
-    for (i = 0; i < 4; i++) { vbox("r16_" + i, XR16, c16cy[i], Wp); box(XR16, c16cy[i], Wp, 14, "con", conTxt("r16_" + i, "16강")); }
+    conBox("rsf", XR4, CY, Wp, "4강");
+    for (i = 0; i < 2; i++) conBox("r8_" + i, XR8, c8cy[i], Wp, "8강");
+    for (i = 0; i < 4; i++) conBox("r16_" + i, XR16, c16cy[i], Wp, "16강");
     for (i = 0; i < 8; i++) pair("rr" + i, BR_R32[i], XR, r32cy[i], XR - cardW / 2);
     function eH(c, p, dir) { var cc = BX[c], pp = BX[p], cr = dir > 0 ? cc.cx + cc.w / 2 : cc.cx - cc.w / 2, pl = dir > 0 ? pp.cx - pp.w / 2 : pp.cx + pp.w / 2, mx = (cr + pl) / 2; P.push("M" + cr + " " + cc.cy + " H" + mx + " V" + pp.cy + " H" + pl); }
     for (i = 0; i < 4; i++) { eH("lr" + (2 * i), "l16_" + i, 1); eH("lr" + (2 * i + 1), "l16_" + i, 1); }

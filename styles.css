@@ -550,6 +550,8 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .tc.pred .bxl { font-size: 8px; font-weight: 800; color: var(--muted); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .brk-stage .tc.pred.win { border-color: #2ecf83; background: rgba(46,207,131,.14); box-shadow: 0 0 0 1px #2ecf83 inset; }
 .brk-stage .tc.pred.win .bxl { color: #1c8b56; font-weight: 900; }
+.brk-stage .bx[data-team] { cursor: pointer; }  /* 예측 국기 클릭→나라상세 */
+.brk-stage .bx[data-team]:hover { filter: brightness(1.05); outline: 2px solid var(--accent); outline-offset: -1px; }
 /* 16강부터 국기만 — 더 크게 */
 .brk-stage .con { min-height: 20px !important; }
 .brk-stage .con .bxf { font-size: 17px; }
