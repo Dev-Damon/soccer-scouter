@@ -1694,7 +1694,7 @@
             rbsvg = '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="29" height="18" rx="3.5" fill="' + rc + '" stroke="#0b1220" stroke-width="1" class="rbox-tap" style="cursor:pointer"/>' +
               '<text x="' + (bx + 14.5).toFixed(0) + '" y="' + (by + 13.5).toFixed(0) + '" fill="#fff" font-size="13.5" font-weight="800" text-anchor="middle" style="pointer-events:none">' + d.rating.toFixed(1) + "</text>";
           }
-          var ico = (d.goal ? "⚽" : "") + (d.subOff ? "⇄" : "");  // 골·교체 표시(어시스트 X)
+          var ico = (d.goal ? "⚽" : "") + (d.subIn ? "🔺" : "") + (d.subOff ? "⇄" : "");  // 골·교체투입(🔺=교체로 들어온 선수)·교체아웃
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
           out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
@@ -1732,7 +1732,7 @@
     var ca = ra && coordFn(ra), cb = rb && coordFn(rb);
     if (!ca || !cb) return null;
     var em = matchEventMap(d.keyEvents);
-    function toPl(coords, teamKo) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm, teamKo, c.p.jersey); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
+    function toPl(coords, teamKo) { return coords.map(function (c) { var nm = (c.p.athlete && c.p.athlete.displayName) || ""; var mp = playerByName(nm, teamKo, c.p.jersey); var dn = mp ? mp.name : nm; return { name: dn, number: c.p.jersey, x: c.x, y: c.y, pid: mp && mp.id, rating: ratingOf(matchId, dn), goal: em.goals[nm] || 0, subOff: !!em.subOff[nm], subIn: !!em.subIn[nm], rate: ended && !!(mp && mp.id) ? matchId : null }; }); }
     return '<h3>📋 ' + (ended ? "선발 라인업" : "라인업") + ' <span class="muted-note">' + (ended ? "교체는 명단 참고" : "실시간 · 탭하면 상세") + "</span></h3>" + mfHead(a, ra.formation, b, rb.formation, matchId) + pitchSVG(toPl(ca, a.name), toPl(cb, b.name));
   }
   // 출전정지·경고 누적 — 기록탭의 누적 카드로 자동 산출(레드/옐2장=정지 예상)
@@ -2602,14 +2602,14 @@
   function teamRatingOf(matchId, teamId) { var m = MATCH_RATINGS[matchId]; return (m && m.team && m.team[teamId] != null) ? m.team[teamId] : null; }
   // 골/교체 표시용 — keyEvents에서 득점자·교체나간선수 추출(ESPN 이름 기준)
   function matchEventMap(keyEvents) {
-    var goals = {}, subOff = {};
+    var goals = {}, subOff = {}, subIn = {};
     (keyEvents || []).forEach(function (ev) {
       var ty = ((ev.type && ev.type.type) || "").toLowerCase();
       var parts = (ev.participants || []).map(function (x) { return x.athlete; }).filter(Boolean);
       if (/goal|scored/.test(ty) && !/own.?goal|missed|saved/.test(ty)) { if (parts[0]) goals[parts[0].displayName] = (goals[parts[0].displayName] || 0) + 1; }
-      else if (/substitution/i.test(ty) && parts.length >= 2) { subOff[parts[1].displayName] = (ev.clock && ev.clock.displayValue) || "1"; }
+      else if (/substitution/i.test(ty) && parts.length >= 2) { subOff[parts[1].displayName] = (ev.clock && ev.clock.displayValue) || "1"; subIn[parts[0].displayName] = (ev.clock && ev.clock.displayValue) || "1"; }  // parts[0]=투입, parts[1]=교체아웃
     });
-    return { goals: goals, subOff: subOff };
+    return { goals: goals, subOff: subOff, subIn: subIn };
   }
   // 평점 미니시트(종료경기 잔디 선수 탭) — 공식+유저평균 보고 1~10 채점
   function openRateSheet(pid, matchId) {
