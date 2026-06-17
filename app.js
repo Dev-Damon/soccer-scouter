@@ -219,6 +219,32 @@
   }
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
+  // ===== 킥톡 예측 대진표 — 전력(지수+몸값+FIFA랭킹)으로 조 순위·승자 예측. 잉글랜드는 매 경기 승리 강제(우승 고정). 참고용. =====
+  var PRED = null, PRED_CHAMP = "england";
+  function brkStrength(id) { var t = teamsById[id]; if (!t) return 0; var x = t.indices || {}; var mv = TEAM_MV[id] || 0; return (x.attack || 60) + (x.defense || 60) + (x.organization || 60) + (x.experience || 40) * 0.4 + Math.sqrt(mv) * 2 + (60 - (t.fifaRank || 60)) * 0.5; }
+  function predictBracket() {
+    var gr = {}; (DATA.groups || []).forEach(function (g) { gr[g.group] = (g.teamIds || []).slice().sort(function (a, b) { return brkStrength(b) - brkStrength(a); }); });
+    var thirds = Object.keys(gr).map(function (L) { return { L: L, id: gr[L][2] }; }).filter(function (o) { return o.id; }).sort(function (a, b) { return brkStrength(b.id) - brkStrength(a.id); });
+    var usedThird = {};
+    function slotTeam(s) {
+      var m = /^([12])([A-L])$/.exec(s); if (m) { var arr = gr[m[2]] || []; return arr[m[1] === "1" ? 0 : 1]; }
+      var t = /3rd\s+([A-L/]+)/.exec(s);
+      if (t) { var cands = t[1].split("/"); var pick = thirds.filter(function (o) { return cands.indexOf(o.L) >= 0 && !usedThird[o.L]; })[0] || thirds.filter(function (o) { return !usedThird[o.L]; })[0]; if (pick) { usedThird[pick.L] = 1; return pick.id; } }
+      return null;
+    }
+    function win(a, b) { if (!a) return b; if (!b) return a; if (a === PRED_CHAMP || b === PRED_CHAMP) return PRED_CHAMP; return brkStrength(a) >= brkStrength(b) ? a : b; }
+    var r32 = {}; BRACKET.r32.forEach(function (m) { r32[m.m] = { a: slotTeam(m.a), b: slotTeam(m.b) }; });
+    var node = {};
+    function side(arr, pfx) {
+      var w = arr.map(function (mn) { return win(r32[mn].a, r32[mn].b); });
+      var l16 = []; for (var i = 0; i < 4; i++) { node[pfx + "16_" + i] = win(w[2 * i], w[2 * i + 1]); l16.push(node[pfx + "16_" + i]); }
+      var l8 = []; for (i = 0; i < 2; i++) { node[pfx + "8_" + i] = win(l16[2 * i], l16[2 * i + 1]); l8.push(node[pfx + "8_" + i]); }
+      node[pfx + "sf"] = win(l8[0], l8[1]); return node[pfx + "sf"];
+    }
+    var lf = side(BL_R32, "l"), rf = side(BR_R32, "r");
+    node.fin = win(lf, rf);
+    return { r32: r32, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf };
+  }
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
   function layoutBracket() {
@@ -233,17 +259,21 @@
     var boxes = [], BX = {}, P = [];
     function box(cx, cy, w, h, cls, html) { boxes.push('<div class="bx ' + cls + '" style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
     function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
-    function tcard(s, cx, cy) { var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : ""; box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : "")); }
-    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; tcard(m.a, cx, cy - OFF); tcard(m.b, cx, cy + OFF); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
+    function tcard(s, cx, cy, tid) {
+      if (PRED && tid) { var tm = teamsById[tid]; box(cx, cy, cardW, 26, "tc pred", tm ? ('<span class="bxf">' + esc(tm.flag) + '</span><span class="bxn">' + esc(tm.name) + "</span>") : esc(brkSlot(s))); return; }
+      var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : ""; box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
+    }
+    function conTxt(id, lbl) { if (PRED && PRED.node[id]) { var t = teamsById[PRED.node[id]]; return t ? '<span class="bxf">' + esc(t.flag) + "</span>" : lbl; } return lbl; }
+    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; tcard(m.a, cx, cy - OFF, pt && pt.a); tcard(m.b, cx, cy + OFF, pt && pt.b); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
     for (i = 0; i < 8; i++) pair("lr" + i, BL_R32[i], XL, r32cy[i], XL + cardW / 2);
-    for (i = 0; i < 4; i++) { vbox("l16_" + i, X16, c16cy[i], Wp); box(X16, c16cy[i], Wp, 14, "con", "16강"); }
-    for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", "8강"); }
-    vbox("lsf", X4, CY, Wp); box(X4, CY, Wp, 14, "con", "4강");
-    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
+    for (i = 0; i < 4; i++) { vbox("l16_" + i, X16, c16cy[i], Wp); box(X16, c16cy[i], Wp, 14, "con", conTxt("l16_" + i, "16강")); }
+    for (i = 0; i < 2; i++) { vbox("l8_" + i, X8, c8cy[i], Wp); box(X8, c8cy[i], Wp, 14, "con", conTxt("l8_" + i, "8강")); }
+    vbox("lsf", X4, CY, Wp); box(X4, CY, Wp, 14, "con", conTxt("lsf", "4강"));
+    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", PRED && PRED.champion ? '<div class="trophy">🏆</div><div class="bxf champf">' + esc((teamsById[PRED.champion] || {}).flag || "") + "</div>" : '<div class="trophy">🏆</div><div class="finlbl">결승</div>');
     box(XF, CY + Wf / 2 + 16, 62, 15, "thirdpl", "🥉 3·4위전");
-    vbox("rsf", XR4, CY, Wp); box(XR4, CY, Wp, 14, "con", "4강");
-    for (i = 0; i < 2; i++) { vbox("r8_" + i, XR8, c8cy[i], Wp); box(XR8, c8cy[i], Wp, 14, "con", "8강"); }
-    for (i = 0; i < 4; i++) { vbox("r16_" + i, XR16, c16cy[i], Wp); box(XR16, c16cy[i], Wp, 14, "con", "16강"); }
+    vbox("rsf", XR4, CY, Wp); box(XR4, CY, Wp, 14, "con", conTxt("rsf", "4강"));
+    for (i = 0; i < 2; i++) { vbox("r8_" + i, XR8, c8cy[i], Wp); box(XR8, c8cy[i], Wp, 14, "con", conTxt("r8_" + i, "8강")); }
+    for (i = 0; i < 4; i++) { vbox("r16_" + i, XR16, c16cy[i], Wp); box(XR16, c16cy[i], Wp, 14, "con", conTxt("r16_" + i, "16강")); }
     for (i = 0; i < 8; i++) pair("rr" + i, BR_R32[i], XR, r32cy[i], XR - cardW / 2);
     function eH(c, p, dir) { var cc = BX[c], pp = BX[p], cr = dir > 0 ? cc.cx + cc.w / 2 : cc.cx - cc.w / 2, pl = dir > 0 ? pp.cx - pp.w / 2 : pp.cx + pp.w / 2, mx = (cr + pl) / 2; P.push("M" + cr + " " + cc.cy + " H" + mx + " V" + pp.cy + " H" + pl); }
     for (i = 0; i < 4; i++) { eH("lr" + (2 * i), "l16_" + i, 1); eH("lr" + (2 * i + 1), "l16_" + i, 1); }
@@ -259,7 +289,9 @@
   }
   window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) layoutBracket(); });
   function renderBracket() {
-    viewEl.innerHTML = '<div class="brk-note">⚠️ 조별리그가 끝나면 대진이 확정됩니다.</div><div class="brk2-fit"></div><div class="adslot"></div>';
+    PRED = predictBracket();
+    var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
+    viewEl.innerHTML = '<div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div><div class="adslot"></div>';
     layoutBracket();
     insertAdFit(viewEl.querySelector(".adslot"));  // 대진표 하단 애드핏 320x100
   }

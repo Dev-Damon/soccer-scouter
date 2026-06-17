@@ -543,6 +543,15 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .m32 .tm + .tm { border-top: 1px solid #3d5689; }
 .brk-stage .m32.r .tm { text-align: right; }
 .brk-stage .con, .brk-stage .csf { background: #2c4d8f; border: 1px solid #5b86d4; border-radius: 999px; color: #eaf2ff; font-weight: 800; text-align: center; align-items: center; }
+/* 킥톡 예측 대진표 — 팀 플래그/이름 */
+.brk-stage .tc.pred { flex-direction: row; gap: 2px; padding: 2px 3px; }
+.brk-stage .bxf { font-size: 12px; line-height: 1; }
+.brk-stage .bxf img { width: 13px; height: 13px; vertical-align: -2px; }
+.brk-stage .tc.pred .bxn { font-size: 8px; font-weight: 800; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brk-stage .con .bxf { font-size: 13px; }
+.brk-stage .con .bxf img { width: 14px; height: 14px; }
+.brk-stage .fin .champf { margin-top: 2px; }
+.brk-stage .fin .champf img { width: 22px !important; height: 22px !important; }
 .brk-stage .csf { background: #36599e; border-color: #6f97e0; }
 .brk-stage .third { background: #141f38; border: 1px solid #2d3f63; border-radius: 7px; color: #9fb0cc; font-weight: 700; text-align: center; align-items: center; }
 .brk-stage .fin { background: linear-gradient(135deg,#ffd86b,#f5b301); border-radius: 8px; color: #0a1530; text-align: center; align-items: center; z-index: 3; box-shadow: 0 2px 10px rgba(245,179,1,.35); }
