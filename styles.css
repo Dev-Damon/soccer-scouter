@@ -882,7 +882,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .ms-h i { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
 .ms-h.l i { right: 0; background: var(--accent); }
 .ms-h.r i { left: 0; background: #e5574d; }
-.ms-h.l i.dim, .ms-h.r i.dim { background: #5b6678; opacity: .55; }  /* 낮은 값 쪽 막대 흐리게 */
+.ms-h.l i.dim, .ms-h.r i.dim { opacity: .4; }  /* 낮은 값 쪽 막대는 팀색 그대로 + 투명도만 낮춤(회색 아님) */
 .result-share { width: 100%; margin: 10px 0 2px; padding: 11px; border-radius: 11px; border: 0; background: linear-gradient(135deg, #4f8cff, #6aa8ff); color: #fff; font-weight: 800; font-size: 13.5px; cursor: pointer; }
 .result-share:active { transform: scale(.99); }
 .vs-team { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }

@@ -2,8 +2,9 @@
 // FIFA 공식 라이브 랭킹값과 동일(이 사이트가 공식 잠정 랭킹을 그대로 추적). 경기 끝나면 반영됨.
 // 사용: node scripts/update_fifa.js [--dry]
 const https = require('https'), fs = require('fs'), path = require('path');
-const ROOT = path.join(__dirname, '..'), DATA = path.join(ROOT, 'data.js');
-const DRY = process.argv.includes('--dry');
+const { execFileSync } = require('child_process');
+const ROOT = path.join(__dirname, '..'), DATA = path.join(ROOT, 'data.js'), IDX = path.join(ROOT, 'index.html');
+const DRY = process.argv.includes('--dry'), NODEPLOY = process.argv.includes('--no-deploy');
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605';
 function get(u){return new Promise((res,rej)=>{https.get(u,{headers:{'User-Agent':UA}},r=>{if(r.statusCode>=300&&r.statusCode<400&&r.headers.location){return get(r.headers.location).then(res,rej);}let d='';r.on('data',c=>d+=c);r.on('end',()=>res(d));}).on('error',rej);});}
 // FIFA 3글자 코드 → 우리 teamId (2026 본선 48개국)
@@ -42,5 +43,18 @@ const CODE_TO_ID = {
   if (changes.length) console.log(' ', changes.join(', '));
   if (missing.length) console.log(' 누락(라이브표 밖 or 코드불일치):', missing.join(', '));
   if (DRY) { console.log('[dry] 미적용'); process.exit(0); }
-  if (changes.length) fs.writeFileSync(DATA, src);
+  if (!changes.length) { console.log('변경 없음'); return; }
+  fs.writeFileSync(DATA, src);
+  // data.js 캐시버전 갱신(브라우저가 새 랭킹 받게) — 매 갱신 유니크
+  var idx = fs.readFileSync(IDX, 'utf8');
+  idx = idx.replace(/data\.js\?v=[^"]*/, 'data.js?v=f' + Date.now());
+  fs.writeFileSync(IDX, idx);
+  if (NODEPLOY) { console.log('배포 생략(--no-deploy)'); return; }
+  try {
+    execFileSync('git', ['add', 'data.js', 'index.html'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['commit', '-m', 'FIFA 랭킹 자동갱신: ' + changes.length + '개팀'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['-c', 'rebase.autoStash=true', 'pull', '--rebase', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['push', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
+    console.log('배포 완료');
+  } catch (e) { console.log('배포 실패:', e.message); }
 })();
