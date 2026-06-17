@@ -50,7 +50,7 @@ D.fixtures.forEach(function (f) {
     "<style>body{margin:0;background:#070d18;color:#eaf0fb;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;line-height:1.6}.wrap{max-width:680px;margin:0 auto;padding:20px;text-align:center}a{color:#4f8cff;text-decoration:none}.brand{font-weight:800;padding:8px 0;font-size:15px}h1{font-size:26px;margin:18px 0 6px}.vs{color:#9fb0cc;font-size:18px;font-weight:600}.meta{color:#9fb0cc;font-size:14px;margin:0 0 8px}h2{font-size:14px;color:#9fb0cc;margin:22px 0 8px}ul.wp{list-style:none;padding:0;text-align:left}ul.wp li{background:#111c30;border:1px solid #243049;border-radius:8px;padding:9px 12px;margin-bottom:6px;font-size:14px}.cta{display:inline-block;background:#4f8cff;color:#06122a;font-weight:800;border-radius:11px;padding:13px 20px;margin:20px 0 8px}.sub{color:#6f7d96;font-size:12.5px}.tlinks{font-size:13.5px;margin-top:14px}.ft{margin-top:26px;padding-top:14px;border-top:1px solid #243049;color:#6f7d96;font-size:12.5px}.ft a{color:#9fb0cc}</style></head>" +
     "<body><div class=wrap><div class=brand>⚽ <a href='" + SITE + "/'>킥톡 KickTalk</a></div>" + body +
     "<div class=ft><a href='" + SITE + "/'>홈</a> · <a href='" + SITE + "/about.html'>소개</a> · <a href='" + SITE + "/privacy.html'>개인정보처리방침</a> · <a href='" + SITE + "/terms.html'>서비스 약관</a></div></div>" +
-    "<script>setTimeout(function(){location.replace('" + appurl + "');},1400);</script>" +  // 사람은 앱으로(크롤러는 OG만 읽음)
+    /* 자동이동 제거(SEO/애드센스): 사람은 본문 CTA 버튼으로 앱 진입 */
     "</body></html>";
   fs.writeFileSync(path.join(ROOT, "m", slug + ".html"), pageHtml);
   urls.push(canonical);
