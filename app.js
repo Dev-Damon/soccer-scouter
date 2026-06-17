@@ -219,22 +219,32 @@
   }
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
-  // ===== 킥톡 예측 대진표 — 슈퍼컴 예측(원본 사진) 기반 큐레이션. 미진출 6팀(이탈리아·덴마크·웨일스·우크라이나·헝가리·베네수엘라)은 실제 진출국으로 대체. 잉글랜드 우승(4강부터 승리). 참고용. =====
-  var PRED = null;
+  // ===== 킥톡 예측 대진표 — 전력(지수+몸값+FIFA랭킹)으로 조 순위·승자 예측. 잉글랜드는 매 경기 승리 강제(우승 고정). 참고용. =====
+  var PRED = null, PRED_CHAMP = "england";
+  function brkStrength(id) { var t = teamsById[id]; if (!t) return 0; var x = t.indices || {}; var mv = TEAM_MV[id] || 0; return (x.attack || 60) + (x.defense || 60) + (x.organization || 60) + (x.experience || 40) * 0.4 + Math.sqrt(mv) * 2 + (60 - (t.fifaRank || 60)) * 0.5; }
   function predictBracket() {
-    // R32 대진(BL/BR 순서 = 사진 위→아래). 사진의 미진출팀 자리만 실제 진출국 대체(노르웨이/오스트리아/독일/스웨덴/체코/스위스).
-    var r32 = {
-      74: { a: "argentina", b: "norway" }, 77: { a: "colombia", b: "austria" }, 73: { a: "portugal", b: "turkey" }, 75: { a: "germany", b: "canada" },
-      76: { a: "uruguay", b: "paraguay" }, 78: { a: "croatia", b: "brazil" }, 79: { a: "ecuador", b: "australia" }, 80: { a: "netherlands", b: "south-korea" },
-      83: { a: "france", b: "sweden" }, 84: { a: "spain", b: "czech-republic" }, 81: { a: "switzerland", b: "algeria" }, 82: { a: "japan", b: "iran" },
-      86: { a: "morocco", b: "senegal" }, 88: { a: "belgium", b: "scotland" }, 85: { a: "england", b: "panama" }, 87: { a: "united-states", b: "mexico" }
-    };
-    var r32win = { 74: "argentina", 77: "colombia", 73: "portugal", 75: "germany", 76: "uruguay", 78: "brazil", 79: "ecuador", 80: "netherlands", 83: "france", 84: "spain", 81: "switzerland", 82: "japan", 86: "morocco", 88: "belgium", 85: "england", 87: "united-states" };
-    var node = {
-      l16_0: "argentina", l16_1: "portugal", l16_2: "uruguay", l16_3: "ecuador", l8_0: "argentina", l8_1: "uruguay", lsf: "argentina",
-      r16_0: "spain", r16_1: "switzerland", r16_2: "belgium", r16_3: "england", r8_0: "spain", r8_1: "england", rsf: "england", fin: "england"
-    };
-    return { curated: true, r32: r32, r32win: r32win, node: node, champion: "england", runnerUp: "argentina", third: ["uruguay", "spain"] };
+    var gr = {}; (DATA.groups || []).forEach(function (g) { gr[g.group] = (g.teamIds || []).slice().sort(function (a, b) { return brkStrength(b) - brkStrength(a); }); });
+    var thirds = Object.keys(gr).map(function (L) { return { L: L, id: gr[L][2] }; }).filter(function (o) { return o.id; }).sort(function (a, b) { return brkStrength(b.id) - brkStrength(a.id); });
+    var usedThird = {};
+    function slotTeam(s) {
+      var m = /^([12])([A-L])$/.exec(s); if (m) { var arr = gr[m[2]] || []; return arr[m[1] === "1" ? 0 : 1]; }
+      var t = /3rd\s+([A-L/]+)/.exec(s);
+      if (t) { var cands = t[1].split("/"); var pick = thirds.filter(function (o) { return cands.indexOf(o.L) >= 0 && !usedThird[o.L]; })[0] || thirds.filter(function (o) { return !usedThird[o.L]; })[0]; if (pick) { usedThird[pick.L] = 1; return pick.id; } }
+      return null;
+    }
+    function win(a, b) { if (!a) return b; if (!b) return a; if (a === PRED_CHAMP || b === PRED_CHAMP) return PRED_CHAMP; return brkStrength(a) >= brkStrength(b) ? a : b; }
+    var r32 = {}; BRACKET.r32.forEach(function (m) { r32[m.m] = { a: slotTeam(m.a), b: slotTeam(m.b) }; });
+    var node = {}, r32win = {};
+    function side(arr, pfx) {
+      var w = arr.map(function (mn) { var wn = win(r32[mn].a, r32[mn].b); r32win[mn] = wn; return wn; });
+      var l16 = []; for (var i = 0; i < 4; i++) { node[pfx + "16_" + i] = win(w[2 * i], w[2 * i + 1]); l16.push(node[pfx + "16_" + i]); }
+      var l8 = []; for (i = 0; i < 2; i++) { node[pfx + "8_" + i] = win(l16[2 * i], l16[2 * i + 1]); l8.push(node[pfx + "8_" + i]); }
+      node[pfx + "sf"] = win(l8[0], l8[1]); return node[pfx + "sf"];
+    }
+    var lf = side(BL_R32, "l"), rf = side(BR_R32, "r");
+    node.fin = win(lf, rf);
+    var lLose = node.lsf === node.l8_0 ? node.l8_1 : node.l8_0, rLose = node.rsf === node.r8_0 ? node.r8_1 : node.r8_0;  // 3·4위전 = 양 4강 패자
+    return { r32: r32, r32win: r32win, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf, third: [lLose, rLose] };
   }
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
@@ -255,8 +265,11 @@
       var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : "";
       if (PRED && tid) {
         var tm = teamsById[tid];
-        // 사진 기반 큐레이션 — 국기 + 나라이름(세로), 승자 강조(win)
-        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl">' + esc(tm ? tm.name : "") + "</span>", teamAttr(tid));
+        // 3위 슬롯: 후보 조 목록(A·B·C·D·F 3위) 유지 + 실제 올라온 조만 굵게·강조색. 1·2위는 그대로.
+        var labelHtml, is3 = g.indexOf("·") >= 0;
+        if (is3) { var tg = tm && tm.group; labelHtml = g.split("·").map(function (x) { return x === tg ? '<b class="hl3">' + esc(x) + "</b>" : esc(x); }).join("·") + " " + esc(r); }
+        else labelHtml = esc(g + " " + r);
+        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl' + (is3 ? " bxl3" : "") + '">' + labelHtml + "</span>", teamAttr(tid));
         return;
       }
       box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
@@ -293,7 +306,7 @@
   function renderBracket() {
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
-    viewEl.innerHTML = '<div class="brk-note">🏆 킥톡 예측 <span class="muted-note">슈퍼컴 예측 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div><div class="adslot"></div>';
+    viewEl.innerHTML = '<div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div><div class="adslot"></div>';
     layoutBracket();
     insertAdFit(viewEl.querySelector(".adslot"));  // 대진표 하단 애드핏 320x100
   }
@@ -1186,7 +1199,8 @@
       Array.prototype.forEach.call(fs, function (f) { var k = f.querySelector(".k"); if (k && k.textContent.indexOf("A매치") >= 0) vEl = f.querySelector(".v"); });
       if (!vEl) return;
       var caps = (p.caps != null ? p.caps : 0) + wa, goals = (p.intlGoals != null ? p.intlGoals : 0) + wg;
-      vEl.innerHTML = caps + "경기 · " + goals + '골 <span class="wc-add">이번 월드컵 ' + (wa ? wa + "경기" : "") + (wa && wg ? "·" : "") + (wg ? wg + "골" : "") + "</span>";
+      var isGK = posClass(p.position) === "gk";  // 골키퍼는 득점 표시 안 함
+      vEl.innerHTML = caps + "경기" + (isGK ? "" : " · " + goals + "골") + ' <span class="wc-add">이번 월드컵 ' + (wa ? wa + "경기" : "") + (wa && wg && !isGK ? "·" : "") + (wg && !isGK ? wg + "골" : "") + "</span>";
     });
   }
   // 선수 키·몸무게(cm/kg) — scripts/fetch_bio.js가 ESPN bio에서 자동수집해 마커 사이 갱신(경기 출전선수 위주).
@@ -1209,7 +1223,8 @@
     ];
     if (pH) facts.push(["키", pH + "cm"]);
     if (pW) facts.push(["몸무게", pW + "kg"]);
-    facts.push(["A매치 기록", (p.caps != null ? p.caps + "경기 · " + (p.intlGoals != null ? p.intlGoals : 0) + "골" : "-")]);
+    var isGK = posClass(p.position) === "gk";  // 골키퍼는 득점 대신 출전만(0골 표시 안 함)
+    facts.push(["A매치 기록", (p.caps != null ? p.caps + "경기" + (isGK ? "" : " · " + (p.intlGoals != null ? p.intlGoals : 0) + "골") : "-")]);
     var factsHtml = facts.map(function (f) {
       return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
     }).join("");
