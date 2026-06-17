@@ -1221,8 +1221,7 @@
       ["포지션", posClass(p.position).toUpperCase()],
       ["나이", (p.age != null ? p.age + "세" : "-")],
     ];
-    if (pH) facts.push(["키", pH + "cm"]);
-    if (pW) facts.push(["몸무게", pW + "kg"]);
+    if (pH || pW) facts.push(["키 · 몸무게", [pH ? pH + "cm" : null, pW ? pW + "kg" : null].filter(Boolean).join(" · ")]);  // 한 카드에(나이 밑)
     var isGK = posClass(p.position) === "gk";  // 골키퍼는 득점 대신 출전만(0골 표시 안 함)
     facts.push(["A매치 기록", (p.caps != null ? p.caps + "경기" + (isGK ? "" : " · " + (p.intlGoals != null ? p.intlGoals : 0) + "골") : "-")]);
     var factsHtml = facts.map(function (f) {
