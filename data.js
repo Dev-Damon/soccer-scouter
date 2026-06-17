@@ -2335,7 +2335,7 @@ window.DATA = {
       "name": "멕시코",
       "nameEn": "Mexico",
       "flag": "🇲🇽",
-      "fifaRank": 13,
+      "fifaRank": 12,
       "group": "A",
       "tierSummary": "개최국 멕시코는 산티아고 히메네스와 라울 히메네스의 공격진, 노련한 유럽파 수비를 앞세워 조 1위와 16강 이상을 노리는 중상위권 전력이다.",
       "styleSummary": [
@@ -2993,7 +2993,7 @@ window.DATA = {
       "name": "체코",
       "nameEn": "Czech Republic",
       "flag": "🇨🇿",
-      "fifaRank": 43,
+      "fifaRank": 44,
       "group": "A",
       "tierSummary": "20년 만에 월드컵 본선에 돌아온 다크호스로, 슈크라는 확실한 해결사와 단단한 슬라비아 프라하 기반의 조직력으로 16강을 노리는 중상위권 팀입니다.",
       "styleSummary": [
@@ -4016,7 +4016,7 @@ window.DATA = {
       "name": "브라질",
       "nameEn": "Brazil",
       "flag": "🇧🇷",
-      "fifaRank": 6,
+      "fifaRank": 5,
       "group": "C",
       "tierSummary": "월드컵 최다 5회 우승의 영원한 우승 후보로, 안첼로티 체제 아래 비니시우스·하피냐가 이끄는 세계 최정상급 공격진을 보유한 우승권 강팀이다.",
       "styleSummary": [
@@ -4265,7 +4265,7 @@ window.DATA = {
       "name": "모로코",
       "nameEn": "Morocco",
       "flag": "🇲🇦",
-      "fifaRank": 7,
+      "fifaRank": 6,
       "group": "C",
       "tierSummary": "2022 월드컵 4강 신화의 뼈대에 하키미·브라힘 디아스·부누 같은 월드클래스와 AFCON 2025 우승을 더한, C조에서 브라질에 맞설 가장 강력한 다크호스다.",
       "styleSummary": [
@@ -10920,7 +10920,7 @@ window.DATA = {
       "name": "포르투갈",
       "nameEn": "Portugal",
       "flag": "🇵🇹",
-      "fifaRank": 5,
+      "fifaRank": 7,
       "group": "K",
       "tierSummary": "유럽 정상급 우승 후보로, 호날두의 마지막 월드컵을 PSG 우승 군단과 황금 세대가 떠받치는 K조 압도적 1강이다.",
       "styleSummary": [
@@ -11119,7 +11119,7 @@ window.DATA = {
       "name": "콩고민주공화국",
       "nameEn": "DR Congo",
       "flag": "🇨🇩",
-      "fifaRank": 45,
+      "fifaRank": 43,
       "group": "K",
       "tierSummary": "유럽 5대 리그와 아프리카 무대를 누비는 검증된 베테랑 수비·공격진에 신예 미드필더가 결합된, 조 최약체로 분류되지만 한 방이 있는 '복병형' 다크호스다.",
       "styleSummary": [
@@ -11581,7 +11581,7 @@ window.DATA = {
       "name": "콜롬비아",
       "nameEn": "Colombia",
       "flag": "🇨🇴",
-      "fifaRank": 14,
+      "fifaRank": 13,
       "group": "K",
       "tierSummary": "제임스 로드리게스의 노련함과 루이스 디아스의 세계적 폭발력을 축으로 유럽·남미 리그의 주전급 선수가 두루 포진한, 16강 이상을 노리는 강팀입니다.",
       "styleSummary": [
@@ -12003,7 +12003,7 @@ window.DATA = {
       "name": "크로아티아",
       "nameEn": "Croatia",
       "flag": "🇭🇷",
-      "fifaRank": 11,
+      "fifaRank": 14,
       "group": "L",
       "tierSummary": "모드리치를 중심으로 한 황금세대가 마지막 불꽃을 태우는 가운데 그바르디올·스타니시치 등 신구 조화로 16강 이상을 노리는 강호급 팀이다.",
       "styleSummary": [
