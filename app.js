@@ -1231,21 +1231,29 @@
   }
 
   // ===================== 나라 상세 =====================
-  function teamSchedule(t) {
-    var now = Date.now();
+  function tsRows(t) {
     var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === t.id || f.awayId === t.id; });
     fxs.sort(function (a, b) { return (matchKickoff(a) || 0) - (matchKickoff(b) || 0); });
-    if (!fxs.length) return "";
-    var rows = fxs.map(function (f) {
+    return fxs.map(function (f) {
       var opp = teamsById[f.homeId === t.id ? f.awayId : f.homeId];
       var oppNm = opp ? (esc(opp.flag) + " " + esc(opp.name)) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
       var when = esc((fxDate(f) || "") + (fxTime(f) ? " " + fxTime(f) : ""));
       var stage = f.group ? esc(f.group + "조") : esc(f.stage || "");
       var lv = LIVE[f.id], live = !!(lv && lv.state === "in"), ended = matchEnded(f);
-      var badge = live ? ' <span class="ts-live">🔴 LIVE</span>' : ended ? ' <span class="ts-done">종료</span>' : "";
+      var hasScore = !!(lv && (lv.state === "in" || lv.state === "post") && lv.hs != null);
+      var badge;
+      if (hasScore) {  // 종료/진행 경기는 우리팀 기준 스코어 표시(승=초록·무=회색·패=빨강)
+        var myS = (f.homeId === t.id) ? lv.hs : lv.as, opS = (f.homeId === t.id) ? lv.as : lv.hs;
+        var rcls = live ? "live" : (myS > opS ? "win" : myS < opS ? "lose" : "draw");
+        badge = ' <span class="ts-score ' + rcls + '">' + (myS | 0) + " : " + (opS | 0) + (live ? " <b>LIVE</b>" : "") + "</span>";
+      } else { badge = live ? ' <span class="ts-live">🔴 LIVE</span>' : ended ? ' <span class="ts-done">종료</span>' : ""; }
       return '<div class="ts-row' + (ended ? " past" : "") + '" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + badge + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
     }).join("");
-    return '<div class="block"><h3>📅 경기 일정</h3><div class="ts-list">' + rows + "</div></div>";
+  }
+  function teamSchedule(t) {
+    var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === t.id || f.awayId === t.id; });
+    if (!fxs.length) return "";
+    return '<div class="block"><h3>📅 경기 일정</h3><div class="ts-list">' + tsRows(t) + "</div></div>";
   }
   // 나라별 스쿼드 총 시장가치(€M) — Transfermarkt 집계(공개 보도, 2026-06 기준). 전체 DB가 아닌 '보도된 나라별 총액'을 출처 표기해 인용.
   var TEAM_MV = { france: 1520, england: 1360, spain: 1220, portugal: 1010, germany: 947, brazil: 928.2, argentina: 807.5, netherlands: 754.2, norway: 589.9, belgium: 547.5, "ivory-coast": 522.1, senegal: 478.1, turkey: 473.7, morocco: 447.7, sweden: 406.08, croatia: 387.3, "united-states": 385.6, ecuador: 368.7, uruguay: 359.3, switzerland: 332.5, colombia: 302.35, japan: 270.85, algeria: 256.9, austria: 245.2, ghana: 234.5, canada: 198.65, mexico: 191.85, "czech-republic": 188.18, scotland: 170.25, paraguay: 153.65, "bosnia-and-herzegovina": 146.4, "dr-congo": 143.9, "south-korea": 139.05, egypt: 116.48, uzbekistan: 85.33, australia: 77.45, tunisia: 69.95, haiti: 55.9, "cape-verde": 49.25, "south-africa": 49.25, "saudi-arabia": 40.68, panama: 34.55, "new-zealand": 34.45, iran: 32.05, curacao: 25.78, iraq: 21.2, jordan: 20.3, qatar: 19.93 };
@@ -1406,7 +1414,12 @@
     viewEl.innerHTML = html;
     insertAdFit(viewEl.querySelector(".adslot")); coupangBottom();
     loadTeamLive(t);  // 이 팀이 뛰는 중/임박이면 라이브 배너 + 선발 확정 포메이션 반영
+    // 종료 경기 결과(스코어) 표시 — DB 결과 로드 후 일정 행 재렌더
+    _schedTeam = t;
+    window._teamSchedRefresh = function () { if (parseHash().name !== "team" || !_schedTeam) return; var el = viewEl.querySelector(".ts-list"); if (el) { el.innerHTML = tsRows(_schedTeam); twem(el); } };
+    loadStoredResults();
   }
+  var _schedTeam = null;
 
   function teamRelevantFixture(teamId) {
     var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === teamId || f.awayId === teamId; });
@@ -1963,7 +1976,7 @@
         if (!d.live || !fresh) return;  // 5분 지난 캐시 무시(유령 방지)
         var changed = false;
         Object.keys(d.live).forEach(function (k) { if (!LIVE[k] && d.live[k] && d.live[k].state === "in") { LIVE[k] = d.live[k]; LIVE[k].cached = true; changed = true; } });
-        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
+        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); }
       }).catch(function () {});
   }
   // live_state.ls(서버 감지 JTBC 라이브) → LIVE_STREAM 반영. 변동 시 경기페이지 버튼 즉시 갱신.
@@ -2007,7 +2020,7 @@
         if (LIVE[mid] && LIVE[mid].state === "post") return;
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
-      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); }
+      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); }
     }).catch(function () {});
   }
   function onHomeSchedule() {
@@ -2048,7 +2061,7 @@
       refreshLiveStream();  // 서버가 감지한 JTBC 라이브 송출 링크(ls) 주기 동기화
       loadStoredResults();  // 매 폴링마다 DB 결과와 대조 → 끝난 경기(ESPN서 내려간)도 스테일 라이브 안 되게 post로 정리
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
-      if (window._teamLiveTick) window._teamLiveTick();    // 나라상세 라이브 배너 점수 갱신
+      if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh();    // 나라상세 라이브 배너 점수 갱신
       var lk = liveKey();
       if ((res.changed || lk !== _lastLiveKey) && onHomeSchedule()) renderSchedule();  // 라이브 집합이 바뀌면(정각 시작 등) 새로고침 없이 자동 갱신
       _lastLiveKey = lk;
@@ -3781,7 +3794,7 @@
     fetchLive();  // 최신 점수 비동기 요청(도착 시 자동 재렌더)
     if (onHomeSchedule()) renderSchedule();          // 홈이면 현재 점수로 즉시 재렌더
     else if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 갱신
-    if (window._teamLiveTick) window._teamLiveTick();  // 나라상세 라이브 배너
+    if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh();  // 나라상세 라이브 배너
   }
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") onAppReturn(); });
   window.addEventListener("focus", onAppReturn);

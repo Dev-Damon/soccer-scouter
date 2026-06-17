@@ -402,6 +402,12 @@ html.light .mgr-act button.mgr-ban { background: #e5a23d; }
 .ts-row.past { opacity: .55; }
 .ts-done { font-size: 10px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; margin-left: 4px; }
 .ts-live { font-size: 10px; font-weight: 800; color: #e5484d; border: 1px solid #e5484d; border-radius: 4px; padding: 1px 5px; margin-left: 4px; }
+.ts-score { font-size: 12px; font-weight: 800; border-radius: 5px; padding: 1px 7px; margin-left: 6px; }
+.ts-score.win { color: #fff; background: #16a34a; }
+.ts-score.lose { color: #fff; background: #dc2626; }
+.ts-score.draw { color: #fff; background: #6b7886; }
+.ts-score.live { color: #fff; background: #e5484d; }
+.ts-row.past { opacity: .72; }  /* 결과 보이게 종료경기 흐림 완화 */
 .mr-pts { display: flex; gap: 3px; margin: 8px 0 5px; }
 .mr-pt { flex: 1; min-width: 0; height: 22px; border-radius: 4px; background: #1c2740; color: #6f7d96; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .mr-pt.on { background: #f5b301; color: #0b1020; }
