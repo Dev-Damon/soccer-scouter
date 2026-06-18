@@ -3796,7 +3796,23 @@
   // ===== 후원(응원하기) =====
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;
-    if (IS_TOSS) { btn.style.display = "none"; return; }  // 토스 미니앱: 외부 송금링크 금지 → 후원 숨김(추후 토스페이 인앱결제로 교체)
+    if (IS_TOSS) {  // 토스 미니앱: 외부 송금링크 금지 → 토스페이 인앱결제(IAP). 금액별 sku는 콘솔 등록, .ait 빌드의 main.ts가 window.tossPay.donate 제공
+      var TT = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
+      btn.addEventListener("click", function () {
+        var ov = document.createElement("div"); ov.className = "donate-ov on";
+        var tiers = TT.map(function (t) { return '<button class="ds-tier" data-amt="' + t[1] + '"><span>' + t[0] + "</span><b>" + t[1].toLocaleString() + "원</b></button>"; }).join("");
+        ov.innerHTML = '<div class="donate-sheet"><button class="ds-x" aria-label="닫기">✕</button><div class="ds-title">⚽ 개발자에게 한 골!</div><div class="ds-sub">여러분의 응원이 킥톡을 계속 뛰게 합니다 🙌</div>' + tiers + '<div class="ds-status"></div><div class="ds-note muted-note">토스페이로 안전하게 후원돼요 💙</div></div>';
+        document.body.appendChild(ov); twem(ov);
+        ov.addEventListener("click", function (e) {
+          if (e.target === ov || e.target.closest(".ds-x")) { ov.remove(); return; }
+          var tb = e.target.closest(".ds-tier"); if (!tb) return;
+          var amt = +tb.getAttribute("data-amt");
+          if (window.tossPay && window.tossPay.donate) { window.tossPay.donate(amt); ov.remove(); }
+          else { var st = ov.querySelector(".ds-status"); if (st) st.textContent = "토스 앱에서 후원할 수 있어요."; }
+        });
+      });
+      return;
+    }
     var ACCT = "100004130027", BANK = "토스뱅크";
     var KAKAO_3900 = "https://qr.kakaopay.com/28100601119492440100760579e06997";  // 3,900원 카카오페이 송금 QR(고정금액)
     var TIERS = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
