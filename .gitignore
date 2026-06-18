@@ -10,3 +10,6 @@ scripts/out/
 !og.png
 !apple-touch-icon.png
 !ogm/*.png
+!icon-192.png
+!icon-512.png
+!icon.svg
