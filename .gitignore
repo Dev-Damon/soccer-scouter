@@ -16,3 +16,6 @@ scripts/out/
 toss/node_modules/
 toss/dist/
 toss/public/
+toss/*.ait
+toss/bundle.*
+toss/*.js.map

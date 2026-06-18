@@ -6,8 +6,8 @@
   "scripts": {
     "prebuild": "node ../scripts/build_toss.js",
     "predev": "node ../scripts/build_toss.js",
-    "dev": "granite dev",
-    "build": "granite build",
+    "dev": "ait dev",
+    "build": "ait build",
     "deploy": "ait deploy"
   },
   "dependencies": {
