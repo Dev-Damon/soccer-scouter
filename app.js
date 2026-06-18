@@ -3600,7 +3600,7 @@
     }
     var cur = "light";
     // 저장된 선택 없으면 OS/브라우저 다크설정 따름 → 웨일/삼성 강제다크가 라이트앱을 뭉개는 것 방지(이미 다크면 force-dark 안 함)
-    try { cur = localStorage.getItem(KEY) || ((window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light"); } catch (e) {}
+    try { cur = localStorage.getItem(KEY) || "light"; } catch (e) {}  // 디폴트 라이트모드(OS설정 무시, 저장된 선택은 유지)
     apply(cur);
     var btn = document.getElementById("themeBtn");
     if (btn) btn.addEventListener("click", function () {
