@@ -2335,7 +2335,7 @@ window.DATA = {
       "name": "멕시코",
       "nameEn": "Mexico",
       "flag": "🇲🇽",
-      "fifaRank": 12,
+      "fifaRank": 13,
       "group": "A",
       "tierSummary": "개최국 멕시코는 산티아고 히메네스와 라울 히메네스의 공격진, 노련한 유럽파 수비를 앞세워 조 1위와 16강 이상을 노리는 중상위권 전력이다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 56,
+      "fifaRank": 55,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -11357,7 +11357,7 @@ window.DATA = {
       "name": "우즈베키스탄",
       "nameEn": "Uzbekistan",
       "flag": "🇺🇿",
-      "fifaRank": 50,
+      "fifaRank": 56,
       "group": "K",
       "tierSummary": "사상 첫 월드컵 본선에 오른 중앙아시아 개척자로, 맨시티 후사노프와 역대 최다 득점자 쇼무로도프를 축으로 조직력과 수비를 앞세워 첫 승에 도전하는 다크호스다.",
       "styleSummary": [
@@ -11581,7 +11581,7 @@ window.DATA = {
       "name": "콜롬비아",
       "nameEn": "Colombia",
       "flag": "🇨🇴",
-      "fifaRank": 13,
+      "fifaRank": 11,
       "group": "K",
       "tierSummary": "제임스 로드리게스의 노련함과 루이스 디아스의 세계적 폭발력을 축으로 유럽·남미 리그의 주전급 선수가 두루 포진한, 16강 이상을 노리는 강팀입니다.",
       "styleSummary": [
