@@ -3085,7 +3085,8 @@
     }).catch(function () {});
   }
   function openCheerCompose() {
-    if (!window.KickComments || !KickComments.user || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+    if (!window.KickComments) return;
+    if (needLogin("📣 응원 메시지")) return;
     var bg = document.createElement("div"); bg.className = "rate-sheet-bg";
     bg.innerHTML = '<div class="rate-sheet"><div class="rs-head"><b>📣 응원 메시지 띄우기</b><button class="rs-x">✕</button></div>' +
       '<div class="rs-hint">메인 전광판에 한 줄 노출돼요 · 300 KP (최대 60자)</div>' +
