@@ -571,11 +571,13 @@
     var ua = (navigator.userAgent || "").toLowerCase();
     return /kakaotalk|instagram|fban|fbav|fb_iab|line\/|naver\(inapp|daumapps|everytimeapp/.test(ua);
   }
+  function kkToss() { try { return !!(window.__APPS_IN_TOSS__ || window.AppsInToss || /toss/i.test(navigator.userAgent) || /[?&]toss=1/.test(location.search)); } catch (e) { return false; } }
   function confirmLogin() {
+    if (kkToss()) return;  // 토스 미니앱: 구글 OAuth 차단 → 모든 로그인 프롬프트(별점·MVP·댓글 등) 막음. 로그인 기능은 추후 토스 로그인으로.
     if (confirm("로그인 후 작성할 수 있어요.\n구글로 로그인하시겠습니까?")) signIn("google");
   }
   function signIn(provider) {
-    if (!client()) return;
+    if (kkToss() || !client()) return;  // 토스에선 OAuth 호출 자체 차단(안전)
     // 구글은 인앱 브라우저(카카오톡 등)에서 OAuth 차단(disallowed_useragent) → 외부 브라우저로 유도
     var ua = (navigator.userAgent || "").toLowerCase();
     if (provider === "google" && inAppBrowser()) {
