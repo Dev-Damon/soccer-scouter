@@ -3598,8 +3598,18 @@
       var ritem = my.closest(".pf-item"); if (!ritem) return;
       var rpid = ritem.getAttribute("data-pid"), rval = parseInt(my.getAttribute("data-rv"), 10);
       var rcur = (boardCache && boardCache.mine && boardCache.mine[rpid]) || 0;
-      my.disabled = true;
-      KickComments.togglePostReaction(rpid, rval, rcur).then(function () { renderBoard(); }).catch(function () { my.disabled = false; });
+      var newVal = (rcur === rval) ? 0 : rval;
+      // 낙관적 제자리 업데이트(전체 재렌더 X → 스크롤 위치 유지)
+      if (boardCache) {
+        boardCache.mine = boardCache.mine || {}; boardCache.mine[rpid] = newVal;
+        var s = boardCache.stats[rpid] || (boardCache.stats[rpid] = { likes: 0, dislikes: 0, comments: 0 });
+        if (rcur === 1) s.likes = Math.max(0, s.likes - 1); else if (rcur === -1) s.dislikes = Math.max(0, s.dislikes - 1);
+        if (newVal === 1) s.likes++; else if (newVal === -1) s.dislikes++;
+        var lb = ritem.querySelector(".pf-like"), db = ritem.querySelector(".pf-dislike");
+        if (lb) { lb.classList.toggle("on", newVal === 1); var lsp = lb.querySelector("span"); if (lsp) lsp.textContent = s.likes; }
+        if (db) { db.classList.toggle("on", newVal === -1); var dsp = db.querySelector("span"); if (dsp) dsp.textContent = s.dislikes; }
+      }
+      KickComments.togglePostReaction(rpid, rval, rcur).catch(function () { renderBoard(); });  // 실패 시에만 재동기화
       return;
     }
     if ((my = e.target.closest(".pf-s"))) { boardSort = my.getAttribute("data-bsort"); paintBoard(); return; }
