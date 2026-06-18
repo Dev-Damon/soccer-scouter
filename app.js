@@ -478,8 +478,10 @@
   }
 
   // 카카오 애드핏 배너 삽입 (SPA: 영역+스크립트를 매번 새로 넣어 렌더 트리거)
+  // ===== 앱인토스(토스 미니앱) 모드 — 토스 웹뷰면 외부광고·쿠팡·베팅·외부송금 숨김(토스 정책 준수). 일반 웹은 무영향. ?toss=1로 테스트 =====
+  var IS_TOSS = (function () { try { return /toss/i.test(navigator.userAgent) || /[?&]toss=1/.test(location.search) || !!window.AppsInToss || !!window.__APPS_IN_TOSS__; } catch (e) { return false; } })();
   function insertAdFit(el, unit, w, h) {
-    if (!el || el.getAttribute("data-done")) return;
+    if (IS_TOSS || !el || el.getAttribute("data-done")) return;
     el.setAttribute("data-done", "1");
     el.innerHTML = '<div class="ad-label">광고</div>';
     var ins = document.createElement("ins"); ins.className = "kakao_ad_area"; ins.style.display = "none";
@@ -492,7 +494,7 @@
   // Google AdSense — 수동 반응형 단위(자동광고 X = 앵커·전면광고 없이 UX 방해 최소). 승인 후 콘솔에서 광고단위ID 발급 → ADSENSE_SLOT에 입력하면 활성화.
   var ADSENSE_CLIENT = "ca-pub-1649642792791162", ADSENSE_SLOT = "";
   function insertAdSense(el) {
-    if (!el || !ADSENSE_SLOT || el.getAttribute("data-done")) return;
+    if (IS_TOSS || !el || !ADSENSE_SLOT || el.getAttribute("data-done")) return;
     el.setAttribute("data-done", "1");
     el.innerHTML = '<div class="ad-label">광고</div>';
     var ins = document.createElement("ins"); ins.className = "adsbygoogle"; ins.style.display = "block";
@@ -505,7 +507,7 @@
   }
   // 쿠팡 파트너스 iframe 배너(+ 대가성 문구)
   function insertCoupang(el, w, h) {
-    if (!el) return;
+    if (IS_TOSS || !el) return;
     el.innerHTML = '<div class="ad-label">광고</div>' +
       '<iframe src="https://ads-partners.coupang.com/widgets.html?id=996159&template=carousel&trackingCode=AF6139723&subId=&width=' + w + '&height=' + h + '&tsource=" width="' + w + '" height="' + h + '" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>' +
       '<div class="cpang-note">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>';
@@ -1864,7 +1866,7 @@
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
     loadPrediction(viewEl.querySelector(".pred-slot"), fx, a, b, aIsHome);
-    loadBetting(viewEl.querySelector(".bet-slot"), fx, a, b, aIsHome);
+    if (!IS_TOSS) loadBetting(viewEl.querySelector(".bet-slot"), fx, a, b, aIsHome);  // 토스 미니앱은 포인트 베팅 숨김(사행성 정책) — 무료 예측만
     if (matchEnded(fx) && window.KickComments) {  // 종료경기 정산 트리거(크론 안 기다리고 즉시)
       var _lv = LIVE[fx.id];
       if (_lv && _lv.state === "post" && _lv.hs != null && _lv.as != null && KickComments.settleWithResult) {
@@ -3182,7 +3184,7 @@
       '<div class="my-tabs">' +
         '<button class="my-tabbtn' + (myTab === "mine" ? " on" : "") + '" data-mytab="mine">내가 쓴 댓글 ' + myCache.mine.length + "</button>" +
         '<button class="my-tabbtn' + (myTab === "tagged" ? " on" : "") + '" data-mytab="tagged">나를 태그한 댓글 ' + myCache.tagged.length + "</button>" +
-        '<button class="my-tabbtn' + (myTab === "bets" ? " on" : "") + '" data-mytab="bets">💰 베팅 ' + ((myCache.bets || []).length) + "</button></div>" +
+        (IS_TOSS ? "" : '<button class="my-tabbtn' + (myTab === "bets" ? " on" : "") + '" data-mytab="bets">💰 베팅 ' + ((myCache.bets || []).length) + "</button>") + "</div>" +
       '<div class="my-list">' + listH + "</div>" + rankH + "</div>"; pageAd();
   }
   function renderMyLogin() {
@@ -3793,6 +3795,7 @@
   // ===== 후원(응원하기) =====
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;
+    if (IS_TOSS) { btn.style.display = "none"; return; }  // 토스 미니앱: 외부 송금링크 금지 → 후원 숨김(추후 토스페이 인앱결제로 교체)
     var ACCT = "100004130027", BANK = "토스뱅크";
     var KAKAO_3900 = "https://qr.kakaopay.com/28100601119492440100760579e06997";  // 3,900원 카카오페이 송금 QR(고정금액)
     var TIERS = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
