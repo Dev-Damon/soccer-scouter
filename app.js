@@ -1252,7 +1252,7 @@
         '<div class="score-bar"><div class="score-fill" style="width:' + ovr + '%"></div></div></div>';
     }
 
-    var powerHtml = p.power ? (powerRadar(p.power) + '<button class="share-card" data-share-card="' + esc(p.id) + '">📤 능력치 카드 이미지로 공유</button><button class="cmp-go" data-cmp-go="' + esc(p.id) + '">⚖️ 다른 선수와 능력치 비교</button>') : "";
+    var powerHtml = p.power ? (powerRadar(p.power) + (IS_TOSS ? "" : '<button class="share-card" data-share-card="' + esc(p.id) + '">📤 능력치 카드 이미지로 공유</button>') + '<button class="cmp-go" data-cmp-go="' + esc(p.id) + '">⚖️ 다른 선수와 능력치 비교</button>') : "";  /* 토스는 외부 공유 숨김 */
     var strengths = (p.strengths || []).map(function (s) { return '<span class="tag">' + esc(s) + "</span>"; }).join("");
     var weaknesses = (p.weaknesses || []).map(function (s) { return '<span class="tag weak">' + esc(s) + "</span>"; }).join("");
 
@@ -1814,7 +1814,7 @@
 
     viewEl.innerHTML =
       '<div class="detail match-view">' +
-        '<div class="match-top-btns">' + saveBtnHtml("match:" + fx.id) + '<button class="share-btn" data-share-match="' + esc(fx.id) + '" aria-label="공유">📤</button></div>' +
+        '<div class="match-top-btns">' + saveBtnHtml("match:" + fx.id) + (IS_TOSS ? "" : '<button class="share-btn" data-share-match="' + esc(fx.id) + '" aria-label="공유">📤</button>') + "</div>" +  /* 토스는 외부 공유 숨김 */
         '<div class="var-title"><span class="var-tag">VAR</span> 경기 분석</div>' +
         '<div class="match-meta-top">' + top + "</div>" +
         '<div class="vs-head">' +
