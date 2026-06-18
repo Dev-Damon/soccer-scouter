@@ -11,8 +11,11 @@ assets.forEach(function (f) { var s = path.join(ROOT, f); if (fs.existsSync(s)) 
 
 // index.html 변환
 let html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-// 1) 애드센스 라이브러리 스크립트 제거(토스 정책: 외부 스크립트 금지)
+// 1) 외부 스크립트 제거(토스 정책: 외부 스크립트 금지) — 애드센스·구글애널리틱스(gtag)·twemoji CDN. 이모지는 토스앱 OS 기본렌더로(twem()이 twemoji 없으면 자동 패스).
 html = html.replace(/<script[^>]*googlesyndication[^>]*><\/script>\s*/gi, '');
+html = html.replace(/<script[^>]*googletagmanager[^>]*><\/script>\s*/gi, '');
+html = html.replace(/<script>[^<]*dataLayer[^<]*<\/script>\s*/gi, '');  // gtag 인라인 설정
+html = html.replace(/<script[^>]*twemoji[^>]*><\/script>\s*/gi, '');
 // 2) 캐시버전 쿼리 제거(번들이라 불필요) — app.js?v=.. → app.js
 html = html.replace(/(app\.js|styles\.css|comments\.js|data\.js)\?v=[^"']*/g, '$1');
 // 3) 토스모드 플래그를 가장 먼저 주입(IS_TOSS=true 확실히) — <head> 바로 뒤
