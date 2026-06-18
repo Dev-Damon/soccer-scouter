@@ -2421,6 +2421,7 @@
     "match-50": "https://chzzk.naver.com/video/13744863", // 이라크-노르웨이
     "match-55": "https://chzzk.naver.com/video/13745669", // 아르헨티나-알제리
     "match-56": "https://chzzk.naver.com/video/13746888", // 오스트리아-요르단
+    "match-62": "https://chzzk.naver.com/video/13762270", // 우즈베키스탄-콜롬비아
     "match-67": "https://chzzk.naver.com/video/13760610", // 잉글랜드-크로아티아
     "match-68": "https://chzzk.naver.com/video/13761281" // 가나-파나마
     /* HL-AUTO-END */
