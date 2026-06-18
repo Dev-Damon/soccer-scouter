@@ -121,9 +121,17 @@ function buildBlock(map, fixById) {
   try { execFileSync(process.execPath, ['--check', APP], { stdio: 'ignore' }); }
   catch (e) { console.log('[highlights] 문법오류 — 롤백'); execFileSync('git', ['checkout', '--', 'app.js'], { cwd: ROOT, stdio: 'ignore' }); process.exit(1); }
 
+  // 캐시버전(?v) 갱신 — 안 올리면 재방문자가 캐시된 옛 app.js를 써서 하이라이트가 안 보임(늦게 붙는 원인)
+  try {
+    const IDX = path.join(ROOT, 'index.html');
+    let idx = fs.readFileSync(IDX, 'utf8');
+    idx = idx.replace(/app\.js\?v=[^"]*/, 'app.js?v=h' + Date.now());
+    fs.writeFileSync(IDX, idx);
+  } catch (e) { console.log('[highlights] 캐시버전 갱신 실패:', e.message); }
+
   // 커밋·배포 (다른 작업 미스테이지 변경에도 안전하도록 autostash 리베이스)
   try {
-    execFileSync('git', ['add', 'app.js'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['add', 'app.js', 'index.html'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['commit', '-m', '하이라이트 자동수집: ' + newIds.join(',')], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['-c', 'rebase.autoStash=true', 'pull', '--rebase', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['push', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
