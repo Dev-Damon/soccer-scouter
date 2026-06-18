@@ -469,25 +469,45 @@
   function unbanUser(userId) { if (!isAdmin()) return Promise.resolve(); return sb.from("banned_users").delete().eq("user_id", userId); }
   function unhideComment(id) { if (!isAdmin()) return Promise.resolve(); return sb.from("comments").update({ hidden: false }).eq("id", id); }
   // ── 선수 평점(별점 1~5) ──
+  // 평점은 로그인(player_ratings)+익명 기기별(anon_reactions kind=player_rating, value=1~5) 합산.
   function ratingStats() {
     if (!client()) return Promise.resolve({});
-    return sb.from("player_rating_stats").select("*").then(function (r) {
-      var m = {}; (r.data || []).forEach(function (x) { m[x.player_id] = { avg: Number(x.avg) || 0, cnt: x.cnt || 0 }; }); return m;
+    return Promise.all([
+      sb.from("player_rating_stats").select("*"),
+      sb.from("anon_reactions").select("target_id,value").eq("kind", "player_rating")
+    ]).then(function (res) {
+      var m = {};
+      ((res[0] && res[0].data) || []).forEach(function (x) { var c = x.cnt || 0; m[x.player_id] = { sum: (Number(x.avg) || 0) * c, cnt: c }; });
+      ((res[1] && res[1].data) || []).forEach(function (x) { var k = x.target_id; if (!m[k]) m[k] = { sum: 0, cnt: 0 }; m[k].sum += (x.value || 0); m[k].cnt += 1; });
+      var out = {}; Object.keys(m).forEach(function (k) { out[k] = { avg: m[k].cnt ? m[k].sum / m[k].cnt : 0, cnt: m[k].cnt }; }); return out;
     }).catch(function () { return {}; });
   }
   function playerRating(pid) {
     if (!client()) return Promise.resolve({ avg: 0, cnt: 0, mine: 0 });
+    var dev = anonDevice();
     return Promise.all([
       sb.from("player_rating_stats").select("avg,cnt").eq("player_id", pid).maybeSingle(),
-      user ? sb.from("player_ratings").select("score").eq("player_id", pid).eq("user_id", user.id).maybeSingle() : Promise.resolve({ data: null })
+      user ? sb.from("player_ratings").select("score").eq("player_id", pid).eq("user_id", user.id).maybeSingle() : Promise.resolve({ data: null }),
+      sb.from("anon_reactions").select("device,value").eq("kind", "player_rating").eq("target_id", String(pid))
     ]).then(function (res) {
-      var s = (res[0] && res[0].data) || null, mn = (res[1] && res[1].data) || null;
-      return { avg: s ? Number(s.avg) : 0, cnt: s ? s.cnt : 0, mine: mn ? mn.score : 0 };
+      var s = (res[0] && res[0].data) || null, mn = (res[1] && res[1].data) || null, anon = (res[2] && res[2].data) || [];
+      var lcnt = s ? (s.cnt || 0) : 0, lsum = s ? (Number(s.avg) || 0) * lcnt : 0;
+      var asum = 0, mine = mn ? mn.score : 0;
+      anon.forEach(function (x) { asum += (x.value || 0); if (x.device === dev) mine = x.value || mine; });
+      var cnt = lcnt + anon.length;
+      return { avg: cnt ? (lsum + asum) / cnt : 0, cnt: cnt, mine: mine };
     }).catch(function () { return { avg: 0, cnt: 0, mine: 0 }; });
   }
   function ratePlayer(pid, score) {
-    if (!user) return Promise.reject(new Error("login"));
-    // 같은 점수를 다시 누르면 평점 취소(삭제)
+    if (!client()) return Promise.reject(new Error("noclient"));
+    if (!user) {  // 비로그인 = 익명 평점(기기별). 같은 점수 재탭 시 취소
+      var dev = anonDevice();
+      return sb.from("anon_reactions").select("value").eq("kind", "player_rating").eq("target_id", String(pid)).eq("device", dev).maybeSingle().then(function (r) {
+        if (r.data && r.data.value === score) return sb.from("anon_reactions").delete().eq("kind", "player_rating").eq("target_id", String(pid)).eq("device", dev);
+        return sb.from("anon_reactions").upsert({ kind: "player_rating", target_id: String(pid), device: dev, value: score }, { onConflict: "kind,target_id,device" });
+      });
+    }
+    // 로그인: 같은 점수를 다시 누르면 평점 취소(삭제)
     return sb.from("player_ratings").select("score").eq("player_id", pid).eq("user_id", user.id).maybeSingle().then(function (r) {
       if (r.data && r.data.score === score) return sb.from("player_ratings").delete().eq("player_id", pid).eq("user_id", user.id);
       return sb.from("player_ratings").upsert({ player_id: pid, user_id: user.id, score: score, updated_at: new Date().toISOString() }, { onConflict: "player_id,user_id" });

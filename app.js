@@ -2676,8 +2676,8 @@
     bg.addEventListener("click", function (e) {
       if (e.target === bg || e.target.closest(".rs-x")) { if (ktModalClose) history.back(); else close(); return; }
       var n = e.target.closest("[data-rs-score]");
-      if (n) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var sc = +n.getAttribute("data-rs-score"); (bg._mine === sc ? KickComments.unrateMatchPlayer(matchId, pid) : KickComments.rateMatchPlayer(matchId, pid, sc)).then(load); return; }
-      if (e.target.closest(".rs-mvp")) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } (bg._mvpMine === pid ? KickComments.unvoteMvp(matchId) : KickComments.voteMvp(matchId, pid)).then(function () { ktToast(bg._mvpMine === pid ? "최고의 선수 취소" : "🏆 최고의 선수로 뽑았어요!"); load(); }); return; }
+      if (n) { if (needLogin("⭐ 선수 평점")) return; var sc = +n.getAttribute("data-rs-score"); (bg._mine === sc ? KickComments.unrateMatchPlayer(matchId, pid) : KickComments.rateMatchPlayer(matchId, pid, sc)).then(load); return; }
+      if (e.target.closest(".rs-mvp")) { if (needLogin("🏆 MVP 투표")) return; (bg._mvpMine === pid ? KickComments.unvoteMvp(matchId) : KickComments.voteMvp(matchId, pid)).then(function () { ktToast(bg._mvpMine === pid ? "최고의 선수 취소" : "🏆 최고의 선수로 뽑았어요!"); load(); }); return; }
       if (e.target.closest(".rs-detail")) { ktModalClose = null; close(); location.hash = "#player/" + pid; return; }
     });
     load();
@@ -3529,8 +3529,8 @@
   viewEl.addEventListener("click", function (e) {
     var my, ad;
     if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
-    if ((my = e.target.closest(".rate-star"))) {
-      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); else alert("로그인이 필요해요."); return; }
+    if ((my = e.target.closest(".rate-star"))) {  // 선수 평점 = 익명 허용(로그인 불필요, 기기별 1회)
+      if (!window.KickComments) return;
       var rpid = my.getAttribute("data-pid"), rsc = parseInt(my.getAttribute("data-s"), 10);
       KickComments.ratePlayer(rpid, rsc).then(function () { renderRating(rpid); }).catch(function () {});
       return;
@@ -3711,7 +3711,7 @@
       return;
     }
     var mvb = e.target.closest("[data-mvp-pid]");
-    if (mvb) { if (!KickComments.user || !KickComments.user()) { KickComments.promptLogin(); return; } var mpid = mvb.getAttribute("data-mvp-pid"); (mrCtx.mvpMine === mpid ? KickComments.unvoteMvp(mrCtx.matchId) : KickComments.voteMvp(mrCtx.matchId, mpid)).then(refreshMatchRatings); return; }
+    if (mvb) { if (needLogin("🏆 MVP 투표")) return; var mpid = mvb.getAttribute("data-mvp-pid"); (mrCtx.mvpMine === mpid ? KickComments.unvoteMvp(mrCtx.matchId) : KickComments.voteMvp(mrCtx.matchId, mpid)).then(refreshMatchRatings); return; }
     var shc = e.target.closest(".share-card");
     if (shc) { var shp = playersById[shc.getAttribute("data-share-card")]; if (shp) sharePlayerCard(shp); return; }
     var shm = e.target.closest("[data-share-match]");
@@ -4075,6 +4075,13 @@
   })();
 
   // 토스트 + 일일 출석 +200 KP
+  // 로그인 필요 동작(평점·MVP) — 토스에선 OAuth 차단이라 조용히 무시 대신 "추후 토스 로그인" 안내. 비로그인 웹은 기존 promptLogin.
+  function needLogin(tossMsg) {
+    if (KickComments.user && KickComments.user()) return false;
+    if (IS_TOSS) ktToast(tossMsg + " — 추후 토스 로그인 기능이 추가되면 이용할 수 있어요");
+    else if (window.KickComments) KickComments.promptLogin();
+    return true;
+  }
   function ktToast(msg) {
     var t = document.createElement("div"); t.className = "kt-toast"; t.textContent = msg; document.body.appendChild(t);
     setTimeout(function () { t.classList.add("show"); }, 10);
