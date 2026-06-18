@@ -4686,7 +4686,7 @@ window.DATA = {
       "name": "스코틀랜드",
       "nameEn": "Scotland",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "fifaRank": 38,
+      "fifaRank": 37,
       "group": "C",
       "tierSummary": "1998년 이후 28년 만의 월드컵 본선에 오른 스코틀랜드는 월드클래스 1명(맥토미니)과 풍부한 빅리그 베테랑들로 무장했지만, 브라질·모로코가 버틴 C조에서는 16강이 현실적 목표인 다크호스다.",
       "styleSummary": [
@@ -7016,7 +7016,7 @@ window.DATA = {
       "name": "스웨덴",
       "nameEn": "Sweden",
       "flag": "🇸🇪",
-      "fifaRank": 35,
+      "fifaRank": 34,
       "group": "F",
       "tierSummary": "조 최하위로 예선을 마치고도 사상 처음으로 플레이오프를 뚫고 본선에 오른 '언더독'이지만, 이사크-요케레스라는 세계 정상급 투톱과 프리미어리그 즐비한 멤버를 보유한 다크호스다.",
       "styleSummary": [
@@ -10701,7 +10701,7 @@ window.DATA = {
       "name": "요르단",
       "nameEn": "Jordan",
       "flag": "🇯🇴",
-      "fifaRank": 67,
+      "fifaRank": 68,
       "group": "J",
       "tierSummary": "사상 첫 월드컵 본선에 오른 다크호스로, 2023 아시안컵 준우승 멤버를 중심으로 한 끈끈한 수비와 알타마리·올완의 역습이 무기인 도전자 티어 팀입니다.",
       "styleSummary": [
@@ -12221,7 +12221,7 @@ window.DATA = {
       "name": "가나",
       "nameEn": "Ghana",
       "flag": "🇬🇭",
-      "fifaRank": 73,
+      "fifaRank": 65,
       "group": "L",
       "tierSummary": "유럽 빅리그에 흩어진 재능 있는 공격 자원과 노련한 베테랑을 갖췄지만, 잉글랜드·크로아티아가 버틴 죽음의 L조에서 16강을 노리려면 수비 안정과 한 방이 절실한 다크호스다.",
       "styleSummary": [
@@ -12471,7 +12471,7 @@ window.DATA = {
       "name": "파나마",
       "nameEn": "Panama",
       "flag": "🇵🇦",
-      "fifaRank": 34,
+      "fifaRank": 40,
       "group": "L",
       "tierSummary": "유럽·멕시코·MLS·칠레 등 다양한 리그에 흩어진 베테랑 중심의 단단한 다크호스로, 조직력과 투지로 강팀을 괴롭히는 전형적인 콘카카프 강호다.",
       "styleSummary": [
