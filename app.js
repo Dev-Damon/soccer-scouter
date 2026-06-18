@@ -3860,15 +3860,17 @@
 
   // ===== PWA 홈 화면 설치 배너 — 안드로이드 원터치(beforeinstallprompt) / 아이폰 1초 그림 안내. ✕=이번만, "다시 보지 않기"=영구 =====
   (function () {
-    if (location.protocol.indexOf("http") !== 0) return;
+    if (location.protocol.indexOf("http") !== 0 || IS_TOSS) return;  // 토스 미니앱 안에선 설치배너 불필요
     var deferred = null, shown = false;
     function isStandalone() { return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true; }
     function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent); }
+    function isSamsung() { return /SamsungBrowser/i.test(navigator.userAgent); }
+    function isAndroid() { return /android/i.test(navigator.userAgent); }
     function flag(s) { try { return localStorage.getItem("kk_install_never") === "1" || sessionStorage.getItem("kk_install_closed") === "1"; } catch (e) { return false; } }
     function hide(bn) { bn.classList.remove("on"); setTimeout(function () { if (bn.parentNode) bn.parentNode.removeChild(bn); }, 250); }
     function show() {
       if (shown || isStandalone() || flag() || document.getElementById("kk-install")) return;
-      if (!deferred && !isIOS()) return;  // 안드로이드는 설치프롬프트 준비됐을 때, iOS는 가이드로
+      if (!deferred && !isIOS() && !isAndroid()) return;  // 모바일(설치 가능 환경)에서만. 안드로이드는 프롬프트 or 메뉴안내 폴백
       shown = true;
       var bn = document.createElement("div"); bn.className = "kk-install"; bn.id = "kk-install";
       bn.innerHTML = '<img class="kki-ic" src="apple-touch-icon.png" alt="킥톡">' +
@@ -3879,25 +3881,31 @@
       bn.querySelector(".kki-x").addEventListener("click", function () { try { sessionStorage.setItem("kk_install_closed", "1"); } catch (e) {} hide(bn); });
       bn.querySelector(".kki-never").addEventListener("click", function () { try { localStorage.setItem("kk_install_never", "1"); } catch (e) {} hide(bn); });
       bn.querySelector(".kki-btn").addEventListener("click", function () {
-        if (deferred) { deferred.prompt(); deferred.userChoice.then(function () { deferred = null; hide(bn); }); }
+        if (deferred) { deferred.prompt(); deferred.userChoice.then(function () { deferred = null; hide(bn); }); }  // 크롬 등 원터치
         else if (isIOS()) { iosGuide(); }
+        else { menuGuide(); }  // 삼성인터넷 등 프롬프트 미지원 브라우저
       });
     }
-    function iosGuide() {
-      if (document.getElementById("kk-ios")) return;
+    function sheet(html) {
       var ov = document.createElement("div"); ov.className = "kk-ios"; ov.id = "kk-ios";
-      ov.innerHTML = '<div class="kk-ios-card"><img class="kki-ic" src="apple-touch-icon.png" alt=""><b>홈 화면에 추가하기</b>' +
-        '<div class="kki-step"><span class="kki-sn">1</span> 아래 <b>공유 ⬆️</b> 버튼 누르기</div>' +
-        '<div class="kki-step"><span class="kki-sn">2</span> <b>홈 화면에 추가 ➕</b> 선택</div>' +
-        '<button class="kki-ios-close">알겠어요</button></div>';
+      ov.innerHTML = '<div class="kk-ios-card"><img class="kki-ic" src="apple-touch-icon.png" alt="">' + html + '<button class="kki-ios-close">알겠어요</button></div>';
       document.body.appendChild(ov);
       function cl() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
       ov.addEventListener("click", function (e) { if (e.target === ov) cl(); });
       ov.querySelector(".kki-ios-close").addEventListener("click", cl);
       twem(ov);
     }
+    function iosGuide() {
+      if (document.getElementById("kk-ios")) return;
+      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span> 아래 <b>공유 ⬆️</b> 버튼 누르기</div><div class="kki-step"><span class="kki-sn">2</span> <b>홈 화면에 추가 ➕</b> 선택</div>');
+    }
+    function menuGuide() {  // 삼성 인터넷·기타 안드로이드 브라우저 — 설치 프롬프트 미지원 시 메뉴 안내
+      if (document.getElementById("kk-ios")) return;
+      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span> 브라우저 <b>메뉴(≡ 또는 ⋮)</b> 열기</div><div class="kki-step"><span class="kki-sn">2</span> <b>현재 페이지 추가</b> → <b>홈 화면</b> (또는 <b>앱 설치</b>) 선택</div>');
+    }
     window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; show(); });
-    if (isIOS()) window.addEventListener("load", function () { setTimeout(show, 2500); });  // iOS는 프롬프트 없어 직접 안내
+    // iOS·삼성 등은 프롬프트 없거나 늦으니 로드 후 폴백으로 배너 노출(프롬프트 오면 위에서 먼저 뜸)
+    if (isIOS() || isAndroid()) window.addEventListener("load", function () { setTimeout(show, 2800); });
   })();
 
   // 서비스워커 (PWA, http(s)에서만) — 새 버전 배포 시 자동 새로고침(캐시된 옛 화면 방지)
