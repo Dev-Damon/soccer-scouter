@@ -4083,10 +4083,22 @@
     else if (window.KickComments) KickComments.promptLogin();
     return true;
   }
+  // 토스트 — 연타/중복 방지(debounce): 떠 있으면 새로 안 쌓고 텍스트 갱신 + 사라짐 타이머만 리셋. 모든 토스트가 이 함수 하나를 거침.
+  var _toastEl = null, _toastT1 = null, _toastT2 = null;
   function ktToast(msg) {
-    var t = document.createElement("div"); t.className = "kt-toast"; t.textContent = msg; document.body.appendChild(t);
-    setTimeout(function () { t.classList.add("show"); }, 10);
-    setTimeout(function () { t.classList.remove("show"); setTimeout(function () { t.remove(); }, 300); }, 3500);
+    if (_toastEl && _toastEl.parentNode) {  // 이미 표시 중 → 같은 엘리먼트 재사용(연타해도 하나만)
+      clearTimeout(_toastT1); clearTimeout(_toastT2);
+      _toastEl.textContent = msg; _toastEl.classList.add("show");
+    } else {
+      _toastEl = document.createElement("div"); _toastEl.className = "kt-toast"; _toastEl.textContent = msg;
+      document.body.appendChild(_toastEl);
+      var t0 = _toastEl; setTimeout(function () { t0.classList.add("show"); }, 10);
+    }
+    var cur = _toastEl;
+    _toastT1 = setTimeout(function () {
+      cur.classList.remove("show");
+      _toastT2 = setTimeout(function () { if (cur.parentNode) cur.remove(); if (_toastEl === cur) _toastEl = null; }, 300);
+    }, 3500);
   }
   // 배지(등급·칭호·훈장) 탭하면 설명 토스트(모바일). 데스크톱은 title 호버로도 표시.
   // 연타 방지 = 쓰로틀(throttle): 한 번 뜨면 2.5초간 재실행 차단.
