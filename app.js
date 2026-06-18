@@ -400,7 +400,6 @@
     return /\.kr(\/|$)|naver\.com|footballist|besteleven|interfootball|sportalkorea|spotvnews|yna\.co|sportschosun|sports\.donga/.test((nw.source || "") + " " + (nw.url || ""));
   }
   function homeNews(limit) {
-    if (IS_TOSS) return [];  // 토스 미니앱: 외부 뉴스(외부링크·저작권) 숨김
     // 선택한 날짜에 경기가 있는 나라들의 뉴스만 (없으면 전체 폴백)
     var dayIds = {};
     (DATA.fixtures || []).forEach(function (f) {
@@ -579,7 +578,7 @@
           (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
           '<div class="hn-head"><span class="hn-flag">' + esc(tt.flag) + '</span><span class="hn-team">' + esc(tt.name) + "</span></div>" +
           '<div class="news-title">' + esc(nw.title) + "</div>" +
-          (nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
+          (!IS_TOSS && nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
           (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
           "</" + tag + ">";
       });
@@ -1390,8 +1389,8 @@
         '<div class="mv-src">Transfermarkt 집계 · 참고용 · 순위 보기 ›</div></div></div>';
     }
 
-    // 최신 뉴스 (있으면) — 토스 미니앱은 숨김(외부링크·저작권)
-    if (!IS_TOSS && t.news && t.news.length) {
+    // 최신 뉴스 (있으면)
+    if (t.news && t.news.length) {
       var kn = t.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, 8);
       var moreN = kn.length - 3;
       html += '<div class="block"><h3>최신 뉴스</h3><div class="news-list' + (moreN > 0 ? " news-collapsed" : "") + '">';
@@ -1402,7 +1401,7 @@
         html += "<" + tag + ' class="news-item' + (nw.url ? " ext" : "") + '"' +
           (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
           '<div class="news-title">' + esc(nw.title) + "</div>" +
-          (nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
+          (!IS_TOSS && nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
           (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
           "</" + tag + ">";
       });
@@ -1576,12 +1575,12 @@
     return "<" + tag + ' class="news-item' + (nw.url ? " ext" : "") + '"' +
       (nw.url ? ' href="' + esc(nw.url) + '" target="_blank" rel="noopener"' : "") + ">" +
       '<div class="news-title">' + esc(nw.title) + "</div>" +
-      (nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
+      (!IS_TOSS && nw.summary ? '<div class="news-sum"><span class="ai-tag">AI 요약</span>' + esc(nw.summary) + "</div>" : "") +
       (foot ? '<div class="news-meta">' + foot + "</div>" : "") +
       "</" + tag + ">";
   }
   function matchNews(team, max) {
-    if (IS_TOSS || !team || !team.news || !team.news.length) return "";  // 토스 미니앱은 뉴스 숨김
+    if (!team || !team.news || !team.news.length) return "";
     var kn = team.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, max || 3);
     return '<div class="mn-team"><div class="mn-h"><span class="mn-flag">' + esc(team.flag) + "</span>" + esc(team.name) + " 주요 소식</div>" +
       '<div class="news-list">' + kn.map(newsItemHtml).join("") + "</div></div>";
@@ -1850,7 +1849,7 @@
         previewHtml +
         '<div class="adslot ad2"></div>' +
         '<div class="cmt-slot"></div>' +
-        (!IS_TOSS && ((a.news && a.news.length) || (b.news && b.news.length)) ?
+        ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
         '<div class="match-cta">' +
           '<button class="mbtn" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + " 분석</button>" +
