@@ -3845,6 +3845,48 @@
     new MutationObserver(function () { twem(viewEl); }).observe(viewEl, { childList: true });
   }
 
+  // ===== PWA 홈 화면 설치 배너 — 안드로이드 원터치(beforeinstallprompt) / 아이폰 1초 그림 안내. ✕=이번만, "다시 보지 않기"=영구 =====
+  (function () {
+    if (location.protocol.indexOf("http") !== 0) return;
+    var deferred = null, shown = false;
+    function isStandalone() { return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true; }
+    function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent); }
+    function flag(s) { try { return localStorage.getItem("kk_install_never") === "1" || sessionStorage.getItem("kk_install_closed") === "1"; } catch (e) { return false; } }
+    function hide(bn) { bn.classList.remove("on"); setTimeout(function () { if (bn.parentNode) bn.parentNode.removeChild(bn); }, 250); }
+    function show() {
+      if (shown || isStandalone() || flag() || document.getElementById("kk-install")) return;
+      if (!deferred && !isIOS()) return;  // 안드로이드는 설치프롬프트 준비됐을 때, iOS는 가이드로
+      shown = true;
+      var bn = document.createElement("div"); bn.className = "kk-install"; bn.id = "kk-install";
+      bn.innerHTML = '<img class="kki-ic" src="apple-touch-icon.png" alt="킥톡">' +
+        '<div class="kki-tx"><b>킥톡 앱으로 추가</b><span>홈 화면에서 바로 실행 · 주소창 없이</span><a class="kki-never">다시 보지 않기</a></div>' +
+        '<button class="kki-btn">설치</button><button class="kki-x" aria-label="닫기">✕</button>';
+      document.body.appendChild(bn);
+      requestAnimationFrame(function () { bn.classList.add("on"); });
+      bn.querySelector(".kki-x").addEventListener("click", function () { try { sessionStorage.setItem("kk_install_closed", "1"); } catch (e) {} hide(bn); });
+      bn.querySelector(".kki-never").addEventListener("click", function () { try { localStorage.setItem("kk_install_never", "1"); } catch (e) {} hide(bn); });
+      bn.querySelector(".kki-btn").addEventListener("click", function () {
+        if (deferred) { deferred.prompt(); deferred.userChoice.then(function () { deferred = null; hide(bn); }); }
+        else if (isIOS()) { iosGuide(); }
+      });
+    }
+    function iosGuide() {
+      if (document.getElementById("kk-ios")) return;
+      var ov = document.createElement("div"); ov.className = "kk-ios"; ov.id = "kk-ios";
+      ov.innerHTML = '<div class="kk-ios-card"><img class="kki-ic" src="apple-touch-icon.png" alt=""><b>홈 화면에 추가하기</b>' +
+        '<div class="kki-step"><span class="kki-sn">1</span> 아래 <b>공유 ⬆️</b> 버튼 누르기</div>' +
+        '<div class="kki-step"><span class="kki-sn">2</span> <b>홈 화면에 추가 ➕</b> 선택</div>' +
+        '<button class="kki-ios-close">알겠어요</button></div>';
+      document.body.appendChild(ov);
+      function cl() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+      ov.addEventListener("click", function (e) { if (e.target === ov) cl(); });
+      ov.querySelector(".kki-ios-close").addEventListener("click", cl);
+      twem(ov);
+    }
+    window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; show(); });
+    if (isIOS()) window.addEventListener("load", function () { setTimeout(show, 2500); });  // iOS는 프롬프트 없어 직접 안내
+  })();
+
   // 서비스워커 (PWA, http(s)에서만) — 새 버전 배포 시 자동 새로고침(캐시된 옛 화면 방지)
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     window.addEventListener("load", function () {
