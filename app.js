@@ -1826,7 +1826,7 @@
         '<div class="vs-goals"></div>' +  /* 골 표기는 몸값비교 위에(스코어 바로 아래) */
         mvCompareHtml(a, b) +
         '<div class="live-btn-slot"></div>' +  /* 라이브 중(치지직 JTBC 송출 감지)이면 updScore가 버튼 채움 */
-        ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx)) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +
+        ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx) && !IS_TOSS) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +  /* 토스모드는 외부링크(치지직) 제거 */
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
         '<div class="block pred-slot"></div>' +
         '<div class="block bet-slot"></div>' +
@@ -1883,7 +1883,7 @@
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
       if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
       var lbs = viewEl.querySelector(".live-btn-slot");  // 치지직 JTBC 라이브 송출 감지 시 "라이브 보기" 버튼(경기종료면 숨김)
-      if (lbs) { lbs.innerHTML = (LIVE_STREAM && LIVE_STREAM.mid === fx.id && LIVE_STREAM.url && !(lv && lv.state === "post")) ? '<a class="live-btn" href="' + esc(LIVE_STREAM.url) + '" target="_blank" rel="noopener"><span class="lb-dot"></span>라이브 보기 (JTBC)</a>' : ""; }
+      if (lbs) { lbs.innerHTML = (!IS_TOSS && LIVE_STREAM && LIVE_STREAM.mid === fx.id && LIVE_STREAM.url && !(lv && lv.state === "post")) ? '<a class="live-btn" href="' + esc(LIVE_STREAM.url) + '" target="_blank" rel="noopener"><span class="lb-dot"></span>라이브 보기 (JTBC)</a>' : ""; }  /* 토스모드는 외부링크 제거 */
     }
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
