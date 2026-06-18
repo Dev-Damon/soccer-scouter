@@ -12,6 +12,9 @@ const DONATE_SKU: Record<number, string> = {
 };
 
 (window as any).__APPS_IN_TOSS__ = true;
+// 인앱결제(후원) 스위치 — 사업자등록 + 콘솔 후원상품(sku) 등록 끝나면 true로. 그 전엔 후원 버튼 숨기고 앱 먼저 출시.
+const IAP_ENABLED = false; // TODO: 사업자·sku 준비되면 true
+(window as any).__TOSS_IAP__ = IAP_ENABLED;
 (window as any).tossPay = {
   donate(amount: number) {
     const sku = DONATE_SKU[amount];

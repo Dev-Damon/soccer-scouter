@@ -3797,6 +3797,7 @@
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;
     if (IS_TOSS) {  // 토스 미니앱: 외부 송금링크 금지 → 토스페이 인앱결제(IAP). 금액별 sku는 콘솔 등록, .ait 빌드의 main.ts가 window.tossPay.donate 제공
+      if (!window.__TOSS_IAP__) { btn.style.display = "none"; return; }  // 인앱결제(사업자·sku) 준비 전엔 후원 숨김 → 앱 먼저 출시 가능. main.ts에서 켜면 노출
       var TT = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
       btn.addEventListener("click", function () {
         var ov = document.createElement("div"); ov.className = "donate-ov on";
