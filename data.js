@@ -32969,7 +32969,7 @@ window.DATA = {
       "team": "크로아티아",
       "club": "PSV 에인트호번",
       "league": "에레디비시 (네덜란드)",
-      "position": "레프트 윙어 / 윙백",
+      "position": "레프트 윙어",
       "age": 37,
       "caps": 153,
       "intlGoals": 38,

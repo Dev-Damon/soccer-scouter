@@ -3449,6 +3449,7 @@
   // 공유 넛지 — 앱을 충분히 써본 사용자(경기·선수 상세 3회 이상)에게 하루 1회 '친구에게 공유' 권유. 첫 방문자에겐 안 뜸.
   function _kday() { try { return new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" }); } catch (e) { return ""; } }
   function bumpEngage() {
+    if (IS_TOSS) return;  // 토스 미니앱: '친구에게 공유' 넛지 팝업 숨김(외부 공유)
     try {
       var n = (+localStorage.getItem("kt_engage") || 0) + 1; localStorage.setItem("kt_engage", n);
       if (n < 3) return;                                            // 3회 이상 본 사람만
