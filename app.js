@@ -1188,6 +1188,7 @@
     return m;
   }
   function applyWcAmatch(p, id) {
+    if (posClass(p.position) === "gk") return;  // 골키퍼는 실점/무실점(gk.json)을 정적 표시 — 가산 안 함
     ensureStats().then(function (j) {
       var hh = parseHash(); if (hh.name !== "player" || hh.id !== id) return;
       var st = ((j && j.players) || []).filter(function (x) { return x.pid === p.id; })[0];
@@ -1225,8 +1226,13 @@
       ["나이", (p.age != null ? p.age + "세" : "-")],
     ];
     // 좌: A매치 기록, 우: 키·몸무게(나이 밑) — 2열 그리드 순서
-    var isGK = posClass(p.position) === "gk";  // 골키퍼는 득점 대신 출전만(0골 표시 안 함)
-    facts.push(["A매치 기록", (p.caps != null ? p.caps + "경기" + (isGK ? "" : " · " + (p.intlGoals != null ? p.intlGoals : 0) + "골") : "-")]);
+    var isGK = posClass(p.position) === "gk";  // 골키퍼는 득점 대신 실점·무실점(있으면)
+    var gk = PLAYER_GK[p.id];
+    var amatch;
+    if (isGK && gk) amatch = gk.g + "경기 · " + gk.c + "실점" + (gk.cs != null ? " · " + gk.cs + "무실점" : "");  // 정확 소스(gk.json)
+    else if (p.caps != null) amatch = p.caps + "경기" + (isGK ? "" : " · " + (p.intlGoals != null ? p.intlGoals : 0) + "골");
+    else amatch = "-";
+    facts.push(["A매치 기록", amatch]);
     if (pH || pW) facts.push(["키 · 몸무게", [pH ? pH + "cm" : null, pW ? pW + "kg" : null].filter(Boolean).join(" · ")]);
     var factsHtml = facts.map(function (f) {
       return '<div class="fact"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + "</div></div>";
