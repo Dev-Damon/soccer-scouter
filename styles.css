@@ -714,6 +714,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .hero-team { font-weight: 800; font-size: 14px; color: #fff; text-align: center; }
 .hero-mid { display: flex; flex-direction: column; align-items: center; }
 .hero-kick { font-size: 19px; font-weight: 900; color: #fff; }
+.hero-kt { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 1px; }  /* 방송 미킥오프 경기 시작시간(점수 위) */
 .hero-vs { font-size: 11px; font-weight: 800; color: #d8e4ff; }
 /* 라이브 강조 */
 .hero-livebadge { display: inline-flex; align-items: center; gap: 5px; background: #e5181f; color: #fff; font-weight: 900; font-size: 13px; padding: 3px 11px; border-radius: 999px; letter-spacing: .5px; animation: heroLivePulse 1.4s infinite; }

@@ -686,7 +686,7 @@
     var preKick = !!(asLiveCard && LIVE_STREAM && LIVE_STREAM.mid === fx.id && !(LIVE[fx.id] && LIVE[fx.id].state === "in"));  // 방송 감지인데 아직 킥오프 전 → 시작시간만 간결히
     var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
     var mid = (live && asLiveCard)
-      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + "</span>" + (preKick ? '<span class="hero-fin">' + esc(fxTime(fx) || "") + " 시작</span>" : "") + "</div>"  // 방송 감지·미킥오프면 시작시간만 간결히
+      ? '<div class="hero-mid">' + (preKick ? '<span class="hero-kt">' + esc(fxTime(fx) || "") + "</span>" : "") + '<span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + "</span></div>"  // 방송 감지·미킥오프면 점수 위에 시작시간만
       : live
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 중 ' + esc(lv.clock || "") + "</span></div>"  // 빅매치는 라이브 강조 X(전용 라이브카드가 위에 있음)
       : ended
