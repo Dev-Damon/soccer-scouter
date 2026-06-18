@@ -72,12 +72,15 @@ function buildBlock(map, fixById) {
   const { map: existing, hasMarkers } = parseExisting(src);
   if (!hasMarkers) { console.log('[highlights] HL-AUTO 마커 없음 — app.js에 마커 추가 필요. 중단.'); process.exit(0); }
 
-  // 종료(킥오프+150분 경과)됐는데 링크 없는 경기
-  const now = Date.now();
-  const pending = D.fixtures.filter(fx => {
-    const ko = kickoff(fx); if (!ko) return false;
-    return now > ko + 105 * 60000 && fx.homeId && fx.awayId && !existing[fx.id];  // 정규경기 종료 무렵부터 계속 검색(JTBC가 경기후 ~10분내 업로드) — 못 찾으면 다음 60초에 재시도
-  });
+  // 종료경기 중 링크 없는 경기. update_live가 ESPN 'post'로 잡은 경기ID를 인자로 넘김(시간 하드코딩 X).
+  const argIds = process.argv.slice(2).filter(a => /^match-/.test(a));
+  let pending;
+  if (argIds.length) {
+    pending = argIds.map(id => fixById[id]).filter(fx => fx && fx.homeId && fx.awayId && !existing[fx.id]);  // ESPN 종료경기만
+  } else {
+    const now = Date.now();  // 단독 실행 폴백(인자 없을 때): 킥오프 충분히 지난 경기
+    pending = D.fixtures.filter(fx => { const ko = kickoff(fx); return ko && now > ko + 105 * 60000 && fx.homeId && fx.awayId && !existing[fx.id]; });
+  }
   if (!pending.length) { if (DRY) console.log('[highlights] 대기 경기 없음'); process.exit(0); }
 
   // 채널 영상목록(최근 ~6페이지=300여개)

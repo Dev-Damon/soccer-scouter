@@ -3897,11 +3897,11 @@
     }
     function iosGuide() {
       if (document.getElementById("kk-ios")) return;
-      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span> 아래 <b>공유 ⬆️</b> 버튼 누르기</div><div class="kki-step"><span class="kki-sn">2</span> <b>홈 화면에 추가 ➕</b> 선택</div>');
+      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span><span>아래 <b>공유 ⬆️</b> 버튼 누르기</span></div><div class="kki-step"><span class="kki-sn">2</span><span><b>홈 화면에 추가 ➕</b> 선택</span></div>');
     }
     function menuGuide() {  // 삼성 인터넷·기타 안드로이드 브라우저 — 설치 프롬프트 미지원 시 메뉴 안내
       if (document.getElementById("kk-ios")) return;
-      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span> 브라우저 <b>메뉴(≡ 또는 ⋮)</b> 열기</div><div class="kki-step"><span class="kki-sn">2</span> <b>현재 페이지 추가</b> → <b>홈 화면</b> (또는 <b>앱 설치</b>) 선택</div>');
+      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span><span>브라우저 메뉴 <b>(≡ 또는 ⋮)</b> 열기</span></div><div class="kki-step"><span class="kki-sn">2</span><span><b>현재 페이지를 홈 화면에 추가</b> 선택</span></div>');
     }
     window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; show(); });
     // iOS·삼성 등은 프롬프트 없거나 늦으니 로드 후 폴백으로 배너 노출(프롬프트 오면 위에서 먼저 뜸)
