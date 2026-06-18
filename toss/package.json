@@ -8,7 +8,8 @@
     "predev": "node ../scripts/build_toss.js",
     "dev": "ait dev",
     "build": "ait build",
-    "deploy": "ait deploy"
+    "deploy": "ait deploy",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@apps-in-toss/web-framework": "^2.9.1"
