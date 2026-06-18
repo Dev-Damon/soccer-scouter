@@ -454,7 +454,7 @@
       var d = ddayCount(opening, today);
       dday = "🏆 2026 월드컵 개막 " + (d <= 0 ? "D-DAY" : "D-" + d);
     } else {
-      if (nextKr) { var d2 = ddayCount(fxDate(nextKr), today); dday = "🇰🇷 대한민국 다음 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
+      if (nextKr) { var d2 = ddayCount(fxDate(nextKr), today); dday = "🇰🇷 대한민국 경기 " + (d2 <= 0 ? "D-DAY · 오늘!" : "D-" + d2); }
       else { dday = "🇰🇷 대한민국 월드컵 일정 종료"; }
     }
     var ddayTap = nextKr ? ' data-match="' + esc(nextKr.id) + '"' : "";  // 클릭 시 다음 한국경기 상세로
