@@ -3376,7 +3376,7 @@
     var fcats = ["자유", "경기예측", "응원", "정보"];
     var adm = !!(KickComments.isAdmin && KickComments.isAdmin());
     var loggedIn = !!(KickComments.user && KickComments.user());
-    var form = '<div class="pf-write"><div class="pf-wrow"><select class="pf-wcat">' +
+    var form = IS_TOSS ? "" : '<div class="pf-write"><div class="pf-wrow"><select class="pf-wcat">' +
       fcats.map(function (c) { return '<option value="' + c + '"' + (boardCat === c ? " selected" : "") + ">" + c + "</option>"; }).join("") + "</select>" +
       (adm ? '<label class="pf-wpin"><input type="checkbox" class="pf-wpinned"> 📌공지</label>' : "") + "</div>" +
       '<div class="pf-wmain"><textarea class="pf-wbody' + (loggedIn ? "" : " locked") + '"' + (loggedIn ? "" : " readonly") + ' maxlength="2000" placeholder="' +
