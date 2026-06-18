@@ -1213,6 +1213,8 @@
   // 골키퍼 국가대표 실점·무실점 — gk.json(나무위키 등 정확 소스 수집). {pid:{g:경기,c:실점,cs:무실점}}
   var PLAYER_GK = {};
   (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
+  // FIFA 랭킹 — fifa.json(scripts/update_fifa.js가 2h마다 갱신)에서 런타임 로드 → 토스도 재빌드 없이 최신 랭킹 반영.
+  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/fifa.json?b="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(!d) return; var ch=false; DATA.teams.forEach(function(t){ if(d[t.id]!=null && t.fifaRank!==d[t.id]){ t.fifaRank=d[t.id]; ch=true; } }); if(ch){ var h=parseHash(); if(h.name==="home"||h.name==="team") route(); } }).catch(function(){}); })();
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }

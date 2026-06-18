@@ -50,13 +50,19 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
   if (DRY) { console.log('[dry] 미적용'); process.exit(0); }
   if (!changes.length) { console.log('변경 없음'); return; }
   fs.writeFileSync(DATA, src);
+  // fifa.json도 갱신(토스/웹 공통 런타임 fetch — 재빌드 없이 랭킹 반영). data.js에서 팀별 fifaRank 추출.
+  try {
+    const W = {}; (new Function('window', src))(W);
+    const fmap = {}; (W.DATA.teams || []).forEach(t => { fmap[t.id] = t.fifaRank; });
+    fs.writeFileSync(path.join(ROOT, 'fifa.json'), JSON.stringify(fmap, null, 1));
+  } catch (e) { console.log('fifa.json 생성 실패:', e.message); }
   // data.js 캐시버전 갱신(브라우저가 새 랭킹 받게) — 매 갱신 유니크
   var idx = fs.readFileSync(IDX, 'utf8');
   idx = idx.replace(/data\.js\?v=[^"]*/, 'data.js?v=f' + Date.now());
   fs.writeFileSync(IDX, idx);
   if (NODEPLOY) { console.log('배포 생략(--no-deploy)'); return; }
   try {
-    execFileSync('git', ['add', 'data.js', 'index.html'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['add', 'data.js', 'index.html', 'fifa.json'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['commit', '-m', 'FIFA 랭킹 자동갱신: ' + changes.length + '개팀'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['-c', 'rebase.autoStash=true', 'pull', '--rebase', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['push', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
