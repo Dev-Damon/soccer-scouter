@@ -335,7 +335,7 @@
       return (window.KickComments && KickComments.matchStats) ? KickComments.matchStats() : null;
     }).then(function (db) {
       if (db && db.players && db.players.length) return db;
-      return fetch("stats.json").then(function (r) { return r.json(); });  // DB 비었을 때만 폴백
+      return fetch("https://kicktalk.xyz/stats.json").then(function (r) { return r.json(); });  // DB 비었을 때만 폴백
     }).then(function (j) { statsData = j || { players: [] }; return statsData; }).catch(function () { statsData = { players: [] }; return statsData; });
     return statsLoading;
   }
@@ -1209,10 +1209,10 @@
   }
   // 선수 키·몸무게(cm/kg) — scripts/fetch_bio.js가 ESPN bio에서 자동수집해 마커 사이 갱신(경기 출전선수 위주).
   var PLAYER_BIO = {};  // 키·몸무게(cm/kg) — bio.json에서 로드(scripts/fetch_bio.js 생성), app.js 경량화
-  (function(){ if(!window.fetch) return; fetch("bio.json?b=2").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_BIO, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
+  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/bio.json?b=2").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_BIO, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   // 골키퍼 국가대표 실점·무실점 — gk.json(나무위키 등 정확 소스 수집). {pid:{g:경기,c:실점,cs:무실점}}
   var PLAYER_GK = {};
-  (function(){ if(!window.fetch) return; fetch("gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
+  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -2231,7 +2231,7 @@
     if (H2HPRE) return Promise.resolve(H2HPRE);
     if (h2hLoading) return h2hLoading;
     if (!window.fetch) { H2HPRE = {}; return Promise.resolve(H2HPRE); }
-    h2hLoading = fetch("h2h.json").then(function (r) { return r.json(); }).then(function (j) { H2HPRE = j || {}; return H2HPRE; }).catch(function () { H2HPRE = {}; return H2HPRE; });
+    h2hLoading = fetch("https://kicktalk.xyz/h2h.json").then(function (r) { return r.json(); }).then(function (j) { H2HPRE = j || {}; return H2HPRE; }).catch(function () { H2HPRE = {}; return H2HPRE; });
     return h2hLoading;
   }
   function loadPrediction(slot, fx, a, b, aIsHome) {
@@ -3795,7 +3795,7 @@
 
   // 자동수집 뉴스(news.json, GitHub Actions 4시간 크론) 로드 → 팀별 news 최신화 후 현재 화면 다시 렌더
   function loadNews() {
-    fetch("news.json?ts=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch("https://kicktalk.xyz/news.json?ts=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (!d || !d.byTeam) return;
       DATA.teams.forEach(function (t) {
         var items = d.byTeam[t.name];
