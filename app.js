@@ -667,7 +667,7 @@
     if (!live.length) return "";
     // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열. ESPN 데이터 없으면 '곧 시작' 0:0 표시
     var cards = live.map(function (fx, i) {
-      var lv = dummy ? dummy[i] : (LIVE[fx.id] || { state: "in", hs: 0, as: 0, clock: "" });
+      var lv = dummy ? dummy[i] : LIVE[fx.id];  // ESPN 실제 라이브만(없으면 방송감지 = 미킥오프 → heroCard가 시작시간 표시)
       return heroCard(fx, lv, true);
     }).join("");
     return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
@@ -683,6 +683,7 @@
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
     var lv = lvOverride || LIVE[fx.id], live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
+    var bcast = !!(asLiveCard && !live && !ended && LIVE_STREAM && LIVE_STREAM.mid === fx.id);  // JTBC 방송 감지·미킥오프
     var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
     var mid = (live && asLiveCard)
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + "</span></div>"  // LIVE·시간은 태그줄로 올림
@@ -690,11 +691,13 @@
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 중 ' + esc(lv.clock || "") + "</span></div>"  // 빅매치는 라이브 강조 X(전용 라이브카드가 위에 있음)
       : ended
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료</span></div>'
+      : bcast
+      ? '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + ' 시작</span><span class="hero-fin">📺 라이브 방송 중</span></div>'
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
     var lvG = teamGoals(fx, lv, lName, "l"), rvG = teamGoals(fx, lv, rName, "r");  // 좌/우 팀별 득점자(가운데로 수렴)
     return '<div class="hero' + (live && asLiveCard ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
-      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "지금 라이브" : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>' + liveClk(lv.clock) + "</span>" : "") + "</div>" +
+      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? (bcast ? "📺 방송 중" : "지금 라이브") : "오늘의 빅매치") + " · " + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>' + liveClk(lv.clock) + "</span>" : "") + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
           '<span class="hero-team">' + esc(lName) + "</span></div>" +
@@ -704,7 +707,7 @@
       "</div>" +
       ((lvG || rvG) ? '<div class="hero-gsplit"><div class="hg-l">' + lvG + '</div><div class="hg-r">' + rvG + "</div></div>" : "") +
       (meta ? '<div class="hero-meta">' + meta + "</div>" : "") +
-      '<div class="hero-cta">' + (live ? "경기 보기 →" : ended ? "경기 결과 보기 →" : "경기 예상 보기 →") + "</div>" +
+      '<div class="hero-cta">' + (live ? "경기 보기 →" : bcast ? "📺 방송 보기 →" : ended ? "경기 결과 보기 →" : "경기 예상 보기 →") + "</div>" +
       "</div>";
   }
 
