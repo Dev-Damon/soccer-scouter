@@ -181,13 +181,19 @@
           var tmm = {}, smm = {}; (pr.data || []).forEach(function (x) { if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
           list.forEach(function (c) { if (c.user_id && tmm[c.user_id]) c._title = tmm[c.user_id]; if (c.user_id && smm[c.user_id]) c._streak = smm[c.user_id]; });
         }).catch(function () {}) : Promise.resolve();
-        return Promise.all([sb.from("comment_reactions").select("comment_id,user_id,value").in("comment_id", ids), ptsP, titP])
+        return Promise.all([sb.from("comment_reactions").select("comment_id,user_id,value").in("comment_id", ids), ptsP, titP, sb.from("anon_reactions").select("target_id,device,value").eq("kind", "comment").in("target_id", ids.map(String))])
           .then(function (arr) {
             var rr = arr[0], rx = {};
             (rr.data || []).forEach(function (x) {
               var e = rx[x.comment_id] || (rx[x.comment_id] = { like: 0, dislike: 0, mine: 0 });
               if (x.value === 1) e.like++; else e.dislike++;
               if (user && x.user_id === user.id) e.mine = x.value;
+            });
+            var dev = anonDevice();  // 익명(기기별) 반응 합산
+            ((arr[3] && arr[3].data) || []).forEach(function (x) {
+              var e = rx[x.target_id] || (rx[x.target_id] = { like: 0, dislike: 0, mine: 0 });
+              if (x.value === 1) e.like++; else e.dislike++;
+              if (!user && x.device === dev) e.mine = x.value;
             });
             return { list: list, rx: rx };
           })
@@ -361,9 +367,17 @@
     if (!confirm("댓글을 삭제할까요?")) return;
     sb.from("comments").delete().eq("id", id).then(function () { render(m); });
   }
+  function anonDevice() { try { var d = localStorage.getItem("kk_device"); if (!d) { d = "d" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); localStorage.setItem("kk_device", d); } return d; } catch (e) { return "anon"; } }
   function react(m, commentId, value) {
-    if (!user) { confirmLogin(); return; }
     var cur = (m._data && m._data.rx[commentId]) ? m._data.rx[commentId].mine : 0;
+    if (!user) {  // 비로그인 = 익명 반응(기기별, anon_reactions) — 로그인 없이 좋아요/싫어요
+      var dev = anonDevice();
+      var op0 = (cur === value)
+        ? sb.from("anon_reactions").delete().eq("kind", "comment").eq("target_id", String(commentId)).eq("device", dev)
+        : sb.from("anon_reactions").upsert({ kind: "comment", target_id: String(commentId), device: dev, value: value }, { onConflict: "kind,target_id,device" });
+      op0.then(function () { render(m); });
+      return;
+    }
     var op = (cur === value)
       ? sb.from("comment_reactions").delete().eq("comment_id", commentId).eq("user_id", user.id)
       : sb.from("comment_reactions").upsert({ comment_id: commentId, user_id: user.id, value: value }, { onConflict: "comment_id,user_id" });
@@ -490,10 +504,13 @@
       var ids = posts.map(function (p) { return p.id; });
       return Promise.all([
         sb.from("board_post_stats").select("*").in("post_id", ids),
-        user ? sb.from("board_post_likes").select("post_id,val").in("post_id", ids).eq("user_id", user.id) : Promise.resolve({ data: [] })
+        user ? sb.from("board_post_likes").select("post_id,val").in("post_id", ids).eq("user_id", user.id) : Promise.resolve({ data: [] }),
+        sb.from("anon_reactions").select("target_id,device,value").eq("kind", "post").in("target_id", ids.map(String))
       ]).then(function (res) {
         var st = {}; ((res[0] && res[0].data) || []).forEach(function (x) { st[x.post_id] = { likes: x.likes || 0, dislikes: x.dislikes || 0, comments: x.comments || 0 }; });
         var mine = {}; ((res[1] && res[1].data) || []).forEach(function (x) { mine[x.post_id] = x.val; });
+        var dev = anonDevice();  // 익명 좋아요/싫어요 합산(기기별)
+        ((res[2] && res[2].data) || []).forEach(function (x) { var s = st[x.target_id] || (st[x.target_id] = { likes: 0, dislikes: 0, comments: 0 }); if (x.value === -1) s.dislikes++; else s.likes++; if (!user && x.device === dev) mine[x.target_id] = x.value; });
         return { posts: posts, stats: st, mine: mine };
       }).catch(function () { return { posts: posts, stats: {}, mine: {} }; });
     }).catch(function () { return { posts: [], stats: {}, mine: {} }; });
@@ -503,12 +520,14 @@
     return Promise.all([
       sb.from("board_posts").select("*").eq("id", id).maybeSingle(),
       sb.from("board_post_stats").select("*").eq("post_id", id).maybeSingle(),
-      user ? sb.from("board_post_likes").select("post_id").eq("post_id", id).eq("user_id", user.id).maybeSingle() : Promise.resolve({ data: null })
+      user ? sb.from("board_post_likes").select("post_id").eq("post_id", id).eq("user_id", user.id).maybeSingle() : Promise.resolve({ data: null }),
+      sb.from("anon_reactions").select("device").eq("kind", "post").eq("target_id", String(id))
     ]).then(function (res) {
       var p = res[0] && res[0].data; if (!p) return null;
       var st = (res[1] && res[1].data) || {};
-      p._likes = st.likes || 0; p._comments = st.comments || 0;
-      p._liked = !!(res[2] && res[2].data);
+      var anon = (res[3] && res[3].data) || [], dev = anonDevice();  // 익명 좋아요 합산
+      p._likes = (st.likes || 0) + anon.length; p._comments = st.comments || 0;
+      p._liked = !!(res[2] && res[2].data) || (!user && anon.some(function (x) { return x.device === dev; }));
       return p;
     }).catch(function () { return null; });
   }
@@ -527,12 +546,21 @@
   }
   function deletePost(id) { return sb.from("board_posts").delete().eq("id", id); }
   function togglePostReaction(id, val, cur) {
-    if (!user) return Promise.reject(new Error("login"));
+    if (!user) {  // 비로그인 = 익명 좋아요/싫어요(기기별, anon_reactions)
+      var dev = anonDevice();
+      return (cur === val)
+        ? sb.from("anon_reactions").delete().eq("kind", "post").eq("target_id", String(id)).eq("device", dev)
+        : sb.from("anon_reactions").upsert({ kind: "post", target_id: String(id), device: dev, value: val }, { onConflict: "kind,target_id,device" });
+    }
     if (cur === val) return sb.from("board_post_likes").delete().eq("post_id", id).eq("user_id", user.id);
     return sb.from("board_post_likes").upsert({ post_id: id, user_id: user.id, val: val }, { onConflict: "post_id,user_id" });
   }
   function togglePostLike(id, liked) {
-    if (!user) return Promise.reject(new Error("login"));
+    if (!user) {  // 비로그인 = 익명 좋아요(기기별, anon_reactions)
+      var dev = anonDevice();
+      return liked ? sb.from("anon_reactions").delete().eq("kind", "post").eq("target_id", String(id)).eq("device", dev)
+                   : sb.from("anon_reactions").upsert({ kind: "post", target_id: String(id), device: dev, value: 1 }, { onConflict: "kind,target_id,device" });
+    }
     return liked ? sb.from("board_post_likes").delete().eq("post_id", id).eq("user_id", user.id)
                  : sb.from("board_post_likes").insert({ post_id: id, user_id: user.id });
   }

@@ -969,6 +969,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .vs-clock.live::before { content: "● "; }
 .adslot { text-align: center; margin: 18px 0 6px; padding: 11px 10px 12px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .adslot:empty, .ad2:empty, .adsense-slot:empty, .cpang-m:empty { display: none !important; }  /* 광고 안 채워지면(토스모드·미충전) 빈 카드 숨김 */
+.bd-toss-note { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
 .detail .adslot { margin-left: -20px; margin-right: -20px; }  /* .detail 20px 패딩 밖으로 → 320px 광고 폭 확보 */
 .adslot .kakao_ad_area, .adslot iframe { border-radius: 8px; overflow: hidden; }
 /* PC 사이드 세로광고 — 좌(쿠팡 90px)는 990px+, 우(애드핏 160px)는 1100px+ */

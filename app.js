@@ -3376,7 +3376,7 @@
     var fcats = ["자유", "경기예측", "응원", "정보"];
     var adm = !!(KickComments.isAdmin && KickComments.isAdmin());
     var loggedIn = !!(KickComments.user && KickComments.user());
-    var form = IS_TOSS ? "" : '<div class="pf-write"><div class="pf-wrow"><select class="pf-wcat">' +
+    var form = IS_TOSS ? '<div class="bd-toss-note">✍️ 글쓰기는 토스 로그인 기능이 열리면 이용할 수 있어요. 지금은 읽기 · 좋아요 · 댓글은 자유롭게 가능해요.</div>' : '<div class="pf-write"><div class="pf-wrow"><select class="pf-wcat">' +
       fcats.map(function (c) { return '<option value="' + c + '"' + (boardCat === c ? " selected" : "") + ">" + c + "</option>"; }).join("") + "</select>" +
       (adm ? '<label class="pf-wpin"><input type="checkbox" class="pf-wpinned"> 📌공지</label>' : "") + "</div>" +
       '<div class="pf-wmain"><textarea class="pf-wbody' + (loggedIn ? "" : " locked") + '"' + (loggedIn ? "" : " readonly") + ' maxlength="2000" placeholder="' +
@@ -3594,7 +3594,7 @@
     if ((my = e.target.closest(".bd-cat"))) { boardCat = my.getAttribute("data-bcat"); renderBoard(); return; }
     if (e.target.closest(".pf-wbody.locked")) { if (window.KickComments) KickComments.promptLogin(); return; }
     if ((my = e.target.closest(".pf-like, .pf-dislike"))) {
-      if (!window.KickComments || !KickComments.user()) { if (window.KickComments) KickComments.promptLogin(); return; }
+      if (!window.KickComments) return;  // 익명도 좋아요 가능(기기별, anon_reactions) — 로그인 불요
       var ritem = my.closest(".pf-item"); if (!ritem) return;
       var rpid = ritem.getAttribute("data-pid"), rval = parseInt(my.getAttribute("data-rv"), 10);
       var rcur = (boardCache && boardCache.mine && boardCache.mine[rpid]) || 0;
