@@ -76,7 +76,7 @@ function buildBlock(map, fixById) {
   const now = Date.now();
   const pending = D.fixtures.filter(fx => {
     const ko = kickoff(fx); if (!ko) return false;
-    return now > ko + 150 * 60000 && fx.homeId && fx.awayId && !existing[fx.id];
+    return now > ko + 105 * 60000 && fx.homeId && fx.awayId && !existing[fx.id];  // 정규경기 종료 무렵부터 계속 검색(JTBC가 경기후 ~10분내 업로드) — 못 찾으면 다음 60초에 재시도
   });
   if (!pending.length) { if (DRY) console.log('[highlights] 대기 경기 없음'); process.exit(0); }
 
