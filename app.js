@@ -2407,6 +2407,7 @@
     "match-2": "https://chzzk.naver.com/video/13666274", // 대한민국-체코
     "match-7": "https://chzzk.naver.com/video/13680813", // 캐나다-보스니아 헤르체고비나
     "match-8": "https://chzzk.naver.com/video/13697795", // 카타르-스위스
+    "match-9": "https://chzzk.naver.com/video/13776758", // 스위스-보스니아 헤르체고비나
     "match-13": "https://chzzk.naver.com/video/13698656", // 브라질-모로코
     "match-14": "https://chzzk.naver.com/video/13699342", // 아이티-스코틀랜드
     "match-19": "https://chzzk.naver.com/video/13682431", // 미국-파라과이
