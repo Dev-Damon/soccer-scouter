@@ -917,31 +917,35 @@
     else head = "😢 자력 진출이 어려운 상황";
     html += '<div class="scn-head ' + (gtd(sLoss) || gtd(sDraw) || gtd(sWin) ? "q12" : (sWin.q || sDraw.q || sLoss.q) ? "p3" : "out") + '">' + head + "</div>";
 
-    // 결과별 카드 3장
-    html += '<div class="scn-cards">';
-    [["🇰🇷 이기면", sWin], ["🇰🇷 비기면", sDraw], ["🇰🇷 지면", sLoss]].forEach(function (kv) {
-      var s = kv[1], cls = s.q === s.total ? "q12" : s.q > 0 ? "p3" : "out";
-      var txt = s.q === s.total ? "✅ 진출 확정" : s.q > 0 ? "🟡 진출 가능" : "❌ 진출 불가";
-      html += '<div class="scn-card ' + cls + '"><div class="sc-k">' + kv[0] + '</div><div class="sc-v">' + txt + "</div>" + (s.q > 0 && s.q < s.total ? '<div class="sc-sub">' + s.q + "/" + s.total + " 경우</div>" : "") + "</div>";
-    });
-    html += "</div>";
+    // 현재 조 순위 미니테이블
+    html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(krGroup) + '조 순위</div><table class="scn-mini"><tbody>';
+    html += "<tr><td>순위</td>" + cur.map(function (r, i) { return "<td" + (r.id === KR ? ' class="kr"' : "") + ">" + (i + 1) + "위</td>"; }).join("") + "</tr>";
+    html += "<tr><td>국가</td>" + cur.map(function (r) { return "<td" + (r.id === KR ? ' class="kr"' : "") + ">" + esc((r.t || {}).flag || "") + " " + esc((r.t || {}).name || r.id) + "</td>"; }).join("") + "</tr>";
+    html += '<tr><td>승점</td>' + cur.map(function (r) { return '<td class="pt' + (r.id === KR ? " kr" : "") + '">' + r.s.pts + "</td>"; }).join("") + "</tr>";
+    html += "</tbody></table></div>";
 
-    // 매트릭스(다른 경기가 1개일 때) — 한 눈에 9칸
-    if (others.length === 1) {
-      var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
-      html += '<div class="scn-mtx"><h3>📊 경우의 수 한눈에</h3>';
-      html += '<div class="mtx-sub">가로 = ' + esc(oh.flag || "") + " " + esc(oh.name || of.homeId) + " vs " + esc(oa.flag || "") + " " + esc(oa.name || of.awayId) + " 결과</div>";
-      html += '<table class="mtx"><thead><tr><th class="mc-h">한국＼' + esc((opp.flag || "")) + '전</th><th>' + esc(oh.flag || "") + "승</th><th>무</th><th>" + esc(oa.flag || "") + "승</th></tr></thead><tbody>";
-      [["승", "win"], ["무", "draw"], ["패", "loss"]].forEach(function (kv) {
-        html += '<tr><th class="mc-h">' + kv[0] + "</th>";
-        ["h", "d", "a"].forEach(function (oo) {
-          var v = evalKr(kv[1], [oo]); var cls = (v.code === "q12" || v.code === "q3") ? "q" : v.code === "p3" ? "p" : "o";
-          html += '<td class="mc ' + cls + '">' + (cls === "q" ? "✅" : cls === "p" ? "🟡" : "❌") + "</td>";
-        });
-        html += "</tr>";
-      });
-      html += '</tbody></table><div class="mtx-leg">✅ 16강 진출 · 🟡 3위 경쟁(다른 조 결과 따라) · ❌ 탈락</div></div>';
-    }
+    // 마지막 경기 헤더
+    html += '<div class="scn-last">🏁 마지막 경기 · ' + flag + " 대한민국 vs " + esc(opp.flag || "") + " " + esc(opp.name || oppId) + "</div>";
+
+    // 번호별 시나리오 카드(설명형)
+    function rankRange(res) { var combos = scnEnum(others), mn = 9, mx = 0; combos.forEach(function (c) { var picks = {}; picks[krFx.id] = krOut(res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (r) { return r.id; }).indexOf(KR) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); }); return { mn: mn, mx: mx }; }
+    var leadId = cur[0].id;
+    var chaserMax = Math.max.apply(null, gids.filter(function (id) { return id !== KR && id !== leadId; }).map(function (id) { var s = scnStats(id); var rem = remaining.some(function (f) { return f.homeId === id || f.awayId === id; }); return s.pts + (rem ? 3 : 0); }).concat([0]));
+    [["승리", "win", 3], ["무승부", "draw", 1], ["패배", "loss", 0]].forEach(function (kv, idx) {
+      var res = kv[1], krPts = krS.pts + kv[2], s = res === "win" ? sWin : res === "draw" ? sDraw : sLoss, rr = rankRange(res);
+      var cls = s.q === s.total ? "q12" : s.q > 0 ? "p3" : "out";
+      var concl = s.q === s.total ? ("✅ 32강 진출 확정" + (rr.mx <= 2 ? " · 최소 조 " + rr.mx + "위" : "")) : s.q > 0 ? "🟡 다른 경기 결과 따라 진출 가능" : "❌ 탈락 가능성 큼";
+      var reason;
+      if (res === "win") reason = esc(opp.name || "남아공") + "을 이기면 승점 " + krPts + "점. 추격팀이 최대 " + chaserMax + "점이라 한국이 앞서 " + (rr.mx <= 2 ? "최소 조 " + rr.mx + "위로 직행합니다." : "유리합니다.");
+      else if (res === "draw") reason = "비기면 승점 " + krPts + "점. " + (s.q === s.total ? "체코·멕시코 결과와 무관하게 진출 확정." : "체코-멕시코 결과에 따라 갈립니다.");
+      else reason = "지면 승점 " + krPts + "점 유지. " + esc(opp.name || "남아공") + "이 이기고 체코가 멕시코를 이기면 한국이 밀려 탈락 가능. 조 3위(승점 " + krPts + ")로는 와일드카드 진출도 쉽지 않습니다.";
+      html += '<div class="scn-sc ' + cls + '"><div class="sc-no">' + (idx + 1) + '</div><div class="sc-body"><div class="sc-tit">' + esc(opp.name || "남아공") + "에 " + kv[0] + ' <span class="sc-pt">승점 ' + krPts + '</span></div><div class="sc-concl">' + concl + '</div><div class="sc-rsn">' + reason + "</div></div></div>";
+    });
+
+    // 한 줄 요약
+    html += '<div class="scn-sum"><div class="ss-h">📌 한 줄 요약</div>';
+    [["승리", sWin], ["무승부", sDraw], ["패배", sLoss]].forEach(function (kv, i) { var s = kv[1]; var t = s.q === s.total ? "32강 진출 확정" : s.q > 0 ? "결과 따라 진출 가능" : "탈락 가능성 큼"; html += '<div class="ss-row"><b>' + (i + 1) + ". " + esc(opp.name || "남아공") + "전 " + kv[0] + "</b> → " + t + "</div>"; });
+    html += "</div>";
 
     html += '<div class="muted-note" style="font-size:11px;margin-top:4px">※ 골득실 1골차 가정 · 다른 조 3위는 현재 순위 기준 추정</div>';
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';

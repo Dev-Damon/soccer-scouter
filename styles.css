@@ -1481,6 +1481,28 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .mtx .mc { text-align: center; font-size: 19px; padding: 11px 2px; border-radius: 7px; }
 .mtx .mc.q { background: rgba(46,207,131,.16); } .mtx .mc.p { background: rgba(245,179,1,.16); } .mtx .mc.o { background: rgba(229,87,77,.13); }
 .mtx-leg { font-size: 11px; color: var(--muted); margin-top: 10px; text-align: center; line-height: 1.5; }
+/* 535 스타일 — 순위표 + 번호별 시나리오 카드 */
+.scn-mini-wrap { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+.scn-mini-h { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.scn-mini { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.scn-mini td { font-size: 11.5px; text-align: center; padding: 6px 2px; border: 1px solid var(--line); color: var(--text); line-height: 1.3; }
+.scn-mini tr td:first-child { font-weight: 800; color: var(--muted); width: 44px; background: var(--card-2); }
+.scn-mini td.pt { font-weight: 800; }
+.scn-mini td.kr { background: rgba(79,140,255,.12); font-weight: 800; }
+.scn-last { text-align: center; font-size: 14px; font-weight: 800; color: var(--text); background: var(--card-2); border-radius: 10px; padding: 11px; margin-bottom: 14px; }
+.scn-sc { display: flex; gap: 11px; align-items: stretch; background: var(--card); border: 1.5px solid var(--line); border-left-width: 5px; border-radius: 11px; padding: 12px; margin-bottom: 10px; }
+.scn-sc.q12 { border-left-color: #2ecf83; } .scn-sc.p3 { border-left-color: #f5b301; } .scn-sc.out { border-left-color: #e5574d; }
+.scn-sc .sc-no { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+.scn-sc.q12 .sc-no { background: #2ecf83; } .scn-sc.p3 .sc-no { background: #f5b301; } .scn-sc.out .sc-no { background: #e5574d; }
+.scn-sc .sc-tit { font-size: 13.5px; font-weight: 800; color: var(--text); margin-bottom: 3px; }
+.scn-sc .sc-pt { font-size: 11px; font-weight: 800; color: var(--muted); background: var(--card-2); padding: 1px 6px; border-radius: 6px; margin-left: 4px; }
+.scn-sc .sc-concl { font-size: 13px; font-weight: 800; margin-bottom: 5px; }
+.scn-sc.q12 .sc-concl { color: #178a52; } .scn-sc.p3 .sc-concl { color: #b07d00; } .scn-sc.out .sc-concl { color: #c93d34; }
+.scn-sc .sc-rsn { font-size: 12px; color: var(--muted); line-height: 1.55; }
+.scn-sum { background: var(--card-2); border: 1px solid var(--line); border-radius: 11px; padding: 13px; margin-bottom: 8px; }
+.scn-sum .ss-h { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.scn-sum .ss-row { font-size: 12.5px; color: var(--text); line-height: 1.7; }
+.scn-sum .ss-row b { font-weight: 800; }
 .scn-note { background: var(--card-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
 .scn-cur { font-size: 14px; font-weight: 700; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
 .scn-self, .scn-sim { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
