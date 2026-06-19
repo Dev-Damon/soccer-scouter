@@ -1406,7 +1406,8 @@
   var PLAYER_GK = {};
   (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   // FIFA 랭킹 — fifa.json(scripts/update_fifa.js가 2h마다 갱신)에서 런타임 로드 → 토스도 재빌드 없이 최신 랭킹 반영.
-  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/fifa.json?b="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(!d) return; var ch=false; DATA.teams.forEach(function(t){ var e=d[t.id]; if(e==null) return; var r=(typeof e==="object")?e.r:e; if(r!=null && t.fifaRank!==r){ t.fifaRank=r; ch=true; } if(typeof e==="object"){ t.fifaPts=e.p; t.fifaCh=e.ch; } }); if(ch){ var h=parseHash(); if(h.name==="home"||h.name==="team"||h.name==="fifa") route(); } }).catch(function(){}); })();
+  var FIFA_TS = 0;  // FIFA 랭킹 갱신 시각(fifa.json _ts)
+  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/fifa.json?b="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(!d) return; if(d._ts) FIFA_TS=d._ts; var ch=false; DATA.teams.forEach(function(t){ var e=d[t.id]; if(e==null) return; var r=(typeof e==="object")?e.r:e; if(r!=null && t.fifaRank!==r){ t.fifaRank=r; ch=true; } if(typeof e==="object"){ t.fifaPts=e.p; t.fifaCh=e.ch; t.fifaChR=e.chR; } }); var h=parseHash(); if((ch||FIFA_TS) && (h.name==="home"||h.name==="team"||h.name==="fifa")) route(); }).catch(function(){}); })();
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -1749,14 +1750,20 @@
     if (pal === 8) return o >= 88 ? "#e11d48" : o >= 83 ? "#fb923c" : o >= 78 ? "#facc15" : "#94a3b8";           // 레드→옐로
     return null;
   }
-  // OVR 숫자 뱃지(?ovrbadge=N 미리보기) — 원 좌하단에 OVR 숫자(금/은/동색). "잘하는 선수"를 숫자로 직관 표시.
+  // OVR 숫자 뱃지(?ovrbadge=N 미리보기) — 원 하단 중앙(이름 안 가림). N=색상 모드.
   function ovrBadgeSvg(pid, px, py) {
     var mode = +((location.search.match(/[?&]ovrbadge=(\d)/) || [])[1] || 0); if (!mode) return "";
     var p = pid && playersById[pid], o = p && p.ovr; if (!o) return "";
-    var col = o >= 88 ? "#d4af37" : o >= 83 ? "#aeb6c2" : o >= 78 ? "#cd7f32" : "#6b7686";  // 금/은/동/철
-    var bx = px - 27, by = py + 5;
-    return '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="22" height="16" rx="3" fill="' + col + '" stroke="#0b1220" stroke-width="1"/>' +
-      '<text x="' + (bx + 11).toFixed(0) + '" y="' + (by + 12.2).toFixed(0) + '" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">' + o + "</text>";
+    var col;
+    if (mode === 1) col = o >= 88 ? "#d4af37" : o >= 83 ? "#aeb6c2" : o >= 78 ? "#cd7f32" : "#6b7686";      // 금/은/동/철
+    else if (mode === 2) col = o >= 88 ? "#7c3aed" : o >= 83 ? "#1f5fd6" : o >= 78 ? "#168a52" : "#64748b"; // 등급색
+    else if (mode === 3) col = "#0b1f4d";                                                                    // 단색(남색·FIFA식)
+    else if (mode === 4) col = o >= 86 ? "#16a34a" : o >= 80 ? "#84cc16" : o >= 74 ? "#f59e0b" : "#ea580c";  // 히트
+    else if (mode === 5) col = o >= 88 ? "#e11d48" : o >= 83 ? "#f97316" : o >= 78 ? "#0ea5e9" : "#64748b";  // 비비드
+    else col = "#0b1f4d";
+    var bx = px - 12, by = py + 6;  // 원 하단 중앙(이름 위) — 이름 안 가림
+    return '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="24" height="15" rx="3.5" fill="' + col + '" stroke="#fff" stroke-width="1"/>' +
+      '<text x="' + (bx + 12).toFixed(0) + '" y="' + (by + 11.5).toFixed(0) + '" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">' + o + "</text>";
   }
   // ===================== 경기 예상 (매치업) =====================
   function teamPower(t) {
