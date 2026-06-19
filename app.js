@@ -1853,10 +1853,20 @@
     var s = winA + winB + draw; winA /= s; winB /= s; draw /= s;
     var ga = Math.max(0, Math.round(1.35 + diff / 22));
     var gb = Math.max(0, Math.round(1.35 - diff / 22));
+    // 정수 합이 정확히 100이 되도록(최대잔여법) — 안 하면 게이지 끝이 1~2% 비거나 넘침
+    var pct = pct100([winA * 100, draw * 100, winB * 100]);
     return {
-      winA: Math.round(winA * 100), draw: Math.round(draw * 100), winB: Math.round(winB * 100),
+      winA: pct[0], draw: pct[1], winB: pct[2],
       ga: ga, gb: gb, pa: Math.round(pa), pb: Math.round(pb),
     };
+  }
+  // 실수 배열을 합 100인 정수 배열로 — 내림 후 잔여(소수부 큰 순)에 +1 분배
+  function pct100(vals) {
+    var fl = vals.map(function (v) { return Math.floor(v); });
+    var rem = 100 - fl.reduce(function (a, b) { return a + b; }, 0);
+    var idx = vals.map(function (v, i) { return { i: i, f: v - Math.floor(v) }; }).sort(function (a, b) { return b.f - a.f; });
+    for (var k = 0; k < rem && k < idx.length; k++) fl[idx[k].i]++;
+    return fl;
   }
   function cmpRow(label, va, vb) {
     va = va || 0; vb = vb || 0;
