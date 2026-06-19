@@ -1541,3 +1541,17 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .scn-verdict.out { background: rgba(229,87,77,.14); color: #d6453b; }
 .scn-tbl .third td { background: rgba(245,179,1,.08); }
 .scn-tbl .krrow td { font-weight: 800; box-shadow: inset 0 0 0 9999px rgba(79,140,255,.07); }
+
+/* 🌍 라이브 FIFA 랭킹 페이지 */
+.fifa-entry { background: var(--accent) !important; color: #fff !important; margin: 2px 0 14px; box-shadow: 0 2px 6px rgba(0,0,0,.12); }
+.tr-fifa { color: var(--accent); font-weight: 800; cursor: pointer; }
+.fifa-list { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.fifa-row { display: flex; align-items: center; gap: 11px; padding: 11px 13px; border-top: 1px solid var(--line); cursor: pointer; }
+.fifa-row:first-child { border-top: 0; }
+.fifa-row:active { background: rgba(255,255,255,.05); }
+.fifa-row .fr-rank { width: 30px; text-align: center; font-weight: 900; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fifa-row .fr-flag { font-size: 22px; }
+.fifa-row .fr-name { flex: 1; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fifa-row .fr-go { color: var(--muted); }
+.fifa-row.kr { background: rgba(79,140,255,.1); }
+.fifa-row.kr .fr-rank, .fifa-row.kr .fr-name { color: var(--accent); font-weight: 900; }
