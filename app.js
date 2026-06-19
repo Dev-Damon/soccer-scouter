@@ -183,6 +183,7 @@
     if (parts[0] === "team") return { name: "team", id: parts[1] };
     if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "manager") return { name: "manager", id: parts[1] };
+    if (parts[0] === "scenario") return { name: "scenario", id: parts[1] };
     if (parts[0] === "search") return { name: "search" };
     if (parts[0] === "board") return { name: "board" };
     if (parts[0] === "post") return { name: "post", id: parts[1] };
@@ -469,11 +470,13 @@
     }
     var ddayTap = nextKr ? ' data-match="' + esc(nextKr.id) + '"' : "";  // 클릭 시 다음 한국경기 상세로
     var witty = WITTY[wittyIdx];  // 현재 회전 중인 문구(렌더돼도 끊김 없이 이어짐)
+    var krGroupRemain = fxs.filter(isKoreaFx).filter(function (f) { return f.group && !matchEnded(f); }).length;  // 한국 조별 잔여경기 있을 때만 경우의수 노출(16강 확정/조별종료 시 자동 숨김)
     return '<div class="hero-banner">' +
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
       '<div class="hb-sub">' + esc(witty) + "</div>" +
-      '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div></div>";
+      '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div>" +
+      (krGroupRemain ? '<div class="hb-scn clickable" data-scngo>🇰🇷 한국 16강 진출 경우의 수 보기 ›</div>' : "") + "</div>";
   }
 
   // 위트 문구 3초마다 슬라이드 전환 — 렌더(날짜 클릭)와 '독립적'으로 타이머 1개만 돈다(클릭해도 리셋 X)
@@ -786,6 +789,7 @@
     var html = '<div class="adslot ad-top"></div><div class="stand-note">' +
       (hasData ? "조별 순위 · 결과 실시간 반영 · 1·2위 직행 + 각 조 3위 중 상위 8팀 진출" : "순위 불러오는 중… (개막 전이라 0)") +
       "</div>";
+    if ((DATA.fixtures || []).filter(isKoreaFx).filter(function (f) { return f.group && !matchEnded(f); }).length) html += '<div class="hb-scn clickable" data-scngo style="margin:2px 0 12px">🇰🇷 한국 16강 진출 경우의 수 →</div>';
     var thirds = [];
     groups.forEach(function (g) {
       var rows = (g.teamIds || []).map(function (id) {
@@ -825,6 +829,142 @@
     html += "</tbody></table></div>";
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     insertAdFit(viewEl.querySelector(".ad-top")); insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");  // 맨위 320x100 / 맨밑 320x50
+  }
+
+  // ===================== 🇰🇷 한국 16강 진출 경우의 수 (풀 시뮬레이터) =====================
+  // 2026 포맷: 각 조 1·2위 직행 + 12개 조 3위 중 상위 8팀 진출. 한국 조 남은 경기를 시뮬레이션하고,
+  // 3위 시 다른 11개 조 3위(현재 순위 기준)와 비교해 8위 이내인지 판정. 골득실은 '1골차' 가정.
+  var scenPick = {};  // {fixtureId: 'h'(홈승)|'d'(무)|'a'(원정승)}
+  var KR = "south-korea";
+  function scnStats(id) { var s = STAND[id]; return s ? { p: s.p, w: s.w, d: s.d, l: s.l, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts } : { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 }; }
+  function scnCmp(a, b) { return b.s.pts - a.s.pts || b.s.gd - a.s.gd || b.s.gf - a.s.gf || (((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999)); }
+  function scnApply(rows, fx, out) {  // 1골차 가정으로 결과 반영
+    var h = rows[fx.homeId], a = rows[fx.awayId]; if (!h || !a) return;
+    h.p++; a.p++;
+    if (out === "d") { h.d++; a.d++; h.pts++; a.pts++; }
+    else if (out === "h") { h.w++; a.l++; h.pts += 3; h.gf++; h.ga += 0; a.ga++; h.gd++; a.gd--; }
+    else { a.w++; h.l++; a.pts += 3; a.gf++; h.ga++; a.gd++; h.gd--; }
+  }
+  function scnSimGroup(gids, remaining, picks) {  // 조 최종 순위 산출
+    var rows = {}; gids.forEach(function (id) { rows[id] = scnStats(id); });
+    remaining.forEach(function (fx) { var o = picks[fx.id]; if (o) scnApply(rows, fx, o); });
+    var arr = gids.map(function (id) { return { id: id, t: teamsById[id], s: rows[id] }; });
+    arr.sort(scnCmp); return arr;
+  }
+  function scnThirdRank(krGroup, projectedKrThird) {  // 12개 조 3위 비교 → 한국(3위) 순위
+    var thirds = [];
+    (DATA.groups || []).forEach(function (g) {
+      if (g.group === krGroup) { if (projectedKrThird) thirds.push({ g: g.group, r: projectedKrThird }); return; }
+      var rows = (g.teamIds || []).map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
+      if (rows[2]) thirds.push({ g: g.group, r: rows[2] });
+    });
+    thirds.sort(function (a, b) { return scnCmp(a.r, b.r); });
+    return thirds;
+  }
+  // 한국 최종 결과 판정: 'q12'(1·2위 직행)/'q3'(3위·8위내 진출)/'p3'(3위·경쟁 탈락권)/'out'(4위)
+  function scnVerdict(krGroup, gids, remaining, picks) {
+    var fin = scnSimGroup(gids, remaining, picks);
+    var rank = fin.map(function (r) { return r.id; }).indexOf(KR) + 1;
+    if (rank <= 2) return { code: "q12", rank: rank, fin: fin };
+    if (rank === 4) return { code: "out", rank: rank, fin: fin };
+    var krRow = fin.filter(function (r) { return r.id === KR; })[0];
+    var thirds = scnThirdRank(krGroup, krRow);
+    var ti = thirds.map(function (o) { return o.r.id; }).indexOf(KR);
+    return { code: ti >= 0 && ti < 8 ? "q3" : "p3", rank: 3, thirdRank: ti + 1, fin: fin };
+  }
+  function renderScenario() {
+    setTabbar("");
+    if (!DATA.groups || !teamsById[KR]) { viewEl.innerHTML = '<div class="empty">데이터를 불러오는 중입니다.</div>'; return; }
+    fetchStandings();
+    var krGroup = teamsById[KR].group;
+    var g = DATA.groups.filter(function (x) { return x.group === krGroup; })[0];
+    var gids = (g && g.teamIds) || [];
+    var allFx = (DATA.fixtures || []).filter(function (f) { return gids.indexOf(f.homeId) >= 0 && gids.indexOf(f.awayId) >= 0; });
+    var remaining = allFx.filter(function (f) { return !matchEnded(f); });
+    var cur = gids.map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
+    var krRank = cur.map(function (r) { return r.id; }).indexOf(KR) + 1;
+    var krS = scnStats(KR);
+    var flag = (teamsById[KR] || {}).flag || "🇰🇷";
+
+    var html = '<div class="sec-h">🇰🇷 한국 16강 진출 경우의 수</div>';
+    html += '<div class="scn-note">2026 월드컵: 각 조 <b>1·2위 직행</b> + 12개 조 <b>3위 중 상위 8팀</b> 16강 진출. ' + esc(krGroup) + '조 남은 경기로 계산합니다. <span class="muted-note">(골득실은 1골차 가정·다른 조 3위는 현재 순위 기준 추정)</span></div>';
+
+    // 현재 상황
+    html += '<div class="scn-cur">' + flag + ' 현재 <b>' + esc(krGroup) + '조 ' + krRank + '위</b> · 승점 ' + krS.pts + ' · 득실 ' + (krS.gd > 0 ? "+" : "") + krS.gd + ' · ' + krS.p + '경기 / 남은 ' + remaining.filter(function (f) { return f.homeId === KR || f.awayId === KR; }).length + '경기</div>';
+
+    if (!remaining.length) {
+      var done = scnVerdict(krGroup, gids, remaining, {});
+      html += '<div class="scn-verdict ' + done.code + '">' + scnVerdictText(done) + "</div>";
+      viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
+      insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
+      bindScenClicks(krGroup, gids, remaining); return;
+    }
+
+    // 자력 요약: 한국 다음 경기 승/무/패별 결론(나머지 경기 모든 경우의 수 종합)
+    var krFx = remaining.filter(function (f) { return f.homeId === KR || f.awayId === KR; })[0];
+    var others = remaining.filter(function (f) { return f !== krFx; });
+    if (krFx) {
+      var krHome = krFx.homeId === KR, oppId = krHome ? krFx.awayId : krFx.homeId, opp = teamsById[oppId] || {};
+      html += '<div class="scn-self"><h3>📋 한국 다음 경기 — vs ' + esc(opp.flag || "") + " " + esc(opp.name || oppId) + '</h3>';
+      [["승", krHome ? "h" : "a"], ["무", "d"], ["패", krHome ? "a" : "h"]].forEach(function (kv) {
+        var label = kv[0], krOut = kv[1];
+        var combos = scnEnum(others), q = 0, total = combos.length || 1;
+        combos.forEach(function (cmb) { var picks = {}; picks[krFx.id] = krOut; others.forEach(function (f, i) { picks[f.id] = cmb[i]; }); var v = scnVerdict(krGroup, gids, remaining, picks); if (v.code === "q12" || v.code === "q3") q++; });
+        var cls = q === total ? "q12" : q > 0 ? "p3" : "out";
+        var concl = q === total ? "✅ 진출 확정" : q > 0 ? "🟡 진출 가능 (" + q + "/" + total + " 경우)" : "❌ 진출 불가";
+        html += '<div class="scn-self-row ' + cls + '"><span class="ss-k">' + label + '</span><span class="ss-v">' + concl + "</span></div>";
+      });
+      html += '<div class="muted-note" style="margin-top:6px;font-size:11px">※ "가능"은 같은 조 다른 경기 결과에 따라 갈림 — 아래 시뮬레이터로 확인하세요.</div></div>';
+    }
+
+    // 인터랙티브 시뮬레이터
+    html += '<div class="scn-sim"><h3>🎮 직접 돌려보기 <span class="muted-note">결과를 눌러보세요</span></h3>';
+    remaining.forEach(function (f) {
+      var h = teamsById[f.homeId] || {}, a = teamsById[f.awayId] || {}, pk = scenPick[f.id];
+      html += '<div class="scn-m"><div class="scn-m-t">' + esc(h.flag || "") + " " + esc(h.name || f.homeId) + " vs " + esc(a.flag || "") + " " + esc(a.name || f.awayId) + (f.homeId === KR || f.awayId === KR ? ' <span class="scn-krtag">한국</span>' : "") + "</div>" +
+        '<div class="scn-btns">' +
+        '<button class="scn-b' + (pk === "h" ? " on" : "") + '" data-scen-pick="' + esc(f.id) + '|h">' + esc((h.flag || "") + " 승") + "</button>" +
+        '<button class="scn-b' + (pk === "d" ? " on" : "") + '" data-scen-pick="' + esc(f.id) + '|d">무</button>' +
+        '<button class="scn-b' + (pk === "a" ? " on" : "") + '" data-scen-pick="' + esc(f.id) + '|a">' + esc((a.flag || "") + " 승") + "</button>" +
+        "</div></div>";
+    });
+    var allPicked = remaining.every(function (f) { return scenPick[f.id]; });
+    html += '<div class="scn-result">';
+    if (allPicked) {
+      var v = scnVerdict(krGroup, gids, remaining, scenPick);
+      html += '<div class="scn-verdict ' + v.code + '">' + scnVerdictText(v) + "</div>";
+      html += '<table class="stand scn-tbl"><thead><tr><th class="c">#</th><th>팀</th><th>승점</th><th>득실</th></tr></thead><tbody>';
+      v.fin.forEach(function (r, i) { html += '<tr class="' + (i < 2 ? "qual" : i === 2 ? "third" : "") + (r.id === KR ? " krrow" : "") + '"><td class="c rk">' + (i + 1) + '</td><td class="tm"><span class="team-flag">' + esc((r.t || {}).flag || "🏳️") + '</span><span class="tm-n">' + esc((r.t || {}).name || r.id) + '</span></td><td class="pts">' + r.s.pts + "</td><td>" + (r.s.gd > 0 ? "+" : "") + r.s.gd + "</td></tr>"; });
+      html += "</tbody></table>";
+    } else {
+      html += '<div class="muted-note">남은 경기 결과를 모두 선택하면 한국 순위·진출 여부가 계산됩니다.</div>';
+    }
+    html += "</div></div>";
+
+    viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
+    insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
+    bindScenClicks(krGroup, gids, remaining);
+  }
+  function scnVerdictText(v) {
+    if (v.code === "q12") return "✅ " + v.rank + "위로 16강 직행!";
+    if (v.code === "q3") return "✅ 3위 — 3위 팀 중 " + v.thirdRank + "위로 16강 진출! (상위 8팀)";
+    if (v.code === "p3") return "🟡 3위 — 3위 팀 중 " + v.thirdRank + "위, 현재로선 진출권(8위) 밖. 다른 조 결과 따라 달라질 수 있음";
+    return "❌ 4위 — 탈락";
+  }
+  function scnEnum(fxs) {  // 남은 경기들의 모든 결과 조합 (3^n)
+    if (!fxs.length) return [[]];
+    var rest = scnEnum(fxs.slice(1)), out = [];
+    ["h", "d", "a"].forEach(function (o) { rest.forEach(function (r) { out.push([o].concat(r)); }); });
+    return out;
+  }
+  function bindScenClicks(krGroup, gids, remaining) {
+    Array.prototype.forEach.call(viewEl.querySelectorAll("[data-scen-pick]"), function (b) {
+      b.addEventListener("click", function () {
+        var pv = b.getAttribute("data-scen-pick").split("|");
+        scenPick[pv[0]] = scenPick[pv[0]] === pv[1] ? null : pv[1];  // 같은 거 다시 누르면 해제
+        if (parseHash().name === "scenario") renderScenario();
+      });
+    });
   }
 
   // ===================== 공통: 선수 행 =====================
@@ -3311,6 +3451,7 @@
     if (r.name === "team") { setTabbar(""); renderTeam(r.id); mountCmt("team:" + r.id); return; }
     if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); bumpEngage(); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
+    if (r.name === "scenario") { setTabbar(""); return renderScenario(r.id); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;
       return renderSearch(searchEl.value);
@@ -3544,6 +3685,7 @@
     var rgo = e.target.closest("[data-rate-go]"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
     var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
+    var sg = e.target.closest("[data-scngo]"); if (sg) { go("scenario"); return; }  // 한국 경우의 수 진입
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");

@@ -1454,3 +1454,31 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .kki-step b { margin: 0 2px; }
 .kki-sn { width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .kki-ios-close { margin-top: 16px; width: 100%; background: var(--accent); color: #fff; font-weight: 800; font-size: 14px; padding: 11px; border: 0; border-radius: 10px; cursor: pointer; }
+
+/* 🇰🇷 한국 진출 경우의 수 페이지 */
+.hb-scn { margin-top: 8px; display: inline-block; background: rgba(255,255,255,.18); color: #fff; font-weight: 800; font-size: 13px; padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.group-card + .hb-scn, .stand-note + .hb-scn { background: var(--accent); color: #fff; }  /* 조별탭(밝은 배경)용 */
+.hb-scn:active { filter: brightness(.95); }
+.scn-note { background: var(--card-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
+.scn-cur { font-size: 14px; font-weight: 700; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.scn-self, .scn-sim { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
+.scn-self h3, .scn-sim h3 { font-size: 14px; font-weight: 800; margin: 0 0 10px; color: var(--text); }
+.scn-self-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; border-radius: 9px; margin-bottom: 6px; font-size: 13.5px; }
+.scn-self-row .ss-k { font-weight: 800; width: 34px; }
+.scn-self-row.q12 { background: rgba(46,207,131,.13); } .scn-self-row.q12 .ss-v { color: #1c8b56; font-weight: 800; }
+.scn-self-row.p3 { background: rgba(245,179,1,.13); } .scn-self-row.p3 .ss-v { color: #b8860b; font-weight: 800; }
+.scn-self-row.out { background: rgba(229,87,77,.12); } .scn-self-row.out .ss-v { color: #d6453b; font-weight: 800; }
+.scn-m { padding: 10px 0; border-top: 1px solid var(--line); }
+.scn-m:first-of-type { border-top: 0; }
+.scn-m-t { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.scn-krtag { background: var(--accent); color: #fff; font-size: 10px; font-weight: 800; padding: 1px 6px; border-radius: 6px; margin-left: 4px; }
+.scn-btns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.scn-b { background: var(--card-2); border: 1px solid var(--line); border-radius: 8px; padding: 9px 4px; font-size: 12.5px; font-weight: 700; color: var(--text); cursor: pointer; }
+.scn-b.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+.scn-result { margin-top: 12px; }
+.scn-verdict { font-size: 15px; font-weight: 800; text-align: center; padding: 14px; border-radius: 10px; margin-bottom: 10px; line-height: 1.5; }
+.scn-verdict.q12, .scn-verdict.q3 { background: rgba(46,207,131,.15); color: #1c8b56; }
+.scn-verdict.p3 { background: rgba(245,179,1,.15); color: #b8860b; }
+.scn-verdict.out { background: rgba(229,87,77,.14); color: #d6453b; }
+.scn-tbl .third td { background: rgba(245,179,1,.08); }
+.scn-tbl .krrow td { font-weight: 800; box-shadow: inset 0 0 0 9999px rgba(79,140,255,.07); }
