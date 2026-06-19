@@ -1566,7 +1566,7 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .sc-bd-row .bd-l { color: var(--text); font-weight: 600; }
 .sc-bd-row .bd-v { font-weight: 800; font-size: 11.5px; }
 .sc-bd-row .bd-v.q { color: #178a52; } .sc-bd-row .bd-v.p { color: #b07d00; } .sc-bd-row .bd-v.o { color: #c93d34; }
-table.stand2 td.gd, table.stand2 th.gd { text-align: right; padding-right: 5px; }  /* 득실 우측정렬 — +/- 부호 자릿수 정렬 */
+table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다른 칼럼과 동일 가운데정렬(헤더·값 일치) */
 /* FIFA 랭킹 — 변동화살표·More·펼침 */
 .fifa-rowwrap { border-top: 1px solid var(--line); }
 .fifa-rowwrap:first-child { border-top: 0; }
