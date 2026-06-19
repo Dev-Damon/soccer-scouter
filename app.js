@@ -1972,13 +1972,13 @@
           '<div class="vs-team" data-team="' + esc(b.id) + '"><span class="vs-flag">' + esc(b.flag) + "</span>" +
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
         "</div>" +
-        '<div class="vs-goals"></div>' +  /* 골 표기는 몸값비교 위에(스코어 바로 아래) */
+        '<div class="vs-goals"></div>' +  /* 골 표기는 스코어 바로 아래 */
+        '<div class="block pred-slot"></div>' +  /* 승부예상을 몸값비교 위로 */
+        '<div class="block bet-slot"></div>' +
         mvCompareHtml(a, b) +
         '<div class="live-btn-slot"></div>' +  /* 라이브 중(치지직 JTBC 송출 감지)이면 updScore가 버튼 채움 */
         ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx) && !IS_TOSS) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +  /* 토스모드는 외부링크(치지직) 제거 */
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
-        '<div class="block pred-slot"></div>' +
-        '<div class="block bet-slot"></div>' +
         '<div class="adslot"></div>' +
         '<div class="block h2h-slot"></div>' +
         '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
