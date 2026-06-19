@@ -576,9 +576,8 @@
     var listHtml = '<div class="sec-h">' + fmtDate(selectedDate).d + " " +
       (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
       ' · ' + dayFixtures.length + '경기 <span class="kst-note">한국시간</span></div>';
+    listHtml += '<div class="adslot home-ad"></div>';  // 날짜 헤딩 바로 아래 광고(320x100)
     dayFixtures.forEach(function (fx) { if ((!hero || fx !== hero) && !isLiveOrBcast(fx)) listHtml += fixtureCard(fx); });  // 라이브/방송중 경기는 상단 라이브카드에만
-
-    listHtml += '<div class="adslot home-ad"></div>';
     // 주요 소식 (팀 뉴스가 있을 때만)
     var hn = homeNews(8);
     if (hn.length) {
