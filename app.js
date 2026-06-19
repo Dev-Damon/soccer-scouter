@@ -692,7 +692,7 @@
       : live
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 중 ' + esc(lv.clock || "") + "</span></div>"  // 빅매치는 라이브 강조 X(전용 라이브카드가 위에 있음)
       : ended
-      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 종료' + (fxTime(fx) ? " · " + esc(fxTime(fx)) : "") + "</span></div>"
+      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">' + (fxTime(fx) ? esc(fxTime(fx)) : "종료") + "</span></div>"
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
     var lvG = teamGoals(fx, lv, lName, "l"), rvG = teamGoals(fx, lv, rName, "r");  // 좌/우 팀별 득점자(가운데로 수렴)
     return '<div class="hero' + (live && asLiveCard ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
@@ -744,7 +744,7 @@
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-score">' + (lScore | 0) + ' <i>-</i> ' + (rScore | 0) + "</span>" +
         (live ? '<span class="fx-live"><span class="lv-dot"></span>' + liveClk(lv.clock) + "</span>"
-              : '<span class="fx-final">종료' + (fxTime(fx) ? " · " + esc(fxTime(fx)) : "") + "</span>");
+              : '<span class="fx-final">' + (fxTime(fx) ? esc(fxTime(fx)) : "종료") + "</span>");
     } else {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-time">' + timeLabel + '</span><span class="fx-vs">VS</span>';
