@@ -788,7 +788,7 @@
   // 공용 순위표(사진형): #·팀·경기·승·무·패·득·실·득실·승점·최근5. opt.group=조컬럼, opt.thirds=상위8 강조
   function standTableHTML(rows, opt) {
     opt = opt || {};
-    var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th>득실</th><th class=\"pts\">승점</th></tr></thead><tbody>";
+    var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th class=\"gd\">득실</th><th class=\"pts\">승점</th></tr></thead><tbody>";
     rows.forEach(function (row, i) {
       var t = row.t, s = row.s, id = row.id, grp = row.g;
       if (row.r) { t = row.r.t; s = row.r.s; id = row.r.id; }  // 3위표 형태 {g, r:{...}}
@@ -798,7 +798,7 @@
         '<td class="c rk">' + (i + 1) + "</td>" +
         '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span></td>" +
         (opt.group ? '<td class="c">' + esc(grp) + "</td>" : "") +
-        "<td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + "</td><td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
+        "<td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + '</td><td class="gd">' + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
     });
     return '<div class="stand-scroll">' + h + "</tbody></table></div>";
   }
