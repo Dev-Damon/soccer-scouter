@@ -3533,6 +3533,7 @@
     });
   }
   function route() {
+    var _kb = document.getElementById("kt-boot"); if (_kb) _kb.remove();  // 첫 렌더 시 부팅 스플래시 제거
     var r = parseHash();
     // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위.
     var _restoreY = (_isPop && _scrollMem.hasOwnProperty(hkey())) ? (_scrollMem[hkey()] || 0) : 0;

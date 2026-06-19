@@ -1582,3 +1582,9 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다
 .fde-sc { font-weight: 800; font-variant-numeric: tabular-nums; }
 .fde-sc.w { color: #2ecf83; } .fde-sc.l { color: #e5574d; } .fde-sc.d { color: var(--muted); }
 .fde-empty { color: var(--muted); font-size: 12px; padding: 6px 0; }
+/* 부팅 로딩 스플래시 */
+.kt-boot { position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.kt-boot-logo { font-size: 50px; line-height: 1; }
+.kt-boot-name { font-size: 20px; font-weight: 900; color: var(--text); }
+.kt-boot-spin { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: ktspin .8s linear infinite; margin-top: 4px; }
+@keyframes ktspin { to { transform: rotate(360deg); } }
