@@ -862,7 +862,19 @@
   var scenPick = {};  // {fixtureId: 'h'(홈승)|'d'(무)|'a'(원정승)}
   var KR = "south-korea";
   function scnStats(id) { var s = STAND[id]; return s ? { p: s.p, w: s.w, d: s.d, l: s.l, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts } : { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 }; }
-  function scnCmp(a, b) { return b.s.pts - a.s.pts || b.s.gd - a.s.gd || b.s.gf - a.s.gf || (((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999)); }
+  // 두 팀 맞대결 결과(승자승) — 이미 치른 경기 기준. A 우선=-1, B 우선=1, 없으면 0
+  function scnH2H(idA, idB) {
+    var fx = (DATA.fixtures || []).filter(function (f) { return (f.homeId === idA && f.awayId === idB) || (f.homeId === idB && f.awayId === idA); }).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "post" && lv.hs != null; })[0];
+    if (!fx) return 0;
+    var lv = LIVE[fx.id], aS = fx.homeId === idA ? lv.hs : lv.as, bS = fx.homeId === idA ? lv.as : lv.hs;
+    return aS > bS ? -1 : aS < bS ? 1 : 0;
+  }
+  function scnCmp(a, b) {
+    var d = (b.s.pts - a.s.pts) || (b.s.gd - a.s.gd) || (b.s.gf - a.s.gf);
+    if (d) return d;
+    var h = scnH2H(a.id, b.id); if (h) return h;  // 승점·득실·득점 동일 → 승자승
+    return ((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999);
+  }
   function scnApply(rows, fx, out) {  // 1골차 가정으로 결과 반영
     var h = rows[fx.homeId], a = rows[fx.awayId]; if (!h || !a) return;
     h.p++; a.p++;
