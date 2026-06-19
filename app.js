@@ -788,7 +788,7 @@
   // 공용 순위표(사진형): #·팀·경기·승·무·패·득·실·득실·승점·최근5. opt.group=조컬럼, opt.thirds=상위8 강조
   function standTableHTML(rows, opt) {
     opt = opt || {};
-    var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>경기</th><th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th>득실</th><th class=\"pts\">승점</th></tr></thead><tbody>";
+    var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th>득실</th><th class=\"pts\">승점</th></tr></thead><tbody>";
     rows.forEach(function (row, i) {
       var t = row.t, s = row.s, id = row.id, grp = row.g;
       if (row.r) { t = row.r.t; s = row.r.s; id = row.r.id; }  // 3위표 형태 {g, r:{...}}
@@ -798,7 +798,7 @@
         '<td class="c rk">' + (i + 1) + "</td>" +
         '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span></td>" +
         (opt.group ? '<td class="c">' + esc(grp) + "</td>" : "") +
-        "<td>" + s.p + "</td><td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + "</td><td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
+        "<td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + "</td><td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
     });
     return '<div class="stand-scroll">' + h + "</tbody></table></div>";
   }
@@ -959,8 +959,19 @@
       var reason;
       if (res === "win") reason = esc(opp.name || "남아공") + "을 이기면 승점 " + krPts + "점. 추격팀이 최대 " + chaserMax + "점이라 한국이 앞서 " + (rr.mx <= 2 ? "최소 조 " + rr.mx + "위로 직행합니다." : "유리합니다.");
       else if (res === "draw") reason = "비기면 승점 " + krPts + "점. " + (s.q === s.total ? "체코·멕시코 결과와 무관하게 진출 확정." : "체코-멕시코 결과에 따라 갈립니다.");
-      else reason = "지면 승점 " + krPts + "점 유지. " + esc(opp.name || "남아공") + "이 이기고 체코가 멕시코를 이기면 한국이 밀려 탈락 가능. 조 3위(승점 " + krPts + ")로는 와일드카드 진출도 쉽지 않습니다.";
-      html += '<div class="scn-sc ' + cls + '"><div class="sc-no">' + (idx + 1) + '</div><div class="sc-body"><div class="sc-tit">' + esc(opp.name || "남아공") + "에 " + kv[0] + ' <span class="sc-pt">승점 ' + krPts + '</span></div><div class="sc-concl">' + concl + '</div><div class="sc-rsn">' + reason + "</div></div></div>";
+      else reason = "지면 승점 " + krPts + "점 유지. 조 3위(승점 " + krPts + ")로는 12개 조 3위 중 8팀 안에 들기 어렵습니다. 다른 경기(체코-멕시코) 결과별로:";
+      // 결과에 따라 갈리는 경우 → 다른 경기 결과별 세부 분기 표시(레퍼런스 스타일)
+      var bd = "";
+      if (others.length === 1 && s.q > 0 && s.q < s.total) {
+        var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
+        bd = '<div class="sc-bd">';
+        [["h", esc(oh.flag || "") + " " + esc(oh.name || of.homeId) + " 승"], ["d", "무승부"], ["a", esc(oa.flag || "") + " " + esc(oa.name || of.awayId) + " 승"]].forEach(function (oc) {
+          var v = evalKr(res, [oc[0]]), q = (v.code === "q12" || v.code === "q3");
+          bd += '<div class="sc-bd-row"><span class="bd-l">' + oc[1] + '</span><span class="bd-v ' + (q ? "q" : v.code === "p3" ? "p" : "o") + '">' + (q ? "✅ 진출" : v.code === "p3" ? "🟡 3위 경쟁" : "❌ 탈락") + "</span></div>";
+        });
+        bd += "</div>";
+      }
+      html += '<div class="scn-sc ' + cls + '"><div class="sc-no">' + (idx + 1) + '</div><div class="sc-body"><div class="sc-tit">' + esc(opp.name || "남아공") + "에 " + kv[0] + ' <span class="sc-pt">승점 ' + krPts + '</span></div><div class="sc-concl">' + concl + '</div><div class="sc-rsn">' + reason + "</div>" + bd + "</div></div>";
     });
 
     // 한 줄 요약
