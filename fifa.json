@@ -1,50 +1,242 @@
 {
- "mexico": 13,
- "south-africa": 61,
- "south-korea": 22,
- "czech-republic": 44,
- "canada": 28,
- "bosnia-and-herzegovina": 64,
- "qatar": 58,
- "switzerland": 19,
- "brazil": 5,
- "morocco": 6,
- "haiti": 85,
- "scotland": 37,
- "united-states": 15,
- "paraguay": 42,
- "australia": 23,
- "turkey": 26,
- "germany": 9,
- "curacao": 83,
- "ivory-coast": 31,
- "ecuador": 29,
- "netherlands": 8,
- "japan": 17,
- "sweden": 34,
- "tunisia": 54,
- "belgium": 10,
- "egypt": 30,
- "iran": 24,
- "new-zealand": 82,
- "spain": 3,
- "cape-verde": 63,
- "saudi-arabia": 59,
- "uruguay": 18,
- "france": 2,
- "senegal": 16,
- "iraq": 60,
- "norway": 27,
- "argentina": 1,
- "algeria": 32,
- "austria": 21,
- "jordan": 68,
- "portugal": 7,
- "dr-congo": 43,
- "uzbekistan": 55,
- "colombia": 11,
- "england": 4,
- "croatia": 14,
- "ghana": 65,
- "panama": 40
+ "mexico": {
+  "r": 13,
+  "p": 1700.98,
+  "ch": 13.5
+ },
+ "south-africa": {
+  "r": 61,
+  "p": 1418.21,
+  "ch": -10.17
+ },
+ "south-korea": {
+  "r": 22,
+  "p": 1612.55,
+  "ch": 20.92
+ },
+ "czech-republic": {
+  "r": 44,
+  "p": 1481.49,
+  "ch": -24.25
+ },
+ "canada": {
+  "r": 28,
+  "p": 1572.13,
+  "ch": 12.65
+ },
+ "bosnia-and-herzegovina": {
+  "r": 64,
+  "p": 1381.18,
+  "ch": -6.04
+ },
+ "qatar": {
+  "r": 58,
+  "p": 1438.82,
+  "ch": -11.49
+ },
+ "switzerland": {
+  "r": 19,
+  "p": 1654.94,
+  "ch": 4.88
+ },
+ "brazil": {
+  "r": 5,
+  "p": 1765.34,
+  "ch": -0.52
+ },
+ "morocco": {
+  "r": 6,
+  "p": 1755.62,
+  "ch": 0.52
+ },
+ "haiti": {
+  "r": 85,
+  "p": 1277.67,
+  "ch": -15.43
+ },
+ "scotland": {
+  "r": 37,
+  "p": 1518.77,
+  "ch": 15.43
+ },
+ "united-states": {
+  "r": 15,
+  "p": 1688.53,
+  "ch": 17.3
+ },
+ "paraguay": {
+  "r": 42,
+  "p": 1488.05,
+  "ch": -17.3
+ },
+ "australia": {
+  "r": 23,
+  "p": 1605.6,
+  "ch": 26.26
+ },
+ "turkey": {
+  "r": 26,
+  "p": 1579.47,
+  "ch": -26.26
+ },
+ "germany": {
+  "r": 9,
+  "p": 1743.54,
+  "ch": 7.77
+ },
+ "curacao": {
+  "r": 83,
+  "p": 1287,
+  "ch": -7.77
+ },
+ "ivory-coast": {
+  "r": 31,
+  "p": 1568.62,
+  "ch": 27.75
+ },
+ "ecuador": {
+  "r": 29,
+  "p": 1570.77,
+  "ch": -27.75
+ },
+ "netherlands": {
+  "r": 8,
+  "p": 1749.2,
+  "ch": -4.37
+ },
+ "japan": {
+  "r": 17,
+  "p": 1665.95,
+  "ch": 4.37
+ },
+ "sweden": {
+  "r": 34,
+  "p": 1533.19,
+  "ch": 23.4
+ },
+ "tunisia": {
+  "r": 54,
+  "p": 1453.01,
+  "ch": -23.4
+ },
+ "belgium": {
+  "r": 10,
+  "p": 1733.94,
+  "ch": -8.3
+ },
+ "egypt": {
+  "r": 30,
+  "p": 1570.67,
+  "ch": 8.3
+ },
+ "iran": {
+  "r": 24,
+  "p": 1605.12,
+  "ch": -14.46
+ },
+ "new-zealand": {
+  "r": 82,
+  "p": 1290.04,
+  "ch": 14.46
+ },
+ "spain": {
+  "r": 3,
+  "p": 1856.03,
+  "ch": -18.68
+ },
+ "cape-verde": {
+  "r": 63,
+  "p": 1389.79,
+  "ch": 18.68
+ },
+ "saudi-arabia": {
+  "r": 59,
+  "p": 1435,
+  "ch": 11.12
+ },
+ "uruguay": {
+  "r": 18,
+  "p": 1661.95,
+  "ch": -11.12
+ },
+ "france": {
+  "r": 2,
+  "p": 1887.11,
+  "ch": 16.41
+ },
+ "senegal": {
+  "r": 16,
+  "p": 1667.66,
+  "ch": -16.41
+ },
+ "iraq": {
+  "r": 60,
+  "p": 1426.53,
+  "ch": -19.75
+ },
+ "norway": {
+  "r": 27,
+  "p": 1577.19,
+  "ch": 19.75
+ },
+ "argentina": {
+  "r": 1,
+  "p": 1889.07,
+  "ch": 11.8
+ },
+ "algeria": {
+  "r": 32,
+  "p": 1559.23,
+  "ch": -11.8
+ },
+ "austria": {
+  "r": 21,
+  "p": 1612.85,
+  "ch": 15.45
+ },
+ "jordan": {
+  "r": 68,
+  "p": 1372.29,
+  "ch": -15.45
+ },
+ "portugal": {
+  "r": 7,
+  "p": 1755.09,
+  "ch": -12.76
+ },
+ "dr-congo": {
+  "r": 43,
+  "p": 1487.19,
+  "ch": 12.76
+ },
+ "uzbekistan": {
+  "r": 55,
+  "p": 1444.48,
+  "ch": -14.25
+ },
+ "colombia": {
+  "r": 11,
+  "p": 1712.6,
+  "ch": 14.25
+ },
+ "england": {
+  "r": 4,
+  "p": 1847.68,
+  "ch": 19.66
+ },
+ "croatia": {
+  "r": 14,
+  "p": 1695.21,
+  "ch": -19.66
+ },
+ "ghana": {
+  "r": 65,
+  "p": 1380.71,
+  "ch": 33.83
+ },
+ "panama": {
+  "r": 40,
+  "p": 1505.33,
+  "ch": -33.83
+ }
 }
