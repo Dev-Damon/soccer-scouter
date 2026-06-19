@@ -1456,9 +1456,31 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .kki-ios-close { margin-top: 16px; width: 100%; background: var(--accent); color: #fff; font-weight: 800; font-size: 14px; padding: 11px; border: 0; border-radius: 10px; cursor: pointer; }
 
 /* 🇰🇷 한국 진출 경우의 수 페이지 */
-.hb-scn { margin-top: 8px; display: inline-block; background: rgba(255,255,255,.18); color: #fff; font-weight: 800; font-size: 13px; padding: 8px 14px; border-radius: 999px; cursor: pointer; }
-.group-card + .hb-scn, .stand-note + .hb-scn { background: var(--accent); color: #fff; }  /* 조별탭(밝은 배경)용 */
+.hb-scn { margin-top: 10px; display: inline-block; background: #fff; color: #1f5fd6; font-weight: 800; font-size: 13px; padding: 9px 15px; border-radius: 999px; cursor: pointer; box-shadow: 0 2px 7px rgba(0,0,0,.18); }  /* 파란 배너 위 흰 알약(고대비) */
+.stand-note + .hb-scn { background: var(--accent); color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.12); }  /* 조별탭(밝은 배경)용 */
 .hb-scn:active { filter: brightness(.95); }
+.scn-head { font-size: 16px; font-weight: 900; text-align: center; padding: 15px 12px; border-radius: 12px; margin-bottom: 14px; line-height: 1.45; }
+.scn-head.q12 { background: rgba(46,207,131,.16); color: #178a52; }
+.scn-head.p3 { background: rgba(245,179,1,.16); color: #b07d00; }
+.scn-head.out { background: rgba(229,87,77,.14); color: #c93d34; }
+.scn-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+.scn-card { border-radius: 12px; padding: 13px 8px; text-align: center; border: 1.5px solid var(--line); background: var(--card); }
+.scn-card.q12 { border-color: #2ecf83; background: rgba(46,207,131,.1); }
+.scn-card.p3 { border-color: #f5b301; background: rgba(245,179,1,.1); }
+.scn-card.out { border-color: #e5574d; background: rgba(229,87,77,.09); }
+.scn-card .sc-k { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 7px; }
+.scn-card .sc-v { font-size: 13px; font-weight: 800; }
+.scn-card.q12 .sc-v { color: #178a52; } .scn-card.p3 .sc-v { color: #b07d00; } .scn-card.out .sc-v { color: #c93d34; }
+.scn-card .sc-sub { font-size: 10.5px; color: var(--muted); margin-top: 3px; font-weight: 700; }
+.scn-mtx { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+.scn-mtx h3 { font-size: 14px; font-weight: 800; margin: 0 0 4px; color: var(--text); }
+.scn-mtx .mtx-sub { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; }
+.mtx { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.mtx th { font-size: 12px; font-weight: 800; color: var(--text); padding: 7px 2px; text-align: center; }
+.mtx th.mc-h { background: var(--card-2); border-radius: 6px; }
+.mtx .mc { text-align: center; font-size: 19px; padding: 11px 2px; border-radius: 7px; }
+.mtx .mc.q { background: rgba(46,207,131,.16); } .mtx .mc.p { background: rgba(245,179,1,.16); } .mtx .mc.o { background: rgba(229,87,77,.13); }
+.mtx-leg { font-size: 11px; color: var(--muted); margin-top: 10px; text-align: center; line-height: 1.5; }
 .scn-note { background: var(--card-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
 .scn-cur { font-size: 14px; font-weight: 700; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
 .scn-self, .scn-sim { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
