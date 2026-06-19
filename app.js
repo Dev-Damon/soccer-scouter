@@ -1735,6 +1735,17 @@
     window._teamLiveTick = function () { if (parseHash().name !== "team") return; renderBanner(); if ((++_tc) % 4 === 0) updatePitch(); };  // 점수 15초·교체 ~60초
   }
 
+  // 라인업 OVR 테두리 링 색 — ?ovrpal=N 일 때만(시안 미리보기). 0/없음=기본(production 무영향). null이면 기본 테두리.
+  function ovrRing(pid) {
+    var pal = +((location.search.match(/[?&]ovrpal=(\d)/) || [])[1] || 0); if (!pal) return null;
+    var p = pid && playersById[pid], o = p && p.ovr; if (!o) return null;
+    if (pal === 1) return o >= 88 ? "#7c3aed" : o >= 83 ? "#1f5fd6" : o >= 78 ? "#168a52" : "#9aa7bd";          // 등급(보라/파랑/초록/회색)
+    if (pal === 2) return o >= 88 ? "#e8b923" : o >= 83 ? "#c0c8d4" : o >= 78 ? "#cd7f32" : null;               // 금/은/동(나머지 기본)
+    if (pal === 3) return o >= 88 ? "#ffcf4d" : o >= 84 ? "#ffffff" : null;                                      // 핵심만(88+금링·84+흰링)
+    if (pal === 4) return o >= 86 ? "#2ecf83" : o >= 80 ? "#a8d05a" : o >= 74 ? "#f5b301" : "#e57a46";           // 히트(초록→주황)
+    if (pal === 5) return o >= 88 ? "#ff4d6d" : o >= 83 ? "#ff9f1c" : o >= 78 ? "#2ec4b6" : "#9aa7bd";           // 비비드(핑크/주황/민트/회색)
+    return null;
+  }
   // ===================== 경기 예상 (매치업) =====================
   function teamPower(t) {
     var i = t.indices || {};
@@ -1902,7 +1913,8 @@
           }
           var ico = (d.goal ? "⚽" : "") + (d.subIn ? "🔺" : "") + (d.subOff ? "⇄" : "");  // 골·교체투입(🔺=교체로 들어온 선수)·교체아웃
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
-          out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="#0b1220" stroke-width="2"/>' +
+          var _ovrc = ovrRing(d.pid);  // OVR 링(?ovrpal=N 미리보기), 없으면 기본 테두리
+          out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="' + (_ovrc || "#0b1220") + '" stroke-width="' + (_ovrc ? "4" : "2") + '"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="' + nameFont + '" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + nmSvg + "</text>" + rbsvg + icoSvg + "</g>");
         });
