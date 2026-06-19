@@ -3967,19 +3967,21 @@
       if (shown || isStandalone() || flag() || document.getElementById("kk-install")) return;
       if (!deferred && !isIOS() && !isAndroid()) return;  // 모바일(설치 가능 환경)에서만. 안드로이드는 프롬프트 or 메뉴안내 폴백
       shown = true;
-      var kak = isKakao();
+      var kak = isKakao(), ios = isIOS();
+      var label = ios ? "홈 화면에 추가" : (kak ? "브라우저로 열기" : "설치");  // 애플=홈화면추가 통일
+      var subtx = ios ? "홈 화면에 추가하면 앱처럼 빠르게" : (kak ? "기본 브라우저로 열면 설치할 수 있어요" : "홈 화면에서 바로 실행 · 주소창 없이");
       var bn = document.createElement("div"); bn.className = "kk-install"; bn.id = "kk-install";
       bn.innerHTML = '<img class="kki-ic" src="apple-touch-icon.png" alt="킥톡">' +
-        '<div class="kki-tx"><b>킥톡 앱으로 추가</b><span>' + (kak ? "기본 브라우저로 열면 설치할 수 있어요" : "홈 화면에서 바로 실행 · 주소창 없이") + '</span><a class="kki-never">다시 보지 않기</a></div>' +
-        '<button class="kki-btn">' + (kak ? "브라우저로 열기" : "설치") + '</button><button class="kki-x" aria-label="닫기">✕</button>';
+        '<div class="kki-tx"><b>킥톡 앱으로 추가</b><span>' + subtx + '</span><a class="kki-never">다시 보지 않기</a></div>' +
+        '<button class="kki-btn">' + label + '</button><button class="kki-x" aria-label="닫기">✕</button>';
       document.body.appendChild(bn);
       requestAnimationFrame(function () { bn.classList.add("on"); });
       bn.querySelector(".kki-x").addEventListener("click", function () { try { sessionStorage.setItem("kk_install_closed", "1"); } catch (e) {} hide(bn); });
       bn.querySelector(".kki-never").addEventListener("click", function () { try { localStorage.setItem("kk_install_never", "1"); } catch (e) {} hide(bn); });
       bn.querySelector(".kki-btn").addEventListener("click", function () {
-        if (kak) { openExternal(); return; }  // 카카오 인앱 → 기본 브라우저로 (거기서 설치 가능)
+        if (ios) { iosGuide(kak); return; }  // 애플: 인앱이든 사파리든 '홈 화면에 추가' 안내
+        if (kak) { openExternal(); return; }  // 안드 카카오 인앱 → 기본 브라우저로(거기서 설치)
         if (deferred) { deferred.prompt(); deferred.userChoice.then(function () { deferred = null; hide(bn); }); }  // 크롬 등 원터치
-        else if (isIOS()) { iosGuide(); }
         else { menuGuide(); }  // 삼성인터넷 등 프롬프트 미지원 브라우저
       });
     }
@@ -3992,9 +3994,14 @@
       ov.querySelector(".kki-ios-close").addEventListener("click", cl);
       twem(ov);
     }
-    function iosGuide() {
+    function iosGuide(inApp) {
       if (document.getElementById("kk-ios")) return;
-      sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span><span>아래 <b>공유 ⬆️</b> 버튼 누르기</span></div><div class="kki-step"><span class="kki-sn">2</span><span><b>홈 화면에 추가 ➕</b> 선택</span></div>');
+      if (inApp) {  // 아이폰 인앱(카카오 등): Safari로 열어야 추가 가능
+        sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span><span>먼저 <b>Safari로 열기</b> (아래 버튼)</span></div><div class="kki-step"><span class="kki-sn">2</span><span>Safari에서 <b>공유 ⬆️</b> → <b>홈 화면에 추가 ➕</b></span></div><button class="kki-safari" style="width:100%;background:var(--accent);color:#fff;font-weight:800;font-size:14px;padding:11px;border:0;border-radius:10px;cursor:pointer;margin:4px 0 10px">Safari로 열기</button>');
+        var sb = document.querySelector(".kki-safari"); if (sb) sb.addEventListener("click", openExternal);
+      } else {  // 아이폰 Safari
+        sheet('<b>홈 화면에 추가하기</b><div class="kki-step"><span class="kki-sn">1</span><span>아래 <b>공유 ⬆️</b> 버튼 누르기</span></div><div class="kki-step"><span class="kki-sn">2</span><span><b>홈 화면에 추가 ➕</b> 선택</span></div>');
+      }
     }
     function menuGuide() {  // 삼성 인터넷·기타 안드로이드 브라우저 — 설치 프롬프트 미지원 시 메뉴 안내
       if (document.getElementById("kk-ios")) return;
