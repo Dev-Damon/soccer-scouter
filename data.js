@@ -3184,7 +3184,7 @@ window.DATA = {
       "name": "캐나다",
       "nameEn": "Canada",
       "flag": "🇨🇦",
-      "fifaRank": 32,
+      "fifaRank": 28,
       "group": "B",
       "tierSummary": "데이비스와 조나단 데이비드가 이끄는 '황금세대'가 자국 개최의 이점을 업고 16강 이상을 노리는, 유럽 빅리그 주전급이 뼈대를 이룬 다크호스다.",
       "styleSummary": [
@@ -3400,7 +3400,7 @@ window.DATA = {
       "name": "보스니아 헤르체고비나",
       "nameEn": "Bosnia and Herzegovina",
       "flag": "🇧🇦",
-      "fifaRank": 63,
+      "fifaRank": 64,
       "group": "B",
       "tierSummary": "2014년 이후 12년 만에 본선에 복귀한 다크호스로, 노장 제코를 구심점 삼아 유럽 각지에서 성장한 디아스포라 자원으로 무장한 중하위 시드 팀이다.",
       "styleSummary": [
@@ -3569,7 +3569,7 @@ window.DATA = {
       "name": "카타르",
       "nameEn": "Qatar",
       "flag": "🇶🇦",
-      "fifaRank": 49,
+      "fifaRank": 58,
       "group": "B",
       "tierSummary": "2회 연속 아시안컵 우승으로 아시아 정상에 오른 강팀이지만, 선수 대부분이 자국 리그 소속이라 유럽 강호들과 맞붙는 본선에서는 도전자에 가깝다.",
       "styleSummary": [
@@ -6188,7 +6188,7 @@ window.DATA = {
       "name": "코트디부아르",
       "nameEn": "Ivory Coast",
       "flag": "🇨🇮",
-      "fifaRank": 30,
+      "fifaRank": 31,
       "group": "E",
       "tierSummary": "12년 만에 본선에 복귀한 2023 아프리카 네이션스컵 챔피언으로, 유럽 빅리그 주전급 자원이 빼곡한 다크호스지만 독일이 버틴 E조에서 16강 경쟁이 만만치 않은 중상위권 전력이다.",
       "styleSummary": [
@@ -6386,7 +6386,7 @@ window.DATA = {
       "name": "에콰도르",
       "nameEn": "Ecuador",
       "flag": "🇪🇨",
-      "fifaRank": 28,
+      "fifaRank": 29,
       "group": "E",
       "tierSummary": "남미 예선에서 아르헨티나 다음으로 좋은 성적을 낸 '황금세대' 다크호스로, 유럽 빅클럽에 포진한 단단한 수비진과 카이세도를 앞세워 16강 이상을 노리는 팀입니다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 55,
+      "fifaRank": 54,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -7675,7 +7675,7 @@ window.DATA = {
       "name": "이집트",
       "nameEn": "Egypt",
       "flag": "🇪🇬",
-      "fifaRank": 29,
+      "fifaRank": 30,
       "group": "G",
       "tierSummary": "살라라는 세계적 슈퍼스타와 마르무시라는 두 번째 칼날을 앞세웠지만, 스쿼드 26명 중 17명이 자국 리그(특히 알 아흘리) 소속인 '에이스 의존형' 다크호스다.",
       "styleSummary": [
@@ -8557,7 +8557,7 @@ window.DATA = {
       "name": "카보베르데",
       "nameEn": "Cape Verde",
       "flag": "🇨🇻",
-      "fifaRank": 64,
+      "fifaRank": 63,
       "group": "H",
       "tierSummary": "사상 첫 월드컵 본선에 오른 인구 50만의 '블루 샤크', 디아스포라 출신 유럽파를 끌어모아 조직력과 수비 안정성으로 무장한 다크호스다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 31,
+      "fifaRank": 32,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
@@ -11357,7 +11357,7 @@ window.DATA = {
       "name": "우즈베키스탄",
       "nameEn": "Uzbekistan",
       "flag": "🇺🇿",
-      "fifaRank": 56,
+      "fifaRank": 55,
       "group": "K",
       "tierSummary": "사상 첫 월드컵 본선에 오른 중앙아시아 개척자로, 맨시티 후사노프와 역대 최다 득점자 쇼무로도프를 축으로 조직력과 수비를 앞세워 첫 승에 도전하는 다크호스다.",
       "styleSummary": [
