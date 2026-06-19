@@ -250,7 +250,8 @@
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
   function layoutBracket() {
     var fit = viewEl.querySelector(".brk2-fit"); if (!fit) return;
-    var W = Math.max(320, Math.floor(fit.clientWidth)), H = 560, CY = H / 2, i;
+    var avail = Math.floor(fit.getBoundingClientRect().width) || fit.clientWidth || 320;  // 실제 가용 폭(렌더 후 측정)
+    var W = Math.max(320, avail), H = 560, CY = H / 2, i;
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
     var cardW = 58, Wp = 22, Wf = 42, OFF = PRED ? 18 : 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백 (예측 모드는 세로카드라 간격↑)
@@ -299,7 +300,10 @@
     eH("r8_0", "rsf", -1); eH("r8_1", "rsf", -1); eH("rsf", "fin", -1);
     var svg = '<svg class="brk-svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '">' + P.map(function (d) { return '<path class="brk-edge" d="' + d + '" fill="none" stroke-width="1.4"/>'; }).join("") + "</svg>";
     fit.innerHTML = '<div class="brk-stage" style="width:' + W + "px;height:" + H + 'px">' + svg + boxes.join("") + "</div>";
-    fit.style.height = H + "px";
+    // 가용폭보다 stage가 넓으면(좁은 기기) 통째로 축소해 잘림 방지. 넓은 화면은 sc=1(그대로).
+    var sc = avail < W ? avail / W : 1, stageEl = fit.firstChild;
+    if (stageEl) { stageEl.style.transformOrigin = "top left"; stageEl.style.transform = sc < 1 ? "scale(" + sc + ")" : ""; }
+    fit.style.height = (sc < 1 ? Math.ceil(H * sc) : H) + "px";
     twem(fit);
   }
   window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) layoutBracket(); });
@@ -307,7 +311,7 @@
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
     viewEl.innerHTML = '<div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div><div class="adslot"></div>';
-    layoutBracket();
+    requestAnimationFrame(layoutBracket);  // 레이아웃 정착 후 정확한 폭으로 그리기(좁은 기기 잘림 방지)
     insertAdFit(viewEl.querySelector(".adslot"));  // 대진표 하단 애드핏 320x100
   }
 
