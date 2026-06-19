@@ -870,10 +870,10 @@
     return aS > bS ? -1 : aS < bS ? 1 : 0;
   }
   function scnCmp(a, b) {
-    var d = (b.s.pts - a.s.pts) || (b.s.gd - a.s.gd) || (b.s.gf - a.s.gf);
-    if (d) return d;
-    var h = scnH2H(a.id, b.id); if (h) return h;  // 승점·득실·득점 동일 → 승자승
-    return ((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999);
+    var d = b.s.pts - a.s.pts; if (d) return d;          // 1) 승점
+    var h = scnH2H(a.id, b.id); if (h) return h;          // 2) 승자승(2026 규칙: 전체 골득실보다 먼저!)
+    d = (b.s.gd - a.s.gd) || (b.s.gf - a.s.gf); if (d) return d;  // 3) 전체 골득실·다득점
+    return ((a.t && a.t.fifaRank) || 999) - ((b.t && b.t.fifaRank) || 999);  // 4) FIFA 랭킹(추첨 폐지)
   }
   function scnApply(rows, fx, out) {  // 1골차 가정으로 결과 반영
     var h = rows[fx.homeId], a = rows[fx.awayId]; if (!h || !a) return;
