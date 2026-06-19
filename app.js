@@ -944,7 +944,7 @@
     var flag = (teamsById[KR] || {}).flag || "🇰🇷";
 
     var loaded = Object.keys(STAND).length > 0;
-    var html = '<div class="sec-h">🇰🇷 한국 32강 진출 경우의 수</div>';
+    var html = '<div class="scn-top"><div class="sec-h scn-toph">🇰🇷 한국 32강 진출 경우의 수</div>' + (IS_TOSS ? "" : '<button class="scn-share" data-scn-share>📤 공유</button>') + "</div>";
     html += '<div class="scn-note">2026 월드컵: 각 조 <b>1·2위 직행</b> + 12개 조 <b>3위 중 상위 8팀</b> 32강 진출.</div>';
     html += '<div class="scn-cur">' + flag + ' 현재 <b>' + esc(krGroup) + '조 ' + krRank + '위</b> · 승점 ' + krS.pts + ' · 득실 ' + (krS.gd > 0 ? "+" : "") + krS.gd + ' · ' + krS.p + '경기 / 남은 ' + remaining.filter(function (f) { return f.homeId === KR || f.awayId === KR; }).length + '경기</div>';
 
@@ -954,6 +954,7 @@
     if (!krFx) {  // 한국 조별 경기 종료
       var done = scnVerdict(krGroup, gids, remaining, {});
       html += '<div class="scn-head ' + done.code + '">' + scnVerdictText(done) + "</div>";
+      _scnShareData = { head: scnVerdictText(done).replace(/^[^가-힣A-Za-z0-9]+/, ""), headCls: done.code === "q12" || done.code === "q3" ? "q12" : done.code === "p3" ? "p3" : "out", cur: esc(krGroup) + "조 " + krRank + "위 · 승점 " + krS.pts + " · 득실 " + (krS.gd > 0 ? "+" : "") + krS.gd, oppName: "", summary: [] };
       viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
       insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50"); return;
     }
@@ -1013,6 +1014,13 @@
     html += "</div>";
 
     html += '<div class="muted-note" style="font-size:11px;margin-top:4px">※ 골득실 1골차 가정 · 다른 조 3위는 현재 순위 기준 추정</div>';
+    // 공유 카드 데이터
+    _scnShareData = {
+      head: head, headCls: hcls,
+      cur: esc(krGroup) + "조 " + krRank + "위 · 승점 " + krS.pts + " · 득실 " + (krS.gd > 0 ? "+" : "") + krS.gd,
+      oppName: opp.name || "남아공",
+      summary: [["승리", rrWin], ["무승부", rrDraw], ["패배", rrLoss]].map(function (kv) { var rr = kv[1]; return { label: kv[0], verdict: rr.mx <= 2 ? "✅ 직행 확정" : rr.mn >= 4 ? "❌ 탈락" : rr.mn <= 2 ? "🟡 직행/3위" : "🟡 3위 경쟁", q: rr.mx <= 2, out: rr.mn >= 4 }; })
+    };
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
   }
@@ -1343,6 +1351,51 @@
         if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { ktToast("🖼️ 이미지 저장 + 🔗 링크 복사됨"); }).catch(function () {});  // 다운로드 폴백: URL도 클립보드에
       }, "image/png");
     });
+  }
+  // 한국 32강 경우의 수 공유 카드(캔버스) — 헤드라인 + 한 줄 요약. 커뮤니티 시딩용 떡밥 이미지.
+  var _scnShareData = null;
+  function scenarioCardCanvas(d) {
+    var rows = d.summary || [], W = 720, H = rows.length ? 430 + rows.length * 58 + 90 : 380;
+    var cv = document.createElement("canvas"); cv.width = W; cv.height = H; var c = cv.getContext("2d");
+    var light = document.documentElement.classList.contains("light");
+    var C = light ? { b1: "#ffffff", b2: "#eef2f8", b3: "#e1e8f3", name: "#1c2536", sub: "#62718c", acc: "#2f6fe0", card: "#f4f7fc", line: "#dde5f0", barTxt: "#ffffff" }
+                  : { b1: "#1b2d60", b2: "#0c1530", b3: "#070d18", name: "#eaf0fb", sub: "#9fb0cc", acc: "#4f8cff", card: "rgba(255,255,255,.06)", line: "rgba(255,255,255,.12)", barTxt: "#0a1020" };
+    var headCol = d.headCls === "q12" ? (light ? "#16a34a" : "#34d399") : d.headCls === "out" ? "#ef4444" : "#f5b301";
+    var bg = c.createLinearGradient(0, 0, W, H); bg.addColorStop(0, C.b1); bg.addColorStop(.55, C.b2); bg.addColorStop(1, C.b3); c.fillStyle = bg; c.fillRect(0, 0, W, H);
+    c.textAlign = "left"; c.fillStyle = C.name; c.font = "900 30px -apple-system,sans-serif"; c.fillText("KICKTALK", 40, 60);
+    c.fillStyle = C.acc; c.font = "bold 19px -apple-system,sans-serif"; c.fillText("2026 월드컵 · 한국 32강 경우의 수", 205, 58);
+    // 국기 + 현재 상황
+    c.textAlign = "left"; c.font = "54px -apple-system,sans-serif"; c.fillText("🇰🇷", 40, 150);
+    c.fillStyle = C.name; c.font = "900 46px -apple-system,sans-serif"; c.fillText("대한민국", 120, 142);
+    c.fillStyle = C.sub; c.font = "600 22px -apple-system,sans-serif"; c.fillText(d.cur, 42, 196);
+    // 헤드라인 박스
+    rr(c, 40, 222, W - 80, 76, 18); c.fillStyle = hexA(headCol, light ? .12 : .16); c.fill(); c.strokeStyle = headCol; c.lineWidth = 2; c.stroke();
+    c.textAlign = "center"; c.fillStyle = headCol; c.font = "900 30px -apple-system,sans-serif"; c.fillText(String(d.head).slice(0, 22), W / 2, 270);
+    // 한 줄 요약
+    if (rows.length) { c.textAlign = "left"; c.fillStyle = C.name; c.font = "bold 22px -apple-system,sans-serif"; c.fillText("📌 " + d.oppName + "전 결과별", 42, 348); }
+    var y = 372;
+    rows.forEach(function (r) {
+      rr(c, 40, y, W - 80, 46, 12); c.fillStyle = C.card; c.fill(); c.strokeStyle = C.line; c.lineWidth = 1; c.stroke();
+      c.textAlign = "left"; c.fillStyle = C.name; c.font = "bold 21px -apple-system,sans-serif"; c.fillText(r.label, 58, y + 30);
+      c.textAlign = "right"; c.fillStyle = r.q ? (light ? "#16a34a" : "#34d399") : r.out ? "#ef4444" : "#f5b301"; c.font = "bold 20px -apple-system,sans-serif"; c.fillText(r.verdict, W - 58, y + 30);
+      y += 58;
+    });
+    rr(c, 40, H - 70, W - 80, 50, 25); c.fillStyle = C.acc; c.fill();
+    c.textAlign = "center"; c.fillStyle = C.barTxt; c.font = "900 23px -apple-system,sans-serif"; c.fillText("kicktalk.xyz · 한국 진출 경우의 수 자세히 보기", W / 2, H - 37);
+    return cv;
+  }
+  function shareScenario() {
+    var d = _scnShareData;
+    var url = "https://kicktalk.xyz/#scenario";
+    var txt = "🇰🇷 " + (d ? d.head : "한국 32강 경우의 수") + " — 킥톡에서 확인\n" + url;
+    if (!d) { if (navigator.share) navigator.share({ text: txt, url: url }).catch(function () {}); else if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { ktToast("🔗 링크 복사됨!"); }); return; }
+    scenarioCardCanvas(d).toBlob(function (blob) {
+      if (!blob) { if (navigator.share) navigator.share({ text: txt, url: url }).catch(function () {}); return; }
+      var fname = "korea-32-kicktalk.png";
+      try { var file = new File([blob], fname, { type: "image/png" }); if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: "한국 32강 경우의 수", text: txt, url: url }).catch(function () {}); return; } } catch (e) {}
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
+      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { ktToast("🖼️ 이미지 저장 + 🔗 링크 복사됨"); }).catch(function () {});
+    }, "image/png");
   }
   // ===== 선수 비교(레이더 겹쳐보기) =====
   var CMP_KEYS = ["공격력", "골결정력", "스피드", "수비력", "피지컬", "테크닉"];
@@ -1758,7 +1811,7 @@
 
   // 라인업 OVR 테두리 링 색 — ?ovrpal=N 일 때만(시안 미리보기). 0/없음=기본(production 무영향). null이면 기본 테두리.
   function ovrRing(pid) {
-    var pal = +((location.search.match(/[?&]ovrpal=(\d)/) || [])[1] || 0); if (!pal) return null;
+    var pal = +((location.search.match(/[?&]ovrpal=(\d)/) || [])[1] || 0); if (!pal) pal = 2;  // 기본=금/은/동 OVR 링(88+금·83+은·78+동·이하 기본). ?ovrpal=N으로 다른 팔레트 테스트.
     var p = pid && playersById[pid], o = p && p.ovr; if (!o) return null;
     if (pal === 1) return o >= 88 ? "#7c3aed" : o >= 83 ? "#1f5fd6" : o >= 78 ? "#168a52" : "#9aa7bd";          // 등급(보라/파랑/초록/회색)
     if (pal === 2) return o >= 88 ? "#e8b923" : o >= 83 ? "#c0c8d4" : o >= 78 ? "#cd7f32" : null;               // 금/은/동(나머지 기본)
@@ -3775,6 +3828,7 @@
     if (shm) { var shf = fixturesById[shm.getAttribute("data-share-match")]; if (shf) shareMatch(shf); return; }
     var rsh = e.target.closest("[data-result-share]");
     if (rsh) { var rsf = fixturesById[rsh.getAttribute("data-result-share")]; if (rsf) shareMatchResult(rsf); return; }
+    if (e.target.closest("[data-scn-share]")) { shareScenario(); return; }
     var cgo = e.target.closest(".cmp-go"); if (cgo) { go("compare/" + cgo.getAttribute("data-cmp-go")); return; }
     var rgo = e.target.closest("[data-rate-go]"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }

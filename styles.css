@@ -1588,3 +1588,8 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다
 .kt-boot-name { font-size: 20px; font-weight: 900; color: var(--text); }
 .kt-boot-spin { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: ktspin .8s linear infinite; margin-top: 4px; }
 @keyframes ktspin { to { transform: rotate(360deg); } }
+/* 경우의 수 공유 버튼 */
+.scn-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.scn-toph { margin: 0; }
+.scn-share { flex: none; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 7px 13px; font-size: 13px; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.scn-share:active { transform: scale(.95); }
