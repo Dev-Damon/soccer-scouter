@@ -2598,6 +2598,7 @@
     /* HL-AUTO-START */
     "match-1": "https://chzzk.naver.com/video/13663676", // 멕시코-남아프리카공화국
     "match-2": "https://chzzk.naver.com/video/13666274", // 대한민국-체코
+    "match-3": "https://chzzk.naver.com/video/13775195", // 체코-남아프리카공화국
     "match-4": "https://chzzk.naver.com/video/13779536", // 멕시코-대한민국
     "match-7": "https://chzzk.naver.com/video/13680813", // 캐나다-보스니아 헤르체고비나
     "match-8": "https://chzzk.naver.com/video/13697795", // 카타르-스위스
