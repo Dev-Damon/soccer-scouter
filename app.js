@@ -2018,10 +2018,10 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
         "</div>" +
         '<div class="vs-goals"></div>' +  /* 골 표기는 스코어 바로 아래 */
-        '<div class="block"><h3>승부 예상</h3>' +  /* 1) 승부예상 게이지(정적 확률) */
+        mvCompareHtml(a, b) +  /* 1) 스쿼드 몸값 게이지(위로) */
+        '<div class="block"><h3>승부 예상</h3>' +  /* 2) 승부예상 게이지(몸값 밑) */
           '<div class="prob"><div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + '</div><div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + '</div><div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div></div>" +
           '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span><span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span><span>' + esc(b.name) + " 승</span></div></div>" +
-        mvCompareHtml(a, b) +  /* 2) 스쿼드 몸값 게이지 */
         '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
         '<div class="block bet-slot"></div>' +  /* 4) 포인트 베팅 */
         '<div class="live-btn-slot"></div>' +  /* 라이브 중(치지직 JTBC 송출 감지)이면 updScore가 버튼 채움 */
