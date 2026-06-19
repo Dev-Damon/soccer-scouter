@@ -3957,21 +3957,27 @@
     function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent); }
     function isSamsung() { return /SamsungBrowser/i.test(navigator.userAgent); }
     function isAndroid() { return /android/i.test(navigator.userAgent); }
+    function isKakao() { return /KAKAOTALK/i.test(navigator.userAgent); }  // 카카오 인앱브라우저(설치 불가 → 기본브라우저로)
+    function openExternal() {  // 카카오 인앱 → 기기 기본 브라우저로 현재 URL 열기(안드로이드·아이폰 공통)
+      try { location.href = "kakaotalk://web/openExternal?url=" + encodeURIComponent(location.href); } catch (e) {}
+    }
     function flag(s) { try { return localStorage.getItem("kk_install_never") === "1" || sessionStorage.getItem("kk_install_closed") === "1"; } catch (e) { return false; } }
     function hide(bn) { bn.classList.remove("on"); setTimeout(function () { if (bn.parentNode) bn.parentNode.removeChild(bn); }, 250); }
     function show() {
       if (shown || isStandalone() || flag() || document.getElementById("kk-install")) return;
       if (!deferred && !isIOS() && !isAndroid()) return;  // 모바일(설치 가능 환경)에서만. 안드로이드는 프롬프트 or 메뉴안내 폴백
       shown = true;
+      var kak = isKakao();
       var bn = document.createElement("div"); bn.className = "kk-install"; bn.id = "kk-install";
       bn.innerHTML = '<img class="kki-ic" src="apple-touch-icon.png" alt="킥톡">' +
-        '<div class="kki-tx"><b>킥톡 앱으로 추가</b><span>홈 화면에서 바로 실행 · 주소창 없이</span><a class="kki-never">다시 보지 않기</a></div>' +
-        '<button class="kki-btn">설치</button><button class="kki-x" aria-label="닫기">✕</button>';
+        '<div class="kki-tx"><b>킥톡 앱으로 추가</b><span>' + (kak ? "기본 브라우저로 열면 설치할 수 있어요" : "홈 화면에서 바로 실행 · 주소창 없이") + '</span><a class="kki-never">다시 보지 않기</a></div>' +
+        '<button class="kki-btn">' + (kak ? "브라우저로 열기" : "설치") + '</button><button class="kki-x" aria-label="닫기">✕</button>';
       document.body.appendChild(bn);
       requestAnimationFrame(function () { bn.classList.add("on"); });
       bn.querySelector(".kki-x").addEventListener("click", function () { try { sessionStorage.setItem("kk_install_closed", "1"); } catch (e) {} hide(bn); });
       bn.querySelector(".kki-never").addEventListener("click", function () { try { localStorage.setItem("kk_install_never", "1"); } catch (e) {} hide(bn); });
       bn.querySelector(".kki-btn").addEventListener("click", function () {
+        if (kak) { openExternal(); return; }  // 카카오 인앱 → 기본 브라우저로 (거기서 설치 가능)
         if (deferred) { deferred.prompt(); deferred.userChoice.then(function () { deferred = null; hide(bn); }); }  // 크롬 등 원터치
         else if (isIOS()) { iosGuide(); }
         else { menuGuide(); }  // 삼성인터넷 등 프롬프트 미지원 브라우저
