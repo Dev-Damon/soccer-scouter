@@ -1555,3 +1555,6 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .fifa-row .fr-go { color: var(--muted); }
 .fifa-row.kr { background: rgba(79,140,255,.1); }
 .fifa-row.kr .fr-rank, .fifa-row.kr .fr-name { color: var(--accent); font-weight: 900; }
+.fifa-row .fr-pts { font-size: 11px; font-weight: 700; color: var(--muted); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.fifa-row .fr-ch { font-size: 10px; font-weight: 800; }
+.fifa-row .fr-ch.up { color: #2ecf83; } .fifa-row .fr-ch.down { color: #e5574d; }

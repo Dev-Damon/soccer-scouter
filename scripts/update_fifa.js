@@ -20,7 +20,7 @@ const CODE_TO_ID = {
 function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<[^>]+>/g,' ').replace(/&[a-z]+;/g,' ').replace(/\s+/g,' ').trim());}
 (async()=>{
   // 페이지네이션(페이지당 50팀) — 1~4페이지(200위)면 본선 48개국 전부 커버
-  const rankByCode = {};
+  const rankByCode = {}, ptsByCode = {}, chByCode = {};
   for (var pg = 1; pg <= 4; pg++) {
     const h = await get('https://football-ranking.com/fifa-rankings?page=' + pg);
     const rows = h.match(/<tr[\s\S]*?<\/tr>/g) || [];
@@ -28,7 +28,12 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
     rows.forEach(r=>{
       const c = cells(r); if (c.length < 2) return;
       const rk = parseInt((c[0]||'').match(/^\s*(\d+)/)); const cm = (c[1]||'').match(/\(([A-Z]{3})\)/);
-      if (rk && cm) rankByCode[cm[1]] = rk;
+      if (rk && cm) {
+        rankByCode[cm[1]] = rk;
+        const rt = c.join(' ');
+        const pm = rt.match(/([\d,]+\.\d+)/); if (pm) ptsByCode[cm[1]] = parseFloat(pm[1].replace(/,/g, ''));  // 포인트(첫 소수)
+        const chm = rt.match(/\(([+\-]\d+(?:\.\d+)?)\)/); if (chm) chByCode[cm[1]] = parseFloat(chm[1]);  // 증감 (+/-)
+      }
     });
     if (Object.keys(rankByCode).length === n0) break;  // 새 항목 없으면 마지막 페이지
   }
@@ -48,22 +53,23 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
   if (changes.length) console.log(' ', changes.join(', '));
   if (missing.length) console.log(' 누락(라이브표 밖 or 코드불일치):', missing.join(', '));
   if (DRY) { console.log('[dry] 미적용'); process.exit(0); }
-  if (!changes.length) { console.log('변경 없음'); return; }
-  fs.writeFileSync(DATA, src);
-  // fifa.json도 갱신(토스/웹 공통 런타임 fetch — 재빌드 없이 랭킹 반영). data.js에서 팀별 fifaRank 추출.
-  try {
-    const W = {}; (new Function('window', src))(W);
-    const fmap = {}; (W.DATA.teams || []).forEach(t => { fmap[t.id] = t.fifaRank; });
-    fs.writeFileSync(path.join(ROOT, 'fifa.json'), JSON.stringify(fmap, null, 1));
-  } catch (e) { console.log('fifa.json 생성 실패:', e.message); }
-  // data.js 캐시버전 갱신(브라우저가 새 랭킹 받게) — 매 갱신 유니크
-  var idx = fs.readFileSync(IDX, 'utf8');
-  idx = idx.replace(/data\.js\?v=[^"]*/, 'data.js?v=f' + Date.now());
-  fs.writeFileSync(IDX, idx);
+  // fifa.json — 순위+포인트+증감({r,p,ch}). 포인트는 매경기 변동되므로 랭크 무변동이어도 갱신. 토스/웹 공통 런타임 fetch.
+  const fmap = {};
+  Object.keys(CODE_TO_ID).forEach(code => { const id = CODE_TO_ID[code]; if (rankByCode[code] != null) fmap[id] = { r: rankByCode[code], p: ptsByCode[code] != null ? ptsByCode[code] : null, ch: chByCode[code] != null ? chByCode[code] : 0 }; });
+  const fjPath = path.join(ROOT, 'fifa.json'), newFj = JSON.stringify(fmap, null, 1);
+  const fjChanged = newFj !== (fs.existsSync(fjPath) ? fs.readFileSync(fjPath, 'utf8') : '');
+  if (fjChanged) fs.writeFileSync(fjPath, newFj);
+  if (changes.length) {
+    fs.writeFileSync(DATA, src);
+    var idx = fs.readFileSync(IDX, 'utf8').replace(/data\.js\?v=[^"]*/, 'data.js?v=f' + Date.now());
+    fs.writeFileSync(IDX, idx);
+  }
+  if (!changes.length && !fjChanged) { console.log('변경 없음'); return; }
   if (NODEPLOY) { console.log('배포 생략(--no-deploy)'); return; }
   try {
-    execFileSync('git', ['add', 'data.js', 'index.html', 'fifa.json'], { cwd: ROOT, stdio: 'ignore' });
-    execFileSync('git', ['commit', '-m', 'FIFA 랭킹 자동갱신: ' + changes.length + '개팀'], { cwd: ROOT, stdio: 'ignore' });
+    var gitFiles = ['fifa.json']; if (changes.length) gitFiles.push('data.js', 'index.html');
+    execFileSync('git', ['add'].concat(gitFiles), { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['commit', '-m', 'FIFA 랭킹 자동갱신: 순위 ' + changes.length + '팀' + (fjChanged ? ' · 포인트 갱신' : '')], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['-c', 'rebase.autoStash=true', 'pull', '--rebase', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['push', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
     console.log('배포 완료');

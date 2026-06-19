@@ -810,10 +810,13 @@
     html += '<div class="scn-note">FIFA가 2026년 도입한 <b>실시간 세계 랭킹</b>이에요. 경기 결과가 반영돼 수시로 바뀝니다. (본선 48개국 · 탭하면 나라 상세)</div>';
     html += '<div class="fifa-list">';
     teams.forEach(function (t) {
+      var pts = t.fifaPts != null ? t.fifaPts.toFixed(2) : "", ch = t.fifaCh || 0;
+      var chHtml = ch ? '<span class="fr-ch ' + (ch > 0 ? "up" : "down") + '">' + (ch > 0 ? "▲" : "▼") + Math.abs(ch).toFixed(2) + "</span>" : "";
       html += '<div class="fifa-row' + (t.id === "south-korea" ? " kr" : "") + '" data-team="' + esc(t.id) + '">' +
         '<span class="fr-rank">' + t.fifaRank + "</span>" +
         '<span class="fr-flag">' + esc(t.flag || "🏳️") + "</span>" +
         '<span class="fr-name">' + esc(t.name) + "</span>" +
+        '<span class="fr-pts">' + (pts ? pts + chHtml : "") + "</span>" +
         '<span class="fr-go">›</span></div>';
     });
     html += "</div>";
@@ -1379,7 +1382,7 @@
   var PLAYER_GK = {};
   (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   // FIFA 랭킹 — fifa.json(scripts/update_fifa.js가 2h마다 갱신)에서 런타임 로드 → 토스도 재빌드 없이 최신 랭킹 반영.
-  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/fifa.json?b="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(!d) return; var ch=false; DATA.teams.forEach(function(t){ if(d[t.id]!=null && t.fifaRank!==d[t.id]){ t.fifaRank=d[t.id]; ch=true; } }); if(ch){ var h=parseHash(); if(h.name==="home"||h.name==="team"||h.name==="fifa") route(); } }).catch(function(){}); })();
+  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/fifa.json?b="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(!d) return; var ch=false; DATA.teams.forEach(function(t){ var e=d[t.id]; if(e==null) return; var r=(typeof e==="object")?e.r:e; if(r!=null && t.fifaRank!==r){ t.fifaRank=r; ch=true; } if(typeof e==="object"){ t.fifaPts=e.p; t.fifaCh=e.ch; } }); if(ch){ var h=parseHash(); if(h.name==="home"||h.name==="team"||h.name==="fifa") route(); } }).catch(function(){}); })();
   function renderPlayer(id) {
     var p = playersById[id];
     if (!p) { viewEl.innerHTML = '<div class="empty">선수를 찾을 수 없어요.</div>'; return; }
@@ -1539,7 +1542,7 @@
         saveBtnHtml("team:" + t.id) +
         '<span class="team-flag lg">' + esc(t.flag) + "</span>" +
         '<div class="ch-meta"><h2>' + esc(t.name) + "</h2>" +
-        '<div class="team-rank">FIFA 랭킹 ' + esc(t.fifaRank) + "위 · " + esc(t.group) + "조</div>" +
+        '<div class="team-rank"><span class="tr-fifa" data-fifago>🌍 FIFA 랭킹 ' + esc(t.fifaRank) + "위 ›</span> · " + esc(t.group) + "조</div>" +
         (t.lastWc ? '<div class="team-wc">🏆 ' + (t.lastWc.inLast2022
           ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
           : (t.lastWc.year ? "최근 월드컵 " + esc(t.lastWc.year) + " · " + esc(t.lastWc.stage) : "2026 첫 본선 진출")) + "</div>" : "") +
