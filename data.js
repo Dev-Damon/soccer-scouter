@@ -2815,7 +2815,7 @@ window.DATA = {
       "name": "대한민국",
       "nameEn": "South Korea",
       "flag": "🇰🇷",
-      "fifaRank": 24,
+      "fifaRank": 23,
       "group": "A",
       "tierSummary": "손흥민과 김민재라는 월드클래스 듀오를 축으로, 유럽 빅리그에서 뛰는 핵심 선수들이 받쳐주는 아시아 강호로 본선 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
@@ -4914,7 +4914,7 @@ window.DATA = {
       "name": "미국",
       "nameEn": "United States",
       "flag": "🇺🇸",
-      "fifaRank": 15,
+      "fifaRank": 13,
       "group": "D",
       "tierSummary": "유럽 빅리그에서 뛰는 황금세대가 절정에 달한, 개최국 어드밴티지를 등에 업은 다크호스 8강 후보다.",
       "styleSummary": [
@@ -5345,7 +5345,7 @@ window.DATA = {
       "name": "호주",
       "nameEn": "Australia",
       "flag": "🇦🇺",
-      "fifaRank": 22,
+      "fifaRank": 25,
       "group": "D",
       "tierSummary": "유럽 2부와 J리그·MLS·A리그에 흩어진 견실한 주전들과 소수의 유망주가 떠받치는, 조직력으로 버티는 6회 연속 본선 진출 중위권 팀.",
       "styleSummary": [
@@ -7898,7 +7898,7 @@ window.DATA = {
       "name": "이란",
       "nameEn": "Iran",
       "flag": "🇮🇷",
-      "fifaRank": 23,
+      "fifaRank": 22,
       "group": "G",
       "tierSummary": "아시아 강호답게 조직적인 수비와 세트피스에 강하지만, 타레미 한 명에게 득점을 크게 의존하는 '벨기에 다음 2위 다툼' 다크호스다.",
       "styleSummary": [
@@ -12003,7 +12003,7 @@ window.DATA = {
       "name": "크로아티아",
       "nameEn": "Croatia",
       "flag": "🇭🇷",
-      "fifaRank": 14,
+      "fifaRank": 15,
       "group": "L",
       "tierSummary": "모드리치를 중심으로 한 황금세대가 마지막 불꽃을 태우는 가운데 그바르디올·스타니시치 등 신구 조화로 16강 이상을 노리는 강호급 팀이다.",
       "styleSummary": [
