@@ -1566,3 +1566,18 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .sc-bd-row .bd-v { font-weight: 800; font-size: 11.5px; }
 .sc-bd-row .bd-v.q { color: #178a52; } .sc-bd-row .bd-v.p { color: #b07d00; } .sc-bd-row .bd-v.o { color: #c93d34; }
 table.stand2 td.gd, table.stand2 th.gd { text-align: right; padding-right: 5px; }  /* 득실 우측정렬 — +/- 부호 자릿수 정렬 */
+/* FIFA 랭킹 — 변동화살표·More·펼침 */
+.fifa-rowwrap { border-top: 1px solid var(--line); }
+.fifa-rowwrap:first-child { border-top: 0; }
+.fifa-list .fifa-row { border-top: 0; }
+.fr-mv { font-size: 10.5px; font-weight: 800; width: 26px; text-align: center; flex: none; }
+.fr-mv.up { color: #2ecf83; } .fr-mv.down { color: #e5574d; } .fr-mv.flat { color: var(--muted); }
+.fr-more { flex: none; background: none; border: 0; color: var(--muted); font-size: 15px; padding: 4px 6px; cursor: pointer; }
+.fifa-detail { padding: 4px 12px 10px 50px; background: var(--card-2); }
+.fde-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 12.5px; border-top: 1px dashed var(--line); cursor: pointer; }
+.fde-row:first-child { border-top: 0; }
+.fde-vs { color: var(--text); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fde-when { color: var(--muted); font-size: 11.5px; }
+.fde-sc { font-weight: 800; font-variant-numeric: tabular-nums; }
+.fde-sc.w { color: #2ecf83; } .fde-sc.l { color: #e5574d; } .fde-sc.d { color: var(--muted); }
+.fde-empty { color: var(--muted); font-size: 12px; padding: 6px 0; }

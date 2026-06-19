@@ -802,22 +802,44 @@
     });
     return '<div class="stand-scroll">' + h + "</tbody></table></div>";
   }
-  // 🌍 라이브 FIFA 랭킹 페이지 — 본선 48개국을 fifaRank(라이브, fifa.json 오버레이) 순으로
+  function fifaAgo(ts) { var s = (Date.now() - ts) / 1000; if (s < 60) return "방금"; if (s < 3600) return Math.floor(s / 60) + "분 전"; if (s < 86400) return Math.floor(s / 3600) + "시간 전"; return Math.floor(s / 86400) + "일 전"; }
+  // 펼침 상세: 그 나라 최근 결과 + 다음 일정
+  function fifaTeamFix(teamId) {
+    var fx = (DATA.fixtures || []).filter(function (f) { return f.homeId === teamId || f.awayId === teamId; }).sort(function (a, b) { return (fxDate(a) || "") < (fxDate(b) || "") ? -1 : 1; });
+    var ended = fx.filter(matchEnded), up = fx.filter(function (f) { return !matchEnded(f); });
+    var rows = ended.slice(-2).concat(up.slice(0, 2));
+    if (!rows.length) return '<div class="fde-empty">경기 정보 없음</div>';
+    return rows.map(function (f) {
+      var opId = f.homeId === teamId ? f.awayId : f.homeId, op = teamsById[opId] || {}, home = f.homeId === teamId;
+      var lv = LIVE[f.id], done = lv && lv.state === "post" && lv.hs != null;
+      var mid;
+      if (done) { var my = home ? lv.hs : lv.as, ot = home ? lv.as : lv.hs; var res = my > ot ? "w" : my < ot ? "l" : "d"; mid = '<span class="fde-sc ' + res + '">' + my + " : " + ot + "</span>"; }
+      else mid = '<span class="fde-when">' + esc((fmtDate(fxDate(f)) || {}).d || fxDate(f) || "") + (fxTime(f) ? " " + esc(fxTime(f)) : "") + "</span>";
+      return '<div class="fde-row" data-match="' + esc(f.id) + '"><span class="fde-vs">' + (home ? "vs " : "@ ") + esc(op.flag || "") + " " + esc(op.name || opId) + "</span>" + mid + "</div>";
+    }).join("");
+  }
+  // 🌍 라이브 FIFA 랭킹 페이지 — 본선 48개국을 fifaRank(라이브) 순으로 + 순위변동·갱신시각·펼침
   function renderFifa() {
     setTabbar("");
     var teams = (DATA.teams || []).filter(function (t) { return t.fifaRank; }).slice().sort(function (a, b) { return a.fifaRank - b.fifaRank; });
-    var html = '<div class="sec-h">🌍 FIFA 랭킹 <span class="muted-note">실시간 · 30분마다 갱신</span></div>';
-    html += '<div class="scn-note">FIFA가 2026년 도입한 <b>실시간 세계 랭킹</b>이에요. 경기 결과가 반영돼 수시로 바뀝니다. (본선 48개국 · 탭하면 나라 상세)</div>';
+    var ago = FIFA_TS ? " · " + fifaAgo(FIFA_TS) + " 업데이트" : "";
+    var html = '<div class="sec-h">🌍 FIFA 랭킹 <span class="muted-note">실시간' + ago + "</span></div>";
+    html += '<div class="scn-note">FIFA가 2026년 도입한 <b>실시간 세계 랭킹</b> — 경기 결과가 반영돼 수시로 바뀝니다. (탭=나라 상세, ▾=최근 경기)</div>';
     html += '<div class="fifa-list">';
     teams.forEach(function (t) {
-      var pts = t.fifaPts != null ? t.fifaPts.toFixed(2) : "", ch = t.fifaCh || 0;
+      var pts = t.fifaPts != null ? t.fifaPts.toFixed(2) : "", ch = t.fifaCh || 0, chR = t.fifaChR || 0;
+      var mv = chR > 0 ? '<span class="fr-mv up">▲' + chR + "</span>" : chR < 0 ? '<span class="fr-mv down">▼' + Math.abs(chR) + "</span>" : '<span class="fr-mv flat">–</span>';
       var chHtml = ch ? '<span class="fr-ch ' + (ch > 0 ? "up" : "down") + '">' + (ch > 0 ? "▲" : "▼") + Math.abs(ch).toFixed(2) + "</span>" : "";
-      html += '<div class="fifa-row' + (t.id === "south-korea" ? " kr" : "") + '" data-team="' + esc(t.id) + '">' +
-        '<span class="fr-rank">' + t.fifaRank + "</span>" +
-        '<span class="fr-flag">' + esc(t.flag || "🏳️") + "</span>" +
-        '<span class="fr-name">' + esc(t.name) + "</span>" +
-        '<span class="fr-pts">' + (pts ? pts + chHtml : "") + "</span>" +
-        '<span class="fr-go">›</span></div>';
+      html += '<div class="fifa-rowwrap">' +
+        '<div class="fifa-row' + (t.id === "south-korea" ? " kr" : "") + '">' +
+          '<span class="fr-rank">' + t.fifaRank + "</span>" + mv +
+          '<span class="fr-flag" data-team="' + esc(t.id) + '">' + esc(t.flag || "🏳️") + "</span>" +
+          '<span class="fr-name" data-team="' + esc(t.id) + '">' + esc(t.name) + "</span>" +
+          '<span class="fr-pts">' + (pts ? pts + chHtml : "") + "</span>" +
+          '<button class="fr-more" data-fifaexp="' + esc(t.id) + '">▾</button>' +
+        "</div>" +
+        '<div class="fifa-detail" id="fde-' + esc(t.id) + '" hidden></div>' +
+        "</div>";
     });
     html += "</div>";
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
@@ -3759,6 +3781,8 @@
     var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
     var sg = e.target.closest("[data-scngo]"); if (sg) { go("scenario"); return; }  // 한국 경우의 수 진입
     var fg = e.target.closest("[data-fifago]"); if (fg) { go("fifa"); return; }  // FIFA 랭킹 페이지 진입
+    var fe = e.target.closest("[data-fifaexp]");  // FIFA 랭킹 행 펼치기(최근 경기)
+    if (fe) { var fid = fe.getAttribute("data-fifaexp"), det = document.getElementById("fde-" + fid); if (det) { if (det.hasAttribute("hidden")) { det.innerHTML = fifaTeamFix(fid); det.removeAttribute("hidden"); fe.textContent = "▴"; twem(det); } else { det.setAttribute("hidden", ""); fe.textContent = "▾"; } } return; }
     var mt = e.target.closest("[data-match]");
     if (mt) { go("match/" + mt.getAttribute("data-match")); return; }
     var mg = e.target.closest("[data-manager]");
