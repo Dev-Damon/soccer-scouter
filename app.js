@@ -471,13 +471,13 @@
     }
     var ddayTap = nextKr ? ' data-match="' + esc(nextKr.id) + '"' : "";  // 클릭 시 다음 한국경기 상세로
     var witty = WITTY[wittyIdx];  // 현재 회전 중인 문구(렌더돼도 끊김 없이 이어짐)
-    var krGroupRemain = fxs.filter(isKoreaFx).filter(function (f) { return f.group && !matchEnded(f); }).length;  // 한국 조별 잔여경기 있을 때만 경우의수 노출(16강 확정/조별종료 시 자동 숨김)
+    var krGroupRemain = fxs.filter(isKoreaFx).filter(function (f) { return f.group && !matchEnded(f); }).length;  // 한국 조별 잔여경기 있을 때만 경우의수 노출(32강 확정/조별종료 시 자동 숨김)
     return '<div class="hero-banner">' +
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
       '<div class="hb-sub">' + esc(witty) + "</div>" +
       '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div>" +
-      (krGroupRemain ? '<div class="hb-scn clickable" data-scngo>🇰🇷 한국 16강 진출 경우의 수 보기 ›</div>' : "") + "</div>";
+      (krGroupRemain ? '<div class="hb-scn clickable" data-scngo>🇰🇷 한국 32강 진출 경우의 수 보기 ›</div>' : "") + "</div>";
   }
 
   // 위트 문구 3초마다 슬라이드 전환 — 렌더(날짜 클릭)와 '독립적'으로 타이머 1개만 돈다(클릭해도 리셋 X)
@@ -861,7 +861,7 @@
     var html = '<div class="adslot ad-top"></div><div class="stand-note">' +
       (hasData ? "조별 순위 · 결과 실시간 반영 · 1·2위 직행 + 각 조 3위 중 상위 8팀 진출" : "순위 불러오는 중… (개막 전이라 0)") +
       "</div>";
-    if ((DATA.fixtures || []).filter(isKoreaFx).filter(function (f) { return f.group && !matchEnded(f); }).length) html += '<div class="hb-scn clickable" data-scngo style="margin:2px 0 12px">🇰🇷 한국 16강 진출 경우의 수 →</div>';
+    if ((DATA.fixtures || []).filter(isKoreaFx).filter(function (f) { return f.group && !matchEnded(f); }).length) html += '<div class="hb-scn clickable" data-scngo style="margin:2px 0 12px">🇰🇷 한국 32강 진출 경우의 수 →</div>';
     var thirds = [];
     groups.forEach(function (g) {
       var rows = (g.teamIds || []).map(function (id) {
@@ -871,14 +871,14 @@
       if (rows[2]) thirds.push({ g: g.group, r: rows[2] });
       html += '<div class="group-card"><h3><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + "조</h3>" + standTableHTML(rows) + "</div>";
     });
-    // 각 조 3위팀 순위 (WC2026: 12개 조 3위 중 상위 8팀 16강 진출)
+    // 각 조 3위팀 순위 (WC2026: 12개 조 3위 중 상위 8팀 32강 진출)
     thirds.sort(function (a, b) { return cmp(a.r, b.r); });
-    html += '<div class="group-card"><h3>🥉 3위 팀 순위 <span class="muted-note">상위 8팀 16강 진출</span></h3>' + standTableHTML(thirds, { group: true, thirds: true }) + "</div>";
+    html += '<div class="group-card"><h3>🥉 3위 팀 순위 <span class="muted-note">상위 8팀 32강 진출</span></h3>' + standTableHTML(thirds, { group: true, thirds: true }) + "</div>";
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     insertAdFit(viewEl.querySelector(".ad-top")); insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");  // 맨위 320x100 / 맨밑 320x50
   }
 
-  // ===================== 🇰🇷 한국 16강 진출 경우의 수 (풀 시뮬레이터) =====================
+  // ===================== 🇰🇷 한국 32강 진출 경우의 수 (풀 시뮬레이터) =====================
   // 2026 포맷: 각 조 1·2위 직행 + 12개 조 3위 중 상위 8팀 진출. 한국 조 남은 경기를 시뮬레이션하고,
   // 3위 시 다른 11개 조 3위(현재 순위 기준)와 비교해 8위 이내인지 판정. 골득실은 '1골차' 가정.
   var scenPick = {};  // {fixtureId: 'h'(홈승)|'d'(무)|'a'(원정승)}
@@ -946,8 +946,8 @@
     var flag = (teamsById[KR] || {}).flag || "🇰🇷";
 
     var loaded = Object.keys(STAND).length > 0;
-    var html = '<div class="sec-h">🇰🇷 한국 16강 진출 경우의 수</div>';
-    html += '<div class="scn-note">2026 월드컵: 각 조 <b>1·2위 직행</b> + 12개 조 <b>3위 중 상위 8팀</b> 16강 진출.</div>';
+    var html = '<div class="sec-h">🇰🇷 한국 32강 진출 경우의 수</div>';
+    html += '<div class="scn-note">2026 월드컵: 각 조 <b>1·2위 직행</b> + 12개 조 <b>3위 중 상위 8팀</b> 32강 진출.</div>';
     html += '<div class="scn-cur">' + flag + ' 현재 <b>' + esc(krGroup) + '조 ' + krRank + '위</b> · 승점 ' + krS.pts + ' · 득실 ' + (krS.gd > 0 ? "+" : "") + krS.gd + ' · ' + krS.p + '경기 / 남은 ' + remaining.filter(function (f) { return f.homeId === KR || f.awayId === KR; }).length + '경기</div>';
 
     if (!loaded) { viewEl.innerHTML = html + '<div class="muted-note">순위를 불러오는 중…</div>'; return; }
@@ -970,9 +970,9 @@
 
     // 헤드라인 — 가장 쉬운 '직행 확정' 결과
     var head, hcls = "q12";
-    if (adv(rrLoss)) head = "🎉 져도 16강 직행 확정!";
-    else if (adv(rrDraw)) head = "🇰🇷 비기기만 해도 16강 직행 확정!";
-    else if (adv(rrWin)) head = "🔥 이기면 16강 직행 확정!";
+    if (adv(rrLoss)) head = "🎉 져도 32강 직행 확정!";
+    else if (adv(rrDraw)) head = "🇰🇷 비기기만 해도 32강 직행 확정!";
+    else if (adv(rrWin)) head = "🔥 이기면 32강 직행 확정!";
     else if (rrWin.mn <= 3) { head = "⚔️ 남은 경기 결과에 운명이 갈려요"; hcls = "p3"; }
     else { head = "😢 자력 진출이 어려운 상황"; hcls = "out"; }
     html += '<div class="scn-head ' + hcls + '">' + head + "</div>";
@@ -1001,7 +1001,7 @@
         bd = '<div class="sc-bd">';
         [["h", esc(oh.flag || "") + " " + esc(oh.name || of.homeId) + " 승"], ["d", "무승부"], ["a", esc(oa.flag || "") + " " + esc(oa.name || of.awayId) + " 승"]].forEach(function (oc) {
           var v = evalKr(res, [oc[0]]);  // 그룹 순위 기준: 1·2위=직행, 3위=와일드카드 경쟁, 4위=탈락
-          var lbl = v.rank <= 2 ? "✅ 16강 직행" : v.rank === 3 ? "🟡 조 3위(경쟁)" : "❌ 탈락", cc = v.rank <= 2 ? "q" : v.rank === 3 ? "p" : "o";
+          var lbl = v.rank <= 2 ? "✅ 32강 직행" : v.rank === 3 ? "🟡 조 3위(경쟁)" : "❌ 탈락", cc = v.rank <= 2 ? "q" : v.rank === 3 ? "p" : "o";
           bd += '<div class="sc-bd-row"><span class="bd-l">' + oc[1] + '</span><span class="bd-v ' + cc + '">' + lbl + "</span></div>";
         });
         bd += "</div>";
@@ -1019,8 +1019,8 @@
     insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
   }
   function scnVerdictText(v) {
-    if (v.code === "q12") return "✅ " + v.rank + "위로 16강 직행!";
-    if (v.code === "q3") return "✅ 3위 — 3위 팀 중 " + v.thirdRank + "위로 16강 진출! (상위 8팀)";
+    if (v.code === "q12") return "✅ " + v.rank + "위로 32강 직행!";
+    if (v.code === "q3") return "✅ 3위 — 3위 팀 중 " + v.thirdRank + "위로 32강 진출! (상위 8팀)";
     if (v.code === "p3") return "🟡 3위 — 3위 팀 중 " + v.thirdRank + "위, 현재로선 진출권(8위) 밖. 다른 조 결과 따라 달라질 수 있음";
     return "❌ 4위 — 탈락";
   }
