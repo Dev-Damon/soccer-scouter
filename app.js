@@ -929,18 +929,19 @@
     var krHome = krFx.homeId === KR, oppId = krHome ? krFx.awayId : krFx.homeId, opp = teamsById[oppId] || {};
     function krOut(res) { return res === "win" ? (krHome ? "h" : "a") : res === "loss" ? (krHome ? "a" : "h") : "d"; }
     function evalKr(res, otherPicks) { var picks = {}; picks[krFx.id] = krOut(res); (otherPicks || []).forEach(function (o, i) { picks[others[i].id] = o; }); return scnVerdict(krGroup, gids, remaining, picks); }
-    function summarize(res) { var combos = scnEnum(others), q = 0; combos.forEach(function (c) { var v = evalKr(res, c); if (v.code === "q12" || v.code === "q3") q++; }); return { q: q, total: combos.length }; }
-    var sWin = summarize("win"), sDraw = summarize("draw"), sLoss = summarize("loss");
-    function gtd(s) { return s.q === s.total; }
+    // 그룹 순위 기준(1·2위=직행 / 3위=와일드카드 경쟁 / 4위=탈락) — 다른 조 3위 비교는 불확실해 순위로 정직하게.
+    function rrng(res) { var combos = scnEnum(others), mn = 9, mx = 0; combos.forEach(function (c) { var picks = {}; picks[krFx.id] = krOut(res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (r) { return r.id; }).indexOf(KR) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); }); return { mn: mn, mx: mx }; }
+    var rrWin = rrng("win"), rrDraw = rrng("draw"), rrLoss = rrng("loss");
+    function adv(rr) { return rr.mx <= 2; }
 
-    // 헤드라인 — 가장 쉬운 '확정' 결과
-    var head;
-    if (gtd(sLoss)) head = "🎉 남은 경기와 무관하게 16강 진출 확정!";
-    else if (gtd(sDraw)) head = "🇰🇷 비기기만 해도 16강 직행 확정!";
-    else if (gtd(sWin)) head = "🔥 이기면 16강 직행 확정!";
-    else if (sWin.q || sDraw.q || sLoss.q) head = "⚔️ 남은 경기 결과에 운명이 갈려요";
-    else head = "😢 자력 진출이 어려운 상황";
-    html += '<div class="scn-head ' + (gtd(sLoss) || gtd(sDraw) || gtd(sWin) ? "q12" : (sWin.q || sDraw.q || sLoss.q) ? "p3" : "out") + '">' + head + "</div>";
+    // 헤드라인 — 가장 쉬운 '직행 확정' 결과
+    var head, hcls = "q12";
+    if (adv(rrLoss)) head = "🎉 져도 16강 직행 확정!";
+    else if (adv(rrDraw)) head = "🇰🇷 비기기만 해도 16강 직행 확정!";
+    else if (adv(rrWin)) head = "🔥 이기면 16강 직행 확정!";
+    else if (rrWin.mn <= 3) { head = "⚔️ 남은 경기 결과에 운명이 갈려요"; hcls = "p3"; }
+    else { head = "😢 자력 진출이 어려운 상황"; hcls = "out"; }
+    html += '<div class="scn-head ' + hcls + '">' + head + "</div>";
 
     // 현재 조 순위표
     html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(krGroup) + '조 순위</div>' + standTableHTML(cur) + "</div>";
@@ -949,25 +950,25 @@
     html += '<div class="scn-last">🏁 마지막 경기 · ' + flag + " 대한민국 vs " + esc(opp.flag || "") + " " + esc(opp.name || oppId) + "</div>";
 
     // 번호별 시나리오 카드(설명형)
-    function rankRange(res) { var combos = scnEnum(others), mn = 9, mx = 0; combos.forEach(function (c) { var picks = {}; picks[krFx.id] = krOut(res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (r) { return r.id; }).indexOf(KR) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); }); return { mn: mn, mx: mx }; }
     var leadId = cur[0].id;
     var chaserMax = Math.max.apply(null, gids.filter(function (id) { return id !== KR && id !== leadId; }).map(function (id) { var s = scnStats(id); var rem = remaining.some(function (f) { return f.homeId === id || f.awayId === id; }); return s.pts + (rem ? 3 : 0); }).concat([0]));
     [["승리", "win", 3], ["무승부", "draw", 1], ["패배", "loss", 0]].forEach(function (kv, idx) {
-      var res = kv[1], krPts = krS.pts + kv[2], s = res === "win" ? sWin : res === "draw" ? sDraw : sLoss, rr = rankRange(res);
-      var cls = s.q === s.total ? "q12" : s.q > 0 ? "p3" : "out";
-      var concl = s.q === s.total ? ("✅ 32강 진출 확정" + (rr.mx <= 2 ? " · 최소 조 " + rr.mx + "위" : "")) : s.q > 0 ? "🟡 다른 경기 결과 따라 진출 가능" : "❌ 탈락 가능성 큼";
+      var res = kv[1], krPts = krS.pts + kv[2], rr = rrng(res);
+      var cls = rr.mx <= 2 ? "q12" : rr.mn >= 4 ? "out" : "p3";
+      var concl = rr.mx <= 2 ? ("✅ 32강 직행 확정" + (rr.mn === rr.mx ? " · 조 " + rr.mn + "위" : "")) : rr.mn <= 2 ? "🟡 직행 또는 조 3위 (다른 경기 따라)" : rr.mx === 3 ? "🟡 조 3위 · 와일드카드 경쟁" : rr.mn >= 4 ? "❌ 탈락" : "🟡 조 3위 또는 탈락 (다른 경기 따라)";
       var reason;
-      if (res === "win") reason = esc(opp.name || "남아공") + "을 이기면 승점 " + krPts + "점. 추격팀이 최대 " + chaserMax + "점이라 한국이 앞서 " + (rr.mx <= 2 ? "최소 조 " + rr.mx + "위로 직행합니다." : "유리합니다.");
-      else if (res === "draw") reason = "비기면 승점 " + krPts + "점. " + (s.q === s.total ? "체코·멕시코 결과와 무관하게 진출 확정." : "체코-멕시코 결과에 따라 갈립니다.");
-      else reason = "지면 승점 " + krPts + "점 유지. 조 3위(승점 " + krPts + ")로는 12개 조 3위 중 8팀 안에 들기 어렵습니다. 다른 경기(체코-멕시코) 결과별로:";
+      if (res === "win") reason = esc(opp.name || "남아공") + "을 이기면 승점 " + krPts + "점. 추격팀이 최대 " + chaserMax + "점이라 한국이 앞서 " + (rr.mx <= 2 ? "조 " + (rr.mn === rr.mx ? rr.mn + "위로 " : "") + "직행합니다." : "유리합니다.");
+      else if (res === "draw") reason = "비기면 승점 " + krPts + "점. " + (rr.mx <= 2 ? "체코·멕시코 결과와 무관하게 직행 확정." : "체코-멕시코 결과에 따라 갈립니다.");
+      else reason = "지면 승점 " + krPts + "점 유지. 조 3위(승점 " + krPts + ")는 12개 조 3위 중 8팀 안에 들어야 진출(불확실). 다른 경기(체코-멕시코) 결과별로:";
       // 결과에 따라 갈리는 경우 → 다른 경기 결과별 세부 분기 표시(레퍼런스 스타일)
       var bd = "";
-      if (others.length === 1 && s.q > 0 && s.q < s.total) {
+      if (others.length === 1 && rr.mn !== rr.mx) {
         var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
         bd = '<div class="sc-bd">';
         [["h", esc(oh.flag || "") + " " + esc(oh.name || of.homeId) + " 승"], ["d", "무승부"], ["a", esc(oa.flag || "") + " " + esc(oa.name || of.awayId) + " 승"]].forEach(function (oc) {
-          var v = evalKr(res, [oc[0]]), q = (v.code === "q12" || v.code === "q3");
-          bd += '<div class="sc-bd-row"><span class="bd-l">' + oc[1] + '</span><span class="bd-v ' + (q ? "q" : v.code === "p3" ? "p" : "o") + '">' + (q ? "✅ 진출" : v.code === "p3" ? "🟡 3위 경쟁" : "❌ 탈락") + "</span></div>";
+          var v = evalKr(res, [oc[0]]);  // 그룹 순위 기준: 1·2위=직행, 3위=와일드카드 경쟁, 4위=탈락
+          var lbl = v.rank <= 2 ? "✅ 16강 직행" : v.rank === 3 ? "🟡 조 3위(경쟁)" : "❌ 탈락", cc = v.rank <= 2 ? "q" : v.rank === 3 ? "p" : "o";
+          bd += '<div class="sc-bd-row"><span class="bd-l">' + oc[1] + '</span><span class="bd-v ' + cc + '">' + lbl + "</span></div>";
         });
         bd += "</div>";
       }
@@ -976,7 +977,7 @@
 
     // 한 줄 요약
     html += '<div class="scn-sum"><div class="ss-h">📌 한 줄 요약</div>';
-    [["승리", sWin], ["무승부", sDraw], ["패배", sLoss]].forEach(function (kv, i) { var s = kv[1]; var t = s.q === s.total ? "32강 진출 확정" : s.q > 0 ? "결과 따라 진출 가능" : "탈락 가능성 큼"; html += '<div class="ss-row"><b>' + (i + 1) + ". " + esc(opp.name || "남아공") + "전 " + kv[0] + "</b> → " + t + "</div>"; });
+    [["승리", rrWin], ["무승부", rrDraw], ["패배", rrLoss]].forEach(function (kv, i) { var rr = kv[1]; var t = rr.mx <= 2 ? "32강 직행 확정" : rr.mn >= 4 ? "탈락" : rr.mn <= 2 ? "직행 또는 3위 경쟁" : "조 3위 경쟁"; html += '<div class="ss-row"><b>' + (i + 1) + ". " + esc(opp.name || "남아공") + "전 " + kv[0] + "</b> → " + t + "</div>"; });
     html += "</div>";
 
     html += '<div class="muted-note" style="font-size:11px;margin-top:4px">※ 골득실 1골차 가정 · 다른 조 3위는 현재 순위 기준 추정</div>';
