@@ -181,6 +181,21 @@ table.stand tr.qual td.rk { color: var(--accent); }
 table.stand tr.qual { background: rgba(46,230,166,.06); }
 table.stand tr[data-team] { cursor: pointer; }
 table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
+/* 사진형 다컬럼 순위표(득점·실점·최근5) */
+.stand-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.stand2 { font-size: 11.5px; min-width: 340px; }
+table.stand2 th, table.stand2 td { padding: 8px 4px; vertical-align: middle; }
+table.stand2 td.tm, table.stand2 th:nth-child(2) { padding-left: 2px; }
+table.stand2 .tm { gap: 5px; }
+table.stand2 .tm .team-flag { font-size: 16px; }
+table.stand2 .tm-n { font-size: 12px; max-width: 70px; }
+table.stand2 td.rk { width: 16px; }
+table.stand2 th.frm, table.stand2 td.frm { white-space: nowrap; }
+table.stand2 tr.krrow { background: rgba(79,140,255,.1); }
+table.stand2 tr.krrow td { font-weight: 800; }
+.frm { display: inline-flex; gap: 2px; }
+.fd { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 50%; font-size: 9px; font-weight: 900; color: #fff; line-height: 1; }
+.fd.w { background: #2ecf83; } .fd.l { background: #e5574d; } .fd.d { background: #9aa7bd; } .fd.e { background: var(--card-2); border: 1px solid var(--line); }
 
 /* Grids */
 .grid { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }

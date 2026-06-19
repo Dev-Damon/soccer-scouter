@@ -774,6 +774,34 @@
       "</div>";
   }
 
+  // 팀 최근 경기 폼(✓승 ✗패 –무) — LIVE(=match_results 로드됨)에서 도출, 최대 5개
+  function formDots(teamId) {
+    var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === teamId || f.awayId === teamId; })
+      .filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "post" && lv.hs != null; })
+      .sort(function (a, b) { return (fxDate(a) || "") < (fxDate(b) || "") ? -1 : 1; });
+    var arr = fxs.map(function (f) { var lv = LIVE[f.id]; var my = f.homeId === teamId ? lv.hs : lv.as, op = f.homeId === teamId ? lv.as : lv.hs; return my > op ? "w" : my < op ? "l" : "d"; }).slice(-5);
+    var out = "";
+    for (var i = 0; i < 5; i++) { var r = arr[i]; out += '<span class="fd ' + (r || "e") + '">' + (r === "w" ? "✓" : r === "l" ? "✗" : r === "d" ? "–" : "") + "</span>"; }
+    return out;
+  }
+  // 공용 순위표(사진형): #·팀·경기·승·무·패·득·실·득실·승점·최근5. opt.group=조컬럼, opt.thirds=상위8 강조
+  function standTableHTML(rows, opt) {
+    opt = opt || {};
+    var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>경기</th><th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th>득실</th><th class=\"pts\">승점</th><th class=\"frm\">최근</th></tr></thead><tbody>";
+    rows.forEach(function (row, i) {
+      var t = row.t, s = row.s, id = row.id, grp = row.g;
+      if (row.r) { t = row.r.t; s = row.r.s; id = row.r.id; }  // 3위표 형태 {g, r:{...}}
+      var gd = (s.gd > 0 ? "+" : "") + s.gd;
+      var qual = opt.thirds ? (i < 8) : (i < 2);
+      h += '<tr class="' + (qual ? "qual" : "") + (id === "south-korea" ? " krrow" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
+        '<td class="c rk">' + (i + 1) + "</td>" +
+        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span></td>" +
+        (opt.group ? '<td class="c">' + esc(grp) + "</td>" : "") +
+        "<td>" + s.p + "</td><td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + "</td><td>" + gd + '</td><td class="pts">' + s.pts + "</td>" +
+        '<td class="frm">' + formDots(id) + "</td></tr>";
+    });
+    return '<div class="stand-scroll">' + h + "</tbody></table></div>";
+  }
   function renderGroups() {
     var groups = DATA.groups || [];
     if (!groups.length) {
@@ -797,36 +825,11 @@
       });
       rows.sort(cmp);
       if (rows[2]) thirds.push({ g: g.group, r: rows[2] });
-      html += '<div class="group-card"><h3><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + "조</h3>" +
-        '<table class="stand"><thead><tr><th class="c">#</th><th>팀</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th></tr></thead><tbody>';
-      rows.forEach(function (r, i) {
-        var t = r.t, s = r.s;
-        var gd = (s.gd > 0 ? "+" : "") + s.gd;
-        html += '<tr class="' + (i < 2 ? "qual" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
-          '<td class="c rk">' + (i + 1) + "</td>" +
-          '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + "</span>" +
-            '<span class="tm-n">' + esc(t ? t.name : r.id) + "</span></td>" +
-          "<td>" + s.p + "</td><td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td>" +
-          "<td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
-      });
-      html += "</tbody></table></div>";
+      html += '<div class="group-card"><h3><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + "조</h3>" + standTableHTML(rows) + "</div>";
     });
     // 각 조 3위팀 순위 (WC2026: 12개 조 3위 중 상위 8팀 16강 진출)
     thirds.sort(function (a, b) { return cmp(a.r, b.r); });
-    html += '<div class="group-card"><h3>🥉 3위 팀 순위 <span class="muted-note">상위 8팀 16강 진출</span></h3>' +
-      '<table class="stand"><thead><tr><th class="c">#</th><th>팀</th><th class="c">조</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th></tr></thead><tbody>';
-    thirds.forEach(function (o, i) {
-      var t = o.r.t, s = o.r.s;
-      var gd = (s.gd > 0 ? "+" : "") + s.gd;
-      html += '<tr class="' + (i < 8 ? "qual" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
-        '<td class="c rk">' + (i + 1) + "</td>" +
-        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + "</span>" +
-          '<span class="tm-n">' + esc(t ? t.name : o.r.id) + "</span></td>" +
-        '<td class="c">' + esc(o.g) + "</td>" +
-        "<td>" + s.p + "</td><td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td>" +
-        "<td>" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
-    });
-    html += "</tbody></table></div>";
+    html += '<div class="group-card"><h3>🥉 3위 팀 순위 <span class="muted-note">상위 8팀 16강 진출</span></h3>' + standTableHTML(thirds, { group: true, thirds: true }) + "</div>";
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     insertAdFit(viewEl.querySelector(".ad-top")); insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");  // 맨위 320x100 / 맨밑 320x50
   }
@@ -917,12 +920,8 @@
     else head = "😢 자력 진출이 어려운 상황";
     html += '<div class="scn-head ' + (gtd(sLoss) || gtd(sDraw) || gtd(sWin) ? "q12" : (sWin.q || sDraw.q || sLoss.q) ? "p3" : "out") + '">' + head + "</div>";
 
-    // 현재 조 순위 미니테이블
-    html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(krGroup) + '조 순위</div><table class="scn-mini"><tbody>';
-    html += "<tr><td>순위</td>" + cur.map(function (r, i) { return "<td" + (r.id === KR ? ' class="kr"' : "") + ">" + (i + 1) + "위</td>"; }).join("") + "</tr>";
-    html += "<tr><td>국가</td>" + cur.map(function (r) { return "<td" + (r.id === KR ? ' class="kr"' : "") + ">" + esc((r.t || {}).flag || "") + " " + esc((r.t || {}).name || r.id) + "</td>"; }).join("") + "</tr>";
-    html += '<tr><td>승점</td>' + cur.map(function (r) { return '<td class="pt' + (r.id === KR ? " kr" : "") + '">' + r.s.pts + "</td>"; }).join("") + "</tr>";
-    html += "</tbody></table></div>";
+    // 현재 조 순위표
+    html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(krGroup) + '조 순위</div>' + standTableHTML(cur) + "</div>";
 
     // 마지막 경기 헤더
     html += '<div class="scn-last">🏁 마지막 경기 · ' + flag + " 대한민국 vs " + esc(opp.flag || "") + " " + esc(opp.name || oppId) + "</div>";
