@@ -2324,6 +2324,7 @@
       });
       standAt = Date.now();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
+      else if (parseHash().name === "scenario") renderScenario();  // 순위 도착 시 경우의수 페이지 재렌더
     }).catch(function () {});
   }
 
