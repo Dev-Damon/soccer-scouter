@@ -95,11 +95,12 @@ function buildBlock(map, fixById) {
 
   const found = {};
   for (const fx of pending) {
-    const hN = names(fx.homeId), aN = names(fx.awayId);
+    const nosp = s => (s || '').replace(/\s+/g, '');  // 공백 무시(예: "남아프리카 공화국" = "남아프리카공화국")
+    const hN = names(fx.homeId).map(nosp), aN = names(fx.awayId).map(nosp);
     const hit = vids.find(v => {
-      const t = v.videoTitle || '';
-      if (!/하이라이트/.test(t) || !/\(JTBC\)/i.test(t)) return false;
-      if (/\d+\s*분\s*하이라이트/.test(t)) return false;            // "2분 하이라이트" 등 제외
+      const traw = v.videoTitle || '', t = nosp(traw);
+      if (!/하이라이트/.test(traw) || !/\(JTBC\)/i.test(traw)) return false;
+      if (/\d+\s*분\s*하이라이트/.test(traw)) return false;          // "2분 하이라이트" 등 제외
       if (!(v.duration >= 300 && v.duration <= 1200)) return false; // 풀경기(수천초)·짧은클립 제외
       return hN.some(n => t.includes(n)) && aN.some(n => t.includes(n));
     });

@@ -2018,9 +2018,12 @@
             '<span class="vs-name">' + esc(b.name) + '</span><span class="vs-rank">FIFA ' + esc(b.fifaRank) + "위</span><span class=\"vs-go\">전력 보기 ›</span></div>" +
         "</div>" +
         '<div class="vs-goals"></div>' +  /* 골 표기는 스코어 바로 아래 */
-        '<div class="block pred-slot"></div>' +  /* 1) 승부예상 */
-        mvCompareHtml(a, b) +  /* 2) 스쿼드 몸값 게이지(승부예상 바로 밑) */
-        '<div class="block bet-slot"></div>' +  /* 3) 포인트 베팅 */
+        '<div class="block"><h3>승부 예상</h3>' +  /* 1) 승부예상 게이지(정적 확률) */
+          '<div class="prob"><div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + '</div><div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + '</div><div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div></div>" +
+          '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span><span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span><span>' + esc(b.name) + " 승</span></div></div>" +
+        mvCompareHtml(a, b) +  /* 2) 스쿼드 몸값 게이지 */
+        '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
+        '<div class="block bet-slot"></div>' +  /* 4) 포인트 베팅 */
         '<div class="live-btn-slot"></div>' +  /* 라이브 중(치지직 JTBC 송출 감지)이면 updScore가 버튼 채움 */
         ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx) && !IS_TOSS) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +  /* 토스모드는 외부링크(치지직) 제거 */
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
@@ -2031,14 +2034,6 @@
         '<div class="block lineup-slot"></div>' +
         '<div class="mom-slot"></div>' +
         /* 선수 평점·MVP 버튼은 종료 후에만(MOM 포디움이 진입점) — 예정/진행 경기엔 표시 안 함 */
-        '<div class="block"><h3>승부 예상</h3>' +
-          '<div class="prob">' +
-            '<div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + "</div>" +
-            '<div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + "</div>" +
-            '<div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div>" +
-          "</div>" +
-          '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span><span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span><span>' + esc(b.name) + " 승</span></div>" +
-        "</div>" +
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
         '<div class="adslot ad2"></div>' +
