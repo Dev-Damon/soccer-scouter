@@ -1749,6 +1749,15 @@
     if (pal === 8) return o >= 88 ? "#e11d48" : o >= 83 ? "#fb923c" : o >= 78 ? "#facc15" : "#94a3b8";           // 레드→옐로
     return null;
   }
+  // OVR 숫자 뱃지(?ovrbadge=N 미리보기) — 원 좌하단에 OVR 숫자(금/은/동색). "잘하는 선수"를 숫자로 직관 표시.
+  function ovrBadgeSvg(pid, px, py) {
+    var mode = +((location.search.match(/[?&]ovrbadge=(\d)/) || [])[1] || 0); if (!mode) return "";
+    var p = pid && playersById[pid], o = p && p.ovr; if (!o) return "";
+    var col = o >= 88 ? "#d4af37" : o >= 83 ? "#aeb6c2" : o >= 78 ? "#cd7f32" : "#6b7686";  // 금/은/동/철
+    var bx = px - 27, by = py + 5;
+    return '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="22" height="16" rx="3" fill="' + col + '" stroke="#0b1220" stroke-width="1"/>' +
+      '<text x="' + (bx + 11).toFixed(0) + '" y="' + (by + 12.2).toFixed(0) + '" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">' + o + "</text>";
+  }
   // ===================== 경기 예상 (매치업) =====================
   function teamPower(t) {
     var i = t.indices || {};
@@ -1916,10 +1925,11 @@
           }
           var ico = (d.goal ? "⚽" : "") + (d.subIn ? "🔺" : "") + (d.subOff ? "⇄" : "");  // 골·교체투입(🔺=교체로 들어온 선수)·교체아웃
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
+          var ovrBadge = ovrBadgeSvg(d.pid, px, py);  // OVR 숫자뱃지 미리보기(?ovrbadge=N)
           var _ovrc = ovrRing(d.pid);  // OVR 링(?ovrpal=N 미리보기), 없으면 기본 테두리
           out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="' + (_ovrc || "#0b1220") + '" stroke-width="' + (_ovrc ? "4" : "2") + '"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
-            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="' + nameFont + '" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + nmSvg + "</text>" + rbsvg + icoSvg + "</g>");
+            '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="' + nameFont + '" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + nmSvg + "</text>" + rbsvg + icoSvg + ovrBadge + "</g>");
         });
       });
       return out.join("");

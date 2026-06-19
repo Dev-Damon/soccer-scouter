@@ -20,7 +20,7 @@ const CODE_TO_ID = {
 function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<[^>]+>/g,' ').replace(/&[a-z]+;/g,' ').replace(/\s+/g,' ').trim());}
 (async()=>{
   // 페이지네이션(페이지당 50팀) — 1~4페이지(200위)면 본선 48개국 전부 커버
-  const rankByCode = {}, ptsByCode = {}, chByCode = {};
+  const rankByCode = {}, ptsByCode = {}, chByCode = {}, chRByCode = {};
   for (var pg = 1; pg <= 4; pg++) {
     const h = await get('https://football-ranking.com/fifa-rankings?page=' + pg);
     const rows = h.match(/<tr[\s\S]*?<\/tr>/g) || [];
@@ -32,7 +32,8 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
         rankByCode[cm[1]] = rk;
         const rt = c.join(' ');
         const pm = rt.match(/([\d,]+\.\d+)/); if (pm) ptsByCode[cm[1]] = parseFloat(pm[1].replace(/,/g, ''));  // 포인트(첫 소수)
-        const chm = rt.match(/\(([+\-]\d+(?:\.\d+)?)\)/); if (chm) chByCode[cm[1]] = parseFloat(chm[1]);  // 증감 (+/-)
+        const chm = rt.match(/\(([+\-]\d+(?:\.\d+)?)\)/); if (chm) chByCode[cm[1]] = parseFloat(chm[1]);  // 포인트 증감 (+/-)
+        const rkm = rt.match(/(↑|↓)\s*(\d+)/); if (rkm) chRByCode[cm[1]] = (rkm[1] === '↑' ? 1 : -1) * parseInt(rkm[2]);  // 순위 변동 (↑N/↓N)
       }
     });
     if (Object.keys(rankByCode).length === n0) break;  // 새 항목 없으면 마지막 페이지
@@ -54,8 +55,8 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
   if (missing.length) console.log(' 누락(라이브표 밖 or 코드불일치):', missing.join(', '));
   if (DRY) { console.log('[dry] 미적용'); process.exit(0); }
   // fifa.json — 순위+포인트+증감({r,p,ch}). 포인트는 매경기 변동되므로 랭크 무변동이어도 갱신. 토스/웹 공통 런타임 fetch.
-  const fmap = {};
-  Object.keys(CODE_TO_ID).forEach(code => { const id = CODE_TO_ID[code]; if (rankByCode[code] != null) fmap[id] = { r: rankByCode[code], p: ptsByCode[code] != null ? ptsByCode[code] : null, ch: chByCode[code] != null ? chByCode[code] : 0 }; });
+  const fmap = { _ts: Date.now() };  // 갱신 시각
+  Object.keys(CODE_TO_ID).forEach(code => { const id = CODE_TO_ID[code]; if (rankByCode[code] != null) fmap[id] = { r: rankByCode[code], p: ptsByCode[code] != null ? ptsByCode[code] : null, ch: chByCode[code] != null ? chByCode[code] : 0, chR: chRByCode[code] != null ? chRByCode[code] : 0 }; });
   const fjPath = path.join(ROOT, 'fifa.json'), newFj = JSON.stringify(fmap, null, 1);
   const fjChanged = newFj !== (fs.existsSync(fjPath) ? fs.readFileSync(fjPath, 'utf8') : '');
   if (fjChanged) fs.writeFileSync(fjPath, newFj);
