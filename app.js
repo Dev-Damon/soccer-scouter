@@ -248,9 +248,12 @@
   }
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
+  var _brkRO = null, _brkLastW = -1;
   function layoutBracket() {
     var fit = viewEl.querySelector(".brk2-fit"); if (!fit) return;
-    var avail = Math.floor(fit.getBoundingClientRect().width) || fit.clientWidth || 320;  // 실제 가용 폭(렌더 후 측정)
+    var avail = Math.floor(fit.clientWidth) || 320;  // 가용 폭(ResizeObserver 콜백에서 측정 = 패딩 적용된 정확값)
+    if (avail === _brkLastW) return;  // 폭 변화 없으면 스킵(높이 변경에 의한 RO 무한루프 방지)
+    _brkLastW = avail;
     var W = Math.max(320, avail), H = 560, CY = H / 2, i;
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
@@ -311,7 +314,10 @@
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
     viewEl.innerHTML = '<div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div><div class="adslot"></div>';
-    requestAnimationFrame(layoutBracket);  // 레이아웃 정착 후 정확한 폭으로 그리기(좁은 기기 잘림 방지)
+    _brkLastW = -1;  // 새 fit → 강제 재측정
+    var _bfit = viewEl.querySelector(".brk2-fit");
+    if (window.ResizeObserver && _bfit) { if (_brkRO) _brkRO.disconnect(); _brkRO = new ResizeObserver(function () { layoutBracket(); }); _brkRO.observe(_bfit); }
+    else requestAnimationFrame(layoutBracket);  // RO 미지원 폴백
     insertAdFit(viewEl.querySelector(".adslot"));  // 대진표 하단 애드핏 320x100
   }
 
