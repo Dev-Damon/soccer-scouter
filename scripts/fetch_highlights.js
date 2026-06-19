@@ -1,13 +1,20 @@
-// 치지직 JTBC 풀하이라이트 자동수집 — 종료경기 중 MATCH_HIGHLIGHTS에 없는 경기를 채널에서 찾아 app.js 갱신.
-// 소스: 치지직 "북중미 월드컵 JTBC" 단일 채널. 제목 "{홈} vs {원정} 하이라이트(JTBC)" / 길이 ~10~12분.
-// 필터: 제목에 두 팀명 + "하이라이트" + "(JTBC)" 포함, "N분" 클립 제외, 길이 300~1200초. → KBS·2분짜리·풀경기 자동 배제.
-// 단독 실행도 가능(node scripts/fetch_highlights.js [--dry]); update_live.js가 매 갱신 때 호출.
+// 치지직 풀하이라이트 자동수집 — 종료경기 중 MATCH_HIGHLIGHTS에 없는 경기를 찾아 app.js 갱신.
+// 소스: JTBC·JTBCSPORTS·KBS 3채널(JTBC 우선, KBS 폴백). 제목에 두 팀명+"하이라이트", "N분"클립 제외, 길이 300~1200초(풀하이라이트).
+// 컷오프: 경기 종료 후 CUTOFF_H 시간까지만 검색(안 올라오는 경기 무한검색 방지). 업로드 지연은 highlight_delays.log에 측정 기록.
+// 단독 실행 가능(node scripts/fetch_highlights.js [--dry]); update_live.js가 매 갱신 때 호출.
 const https = require('https'), fs = require('fs'), path = require('path');
 const { execFileSync } = require('child_process');
 
-const CHANNEL_ID = '8ecd602c251f30fd7f09463e9f55609f';  // 치지직 "북중미 월드컵 JTBC"
+// 치지직 월드컵 하이라이트 채널 — JTBC 우선(pri 0), KBS 폴백(pri 1). 풀하이라이트(300~1200초) 선호.
+const CHANNELS = [
+  { id: '8ecd602c251f30fd7f09463e9f55609f', src: 'JTBC', pri: 0 },        // 북중미 월드컵 JTBC
+  { id: '1656686e9f50aa321a83482046318bac', src: 'JTBCSPORTS', pri: 0 },  // 북중미 월드컵 JTBCSPORTS
+  { id: '9f5a638cb687474249ada6d21a286153', src: 'KBS', pri: 1 },         // 북중미 월드컵 KBS1
+];
+const CUTOFF_H = 8;  // 경기 종료 후 N시간까지만 검색(영영 안 올라오는 경기 무한검색 방지)
 const ROOT = path.join(__dirname, '..');
 const APP = path.join(ROOT, 'app.js');
+const DELAY_LOG = path.join(ROOT, 'scripts', 'highlight_delays.log');  // 업로드 지연 측정 로그
 const DRY = process.argv.includes('--dry');
 
 function getJson(u) {
@@ -78,39 +85,47 @@ function buildBlock(map, fixById) {
   if (argIds.length) {
     pending = argIds.map(id => fixById[id]).filter(fx => fx && fx.homeId && fx.awayId && !existing[fx.id]);  // ESPN 종료경기만
   } else {
-    const now = Date.now();  // 단독 실행 폴백(인자 없을 때): 킥오프 충분히 지난 경기
-    pending = D.fixtures.filter(fx => { const ko = kickoff(fx); return ko && now > ko + 105 * 60000 && fx.homeId && fx.awayId && !existing[fx.id]; });
+    const now = Date.now();  // 단독/크론 폴백: 종료 후 CUTOFF_H 이내 경기만(무한검색 방지)
+    pending = D.fixtures.filter(fx => { const ko = kickoff(fx); if (!ko || !fx.homeId || !fx.awayId || existing[fx.id]) return false; const end = ko + 115 * 60000; return now > end && now < end + CUTOFF_H * 3600000; });
   }
   if (!pending.length) { if (DRY) console.log('[highlights] 대기 경기 없음'); process.exit(0); }
 
-  // 채널 영상목록(최근 ~6페이지=300여개)
+  // 채널 영상목록(JTBC·JTBCSPORTS·KBS) — 각 영상에 출처/우선순위 태그
   let vids = [];
-  for (let p = 0; p < 6; p++) {
-    const r = await getJson('https://api.chzzk.naver.com/service/v1/channels/' + CHANNEL_ID + '/videos?sortType=LATEST&pagingType=PAGE&page=' + p + '&size=50');
-    const data = r && r.content && r.content.data; if (!data || !data.length) break;
-    vids = vids.concat(data);
-    if (data.length < 50) break;
+  for (const ch of CHANNELS) {
+    for (let p = 0; p < 4; p++) {
+      const r = await getJson('https://api.chzzk.naver.com/service/v1/channels/' + ch.id + '/videos?sortType=LATEST&pagingType=PAGE&page=' + p + '&size=50');
+      const data = r && r.content && r.content.data; if (!data || !data.length) break;
+      data.forEach(v => { v._src = ch.src; v._pri = ch.pri; }); vids = vids.concat(data);
+      if (data.length < 50) break;
+    }
   }
   if (!vids.length) { console.log('[highlights] 채널 영상 조회 실패'); process.exit(0); }
 
+  const nosp = s => (s || '').replace(/\s+/g, '');  // 공백 무시(예: "남아프리카 공화국"="남아프리카공화국")
   const found = {};
   for (const fx of pending) {
-    const nosp = s => (s || '').replace(/\s+/g, '');  // 공백 무시(예: "남아프리카 공화국" = "남아프리카공화국")
     const hN = names(fx.homeId).map(nosp), aN = names(fx.awayId).map(nosp);
-    const hit = vids.find(v => {
+    const cands = vids.filter(v => {
       const traw = v.videoTitle || '', t = nosp(traw);
-      if (!/하이라이트/.test(traw) || !/\(JTBC\)/i.test(traw)) return false;
-      if (/\d+\s*분\s*하이라이트/.test(traw)) return false;          // "2분 하이라이트" 등 제외
-      if (!(v.duration >= 300 && v.duration <= 1200)) return false; // 풀경기(수천초)·짧은클립 제외
+      if (!/하이라이트/.test(traw)) return false;
+      if (/\d+\s*분\s*하이라이트/.test(traw)) return false;          // "2분/3분 하이라이트" 제외
+      if (!(v.duration >= 300 && v.duration <= 1200)) return false; // 풀경기·짧은클립 제외
       return hN.some(n => t.includes(n)) && aN.some(n => t.includes(n));
     });
-    if (hit) found[fx.id] = { url: 'https://chzzk.naver.com/video/' + hit.videoNo, title: hit.videoTitle, dur: hit.duration };
+    if (!cands.length) continue;
+    cands.sort((a, b) => a._pri - b._pri || b.duration - a.duration);  // JTBC 우선 → 긴 영상 우선
+    const hit = cands[0];
+    found[fx.id] = { url: 'https://chzzk.naver.com/video/' + hit.videoNo, title: hit.videoTitle, dur: hit.duration, src: hit._src, delayMin: Math.round((Date.now() - (kickoff(fx) + 115 * 60000)) / 60000) };
   }
 
   const newIds = Object.keys(found);
   if (!newIds.length) { if (DRY) console.log('[highlights] 매칭 없음 (대기 ' + pending.length + '경기)'); process.exit(0); }
 
-  newIds.forEach(id => console.log('[highlights] +', id, found[id].title, '(' + found[id].dur + 's)', found[id].url));
+  newIds.forEach(id => {
+    console.log('[highlights] +', id, '[' + found[id].src + ']', found[id].title, '(' + found[id].dur + 's, 종료후 ' + found[id].delayMin + '분)', found[id].url);
+    if (!DRY) try { fs.appendFileSync(DELAY_LOG, [new Date().toISOString(), id, found[id].src, found[id].delayMin + 'min', found[id].title].join('\t') + '\n'); } catch (e) {}  // 업로드 지연 측정
+  });
   if (DRY) process.exit(0);
 
   // app.js 블록 갱신
@@ -135,7 +150,7 @@ function buildBlock(map, fixById) {
 
   // 커밋·배포 (다른 작업 미스테이지 변경에도 안전하도록 autostash 리베이스)
   try {
-    execFileSync('git', ['add', 'app.js', 'index.html'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['add', 'app.js', 'index.html', 'scripts/highlight_delays.log'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['commit', '-m', '하이라이트 자동수집: ' + newIds.join(',')], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['-c', 'rebase.autoStash=true', 'pull', '--rebase', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['push', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
