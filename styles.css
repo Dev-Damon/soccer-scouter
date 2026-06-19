@@ -183,11 +183,12 @@ table.stand tr[data-team] { cursor: pointer; }
 table.stand tr[data-team]:active { background: rgba(255,255,255,.05); }
 /* 사진형 다컬럼 순위표(득점·실점·최근5) */
 .stand-scroll { overflow-x: visible; }  /* 가로스크롤 없이 — 나라칸 동적 축소 */
-table.stand2 { font-size: 11.5px; width: 100%; table-layout: fixed; }  /* 숫자칼럼 고정 + 팀칼럼 나머지 */
-table.stand2 th, table.stand2 td { padding: 8px 1px; vertical-align: middle; text-align: center; }
-table.stand2 td.rk, table.stand2 th:first-child { width: 16px; }
-table.stand2 td.tm, table.stand2 th:nth-child(2) { width: auto; text-align: left; padding-left: 2px; }  /* 팀칼럼=나머지(동적) */
-table.stand2 td:not(.tm):not(.rk), table.stand2 th:not(:first-child):not(:nth-child(2)) { width: 29px; }  /* 승무패득실득실승점(+조) 고정폭 */
+table.stand2 { font-size: 11px; width: 100%; table-layout: fixed; }  /* 숫자칼럼 고정 + 팀칼럼 나머지 */
+table.stand2 th, table.stand2 td { padding: 8px 0; vertical-align: middle; text-align: center; }
+table.stand2 td.rk, table.stand2 th:first-child { width: 14px; }
+table.stand2 td.tm, table.stand2 th:nth-child(2) { width: auto; text-align: left; padding-left: 3px; }  /* 팀칼럼=나머지(동적) */
+table.stand2 td:not(.tm):not(.rk), table.stand2 th:not(:first-child):not(:nth-child(2)) { width: 23px; }  /* 승무패득실득실승점(+조) 고정폭 */
+table.stand2 th:last-child, table.stand2 td.pts { width: 28px; }  /* 승점은 약간 넓게 */
 table.stand2 .tm { display: flex; align-items: center; gap: 5px; min-width: 0; }
 table.stand2 .tm .team-flag { font-size: 16px; flex: none; }
 table.stand2 .tm-n { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
