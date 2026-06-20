@@ -4016,7 +4016,7 @@ window.DATA = {
       "name": "브라질",
       "nameEn": "Brazil",
       "flag": "🇧🇷",
-      "fifaRank": 6,
+      "fifaRank": 5,
       "group": "C",
       "tierSummary": "월드컵 최다 5회 우승의 영원한 우승 후보로, 안첼로티 체제 아래 비니시우스·하피냐가 이끄는 세계 최정상급 공격진을 보유한 우승권 강팀이다.",
       "styleSummary": [
@@ -4265,7 +4265,7 @@ window.DATA = {
       "name": "모로코",
       "nameEn": "Morocco",
       "flag": "🇲🇦",
-      "fifaRank": 5,
+      "fifaRank": 6,
       "group": "C",
       "tierSummary": "2022 월드컵 4강 신화의 뼈대에 하키미·브라힘 디아스·부누 같은 월드클래스와 AFCON 2025 우승을 더한, C조에서 브라질에 맞설 가장 강력한 다크호스다.",
       "styleSummary": [
@@ -4470,7 +4470,7 @@ window.DATA = {
       "name": "아이티",
       "nameEn": "Haiti",
       "flag": "🇭🇹",
-      "fifaRank": 85,
+      "fifaRank": 87,
       "group": "C",
       "tierSummary": "1974년 이후 52년 만에 본선에 복귀한 카리브의 다크호스로, 프랑스·벨기에·잉글랜드에서 성장한 디아스포라 선수들이 주축인 빠르고 거친 언더독 팀이다.",
       "styleSummary": [
