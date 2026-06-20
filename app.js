@@ -2724,6 +2724,7 @@
     "match-22": "https://chzzk.naver.com/video/13797374", // 튀르키예-파라과이
     "match-25": "https://chzzk.naver.com/video/13713371", // 독일-퀴라소
     "match-26": "https://chzzk.naver.com/video/13714960", // 코트디부아르-에콰도르
+    "match-27": "https://chzzk.naver.com/video/13812303", // 독일-코트디부아르
     "match-31": "https://chzzk.naver.com/video/13714387", // 네덜란드-일본
     "match-32": "https://chzzk.naver.com/video/13716097", // 스웨덴-튀니지
     "match-33": "https://chzzk.naver.com/video/13810944", // 네덜란드-스웨덴
