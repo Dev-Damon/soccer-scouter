@@ -4016,7 +4016,7 @@ window.DATA = {
       "name": "브라질",
       "nameEn": "Brazil",
       "flag": "🇧🇷",
-      "fifaRank": 5,
+      "fifaRank": 6,
       "group": "C",
       "tierSummary": "월드컵 최다 5회 우승의 영원한 우승 후보로, 안첼로티 체제 아래 비니시우스·하피냐가 이끄는 세계 최정상급 공격진을 보유한 우승권 강팀이다.",
       "styleSummary": [
@@ -4265,7 +4265,7 @@ window.DATA = {
       "name": "모로코",
       "nameEn": "Morocco",
       "flag": "🇲🇦",
-      "fifaRank": 6,
+      "fifaRank": 5,
       "group": "C",
       "tierSummary": "2022 월드컵 4강 신화의 뼈대에 하키미·브라힘 디아스·부누 같은 월드클래스와 AFCON 2025 우승을 더한, C조에서 브라질에 맞설 가장 강력한 다크호스다.",
       "styleSummary": [
@@ -4686,7 +4686,7 @@ window.DATA = {
       "name": "스코틀랜드",
       "nameEn": "Scotland",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "fifaRank": 37,
+      "fifaRank": 40,
       "group": "C",
       "tierSummary": "1998년 이후 28년 만의 월드컵 본선에 오른 스코틀랜드는 월드클래스 1명(맥토미니)과 풍부한 빅리그 베테랑들로 무장했지만, 브라질·모로코가 버틴 C조에서는 16강이 현실적 목표인 다크호스다.",
       "styleSummary": [
@@ -12471,7 +12471,7 @@ window.DATA = {
       "name": "파나마",
       "nameEn": "Panama",
       "flag": "🇵🇦",
-      "fifaRank": 40,
+      "fifaRank": 39,
       "group": "L",
       "tierSummary": "유럽·멕시코·MLS·칠레 등 다양한 리그에 흩어진 베테랑 중심의 단단한 다크호스로, 조직력과 투지로 강팀을 괴롭히는 전형적인 콘카카프 강호다.",
       "styleSummary": [
