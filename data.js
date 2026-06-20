@@ -5756,7 +5756,7 @@ window.DATA = {
       "name": "독일",
       "nameEn": "Germany",
       "flag": "🇩🇪",
-      "fifaRank": 9,
+      "fifaRank": 8,
       "group": "E",
       "tierSummary": "무지알라와 비르츠로 대표되는 세계 최고급 공격형 미드필더진에 키미히와 뤼디거의 경험이 더해진 우승 후보권 강팀이지만, 확실한 월드클래스 9번 스트라이커의 부재가 마지막 퍼즐이다.",
       "styleSummary": [
@@ -6188,7 +6188,7 @@ window.DATA = {
       "name": "코트디부아르",
       "nameEn": "Ivory Coast",
       "flag": "🇨🇮",
-      "fifaRank": 30,
+      "fifaRank": 31,
       "group": "E",
       "tierSummary": "12년 만에 본선에 복귀한 2023 아프리카 네이션스컵 챔피언으로, 유럽 빅리그 주전급 자원이 빼곡한 다크호스지만 독일이 버틴 E조에서 16강 경쟁이 만만치 않은 중상위권 전력이다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 31,
+      "fifaRank": 30,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
@@ -10920,7 +10920,7 @@ window.DATA = {
       "name": "포르투갈",
       "nameEn": "Portugal",
       "flag": "🇵🇹",
-      "fifaRank": 8,
+      "fifaRank": 9,
       "group": "K",
       "tierSummary": "유럽 정상급 우승 후보로, 호날두의 마지막 월드컵을 PSG 우승 군단과 황금 세대가 떠받치는 K조 압도적 1강이다.",
       "styleSummary": [
