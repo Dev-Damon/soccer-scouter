@@ -2721,6 +2721,7 @@
     "match-19": "https://chzzk.naver.com/video/13682431", // 미국-파라과이
     "match-20": "https://chzzk.naver.com/video/13700637", // 호주-튀르키예
     "match-21": "https://chzzk.naver.com/video/13795010", // 미국-호주
+    "match-22": "https://chzzk.naver.com/video/13797374", // 튀르키예-파라과이
     "match-25": "https://chzzk.naver.com/video/13713371", // 독일-퀴라소
     "match-26": "https://chzzk.naver.com/video/13714960", // 코트디부아르-에콰도르
     "match-31": "https://chzzk.naver.com/video/13714387", // 네덜란드-일본
