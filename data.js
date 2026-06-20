@@ -6593,7 +6593,7 @@ window.DATA = {
       "name": "네덜란드",
       "nameEn": "Netherlands",
       "flag": "🇳🇱",
-      "fifaRank": 8,
+      "fifaRank": 7,
       "group": "F",
       "tierSummary": "반 다이크와 프렝키 더용을 축으로 한 유럽 강호로, 우승 후보 한 단계 아래의 '강력한 다크호스' 티어다.",
       "styleSummary": [
@@ -7016,7 +7016,7 @@ window.DATA = {
       "name": "스웨덴",
       "nameEn": "Sweden",
       "flag": "🇸🇪",
-      "fifaRank": 34,
+      "fifaRank": 36,
       "group": "F",
       "tierSummary": "조 최하위로 예선을 마치고도 사상 처음으로 플레이오프를 뚫고 본선에 오른 '언더독'이지만, 이사크-요케레스라는 세계 정상급 투톱과 프리미어리그 즐비한 멤버를 보유한 다크호스다.",
       "styleSummary": [
@@ -10920,7 +10920,7 @@ window.DATA = {
       "name": "포르투갈",
       "nameEn": "Portugal",
       "flag": "🇵🇹",
-      "fifaRank": 7,
+      "fifaRank": 8,
       "group": "K",
       "tierSummary": "유럽 정상급 우승 후보로, 호날두의 마지막 월드컵을 PSG 우승 군단과 황금 세대가 떠받치는 K조 압도적 1강이다.",
       "styleSummary": [
