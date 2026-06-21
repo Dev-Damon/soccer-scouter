@@ -5952,7 +5952,7 @@ window.DATA = {
       "name": "퀴라소",
       "nameEn": "Curaçao",
       "flag": "🇨🇼",
-      "fifaRank": 83,
+      "fifaRank": 81,
       "group": "E",
       "tierSummary": "인구·면적 모두 역대 최소 규모로 월드컵 본선에 오른 동화 같은 팀으로, 네덜란드 리그 출신 디아스포라 선수들이 주축인 다크호스다.",
       "styleSummary": [
@@ -6386,7 +6386,7 @@ window.DATA = {
       "name": "에콰도르",
       "nameEn": "Ecuador",
       "flag": "🇪🇨",
-      "fifaRank": 28,
+      "fifaRank": 30,
       "group": "E",
       "tierSummary": "남미 예선에서 아르헨티나 다음으로 좋은 성적을 낸 '황금세대' 다크호스로, 유럽 빅클럽에 포진한 단단한 수비진과 카이세도를 앞세워 16강 이상을 노리는 팀입니다.",
       "styleSummary": [
@@ -7675,7 +7675,7 @@ window.DATA = {
       "name": "이집트",
       "nameEn": "Egypt",
       "flag": "🇪🇬",
-      "fifaRank": 29,
+      "fifaRank": 28,
       "group": "G",
       "tierSummary": "살라라는 세계적 슈퍼스타와 마르무시라는 두 번째 칼날을 앞세웠지만, 스쿼드 26명 중 17명이 자국 리그(특히 알 아흘리) 소속인 '에이스 의존형' 다크호스다.",
       "styleSummary": [
@@ -8115,7 +8115,7 @@ window.DATA = {
       "name": "뉴질랜드",
       "nameEn": "New Zealand",
       "flag": "🇳🇿",
-      "fifaRank": 82,
+      "fifaRank": 83,
       "group": "G",
       "tierSummary": "FIFA 85위의 오세아니아 맹주로, 16년 만에 본선에 복귀한 '언더독' 팀이지만 우디 같은 프리미어리그급 핵심 선수와 유럽파 젊은 피가 섞여 한 방을 노린다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 30,
+      "fifaRank": 29,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
