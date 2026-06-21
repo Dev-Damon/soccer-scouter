@@ -395,7 +395,7 @@ html.light .mgr-act button.mgr-ban { background: #e5a23d; }
 .mf-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; margin: 6px 0 8px; gap: 8px; }
 .mf-head b { font-weight: 800; }
 .mf-a { color: #4f8cff; } .mf-b { color: #e5566a; text-align: right; }
-.mf-tm { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 2px; }
+.mf-tm { cursor: pointer; text-decoration: none; }
 .mf-tm:active { opacity: .65; }
 .mf-pitch { width: 100%; height: auto; display: block; border-radius: 10px; }
 .mf-p { cursor: pointer; }
@@ -885,7 +885,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .badge-info { cursor: pointer; }
 @keyframes msblink { 50% { opacity: .35; } }
 .mstat-leg { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-weight: 800; font-size: 13.5px; color: var(--text); }
-.mstat-leg .ms-tm[data-team], .lu-subteam .lu-tn[data-team] { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(120,140,170,.35); text-underline-offset: 2px; }
+.mstat-leg .ms-tm[data-team], .lu-subteam .lu-tn[data-team] { cursor: pointer; text-decoration: none; }
 .mstat-leg .ms-tm[data-team]:active, .lu-subteam .lu-tn[data-team]:active { opacity: .65; }
 .mstat-leg .ms-tm img.emoji { width: 20px; height: 20px; vertical-align: -3px; }
 .ms-row { margin-bottom: 11px; }
