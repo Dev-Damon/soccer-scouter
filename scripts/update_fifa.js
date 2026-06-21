@@ -19,9 +19,9 @@ const CODE_TO_ID = {
 };
 function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<[^>]+>/g,' ').replace(/&[a-z]+;/g,' ').replace(/\s+/g,' ').trim());}
 (async()=>{
-  // 페이지네이션(페이지당 50팀) — 1~4페이지(200위)면 본선 48개국 전부 커버
-  const rankByCode = {}, ptsByCode = {}, chByCode = {}, chRByCode = {};
-  for (var pg = 1; pg <= 4; pg++) {
+  // 페이지네이션(페이지당 50팀) — 전체 FIFA 회원국까지 저장하고, 본선 48개국은 data.js에도 반영.
+  const rankByCode = {}, ptsByCode = {}, chByCode = {}, chRByCode = {}, allByCode = {};
+  for (var pg = 1; pg <= 5; pg++) {
     const h = await get('https://football-ranking.com/fifa-rankings?page=' + pg);
     const rows = h.match(/<tr[\s\S]*?<\/tr>/g) || [];
     var n0 = Object.keys(rankByCode).length;
@@ -29,11 +29,14 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
       const c = cells(r); if (c.length < 2) return;
       const rk = parseInt((c[0]||'').match(/^\s*(\d+)/)); const cm = (c[1]||'').match(/\(([A-Z]{3})\)/);
       if (rk && cm) {
-        rankByCode[cm[1]] = rk;
+        const code = cm[1], name = (c[1] || '').replace(/\([A-Z]{3}\)/, '').trim();
+        const im = r.match(/<img[^>]+src="([^"]+)"/);
+        rankByCode[code] = rk;
         const rt = c.join(' ');
-        const pm = rt.match(/([\d,]+\.\d+)/); if (pm) ptsByCode[cm[1]] = parseFloat(pm[1].replace(/,/g, ''));  // 포인트(첫 소수)
-        const chm = rt.match(/\(([+\-]\d+(?:\.\d+)?)\)/); if (chm) chByCode[cm[1]] = parseFloat(chm[1]);  // 포인트 증감 (+/-)
-        const rkm = rt.match(/(↑|↓)\s*(\d+)/); if (rkm) chRByCode[cm[1]] = (rkm[1] === '↑' ? 1 : -1) * parseInt(rkm[2]);  // 순위 변동 (↑N/↓N)
+        const pm = rt.match(/([\d,]+\.\d+)/); if (pm) ptsByCode[code] = parseFloat(pm[1].replace(/,/g, ''));  // 포인트(첫 소수)
+        const chm = rt.match(/\(([+\-]\d+(?:\.\d+)?)\)/); if (chm) chByCode[code] = parseFloat(chm[1]);  // 포인트 증감 (+/-)
+        const rkm = rt.match(/(↑|↓)\s*(\d+)/); if (rkm) chRByCode[code] = (rkm[1] === '↑' ? 1 : -1) * parseInt(rkm[2]);  // 순위 변동 (↑N/↓N)
+        allByCode[code] = { code, name, flagUrl: im ? im[1] : '', r: rk };
       }
     });
     if (Object.keys(rankByCode).length === n0) break;  // 새 항목 없으면 마지막 페이지
@@ -57,6 +60,10 @@ function cells(r){return (r.match(/<td[\s\S]*?<\/td>/g)||[]).map(c=>c.replace(/<
   // fifa.json — 순위+포인트+증감({r,p,ch}). 포인트는 매경기 변동되므로 랭크 무변동이어도 갱신. 토스/웹 공통 런타임 fetch.
   const fmap = { _ts: Date.now() };  // 갱신 시각
   Object.keys(CODE_TO_ID).forEach(code => { const id = CODE_TO_ID[code]; if (rankByCode[code] != null) fmap[id] = { r: rankByCode[code], p: ptsByCode[code] != null ? ptsByCode[code] : null, ch: chByCode[code] != null ? chByCode[code] : 0, chR: chRByCode[code] != null ? chRByCode[code] : 0 }; });
+  fmap._all = Object.keys(allByCode).map(code => {
+    const row = allByCode[code];
+    return { code: row.code, name: row.name, flagUrl: row.flagUrl, id: CODE_TO_ID[code] || null, r: row.r, p: ptsByCode[code] != null ? ptsByCode[code] : null, ch: chByCode[code] != null ? chByCode[code] : 0, chR: chRByCode[code] != null ? chRByCode[code] : 0 };
+  }).sort((a, b) => a.r - b.r);
   const fjPath = path.join(ROOT, 'fifa.json'), newFj = JSON.stringify(fmap, null, 1);
   const fjChanged = newFj !== (fs.existsSync(fjPath) ? fs.readFileSync(fjPath, 'utf8') : '');
   if (fjChanged) fs.writeFileSync(fjPath, newFj);

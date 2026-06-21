@@ -287,5 +287,2117 @@
   "p": 1505.33,
   "ch": -33.83,
   "chR": -6
- }
+ },
+ "_all": [
+  {
+   "code": "ARG",
+   "name": "Argentina",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ar.svg",
+   "id": "argentina",
+   "r": 1,
+   "p": 1889.07,
+   "ch": 11.8,
+   "chR": 0
+  },
+  {
+   "code": "FRA",
+   "name": "France",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fr.svg",
+   "id": "france",
+   "r": 2,
+   "p": 1887.11,
+   "ch": 16.41,
+   "chR": 1
+  },
+  {
+   "code": "ESP",
+   "name": "Spain",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/es.svg",
+   "id": "spain",
+   "r": 3,
+   "p": 1856.03,
+   "ch": -18.68,
+   "chR": -1
+  },
+  {
+   "code": "ENG",
+   "name": "England",
+   "flagUrl": "https://flagcdn.com/28x21/gb-eng.png",
+   "id": "england",
+   "r": 4,
+   "p": 1847.68,
+   "ch": 19.66,
+   "chR": 0
+  },
+  {
+   "code": "BRA",
+   "name": "Brazil",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/br.svg",
+   "id": "brazil",
+   "r": 5,
+   "p": 1772.01,
+   "ch": 6.15,
+   "chR": 1
+  },
+  {
+   "code": "MAR",
+   "name": "Morocco",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ma.svg",
+   "id": "morocco",
+   "r": 6,
+   "p": 1769.98,
+   "ch": 14.88,
+   "chR": 1
+  },
+  {
+   "code": "NED",
+   "name": "Netherlands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nl.svg",
+   "id": "netherlands",
+   "r": 7,
+   "p": 1764.4,
+   "ch": 10.83,
+   "chR": 1
+  },
+  {
+   "code": "GER",
+   "name": "Germany",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/de.svg",
+   "id": "germany",
+   "r": 8,
+   "p": 1760.45,
+   "ch": 24.68,
+   "chR": 2
+  },
+  {
+   "code": "POR",
+   "name": "Portugal",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pt.svg",
+   "id": "portugal",
+   "r": 9,
+   "p": 1755.09,
+   "ch": -12.76,
+   "chR": -4
+  },
+  {
+   "code": "BEL",
+   "name": "Belgium",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/be.svg",
+   "id": "belgium",
+   "r": 10,
+   "p": 1733.94,
+   "ch": -8.3,
+   "chR": -1
+  },
+  {
+   "code": "MEX",
+   "name": "Mexico",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mx.svg",
+   "id": "mexico",
+   "r": 11,
+   "p": 1721.78,
+   "ch": 34.3,
+   "chR": 3
+  },
+  {
+   "code": "COL",
+   "name": "Colombia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/co.svg",
+   "id": "colombia",
+   "r": 12,
+   "p": 1712.6,
+   "ch": 14.25,
+   "chR": 1
+  },
+  {
+   "code": "USA",
+   "name": "USA",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/us.svg",
+   "id": "united-states",
+   "r": 13,
+   "p": 1709.59,
+   "ch": 38.36,
+   "chR": 4
+  },
+  {
+   "code": "ITA",
+   "name": "Italy",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/it.svg",
+   "id": null,
+   "r": 14,
+   "p": 1704.73,
+   "ch": 0,
+   "chR": -2
+  },
+  {
+   "code": "CRO",
+   "name": "Croatia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hr.svg",
+   "id": "croatia",
+   "r": 15,
+   "p": 1695.21,
+   "ch": -19.66,
+   "chR": -4
+  },
+  {
+   "code": "JPN",
+   "name": "Japan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jp.svg",
+   "id": "japan",
+   "r": 16,
+   "p": 1681.27,
+   "ch": 19.69,
+   "chR": 2
+  },
+  {
+   "code": "SEN",
+   "name": "Senegal",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sn.svg",
+   "id": "senegal",
+   "r": 17,
+   "p": 1667.66,
+   "ch": -16.41,
+   "chR": -2
+  },
+  {
+   "code": "URU",
+   "name": "Uruguay",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
+   "id": "uruguay",
+   "r": 18,
+   "p": 1661.95,
+   "ch": -11.12,
+   "chR": -2
+  },
+  {
+   "code": "SUI",
+   "name": "Switzerland",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ch.svg",
+   "id": "switzerland",
+   "r": 19,
+   "p": 1654.94,
+   "ch": 4.88,
+   "chR": 0
+  },
+  {
+   "code": "DEN",
+   "name": "Denmark",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/dk.svg",
+   "id": null,
+   "r": 20,
+   "p": 1619.47,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "AUT",
+   "name": "Austria",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/at.svg",
+   "id": "austria",
+   "r": 21,
+   "p": 1612.85,
+   "ch": 15.45,
+   "chR": 3
+  },
+  {
+   "code": "IRN",
+   "name": "IR Iran",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ir.svg",
+   "id": "iran",
+   "r": 22,
+   "p": 1605.12,
+   "ch": -14.46,
+   "chR": -2
+  },
+  {
+   "code": "KOR",
+   "name": "Korea Republic",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kr.svg",
+   "id": "south-korea",
+   "r": 23,
+   "p": 1591.75,
+   "ch": 0.12,
+   "chR": 2
+  },
+  {
+   "code": "NGA",
+   "name": "Nigeria",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ng.svg",
+   "id": null,
+   "r": 24,
+   "p": 1585.02,
+   "ch": 0,
+   "chR": 2
+  },
+  {
+   "code": "AUS",
+   "name": "Australia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/au.svg",
+   "id": "australia",
+   "r": 25,
+   "p": 1584.55,
+   "ch": 5.21,
+   "chR": 2
+  },
+  {
+   "code": "NOR",
+   "name": "Norway",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
+   "id": "norway",
+   "r": 26,
+   "p": 1577.19,
+   "ch": 19.75,
+   "chR": 5
+  },
+  {
+   "code": "CAN",
+   "name": "Canada",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ca.svg",
+   "id": "canada",
+   "r": 27,
+   "p": 1572.13,
+   "ch": 12.65,
+   "chR": 3
+  },
+  {
+   "code": "EGY",
+   "name": "Egypt",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/eg.svg",
+   "id": "egypt",
+   "r": 28,
+   "p": 1570.67,
+   "ch": 8.3,
+   "chR": 1
+  },
+  {
+   "code": "ALG",
+   "name": "Algeria",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/dz.svg",
+   "id": "algeria",
+   "r": 29,
+   "p": 1559.23,
+   "ch": -11.8,
+   "chR": -1
+  },
+  {
+   "code": "ECU",
+   "name": "Ecuador",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ec.svg",
+   "id": "ecuador",
+   "r": 30,
+   "p": 1558.36,
+   "ch": -40.16,
+   "chR": -7
+  },
+  {
+   "code": "CIV",
+   "name": "Côte d'Ivoire",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ci.svg",
+   "id": "ivory-coast",
+   "r": 31,
+   "p": 1551.71,
+   "ch": 10.84,
+   "chR": 2
+  },
+  {
+   "code": "TUR",
+   "name": "Türkiye",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tr.svg",
+   "id": "turkey",
+   "r": 32,
+   "p": 1550.12,
+   "ch": -55.61,
+   "chR": -10
+  },
+  {
+   "code": "UKR",
+   "name": "Ukraine",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ua.svg",
+   "id": null,
+   "r": 33,
+   "p": 1549.29,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "RUS",
+   "name": "Russia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ru.svg",
+   "id": null,
+   "r": 34,
+   "p": 1529.6,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "POL",
+   "name": "Poland",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pl.svg",
+   "id": null,
+   "r": 35,
+   "p": 1526.18,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "SWE",
+   "name": "Sweden",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/se.svg",
+   "id": "sweden",
+   "r": 36,
+   "p": 1518,
+   "ch": 8.21,
+   "chR": 2
+  },
+  {
+   "code": "PAR",
+   "name": "Paraguay",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/py.svg",
+   "id": "paraguay",
+   "r": 37,
+   "p": 1517.39,
+   "ch": 12.04,
+   "chR": 4
+  },
+  {
+   "code": "WAL",
+   "name": "Wales",
+   "flagUrl": "https://flagcdn.com/28x21/gb-wls.png",
+   "id": null,
+   "r": 38,
+   "p": 1516.95,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "HUN",
+   "name": "Hungary",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hu.svg",
+   "id": null,
+   "r": 39,
+   "p": 1506.39,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PAN",
+   "name": "Panama",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pa.svg",
+   "id": "panama",
+   "r": 40,
+   "p": 1505.33,
+   "ch": -33.83,
+   "chR": -6
+  },
+  {
+   "code": "SCO",
+   "name": "Scotland",
+   "flagUrl": "https://flagcdn.com/28x21/gb-sct.png",
+   "id": "scotland",
+   "r": 41,
+   "p": 1504.41,
+   "ch": 1.07,
+   "chR": 1
+  },
+  {
+   "code": "SRB",
+   "name": "Serbia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/rs.svg",
+   "id": null,
+   "r": 42,
+   "p": 1502.13,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "COD",
+   "name": "Congo DR",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cd.svg",
+   "id": "dr-congo",
+   "r": 43,
+   "p": 1487.19,
+   "ch": 12.76,
+   "chR": 3
+  },
+  {
+   "code": "CZE",
+   "name": "Czechia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cz.svg",
+   "id": "czech-republic",
+   "r": 44,
+   "p": 1481.49,
+   "ch": -24.25,
+   "chR": -4
+  },
+  {
+   "code": "CMR",
+   "name": "Cameroon",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cm.svg",
+   "id": null,
+   "r": 45,
+   "p": 1481.24,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "SVK",
+   "name": "Slovakia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sk.svg",
+   "id": null,
+   "r": 46,
+   "p": 1473.66,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "GRE",
+   "name": "Greece",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gr.svg",
+   "id": null,
+   "r": 47,
+   "p": 1473.19,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "VEN",
+   "name": "Venezuela",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ve.svg",
+   "id": null,
+   "r": 48,
+   "p": 1469.18,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "CHI",
+   "name": "Chile",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cl.svg",
+   "id": null,
+   "r": 49,
+   "p": 1458.2,
+   "ch": 0,
+   "chR": 2
+  },
+  {
+   "code": "PER",
+   "name": "Peru",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pe.svg",
+   "id": null,
+   "r": 50,
+   "p": 1457.69,
+   "ch": 0,
+   "chR": 2
+  },
+  {
+   "code": "CRC",
+   "name": "Costa Rica",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cr.svg",
+   "id": null,
+   "r": 51,
+   "p": 1456.03,
+   "ch": 0,
+   "chR": 2
+  },
+  {
+   "code": "ROU",
+   "name": "Romania",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ro.svg",
+   "id": null,
+   "r": 52,
+   "p": 1455.89,
+   "ch": 0,
+   "chR": 2
+  },
+  {
+   "code": "MLI",
+   "name": "Mali",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ml.svg",
+   "id": null,
+   "r": 53,
+   "p": 1455.59,
+   "ch": 0,
+   "chR": 2
+  },
+  {
+   "code": "UZB",
+   "name": "Uzbekistan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uz.svg",
+   "id": "uzbekistan",
+   "r": 54,
+   "p": 1444.48,
+   "ch": -14.25,
+   "chR": -4
+  },
+  {
+   "code": "IRL",
+   "name": "Republic of Ireland",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ie.svg",
+   "id": null,
+   "r": 55,
+   "p": 1441.1,
+   "ch": 0,
+   "chR": 3
+  },
+  {
+   "code": "SVN",
+   "name": "Slovenia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/si.svg",
+   "id": null,
+   "r": 56,
+   "p": 1441.09,
+   "ch": 0,
+   "chR": 3
+  },
+  {
+   "code": "QAT",
+   "name": "Qatar",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/qa.svg",
+   "id": "qatar",
+   "r": 57,
+   "p": 1438.82,
+   "ch": -11.49,
+   "chR": -1
+  },
+  {
+   "code": "TUN",
+   "name": "Tunisia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tn.svg",
+   "id": "tunisia",
+   "r": 58,
+   "p": 1437.69,
+   "ch": -38.72,
+   "chR": -13
+  },
+  {
+   "code": "KSA",
+   "name": "Saudi Arabia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sa.svg",
+   "id": "saudi-arabia",
+   "r": 59,
+   "p": 1435,
+   "ch": 11.12,
+   "chR": 2
+  },
+  {
+   "code": "IRQ",
+   "name": "Iraq",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/iq.svg",
+   "id": "iraq",
+   "r": 60,
+   "p": 1426.53,
+   "ch": -19.75,
+   "chR": -3
+  },
+  {
+   "code": "RSA",
+   "name": "South Africa",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/za.svg",
+   "id": "south-africa",
+   "r": 61,
+   "p": 1418.21,
+   "ch": -10.17,
+   "chR": -1
+  },
+  {
+   "code": "BFA",
+   "name": "Burkina Faso",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bf.svg",
+   "id": null,
+   "r": 62,
+   "p": 1406.99,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CPV",
+   "name": "Cabo Verde",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cv.svg",
+   "id": "cape-verde",
+   "r": 63,
+   "p": 1389.79,
+   "ch": 18.68,
+   "chR": 4
+  },
+  {
+   "code": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ba.svg",
+   "id": "bosnia-and-herzegovina",
+   "r": 64,
+   "p": 1381.18,
+   "ch": -6.04,
+   "chR": 0
+  },
+  {
+   "code": "GHA",
+   "name": "Ghana",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gh.svg",
+   "id": "ghana",
+   "r": 65,
+   "p": 1380.71,
+   "ch": 33.83,
+   "chR": 8
+  },
+  {
+   "code": "HON",
+   "name": "Honduras",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hn.svg",
+   "id": null,
+   "r": 66,
+   "p": 1378.97,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "ALB",
+   "name": "Albania",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/al.svg",
+   "id": null,
+   "r": 67,
+   "p": 1376.03,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "JOR",
+   "name": "Jordan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jo.svg",
+   "id": "jordan",
+   "r": 68,
+   "p": 1372.29,
+   "ch": -15.45,
+   "chR": -5
+  },
+  {
+   "code": "UAE",
+   "name": "United Arab Emirates",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ae.svg",
+   "id": null,
+   "r": 69,
+   "p": 1370.47,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "MKD",
+   "name": "North Macedonia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mk.svg",
+   "id": null,
+   "r": 70,
+   "p": 1369.16,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "NIR",
+   "name": "Northern Ireland",
+   "flagUrl": "https://flagcdn.com/28x21/gb-nir.png",
+   "id": null,
+   "r": 71,
+   "p": 1365.3,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "JAM",
+   "name": "Jamaica",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jm.svg",
+   "id": null,
+   "r": 72,
+   "p": 1357.84,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "GEO",
+   "name": "Georgia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ge.svg",
+   "id": null,
+   "r": 73,
+   "p": 1355.26,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "ISL",
+   "name": "Iceland",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/is.svg",
+   "id": null,
+   "r": 74,
+   "p": 1342.77,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "FIN",
+   "name": "Finland",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fi.svg",
+   "id": null,
+   "r": 75,
+   "p": 1341.92,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ISR",
+   "name": "Israel",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/il.svg",
+   "id": null,
+   "r": 76,
+   "p": 1333.9,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BOL",
+   "name": "Bolivia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bo.svg",
+   "id": null,
+   "r": 77,
+   "p": 1326,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "KOS",
+   "name": "Kosovo",
+   "flagUrl": "https://flagcdn.com/28x21/.png",
+   "id": null,
+   "r": 78,
+   "p": 1319.12,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "OMA",
+   "name": "Oman",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/om.svg",
+   "id": null,
+   "r": 79,
+   "p": 1306.9,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MNE",
+   "name": "Montenegro",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/me.svg",
+   "id": null,
+   "r": 80,
+   "p": 1301.98,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CUW",
+   "name": "Curaçao",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cw.svg",
+   "id": "curacao",
+   "r": 81,
+   "p": 1299.41,
+   "ch": 4.64,
+   "chR": 1
+  },
+  {
+   "code": "GUI",
+   "name": "Guinea",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gn.svg",
+   "id": null,
+   "r": 82,
+   "p": 1295.6,
+   "ch": 0,
+   "chR": -1
+  },
+  {
+   "code": "NZL",
+   "name": "New Zealand",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nz.svg",
+   "id": "new-zealand",
+   "r": 83,
+   "p": 1290.04,
+   "ch": 14.46,
+   "chR": 2
+  },
+  {
+   "code": "SYR",
+   "name": "Syria",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sy.svg",
+   "id": null,
+   "r": 84,
+   "p": 1283.05,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GAB",
+   "name": "Gabon",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ga.svg",
+   "id": null,
+   "r": 85,
+   "p": 1272.51,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "BUL",
+   "name": "Bulgaria",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bg.svg",
+   "id": null,
+   "r": 86,
+   "p": 1271.68,
+   "ch": 0,
+   "chR": 1
+  },
+  {
+   "code": "HAI",
+   "name": "Haiti",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ht.svg",
+   "id": "haiti",
+   "r": 87,
+   "p": 1271,
+   "ch": -22.1,
+   "chR": -4
+  },
+  {
+   "code": "ANG",
+   "name": "Angola",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ao.svg",
+   "id": null,
+   "r": 88,
+   "p": 1265.58,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "UGA",
+   "name": "Uganda",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ug.svg",
+   "id": null,
+   "r": 89,
+   "p": 1264.09,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ZAM",
+   "name": "Zambia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/zm.svg",
+   "id": null,
+   "r": 90,
+   "p": 1255.82,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CHN",
+   "name": "China PR",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cn.svg",
+   "id": null,
+   "r": 91,
+   "p": 1254.81,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BHR",
+   "name": "Bahrain",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bh.svg",
+   "id": null,
+   "r": 92,
+   "p": 1254.41,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BEN",
+   "name": "Benin",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bj.svg",
+   "id": null,
+   "r": 93,
+   "p": 1252.17,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "THA",
+   "name": "Thailand",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
+   "id": null,
+   "r": 94,
+   "p": 1250.8,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PLE",
+   "name": "Palestine",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ps.svg",
+   "id": null,
+   "r": 95,
+   "p": 1243.71,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BLR",
+   "name": "Belarus",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/by.svg",
+   "id": null,
+   "r": 96,
+   "p": 1242.88,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GUA",
+   "name": "Guatemala",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gt.svg",
+   "id": null,
+   "r": 97,
+   "p": 1238.74,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LUX",
+   "name": "Luxembourg",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lu.svg",
+   "id": null,
+   "r": 98,
+   "p": 1232.82,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "VIE",
+   "name": "Vietnam",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
+   "id": null,
+   "r": 99,
+   "p": 1225.68,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SLV",
+   "name": "El Salvador",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sv.svg",
+   "id": null,
+   "r": 100,
+   "p": 1225.34,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TJK",
+   "name": "Tajikistan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tj.svg",
+   "id": null,
+   "r": 101,
+   "p": 1224.19,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TRI",
+   "name": "Trinidad and Tobago",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tt.svg",
+   "id": null,
+   "r": 102,
+   "p": 1219.59,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MOZ",
+   "name": "Mozambique",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mz.svg",
+   "id": null,
+   "r": 103,
+   "p": 1218.62,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MAD",
+   "name": "Madagascar",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mg.svg",
+   "id": null,
+   "r": 104,
+   "p": 1202.69,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "EQG",
+   "name": "Equatorial Guinea",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gq.svg",
+   "id": null,
+   "r": 105,
+   "p": 1195.2,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "KGZ",
+   "name": "Kyrgyz Republic",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kg.svg",
+   "id": null,
+   "r": 106,
+   "p": 1192.16,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ARM",
+   "name": "Armenia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/am.svg",
+   "id": null,
+   "r": 107,
+   "p": 1189.63,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "COM",
+   "name": "Comoros",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/km.svg",
+   "id": null,
+   "r": 108,
+   "p": 1187.91,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "KEN",
+   "name": "Kenya",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ke.svg",
+   "id": null,
+   "r": 109,
+   "p": 1185.08,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LBY",
+   "name": "Libya",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ly.svg",
+   "id": null,
+   "r": 110,
+   "p": 1182.08,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "KAZ",
+   "name": "Kazakhstan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kz.svg",
+   "id": null,
+   "r": 111,
+   "p": 1180.78,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TAN",
+   "name": "Tanzania",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tz.svg",
+   "id": null,
+   "r": 112,
+   "p": 1180.27,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MTN",
+   "name": "Mauritania",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mr.svg",
+   "id": null,
+   "r": 113,
+   "p": 1176.68,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "NIG",
+   "name": "Niger",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ne.svg",
+   "id": null,
+   "r": 114,
+   "p": 1175.33,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LBN",
+   "name": "Lebanon",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lb.svg",
+   "id": null,
+   "r": 115,
+   "p": 1172.22,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GAM",
+   "name": "The Gambia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gm.svg",
+   "id": null,
+   "r": 116,
+   "p": 1159.64,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SDN",
+   "name": "Sudan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sd.svg",
+   "id": null,
+   "r": 117,
+   "p": 1157.22,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "IDN",
+   "name": "Indonesia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/id.svg",
+   "id": null,
+   "r": 118,
+   "p": 1157.14,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TOG",
+   "name": "Togo",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tg.svg",
+   "id": null,
+   "r": 119,
+   "p": 1152.76,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PRK",
+   "name": "Korea DPR",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kp.svg",
+   "id": null,
+   "r": 120,
+   "p": 1151.05,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "NAM",
+   "name": "Namibia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/na.svg",
+   "id": null,
+   "r": 121,
+   "p": 1148.84,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SLE",
+   "name": "Sierra Leone",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sl.svg",
+   "id": null,
+   "r": 122,
+   "p": 1147.56,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "FRO",
+   "name": "Faroe Islands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fo.svg",
+   "id": null,
+   "r": 123,
+   "p": 1136.59,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CYP",
+   "name": "Cyprus",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cy.svg",
+   "id": null,
+   "r": 124,
+   "p": 1133.25,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SUR",
+   "name": "Suriname",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sr.svg",
+   "id": null,
+   "r": 125,
+   "p": 1132.43,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "AZE",
+   "name": "Azerbaijan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/az.svg",
+   "id": null,
+   "r": 126,
+   "p": 1132,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "EST",
+   "name": "Estonia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ee.svg",
+   "id": null,
+   "r": 127,
+   "p": 1130.64,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "RWA",
+   "name": "Rwanda",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/rw.svg",
+   "id": null,
+   "r": 128,
+   "p": 1126.62,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MWI",
+   "name": "Malawi",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mw.svg",
+   "id": null,
+   "r": 129,
+   "p": 1122.05,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ZIM",
+   "name": "Zimbabwe",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/zw.svg",
+   "id": null,
+   "r": 130,
+   "p": 1119.78,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "NCA",
+   "name": "Nicaragua",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ni.svg",
+   "id": null,
+   "r": 131,
+   "p": 1114.63,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GNB",
+   "name": "Guinea-Bissau",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gw.svg",
+   "id": null,
+   "r": 132,
+   "p": 1108.38,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "KUW",
+   "name": "Kuwait",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kw.svg",
+   "id": null,
+   "r": 133,
+   "p": 1106.47,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CGO",
+   "name": "Congo",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cg.svg",
+   "id": null,
+   "r": 134,
+   "p": 1105.96,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PHI",
+   "name": "Philippines",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ph.svg",
+   "id": null,
+   "r": 135,
+   "p": 1100.95,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MAS",
+   "name": "Malaysia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/my.svg",
+   "id": null,
+   "r": 136,
+   "p": 1086.22,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LVA",
+   "name": "Latvia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lv.svg",
+   "id": null,
+   "r": 137,
+   "p": 1085.66,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "IND",
+   "name": "India",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/in.svg",
+   "id": null,
+   "r": 138,
+   "p": 1084.93,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CTA",
+   "name": "Central African Republic",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cf.svg",
+   "id": null,
+   "r": 139,
+   "p": 1080.82,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LBR",
+   "name": "Liberia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lr.svg",
+   "id": null,
+   "r": 140,
+   "p": 1080.44,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TKM",
+   "name": "Turkmenistan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tm.svg",
+   "id": null,
+   "r": 141,
+   "p": 1078.65,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BDI",
+   "name": "Burundi",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bi.svg",
+   "id": null,
+   "r": 142,
+   "p": 1078.01,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ETH",
+   "name": "Ethiopia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/et.svg",
+   "id": null,
+   "r": 143,
+   "p": 1077.52,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "DOM",
+   "name": "Dominican Republic",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/do.svg",
+   "id": null,
+   "r": 144,
+   "p": 1076.5,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "YEM",
+   "name": "Yemen",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ye.svg",
+   "id": null,
+   "r": 145,
+   "p": 1065.24,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LES",
+   "name": "Lesotho",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ls.svg",
+   "id": null,
+   "r": 146,
+   "p": 1064.29,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BOT",
+   "name": "Botswana",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bw.svg",
+   "id": null,
+   "r": 147,
+   "p": 1063.63,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SGP",
+   "name": "Singapore",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sg.svg",
+   "id": null,
+   "r": 148,
+   "p": 1057.95,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LTU",
+   "name": "Lithuania",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lt.svg",
+   "id": null,
+   "r": 149,
+   "p": 1056.85,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GUY",
+   "name": "Guyana",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gy.svg",
+   "id": null,
+   "r": 150,
+   "p": 1049.32,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "NCL",
+   "name": "New Caledonia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nc.svg",
+   "id": null,
+   "r": 151,
+   "p": 1036.95,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SKN",
+   "name": "St Kitts and Nevis",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kn.svg",
+   "id": null,
+   "r": 152,
+   "p": 1036.33,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SOL",
+   "name": "Solomon Islands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sb.svg",
+   "id": null,
+   "r": 153,
+   "p": 1031.89,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PUR",
+   "name": "Puerto Rico",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pr.svg",
+   "id": null,
+   "r": 154,
+   "p": 1024.3,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "FIJ",
+   "name": "Fiji",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fj.svg",
+   "id": null,
+   "r": 155,
+   "p": 1024.17,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "HKG",
+   "name": "Hong Kong, China",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hk.svg",
+   "id": null,
+   "r": 156,
+   "p": 1024.16,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TAH",
+   "name": "Tahiti",
+   "flagUrl": "https://flagcdn.com/28x21/pf.png",
+   "id": null,
+   "r": 157,
+   "p": 1019.04,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MYA",
+   "name": "Myanmar",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mm.svg",
+   "id": null,
+   "r": 158,
+   "p": 1010.91,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MDA",
+   "name": "Moldova",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/md.svg",
+   "id": null,
+   "r": 159,
+   "p": 1008.24,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "VAN",
+   "name": "Vanuatu",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vu.svg",
+   "id": null,
+   "r": 160,
+   "p": 1002.53,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MLT",
+   "name": "Malta",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mt.svg",
+   "id": null,
+   "r": 161,
+   "p": 992.79,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ATG",
+   "name": "Antigua and Barbuda",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ag.svg",
+   "id": null,
+   "r": 162,
+   "p": 986.58,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GRN",
+   "name": "Grenada",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gd.svg",
+   "id": null,
+   "r": 163,
+   "p": 981.82,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CUB",
+   "name": "Cuba",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cu.svg",
+   "id": null,
+   "r": 164,
+   "p": 981.42,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SWZ",
+   "name": "Eswatini",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sz.svg",
+   "id": null,
+   "r": 165,
+   "p": 979.01,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LCA",
+   "name": "St Lucia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lc.svg",
+   "id": null,
+   "r": 166,
+   "p": 976.71,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BER",
+   "name": "Bermuda",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bm.svg",
+   "id": null,
+   "r": 167,
+   "p": 975.05,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PNG",
+   "name": "Papua New Guinea",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pg.svg",
+   "id": null,
+   "r": 168,
+   "p": 974.9,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SSD",
+   "name": "South Sudan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ss.svg",
+   "id": null,
+   "r": 169,
+   "p": 970.94,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "VIN",
+   "name": "St Vincent and the Grenadines",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vc.svg",
+   "id": null,
+   "r": 170,
+   "p": 968.27,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "AFG",
+   "name": "Afghanistan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/af.svg",
+   "id": null,
+   "r": 171,
+   "p": 968.07,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "AND",
+   "name": "Andorra",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ad.svg",
+   "id": null,
+   "r": 172,
+   "p": 946.43,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MDV",
+   "name": "Maldives",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mv.svg",
+   "id": null,
+   "r": 173,
+   "p": 943.92,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TPE",
+   "name": "Chinese Taipei",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tw.svg",
+   "id": null,
+   "r": 174,
+   "p": 923.78,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CAM",
+   "name": "Cambodia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kh.svg",
+   "id": null,
+   "r": 175,
+   "p": 922.32,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MSR",
+   "name": "Montserrat",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ms.svg",
+   "id": null,
+   "r": 176,
+   "p": 916.75,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "NEP",
+   "name": "Nepal",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/np.svg",
+   "id": null,
+   "r": 177,
+   "p": 914.54,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MRI",
+   "name": "Mauritius",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mu.svg",
+   "id": null,
+   "r": 178,
+   "p": 911.49,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BRB",
+   "name": "Barbados",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bb.svg",
+   "id": null,
+   "r": 179,
+   "p": 909.89,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BLZ",
+   "name": "Belize",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bz.svg",
+   "id": null,
+   "r": 180,
+   "p": 907,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BAN",
+   "name": "Bangladesh",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bd.svg",
+   "id": null,
+   "r": 181,
+   "p": 902.93,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "DMA",
+   "name": "Dominica",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/dm.svg",
+   "id": null,
+   "r": 182,
+   "p": 897.69,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CHA",
+   "name": "Chad",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/td.svg",
+   "id": null,
+   "r": 183,
+   "p": 896.85,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ERI",
+   "name": "Eritrea",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/er.svg",
+   "id": null,
+   "r": 184,
+   "p": 887.06,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LAO",
+   "name": "Laos",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/la.svg",
+   "id": null,
+   "r": 185,
+   "p": 885.03,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "COK",
+   "name": "Cook Islands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ck.svg",
+   "id": null,
+   "r": 186,
+   "p": 877.53,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SRI",
+   "name": "Sri Lanka",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lk.svg",
+   "id": null,
+   "r": 187,
+   "p": 876.86,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SAM",
+   "name": "Samoa",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ws.svg",
+   "id": null,
+   "r": 188,
+   "p": 876.41,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ARU",
+   "name": "Aruba",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/aw.svg",
+   "id": null,
+   "r": 189,
+   "p": 875.61,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MNG",
+   "name": "Mongolia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mn.svg",
+   "id": null,
+   "r": 190,
+   "p": 874.47,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "ASA",
+   "name": "American Samoa",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ws.svg",
+   "id": null,
+   "r": 191,
+   "p": 871.61,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BHU",
+   "name": "Bhutan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bt.svg",
+   "id": null,
+   "r": 192,
+   "p": 870.81,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "MAC",
+   "name": "Macau",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mo.svg",
+   "id": null,
+   "r": 193,
+   "p": 858.03,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BRU",
+   "name": "Brunei Darussalam",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bn.svg",
+   "id": null,
+   "r": 194,
+   "p": 857.73,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "STP",
+   "name": "São Tomé and Príncipe",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/st.svg",
+   "id": null,
+   "r": 195,
+   "p": 855.44,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "DJI",
+   "name": "Djibouti",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/dj.svg",
+   "id": null,
+   "r": 196,
+   "p": 853.58,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "CAY",
+   "name": "Cayman Islands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ky.svg",
+   "id": null,
+   "r": 197,
+   "p": 850.06,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "PAK",
+   "name": "Pakistan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pk.svg",
+   "id": null,
+   "r": 198,
+   "p": 840.28,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SOM",
+   "name": "Somalia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/so.svg",
+   "id": null,
+   "r": 199,
+   "p": 839.17,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TGA",
+   "name": "Tonga",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/to.svg",
+   "id": null,
+   "r": 200,
+   "p": 835.64,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TLS",
+   "name": "Timor-Leste",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tl.svg",
+   "id": null,
+   "r": 201,
+   "p": 831,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GIB",
+   "name": "Gibraltar",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gi.svg",
+   "id": null,
+   "r": 202,
+   "p": 820.26,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "GUM",
+   "name": "Guam",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gu.svg",
+   "id": null,
+   "r": 203,
+   "p": 819.54,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SEY",
+   "name": "Seychelles",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sc.svg",
+   "id": null,
+   "r": 204,
+   "p": 804.16,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "TCA",
+   "name": "Turks and Caicos Islands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tc.svg",
+   "id": null,
+   "r": 205,
+   "p": 803.98,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "LIE",
+   "name": "Liechtenstein",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/li.svg",
+   "id": null,
+   "r": 206,
+   "p": 797.7,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "BAH",
+   "name": "Bahamas",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bs.svg",
+   "id": null,
+   "r": 207,
+   "p": 786.82,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "VIR",
+   "name": "US Virgin Islands",
+   "flagUrl": "https://flagcdn.com/28x21/vi.png",
+   "id": null,
+   "r": 208,
+   "p": 779.76,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "VGB",
+   "name": "British Virgin Islands",
+   "flagUrl": "https://flagcdn.com/28x21/vg.png",
+   "id": null,
+   "r": 209,
+   "p": 777.41,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "AIA",
+   "name": "Anguilla",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ai.svg",
+   "id": null,
+   "r": 210,
+   "p": 760.25,
+   "ch": 0,
+   "chR": 0
+  },
+  {
+   "code": "SMR",
+   "name": "San Marino",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sm.svg",
+   "id": null,
+   "r": 211,
+   "p": 721.2,
+   "ch": 0,
+   "chR": 0
+  }
+ ]
 }

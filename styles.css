@@ -1556,7 +1556,9 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .fifa-row:active { background: rgba(255,255,255,.05); }
 .fifa-row .fr-rank { width: 30px; text-align: center; font-weight: 900; color: var(--muted); font-variant-numeric: tabular-nums; }
 .fifa-row .fr-flag { font-size: 22px; }
+.fifa-row .fr-img { width: 24px; height: 18px; object-fit: cover; border-radius: 2px; vertical-align: -3px; box-shadow: 0 0 0 1px rgba(255,255,255,.18); }
 .fifa-row .fr-name { flex: 1; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fifa-row .fr-name small { color: var(--muted); font-size: 11px; margin-left: 4px; }
 .fifa-row .fr-go { color: var(--muted); }
 .fifa-row.kr { background: rgba(79,140,255,.1); }
 .fifa-row.kr .fr-rank, .fifa-row.kr .fr-name { color: var(--accent); font-weight: 900; }
@@ -1576,6 +1578,7 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다
 .fr-mv { font-size: 10.5px; font-weight: 800; width: 26px; text-align: center; flex: none; }
 .fr-mv.up { color: #2ecf83; } .fr-mv.down { color: #e5574d; } .fr-mv.flat { color: var(--muted); }
 .fr-more { flex: none; background: none; border: 0; color: var(--muted); font-size: 15px; padding: 4px 6px; cursor: pointer; }
+.fr-more.fr-empty { width: 27px; cursor: default; }
 .fifa-detail { padding: 4px 12px 10px 50px; background: var(--card-2); }
 .fde-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 12.5px; border-top: 1px dashed var(--line); cursor: pointer; }
 .fde-row:first-child { border-top: 0; }
