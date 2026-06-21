@@ -3,6 +3,9 @@ ui-*.png
 final-*.png
 real-*.png
 .DS_Store
+.env
+.env.*
+!.env.example
 *.png
 scripts/out/
 
