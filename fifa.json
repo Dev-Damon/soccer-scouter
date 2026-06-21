@@ -1,5 +1,5 @@
 {
- "_ts": 1782068231629,
+ "_ts": 1782070041492,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -170,8 +170,8 @@
  },
  "spain": {
   "r": 3,
-  "p": 1856.03,
-  "ch": -18.68,
+  "p": 1864.32,
+  "ch": -10.39,
   "chR": -1
  },
  "cape-verde": {
@@ -182,8 +182,8 @@
  },
  "saudi-arabia": {
   "r": 59,
-  "p": 1435,
-  "ch": 11.12,
+  "p": 1426.71,
+  "ch": 2.83,
   "chR": 2
  },
  "uruguay": {
@@ -315,8 +315,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/es.svg",
    "id": "spain",
    "r": 3,
-   "p": 1856.03,
-   "ch": -18.68,
+   "p": 1864.32,
+   "ch": -10.39,
    "chR": -1
   },
   {
@@ -875,8 +875,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sa.svg",
    "id": "saudi-arabia",
    "r": 59,
-   "p": 1435,
-   "ch": 11.12,
+   "p": 1426.71,
+   "ch": 2.83,
    "chR": 2
   },
   {
