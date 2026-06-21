@@ -3569,7 +3569,7 @@ window.DATA = {
       "name": "카타르",
       "nameEn": "Qatar",
       "flag": "🇶🇦",
-      "fifaRank": 58,
+      "fifaRank": 57,
       "group": "B",
       "tierSummary": "2회 연속 아시안컵 우승으로 아시아 정상에 오른 강팀이지만, 선수 대부분이 자국 리그 소속이라 유럽 강호들과 맞붙는 본선에서는 도전자에 가깝다.",
       "styleSummary": [
@@ -6827,7 +6827,7 @@ window.DATA = {
       "name": "일본",
       "nameEn": "Japan",
       "flag": "🇯🇵",
-      "fifaRank": 17,
+      "fifaRank": 16,
       "group": "F",
       "tierSummary": "유럽 빅리그에 선수 대부분을 보낸 아시아 최강 다크호스로, 스타 1~2명 의존이 아니라 탄탄한 미드필더와 공격 자원의 두께가 강점인 8강권 전력이다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 54,
+      "fifaRank": 58,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -9448,7 +9448,7 @@ window.DATA = {
       "name": "세네갈",
       "nameEn": "Senegal",
       "flag": "🇸🇳",
-      "fifaRank": 16,
+      "fifaRank": 17,
       "group": "I",
       "tierSummary": "2021년·2025년 아프리카 네이션스컵을 제패한 아프리카 최강 전력 중 하나로, 프리미어리그를 비롯한 빅리그 주축 선수가 즐비한 다크호스급 팀입니다.",
       "styleSummary": [
@@ -11357,7 +11357,7 @@ window.DATA = {
       "name": "우즈베키스탄",
       "nameEn": "Uzbekistan",
       "flag": "🇺🇿",
-      "fifaRank": 55,
+      "fifaRank": 54,
       "group": "K",
       "tierSummary": "사상 첫 월드컵 본선에 오른 중앙아시아 개척자로, 맨시티 후사노프와 역대 최다 득점자 쇼무로도프를 축으로 조직력과 수비를 앞세워 첫 승에 도전하는 다크호스다.",
       "styleSummary": [
