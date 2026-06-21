@@ -885,6 +885,8 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .badge-info { cursor: pointer; }
 @keyframes msblink { 50% { opacity: .35; } }
 .mstat-leg { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-weight: 800; font-size: 13.5px; color: var(--text); }
+.mstat-leg .ms-tm[data-team], .lu-subteam .lu-tn[data-team] { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(120,140,170,.35); text-underline-offset: 2px; }
+.mstat-leg .ms-tm[data-team]:active, .lu-subteam .lu-tn[data-team]:active { opacity: .65; }
 .mstat-leg .ms-tm img.emoji { width: 20px; height: 20px; vertical-align: -3px; }
 .ms-row { margin-bottom: 11px; }
 .ms-top { display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; margin-bottom: 5px; }

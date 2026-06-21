@@ -2891,7 +2891,7 @@
     }).join("");
     if (!rows) return "";
     return '<div class="mstat"><div class="mstat-h">📊 경기 통계' + (live ? ' <span class="ms-live">● 실시간</span>' : "") + "</div>" +
-      '<div class="mstat-leg"><span class="ms-tm">' + esc(a.flag) + " " + esc(a.name) + '</span><span class="ms-tm">' + esc(b.name) + " " + esc(b.flag) + "</span></div>" + rows + "</div>";
+      '<div class="mstat-leg"><span class="ms-tm" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(a.name) + '</span><span class="ms-tm" data-team="' + esc(b.id) + '">' + esc(b.name) + " " + esc(b.flag) + "</span></div>" + rows + "</div>";
   }
   function renderLineup(slot, d, a, b, fx) {
     var rosters = d.rosters || [];
@@ -2925,7 +2925,7 @@
         }
         if (!subs.length) return "";
         subs.sort(function (x, y) { function rank(p) { var n = (p.athlete && p.athlete.displayName) || ""; return outInfo[n] ? 0 : (subInfo[n] ? 1 : 2); } return rank(x) - rank(y); });  // 빠진 선발 → 투입선수 → 미출전 순
-        return '<div class="lu-subteam"><div class="lu-tn">' + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx), outInfo, t && t.name); }).join("") + "</div></div>";
+        return '<div class="lu-subteam"><div class="lu-tn"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" + esc(nm) + '</div><div class="lu-list subs">' + subs.map(function (p) { return luPlayer(p, matchId, subInfo, _em.goals, fx && matchEnded(fx), outInfo, t && t.name); }).join("") + "</div></div>";
       }).join("");
       if (subsHtml) html += '<details class="lu-subs-d"' + (fx && matchEnded(fx) ? " open" : "") + '><summary>🔄 교체 명단</summary>' + subsHtml + "</details>";  // 종료 후엔 펼친 채로
     } else {
