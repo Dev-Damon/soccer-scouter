@@ -3983,19 +3983,26 @@
   // ===== 후원(응원하기) =====
   (function () {
     var btn = document.getElementById("donateBtn"); if (!btn) return;
-    if (IS_TOSS) {  // 토스 미니앱: 외부 송금링크 금지 → 토스페이 인앱결제(IAP). 금액별 sku는 콘솔 등록, .ait 빌드의 main.ts가 window.tossPay.donate 제공
-      if (!window.__TOSS_IAP__) { btn.style.display = "none"; return; }  // 인앱결제(사업자·sku) 준비 전엔 후원 숨김 → 앱 먼저 출시 가능. main.ts에서 켜면 노출
-      var TT = [["⚽ 골", 3900], ["🎩 해트트릭", 6900], ["🏆 발롱도르", 9900], ["🐐 GOAT", 19900]];
+    if (IS_TOSS) {  // 토스 미니앱: 외부 송금링크 금지 → 토스페이 인앱결제(IAP). 상품(이름/금액/sku)은 콘솔 등록값을 main.ts의 products()로 받아 표시
+      if (!window.__TOSS_IAP__) { btn.style.display = "none"; return; }  // 인앱결제 준비 전엔 후원 숨김
+      function amtNum(s) { var m = String(s || "").replace(/[^\d]/g, ""); return m ? +m : 0; }  // "3,600원" → 3600 (정렬용)
       btn.addEventListener("click", function () {
         var ov = document.createElement("div"); ov.className = "donate-ov on";
-        var tiers = TT.map(function (t) { return '<button class="ds-tier" data-amt="' + t[1] + '"><span>' + t[0] + "</span><b>" + t[1].toLocaleString() + "원</b></button>"; }).join("");
-        ov.innerHTML = '<div class="donate-sheet"><button class="ds-x" aria-label="닫기">✕</button><div class="ds-title">⚽ 개발자에게 한 골!</div><div class="ds-sub">여러분의 응원이 킥톡을 계속 뛰게 합니다 🙌</div>' + tiers + '<div class="ds-status"></div><div class="ds-note muted-note">토스페이로 안전하게 후원돼요 💙</div></div>';
+        ov.innerHTML = '<div class="donate-sheet"><button class="ds-x" aria-label="닫기">✕</button><div class="ds-title">⚽ 개발자에게 한 골!</div><div class="ds-sub">여러분의 응원이 킥톡을 계속 뛰게 합니다 🙌</div><div class="ds-tiers"><div class="ds-loading"><span class="ds-spin"></span>상품 불러오는 중…</div></div><div class="ds-status"></div><div class="ds-note muted-note">토스페이로 안전하게 후원돼요 💙</div></div>';
         document.body.appendChild(ov); twem(ov);
+        // 콘솔 등록 상품 목록을 받아 금액 오름차순으로 표시(토스 상품 기준 — 이름/금액 그대로)
+        (window.tossPay && window.tossPay.products ? window.tossPay.products() : Promise.resolve([])).then(function (list) {
+          var box = ov.querySelector(".ds-tiers"); if (!box) return;
+          if (!list || !list.length) { box.innerHTML = '<div class="muted-note">상품을 불러오지 못했어요. 토스 앱에서 다시 시도해주세요.</div>'; return; }
+          list = list.slice().sort(function (a, b) { return amtNum(a.displayAmount) - amtNum(b.displayAmount); });
+          box.innerHTML = list.map(function (p) { return '<button class="ds-tier" data-sku="' + esc(p.sku) + '"><span>' + esc(p.displayName) + "</span><b>" + esc(p.displayAmount) + "</b></button>"; }).join("");
+          twem(box);
+        }).catch(function () { var box = ov.querySelector(".ds-tiers"); if (box) box.innerHTML = '<div class="muted-note">상품을 불러오지 못했어요.</div>'; });
         ov.addEventListener("click", function (e) {
           if (e.target === ov || e.target.closest(".ds-x")) { ov.remove(); return; }
           var tb = e.target.closest(".ds-tier"); if (!tb) return;
-          var amt = +tb.getAttribute("data-amt");
-          if (window.tossPay && window.tossPay.donate) { window.tossPay.donate(amt); ov.remove(); }
+          var sku = tb.getAttribute("data-sku");
+          if (sku && window.tossPay && window.tossPay.donate) { window.tossPay.donate(sku); ov.remove(); }
           else { var st = ov.querySelector(".ds-status"); if (st) st.textContent = "토스 앱에서 후원할 수 있어요."; }
         });
       });
