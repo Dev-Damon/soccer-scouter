@@ -2974,14 +2974,14 @@
   function luEvent(ev) {
     var evTeamKo = ev.team ? ((teamsById[espnTeamId(ev.team.displayName)] || {}).name) : null;  // 이벤트 팀 → 동명이인 매칭
     function nk(a) { return enToKo((a && a.displayName) || "", evTeamKo); }
-    function jn(a) { var n = (a && a.displayName) || "", mp = playerByName(n, evTeamKo); var num = (mp && mp.number != null) ? mp.number : ((a && a.jersey != null && a.jersey !== "") ? a.jersey : ""); return (num !== "" ? num + "번 " : "") + enToKo(n, evTeamKo); }
+    function jn(a) { var n = (a && a.displayName) || "", mp = playerByName(n, evTeamKo); var num = (mp && mp.number != null) ? mp.number : ((a && a.jersey != null && a.jersey !== "") ? a.jersey : ""); return (num !== "" ? num + " " : "") + enToKo(n, evTeamKo); }  // 등번호 + 이름 (예: "14 제이컵 새펄버그")
     var ty = ((ev.type && ev.type.type) || "").toLowerCase(), clk = (ev.clock && ev.clock.displayValue) || "";
     var parts = (ev.participants || ev.athletesInvolved || []).map(function (a) { return a.athlete; }).filter(Boolean);
     var icon, txt;
-    if (/own.?goal/.test(ty)) { icon = "⚽"; txt = nk(parts[0]) + " 자책골"; }
-    else if (/goal|scored/.test(ty) && !/missed|saved/.test(ty)) { icon = "⚽"; txt = nk(parts[0]) + " 골" + (parts[1] ? " (도움 " + nk(parts[1]) + ")" : ""); }
-    else if (/yellow/.test(ty)) { icon = "🟨"; txt = nk(parts[0]) + " 경고"; }
-    else if (/red/.test(ty)) { icon = "🟥"; txt = nk(parts[0]) + " 퇴장"; }
+    if (/own.?goal/.test(ty)) { icon = "⚽"; txt = jn(parts[0]) + " 자책골"; }
+    else if (/goal|scored/.test(ty) && !/missed|saved/.test(ty)) { icon = "⚽"; txt = jn(parts[0]) + " 골" + (parts[1] ? " (도움 " + jn(parts[1]) + ")" : ""); }
+    else if (/yellow/.test(ty)) { icon = "🟨"; txt = jn(parts[0]) + " 경고"; }
+    else if (/red/.test(ty)) { icon = "🟥"; txt = jn(parts[0]) + " 퇴장"; }
     else if (/substitution/.test(ty)) { icon = "🔄"; txt = (parts[0] ? jn(parts[0]) + " ⬆" : "") + (parts[1] ? " " + jn(parts[1]) + " ⬇" : ""); }
     else return "";
     if (!(txt || "").trim()) txt = ev.shortText || ev.text || "";
