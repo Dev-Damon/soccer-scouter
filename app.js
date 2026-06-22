@@ -1084,33 +1084,51 @@
   }
   // 경기상세용: 이 경기(조별·미종료) 결과별 양팀 32강 진출 경우의 수 + 현재 조 순위. 한국 전용 로직을 모든 팀에 일반화.
   function matchScenarioHtml(fx) {
-    if (!fx || !fx.group || !DATA.groups) return "";
+    if (!fx || !fx.group || !DATA.groups || matchEnded(fx)) return "";
     var g = DATA.groups.filter(function (x) { return x.group === fx.group; })[0]; if (!g) return "";
     var gids = g.teamIds || []; if (gids.indexOf(fx.homeId) < 0 || gids.indexOf(fx.awayId) < 0) return "";
+    if (!Object.keys(STAND).length) return '<div class="block"><h3>🏆 ' + esc(fx.group) + '조 현황</h3><div class="muted-note">순위 불러오는 중…</div></div>';
     var allFx = (DATA.fixtures || []).filter(function (f) { return gids.indexOf(f.homeId) >= 0 && gids.indexOf(f.awayId) >= 0; });
     var remaining = allFx.filter(function (f) { return !matchEnded(f); });
-    if (matchEnded(fx) || remaining.indexOf(fx) < 0) return "";  // 종료 경기는 시나리오 생략
-    if (!Object.keys(STAND).length) return '<div class="block"><h3>🧮 32강 진출 경우의 수</h3><div class="muted-note">순위 불러오는 중…</div></div>';
     var cur = gids.map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
-    var others = remaining.filter(function (f) { return f !== fx; });
-    function teamOut(teamId, res) { var home = fx.homeId === teamId; return res === "win" ? (home ? "h" : "a") : res === "loss" ? (home ? "a" : "h") : "d"; }
-    function rrngTeam(teamId, res) {
-      var combos = scnEnum(others), mn = 9, mx = 0;
-      combos.forEach(function (c) { var picks = {}; picks[fx.id] = teamOut(teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
-      return { mn: mn, mx: mx };
+
+    // 양팀의 조별 종료 경기 결과(상대 + 스코어 + 승무패) — 좌우 배치
+    function teamResults(teamId) {
+      return allFx.filter(function (f) { return (f.homeId === teamId || f.awayId === teamId) && matchEnded(f); })
+        .sort(function (a, b) { return (fxDate(a) || "") < (fxDate(b) || "") ? -1 : 1; })
+        .map(function (f) {
+          var lv = LIVE[f.id] || {}, home = f.homeId === teamId, op = teamsById[home ? f.awayId : f.homeId] || {};
+          var my = home ? lv.hs : lv.as, ot = home ? lv.as : lv.hs;
+          var res = my == null ? "" : my > ot ? "w" : my < ot ? "l" : "d";
+          return '<div class="mr-g ' + res + '"><span class="mr-opp">' + esc(op.flag || "") + " " + esc(op.name || "") + '</span><span class="mr-sc">' + (my != null ? my + ":" + ot : "-") + "</span></div>";
+        }).join("");
     }
-    function verdict(rr) { return rr.mx <= 2 ? { t: "✅ 32강 직행", c: "q" } : rr.mn >= 4 ? { t: "❌ 탈락", c: "o" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 경쟁", c: "p" } : rr.mn <= 2 ? { t: "🟡 직행 또는 3위", c: "p" } : { t: "🟡 3위 또는 탈락", c: "p" }; }
-    var hn = fx.homeName, an = fx.awayName, hf = teamsById[fx.homeId] || {}, af = teamsById[fx.awayId] || {};
-    var cases = [["win", esc(hf.flag || "") + " " + esc(hn) + " 승"], ["draw", "무승부"], ["loss", esc(af.flag || "") + " " + esc(an) + " 승"]];
-    var trs = cases.map(function (kv) {
-      var hRes = kv[0], aRes = kv[0] === "win" ? "loss" : kv[0] === "loss" ? "win" : "draw";
-      var vh = verdict(rrngTeam(fx.homeId, hRes)), va = verdict(rrngTeam(fx.awayId, aRes));
-      return '<div class="msc-row"><span class="msc-res">' + kv[1] + '</span><span class="msc-v ' + vh.c + '">' + vh.t + '</span><span class="msc-v ' + va.c + '">' + va.t + "</span></div>";
-    }).join("");
-    var html = '<div class="block"><h3>🧮 32강 진출 경우의 수 <span class="muted-note">이 경기 결과별</span></h3>';
-    html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(fx.group) + '조 순위</div>' + standTableHTML(cur) + "</div>";
-    html += '<div class="msc-tbl"><div class="msc-row msc-head"><span class="msc-res">결과</span><span>' + esc(hn) + '</span><span>' + esc(an) + "</span></div>" + trs + "</div>";
-    html += '<div class="muted-note" style="font-size:11px;margin-top:6px">※ 같은 조 다른 경기 결과 조합까지 계산 · 1·2위 직행, 3위는 12개 조 3위 중 상위 8팀 진출</div>';
+    var hf = teamsById[fx.homeId] || {}, af = teamsById[fx.awayId] || {};
+    var hRes = teamResults(fx.homeId), aRes = teamResults(fx.awayId);
+
+    var html = '<div class="block"><h3>🏆 ' + esc(fx.group) + '조 현황</h3>' + standTableHTML(cur);
+    if (hRes || aRes) {  // 2라운드부터(종료 경기 있을 때)만 결과 표시
+      html += '<div class="mr-wrap">' +
+        '<div class="mr-side"><div class="mr-team">' + esc(hf.flag || "") + " " + esc(fx.homeName) + "</div>" + (hRes || '<div class="muted-note">경기 전</div>') + "</div>" +
+        '<div class="mr-side"><div class="mr-team">' + esc(af.flag || "") + " " + esc(fx.awayName) + "</div>" + (aRes || '<div class="muted-note">경기 전</div>') + "</div>" +
+        "</div>";
+    }
+
+    // 경우의 수 — 조별 3라운드(양팀 모두 2경기 이상 치름)부터만. 간결하게 양팀 승/무/패 한 줄씩.
+    if (scnStats(fx.homeId).p >= 2 && scnStats(fx.awayId).p >= 2) {
+      var others = remaining.filter(function (f) { return f !== fx; });
+      function teamOut(teamId, res) { var home = fx.homeId === teamId; return res === "win" ? (home ? "h" : "a") : res === "loss" ? (home ? "a" : "h") : "d"; }
+      function rrngTeam(teamId, res) {
+        var combos = scnEnum(others), mn = 9, mx = 0;
+        combos.forEach(function (c) { var picks = {}; picks[fx.id] = teamOut(teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
+        return { mn: mn, mx: mx };
+      }
+      function vd(rr) { return rr.mx <= 2 ? '<b class="q">✅직행</b>' : rr.mn >= 4 ? '<b class="o">❌탈락</b>' : (rr.mn >= 3 && rr.mx === 3) ? '<b class="p">🟡3위경쟁</b>' : '<b class="p">🟡유동적</b>'; }
+      function line(teamId, flag, name) { return '<div class="mscl"><span class="mscl-t">' + esc(flag || "") + " " + esc(name) + '</span><span>승 ' + vd(rrngTeam(teamId, "win")) + " · 무 " + vd(rrngTeam(teamId, "draw")) + " · 패 " + vd(rrngTeam(teamId, "loss")) + "</span></div>"; }
+      html += '<div class="msc-simple"><div class="msc-simple-h">🧮 32강 진출 경우의 수</div>' +
+        line(fx.homeId, hf.flag, fx.homeName) + line(fx.awayId, af.flag, fx.awayName) +
+        '<div class="muted-note" style="font-size:11px;margin-top:4px">※ 같은 조 다른 경기 결과까지 계산 · 1·2위 직행, 3위는 상위 8팀 진출</div></div>';
+    }
     html += "</div>";
     return html;
   }

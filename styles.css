@@ -1602,16 +1602,20 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다
 .scn-toph { margin: 0; }
 .scn-share { flex: none; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 7px 13px; font-size: 13px; font-weight: 800; cursor: pointer; white-space: nowrap; }
 .scn-share:active { transform: scale(.95); }
-/* 경기상세 32강 진출 경우의 수 표 */
-.msc-tbl { margin-top: 10px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.msc-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; align-items: center; gap: 6px; padding: 9px 11px; border-top: 1px solid var(--line); font-size: 12.5px; }
-.msc-row:first-child { border-top: 0; }
-.msc-head { background: var(--bg-soft); font-weight: 800; color: var(--muted); font-size: 11.5px; }
-.msc-head span { text-align: center; }
-.msc-head .msc-res { text-align: left; }
-.msc-res { font-weight: 700; color: var(--text); }
-.msc-v { text-align: center; font-weight: 700; font-size: 11.5px; border-radius: 7px; padding: 4px 2px; }
-.msc-v.q { background: rgba(52,199,120,.16); color: #2ec56e; }
-.msc-v.p { background: rgba(245,179,1,.15); color: #d99a00; }
-.msc-v.o { background: rgba(239,68,68,.14); color: #ef5350; }
-html.light .msc-v.p { color: #b07d00; }
+/* 경기상세 조 현황 — 양팀 조별 경기결과(좌우) + 간결 경우의수 */
+.mr-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.mr-side { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 9px; }
+.mr-team { font-weight: 800; font-size: 12px; color: var(--text); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mr-g { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 11.5px; padding: 4px 6px; border-radius: 7px; margin-top: 4px; }
+.mr-g .mr-opp { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
+.mr-g .mr-sc { font-weight: 800; flex: none; font-variant-numeric: tabular-nums; }
+.mr-g.w { background: rgba(52,199,120,.14); } .mr-g.w .mr-sc { color: #2ec56e; }
+.mr-g.l { background: rgba(239,68,68,.12); } .mr-g.l .mr-sc { color: #ef5350; }
+.mr-g.d { background: rgba(245,179,1,.13); } .mr-g.d .mr-sc { color: #d99a00; }
+.msc-simple { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+.msc-simple-h { font-weight: 800; font-size: 13px; color: var(--text); margin-bottom: 8px; }
+.mscl { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; font-size: 12px; padding: 6px 0; border-top: 1px dashed var(--line); }
+.mscl:first-of-type { border-top: 0; }
+.mscl-t { font-weight: 800; color: var(--text); min-width: 90px; }
+.mscl b.q { color: #2ec56e; } .mscl b.p { color: #d99a00; } .mscl b.o { color: #ef5350; }
+html.light .mr-g.d .mr-sc, html.light .mscl b.p { color: #b07d00; }
