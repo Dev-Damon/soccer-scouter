@@ -165,28 +165,27 @@
   // 광고가 비동기로 뒤늦게 떠서 그 아래 콘텐츠 좌표가 밀려도, 앵커 요소를 같은 화면 위치에 맞추므로 안 어긋남.
   // (토스: 광고 슬롯이 비어 높이 0 → 레이아웃 더 안정적이라 동일하게 정확. 앵커 못 찾으면 절대값 폴백)
   function _anchorHeadH() { var tb = document.querySelector(".topbar"); return tb ? tb.getBoundingClientRect().height : 0; }
-  // 앵커 후보는 "안정 식별자를 가진 본문 leaf 요소"만 — 컨테이너(.block/.mf-wrap)·헤더 팀명(data-team)은 제외(인덱스 흔들림/위치 부적합).
-  function _anchorCands() { return viewEl ? viewEl.querySelectorAll("[data-player],[data-match],.player-row,.fixture-card,.news-item,.dash-card,.scn-sc,.sec-h") : []; }
-  function _clsTok(el) { var c = (el.className && el.className.baseVal != null) ? el.className.baseVal : el.className; return ("" + (c || "")).split(" ")[0] || el.tagName.toLowerCase(); }
-  function _anchorKey(el, cands) {
-    var d = el.getAttribute("data-player") || el.getAttribute("data-match") || el.getAttribute("data-team");
+  // 앵커 후보 — 페이지 전체에 촘촘히 분포하도록 본문 leaf + 모든 섹션/블록 제목(h3,.sec-h)을 포함.
+  // 컨테이너(.block/.mf-wrap)·헤더 팀명(data-team)은 인덱스/위치가 불안정해 제외. 키는 data-* > 제목텍스트 우선(안정).
+  function _anchorCands() { return viewEl ? viewEl.querySelectorAll("[data-player],[data-match],.player-row,.fixture-card,.news-item,.dash-card,.scn-sc,.sec-h,.block>h3,.detail h3") : []; }
+  function _txtKey(el) { return (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 28); }
+  function _anchorKey(el) {
+    var d = el.getAttribute("data-player") || el.getAttribute("data-match");
     if (d) return "d:" + d;
-    var tok = _clsTok(el), n = 0;
-    for (var i = 0; i < cands.length; i++) { if (_clsTok(cands[i]) === tok) { if (cands[i] === el) return "c:" + tok + ":" + n; n++; } }
-    return "c:" + tok + ":0";
+    var t = _txtKey(el); return t ? "t:" + t : null;
   }
+  // 화면 "중앙"에 가장 가까운 후보를 앵커로 — 광고(상단)가 아닌 보던 주 콘텐츠가 잡혀,
+  // 광고가 뒤늦게 떠도 앵커가 광고 아래라 함께 밀려 정확히 따라감. (상단 기준이면 광고 위 요소가 잡혀 어긋남)
   function captureAnchor() {
     if (!viewEl) return null;
-    var cands = _anchorCands(), headH = _anchorHeadH(), best = null;
-    for (var i = 0; i < cands.length; i++) { var r = cands[i].getBoundingClientRect(); if (r.height > 0 && r.bottom > headH + 4) { best = { el: cands[i], top: r.top }; break; } }
-    if (!best) return null;
-    return { key: _anchorKey(best.el, cands), top: best.top };
+    var cands = _anchorCands(), headH = _anchorHeadH(), refY = headH + (window.innerHeight - headH) / 2, best = null, bd = 1e9;
+    for (var i = 0; i < cands.length; i++) { var r = cands[i].getBoundingClientRect(); if (r.height <= 0) continue; var ad = Math.abs(r.top - refY); if (ad < bd) { var k = _anchorKey(cands[i]); if (k) { bd = ad; best = { key: k, top: r.top }; } } }
+    return best;
   }
   function findAnchor(key) {
     var cands = _anchorCands();
-    if (key.indexOf("d:") === 0) { var v = key.slice(2); for (var i = 0; i < cands.length; i++) { var c = cands[i]; if ((c.getAttribute("data-player") || c.getAttribute("data-match") || c.getAttribute("data-team")) === v) return c; } return null; }
-    var parts = key.split(":"), tok = parts[1], idx = +parts[2], n = 0;
-    for (var j = 0; j < cands.length; j++) { if (_clsTok(cands[j]) === tok) { if (n === idx) return cands[j]; n++; } }
+    if (key.indexOf("d:") === 0) { var v = key.slice(2); for (var i = 0; i < cands.length; i++) { var c = cands[i]; if ((c.getAttribute("data-player") || c.getAttribute("data-match")) === v) return c; } return null; }
+    if (key.indexOf("t:") === 0) { var tv = key.slice(2); for (var j = 0; j < cands.length; j++) { if (_txtKey(cands[j]) === tv) return cands[j]; } }
     return null;
   }
   // mem: number(구버전 폴백) 또는 {y, anchor}. 매 프레임 절대 목표로 보정 → 광고·라인업(비동기) 늦게 떠도 앵커를 같은 화면 위치에 정렬.
