@@ -1082,6 +1082,38 @@
     ["h", "d", "a"].forEach(function (o) { rest.forEach(function (r) { out.push([o].concat(r)); }); });
     return out;
   }
+  // 경기상세용: 이 경기(조별·미종료) 결과별 양팀 32강 진출 경우의 수 + 현재 조 순위. 한국 전용 로직을 모든 팀에 일반화.
+  function matchScenarioHtml(fx) {
+    if (!fx || !fx.group || !DATA.groups) return "";
+    var g = DATA.groups.filter(function (x) { return x.group === fx.group; })[0]; if (!g) return "";
+    var gids = g.teamIds || []; if (gids.indexOf(fx.homeId) < 0 || gids.indexOf(fx.awayId) < 0) return "";
+    var allFx = (DATA.fixtures || []).filter(function (f) { return gids.indexOf(f.homeId) >= 0 && gids.indexOf(f.awayId) >= 0; });
+    var remaining = allFx.filter(function (f) { return !matchEnded(f); });
+    if (matchEnded(fx) || remaining.indexOf(fx) < 0) return "";  // 종료 경기는 시나리오 생략
+    if (!Object.keys(STAND).length) return '<div class="block"><h3>🧮 32강 진출 경우의 수</h3><div class="muted-note">순위 불러오는 중…</div></div>';
+    var cur = gids.map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
+    var others = remaining.filter(function (f) { return f !== fx; });
+    function teamOut(teamId, res) { var home = fx.homeId === teamId; return res === "win" ? (home ? "h" : "a") : res === "loss" ? (home ? "a" : "h") : "d"; }
+    function rrngTeam(teamId, res) {
+      var combos = scnEnum(others), mn = 9, mx = 0;
+      combos.forEach(function (c) { var picks = {}; picks[fx.id] = teamOut(teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
+      return { mn: mn, mx: mx };
+    }
+    function verdict(rr) { return rr.mx <= 2 ? { t: "✅ 32강 직행", c: "q" } : rr.mn >= 4 ? { t: "❌ 탈락", c: "o" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 경쟁", c: "p" } : rr.mn <= 2 ? { t: "🟡 직행 또는 3위", c: "p" } : { t: "🟡 3위 또는 탈락", c: "p" }; }
+    var hn = fx.homeName, an = fx.awayName, hf = teamsById[fx.homeId] || {}, af = teamsById[fx.awayId] || {};
+    var cases = [["win", esc(hf.flag || "") + " " + esc(hn) + " 승"], ["draw", "무승부"], ["loss", esc(af.flag || "") + " " + esc(an) + " 승"]];
+    var trs = cases.map(function (kv) {
+      var hRes = kv[0], aRes = kv[0] === "win" ? "loss" : kv[0] === "loss" ? "win" : "draw";
+      var vh = verdict(rrngTeam(fx.homeId, hRes)), va = verdict(rrngTeam(fx.awayId, aRes));
+      return '<div class="msc-row"><span class="msc-res">' + kv[1] + '</span><span class="msc-v ' + vh.c + '">' + vh.t + '</span><span class="msc-v ' + va.c + '">' + va.t + "</span></div>";
+    }).join("");
+    var html = '<div class="block"><h3>🧮 32강 진출 경우의 수 <span class="muted-note">이 경기 결과별</span></h3>';
+    html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(fx.group) + '조 순위</div>' + standTableHTML(cur) + "</div>";
+    html += '<div class="msc-tbl"><div class="msc-row msc-head"><span class="msc-res">결과</span><span>' + esc(hn) + '</span><span>' + esc(an) + "</span></div>" + trs + "</div>";
+    html += '<div class="muted-note" style="font-size:11px;margin-top:6px">※ 같은 조 다른 경기 결과 조합까지 계산 · 1·2위 직행, 3위는 12개 조 3위 중 상위 8팀 진출</div>';
+    html += "</div>";
+    return html;
+  }
 
   // ===================== 공통: 선수 행 =====================
   function playerRow(p, hideScore, clubLeague) {
@@ -2183,6 +2215,7 @@
         '<div class="block"><h3>승부 예상</h3>' +  /* 2) 승부예상 게이지(몸값 밑) */
           '<div class="prob"><div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + '</div><div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + '</div><div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div></div>" +
           '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span><span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span><span>' + esc(b.name) + " 승</span></div></div>" +
+        matchScenarioHtml(fx) +  /* 조별 경기면 32강 진출 경우의 수 + 조 순위 */
         '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
         '<div class="block bet-slot"></div>' +  /* 4) 포인트 베팅 */
         '<div class="live-btn-slot"></div>' +  /* 라이브 중(치지직 JTBC 송출 감지)이면 updScore가 버튼 채움 */

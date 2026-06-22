@@ -1602,3 +1602,16 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다
 .scn-toph { margin: 0; }
 .scn-share { flex: none; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 7px 13px; font-size: 13px; font-weight: 800; cursor: pointer; white-space: nowrap; }
 .scn-share:active { transform: scale(.95); }
+/* 경기상세 32강 진출 경우의 수 표 */
+.msc-tbl { margin-top: 10px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.msc-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; align-items: center; gap: 6px; padding: 9px 11px; border-top: 1px solid var(--line); font-size: 12.5px; }
+.msc-row:first-child { border-top: 0; }
+.msc-head { background: var(--bg-soft); font-weight: 800; color: var(--muted); font-size: 11.5px; }
+.msc-head span { text-align: center; }
+.msc-head .msc-res { text-align: left; }
+.msc-res { font-weight: 700; color: var(--text); }
+.msc-v { text-align: center; font-weight: 700; font-size: 11.5px; border-radius: 7px; padding: 4px 2px; }
+.msc-v.q { background: rgba(52,199,120,.16); color: #2ec56e; }
+.msc-v.p { background: rgba(245,179,1,.15); color: #d99a00; }
+.msc-v.o { background: rgba(239,68,68,.14); color: #ef5350; }
+html.light .msc-v.p { color: #b07d00; }
