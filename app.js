@@ -750,7 +750,7 @@
       "</div>";
   }
 
-  // 특정 팀의 득점자만 추려서 줄바꿈 목록으로(성만). 한국골은 한국쪽, 상대골은 상대쪽에 배치용.
+  // 특정 팀의 득점자 목록(풀네임). 너무 길면 CSS로 …처리(모바일 잘림 방지). 한국골은 한국쪽, 상대골은 상대쪽 배치용.
   function teamGoals(fx, lv, teamName, side) {
     if (!lv || !lv.events || !lv.events.length) return "";
     var oppName = (teamName === fx.homeName) ? fx.awayName : fx.homeName;
@@ -758,10 +758,10 @@
       var p = playerByName(g.who); if (!p) return false;
       return g.og ? (p.team === oppName) : (p.team === teamName);  // 자책골은 상대 선수가 우리 쪽 득점 → 우리 쪽에 표시
     }).map(function (g) {
-      var p = playerByName(g.who), nm = p ? pitchSurname(p.name, p.id) : g.who.split(" ").slice(-1)[0];
+      var p = playerByName(g.who), nm = p ? p.name : g.who;  // 풀네임(성만→전체)
       var label = esc(nm) + (g.og ? " (자책골)" : "") + (g.clk ? " " + esc(g.clk) : "");
-      return side === "r" ? ("⚽ " + label) : (label + " ⚽");  // 공이 가운데쪽: 좌팀=뒤, 우팀=앞
-    }).join("<br>");
+      return '<span class="hg-goal">' + (side === "r" ? ("⚽ " + label) : (label + " ⚽")) + "</span>";  // 공이 가운데쪽: 좌팀=뒤, 우팀=앞
+    }).join("");
   }
 
   function fixtureCard(fx) {

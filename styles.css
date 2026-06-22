@@ -747,6 +747,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .hero-gsplit { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
 .hg-l, .hg-r { font-size: 11px; font-weight: 700; color: #eaf2ff; line-height: 1.6; }
 .hg-l { text-align: right; } .hg-r { text-align: left; }   /* 득점자 가운데로 수렴 */
+.hg-goal { display: block; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }  /* 풀네임 길면 …처리(모바일 잘림 방지) */
 .hero.live-hero .hg-l, .hero.live-hero .hg-r { color: var(--text); }
 .hero-cta { position: relative; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 800; color: #fff; }
 
