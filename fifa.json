@@ -1,5 +1,5 @@
 {
- "_ts": 1782089948544,
+ "_ts": 1782091757727,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -43,10 +43,10 @@
   "chR": -1
  },
  "switzerland": {
-  "r": 19,
+  "r": 18,
   "p": 1654.94,
   "ch": 4.88,
-  "chR": 0
+  "chR": 1
  },
  "brazil": {
   "r": 5,
@@ -176,8 +176,8 @@
  },
  "cape-verde": {
   "r": 63,
-  "p": 1389.79,
-  "ch": 18.68,
+  "p": 1401.77,
+  "ch": 30.66,
   "chR": 4
  },
  "saudi-arabia": {
@@ -187,10 +187,10 @@
   "chR": 2
  },
  "uruguay": {
-  "r": 18,
-  "p": 1661.95,
-  "ch": -11.12,
-  "chR": -2
+  "r": 19,
+  "p": 1649.97,
+  "ch": -23.1,
+  "chR": -3
  },
  "france": {
   "r": 2,
@@ -460,24 +460,24 @@
    "chR": -2
   },
   {
-   "code": "URU",
-   "name": "Uruguay",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
-   "id": "uruguay",
-   "r": 18,
-   "p": 1661.95,
-   "ch": -11.12,
-   "chR": -2
-  },
-  {
    "code": "SUI",
    "name": "Switzerland",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ch.svg",
    "id": "switzerland",
-   "r": 19,
+   "r": 18,
    "p": 1654.94,
    "ch": 4.88,
-   "chR": 0
+   "chR": 1
+  },
+  {
+   "code": "URU",
+   "name": "Uruguay",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
+   "id": "uruguay",
+   "r": 19,
+   "p": 1649.97,
+   "ch": -23.1,
+   "chR": -3
   },
   {
    "code": "DEN",
@@ -915,8 +915,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cv.svg",
    "id": "cape-verde",
    "r": 63,
-   "p": 1389.79,
-   "ch": 18.68,
+   "p": 1401.77,
+   "ch": 30.66,
    "chR": 4
   },
   {

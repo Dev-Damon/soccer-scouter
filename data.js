@@ -3787,7 +3787,7 @@ window.DATA = {
       "name": "스위스",
       "nameEn": "Switzerland",
       "flag": "🇨🇭",
-      "fifaRank": 19,
+      "fifaRank": 18,
       "group": "B",
       "tierSummary": "월드클래스 슈퍼스타는 없지만 빅리그 주전들로 빼곡한 탄탄한 조직력의 다크호스로, 토너먼트 16강 단골이지만 8강 벽을 넘는 게 숙제인 팀.",
       "styleSummary": [
@@ -8992,7 +8992,7 @@ window.DATA = {
       "name": "우루과이",
       "nameEn": "Uruguay",
       "flag": "🇺🇾",
-      "fifaRank": 18,
+      "fifaRank": 19,
       "group": "H",
       "tierSummary": "유럽·남미 빅클럽에서 뛰는 세대교체 핵심들을 비엘사 감독이 거칠고 짜임새 있게 묶어낸, 8강 이상을 노리는 강호다.",
       "styleSummary": [
