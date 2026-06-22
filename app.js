@@ -878,7 +878,7 @@
         '<div class="fifa-row' + (t.id === "south-korea" ? " kr" : "") + (t.wc ? "" : " nq") + '"' + rowAttr + '>' +
           '<span class="fr-rank">' + t.fifaRank + "</span>" + mv +
           '<span class="fr-flag">' + flagHtml + "</span>" +
-          '<span class="fr-name">' + esc(t.name) + (t.code && !t.wc ? ' <small>' + esc(t.code) + "</small>" : "") + "</span>" +
+          '<span class="fr-name">' + esc(t.name) + (t.code && !t.wc && /[A-Za-z]/.test(t.name) ? ' <small>' + esc(t.code) + "</small>" : "") + "</span>" +  // 한글 매핑되면 코드 숨김, 영어 폴백일 때만 코드 병기
           '<span class="fr-pts">' + (pts ? pts + chHtml : "") + "</span>" +
           (t.wc ? '<button class="fr-more" data-fifaexp="' + esc(t.id) + '">▾</button>' : '<span class="fr-more fr-empty"></span>') +
         "</div>" +
