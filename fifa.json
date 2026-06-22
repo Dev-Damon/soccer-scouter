@@ -1,5 +1,5 @@
 {
- "_ts": 1782160526237,
+ "_ts": 1782162335705,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -157,10 +157,10 @@
   "chR": 3
  },
  "iran": {
-  "r": 22,
+  "r": 21,
   "p": 1611.18,
   "ch": -8.4,
-  "chR": -2
+  "chR": -1
  },
  "new-zealand": {
   "r": 84,
@@ -218,8 +218,8 @@
  },
  "argentina": {
   "r": 1,
-  "p": 1889.07,
-  "ch": 11.8,
+  "p": 1901.93,
+  "ch": 24.66,
   "chR": 0
  },
  "algeria": {
@@ -229,10 +229,10 @@
   "chR": -1
  },
  "austria": {
-  "r": 21,
-  "p": 1612.85,
-  "ch": 15.45,
-  "chR": 3
+  "r": 22,
+  "p": 1599.99,
+  "ch": 2.59,
+  "chR": 2
  },
  "jordan": {
   "r": 68,
@@ -295,8 +295,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ar.svg",
    "id": "argentina",
    "r": 1,
-   "p": 1889.07,
-   "ch": 11.8,
+   "p": 1901.93,
+   "ch": 24.66,
    "chR": 0
   },
   {
@@ -490,24 +490,24 @@
    "chR": 1
   },
   {
-   "code": "AUT",
-   "name": "Austria",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/at.svg",
-   "id": "austria",
-   "r": 21,
-   "p": 1612.85,
-   "ch": 15.45,
-   "chR": 3
-  },
-  {
    "code": "IRN",
    "name": "IR Iran",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ir.svg",
    "id": "iran",
-   "r": 22,
+   "r": 21,
    "p": 1611.18,
    "ch": -8.4,
-   "chR": -2
+   "chR": -1
+  },
+  {
+   "code": "AUT",
+   "name": "Austria",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/at.svg",
+   "id": "austria",
+   "r": 22,
+   "p": 1599.99,
+   "ch": 2.59,
+   "chR": 2
   },
   {
    "code": "KOR",

@@ -7898,7 +7898,7 @@ window.DATA = {
       "name": "이란",
       "nameEn": "Iran",
       "flag": "🇮🇷",
-      "fifaRank": 22,
+      "fifaRank": 21,
       "group": "G",
       "tierSummary": "아시아 강호답게 조직적인 수비와 세트피스에 강하지만, 타레미 한 명에게 득점을 크게 의존하는 '벨기에 다음 2위 다툼' 다크호스다.",
       "styleSummary": [
@@ -10481,7 +10481,7 @@ window.DATA = {
       "name": "오스트리아",
       "nameEn": "Austria",
       "flag": "🇦🇹",
-      "fifaRank": 21,
+      "fifaRank": 22,
       "group": "J",
       "tierSummary": "1998년 이후 28년 만에 본선에 복귀한 랑니크 감독의 오스트리아는 분데스리가 출신 베테랑들이 즐비한 단단한 중상위권 팀으로, 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
