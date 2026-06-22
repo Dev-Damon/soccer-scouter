@@ -161,50 +161,15 @@
   var _scrollMem = {}, _isPop = false;  // 화면별 스크롤 위치 기억 → 뒤로가기 시 그 자리 복원
   try { history.scrollRestoration = "manual"; } catch (e) {}  // 브라우저 자동복원 끄고 우리가 제어
   function hkey() { return location.hash || "#"; }  // 홈은 해시가 ""라 "#"로 정규화
-  // ── 스크롤 복원: 절대 픽셀 대신 "보던 요소(앵커) 기준 상대 위치"로 복원 ──
-  // 광고가 비동기로 뒤늦게 떠서 그 아래 콘텐츠 좌표가 밀려도, 앵커 요소를 같은 화면 위치에 맞추므로 안 어긋남.
-  // (토스: 광고 슬롯이 비어 높이 0 → 레이아웃 더 안정적이라 동일하게 정확. 앵커 못 찾으면 절대값 폴백)
-  function _anchorHeadH() { var tb = document.querySelector(".topbar"); return tb ? tb.getBoundingClientRect().height : 0; }
-  // 앵커 후보 — 페이지 전체에 촘촘히 분포하도록 본문 leaf + 모든 섹션/블록 제목(h3,.sec-h)을 포함.
-  // 컨테이너(.block/.mf-wrap)·헤더 팀명(data-team)은 인덱스/위치가 불안정해 제외. 키는 data-* > 제목텍스트 우선(안정).
-  function _anchorCands() { return viewEl ? viewEl.querySelectorAll("[data-player],[data-match],.player-row,.fixture-card,.news-item,.dash-card,.scn-sc,.sec-h,.block>h3,.detail h3") : []; }
-  function _txtKey(el) { return (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 28); }
-  function _anchorKey(el) {
-    var d = el.getAttribute("data-player") || el.getAttribute("data-match");
-    if (d) return "d:" + d;
-    var t = _txtKey(el); return t ? "t:" + t : null;
-  }
-  // 화면 "중앙"에 가장 가까운 후보를 앵커로 — 광고(상단)가 아닌 보던 주 콘텐츠가 잡혀,
-  // 광고가 뒤늦게 떠도 앵커가 광고 아래라 함께 밀려 정확히 따라감. (상단 기준이면 광고 위 요소가 잡혀 어긋남)
-  function captureAnchor() {
-    if (!viewEl) return null;
-    var cands = _anchorCands(), headH = _anchorHeadH(), refY = headH + (window.innerHeight - headH) / 2, best = null, bd = 1e9;
-    for (var i = 0; i < cands.length; i++) { var r = cands[i].getBoundingClientRect(); if (r.height <= 0) continue; var ad = Math.abs(r.top - refY); if (ad < bd) { var k = _anchorKey(cands[i]); if (k) { bd = ad; best = { key: k, top: r.top }; } } }
-    return best;
-  }
-  function findAnchor(key) {
-    var cands = _anchorCands();
-    if (key.indexOf("d:") === 0) { var v = key.slice(2); for (var i = 0; i < cands.length; i++) { var c = cands[i]; if ((c.getAttribute("data-player") || c.getAttribute("data-match")) === v) return c; } return null; }
-    if (key.indexOf("t:") === 0) { var tv = key.slice(2); for (var j = 0; j < cands.length; j++) { if (_txtKey(cands[j]) === tv) return cands[j]; } }
-    return null;
-  }
-  // mem: number(구버전 폴백) 또는 {y, anchor}. 매 프레임 절대 목표로 보정 → 광고·라인업(비동기) 늦게 떠도 앵커를 같은 화면 위치에 정렬.
-  function restoreScroll(mem) {
-    var y = typeof mem === "number" ? mem : (mem && mem.y) || 0;
-    var anchor = (mem && typeof mem === "object") ? mem.anchor : null;
-    if (!y && !anchor) { window.scrollTo(0, 0); return; }
-    var start = null, hits = 0;
+  // 스크롤 복원: 절대 픽셀값으로 복원. 비동기 콘텐츠가 늦게 자라도 목표 도달까지 ~1.2초 재시도.
+  // (광고 슬롯은 insertAdFit에서 높이를 미리 예약 → 광고가 늦게 떠도 레이아웃이 안 밀려 절대복원이 정확)
+  function restoreScroll(y) {
+    if (!y) { window.scrollTo(0, 0); return; }
+    var start = null;
     function step(ts) {
       if (start == null) start = ts;
-      var el = anchor ? findAnchor(anchor.key) : null;
-      if (el) {
-        var cur = el.getBoundingClientRect().top;
-        var max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-        var target = Math.max(0, Math.min(window.scrollY + (cur - anchor.top), max));  // 절대 목표(클램프 안전)
-        window.scrollTo(0, target);
-        if (Math.abs(el.getBoundingClientRect().top - anchor.top) <= 2) { if (++hits >= 3 && ts - start > 120) return; } else { hits = 0; }
-      } else { window.scrollTo(0, y); }  // 앵커 아직 미렌더 → 절대값 임시
-      if (ts - start < 2500) requestAnimationFrame(step);  // 비동기 라인업(ESPN)까지 충분히 대기
+      window.scrollTo(0, y);
+      if (window.scrollY < y - 2 && ts - start < 1200) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
@@ -533,6 +498,7 @@
   function insertAdFit(el, unit, w, h) {
     if (IS_TOSS || !el || el.getAttribute("data-done")) return;
     el.setAttribute("data-done", "1");
+    el.style.boxSizing = "border-box"; el.style.minHeight = (parseInt(h || "100", 10) + 60) + "px";  // 광고 자리 미리 예약(광고높이+라벨+패딩 여유, border-box) → 광고가 늦게 떠도 슬롯 높이 불변 → 뒤로가기 스크롤 정확
     el.innerHTML = '<div class="ad-label">광고</div>';
     var ins = document.createElement("ins"); ins.className = "kakao_ad_area"; ins.style.display = "none";
     ins.setAttribute("data-ad-unit", unit || "DAN-njRR43wj48QPOMPj");
@@ -3654,9 +3620,9 @@
     var _kb = document.getElementById("kt-boot"); if (_kb) _kb.remove();  // 첫 렌더 시 부팅 스플래시 제거
     var r = parseHash();
     // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위.
-    var _restoreMem = (_isPop && _scrollMem.hasOwnProperty(hkey())) ? _scrollMem[hkey()] : 0;
+    var _restoreY = (_isPop && _scrollMem.hasOwnProperty(hkey())) ? (_scrollMem[hkey()] || 0) : 0;
     _isPop = false;
-    restoreScroll(_restoreMem);
+    restoreScroll(_restoreY);
     stopMatchLive();
     if (r.name === "player") { setTabbar(""); renderPlayer(r.id); renderRating(r.id); mountCmt("player:" + r.id); bumpEngage(); return; }
     if (r.name === "compare") { setTabbar(""); renderCompare(r.a, r.b); return; }
@@ -4062,7 +4028,7 @@
   })();
 
   window.addEventListener("hashchange", function (e) {
-    try { var oh = (e.oldURL && e.oldURL.indexOf("#") >= 0) ? e.oldURL.slice(e.oldURL.indexOf("#")) : "#"; _scrollMem[oh] = { y: window.scrollY, anchor: captureAnchor() }; } catch (_) {}  // 떠나는 화면 스크롤+앵커 저장
+    try { var oh = (e.oldURL && e.oldURL.indexOf("#") >= 0) ? e.oldURL.slice(e.oldURL.indexOf("#")) : "#"; _scrollMem[oh] = window.scrollY; } catch (_) {}  // 떠나는 화면 스크롤 저장
     route();
   });
 
