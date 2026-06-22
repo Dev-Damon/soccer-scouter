@@ -845,11 +845,21 @@
   }
   // 🌍 라이브 FIFA 랭킹 페이지 — 전체 FIFA 랭킹. 본선팀은 나라상세, 비본선팀은 토스트.
   var FIFA_ALL = [];
+  // FIFA 코드 → 한글 국가명 (월드컵 비출전팀 표시용 — 본선 48개국은 data.teams에서 옴)
+  var NQ_KO = {
+    ITA: "이탈리아", DEN: "덴마크", NGA: "나이지리아", UKR: "우크라이나", RUS: "러시아", POL: "폴란드", WAL: "웨일스",
+    HUN: "헝가리", SRB: "세르비아", CMR: "카메룬", SVK: "슬로바키아", GRE: "그리스", VEN: "베네수엘라", CHI: "칠레",
+    PER: "페루", CRC: "코스타리카", ROU: "루마니아", MLI: "말리", IRL: "아일랜드", SVN: "슬로베니아", NIR: "북아일랜드",
+    ALB: "알바니아", MKD: "북마케도니아", ISL: "아이슬란드", FIN: "핀란드", MNE: "몬테네그로", GAB: "가봉", BFA: "부르키나파소",
+    ZAM: "잠비아", BEN: "베냉", COG: "콩고", GUI: "기니", LBY: "리비아", UGA: "우간다", GEO: "조지아", BOL: "볼리비아",
+    JAM: "자메이카", OMA: "오만", BHR: "바레인", UAE: "아랍에미리트", CHN: "중국", PAN: "파나마", LUX: "룩셈부르크",
+    KVX: "코소보", IND: "인도", SYR: "시리아", PLE: "팔레스타인", HON: "온두라스", SLV: "엘살바도르",
+  };
   function renderFifa() {
     setTabbar("");
     var rows = FIFA_ALL.length ? FIFA_ALL.map(function (x) {
       var t = x.id && teamsById[x.id];
-      return { id: x.id || "", code: x.code || "", name: t ? t.name : (x.name || x.code || ""), flag: t ? t.flag : "", flagUrl: x.flagUrl || "", fifaRank: x.r, fifaPts: x.p, fifaCh: x.ch || 0, fifaChR: x.chR || 0, wc: !!t };
+      return { id: x.id || "", code: x.code || "", name: t ? t.name : (NQ_KO[x.code] || x.name || x.code || ""), flag: t ? t.flag : "", flagUrl: x.flagUrl || "", fifaRank: x.r, fifaPts: x.p, fifaCh: x.ch || 0, fifaChR: x.chR || 0, wc: !!t };
     }) : (DATA.teams || []).filter(function (t) { return t.fifaRank; }).map(function (t) {
       return { id: t.id, code: "", name: t.name, flag: t.flag || "", flagUrl: "", fifaRank: t.fifaRank, fifaPts: t.fifaPts, fifaCh: t.fifaCh || 0, fifaChR: t.fifaChR || 0, wc: true };
     });
@@ -865,7 +875,7 @@
       var flagHtml = t.flag ? esc(t.flag) : (t.flagUrl ? '<img class="fr-img" src="' + esc(t.flagUrl) + '" alt="">' : "🏳️");
       var rowAttr = t.wc ? ' data-team="' + esc(t.id) + '"' : ' data-fifa-nq="' + esc(t.name) + '"';
       html += '<div class="fifa-rowwrap">' +
-        '<div class="fifa-row' + (t.id === "south-korea" ? " kr" : "") + '"' + rowAttr + '>' +
+        '<div class="fifa-row' + (t.id === "south-korea" ? " kr" : "") + (t.wc ? "" : " nq") + '"' + rowAttr + '>' +
           '<span class="fr-rank">' + t.fifaRank + "</span>" + mv +
           '<span class="fr-flag">' + flagHtml + "</span>" +
           '<span class="fr-name">' + esc(t.name) + (t.code && !t.wc ? ' <small>' + esc(t.code) + "</small>" : "") + "</span>" +
