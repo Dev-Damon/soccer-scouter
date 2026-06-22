@@ -1,5 +1,5 @@
 {
- "_ts": 1782104424777,
+ "_ts": 1782106233989,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -25,10 +25,10 @@
   "chR": -4
  },
  "canada": {
-  "r": 27,
+  "r": 28,
   "p": 1572.13,
   "ch": 12.65,
-  "chR": 3
+  "chR": 2
  },
  "bosnia-and-herzegovina": {
   "r": 64,
@@ -151,10 +151,10 @@
   "chR": -1
  },
  "egypt": {
-  "r": 28,
-  "p": 1570.67,
-  "ch": 8.3,
-  "chR": 1
+  "r": 26,
+  "p": 1583.38,
+  "ch": 21.01,
+  "chR": 3
  },
  "iran": {
   "r": 22,
@@ -163,10 +163,10 @@
   "chR": -2
  },
  "new-zealand": {
-  "r": 83,
-  "p": 1290.04,
-  "ch": 14.46,
-  "chR": 2
+  "r": 84,
+  "p": 1277.34,
+  "ch": 1.76,
+  "chR": 1
  },
  "spain": {
   "r": 3,
@@ -211,10 +211,10 @@
   "chR": -3
  },
  "norway": {
-  "r": 26,
+  "r": 27,
   "p": 1577.19,
   "ch": 19.75,
-  "chR": 5
+  "chR": 4
  },
  "argentina": {
   "r": 1,
@@ -540,34 +540,34 @@
    "chR": 2
   },
   {
+   "code": "EGY",
+   "name": "Egypt",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/eg.svg",
+   "id": "egypt",
+   "r": 26,
+   "p": 1583.38,
+   "ch": 21.01,
+   "chR": 3
+  },
+  {
    "code": "NOR",
    "name": "Norway",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
    "id": "norway",
-   "r": 26,
+   "r": 27,
    "p": 1577.19,
    "ch": 19.75,
-   "chR": 5
+   "chR": 4
   },
   {
    "code": "CAN",
    "name": "Canada",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ca.svg",
    "id": "canada",
-   "r": 27,
+   "r": 28,
    "p": 1572.13,
    "ch": 12.65,
-   "chR": 3
-  },
-  {
-   "code": "EGY",
-   "name": "Egypt",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/eg.svg",
-   "id": "egypt",
-   "r": 28,
-   "p": 1570.67,
-   "ch": 8.3,
-   "chR": 1
+   "chR": 2
   },
   {
    "code": "ALG",
@@ -1110,24 +1110,24 @@
    "chR": -1
   },
   {
-   "code": "NZL",
-   "name": "New Zealand",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nz.svg",
-   "id": "new-zealand",
-   "r": 83,
-   "p": 1290.04,
-   "ch": 14.46,
-   "chR": 2
-  },
-  {
    "code": "SYR",
    "name": "Syria",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sy.svg",
    "id": null,
-   "r": 84,
+   "r": 83,
    "p": 1283.05,
    "ch": 0,
-   "chR": 0
+   "chR": 1
+  },
+  {
+   "code": "NZL",
+   "name": "New Zealand",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nz.svg",
+   "id": "new-zealand",
+   "r": 84,
+   "p": 1277.34,
+   "ch": 1.76,
+   "chR": 1
   },
   {
    "code": "GAB",
