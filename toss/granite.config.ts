@@ -14,7 +14,7 @@ export default defineConfig({
   permissions: [],
   outdir: 'dist',
   brand: {
-    displayName: '킥톡',
+    displayName: '한눈에 보는 월드컵',  // 콘솔 앱 정보 등록명과 동일해야 검수 통과(반려사유)
     icon: 'https://kicktalk.xyz/icon-512.png',
     primaryColor: '#0b1220',
     bridgeColorMode: 'inverted',
