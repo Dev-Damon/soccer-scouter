@@ -66479,8 +66479,16 @@ window.DATA = {
         "골결정력": 78
       },
       "ovrBase": 69
-    }
-  ],
+    },
+{"id":"marcos-senesi","name":"마르코스 세네시","nameEn":"Marcos Senesi","team":"아르헨티나","club":"AFC 본머스","league":"프리미어리그 (잉글랜드)","position":"수비수","age":29,"caps":0,"intlGoals":0,"grade":"주전급","oneLiner":"본머스의 주전 센터백으로 발밑이 좋은 왼발 수비수.","strengths":["빌드업 능력","대인 수비","왼발 패스"],"weaknesses":["스피드 경쟁에서 약점","공중볼 기복"],"honours":[],"ovr":79,"scout":{"skill":79,"value":68,"fame":52},"number":2,"power":{"공격력":38,"수비력":82,"스피드":74,"테크닉":70,"피지컬":80,"골결정력":30},"ovrBase":79},
+{"id":"shuto-machino","name":"마치노 슈토","nameEn":"Shuto Machino","team":"일본","club":"보루시아 묀헨글라트바흐","league":"분데스리가 (독일)","position":"공격수","age":26,"caps":0,"intlGoals":0,"grade":"로테이션","oneLiner":"분데스리가로 건너간 활동량 많은 만능 공격수.","strengths":["왕성한 움직임","연계 플레이","수비 가담"],"weaknesses":["폭발적 한 방 부족","경험 부족"],"honours":[],"ovr":74,"scout":{"skill":74,"value":58,"fame":42},"number":6,"power":{"공격력":75,"수비력":45,"스피드":76,"테크닉":72,"피지컬":74,"골결정력":73},"ovrBase":74},
+{"id":"amine-sbai","name":"아민 스바이","nameEn":"Amine Sbaï","team":"모로코","club":"앙제 SCO","league":"리그 1 (프랑스)","position":"공격수","age":25,"caps":0,"intlGoals":0,"grade":"로테이션","oneLiner":"측면을 빠르게 허무는 모로코의 드리블러.","strengths":["속도와 드리블","측면 돌파","적극성"],"weaknesses":["마무리 기복","피지컬"],"honours":[],"ovr":73,"scout":{"skill":73,"value":52,"fame":32},"number":17,"power":{"공격력":73,"수비력":42,"스피드":80,"테크닉":76,"피지컬":64,"골결정력":69},"ovrBase":73},
+{"id":"dejan-ljubicic","name":"데얀 류비치치","nameEn":"Dejan Ljubicic","team":"오스트리아","club":"FC 샬케 04","league":"분데스리가 2부 (독일)","position":"미드필더","age":28,"caps":0,"intlGoals":0,"grade":"로테이션","oneLiner":"박스 투 박스로 뛰는 오스트리아 중원 자원.","strengths":["체력과 활동량","중거리 슛","전방 압박"],"weaknesses":["판단 속도","빅매치 경험"],"honours":[],"ovr":73,"scout":{"skill":73,"value":50,"fame":40},"number":19,"power":{"공격력":66,"수비력":68,"스피드":68,"테크닉":74,"피지컬":73,"골결정력":64},"ovrBase":73},
+{"id":"marwane-saadane","name":"마르완 사다네","nameEn":"Marwane Saadane","team":"모로코","club":"알 파테","league":"사우디 프로 리그 (사우디아라비아)","position":"미드필더","age":34,"caps":0,"intlGoals":0,"grade":"로테이션","oneLiner":"노련함으로 중원을 지키는 베테랑 수비형 미드필더.","strengths":["위치 선정","경합 능력","경험"],"weaknesses":["기동력 저하","나이"],"honours":[],"ovr":71,"scout":{"skill":71,"value":38,"fame":35},"number":5,"power":{"공격력":52,"수비력":74,"스피드":56,"테크닉":68,"피지컬":77,"골결정력":44},"ovrBase":71},
+{"id":"ruslanbek-jiyanov","name":"루슬란베크 지야노프","nameEn":"Ruslanbek Jiyanov","team":"우즈베키스탄","club":"나브바호르","league":"우즈베키스탄 슈퍼리그 (우즈베키스탄)","position":"미드필더","age":25,"caps":0,"intlGoals":0,"grade":"로테이션","oneLiner":"우즈베키스탄의 공격을 조율하는 10번.","strengths":["창의적 패스","탈압박","세트피스"],"weaknesses":["수비 가담","국제 경험"],"honours":[],"ovr":71,"scout":{"skill":71,"value":42,"fame":30},"number":10,"power":{"공격력":71,"수비력":58,"스피드":70,"테크닉":75,"피지컬":64,"골결정력":67},"ovrBase":71},
+{"id":"arjan-malic","name":"아르얀 말리치","nameEn":"Arjan Malic","team":"보스니아 헤르체고비나","club":"SK 슈투름 그라츠","league":"오스트리아 분데스리가 (오스트리아)","position":"수비수","age":20,"caps":0,"intlGoals":0,"grade":"유망주","oneLiner":"슈투름 그라츠에서 성장 중인 보스니아 영건 수비수.","strengths":["나이 대비 안정감","스피드","성장 잠재력"],"weaknesses":["경험 부족","빌드업 정교함"],"honours":[],"ovr":70,"scout":{"skill":70,"value":55,"fame":25},"number":24,"power":{"공격력":36,"수비력":72,"스피드":72,"테크닉":66,"피지컬":74,"골결정력":28},"ovrBase":70},
+{"id":"logan-rogerson","name":"로건 로저슨","nameEn":"Logan Rogerson","team":"뉴질랜드","club":"FC 하카","league":"베이카우스리가 (핀란드)","position":"공격수","age":28,"caps":0,"intlGoals":0,"grade":"로테이션","oneLiner":"부지런히 측면을 공략하는 뉴질랜드 공격 자원.","strengths":["활동량","측면 침투","연계"],"weaknesses":["피지컬","빅리그 경험"],"honours":[],"ovr":69,"scout":{"skill":69,"value":35,"fame":25},"number":7,"power":{"공격력":70,"수비력":42,"스피드":74,"테크닉":70,"피지컬":64,"골결정력":66},"ovrBase":69}
+],
   "standings": {
     "A": [
       {
