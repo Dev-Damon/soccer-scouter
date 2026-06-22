@@ -210,6 +210,7 @@
     if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "manager") return { name: "manager", id: parts[1] };
     if (parts[0] === "scenario") return { name: "scenario", id: parts[1] };
+    if (parts[0] === "groupscn") return { name: "groupscn", id: parts[1] };
     if (parts[0] === "fifa") return { name: "fifa" };
     if (parts[0] === "search") return { name: "search" };
     if (parts[0] === "board") return { name: "board" };
@@ -1114,23 +1115,68 @@
         "</div>";
     }
 
-    // 경우의 수 — 조별 3라운드(양팀 모두 2경기 이상 치름)부터만. 간결하게 양팀 승/무/패 한 줄씩.
-    if (scnStats(fx.homeId).p >= 2 && scnStats(fx.awayId).p >= 2) {
-      var others = remaining.filter(function (f) { return f !== fx; });
-      function teamOut(teamId, res) { var home = fx.homeId === teamId; return res === "win" ? (home ? "h" : "a") : res === "loss" ? (home ? "a" : "h") : "d"; }
-      function rrngTeam(teamId, res) {
-        var combos = scnEnum(others), mn = 9, mx = 0;
-        combos.forEach(function (c) { var picks = {}; picks[fx.id] = teamOut(teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
-        return { mn: mn, mx: mx };
-      }
-      function vd(rr) { return rr.mx <= 2 ? '<b class="q">✅직행</b>' : rr.mn >= 4 ? '<b class="o">❌탈락</b>' : (rr.mn >= 3 && rr.mx === 3) ? '<b class="p">🟡3위경쟁</b>' : '<b class="p">🟡유동적</b>'; }
-      function line(teamId, flag, name) { return '<div class="mscl"><span class="mscl-t">' + esc(flag || "") + " " + esc(name) + '</span><span>승 ' + vd(rrngTeam(teamId, "win")) + " · 무 " + vd(rrngTeam(teamId, "draw")) + " · 패 " + vd(rrngTeam(teamId, "loss")) + "</span></div>"; }
-      html += '<div class="msc-simple"><div class="msc-simple-h">🧮 32강 진출 경우의 수</div>' +
-        line(fx.homeId, hf.flag, fx.homeName) + line(fx.awayId, af.flag, fx.awayName) +
-        '<div class="muted-note" style="font-size:11px;margin-top:4px">※ 같은 조 다른 경기 결과까지 계산 · 1·2위 직행, 3위는 상위 8팀 진출</div></div>';
-    }
+    // 32강 진출 경우의 수는 별도 페이지로 이동(공간 절약) — 한국 경기는 한국 전용 페이지, 그 외는 조별 통합 페이지
+    var isKr = fx.homeId === "south-korea" || fx.awayId === "south-korea";
+    html += '<button class="scn-go-btn"' + (isKr ? " data-scngo" : ' data-grpscn="' + esc(fx.group) + '"') + '>🧮 ' + (isKr ? "한국 " : esc(fx.group) + "조 ") + "32강 진출 경우의 수 보기 →</button>";
     html += "</div>";
     return html;
+  }
+  // 조별 32강 진출 경우의 수 통합 페이지 (한국 외 모든 조) — 조 4팀 각각 현재 상황 + 다음 경기 결과별 진출 판정
+  function renderGroupScenario(group) {
+    setTabbar(""); backBtn.hidden = false; tabsEl.hidden = true;
+    if (!DATA.groups || !group) { viewEl.innerHTML = '<div class="empty">데이터를 불러오는 중입니다.</div>'; return; }
+    fetchStandings();
+    var g = DATA.groups.filter(function (x) { return x.group === group; })[0];
+    if (!g) { viewEl.innerHTML = '<div class="empty">조를 찾을 수 없어요.</div>'; return; }
+    var gids = g.teamIds || [];
+    var allFx = (DATA.fixtures || []).filter(function (f) { return gids.indexOf(f.homeId) >= 0 && gids.indexOf(f.awayId) >= 0; });
+    var remaining = allFx.filter(function (f) { return !matchEnded(f); });
+    var html = '<div class="sec-h">🧮 ' + esc(group) + "조 32강 진출 경우의 수</div>";
+    html += '<div class="scn-note">2026 월드컵: 각 조 <b>1·2위 직행</b> + 12개 조 <b>3위 중 상위 8팀</b> 진출.</div>';
+    if (!Object.keys(STAND).length) { viewEl.innerHTML = html + '<div class="muted-note">순위를 불러오는 중…</div>'; return; }
+    var cur = gids.map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
+    html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(group) + "조 순위</div>" + standTableHTML(cur) + "</div>";
+
+    function vd(rr) { return rr.mx <= 2 ? { t: "✅ 직행 확정", c: "q12" } : rr.mn >= 4 ? { t: "❌ 탈락 확정", c: "out" } : rr.mn <= 2 ? { t: "🟡 직행 가능 / 최소 3위 경쟁", c: "p3" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 (와일드카드 경쟁)", c: "p3" } : { t: "🟡 3위 또는 탈락", c: "p3" }; }
+    function teamFullRange(teamId) {  // 남은 경기 전체 조합으로 가능한 순위 범위
+      var combos = scnEnum(remaining), mn = 9, mx = 0;
+      combos.forEach(function (c) { var picks = {}; remaining.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
+      return { mn: mn, mx: mx };
+    }
+    function teamOut(fx, teamId, res) { var home = fx.homeId === teamId; return res === "win" ? (home ? "h" : "a") : res === "loss" ? (home ? "a" : "h") : "d"; }
+    function rrngNext(teamId, nextFx, res) {  // 그 팀 다음 경기 결과 고정 + 나머지 조합
+      var others = remaining.filter(function (f) { return f !== nextFx; });
+      var combos = scnEnum(others), mn = 9, mx = 0;
+      combos.forEach(function (c) { var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
+      return { mn: mn, mx: mx };
+    }
+
+    cur.forEach(function (row, i) {
+      var t = row.t || {}, s = row.s;
+      var nextFx = remaining.filter(function (f) { return f.homeId === row.id || f.awayId === row.id; })[0];
+      var overall = nextFx ? vd(teamFullRange(row.id)) : null;
+      html += '<div class="gsc-card ' + (overall ? overall.c : "q12") + '">' +
+        '<div class="gsc-head"><span class="gsc-rank">' + (i + 1) + "위</span>" + esc(t.flag || "") + ' <b>' + esc(t.name || row.id) + "</b>" +
+        '<span class="gsc-pts">승점 ' + s.pts + " · 득실 " + (s.gd > 0 ? "+" : "") + s.gd + "</span></div>";
+      if (!nextFx) {
+        html += '<div class="gsc-done">조별리그 종료</div>';
+      } else {
+        var op = teamsById[nextFx.homeId === row.id ? nextFx.awayId : nextFx.homeId] || {};
+        if (overall) html += '<div class="gsc-verdict ' + overall.c + '">' + overall.t + "</div>";
+        html += '<div class="gsc-next muted-note">다음 상대: ' + esc(op.flag || "") + " " + esc(op.name || "") + "</div>";
+        html += '<div class="gsc-lines">';
+        [["win", "승"], ["draw", "무"], ["loss", "패"]].forEach(function (kv) {
+          var v = vd(rrngNext(row.id, nextFx, kv[0]));
+          html += '<div class="gsc-line"><span class="gscl-r">' + kv[1] + '</span><span class="gscl-v ' + v.c + '">' + v.t + "</span></div>";
+        });
+        html += "</div>";
+      }
+      html += "</div>";
+    });
+    html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 같은 조 남은 경기 결과 조합을 모두 계산 · 3위는 12개 조 3위 비교라 다른 조 결과에 따라 달라질 수 있어요(추정).</div>';
+    viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
+    twem(viewEl);
+    insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
   }
 
   // ===================== 공통: 선수 행 =====================
@@ -2575,6 +2621,7 @@
       standAt = Date.now();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
       else if (parseHash().name === "scenario") renderScenario();  // 순위 도착 시 경우의수 페이지 재렌더
+      else if (parseHash().name === "groupscn" && parseHash().id) renderGroupScenario(parseHash().id);  // 조별 경우의수 페이지 갱신
       else if (parseHash().name === "match" && parseHash().id) renderMatch(parseHash().id);  // 경기상세 진출 경우의수 표 갱신
     }).catch(function () {});
   }
@@ -3719,6 +3766,7 @@
     if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); bumpEngage(); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
     if (r.name === "scenario") { setTabbar(""); return renderScenario(r.id); }
+    if (r.name === "groupscn") { setTabbar(""); return renderGroupScenario(r.id); }
     if (r.name === "fifa") { setTabbar(""); return renderFifa(); }
     if (r.name === "search") {
       setTabbar("search"); backBtn.hidden = true; tabsEl.hidden = true;
@@ -3955,6 +4003,7 @@
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
     var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
     var sg = e.target.closest("[data-scngo]"); if (sg) { go("scenario"); return; }  // 한국 경우의 수 진입
+    var gsg = e.target.closest("[data-grpscn]"); if (gsg) { go("groupscn/" + gsg.getAttribute("data-grpscn")); return; }  // 조별 경우의 수 페이지 진입
     var fg = e.target.closest("[data-fifago]"); if (fg) { go("fifa"); return; }  // FIFA 랭킹 페이지 진입
     var fe = e.target.closest("[data-fifaexp]");  // FIFA 랭킹 행 펼치기(최근 경기)
     if (fe) { var fid = fe.getAttribute("data-fifaexp"), det = document.getElementById("fde-" + fid); if (det) { if (det.hasAttribute("hidden")) { det.innerHTML = fifaTeamFix(fid); det.removeAttribute("hidden"); fe.textContent = "▴"; twem(det); } else { det.setAttribute("hidden", ""); fe.textContent = "▾"; } } return; }

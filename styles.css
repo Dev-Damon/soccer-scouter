@@ -1619,3 +1619,24 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다
 .mscl-t { font-weight: 800; color: var(--text); min-width: 90px; }
 .mscl b.q { color: #2ec56e; } .mscl b.p { color: #d99a00; } .mscl b.o { color: #ef5350; }
 html.light .mr-g.d .mr-sc, html.light .mscl b.p { color: #b07d00; }
+/* 경기상세 → 경우의수 페이지 이동 버튼 */
+.scn-go-btn { display: block; width: 100%; margin-top: 12px; background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 13px; font-size: 14px; font-weight: 800; cursor: pointer; }
+.scn-go-btn:active { transform: scale(.98); }
+/* 조별 32강 진출 경우의 수 페이지 */
+.gsc-card { border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; margin: 10px 0; background: var(--card); }
+.gsc-card.q12 { border-color: rgba(52,199,120,.4); }
+.gsc-card.out { border-color: rgba(239,68,68,.35); opacity: .85; }
+.gsc-head { display: flex; align-items: center; gap: 7px; font-size: 15px; }
+.gsc-head b { font-size: 15px; }
+.gsc-rank { font-weight: 900; color: var(--muted); font-size: 13px; min-width: 32px; }
+.gsc-pts { margin-left: auto; font-size: 11.5px; color: var(--muted); font-weight: 600; }
+.gsc-verdict { margin-top: 8px; font-weight: 800; font-size: 13.5px; }
+.gsc-verdict.q12 { color: #2ec56e; } .gsc-verdict.out { color: #ef5350; } .gsc-verdict.p3 { color: #d99a00; }
+.gsc-next { margin-top: 6px; font-size: 12px; }
+.gsc-done { margin-top: 6px; color: var(--muted); font-weight: 700; font-size: 13px; }
+.gsc-lines { margin-top: 8px; display: flex; flex-direction: column; gap: 5px; }
+.gsc-line { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.gscl-r { font-weight: 800; min-width: 22px; color: var(--text); }
+.gscl-v { font-weight: 700; }
+.gscl-v.q12 { color: #2ec56e; } .gscl-v.out { color: #ef5350; } .gscl-v.p3 { color: #d99a00; }
+html.light .gsc-verdict.p3, html.light .gscl-v.p3 { color: #b07d00; }
