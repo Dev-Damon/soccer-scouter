@@ -2167,6 +2167,7 @@
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
+    if (fx.group && !matchEnded(fx)) fetchStandings();  // 조별·미종료 경기면 순위 로드 → 진출 경우의수 표(도착 시 자동 재렌더)
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
@@ -2556,6 +2557,7 @@
       standAt = Date.now();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
       else if (parseHash().name === "scenario") renderScenario();  // 순위 도착 시 경우의수 페이지 재렌더
+      else if (parseHash().name === "match" && parseHash().id) renderMatch(parseHash().id);  // 경기상세 진출 경우의수 표 갱신
     }).catch(function () {});
   }
 
