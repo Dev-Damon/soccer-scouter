@@ -840,7 +840,7 @@
       var mid;
       if (done) { var my = home ? lv.hs : lv.as, ot = home ? lv.as : lv.hs; var res = my > ot ? "w" : my < ot ? "l" : "d"; mid = '<span class="fde-sc ' + res + '">' + my + " : " + ot + "</span>"; }
       else mid = '<span class="fde-when">' + esc((fmtDate(fxDate(f)) || {}).d || fxDate(f) || "") + (fxTime(f) ? " " + esc(fxTime(f)) : "") + "</span>";
-      return '<div class="fde-row" data-match="' + esc(f.id) + '"><span class="fde-vs">' + (home ? "vs " : "@ ") + esc(op.flag || "") + " " + esc(op.name || opId) + "</span>" + mid + "</div>";
+      return '<div class="fde-row" data-match="' + esc(f.id) + '"><span class="fde-vs">vs ' + esc(op.flag || "") + " " + esc(op.name || opId) + "</span>" + mid + "</div>";  // 월드컵은 중립 개최 → 홈/어웨이(@/vs) 구분 없이 vs로 통일
     }).join("");
   }
   // 🌍 라이브 FIFA 랭킹 페이지 — 전체 FIFA 랭킹. 본선팀은 나라상세, 비본선팀은 토스트.
