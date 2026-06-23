@@ -1,5 +1,5 @@
 {
- "_ts": 1782247403087,
+ "_ts": 1782249212938,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -37,10 +37,10 @@
   "chR": 0
  },
  "qatar": {
-  "r": 57,
+  "r": 56,
   "p": 1438.82,
   "ch": -11.49,
-  "chR": -1
+  "chR": 0
  },
  "switzerland": {
   "r": 17,
@@ -97,10 +97,10 @@
   "chR": -10
  },
  "germany": {
-  "r": 8,
+  "r": 9,
   "p": 1760.45,
   "ch": 24.68,
-  "chR": 2
+  "chR": 1
  },
  "curacao": {
   "r": 81,
@@ -121,10 +121,10 @@
   "chR": -7
  },
  "netherlands": {
-  "r": 7,
+  "r": 8,
   "p": 1764.4,
   "ch": 10.83,
-  "chR": 1
+  "chR": 0
  },
  "japan": {
   "r": 16,
@@ -139,10 +139,10 @@
   "chR": 2
  },
  "tunisia": {
-  "r": 58,
+  "r": 57,
   "p": 1437.69,
   "ch": -38.72,
-  "chR": -13
+  "chR": -12
  },
  "belgium": {
   "r": 10,
@@ -241,10 +241,10 @@
   "chR": -9
  },
  "portugal": {
-  "r": 9,
-  "p": 1755.09,
-  "ch": -12.76,
-  "chR": -4
+  "r": 7,
+  "p": 1766.74,
+  "ch": -1.11,
+  "chR": -2
  },
  "dr-congo": {
   "r": 43,
@@ -253,10 +253,10 @@
   "chR": 3
  },
  "uzbekistan": {
-  "r": 54,
-  "p": 1444.48,
-  "ch": -14.25,
-  "chR": -4
+  "r": 58,
+  "p": 1432.83,
+  "ch": -25.9,
+  "chR": -8
  },
  "colombia": {
   "r": 12,
@@ -350,34 +350,34 @@
    "chR": 1
   },
   {
+   "code": "POR",
+   "name": "Portugal",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pt.svg",
+   "id": "portugal",
+   "r": 7,
+   "p": 1766.74,
+   "ch": -1.11,
+   "chR": -2
+  },
+  {
    "code": "NED",
    "name": "Netherlands",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nl.svg",
    "id": "netherlands",
-   "r": 7,
+   "r": 8,
    "p": 1764.4,
    "ch": 10.83,
-   "chR": 1
+   "chR": 0
   },
   {
    "code": "GER",
    "name": "Germany",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/de.svg",
    "id": "germany",
-   "r": 8,
+   "r": 9,
    "p": 1760.45,
    "ch": 24.68,
-   "chR": 2
-  },
-  {
-   "code": "POR",
-   "name": "Portugal",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pt.svg",
-   "id": "portugal",
-   "r": 9,
-   "p": 1755.09,
-   "ch": -12.76,
-   "chR": -4
+   "chR": 1
   },
   {
    "code": "BEL",
@@ -820,54 +820,54 @@
    "chR": 2
   },
   {
-   "code": "UZB",
-   "name": "Uzbekistan",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uz.svg",
-   "id": "uzbekistan",
-   "r": 54,
-   "p": 1444.48,
-   "ch": -14.25,
-   "chR": -4
-  },
-  {
    "code": "IRL",
    "name": "Republic of Ireland",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ie.svg",
    "id": null,
-   "r": 55,
+   "r": 54,
    "p": 1441.1,
    "ch": 0,
-   "chR": 3
+   "chR": 4
   },
   {
    "code": "SVN",
    "name": "Slovenia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/si.svg",
    "id": null,
-   "r": 56,
+   "r": 55,
    "p": 1441.09,
    "ch": 0,
-   "chR": 3
+   "chR": 4
   },
   {
    "code": "QAT",
    "name": "Qatar",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/qa.svg",
    "id": "qatar",
-   "r": 57,
+   "r": 56,
    "p": 1438.82,
    "ch": -11.49,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "TUN",
    "name": "Tunisia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tn.svg",
    "id": "tunisia",
-   "r": 58,
+   "r": 57,
    "p": 1437.69,
    "ch": -38.72,
-   "chR": -13
+   "chR": -12
+  },
+  {
+   "code": "UZB",
+   "name": "Uzbekistan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uz.svg",
+   "id": "uzbekistan",
+   "r": 58,
+   "p": 1432.83,
+   "ch": -25.9,
+   "chR": -8
   },
   {
    "code": "KSA",
