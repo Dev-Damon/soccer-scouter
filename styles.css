@@ -177,7 +177,6 @@ table.stand .tm .team-flag { font-size: 20px; flex: none; }
 table.stand .tm-n { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 table.stand td.rk { color: var(--muted); font-weight: 800; width: 20px; }
 table.stand td.pts { font-weight: 900; color: var(--text); }
-table.stand th.gd, table.stand td.gd { text-align: right; padding-right: 12px; }  /* 득실 부호(+5/0/-3) 끝자리 정렬 → 수평 맞춤 */
 table.stand tr.qual td.rk { color: var(--accent); }
 table.stand tr.qual { background: rgba(46,230,166,.06); }
 table.stand tr[data-team] { cursor: pointer; }
@@ -1575,7 +1574,7 @@ html.light .fifa-row.nq { background: rgba(120,130,150,.09); }
 .sc-bd-row .bd-l { color: var(--text); font-weight: 600; }
 .sc-bd-row .bd-v { font-weight: 800; font-size: 11.5px; }
 .sc-bd-row .bd-v.q { color: #178a52; } .sc-bd-row .bd-v.p { color: #b07d00; } .sc-bd-row .bd-v.o { color: #c93d34; }
-table.stand2 td.gd, table.stand2 th.gd { text-align: center; }  /* 득실도 다른 칼럼과 동일 가운데정렬(헤더·값 일치) */
+table.stand2 td.gd, table.stand2 th.gd { text-align: right; padding-right: 9px; }  /* 득실 부호(+5/0/-3) 끝자리 정렬 → 헤더·값 수평 맞춤 */
 /* FIFA 랭킹 — 변동화살표·More·펼침 */
 .fifa-rowwrap { border-top: 1px solid var(--line); }
 .fifa-rowwrap:first-child { border-top: 0; }
