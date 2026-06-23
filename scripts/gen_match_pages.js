@@ -25,7 +25,8 @@ D.fixtures.forEach(function (f) {
   var title = hn + " vs " + an + " 중계·라인업·선수평점 | 킥톡 2026 월드컵";
   var desc = hn + " vs " + an + " " + kst + " KST 킥오프" + (grp ? " (" + grp + ")" : "") + ". 예상·확정 라인업, 실시간 중계 스코어, 선수 평점·MVP 투표, 응원·하이라이트까지 킥톡에서 한눈에.";
   var wp = ((f.preview || {}).watchPoints) || [];
-  var ld = JSON.stringify({ "@context": "https://schema.org", "@type": "SportsEvent", name: hn + " vs " + an, sport: "축구", startDate: f.date, location: { "@type": "Place", name: venue || "2026 월드컵" }, url: canonical, competitor: [{ "@type": "SportsTeam", name: hn }, { "@type": "SportsTeam", name: an }] });
+  var teams = [{ "@type": "SportsTeam", name: hn }, { "@type": "SportsTeam", name: an }];
+  var ld = JSON.stringify({ "@context": "https://schema.org", "@type": "SportsEvent", name: hn + " vs " + an, sport: "축구", description: desc, startDate: f.date, eventStatus: "https://schema.org/EventScheduled", location: { "@type": "Place", name: venue || "2026 월드컵", address: { "@type": "PostalAddress", addressLocality: f.city || venue || "북중미" } }, image: [SITE + "/ogm/" + slug + ".png"], url: canonical, organizer: { "@type": "Organization", name: "FIFA", url: "https://www.fifa.com" }, performer: teams, competitor: teams });
   var body =
     "<h1>" + e(hf) + " " + e(hn) + " <span class=vs>vs</span> " + e(an) + " " + e(af) + "</h1>" +
     "<p class=meta>" + e(kst) + " KST" + (grp ? " · " + e(grp) : "") + (venue ? " · " + e(venue) : "") + "</p>" +
