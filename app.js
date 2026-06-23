@@ -1102,7 +1102,7 @@
           var lv = LIVE[f.id] || {}, home = f.homeId === teamId, op = teamsById[home ? f.awayId : f.homeId] || {};
           var my = home ? lv.hs : lv.as, ot = home ? lv.as : lv.hs;
           var res = my == null ? "" : my > ot ? "w" : my < ot ? "l" : "d";
-          return '<div class="mr-g ' + res + '"><span class="mr-opp">' + esc(op.flag || "") + " " + esc(op.name || "") + '</span><span class="mr-sc">' + (my != null ? my + ":" + ot : "-") + "</span></div>";
+          return '<div class="mr-g ' + res + '" data-match="' + esc(f.id) + '"><span class="mr-opp">' + esc(op.flag || "") + " " + esc(op.name || "") + '</span><span class="mr-sc">' + (my != null ? my + ":" + ot : "-") + "</span></div>";  // 클릭 시 그 경기 상세로(기존 [data-match] 핸들러)
         }).join("");
     }
     var hf = teamsById[fx.homeId] || {}, af = teamsById[fx.awayId] || {};

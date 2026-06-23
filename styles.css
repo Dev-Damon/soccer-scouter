@@ -1606,7 +1606,8 @@ table.stand2 td.gd, table.stand2 th.gd { text-align: right; padding-right: 9px; 
 .mr-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
 .mr-side { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 9px; }
 .mr-team { font-weight: 800; font-size: 12px; color: var(--text); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mr-g { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 11.5px; padding: 4px 6px; border-radius: 7px; margin-top: 4px; }
+.mr-g { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 11.5px; padding: 4px 6px; border-radius: 7px; margin-top: 4px; cursor: pointer; }
+.mr-g:active { opacity: .6; }
 .mr-g .mr-opp { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
 .mr-g .mr-sc { font-weight: 800; flex: none; font-variant-numeric: tabular-nums; }
 .mr-g.w { background: rgba(52,199,120,.14); } .mr-g.w .mr-sc { color: #2ec56e; }
