@@ -521,6 +521,20 @@
   // 카카오 애드핏 배너 삽입 (SPA: 영역+스크립트를 매번 새로 넣어 렌더 트리거)
   // ===== 앱인토스(토스 미니앱) 모드 — 토스 웹뷰면 외부광고·쿠팡·베팅·외부송금 숨김(토스 정책 준수). 일반 웹은 무영향. ?toss=1로 테스트 =====
   var IS_TOSS = (function () { try { return /toss/i.test(navigator.userAgent) || /[?&]toss=1/.test(location.search) || !!window.AppsInToss || !!window.__APPS_IN_TOSS__; } catch (e) { return false; } })();
+  // ===== 토스 광고/로그인 — 미리 구현. main.ts가 window.tossAd/tossUser 브릿지 제공. 키/위치만 채우면 바로 동작 =====
+  var TOSS_AD_GROUP = "";  // ← 앱인토스 콘솔에서 발급한 AdMob 광고그룹 ID. 채우면 토스앱에서 전면광고 동작(빈값이면 광고 없음)
+  // 토스 전면광고 표시: 위치(트리거)는 정해지면 이 함수를 그 지점에서 호출. onDone은 광고 닫힌 뒤 콜백(없어도 됨).
+  function tossShowAd(onDone) {
+    if (IS_TOSS && TOSS_AD_GROUP && window.tossAd && window.tossAd.isSupported && window.tossAd.isSupported()) {
+      window.tossAd.load(TOSS_AD_GROUP);
+      setTimeout(function () { window.tossAd.show(TOSS_AD_GROUP, onDone); }, 700);  // load 후 약간 뒤 show
+    } else if (onDone) { onDone(); }
+  }
+  // 토스 사용자 식별(익명 고유키) — 응원/MVP/평점 로그인 대체. Promise<string|null>. (서버 복호화 불필요)
+  function tossUserKey() { return (IS_TOSS && window.tossUser && window.tossUser.key) ? window.tossUser.key() : Promise.resolve(null); }
+  // 토스 인증 로그인(프로필 필요 시) — Promise<{authorizationCode,referrer}|null>. 서버에서 코드로 토스 API+복호화.
+  function tossLogin() { return (IS_TOSS && window.tossUser && window.tossUser.login) ? window.tossUser.login() : Promise.resolve(null); }
+  void tossShowAd; void tossUserKey; void tossLogin;  // 위치/키 확정 시 호출 지점에 연결(현재 준비만)
   function insertAdFit(el, unit, w, h) {
     if (IS_TOSS || !el || el.getAttribute("data-done")) return;
     el.setAttribute("data-done", "1");
