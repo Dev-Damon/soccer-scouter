@@ -814,12 +814,12 @@
   // 공용 순위표(사진형): #·팀·경기·승·무·패·득·실·득실·승점·최근5. opt.group=조컬럼, opt.thirds=상위8 강조
   function standTableHTML(rows, opt) {
     opt = opt || {};
-    var GDS = ' style="text-align:right;padding-right:9px;font-family:ui-monospace,\'SF Mono\',\'Roboto Mono\',Menlo,monospace;font-variant-numeric:normal"';  // 득실: 고정폭 폰트로 +/-부호도 숫자와 동일 크기·정렬(일부 기기 폰트가 tabular에서 부호를 작게 그리는 문제 회피). 인라인이라 CSS 캐시 무관
+    var GDS = ' style="text-align:right;padding-right:9px"';  // 득실: 표 본문과 같은 일반 폰트(baseline 일치) + 우측정렬. 부호 크기/색은 값 span에서 처리. 인라인이라 CSS 캐시 무관
     var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th class=\"gd\"" + GDS + ">득실</th><th class=\"pts\">승점</th></tr></thead><tbody>";
     rows.forEach(function (row, i) {
       var t = row.t, s = row.s, id = row.id, grp = row.g;
       if (row.r) { t = row.r.t; s = row.r.s; id = row.r.id; }  // 3위표 형태 {g, r:{...}}
-      var gd = (s.gd > 0 ? "+" : "") + s.gd;
+      var gd = '<span style="color:' + (s.gd > 0 ? "#2ec56e" : s.gd < 0 ? "#ef5350" : "inherit") + '">' + (s.gd > 0 ? "+" : "") + s.gd + "</span>";  // 색으로 +/- 보강(부호 작게 보여도 의미 전달)
       var qual = opt.thirds ? (i < 8) : (i < 2);
       h += '<tr class="' + (qual ? "qual" : "") + (id === "south-korea" ? " krrow" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
         '<td class="c rk">' + (i + 1) + "</td>" +
