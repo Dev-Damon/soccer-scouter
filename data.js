@@ -3184,7 +3184,7 @@ window.DATA = {
       "name": "캐나다",
       "nameEn": "Canada",
       "flag": "🇨🇦",
-      "fifaRank": 28,
+      "fifaRank": 29,
       "group": "B",
       "tierSummary": "데이비스와 조나단 데이비드가 이끄는 '황금세대'가 자국 개최의 이점을 업고 16강 이상을 노리는, 유럽 빅리그 주전급이 뼈대를 이룬 다크호스다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 29,
+      "fifaRank": 28,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
@@ -10701,7 +10701,7 @@ window.DATA = {
       "name": "요르단",
       "nameEn": "Jordan",
       "flag": "🇯🇴",
-      "fifaRank": 68,
+      "fifaRank": 72,
       "group": "J",
       "tierSummary": "사상 첫 월드컵 본선에 오른 다크호스로, 2023 아시안컵 준우승 멤버를 중심으로 한 끈끈한 수비와 알타마리·올완의 역습이 무기인 도전자 티어 팀입니다.",
       "styleSummary": [

@@ -1,5 +1,5 @@
 {
- "_ts": 1782196725636,
+ "_ts": 1782198535615,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -25,10 +25,10 @@
   "chR": -4
  },
  "canada": {
-  "r": 28,
+  "r": 29,
   "p": 1572.13,
   "ch": 12.65,
-  "chR": 2
+  "chR": 1
  },
  "bosnia-and-herzegovina": {
   "r": 64,
@@ -223,10 +223,10 @@
   "chR": 0
  },
  "algeria": {
-  "r": 29,
-  "p": 1559.23,
-  "ch": -11.8,
-  "chR": -1
+  "r": 28,
+  "p": 1575.63,
+  "ch": 4.6,
+  "chR": 0
  },
  "austria": {
   "r": 23,
@@ -235,10 +235,10 @@
   "chR": 1
  },
  "jordan": {
-  "r": 68,
-  "p": 1372.29,
-  "ch": -15.45,
-  "chR": -5
+  "r": 72,
+  "p": 1355.89,
+  "ch": -31.85,
+  "chR": -9
  },
  "portugal": {
   "r": 9,
@@ -560,24 +560,24 @@
    "chR": 2
   },
   {
-   "code": "CAN",
-   "name": "Canada",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ca.svg",
-   "id": "canada",
-   "r": 28,
-   "p": 1572.13,
-   "ch": 12.65,
-   "chR": 2
-  },
-  {
    "code": "ALG",
    "name": "Algeria",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/dz.svg",
    "id": "algeria",
+   "r": 28,
+   "p": 1575.63,
+   "ch": 4.6,
+   "chR": 0
+  },
+  {
+   "code": "CAN",
+   "name": "Canada",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ca.svg",
+   "id": "canada",
    "r": 29,
-   "p": 1559.23,
-   "ch": -11.8,
-   "chR": -1
+   "p": 1572.13,
+   "ch": 12.65,
+   "chR": 1
   },
   {
    "code": "ECU",
@@ -960,54 +960,54 @@
    "chR": -1
   },
   {
-   "code": "JOR",
-   "name": "Jordan",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jo.svg",
-   "id": "jordan",
-   "r": 68,
-   "p": 1372.29,
-   "ch": -15.45,
-   "chR": -5
-  },
-  {
    "code": "UAE",
    "name": "United Arab Emirates",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ae.svg",
    "id": null,
-   "r": 69,
+   "r": 68,
    "p": 1370.47,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "MKD",
    "name": "North Macedonia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mk.svg",
    "id": null,
-   "r": 70,
+   "r": 69,
    "p": 1369.16,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "NIR",
    "name": "Northern Ireland",
    "flagUrl": "https://flagcdn.com/28x21/gb-nir.png",
    "id": null,
-   "r": 71,
+   "r": 70,
    "p": 1365.3,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "JAM",
    "name": "Jamaica",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jm.svg",
    "id": null,
-   "r": 72,
+   "r": 71,
    "p": 1357.84,
    "ch": 0,
-   "chR": -1
+   "chR": 0
+  },
+  {
+   "code": "JOR",
+   "name": "Jordan",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jo.svg",
+   "id": "jordan",
+   "r": 72,
+   "p": 1355.89,
+   "ch": -31.85,
+   "chR": -9
   },
   {
    "code": "GEO",
