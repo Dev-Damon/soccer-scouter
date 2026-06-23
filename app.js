@@ -1113,6 +1113,7 @@
         .map(function (f) {
           var lv = LIVE[f.id] || {}, home = f.homeId === teamId, op = teamsById[home ? f.awayId : f.homeId] || {};
           var my = home ? lv.hs : lv.as, ot = home ? lv.as : lv.hs;
+          if (my == null) window._mscNeedsLive = true;  // 스코어 미로드 → 저장 결과 도착 시 재렌더 트리거
           var res = my == null ? "" : my > ot ? "w" : my < ot ? "l" : "d";
           return '<div class="mr-g ' + res + '" data-match="' + esc(f.id) + '"><span class="mr-opp">' + esc(op.flag || "") + " " + esc(op.name || "") + '</span><span class="mr-sc">' + (my != null ? my + ":" + ot : "-") + "</span></div>";  // 클릭 시 그 경기 상세로(기존 [data-match] 핸들러)
         }).join("");
@@ -2268,6 +2269,7 @@
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
+    window._mscNeedsLive = false;  // 조현황 경기결과에 '-'(스코어 미로드)가 있으면 teamResults가 true로 → 저장 스코어 도착 시 재렌더
     if (fx.group && !matchEnded(fx)) fetchStandings();  // 조별·미종료 경기면 순위 로드 → 진출 경우의수 표(도착 시 자동 재렌더)
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
@@ -2531,7 +2533,7 @@
         if (!d.live || !fresh) return;  // 5분 지난 캐시 무시(유령 방지)
         var changed = false;
         Object.keys(d.live).forEach(function (k) { if (!LIVE[k] && d.live[k] && d.live[k].state === "in") { LIVE[k] = d.live[k]; LIVE[k].cached = true; changed = true; } });
-        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); }
+        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
       }).catch(function () {});
   }
   // live_state.ls(서버 감지 JTBC 라이브) → LIVE_STREAM 반영. 변동 시 경기페이지 버튼 즉시 갱신.
@@ -2576,7 +2578,7 @@
         if (LIVE[mid] && LIVE[mid].state === "post") return;
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
-      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); }
+      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
     }).catch(function () {});
   }
   function onHomeSchedule() {
