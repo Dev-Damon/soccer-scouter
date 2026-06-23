@@ -3400,7 +3400,7 @@ window.DATA = {
       "name": "보스니아 헤르체고비나",
       "nameEn": "Bosnia and Herzegovina",
       "flag": "🇧🇦",
-      "fifaRank": 64,
+      "fifaRank": 65,
       "group": "B",
       "tierSummary": "2014년 이후 12년 만에 본선에 복귀한 다크호스로, 노장 제코를 구심점 삼아 유럽 각지에서 성장한 디아스포라 자원으로 무장한 중하위 시드 팀이다.",
       "styleSummary": [
@@ -12221,7 +12221,7 @@ window.DATA = {
       "name": "가나",
       "nameEn": "Ghana",
       "flag": "🇬🇭",
-      "fifaRank": 65,
+      "fifaRank": 64,
       "group": "L",
       "tierSummary": "유럽 빅리그에 흩어진 재능 있는 공격 자원과 노련한 베테랑을 갖췄지만, 잉글랜드·크로아티아가 버틴 죽음의 L조에서 16강을 노리려면 수비 안정과 한 방이 절실한 다크호스다.",
       "styleSummary": [

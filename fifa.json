@@ -1,5 +1,5 @@
 {
- "_ts": 1782254642637,
+ "_ts": 1782256453452,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -31,10 +31,10 @@
   "chR": 1
  },
  "bosnia-and-herzegovina": {
-  "r": 64,
+  "r": 65,
   "p": 1381.18,
   "ch": -6.04,
-  "chR": 0
+  "chR": -1
  },
  "qatar": {
   "r": 56,
@@ -266,8 +266,8 @@
  },
  "england": {
   "r": 4,
-  "p": 1847.68,
-  "ch": 19.66,
+  "p": 1829.82,
+  "ch": 1.8,
   "chR": 0
  },
  "croatia": {
@@ -277,10 +277,10 @@
   "chR": -4
  },
  "ghana": {
-  "r": 65,
-  "p": 1380.71,
-  "ch": 33.83,
-  "chR": 8
+  "r": 64,
+  "p": 1398.57,
+  "ch": 51.69,
+  "chR": 9
  },
  "panama": {
   "r": 40,
@@ -325,8 +325,8 @@
    "flagUrl": "https://flagcdn.com/28x21/gb-eng.png",
    "id": "england",
    "r": 4,
-   "p": 1847.68,
-   "ch": 19.66,
+   "p": 1829.82,
+   "ch": 1.8,
    "chR": 0
   },
   {
@@ -920,24 +920,24 @@
    "chR": 4
   },
   {
-   "code": "BIH",
-   "name": "Bosnia and Herzegovina",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ba.svg",
-   "id": "bosnia-and-herzegovina",
-   "r": 64,
-   "p": 1381.18,
-   "ch": -6.04,
-   "chR": 0
-  },
-  {
    "code": "GHA",
    "name": "Ghana",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gh.svg",
    "id": "ghana",
+   "r": 64,
+   "p": 1398.57,
+   "ch": 51.69,
+   "chR": 9
+  },
+  {
+   "code": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ba.svg",
+   "id": "bosnia-and-herzegovina",
    "r": 65,
-   "p": 1380.71,
-   "ch": 33.83,
-   "chR": 8
+   "p": 1381.18,
+   "ch": -6.04,
+   "chR": -1
   },
   {
    "code": "HON",
