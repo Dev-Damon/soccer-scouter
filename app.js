@@ -1021,7 +1021,7 @@
     var others = remaining.filter(function (f) { return f !== krFx; });
     var krHome = krFx.homeId === KR, oppId = krHome ? krFx.awayId : krFx.homeId, opp = teamsById[oppId] || {};
     function krOut(res) { return res === "win" ? (krHome ? "h" : "a") : res === "loss" ? (krHome ? "a" : "h") : "d"; }
-    function evalKr(res, otherPicks) { var picks = {}; picks[krFx.id] = krOut(res); (otherPicks || []).forEach(function (o, i) { picks[others[i].id] = o; }); return scnVerdict(krGroup, gids, remaining, picks); }
+    function evalKr(res, otherPicks) { var picks = {}; picks[krFx.id] = krOut(res); (otherPicks || []).forEach(function (o, i) { picks[others[i].id] = o; }); return scnRankRange(KR, gids, remaining, picks); }  // 상단 rrng와 동일하게 승점 기반(골득실 동률은 보수적) → 상·하위 결과 일치
     // 그룹 순위 기준(1·2위=직행 / 3위=와일드카드 경쟁 / 4위=탈락) — 다른 조 3위 비교는 불확실해 순위로 정직하게.
     function rrng(res) { var combos = scnEnum(others), mn = 9, mx = 0; combos.forEach(function (c) { var picks = {}; picks[krFx.id] = krOut(res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var rr = scnRankRange(KR, gids, remaining, picks); mn = Math.min(mn, rr.best); mx = Math.max(mx, rr.worst); }); return { mn: mn, mx: mx }; }  // 승점 기반(골득실 동률은 보수적으로 worst까지)
     var rrWin = rrng("win"), rrDraw = rrng("draw"), rrLoss = rrng("loss");
@@ -1059,8 +1059,13 @@
         var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
         bd = '<div class="sc-bd">';
         [["h", esc(oh.flag || "") + " " + esc(oh.name || of.homeId) + " 승"], ["d", "무승부"], ["a", esc(oa.flag || "") + " " + esc(oa.name || of.awayId) + " 승"]].forEach(function (oc) {
-          var v = evalKr(res, [oc[0]]);  // 그룹 순위 기준: 1·2위=직행, 3위=와일드카드 경쟁, 4위=탈락
-          var lbl = v.rank <= 2 ? "✅ 32강 직행" : v.rank === 3 ? "🟡 조 3위(경쟁)" : "❌ 탈락", cc = v.rank <= 2 ? "q" : v.rank === 3 ? "p" : "o";
+          var v = evalKr(res, [oc[0]]);  // 승점 기반 best~worst (골득실 동률이면 범위)
+          var lbl, cc;
+          if (v.worst <= 2) { lbl = "✅ 32강 직행"; cc = "q"; }
+          else if (v.best >= 4) { lbl = "❌ 탈락"; cc = "o"; }
+          else if (v.best === v.worst) { lbl = v.best === 3 ? "🟡 조 3위(경쟁)" : "✅ 32강 직행"; cc = v.best === 3 ? "p" : "q"; }
+          else if (v.best <= 2 && v.worst === 3) { lbl = "🟡 직행 또는 3위"; cc = "p"; }
+          else { lbl = "🟡 3위 또는 탈락"; cc = "p"; }
           bd += '<div class="sc-bd-row"><span class="bd-l">' + oc[1] + '</span><span class="bd-v ' + cc + '">' + lbl + "</span></div>";
         });
         bd += "</div>";
