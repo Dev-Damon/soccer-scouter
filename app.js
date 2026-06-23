@@ -2886,6 +2886,7 @@
     "match-46": "https://chzzk.naver.com/video/13829279", // 우루과이-카보베르데
     "match-49": "https://chzzk.naver.com/video/13744157", // 프랑스-세네갈
     "match-50": "https://chzzk.naver.com/video/13744863", // 이라크-노르웨이
+    "match-51": "https://chzzk.naver.com/video/13844343", // 프랑스-이라크
     "match-55": "https://chzzk.naver.com/video/13745669", // 아르헨티나-알제리
     "match-56": "https://chzzk.naver.com/video/13746888", // 오스트리아-요르단
     "match-57": "https://chzzk.naver.com/video/13842853", // 아르헨티나-오스트리아
