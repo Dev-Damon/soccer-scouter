@@ -1117,8 +1117,10 @@
     }
 
     // 32강 진출 경우의 수는 별도 페이지로 이동(공간 절약) — 한국 경기는 한국 전용 페이지, 그 외는 조별 통합 페이지
-    // 경우의 수 버튼은 조별 3라운드(양팀 모두 2경기 이상 치름 = 마지막 경기)부터만. 종료 경기는 위에서 이미 블록 자체 생략.
-    if (scnStats(fx.homeId).p >= 2 && scnStats(fx.awayId).p >= 2) {
+    // 경우의 수 버튼은 조별 3라운드(=양팀 모두 이 경기가 마지막 조별 경기)부터만. 일정 기준이라 STAND 값에 안 흔들림. 종료 경기는 위에서 블록 자체 생략.
+    var _fd = fxDate(fx) || "";
+    var isLastRound = [fx.homeId, fx.awayId].every(function (tid) { return !allFx.some(function (f) { return f !== fx && (f.homeId === tid || f.awayId === tid) && (fxDate(f) || "") > _fd; }); });
+    if (isLastRound) {
       var isKr = fx.homeId === "south-korea" || fx.awayId === "south-korea";
       html += '<button class="scn-go-btn"' + (isKr ? " data-scngo" : ' data-grpscn="' + esc(fx.group) + '"') + '>🧮 ' + (isKr ? "한국 " : esc(fx.group) + "조 ") + "32강 진출 경우의 수 보기 →</button>";
     }
