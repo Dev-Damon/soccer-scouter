@@ -1640,3 +1640,7 @@ html.light .mr-g.d .mr-sc, html.light .mscl b.p { color: #b07d00; }
 .gscl-v { font-weight: 700; }
 .gscl-v.q12 { color: #2ec56e; } .gscl-v.out { color: #ef5350; } .gscl-v.p3 { color: #d99a00; }
 html.light .gsc-verdict.p3, html.light .gscl-v.p3 { color: #b07d00; }
+/* 조별 경우의수 — 다른 경기 결과별 분기(2안 항상표시) */
+.gsc-branch { margin: 1px 0 6px 30px; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+.gsc-branch b.q { color: #2ec56e; } .gsc-branch b.p { color: #d99a00; } .gsc-branch b.o { color: #ef5350; }
+html.light .gsc-branch b.p { color: #b07d00; }

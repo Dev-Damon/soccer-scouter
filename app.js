@@ -1151,6 +1151,19 @@
       combos.forEach(function (c) { var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
       return { mn: mn, mx: mx };
     }
+    // 동시에 열리는 같은 조 다른 경기 결과별 분기(누가 누굴 이기면 → 직행/3위/탈락). 다른 경기가 1개일 때만(보통 3라운드).
+    function branchLine(teamId, nextFx, res) {
+      var others = remaining.filter(function (f) { return f !== nextFx; });
+      if (others.length !== 1) return "";
+      var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
+      var parts = [["h", esc(oh.name || "") + " 승"], ["d", "무"], ["a", esc(oa.name || "") + " 승"]].map(function (oc) {
+        var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); picks[of.id] = oc[0];
+        var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1;
+        var lab = rk <= 2 ? "직행" : rk === 3 ? "3위" : "탈락", cls = rk <= 2 ? "q" : rk === 3 ? "p" : "o";
+        return oc[1] + "→<b class=\"" + cls + "\">" + lab + "</b>";
+      });
+      return '<div class="gsc-branch">└ ' + parts.join(" / ") + "</div>";
+    }
 
     cur.forEach(function (row, i) {
       var t = row.t || {}, s = row.s;
@@ -1167,8 +1180,9 @@
         html += '<div class="gsc-next muted-note">다음 상대: ' + esc(op.flag || "") + " " + esc(op.name || "") + "</div>";
         html += '<div class="gsc-lines">';
         [["win", "승"], ["draw", "무"], ["loss", "패"]].forEach(function (kv) {
-          var v = vd(rrngNext(row.id, nextFx, kv[0]));
+          var rr = rrngNext(row.id, nextFx, kv[0]), v = vd(rr);
           html += '<div class="gsc-line"><span class="gscl-r">' + kv[1] + '</span><span class="gscl-v ' + v.c + '">' + v.t + "</span></div>";
+          if (!(rr.mx <= 2 || rr.mn >= 4)) html += branchLine(row.id, nextFx, kv[0]);  // 유동적일 때만 다른 경기 분기 표시
         });
         html += "</div>";
       }
