@@ -814,7 +814,7 @@
   // 공용 순위표(사진형): #·팀·경기·승·무·패·득·실·득실·승점·최근5. opt.group=조컬럼, opt.thirds=상위8 강조
   function standTableHTML(rows, opt) {
     opt = opt || {};
-    var GDS = ' style="text-align:right;padding-right:9px;font-variant-numeric:tabular-nums"';  // 득실 우측정렬 인라인(styles.css 캐시와 무관하게 강제 → 부호 끝자리 정렬)
+    var GDS = ' style="text-align:right;padding-right:9px;font-family:ui-monospace,\'SF Mono\',\'Roboto Mono\',Menlo,monospace;font-variant-numeric:normal"';  // 득실: 고정폭 폰트로 +/-부호도 숫자와 동일 크기·정렬(일부 기기 폰트가 tabular에서 부호를 작게 그리는 문제 회피). 인라인이라 CSS 캐시 무관
     var h = '<table class="stand stand2"><thead><tr><th class="c">#</th><th>팀</th>' + (opt.group ? '<th class="c">조</th>' : "") + "<th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th class=\"gd\"" + GDS + ">득실</th><th class=\"pts\">승점</th></tr></thead><tbody>";
     rows.forEach(function (row, i) {
       var t = row.t, s = row.s, id = row.id, grp = row.g;
