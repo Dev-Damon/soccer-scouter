@@ -2815,7 +2815,7 @@ window.DATA = {
       "name": "대한민국",
       "nameEn": "South Korea",
       "flag": "🇰🇷",
-      "fifaRank": 23,
+      "fifaRank": 24,
       "group": "A",
       "tierSummary": "손흥민과 김민재라는 월드클래스 듀오를 축으로, 유럽 빅리그에서 뛰는 핵심 선수들이 받쳐주는 아시아 강호로 본선 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
@@ -3787,7 +3787,7 @@ window.DATA = {
       "name": "스위스",
       "nameEn": "Switzerland",
       "flag": "🇨🇭",
-      "fifaRank": 18,
+      "fifaRank": 17,
       "group": "B",
       "tierSummary": "월드클래스 슈퍼스타는 없지만 빅리그 주전들로 빼곡한 탄탄한 조직력의 다크호스로, 토너먼트 16강 단골이지만 8강 벽을 넘는 게 숙제인 팀.",
       "styleSummary": [
@@ -5345,7 +5345,7 @@ window.DATA = {
       "name": "호주",
       "nameEn": "Australia",
       "flag": "🇦🇺",
-      "fifaRank": 25,
+      "fifaRank": 26,
       "group": "D",
       "tierSummary": "유럽 2부와 J리그·MLS·A리그에 흩어진 견실한 주전들과 소수의 유망주가 떠받치는, 조직력으로 버티는 6회 연속 본선 진출 중위권 팀.",
       "styleSummary": [
@@ -7675,7 +7675,7 @@ window.DATA = {
       "name": "이집트",
       "nameEn": "Egypt",
       "flag": "🇪🇬",
-      "fifaRank": 26,
+      "fifaRank": 27,
       "group": "G",
       "tierSummary": "살라라는 세계적 슈퍼스타와 마르무시라는 두 번째 칼날을 앞세웠지만, 스쿼드 26명 중 17명이 자국 리그(특히 알 아흘리) 소속인 '에이스 의존형' 다크호스다.",
       "styleSummary": [
@@ -8992,7 +8992,7 @@ window.DATA = {
       "name": "우루과이",
       "nameEn": "Uruguay",
       "flag": "🇺🇾",
-      "fifaRank": 19,
+      "fifaRank": 18,
       "group": "H",
       "tierSummary": "유럽·남미 빅클럽에서 뛰는 세대교체 핵심들을 비엘사 감독이 거칠고 짜임새 있게 묶어낸, 8강 이상을 노리는 강호다.",
       "styleSummary": [
@@ -9448,7 +9448,7 @@ window.DATA = {
       "name": "세네갈",
       "nameEn": "Senegal",
       "flag": "🇸🇳",
-      "fifaRank": 17,
+      "fifaRank": 19,
       "group": "I",
       "tierSummary": "2021년·2025년 아프리카 네이션스컵을 제패한 아프리카 최강 전력 중 하나로, 프리미어리그를 비롯한 빅리그 주축 선수가 즐비한 다크호스급 팀입니다.",
       "styleSummary": [
@@ -9853,7 +9853,7 @@ window.DATA = {
       "name": "노르웨이",
       "nameEn": "Norway",
       "flag": "🇳🇴",
-      "fifaRank": 27,
+      "fifaRank": 22,
       "group": "I",
       "tierSummary": "28년 만의 본선 복귀를 일군 황금세대로, 홀란과 외데고르라는 세계적 스타를 축으로 한 다크호스 다.",
       "styleSummary": [
@@ -10481,7 +10481,7 @@ window.DATA = {
       "name": "오스트리아",
       "nameEn": "Austria",
       "flag": "🇦🇹",
-      "fifaRank": 22,
+      "fifaRank": 23,
       "group": "J",
       "tierSummary": "1998년 이후 28년 만에 본선에 복귀한 랑니크 감독의 오스트리아는 분데스리가 출신 베테랑들이 즐비한 단단한 중상위권 팀으로, 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
