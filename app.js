@@ -956,6 +956,18 @@
     var arr = gids.map(function (id) { return { id: id, t: teamsById[id], s: rows[id] }; });
     arr.sort(scnCmp); return arr;
   }
+  // picks(남은경기 결과)로 각 팀 최종 승점만 계산 — 골득실은 스코어 모르니 가정 안 함.
+  function scnPtsAfter(gids, remaining, picks) {
+    var r = {}; gids.forEach(function (id) { r[id] = scnStats(id).pts; });
+    remaining.forEach(function (f) { var o = picks[f.id]; if (!o) return; if (o === "h") r[f.homeId] += 3; else if (o === "a") r[f.awayId] += 3; else { r[f.homeId] += 1; r[f.awayId] += 1; } });
+    return r;
+  }
+  // 승점만으로 순위 범위(best~worst). 승점 동률 팀은 골득실로 갈리지만 스코어를 모르므로 "그 동률 구간 어디든 가능"으로 보수적 판정 → 골득실 의존 케이스를 '확정'으로 오판하지 않음.
+  function scnRankRange(teamId, gids, remaining, picks) {
+    var p = scnPtsAfter(gids, remaining, picks), my = p[teamId], hi = 0, sm = 0;
+    gids.forEach(function (id) { if (p[id] > my) hi++; else if (p[id] === my) sm++; });
+    return { best: hi + 1, worst: hi + sm };  // 동률 sm명이면 best=hi+1 ~ worst=hi+sm
+  }
   function scnThirdRank(krGroup, projectedKrThird) {  // 12개 조 3위 비교 → 한국(3위) 순위
     var thirds = [];
     (DATA.groups || []).forEach(function (g) {
@@ -1011,7 +1023,7 @@
     function krOut(res) { return res === "win" ? (krHome ? "h" : "a") : res === "loss" ? (krHome ? "a" : "h") : "d"; }
     function evalKr(res, otherPicks) { var picks = {}; picks[krFx.id] = krOut(res); (otherPicks || []).forEach(function (o, i) { picks[others[i].id] = o; }); return scnVerdict(krGroup, gids, remaining, picks); }
     // 그룹 순위 기준(1·2위=직행 / 3위=와일드카드 경쟁 / 4위=탈락) — 다른 조 3위 비교는 불확실해 순위로 정직하게.
-    function rrng(res) { var combos = scnEnum(others), mn = 9, mx = 0; combos.forEach(function (c) { var picks = {}; picks[krFx.id] = krOut(res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (r) { return r.id; }).indexOf(KR) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); }); return { mn: mn, mx: mx }; }
+    function rrng(res) { var combos = scnEnum(others), mn = 9, mx = 0; combos.forEach(function (c) { var picks = {}; picks[krFx.id] = krOut(res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var rr = scnRankRange(KR, gids, remaining, picks); mn = Math.min(mn, rr.best); mx = Math.max(mx, rr.worst); }); return { mn: mn, mx: mx }; }  // 승점 기반(골득실 동률은 보수적으로 worst까지)
     var rrWin = rrng("win"), rrDraw = rrng("draw"), rrLoss = rrng("loss");
     function adv(rr) { return rr.mx <= 2; }
 
@@ -1144,16 +1156,16 @@
     html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(group) + "조 순위</div>" + standTableHTML(cur) + "</div>";
 
     function vd(rr) { return rr.mx <= 2 ? { t: "✅ 직행 확정", c: "q12" } : rr.mn >= 4 ? { t: "❌ 탈락 확정", c: "out" } : rr.mn <= 2 ? { t: "🟡 직행 가능 / 최소 3위 경쟁", c: "p3" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 (와일드카드 경쟁)", c: "p3" } : { t: "🟡 3위 또는 탈락", c: "p3" }; }
-    function teamFullRange(teamId) {  // 남은 경기 전체 조합으로 가능한 순위 범위
+    function teamFullRange(teamId) {  // 남은 경기 전체 조합 → 승점 기반 순위 범위(골득실 동률은 보수적)
       var combos = scnEnum(remaining), mn = 9, mx = 0;
-      combos.forEach(function (c) { var picks = {}; remaining.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
+      combos.forEach(function (c) { var picks = {}; remaining.forEach(function (f, i) { picks[f.id] = c[i]; }); var rr = scnRankRange(teamId, gids, remaining, picks); mn = Math.min(mn, rr.best); mx = Math.max(mx, rr.worst); });
       return { mn: mn, mx: mx };
     }
     function teamOut(fx, teamId, res) { var home = fx.homeId === teamId; return res === "win" ? (home ? "h" : "a") : res === "loss" ? (home ? "a" : "h") : "d"; }
-    function rrngNext(teamId, nextFx, res) {  // 그 팀 다음 경기 결과 고정 + 나머지 조합
+    function rrngNext(teamId, nextFx, res) {  // 그 팀 다음 경기 결과 고정 + 나머지 조합 → 승점 기반 범위
       var others = remaining.filter(function (f) { return f !== nextFx; });
       var combos = scnEnum(others), mn = 9, mx = 0;
-      combos.forEach(function (c) { var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1; mn = Math.min(mn, rk); mx = Math.max(mx, rk); });
+      combos.forEach(function (c) { var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); others.forEach(function (f, i) { picks[f.id] = c[i]; }); var rr = scnRankRange(teamId, gids, remaining, picks); mn = Math.min(mn, rr.best); mx = Math.max(mx, rr.worst); });
       return { mn: mn, mx: mx };
     }
     // 동시에 열리는 같은 조 다른 경기 결과별 분기(누가 누굴 이기면 → 직행/3위/탈락). 다른 경기가 1개일 때만(보통 3라운드).
@@ -1163,8 +1175,13 @@
       var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
       var parts = [["h", esc(oh.name || "") + " 승"], ["d", "무"], ["a", esc(oa.name || "") + " 승"]].map(function (oc) {
         var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); picks[of.id] = oc[0];
-        var fin = scnSimGroup(gids, remaining, picks); var rk = fin.map(function (x) { return x.id; }).indexOf(teamId) + 1;
-        var lab = rk <= 2 ? "직행" : rk === 3 ? "3위" : "탈락", cls = rk <= 2 ? "q" : rk === 3 ? "p" : "o";
+        var rr = scnRankRange(teamId, gids, remaining, picks);  // 승점 기반(골득실 동률이면 best≠worst)
+        var lab, cls;
+        if (rr.worst <= 2) { lab = "직행"; cls = "q"; }
+        else if (rr.best >= 4) { lab = "탈락"; cls = "o"; }
+        else if (rr.best === rr.worst) { lab = rr.best + "위"; cls = rr.best <= 2 ? "q" : rr.best === 3 ? "p" : "o"; }
+        else if (rr.best <= 2 && rr.worst === 3) { lab = "직행/3위"; cls = "p"; }  // 골득실 따라
+        else { lab = "3위/탈락"; cls = "p"; }
         return oc[1] + "→<b class=\"" + cls + "\">" + lab + "</b>";
       });
       return '<div class="gsc-branch">└ ' + parts.join(" / ") + "</div>";
