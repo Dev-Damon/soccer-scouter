@@ -2411,6 +2411,7 @@
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
+    if (fx.venue && VENUE_INFO[fx.venue] && VENUE_INFO[fx.venue].img) { try { var _pi = new Image(); _pi.src = VENUE_INFO[fx.venue].img; } catch (e) {} }  // 경기장 사진 미리 받아두기(클릭 시 즉시 표시)
     var _vn = fx.venue ? (VENUE_INFO[fx.venue] ? '<span class="mv-venue" data-venue="' + esc(fx.venue) + '">' + esc(fx.venue) + ' ⓘ</span>' : esc(fx.venue)) : "";  // 정보 있는 경기장은 클릭 가능
     var where = [_vn, esc(fx.city), hostCountry(fx)].filter(Boolean).join(" · ");
     var top = (fx.group ? esc(fx.group) + "조" : esc(fx.stage || "")) + " · " + when + (where ? " · " + where : "");
