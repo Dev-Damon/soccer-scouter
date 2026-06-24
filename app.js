@@ -342,7 +342,7 @@
   function renderBracket() {
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
-    viewEl.innerHTML = '<div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div><div class="adslot"></div>';
+    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div>';
     _brkLastW = -1;  // 새 fit → 강제 재측정
     var _bfit = viewEl.querySelector(".brk2-fit");
     if (window.ResizeObserver && _bfit) { if (_brkRO) _brkRO.disconnect(); _brkRO = new ResizeObserver(function () { layoutBracket(); }); _brkRO.observe(_bfit); }
@@ -524,14 +524,16 @@
   // ===== 앱인토스(토스 미니앱) 모드 — 토스 웹뷰면 외부광고·쿠팡·베팅·외부송금 숨김(토스 정책 준수). 일반 웹은 무영향. ?toss=1로 테스트 =====
   var IS_TOSS = (function () { try { return /toss/i.test(navigator.userAgent) || /[?&]toss=1/.test(location.search) || !!window.AppsInToss || !!window.__APPS_IN_TOSS__; } catch (e) { return false; } })();
   // ===== 토스 광고/로그인 — 미리 구현. main.ts가 window.tossAd/tossUser 브릿지 제공. 키/위치만 채우면 바로 동작 =====
-  var TOSS_AD_GROUP = "ait.v2.live.a45bb57c5ead4cdd";  // ← 전면광고 그룹 ID(콘솔 발급). 채우면 토스앱 전면광고 동작
-  var TOSS_BANNER_BIG = "ait.v2.live.83d0588683ff49a2";    // ← 320x100 "배너큰이미지" 그룹 ID
-  var TOSS_BANNER_SMALL = "ait.v2.live.95355b5db1f745e9";  // ← 320x50 "배너" 그룹 ID
+  // [광고 ID] 검수 전 QR 테스트는 테스트 ID 필수(라이브 ID는 검수 통과 후에야 노출됨, 실제 ID로 테스트하면 정책위반).
+  // ★검수 제출 전 USE_TEST_AD = false 로 되돌릴 것.
+  var USE_TEST_AD = false;
+  var TOSS_AD_GROUP    = USE_TEST_AD ? "ait-ad-test-interstitial-id"  : "ait.v2.live.a45bb57c5ead4cdd";  // 전면광고
+  var TOSS_BANNER_BIG  = USE_TEST_AD ? "ait-ad-test-native-image-id"  : "ait.v2.live.83d0588683ff49a2";  // 320x100 "배너큰이미지"(피드/네이티브)
+  var TOSS_BANNER_SMALL= USE_TEST_AD ? "ait-ad-test-banner-id"        : "ait.v2.live.95355b5db1f745e9";  // 320x50 "배너"(리스트형)
   // 토스 전면광고 표시: 위치(트리거)는 정해지면 이 함수를 그 지점에서 호출. onDone은 광고 닫힌 뒤 콜백(없어도 됨).
   function tossShowAd(onDone) {
     if (IS_TOSS && TOSS_AD_GROUP && window.tossAd && window.tossAd.isSupported && window.tossAd.isSupported()) {
-      window.tossAd.load(TOSS_AD_GROUP);
-      setTimeout(function () { window.tossAd.show(TOSS_AD_GROUP, onDone); }, 700);  // load 후 약간 뒤 show
+      window.tossAd.load(TOSS_AD_GROUP, function () { window.tossAd.show(TOSS_AD_GROUP, onDone); });  // loaded 이벤트 받은 뒤 show(문서 권장 흐름)
     } else if (onDone) { onDone(); }
   }
   // 토스 사용자 식별(익명 고유키) — 응원/MVP/평점 로그인 대체. Promise<string|null>. (서버 복호화 불필요)
@@ -2305,7 +2307,6 @@
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
-    if (IS_TOSS && TOSS_AD_GROUP && !window._tossAdShown) { window._tossAdShown = true; tossShowAd(); }  // [테스트] 경기상세 첫 진입(세션 1회) 전면광고. 키(TOSS_AD_GROUP) 있을 때만
     window._mscNeedsLive = false;  // 조현황 경기결과에 '-'(스코어 미로드)가 있으면 teamResults가 true로 → 저장 스코어 도착 시 재렌더
     if (fx.group) fetchStandings();  // 조별 경기면 순위 로드(종료경기도 조현황 순위표 필요) → 도착 시 자동 재렌더. STAND는 정적 순위라 라이브 섞임과 무관
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
@@ -2340,6 +2341,7 @@
     }
 
     viewEl.innerHTML =
+      '<div class="adslot ad-top"></div>' +  /* 작은 배너(320x50) — 경기 분석 카드 위, 바깥 별도 공간(맨 위) */
       '<div class="detail match-view">' +
         '<div class="match-top-btns">' + saveBtnHtml("match:" + fx.id) + (IS_TOSS ? "" : '<button class="share-btn" data-share-match="' + esc(fx.id) + '" aria-label="공유">📤</button>') + "</div>" +  /* 토스는 외부 공유 숨김 */
         '<div class="var-title"><span class="var-tag">VAR</span> 경기 분석</div>' +
@@ -2360,9 +2362,9 @@
         '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
         '<div class="block bet-slot"></div>' +  /* 4) 포인트 베팅 */
         '<div class="live-btn-slot"></div>' +  /* 라이브 중(치지직 JTBC 송출 감지)이면 updScore가 버튼 채움 */
-        ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx) && !IS_TOSS) ? '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>' : "") +  /* 토스모드는 외부링크(치지직) 제거 */
+        ((MATCH_HIGHLIGHTS[fx.id] && matchEnded(fx)) ? (IS_TOSS ? '<button class="hl-btn" data-ext="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '">▶ 하이라이트 보기</button>' : '<a class="hl-btn" href="' + esc(MATCH_HIGHLIGHTS[fx.id]) + '" target="_blank" rel="noopener">▶ 하이라이트 보기</a>') : "") +  /* 토스는 openURL(외부브라우저), 웹은 새 탭 */
         /* 경기 결과 이미지 공유 버튼 제거(우측상단 📤 공유로 일원화) */
-        '<div class="adslot"></div>' +
+        '<div class="adslot ad-mid"></div>' +
         '<div class="block h2h-slot"></div>' +
         '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
         '<div class="block card-slot" style="display:none"></div>' +
@@ -2371,7 +2373,6 @@
         /* 선수 평점·MVP 버튼은 종료 후에만(MOM 포디움이 진입점) — 예정/진행 경기엔 표시 안 함 */
         '<div class="block"><h3>전력 비교</h3>' + cmp + "</div>" +
         previewHtml +
-        '<div class="adslot ad2"></div>' +
         '<div class="cmt-slot"></div>' +
         ((a.news && a.news.length) || (b.news && b.news.length) ?
           '<div class="block"><h3>📰 주요 뉴스</h3>' + matchNews(a, 3) + matchNews(b, 3) + "</div>" : "") +
@@ -2385,7 +2386,7 @@
     loadLineup(viewEl.querySelector(".lineup-slot"), fx, a, b);
     loadMomPodium(viewEl.querySelector(".mom-slot"), fx);
     loadCardWatch(viewEl.querySelector(".card-slot"), a, b, fx);
-    insertAdFit(viewEl.querySelector(".adslot")); insertAdFit(viewEl.querySelector(".ad2"), "DAN-SWWhds5NegoTMohB", "320", "50"); insertAdSense(viewEl.querySelector(".adsense-slot")); coupangBottom();
+    insertAdFit(viewEl.querySelector(".ad-top"), "DAN-SWWhds5NegoTMohB", "320", "50"); insertAdFit(viewEl.querySelector(".ad-mid")); insertAdSense(viewEl.querySelector(".adsense-slot")); coupangBottom();
 
     // 라이브 자동 갱신: 스코어(VS 자리) + 라인업/이벤트
     var aIsHome = (a.id === fx.homeId);
@@ -2409,7 +2410,7 @@
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
       if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
       var lbs = viewEl.querySelector(".live-btn-slot");  // 치지직 JTBC 라이브 송출 감지 시 "라이브 보기" 버튼(경기종료면 숨김)
-      if (lbs) { lbs.innerHTML = (!IS_TOSS && LIVE_STREAM && LIVE_STREAM.mid === fx.id && LIVE_STREAM.url && !(lv && lv.state === "post")) ? '<a class="live-btn" href="' + esc(LIVE_STREAM.url) + '" target="_blank" rel="noopener"><span class="lb-dot"></span>라이브 보기 (JTBC)</a>' : ""; }  /* 토스모드는 외부링크 제거 */
+      if (lbs) { lbs.innerHTML = (LIVE_STREAM && LIVE_STREAM.mid === fx.id && LIVE_STREAM.url && !(lv && lv.state === "post")) ? (IS_TOSS ? '<button class="live-btn" data-ext="' + esc(LIVE_STREAM.url) + '"><span class="lb-dot"></span>라이브 보기 (JTBC)</button>' : '<a class="live-btn" href="' + esc(LIVE_STREAM.url) + '" target="_blank" rel="noopener"><span class="lb-dot"></span>라이브 보기 (JTBC)</a>') : ""; }  /* 토스는 openURL, 웹은 새 탭 */
     }
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
@@ -3840,9 +3841,17 @@
       }
     });
   }
+  // 전면광고 빈도: 화면 이동 카운트로 첫 5번째, 이후 15마다, 세션 최대 4회(첫 진입 즉시 노출은 토스 정책 위반+이탈 → 금지)
+  var _navCount = 0, _adShownCount = 0, AD_FIRST = 10, AD_EVERY = 15, AD_MAX = 4;
+  function maybeShowInterstitial() {
+    if (!IS_TOSS || !TOSS_AD_GROUP || _adShownCount >= AD_MAX) return;
+    if (_navCount >= AD_FIRST + AD_EVERY * _adShownCount) { _adShownCount++; tossShowAd(); }  // 0회→10, 1회→25, 2회→40, 3회→55
+  }
   function route() {
     var _kb = document.getElementById("kt-boot"); if (_kb) _kb.remove();  // 첫 렌더 시 부팅 스플래시 제거
     var r = parseHash();
+    var _sw = document.querySelector(".search-wrap"); if (_sw) _sw.hidden = (r.name !== "search");  // 상단 검색창은 검색 탭에서만(일정·경기상세 등은 하단 검색탭으로 일원화)
+    _navCount++; maybeShowInterstitial();  // 화면 이동마다 카운트 → 임계 도달 시 전면광고
     // 스크롤 복원: 뒤로가기(_isPop)면 기억된 위치로, 아니면 맨위.
     var _restoreMem = (_isPop && _scrollMem.hasOwnProperty(hkey())) ? _scrollMem[hkey()] : 0;
     _isPop = false;
@@ -3896,6 +3905,8 @@
   });
   viewEl.addEventListener("click", function (e) {
     var my, ad;
+    var _ext = e.target.closest("[data-ext]");  // 외부 링크(치지직 등): 토스는 openURL(외부 브라우저), 웹은 새 탭
+    if (_ext) { var _u = _ext.getAttribute("data-ext"); if (_u) { if (IS_TOSS && window.tossOpenUrl) window.tossOpenUrl(_u); else window.open(_u, "_blank", "noopener"); } return; }
     if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
     if ((my = e.target.closest(".rate-star"))) {  // 선수 평점 = 익명 허용(로그인 불필요, 기기별 1회)
       if (!window.KickComments) return;

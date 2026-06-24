@@ -1,7 +1,7 @@
 // 킥톡 토스 미니앱 브릿지 — 토스 IAP(인앱결제)로 후원을 처리하는 window.tossPay 제공.
 // app.js(웹 소스)는 IS_TOSS일 때 window.tossPay.products()로 상품목록을 받아 표시하고, window.tossPay.donate(sku)로 결제.
 // 상품(이름/금액/sku)은 앱인토스 콘솔 등록값을 getProductItemList가 그대로 반환 → 코드에 금액/매핑 하드코딩 불필요.
-import { IAP, GoogleAdMob, appLogin, getAnonymousKey, TossAds } from '@apps-in-toss/web-framework';
+import { IAP, loadFullScreenAd, showFullScreenAd, appLogin, getAnonymousKey, TossAds, openURL } from '@apps-in-toss/web-framework';
 
 (window as any).__APPS_IN_TOSS__ = true;
 (window as any).__TOSS_IAP__ = true;  // 콘솔에 후원 상품 등록 완료 → 인앱결제 후원 활성화
@@ -30,27 +30,27 @@ import { IAP, GoogleAdMob, appLogin, getAnonymousKey, TossAds } from '@apps-in-t
   },
 };
 
-// ===== 토스 광고 (Google AdMob) — 미리 구현. 콘솔에서 adGroupId 발급 후 app.js의 TOSS_AD_GROUP에 넣고, 표시 위치만 정하면 동작 =====
-// AdMob은 전면/리워드형(load→show, 전체화면)이라 인라인 배너가 아님. 특정 동작 시점에 show() 호출.
+// ===== 토스 전면광고 (통합광고 2.0 ver2: loadFullScreenAd/showFullScreenAd) — 토스애즈+구글애드몹 자동선택 =====
+// 전면/리워드형(load→loaded이벤트→show, 전체화면). adGroupId로 타입 자동결정. 테스트ID(ait-ad-test-interstitial-id)도 이 API용.
 (window as any).tossAd = {
-  isSupported() { try { return GoogleAdMob.loadAppsInTossAdMob.isSupported() === true && GoogleAdMob.showAppsInTossAdMob.isSupported() === true; } catch (e) { return false; } },
+  isSupported() { try { return (loadFullScreenAd as any).isSupported() === true; } catch (e) { return false; } },
   load(adGroupId: string, onLoaded?: () => void) {
     if (!adGroupId || !this.isSupported()) return;
     try {
-      GoogleAdMob.loadAppsInTossAdMob({
+      loadFullScreenAd({
         options: { adGroupId },
         onEvent: (e: any) => { if (e && e.type === 'loaded' && onLoaded) onLoaded(); },
-        onError: (err: unknown) => console.error('광고 로드 오류', err),
+        onError: (err: unknown) => console.error('전면광고 로드 오류', err),
       });
     } catch (e) { console.error(e); }
   },
   show(adGroupId: string, onClosed?: () => void) {
     if (!adGroupId || !this.isSupported()) { if (onClosed) onClosed(); return; }
     try {
-      GoogleAdMob.showAppsInTossAdMob({
+      showFullScreenAd({
         options: { adGroupId },
-        onEvent: (e: any) => { if (e && (e.type === 'closed' || e.type === 'dismissed') && onClosed) onClosed(); },
-        onError: (err: unknown) => { console.error('광고 표시 오류', err); if (onClosed) onClosed(); },
+        onEvent: (e: any) => { if (e && e.type === 'dismissed' && onClosed) onClosed(); },
+        onError: (err: unknown) => { console.error('전면광고 표시 오류', err); if (onClosed) onClosed(); },
       });
     } catch (e) { console.error(e); if (onClosed) onClosed(); }
   },
@@ -65,6 +65,9 @@ import { IAP, GoogleAdMob, appLogin, getAnonymousKey, TossAds } from '@apps-in-t
   async key() { try { return await getAnonymousKey(); } catch (e) { console.error('사용자키 오류', e); return null; } },
   async login() { try { return await appLogin(); } catch (e) { console.error('로그인 오류', e); return null; } },
 };
+
+// ===== 외부 링크 열기 — 토스 공식 openURL(http/https는 외부 브라우저로). 치지직 라이브/하이라이트 등 정보성 링크용 =====
+(window as any).tossOpenUrl = (url: string) => { if (!url) return; try { openURL(url); } catch (e) { console.error('openURL 오류', e); } };
 
 // ===== 토스 배너 광고 — TossAds.initialize() 후 attachBanner로 DOM에 인라인 삽입(초기화 필수) =====
 (window as any).__TOSS_BANNER__ = true;
