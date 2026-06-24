@@ -2954,7 +2954,8 @@
     "match-63": "https://chzzk.naver.com/video/13858502", // 포르투갈-우즈베키스탄
     "match-67": "https://chzzk.naver.com/video/13760610", // 잉글랜드-크로아티아
     "match-68": "https://chzzk.naver.com/video/13761281", // 가나-파나마
-    "match-69": "https://chzzk.naver.com/video/13859553" // 잉글랜드-가나
+    "match-69": "https://chzzk.naver.com/video/13859553", // 잉글랜드-가나
+    "match-70": "https://chzzk.naver.com/video/13860139" // 파나마-크로아티아
     /* HL-AUTO-END */
   };
   // 선수 평점 — 외부 JSON(match-ratings.json)에서 런타임 로드. 웹/토스 공통, .ait 재빌드 없이 평점만 갱신 가능(파일 push만으로 양쪽 반영).
