@@ -718,7 +718,7 @@
     var ko = matchKickoff(f); if (!ko) return false;
     var now = Date.now(); return now >= ko && now < ko + 130 * 60000;
   }
-  function isLiveFix(f) { var lv = LIVE[f.id]; return (lv && lv.state === "in") || isTimeLive(f); }
+  function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 150 * 60000) return false; return true; } return isTimeLive(f); }  // 종료(킥오프+150분 경과) 경기는 LIVE가 'in'으로 남아있어도 라이브 아님 — 스테일 라이브 오염 방어
   function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM.mid === f.id); }  // ESPN 라이브 or JTBC 방송 감지
   function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
   function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
@@ -2256,6 +2256,9 @@
   }
   function espnPitch(d, a, b, matchId) {
     var rosters = d.rosters || [];
+    // ★방어: 받아온 데이터(d)의 팀이 이 경기(a,b)와 다르면 거부 — 다른 경기 라인업이 섞여 들어오는 버그 차단
+    var _rt = rosters.map(function (rs) { return espnTeamId(rs.team && rs.team.displayName); }).filter(Boolean);
+    if (_rt.length && (_rt.indexOf(a.id) < 0 || _rt.indexOf(b.id) < 0)) return "";
     function rosterFor(team) { return rosters.filter(function (rs) { return espnTeamId(rs.team && rs.team.displayName) === team.id; })[0]; }
     var ra = rosterFor(a), rb = rosterFor(b);
     // ★규칙: 경기중=실시간 라인업(현재 뛰는 선수, currentLineupCoords) / 종료=선발 라인업(espnLineupCoords). 교체된 선수는 교체명단에 표시. (이 규칙 바꾸지 말 것)
@@ -2396,9 +2399,11 @@
     function updScore() {
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
+        var _ko = matchKickoff(fx), _stale = _ko && Date.now() > _ko + 150 * 60000;  // 종료 시간 경과인데 'in'으로 남은 스테일 라이브 → 종료 처리
+        var _ended = lv.state === "post" || _stale, _isLive = lv.state === "in" && !_stale;
         var as_ = aIsHome ? lv.hs : lv.as, bs_ = aIsHome ? lv.as : lv.hs;
         c.innerHTML = '<div class="vs-score">' + (as_ | 0) + ' <span>-</span> ' + (bs_ | 0) + "</div>" +
-          '<div class="vs-clock' + (lv.state === "in" ? " live" : "") + '">' + (lv.state === "post" ? "경기 종료" : esc(lv.clock || "LIVE")) + "</div>";
+          '<div class="vs-clock' + (_isLive ? " live" : "") + '">' + (_ended ? "경기 종료" : esc(lv.clock || "LIVE")) + "</div>";
       }
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
       if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
@@ -2737,8 +2742,11 @@
         if (summaryCache[eid]) return summaryCache[eid];
         return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
           summaryCache[eid] = d;
-          if (hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames, boxscore: d.boxscore });  // 확정 라인업+상대전적+경기통계 DB 저장(영구·백업)
-          return d;
+          // 방어: d의 팀이 이 경기(fx)와 일치할 때만 DB 저장(다른 경기 데이터로 DB 오염 방지)
+          var _dt = (d.rosters || []).map(function (rs) { return espnTeamId(rs.team && rs.team.displayName); }).filter(Boolean);
+          var _ok = _dt.indexOf(fx.homeId) >= 0 && _dt.indexOf(fx.awayId) >= 0;
+          if (_ok && hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames, boxscore: d.boxscore });
+          return _ok ? d : dbGet();  // 팀 불일치 데이터면 버리고 DB 백업 사용
         }).catch(function () { return dbGet(); });  // ESPN 실패 → DB 백업
       });
     }
