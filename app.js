@@ -128,8 +128,8 @@
   // 한국시간(KST) 우선 표시
   function fxDate(fx) { return fx.kstDate || fx.date; }
   function fxTime(fx) { return fx.kstTime || fx.time; }
-  function shortDate(iso) { var m = /^\d{4}-(\d{2})-(\d{2})/.exec(iso || ""); return m ? (+m[1]) + "/" + (+m[2]) : (iso || ""); }  // 2026-06-12 → 6/12
-  function shortTime(t) { var m = /^(\d{1,2}):(\d{2})/.exec(t || ""); return m ? ((+m[1]) + "시" + (m[2] === "00" ? "" : (+m[2]) + "분")) : (t || ""); }  // 10:00 → 10시, 10:30 → 10시30분
+  function shortDate(iso) { var m = /^\d{4}-(\d{2})-(\d{2})/.exec(iso || ""); return m ? (+m[1]) + "." + (+m[2]) : (iso || ""); }  // 2026-06-28 → 6.28
+  function shortTime(t) { var m = /^(\d{1,2}):(\d{2})/.exec(t || ""); return m ? (("0" + m[1]).slice(-2) + ":" + m[2]) : (t || ""); }  // 2:00 → 02:00, 8:30 → 08:30 (24시간 HH:MM)
   var SHORT_TEAM = { "south-africa": "남아공", "bosnia-and-herzegovina": "보스니아", "dr-congo": "콩고", "saudi-arabia": "사우디", "uzbekistan": "우즈벡", "ivory-coast": "코트디부" };  // 좁은 화면 일정용 약칭
   function shortTeamName(id, full) { return SHORT_TEAM[id] || full; }
   // 포지션 → 색 클래스(GK/DF/MF/FW)
