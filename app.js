@@ -1266,7 +1266,7 @@
         var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); picks[of.id] = oc[0];
         var rr = scnRankRange(teamId, gids, remaining, picks);
         var lab, cls;
-        if (rr.worst <= 2) { lab = "직행"; cls = "q"; }
+        if (rr.worst <= 2) { lab = (rr.best === rr.worst) ? (rr.best + "위") : "1·2위"; cls = "q"; }  // 직행이어도 1위 확정/1·2위 미정 구분
         else if (rr.best >= 4) { lab = "탈락"; cls = "o"; }
         else if (rr.best === rr.worst) { lab = rr.best + "위"; cls = rr.best <= 2 ? "q" : rr.best === 3 ? "p" : "o"; }
         else if (rr.best <= 2 && rr.worst === 3) { lab = "직행/3위"; cls = "p"; }  // 골득실 따라
@@ -1294,7 +1294,7 @@
         [["win", "승"], ["draw", "무"], ["loss", "패"]].forEach(function (kv) {
           var rr = rrngNext(row.id, nextFx, kv[0]), v = vd(rr);
           html += '<div class="gsc-line"><span class="gscl-r">' + kv[1] + '</span><span class="gscl-v ' + v.c + '">' + v.t + "</span></div>";
-          if (!(rr.mx <= 2 || rr.mn >= 4)) html += branchLine(row.id, nextFx, kv[0]);  // 유동적일 때만 다른 경기 분기 표시
+          html += branchLine(row.id, nextFx, kv[0]);  // 다른 경기 결과로 순위가 갈릴 때만 표시(1·2위 미정 포함). 내부에서 uniq<=1이면 숨김
         });
         html += "</div>";
       }
