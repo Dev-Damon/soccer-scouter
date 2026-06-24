@@ -1586,6 +1586,12 @@ html.light .fifa-row.nq { background: rgba(120,130,150,.09); }
 .sc-bd-row .bd-v { font-weight: 800; font-size: 11.5px; }
 .sc-bd-row .bd-v.q { color: #178a52; } .sc-bd-row .bd-v.p { color: #b07d00; } .sc-bd-row .bd-v.o { color: #c93d34; }
 table.stand2 td.gd, table.stand2 th.gd { text-align: right; padding-right: 9px; }  /* 득실 부호(+5/0/-3) 끝자리 정렬 → 헤더·값 수평 맞춤 */
+/* 득실 셀: 부호칸(고정폭) + 숫자칸(tabular 고정폭)을 grid로 분리 → 부호 유무/숫자 폭과 무관하게 모든 행 숫자가 세로로 정확히 정렬(모바일 가변폭 폰트 대응) */
+table.stand2 .gdcell { display: inline-grid; grid-template-columns: 0.62em auto; align-items: baseline; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+table.stand2 .gdsign { text-align: right; }
+table.stand2 .gdnum { text-align: left; }
+.gc-head { cursor: pointer; }
+.gc-scn { margin-left: auto; font-size: 11.5px; font-weight: 600; color: #4f8cff; }
 /* FIFA 랭킹 — 변동화살표·More·펼침 */
 .fifa-rowwrap { border-top: 1px solid var(--line); }
 .fifa-rowwrap:first-child { border-top: 0; }

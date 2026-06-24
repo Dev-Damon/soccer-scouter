@@ -854,7 +854,9 @@
     rows.forEach(function (row, i) {
       var t = row.t, s = row.s, id = row.id, grp = row.g;
       if (row.r) { t = row.r.t; s = row.r.s; id = row.r.id; }  // 3위표 형태 {g, r:{...}}
-      var gd = '<span style="color:' + (s.gd > 0 ? "#2ec56e" : s.gd < 0 ? "#ef5350" : "inherit") + '">' + (s.gd > 0 ? "+" : "") + s.gd + "</span>";  // 색으로 +/- 보강(부호 작게 보여도 의미 전달)
+      // 득실: 부호칸(고정폭) + 숫자칸(tabular)을 grid로 분리 → 부호 유무·숫자 폭과 무관하게 세로 정렬 일치(모바일 폰트 폭 가변 문제 해결)
+      var _gv = Math.abs(s.gd), _gs = s.gd > 0 ? "+" : s.gd < 0 ? "−" : "";
+      var gd = '<span class="gdcell" style="color:' + (s.gd > 0 ? "#2ec56e" : s.gd < 0 ? "#ef5350" : "inherit") + '"><span class="gdsign">' + _gs + '</span><span class="gdnum">' + _gv + "</span></span>";
       var qual = opt.thirds ? (i < 8) : (i < 2);
       h += '<tr class="' + (qual ? "qual" : "") + (id === "south-korea" ? " krrow" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
         '<td class="c rk">' + (i + 1) + "</td>" +
@@ -950,7 +952,7 @@
       });
       rows.sort(cmp);
       if (rows[2]) thirds.push({ g: g.group, r: rows[2] });
-      html += '<div class="group-card"><h3><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + "조</h3>" + standTableHTML(rows) + "</div>";
+      html += '<div class="group-card"><h3 class="gc-head" data-grpscn="' + esc(g.group) + '"><span class="group-letter">' + esc(g.group) + "</span>" + esc(g.group) + '조<span class="gc-scn">🧮 32강 경우의 수 ›</span></h3>' + standTableHTML(rows) + "</div>";  // 조 제목 클릭 → 경우의수 페이지
     });
     // 각 조 3위팀 순위 (WC2026: 12개 조 3위 중 상위 8팀 32강 진출)
     thirds.sort(function (a, b) { return cmp(a.r, b.r); });
