@@ -128,6 +128,10 @@
   // 한국시간(KST) 우선 표시
   function fxDate(fx) { return fx.kstDate || fx.date; }
   function fxTime(fx) { return fx.kstTime || fx.time; }
+  function shortDate(iso) { var m = /^\d{4}-(\d{2})-(\d{2})/.exec(iso || ""); return m ? (+m[1]) + "/" + (+m[2]) : (iso || ""); }  // 2026-06-12 → 6/12
+  function shortTime(t) { var m = /^(\d{1,2}):(\d{2})/.exec(t || ""); return m ? ((+m[1]) + "시" + (m[2] === "00" ? "" : (+m[2]) + "분")) : (t || ""); }  // 10:00 → 10시, 10:30 → 10시30분
+  var SHORT_TEAM = { "south-africa": "남아공", "bosnia-and-herzegovina": "보스니아", "dr-congo": "콩고", "saudi-arabia": "사우디", "uzbekistan": "우즈벡", "ivory-coast": "코트디부" };  // 좁은 화면 일정용 약칭
+  function shortTeamName(id, full) { return SHORT_TEAM[id] || full; }
   // 포지션 → 색 클래스(GK/DF/MF/FW)
   function posClass(pos) {
     var s = String(pos || ""); var p = s.toUpperCase();
@@ -342,7 +346,7 @@
   function renderBracket() {
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
-    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + ' <span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div>';
+    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div>';
     _brkLastW = -1;  // 새 fit → 강제 재측정
     var _bfit = viewEl.querySelector(".brk2-fit");
     if (window.ResizeObserver && _bfit) { if (_brkRO) _brkRO.disconnect(); _brkRO = new ResizeObserver(function () { layoutBracket(); }); _brkRO.observe(_bfit); }
@@ -1008,10 +1012,23 @@
   function scnRankRange(teamId, gids, remaining, picks) {
     var p = scnPtsAfter(gids, remaining, picks), my = p[teamId], above = 0, tie = [];
     gids.forEach(function (id) { if (id === teamId) return; if (p[id] > my) above++; else if (p[id] === my) tie.push(id); });
-    // 승점 동률 해소: 2팀 동률이면 맞대결 승자승(이미 끝났거나 시나리오 결과)으로 확정. 무·3팀+ 동률은 골득실 의존 → 미정 구간으로 둠.
+    // 승점 동률 해소: 2팀 동률이면 맞대결 승자승으로 확정. 맞대결 무면 골득실(무승부는 양팀 동일 변동이라, 서로 마지막 경기면 현재 골득실 차이가 유지됨 → 확정).
     var ambiguous;
-    if (tie.length === 1) { var h = h2hWinner(teamId, tie[0], picks); if (h > 0) { above++; ambiguous = 0; } else if (h < 0) ambiguous = 0; else ambiguous = 1; }
-    else ambiguous = tie.length;
+    if (tie.length === 1) {
+      var oid = tie[0], h = h2hWinner(teamId, oid, picks);
+      if (h > 0) { above++; ambiguous = 0; }           // 맞대결 패 → 상대가 위
+      else if (h < 0) ambiguous = 0;                    // 맞대결 승 → 내가 위
+      else {                                            // 맞대결 무(또는 미정)
+        var myFx = remaining.filter(function (f) { return f.homeId === teamId || f.awayId === teamId; });
+        var oFx = remaining.filter(function (f) { return f.homeId === oid || f.awayId === oid; });
+        if (myFx.length === 1 && oFx.length === 1 && myFx[0] === oFx[0]) {  // 둘의 유일한 남은 경기가 '서로의 맞대결'일 때만 → 무승부면 양팀 골득실이 똑같이 변해 현재 차이가 유지됨
+          var dgd = scnStats(teamId).gd - scnStats(oid).gd, dgf = scnStats(teamId).gf - scnStats(oid).gf;
+          if (dgd > 0 || (dgd === 0 && dgf > 0)) ambiguous = 0;                  // 골득실/다득점 우위 → 확정 위
+          else if (dgd < 0 || (dgd === 0 && dgf < 0)) { above++; ambiguous = 0; }  // 열위 → 확정 아래
+          else ambiguous = 1;                           // 완전 동일 → 페어플레이·FIFA(미정)
+        } else ambiguous = 1;                           // 각자 다른 상대와 마지막 경기 → 골 변동으로 현재 골득실 무효 → 보수적(미정)
+      }
+    } else ambiguous = tie.length;                      // 3팀+ 동률은 미니리그 골득실 의존 → 보수적
     return { best: above + 1, worst: above + 1 + ambiguous };  // 동률 미정 ambiguous명이면 worst=best+ambiguous
   }
   function scnThirdRank(krGroup, projectedKrThird) {  // 12개 조 3위 비교 → 한국(3위) 순위
@@ -1243,18 +1260,20 @@
       var others = remaining.filter(function (f) { return f !== nextFx; });
       if (others.length !== 1) return "";
       var of = others[0], oh = teamsById[of.homeId] || {}, oa = teamsById[of.awayId] || {};
-      var parts = [["h", esc(oh.name || "") + " 승"], ["d", "무"], ["a", esc(oa.name || "") + " 승"]].map(function (oc) {
+      var rows = [["h", esc(oh.name || "") + " 승"], ["d", "무"], ["a", esc(oa.name || "") + " 승"]].map(function (oc) {
         var picks = {}; picks[nextFx.id] = teamOut(nextFx, teamId, res); picks[of.id] = oc[0];
-        var rr = scnRankRange(teamId, gids, remaining, picks);  // 승점 기반(골득실 동률이면 best≠worst)
+        var rr = scnRankRange(teamId, gids, remaining, picks);
         var lab, cls;
         if (rr.worst <= 2) { lab = "직행"; cls = "q"; }
         else if (rr.best >= 4) { lab = "탈락"; cls = "o"; }
         else if (rr.best === rr.worst) { lab = rr.best + "위"; cls = rr.best <= 2 ? "q" : rr.best === 3 ? "p" : "o"; }
         else if (rr.best <= 2 && rr.worst === 3) { lab = "직행/3위"; cls = "p"; }  // 골득실 따라
         else { lab = "3위/탈락"; cls = "p"; }
-        return oc[1] + "→<b class=\"" + cls + "\">" + lab + "</b>";
+        return { txt: oc[1], lab: lab, cls: cls };
       });
-      return '<div class="gsc-branch">└ ' + parts.join(" / ") + "</div>";
+      var uniq = {}; rows.forEach(function (r) { uniq[r.lab] = 1; });
+      if (Object.keys(uniq).length <= 1) return "";  // 다른 경기 결과와 무관하게 내 순위가 같으면 분기 의미 없음 → 숨김
+      return '<div class="gsc-branch">└ ' + rows.map(function (r) { return r.txt + "→<b class=\"" + r.cls + "\">" + r.lab + "</b>"; }).join(" / ") + "</div>";
     }
 
     cur.forEach(function (row, i) {
@@ -1822,9 +1841,8 @@
     fxs.sort(function (a, b) { return (matchKickoff(a) || 0) - (matchKickoff(b) || 0); });
     return fxs.map(function (f) {
       var opp = teamsById[f.homeId === t.id ? f.awayId : f.homeId];
-      var oppNm = opp ? (esc(opp.flag) + " " + esc(opp.name)) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
-      var when = esc((fxDate(f) || "") + (fxTime(f) ? " " + fxTime(f) : ""));
-      var stage = f.group ? esc(f.group + "조") : esc(f.stage || "");
+      var oppNm = opp ? (esc(opp.flag) + " " + esc(shortTeamName(opp.id, opp.name))) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
+      var when = esc(shortDate(fxDate(f)) + (fxTime(f) ? " " + shortTime(fxTime(f)) : ""));  // 6/12 10시 (조 표기 제거, 년도 제거)
       var lv = LIVE[f.id], live = !!(lv && lv.state === "in"), ended = matchEnded(f);
       var hasScore = !!(lv && (lv.state === "in" || lv.state === "post") && lv.hs != null);
       var badge;
@@ -1833,7 +1851,7 @@
         var rcls = live ? "live" : (myS > opS ? "win" : myS < opS ? "lose" : "draw");
         badge = ' <span class="ts-score ' + rcls + '">' + (myS | 0) + " : " + (opS | 0) + (live ? " <b>LIVE</b>" : "") + "</span>";
       } else { badge = live ? ' <span class="ts-live">🔴 LIVE</span>' : ended ? ' <span class="ts-done">종료</span>' : ""; }
-      return '<div class="ts-row' + (ended ? " past" : "") + '" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + badge + '</div><div class="ts-when">' + when + (stage ? " · " + stage : "") + "</div></div>";
+      return '<div class="ts-row' + (ended ? " past" : "") + '" data-match="' + esc(f.id) + '"><div class="ts-opp">🆚 ' + oppNm + badge + '</div><div class="ts-when">' + when + "</div></div>";
     }).join("");
   }
   function teamSchedule(t) {
