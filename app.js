@@ -534,7 +534,7 @@
   function tossUserKey() { return (IS_TOSS && window.tossUser && window.tossUser.key) ? window.tossUser.key() : Promise.resolve(null); }
   // 토스 인증 로그인(프로필 필요 시) — Promise<{authorizationCode,referrer}|null>. 서버에서 코드로 토스 API+복호화.
   function tossLogin() { return (IS_TOSS && window.tossUser && window.tossUser.login) ? window.tossUser.login() : Promise.resolve(null); }
-  void tossShowAd; void tossUserKey; void tossLogin;  // 위치/키 확정 시 호출 지점에 연결(현재 준비만)
+  void tossUserKey; void tossLogin;  // 로그인은 방식 확정 시 연결(현재 준비만)
   function insertAdFit(el, unit, w, h) {
     if (IS_TOSS || !el || el.getAttribute("data-done")) return;
     el.setAttribute("data-done", "1");
@@ -2288,6 +2288,7 @@
     var fx = fixturesById[id];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
+    if (IS_TOSS && TOSS_AD_GROUP && !window._tossAdShown) { window._tossAdShown = true; tossShowAd(); }  // [테스트] 경기상세 첫 진입(세션 1회) 전면광고. 키(TOSS_AD_GROUP) 있을 때만
     window._mscNeedsLive = false;  // 조현황 경기결과에 '-'(스코어 미로드)가 있으면 teamResults가 true로 → 저장 스코어 도착 시 재렌더
     if (fx.group && !matchEnded(fx)) fetchStandings();  // 조별·미종료 경기면 순위 로드 → 진출 경우의수 표(도착 시 자동 재렌더)
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
