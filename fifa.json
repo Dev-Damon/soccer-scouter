@@ -1,10 +1,10 @@
 {
- "_ts": 1782276367078,
+ "_ts": 1782278176445,
  "mexico": {
-  "r": 11,
+  "r": 12,
   "p": 1721.78,
   "ch": 34.3,
-  "chR": 3
+  "chR": 2
  },
  "south-africa": {
   "r": 61,
@@ -19,10 +19,10 @@
   "chR": 1
  },
  "czech-republic": {
-  "r": 44,
+  "r": 43,
   "p": 1481.49,
   "ch": -24.25,
-  "chR": -4
+  "chR": -3
  },
  "canada": {
   "r": 29,
@@ -247,10 +247,10 @@
   "chR": -2
  },
  "dr-congo": {
-  "r": 43,
-  "p": 1487.19,
-  "ch": 12.76,
-  "chR": 3
+  "r": 47,
+  "p": 1472.37,
+  "ch": -2.06,
+  "chR": -1
  },
  "uzbekistan": {
   "r": 58,
@@ -259,10 +259,10 @@
   "chR": -8
  },
  "colombia": {
-  "r": 12,
-  "p": 1712.6,
-  "ch": 14.25,
-  "chR": 1
+  "r": 11,
+  "p": 1727.42,
+  "ch": 29.07,
+  "chR": 2
  },
  "england": {
   "r": 4,
@@ -390,24 +390,24 @@
    "chR": -1
   },
   {
-   "code": "MEX",
-   "name": "Mexico",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mx.svg",
-   "id": "mexico",
-   "r": 11,
-   "p": 1721.78,
-   "ch": 34.3,
-   "chR": 3
-  },
-  {
    "code": "COL",
    "name": "Colombia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/co.svg",
    "id": "colombia",
+   "r": 11,
+   "p": 1727.42,
+   "ch": 29.07,
+   "chR": 2
+  },
+  {
+   "code": "MEX",
+   "name": "Mexico",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mx.svg",
+   "id": "mexico",
    "r": 12,
-   "p": 1712.6,
-   "ch": 14.25,
-   "chR": 1
+   "p": 1721.78,
+   "ch": 34.3,
+   "chR": 2
   },
   {
    "code": "CRO",
@@ -710,54 +710,54 @@
    "chR": -8
   },
   {
-   "code": "COD",
-   "name": "Congo DR",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cd.svg",
-   "id": "dr-congo",
-   "r": 43,
-   "p": 1487.19,
-   "ch": 12.76,
-   "chR": 3
-  },
-  {
    "code": "CZE",
    "name": "Czechia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cz.svg",
    "id": "czech-republic",
-   "r": 44,
+   "r": 43,
    "p": 1481.49,
    "ch": -24.25,
-   "chR": -4
+   "chR": -3
   },
   {
    "code": "CMR",
    "name": "Cameroon",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cm.svg",
    "id": null,
-   "r": 45,
+   "r": 44,
    "p": 1481.24,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "SVK",
    "name": "Slovakia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sk.svg",
    "id": null,
-   "r": 46,
+   "r": 45,
    "p": 1473.66,
    "ch": 0,
-   "chR": 1
+   "chR": 2
   },
   {
    "code": "GRE",
    "name": "Greece",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gr.svg",
    "id": null,
-   "r": 47,
+   "r": 46,
    "p": 1473.19,
    "ch": 0,
-   "chR": 1
+   "chR": 2
+  },
+  {
+   "code": "COD",
+   "name": "Congo DR",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cd.svg",
+   "id": "dr-congo",
+   "r": 47,
+   "p": 1472.37,
+   "ch": -2.06,
+   "chR": -1
   },
   {
    "code": "VEN",

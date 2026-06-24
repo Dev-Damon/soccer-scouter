@@ -2335,7 +2335,7 @@ window.DATA = {
       "name": "멕시코",
       "nameEn": "Mexico",
       "flag": "🇲🇽",
-      "fifaRank": 11,
+      "fifaRank": 12,
       "group": "A",
       "tierSummary": "개최국 멕시코는 산티아고 히메네스와 라울 히메네스의 공격진, 노련한 유럽파 수비를 앞세워 조 1위와 16강 이상을 노리는 중상위권 전력이다.",
       "styleSummary": [
@@ -2993,7 +2993,7 @@ window.DATA = {
       "name": "체코",
       "nameEn": "Czech Republic",
       "flag": "🇨🇿",
-      "fifaRank": 44,
+      "fifaRank": 43,
       "group": "A",
       "tierSummary": "20년 만에 월드컵 본선에 돌아온 다크호스로, 슈크라는 확실한 해결사와 단단한 슬라비아 프라하 기반의 조직력으로 16강을 노리는 중상위권 팀입니다.",
       "styleSummary": [
@@ -11119,7 +11119,7 @@ window.DATA = {
       "name": "콩고민주공화국",
       "nameEn": "DR Congo",
       "flag": "🇨🇩",
-      "fifaRank": 43,
+      "fifaRank": 47,
       "group": "K",
       "tierSummary": "유럽 5대 리그와 아프리카 무대를 누비는 검증된 베테랑 수비·공격진에 신예 미드필더가 결합된, 조 최약체로 분류되지만 한 방이 있는 '복병형' 다크호스다.",
       "styleSummary": [
@@ -11581,7 +11581,7 @@ window.DATA = {
       "name": "콜롬비아",
       "nameEn": "Colombia",
       "flag": "🇨🇴",
-      "fifaRank": 12,
+      "fifaRank": 11,
       "group": "K",
       "tierSummary": "제임스 로드리게스의 노련함과 루이스 디아스의 세계적 폭발력을 축으로 유럽·남미 리그의 주전급 선수가 두루 포진한, 16강 이상을 노리는 강팀입니다.",
       "styleSummary": [
