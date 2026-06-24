@@ -1,7 +1,7 @@
 // 킥톡 토스 미니앱 브릿지 — 토스 IAP(인앱결제)로 후원을 처리하는 window.tossPay 제공.
 // app.js(웹 소스)는 IS_TOSS일 때 window.tossPay.products()로 상품목록을 받아 표시하고, window.tossPay.donate(sku)로 결제.
 // 상품(이름/금액/sku)은 앱인토스 콘솔 등록값을 getProductItemList가 그대로 반환 → 코드에 금액/매핑 하드코딩 불필요.
-import { IAP, GoogleAdMob, appLogin, getAnonymousKey } from '@apps-in-toss/web-framework';
+import { IAP, GoogleAdMob, appLogin, getAnonymousKey, TossAds } from '@apps-in-toss/web-framework';
 
 (window as any).__APPS_IN_TOSS__ = true;
 (window as any).__TOSS_IAP__ = true;  // 콘솔에 후원 상품 등록 완료 → 인앱결제 후원 활성화
@@ -64,4 +64,17 @@ import { IAP, GoogleAdMob, appLogin, getAnonymousKey } from '@apps-in-toss/web-f
 (window as any).tossUser = {
   async key() { try { return await getAnonymousKey(); } catch (e) { console.error('사용자키 오류', e); return null; } },
   async login() { try { return await appLogin(); } catch (e) { console.error('로그인 오류', e); return null; } },
+};
+
+// ===== 토스 배너 광고 — 기존 애드핏 자리(DOM 요소)에 인라인 삽입. adGroupId는 320x100(배너큰이미지)/320x50(배너) 각각 콘솔 발급 =====
+(window as any).__TOSS_BANNER__ = true;
+(window as any).tossBanner = {
+  attach(adGroupId: string, el: HTMLElement) {
+    if (!adGroupId || !el) return;
+    try {
+      (TossAds as any).attachBanner(adGroupId, el, {
+        callbacks: { onAdFailedToRender: (e: unknown) => console.error('배너 렌더 실패', e) },
+      });
+    } catch (e) { console.error('배너 오류', e); }
+  },
 };
