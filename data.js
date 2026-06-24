@@ -4686,7 +4686,7 @@ window.DATA = {
       "name": "스코틀랜드",
       "nameEn": "Scotland",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "fifaRank": 41,
+      "fifaRank": 40,
       "group": "C",
       "tierSummary": "1998년 이후 28년 만의 월드컵 본선에 오른 스코틀랜드는 월드클래스 1명(맥토미니)과 풍부한 빅리그 베테랑들로 무장했지만, 브라질·모로코가 버틴 C조에서는 16강이 현실적 목표인 다크호스다.",
       "styleSummary": [
@@ -4914,7 +4914,7 @@ window.DATA = {
       "name": "미국",
       "nameEn": "United States",
       "flag": "🇺🇸",
-      "fifaRank": 13,
+      "fifaRank": 14,
       "group": "D",
       "tierSummary": "유럽 빅리그에서 뛰는 황금세대가 절정에 달한, 개최국 어드밴티지를 등에 업은 다크호스 8강 후보다.",
       "styleSummary": [
@@ -12003,7 +12003,7 @@ window.DATA = {
       "name": "크로아티아",
       "nameEn": "Croatia",
       "flag": "🇭🇷",
-      "fifaRank": 15,
+      "fifaRank": 13,
       "group": "L",
       "tierSummary": "모드리치를 중심으로 한 황금세대가 마지막 불꽃을 태우는 가운데 그바르디올·스타니시치 등 신구 조화로 16강 이상을 노리는 강호급 팀이다.",
       "styleSummary": [
@@ -12471,7 +12471,7 @@ window.DATA = {
       "name": "파나마",
       "nameEn": "Panama",
       "flag": "🇵🇦",
-      "fifaRank": 40,
+      "fifaRank": 42,
       "group": "L",
       "tierSummary": "유럽·멕시코·MLS·칠레 등 다양한 리그에 흩어진 베테랑 중심의 단단한 다크호스로, 조직력과 투지로 강팀을 괴롭히는 전형적인 콘카카프 강호다.",
       "styleSummary": [

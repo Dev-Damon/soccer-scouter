@@ -1,5 +1,5 @@
 {
- "_ts": 1782269128988,
+ "_ts": 1782270938282,
  "mexico": {
   "r": 11,
   "p": 1721.78,
@@ -67,16 +67,16 @@
   "chR": -4
  },
  "scotland": {
-  "r": 41,
+  "r": 40,
   "p": 1504.41,
   "ch": 1.07,
-  "chR": 1
+  "chR": 2
  },
  "united-states": {
-  "r": 13,
+  "r": 14,
   "p": 1709.59,
   "ch": 38.36,
-  "chR": 4
+  "chR": 3
  },
  "paraguay": {
   "r": 37,
@@ -271,10 +271,10 @@
   "chR": 0
  },
  "croatia": {
-  "r": 15,
-  "p": 1695.21,
-  "ch": -19.66,
-  "chR": -4
+  "r": 13,
+  "p": 1711.49,
+  "ch": -3.38,
+  "chR": -2
  },
  "ghana": {
   "r": 64,
@@ -283,10 +283,10 @@
   "chR": 9
  },
  "panama": {
-  "r": 40,
-  "p": 1505.33,
-  "ch": -33.83,
-  "chR": -6
+  "r": 42,
+  "p": 1489.06,
+  "ch": -50.1,
+  "chR": -8
  },
  "_all": [
   {
@@ -410,34 +410,34 @@
    "chR": 1
   },
   {
+   "code": "CRO",
+   "name": "Croatia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hr.svg",
+   "id": "croatia",
+   "r": 13,
+   "p": 1711.49,
+   "ch": -3.38,
+   "chR": -2
+  },
+  {
    "code": "USA",
    "name": "USA",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/us.svg",
    "id": "united-states",
-   "r": 13,
+   "r": 14,
    "p": 1709.59,
    "ch": 38.36,
-   "chR": 4
+   "chR": 3
   },
   {
    "code": "ITA",
    "name": "Italy",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/it.svg",
    "id": null,
-   "r": 14,
+   "r": 15,
    "p": 1704.73,
    "ch": 0,
-   "chR": -2
-  },
-  {
-   "code": "CRO",
-   "name": "Croatia",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hr.svg",
-   "id": "croatia",
-   "r": 15,
-   "p": 1695.21,
-   "ch": -19.66,
-   "chR": -4
+   "chR": -3
   },
   {
    "code": "JPN",
@@ -680,34 +680,34 @@
    "chR": 0
   },
   {
-   "code": "PAN",
-   "name": "Panama",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pa.svg",
-   "id": "panama",
-   "r": 40,
-   "p": 1505.33,
-   "ch": -33.83,
-   "chR": -6
-  },
-  {
    "code": "SCO",
    "name": "Scotland",
    "flagUrl": "https://flagcdn.com/28x21/gb-sct.png",
    "id": "scotland",
-   "r": 41,
+   "r": 40,
    "p": 1504.41,
    "ch": 1.07,
-   "chR": 1
+   "chR": 2
   },
   {
    "code": "SRB",
    "name": "Serbia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/rs.svg",
    "id": null,
-   "r": 42,
+   "r": 41,
    "p": 1502.13,
    "ch": 0,
-   "chR": 1
+   "chR": 2
+  },
+  {
+   "code": "PAN",
+   "name": "Panama",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pa.svg",
+   "id": "panama",
+   "r": 42,
+   "p": 1489.06,
+   "ch": -50.1,
+   "chR": -8
   },
   {
    "code": "COD",
