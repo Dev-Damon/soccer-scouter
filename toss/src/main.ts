@@ -66,15 +66,27 @@ import { IAP, GoogleAdMob, appLogin, getAnonymousKey, TossAds } from '@apps-in-t
   async login() { try { return await appLogin(); } catch (e) { console.error('로그인 오류', e); return null; } },
 };
 
-// ===== 토스 배너 광고 — 기존 애드핏 자리(DOM 요소)에 인라인 삽입. adGroupId는 320x100(배너큰이미지)/320x50(배너) 각각 콘솔 발급 =====
+// ===== 토스 배너 광고 — TossAds.initialize() 후 attachBanner로 DOM에 인라인 삽입(초기화 필수) =====
 (window as any).__TOSS_BANNER__ = true;
+var _tossAdsInited = false;
+try {
+  (TossAds as any).initialize({
+    callbacks: {
+      onInitialized: () => { _tossAdsInited = true; console.log('TossAds 초기화 완료'); },
+      onInitializationFailed: (e: Error) => console.error('TossAds 초기화 실패', e),
+    },
+  });
+} catch (e) { console.error('TossAds initialize 호출 오류', e); }
 (window as any).tossBanner = {
   attach(adGroupId: string, el: HTMLElement) {
     if (!adGroupId || !el) return;
-    try {
-      (TossAds as any).attachBanner(adGroupId, el, {
-        callbacks: { onAdFailedToRender: (e: unknown) => console.error('배너 렌더 실패', e) },
-      });
-    } catch (e) { console.error('배너 오류', e); }
+    function go() {
+      try { (TossAds as any).attachBanner(adGroupId, el, { callbacks: { onAdFailedToRender: (e: unknown) => console.error('배너 렌더 실패', e) } }); }
+      catch (e) { console.error('배너 오류', e); }
+    }
+    var ready = false;
+    try { ready = !!((TossAds as any).isInitialized && (TossAds as any).isInitialized()); } catch (e) {}
+    if (ready || _tossAdsInited) go();
+    else setTimeout(go, 1200);  // 초기화 완료 대기 후 부착
   },
 };

@@ -1132,7 +1132,7 @@
   }
   // 경기상세용: 이 경기(조별·미종료) 결과별 양팀 32강 진출 경우의 수 + 현재 조 순위. 한국 전용 로직을 모든 팀에 일반화.
   function matchScenarioHtml(fx) {
-    if (!fx || !fx.group || !DATA.groups || matchEnded(fx)) return "";
+    if (!fx || !fx.group || !DATA.groups) return "";  // 종료 경기도 조 순위+경기결과는 표시(경우의수 버튼만 미종료+3R)
     var g = DATA.groups.filter(function (x) { return x.group === fx.group; })[0]; if (!g) return "";
     var gids = g.teamIds || []; if (gids.indexOf(fx.homeId) < 0 || gids.indexOf(fx.awayId) < 0) return "";
     if (!Object.keys(STAND).length) return '<div class="block"><h3>🏆 ' + esc(fx.group) + '조 현황</h3><div class="muted-note">순위 불러오는 중…</div></div>';
@@ -1163,11 +1163,10 @@
         "</div>";
     }
 
-    // 32강 진출 경우의 수는 별도 페이지로 이동(공간 절약) — 한국 경기는 한국 전용 페이지, 그 외는 조별 통합 페이지
-    // 경우의 수 버튼은 조별 3라운드(=양팀 모두 이 경기가 마지막 조별 경기)부터만. 일정 기준이라 STAND 값에 안 흔들림. 종료 경기는 위에서 블록 자체 생략.
+    // 경우의 수 버튼: 미종료 & 조별 3라운드(=양팀 모두 이 경기가 마지막 조별 경기)일 때만. 종료 경기는 결과 확정이라 버튼 X(조 순위+결과는 위에 그대로 표시).
     var _fd = fxDate(fx) || "";
     var isLastRound = [fx.homeId, fx.awayId].every(function (tid) { return !allFx.some(function (f) { return f !== fx && (f.homeId === tid || f.awayId === tid) && (fxDate(f) || "") > _fd; }); });
-    if (isLastRound) {
+    if (!matchEnded(fx) && isLastRound) {
       var isKr = fx.homeId === "south-korea" || fx.awayId === "south-korea";
       html += '<button class="scn-go-btn"' + (isKr ? " data-scngo" : ' data-grpscn="' + esc(fx.group) + '"') + '>🧮 ' + (isKr ? "한국 " : esc(fx.group) + "조 ") + "32강 진출 경우의 수 보기 →</button>";
     }
