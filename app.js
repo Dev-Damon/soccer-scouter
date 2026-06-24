@@ -4398,8 +4398,13 @@
     if (isIOS() || isAndroid()) window.addEventListener("load", function () { setTimeout(show, 2800); });
   })();
 
-  // 서비스워커 (PWA, http(s)에서만) — 새 버전 배포 시 자동 새로고침(캐시된 옛 화면 방지)
-  if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+  // 토스 미니앱은 .ait 번들이 최신 코드를 제공 — SW 캐시가 구버전을 붙들면 안 되므로 등록 해제 + 캐시 삭제(이전에 등록된 SW 정리)
+  if (IS_TOSS) {
+    try { if ("serviceWorker" in navigator) navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); }).catch(function () {}); } catch (e) {}
+    try { if (window.caches && caches.keys) caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); }).catch(function () {}); } catch (e) {}
+  }
+  // 서비스워커 (PWA 웹에서만, http(s)) — 새 버전 배포 시 자동 새로고침(캐시된 옛 화면 방지). 토스에선 등록 안 함.
+  if (!IS_TOSS && "serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     window.addEventListener("load", function () {
       navigator.serviceWorker.register("sw.js").then(function (reg) {
         var pendingReload = false;
