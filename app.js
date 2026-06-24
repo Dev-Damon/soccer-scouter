@@ -994,10 +994,25 @@
     return r;
   }
   // 승점만으로 순위 범위(best~worst). 승점 동률 팀은 골득실로 갈리지만 스코어를 모르므로 "그 동률 구간 어디든 가능"으로 보수적 판정 → 골득실 의존 케이스를 '확정'으로 오판하지 않음.
+  // 두 팀 맞대결 승자 — 이미 끝났거나 picks(시나리오)로 정해진 결과 반영. A우위 -1 / B우위 1 / 미정(무·맞대결없음) 0
+  function h2hWinner(idA, idB, picks) {
+    var fx = (DATA.fixtures || []).filter(function (f) { return (f.homeId === idA && f.awayId === idB) || (f.homeId === idB && f.awayId === idA); })[0];
+    if (!fx) return 0;
+    var lv = LIVE[fx.id], out;
+    if (lv && lv.state === "post" && lv.hs != null) out = lv.hs > lv.as ? "h" : lv.hs < lv.as ? "a" : "d";
+    else out = picks[fx.id];
+    if (!out || out === "d") return 0;
+    var aWin = (fx.homeId === idA && out === "h") || (fx.awayId === idA && out === "a");
+    return aWin ? -1 : 1;
+  }
   function scnRankRange(teamId, gids, remaining, picks) {
-    var p = scnPtsAfter(gids, remaining, picks), my = p[teamId], hi = 0, sm = 0;
-    gids.forEach(function (id) { if (p[id] > my) hi++; else if (p[id] === my) sm++; });
-    return { best: hi + 1, worst: hi + sm };  // 동률 sm명이면 best=hi+1 ~ worst=hi+sm
+    var p = scnPtsAfter(gids, remaining, picks), my = p[teamId], above = 0, tie = [];
+    gids.forEach(function (id) { if (id === teamId) return; if (p[id] > my) above++; else if (p[id] === my) tie.push(id); });
+    // 승점 동률 해소: 2팀 동률이면 맞대결 승자승(이미 끝났거나 시나리오 결과)으로 확정. 무·3팀+ 동률은 골득실 의존 → 미정 구간으로 둠.
+    var ambiguous;
+    if (tie.length === 1) { var h = h2hWinner(teamId, tie[0], picks); if (h > 0) { above++; ambiguous = 0; } else if (h < 0) ambiguous = 0; else ambiguous = 1; }
+    else ambiguous = tie.length;
+    return { best: above + 1, worst: above + 1 + ambiguous };  // 동률 미정 ambiguous명이면 worst=best+ambiguous
   }
   function scnThirdRank(krGroup, projectedKrThird) {  // 12개 조 3위 비교 → 한국(3위) 순위
     var thirds = [];
@@ -1176,6 +1191,18 @@
     return html;
   }
   // 조별 32강 진출 경우의 수 통합 페이지 (한국 외 모든 조) — 조 4팀 각각 현재 상황 + 다음 경기 결과별 진출 판정
+  // 승점 동률 시 순위 결정 규칙 팝업(FIFA 2026 타이브레이커)
+  function tieRulePopup() {
+    var ov = document.createElement("div"); ov.className = "tie-pop-bg";
+    ov.innerHTML = '<div class="tie-pop"><div class="tie-pop-h">⚖️ 승점 동률 시 순위 결정</div>' +
+      '<div class="tie-pop-sub">조별리그에서 2팀 이상 승점이 같으면 아래 순서로 순위를 가립니다.</div>' +
+      '<div class="tie-step"><b>1단계 · 승자승 (해당 팀들끼리)</b><ol><li>맞대결 승점</li><li>맞대결 골득실</li><li>맞대결 총 득점</li></ol></div>' +
+      '<div class="tie-step"><b>2단계 · 전체 조별리그 성적</b><ol><li>전체 골득실</li><li>전체 총 득점</li><li>페어플레이 점수(경고·퇴장)</li></ol></div>' +
+      '<div class="tie-step"><b>3단계</b><ol><li>그래도 동률이면 최신 FIFA 랭킹</li></ol></div>' +
+      '<button class="tie-pop-x">닫기</button></div>';
+    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".tie-pop-x")) ov.remove(); });
+    document.body.appendChild(ov);
+  }
   function renderGroupScenario(group) {
     setTabbar(""); backBtn.hidden = false; tabsEl.hidden = true;
     if (!DATA.groups || !group) { viewEl.innerHTML = '<div class="empty">데이터를 불러오는 중입니다.</div>'; return; }
@@ -1194,11 +1221,8 @@
 
     function vd(rr) {
       if (rr.mx <= 2) {  // 직행권(1·2위)
-        if (group === "B") {  // B조 2위는 한국(A조 2위)과 32강 73경기에서 대결 → 1·2위 구분 표시
-          if (rr.mn === rr.mx) return { t: "✅ " + rr.mn + "위 직행" + (rr.mn === 2 ? " 🇰🇷한국과 32강" : ""), c: "q12" };
-          return { t: "✅ 1·2위 직행 (순위 미정)", c: "q12" };
-        }
-        return { t: "✅ 직행 확정", c: "q12" };
+        if (rr.mn === rr.mx) return { t: "✅ " + rr.mn + "위 직행" + (group === "B" && rr.mn === 2 ? " 🇰🇷한국과 32강" : ""), c: "q12" };  // 순위 확정
+        return { t: '✅ 1·2위 직행 <span class="tie-tag">승점 동률<span class="tie-q" data-tiehelp>?</span></span>', c: "q12" };  // 직행 확정, 1·2위만 골득실 등으로 갈림
       }
       return rr.mn >= 4 ? { t: "❌ 탈락 확정", c: "out" } : rr.mn <= 2 ? { t: "🟡 직행 가능 / 최소 3위 경쟁", c: "p3" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 (와일드카드 경쟁)", c: "p3" } : { t: "🟡 3위 또는 탈락", c: "p3" };
     }
@@ -3917,6 +3941,7 @@
     var my, ad;
     var _ext = e.target.closest("[data-ext]");  // 외부 링크(치지직 등): 토스는 openURL(외부 브라우저), 웹은 새 탭
     if (_ext) { var _u = _ext.getAttribute("data-ext"); if (_u) { if (IS_TOSS && window.tossOpenUrl) window.tossOpenUrl(_u); else window.open(_u, "_blank", "noopener"); } return; }
+    if (e.target.closest("[data-tiehelp]")) { tieRulePopup(); return; }  // 승점 동률 순위결정 규칙 팝업
     if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
     if ((my = e.target.closest(".rate-star"))) {  // 선수 평점 = 익명 허용(로그인 불필요, 기기별 1회)
       if (!window.KickComments) return;
