@@ -796,7 +796,9 @@
     }).map(function (g) {
       var p = playerByName(g.who), nm = p ? p.name : g.who;  // 풀네임(성만→전체)
       var label = esc(nm) + (g.og ? " (자책골)" : "") + (g.clk ? " " + esc(g.clk) : "");
-      return '<span class="hg-goal">' + (side === "r" ? ("⚽ " + label) : (label + " ⚽")) + "</span>";  // 공이 가운데쪽: 좌팀=뒤, 우팀=앞
+      var pid = p ? p.id : null;
+      return '<span class="hg-goal' + (pid ? " hg-clk" : "") + '"' + (pid ? ' data-player="' + esc(pid) + '"' : "") + ">" + (side === "r" ? ("⚽ " + label) : (label + " ⚽")) + "</span>";  // 득점자 클릭 → 선수상세. 공이 가운데쪽: 좌팀=뒤, 우팀=앞
+
     }).join("");
   }
 
