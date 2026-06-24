@@ -380,6 +380,8 @@
   }
   function scVal(p) { return scoreCat === "cards" ? ((p.yellow || 0) + (p.red || 0) * 2) : (p[scoreCat] || 0); }
   function renderScorers() {
+    // 통계(Supabase) 로딩 동안 빈 화면 대신 탭+스피너 즉시 표시
+    if (!viewEl.querySelector(".rank-sb")) viewEl.innerHTML = '<div class="rank-sorts">' + SCORE_CATS.map(function (c) { return '<button class="rank-sb' + (scoreCat === c[0] ? " on" : "") + '" data-scat="' + esc(c[0]) + '">' + c[1] + "</button>"; }).join("") + '</div><div class="sc-loading"><span class="sc-spin"></span><span>기록 불러오는 중…</span></div>';
     ensureStats().then(function (j) {
       if (parseHash().name !== "home" || homeTab !== "scorers") return;
       var subs = '<div class="rank-sorts">' + SCORE_CATS.map(function (c) { return '<button class="rank-sb' + (scoreCat === c[0] ? " on" : "") + '" data-scat="' + c[0] + '">' + c[1] + "</button>"; }).join("") + "</div>";
@@ -522,9 +524,9 @@
   // ===== 앱인토스(토스 미니앱) 모드 — 토스 웹뷰면 외부광고·쿠팡·베팅·외부송금 숨김(토스 정책 준수). 일반 웹은 무영향. ?toss=1로 테스트 =====
   var IS_TOSS = (function () { try { return /toss/i.test(navigator.userAgent) || /[?&]toss=1/.test(location.search) || !!window.AppsInToss || !!window.__APPS_IN_TOSS__; } catch (e) { return false; } })();
   // ===== 토스 광고/로그인 — 미리 구현. main.ts가 window.tossAd/tossUser 브릿지 제공. 키/위치만 채우면 바로 동작 =====
-  var TOSS_AD_GROUP = "";  // ← 전면광고 그룹 ID(콘솔 발급). 채우면 토스앱 전면광고 동작
-  var TOSS_BANNER_BIG = "";    // ← 320x100 "배너큰이미지" 그룹 ID
-  var TOSS_BANNER_SMALL = "";  // ← 320x50 "배너" 그룹 ID
+  var TOSS_AD_GROUP = "ait.v2.live.a45bb57c5ead4cdd";  // ← 전면광고 그룹 ID(콘솔 발급). 채우면 토스앱 전면광고 동작
+  var TOSS_BANNER_BIG = "ait.v2.live.83d0588683ff49a2";    // ← 320x100 "배너큰이미지" 그룹 ID
+  var TOSS_BANNER_SMALL = "ait.v2.live.95355b5db1f745e9";  // ← 320x50 "배너" 그룹 ID
   // 토스 전면광고 표시: 위치(트리거)는 정해지면 이 함수를 그 지점에서 호출. onDone은 광고 닫힌 뒤 콜백(없어도 됨).
   function tossShowAd(onDone) {
     if (IS_TOSS && TOSS_AD_GROUP && window.tossAd && window.tossAd.isSupported && window.tossAd.isSupported()) {
