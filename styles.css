@@ -1538,6 +1538,21 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .tie-step b { font-size: 12.5px; color: var(--accent, #4f8cff); }
 .tie-step ol { margin: 5px 0 0; padding-left: 18px; line-height: 1.6; }
 .tie-pop-x { width: 100%; margin-top: 6px; padding: 11px; border: 0; border-radius: 10px; background: var(--accent, #4f8cff); color: #fff; font-weight: 800; font-size: 14px; cursor: pointer; }
+/* 경기장 정보 팝업 */
+.mv-venue { cursor: pointer; color: #4f8cff; font-weight: 700; }
+.venue-pop-bg { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9000; display: flex; align-items: center; justify-content: center; padding: 22px; }
+.venue-pop { background: var(--card); border: 1px solid var(--line); border-radius: 16px; max-width: 360px; width: 100%; max-height: 88vh; overflow-y: auto; overflow-x: hidden; }
+.vp-img { width: 100%; height: 170px; background-size: cover; background-position: center; background-color: #1a2438; }
+.vp-body { padding: 16px 18px 14px; }
+.vp-name { font-size: 18px; font-weight: 800; color: var(--text); }
+.vp-sub { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.vp-rows { display: flex; flex-direction: column; gap: 7px; }
+.vp-row { display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; }
+.vp-row span { color: var(--muted); }
+.vp-row b { color: var(--text); font-weight: 700; }
+.vp-note { margin-top: 12px; padding: 10px 12px; background: var(--card-2); border-radius: 10px; font-size: 13px; line-height: 1.5; color: var(--text); }
+.vp-credit { margin-top: 10px; font-size: 10.5px; color: var(--muted); line-height: 1.4; }
+.vp-x { width: 100%; margin-top: 12px; padding: 11px; border: 0; border-radius: 10px; background: var(--accent, #4f8cff); color: #fff; font-weight: 800; font-size: 14px; cursor: pointer; }
 .scn-cur { font-size: 14px; font-weight: 700; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
 .scn-self, .scn-sim { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
 .scn-self h3, .scn-sim h3 { font-size: 14px; font-weight: 800; margin: 0 0 10px; color: var(--text); }

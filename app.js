@@ -114,6 +114,46 @@
     if (/toronto|vancouver|bc place|bmo field/i.test(c)) return "🇨🇦 캐나다";
     return "🇺🇸 미국";
   }
+  // 2026 월드컵 16개 경기장 정보(고정) — 경기상세 경기장명 클릭 시 표시. 출처: Wikimedia Commons(사진 CC 라이선스, 위키피디아 수용인원=월드컵 기준).
+  var VENUE_INFO = {
+    "Estadio Azteca": { nameKo: "에스타디오 아스테카", city: "멕시코시티", country: "멕시코", capacity: 80824, opened: 1966, roof: "야외", grass: "하이브리드 천연잔디", note: "1970·1986·2026 월드컵 개최, 역대 3회 본선을 치르는 유일한 경기장", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Vista_a%C3%A9rea_del_Estadio_Azteca_-_2026_-_02.jpg/1280px-Vista_a%C3%A9rea_del_Estadio_Azteca_-_2026_-_02.jpg", imgCredit: "Wikimedia Commons / ProtoplasmaKid, CC BY 4.0" },
+    "Estadio Akron": { nameKo: "에스타디오 아크론", city: "과달라하라", country: "멕시코", capacity: 45664, opened: 2010, roof: "야외", grass: "천연잔디", note: "멕시코 명문 클럽 과달라하라(치바스)의 홈구장, 화산 분화구를 닮은 디자인", img: "https://upload.wikimedia.org/wikipedia/commons/1/10/Estadio_Akron_02-07-2022_cabecera_sur_lado_derecho_%283%29.jpg", imgCredit: "Wikimedia Commons / Alejan98, CC0 1.0" },
+    "Mercedes-Benz Stadium": { nameKo: "메르세데스-벤츠 스타디움", city: "애틀랜타", country: "미국", capacity: 68239, opened: 2017, roof: "개폐식", grass: "임시 천연잔디", note: "여덟 개의 삼각 패널이 풍차처럼 열리는 독특한 개폐식 지붕으로 유명하다", img: "https://upload.wikimedia.org/wikipedia/commons/2/29/Mercedes-Benz_Stadium%2C_July_2018.jpg", imgCredit: "Wikimedia Commons / Thomson200, CC0 1.0" },
+    "Estadio BBVA": { nameKo: "에스타디오 BBVA", city: "몬테레이", country: "멕시코", capacity: 51243, opened: 2015, roof: "야외", grass: "하이브리드 천연잔디", note: "철골 외피로 '강철 거인'이라 불리며, 세로 산맥을 배경으로 한 절경의 구장", img: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Estadio_BBVA_Bancomer_%281%29.jpg", imgCredit: "Wikimedia Commons / Presidencia de la República Mexicana, CC BY 2.0" },
+    "BMO Field": { nameKo: "BMO 필드", city: "토론토", country: "캐나다", capacity: 43036, opened: 2007, roof: "야외", grass: "하이브리드 천연잔디", note: "월드컵을 위해 평소 약 2.8만석에서 4만석 이상으로 임시 증축된 토론토 FC의 홈구장", img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Toronto_BMO_Field_in_2024.jpg", imgCredit: "Wikimedia Commons / H4stings, CC BY-SA 4.0" },
+    "Levi's Stadium": { nameKo: "리바이스 스타디움", city: "샌타클래라", country: "미국", capacity: 68827, opened: 2014, roof: "야외", grass: "천연잔디", note: "NFL 샌프란시스코 포티나이너스의 홈구장으로 슈퍼볼 50회를 개최한 친환경 경기장", img: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Levi%27s_Stadium_in_February_2016_prior_to_Super_Bowl_50_%2824398261729%29.jpg", imgCredit: "Wikimedia Commons / Glenn Fawcett, Public Domain" },
+    "SoFi Stadium": { nameKo: "소파이 스타디움", city: "잉글우드", country: "미국", capacity: 70492, opened: 2020, roof: "돔", grass: "임시 천연잔디", note: "약 50억 달러로 지어진 세계에서 가장 비싼 경기장 중 하나로, NFL 두 팀(램스·차저스)이 함께 쓴다", img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/SoFi_Stadium_2023.jpg", imgCredit: "Wikimedia Commons / Troutfarm27, CC BY-SA 4.0" },
+    "BC Place": { nameKo: "BC 플레이스", city: "밴쿠버", country: "캐나다", capacity: 52497, opened: 1983, roof: "개폐식", grass: "임시 천연잔디", note: "2010 밴쿠버 동계올림픽 개·폐막식이 열린 곳으로, 2011년 세계 최대급 개폐식 지붕으로 개조됐다", img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/BC_Place_2015_Women%27s_FIFA_World_Cup.jpg", imgCredit: "Wikimedia Commons / GoToVan, CC BY 2.0" },
+    "Lumen Field": { nameKo: "루멘 필드", city: "시애틀", country: "미국", capacity: 66925, opened: 2002, roof: "야외", grass: "임시 천연잔디", note: "관중 함성이 지진계에 잡힐 정도로 시끄러워 북미에서 손꼽히는 '홈 어드밴티지' 경기장으로 유명하다", img: "https://upload.wikimedia.org/wikipedia/commons/c/c8/2026_FIFA_World_Cup_-_Belgium_v._Egypt_in_Seattle_-_04.jpg", imgCredit: "Wikimedia Commons / SounderBruce, CC BY-SA 4.0" },
+    "MetLife Stadium": { nameKo: "메트라이프 스타디움", city: "이스트러더퍼드", country: "미국", capacity: 80663, opened: 2010, roof: "야외", grass: "임시 천연잔디", note: "2026 월드컵 결승전이 열리는 무대로, 평소엔 NFL 뉴욕 자이언츠와 제츠가 함께 쓴다", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/Metlife_stadium_%28Aerial_view%29.jpg", imgCredit: "Wikimedia Commons / Anthony Quintano, CC BY 2.0" },
+    "Gillette Stadium": { nameKo: "질레트 스타디움", city: "폭스버러", country: "미국", capacity: 64146, opened: 2002, roof: "야외", grass: "임시 천연잔디", note: "NFL 명문 뉴잉글랜드 패트리어츠의 홈구장으로, 보스턴 인근에 있다", img: "https://upload.wikimedia.org/wikipedia/commons/d/db/Gillette_Stadium_%28Top_View%29.jpg", imgCredit: "Wikimedia Commons / Art N., CC BY 2.0" },
+    "Lincoln Financial Field": { nameKo: "링컨 파이낸셜 필드", city: "필라델피아", country: "미국", capacity: 68324, opened: 2003, roof: "야외", grass: "임시 천연잔디", note: "필라델피아 이글스의 홈구장으로, 개방된 코너 너머로 도심 스카이라인이 보인다", img: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Lincoln_Financial_Field_%28Aerial_view%29.jpg", imgCredit: "Wikimedia Commons / Ron Reiring, CC BY 2.0" },
+    "Hard Rock Stadium": { nameKo: "하드록 스타디움", city: "마이애미가든스", country: "미국", capacity: 64478, opened: 1987, roof: "야외", grass: "임시 천연잔디", note: "2016년 좌석 위에 대형 캐노피를 씌워 뜨거운 마이애미 햇볕과 비를 막아준다", img: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Hard_Rock_Stadium_for_Super_Bowl_LIV_%2849606710103%29.jpg", imgCredit: "Wikimedia Commons / elisfkc2, CC BY-SA 2.0" },
+    "NRG Stadium": { nameKo: "NRG 스타디움", city: "휴스턴", country: "미국", capacity: 68777, opened: 2002, roof: "개폐식", grass: "임시 천연잔디", note: "NFL 최초의 개폐식 지붕 경기장으로, 지붕을 약 7분 만에 여닫을 수 있다", img: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Nrg_stadium.jpg", imgCredit: "Wikimedia Commons / Carlos.dkfi, CC0 1.0" },
+    "Arrowhead Stadium": { nameKo: "애로헤드 스타디움", city: "캔자스시티", country: "미국", capacity: 69045, opened: 1972, roof: "야외", grass: "천연잔디", note: "야외 경기장 중 가장 시끄러운 관중 기록(142.2데시벨)을 가진 곳으로 기네스북에 올랐다", img: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Aerial_view_of_Arrowhead_Stadium_08-31-2013.jpg", imgCredit: "Wikimedia Commons / Ichabod, CC BY-SA 3.0" },
+    "AT&T Stadium": { nameKo: "AT&T 스타디움", city: "알링턴", country: "미국", capacity: 70649, opened: 2009, roof: "개폐식", grass: "임시 천연잔디", note: "농구 코트보다 큰 초대형 중앙 전광판으로 유명하며 구단주 이름을 따 '제리 월드'로 불린다", img: "https://upload.wikimedia.org/wikipedia/commons/1/11/Arlington_June_2020_4_%28AT%26T_Stadium%29.jpg", imgCredit: "Wikimedia Commons / Michael Barera, CC BY-SA 4.0" }
+  };
+  function venueModal(name) {
+    var v = VENUE_INFO[name]; if (!v) return;
+    var ov = document.createElement("div"); ov.className = "venue-pop-bg";
+    function row(ic, lb, val) { return val ? '<div class="vp-row"><span>' + ic + " " + lb + '</span><b>' + esc(val) + "</b></div>" : ""; }
+    ov.innerHTML = '<div class="venue-pop">' +
+      (v.img ? '<div class="vp-img" style="background-image:url(\'' + esc(v.img) + '\')"></div>' : "") +
+      '<div class="vp-body"><div class="vp-name">' + esc(v.nameKo || name) + "</div>" +
+      '<div class="vp-sub">' + esc(name) + "</div>" +
+      '<div class="vp-rows">' +
+        row("📍", "위치", (v.city || "") + (v.country ? ", " + v.country : "")) +
+        row("👥", "수용", v.capacity ? (v.capacity.toLocaleString() + "명") : "") +
+        row("🏟️", "개장", v.opened) +
+        row("🔝", "지붕", v.roof) +
+        row("🌱", "잔디", v.grass) +
+      "</div>" +
+      (v.note ? '<div class="vp-note">💡 ' + esc(v.note) + "</div>" : "") +
+      (v.imgCredit ? '<div class="vp-credit">사진: ' + esc(v.imgCredit) + "</div>" : "") +
+      '<button class="vp-x">닫기</button></div></div>';
+    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".vp-x")) ov.remove(); });
+    document.body.appendChild(ov);
+  }
   var DOW = ["일", "월", "화", "수", "목", "금", "토"];
   function parseDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
@@ -2367,7 +2407,8 @@
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
-    var where = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
+    var _vn = fx.venue ? (VENUE_INFO[fx.venue] ? '<span class="mv-venue" data-venue="' + esc(fx.venue) + '">' + esc(fx.venue) + ' ⓘ</span>' : esc(fx.venue)) : "";  // 정보 있는 경기장은 클릭 가능
+    var where = [_vn, esc(fx.city), hostCountry(fx)].filter(Boolean).join(" · ");
     var top = (fx.group ? esc(fx.group) + "조" : esc(fx.stage || "")) + " · " + when + (where ? " · " + where : "");
 
     // 한쪽만 정해진 경우(토너먼트 미정 등)
@@ -3963,6 +4004,7 @@
     var _ext = e.target.closest("[data-ext]");  // 외부 링크(치지직 등): 토스는 openURL(외부 브라우저), 웹은 새 탭
     if (_ext) { var _u = _ext.getAttribute("data-ext"); if (_u) { if (IS_TOSS && window.tossOpenUrl) window.tossOpenUrl(_u); else window.open(_u, "_blank", "noopener"); } return; }
     if (e.target.closest("[data-tiehelp]")) { tieRulePopup(); return; }  // 승점 동률 순위결정 규칙 팝업
+    var _vv = e.target.closest("[data-venue]"); if (_vv) { venueModal(_vv.getAttribute("data-venue")); return; }  // 경기장 정보 팝업
     if ((my = e.target.closest(".my-admin"))) { go("admin"); return; }
     if ((my = e.target.closest(".rate-star"))) {  // 선수 평점 = 익명 허용(로그인 불필요, 기기별 1회)
       if (!window.KickComments) return;
