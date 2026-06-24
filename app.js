@@ -1268,8 +1268,7 @@
         html += '<div class="gsc-done">조별리그 종료</div>';
       } else {
         var op = teamsById[nextFx.homeId === row.id ? nextFx.awayId : nextFx.homeId] || {};
-        if (overall) html += '<div class="gsc-verdict ' + overall.c + '">' + overall.t + "</div>";
-        html += '<div class="gsc-next muted-note">다음 상대: ' + esc(op.flag || "") + " " + esc(op.name || "") + "</div>";
+        html += '<div class="gsc-next muted-note">다음 상대: ' + esc(op.flag || "") + " " + esc(op.name || "") + "</div>";  /* 종합판정 줄(gsc-verdict)은 혼란 방지로 제거 — 승/무/패별 결과로 충분 */
         html += '<div class="gsc-lines">';
         [["win", "승"], ["draw", "무"], ["loss", "패"]].forEach(function (kv) {
           var rr = rrngNext(row.id, nextFx, kv[0]), v = vd(rr);
