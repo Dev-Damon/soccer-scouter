@@ -3875,10 +3875,10 @@
     });
   }
   // 전면광고 빈도: 화면 이동 카운트로 첫 5번째, 이후 15마다, 세션 최대 4회(첫 진입 즉시 노출은 토스 정책 위반+이탈 → 금지)
-  var _navCount = 0, _adShownCount = 0, AD_FIRST = 10, AD_EVERY = 15, AD_MAX = 4;
+  var _navCount = 0, _adShownCount = 0, AD_FIRST = 20, AD_EVERY = 25, AD_MAX = 4;
   function maybeShowInterstitial() {
     if (!IS_TOSS || !TOSS_AD_GROUP || _adShownCount >= AD_MAX) return;
-    if (_navCount >= AD_FIRST + AD_EVERY * _adShownCount) { _adShownCount++; tossShowAd(); }  // 0회→10, 1회→25, 2회→40, 3회→55
+    if (_navCount >= AD_FIRST + AD_EVERY * _adShownCount) { _adShownCount++; tossShowAd(); }  // 0회→20, 1회→45, 2회→70, 3회→95
   }
   function route() {
     var _kb = document.getElementById("kt-boot"); if (_kb) _kb.remove();  // 첫 렌더 시 부팅 스플래시 제거
