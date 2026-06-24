@@ -2307,7 +2307,7 @@
     backBtn.hidden = false; tabsEl.hidden = true;
     if (IS_TOSS && TOSS_AD_GROUP && !window._tossAdShown) { window._tossAdShown = true; tossShowAd(); }  // [테스트] 경기상세 첫 진입(세션 1회) 전면광고. 키(TOSS_AD_GROUP) 있을 때만
     window._mscNeedsLive = false;  // 조현황 경기결과에 '-'(스코어 미로드)가 있으면 teamResults가 true로 → 저장 스코어 도착 시 재렌더
-    if (fx.group && !matchEnded(fx)) fetchStandings();  // 조별·미종료 경기면 순위 로드 → 진출 경우의수 표(도착 시 자동 재렌더)
+    if (fx.group) fetchStandings();  // 조별 경기면 순위 로드(종료경기도 조현황 순위표 필요) → 도착 시 자동 재렌더. STAND는 정적 순위라 라이브 섞임과 무관
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
