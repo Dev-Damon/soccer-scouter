@@ -1187,11 +1187,21 @@
     var remaining = allFx.filter(function (f) { return !matchEnded(f); });
     var html = '<div class="sec-h">🧮 ' + esc(group) + "조 32강 진출 경우의 수</div>";
     html += '<div class="scn-note">2026 월드컵: 각 조 <b>1·2위 직행</b> + 12개 조 <b>3위 중 상위 8팀</b> 진출.</div>';
+    if (group === "B") html += '<div class="gsc-krhint">🇰🇷 B조 <b>2위</b>는 32강 73경기에서 <b>한국</b>(A조 2위 통과 시)과 맞붙어요 — 누가 1위·2위로 직행하는지가 한국의 상대를 결정!</div>';
     if (!Object.keys(STAND).length) { viewEl.innerHTML = html + '<div class="muted-note">순위를 불러오는 중…</div>'; return; }
     var cur = gids.map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
     html += '<div class="scn-mini-wrap"><div class="scn-mini-h">🏆 현재 ' + esc(group) + "조 순위</div>" + standTableHTML(cur) + "</div>";
 
-    function vd(rr) { return rr.mx <= 2 ? { t: "✅ 직행 확정", c: "q12" } : rr.mn >= 4 ? { t: "❌ 탈락 확정", c: "out" } : rr.mn <= 2 ? { t: "🟡 직행 가능 / 최소 3위 경쟁", c: "p3" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 (와일드카드 경쟁)", c: "p3" } : { t: "🟡 3위 또는 탈락", c: "p3" }; }
+    function vd(rr) {
+      if (rr.mx <= 2) {  // 직행권(1·2위)
+        if (group === "B") {  // B조 2위는 한국(A조 2위)과 32강 73경기에서 대결 → 1·2위 구분 표시
+          if (rr.mn === rr.mx) return { t: "✅ " + rr.mn + "위 직행" + (rr.mn === 2 ? " 🇰🇷한국과 32강" : ""), c: "q12" };
+          return { t: "✅ 1·2위 직행 (순위 미정)", c: "q12" };
+        }
+        return { t: "✅ 직행 확정", c: "q12" };
+      }
+      return rr.mn >= 4 ? { t: "❌ 탈락 확정", c: "out" } : rr.mn <= 2 ? { t: "🟡 직행 가능 / 최소 3위 경쟁", c: "p3" } : (rr.mn >= 3 && rr.mx === 3) ? { t: "🟡 조 3위 (와일드카드 경쟁)", c: "p3" } : { t: "🟡 3위 또는 탈락", c: "p3" };
+    }
     function teamFullRange(teamId) {  // 남은 경기 전체 조합 → 승점 기반 순위 범위(골득실 동률은 보수적)
       var combos = scnEnum(remaining), mn = 9, mx = 0;
       combos.forEach(function (c) { var picks = {}; remaining.forEach(function (f, i) { picks[f.id] = c[i]; }); var rr = scnRankRange(teamId, gids, remaining, picks); mn = Math.min(mn, rr.best); mx = Math.max(mx, rr.worst); });
