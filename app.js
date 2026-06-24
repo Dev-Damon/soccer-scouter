@@ -151,8 +151,10 @@
       (v.note ? '<div class="vp-note">💡 ' + esc(v.note) + "</div>" : "") +
       (v.imgCredit ? '<div class="vp-credit">사진: ' + esc(v.imgCredit) + "</div>" : "") +
       '<button class="vp-x">닫기</button></div></div>';
-    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".vp-x")) ov.remove(); });
+    function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".vp-x")) { if (ktModalClose) history.back(); else close(); } });
     document.body.appendChild(ov);
+    ktModalOpen(close);  // 뒤로가기 시 페이지 이동 대신 팝업이 닫히도록
   }
   var DOW = ["일", "월", "화", "수", "목", "금", "토"];
   function parseDate(iso) {
@@ -1261,8 +1263,10 @@
       '<div class="tie-step"><b>2단계 · 전체 조별리그 성적</b><ol><li>전체 골득실</li><li>전체 총 득점</li><li>페어플레이 점수(경고·퇴장)</li></ol></div>' +
       '<div class="tie-step"><b>3단계</b><ol><li>그래도 동률이면 최신 FIFA 랭킹</li></ol></div>' +
       '<button class="tie-pop-x">닫기</button></div>';
-    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".tie-pop-x")) ov.remove(); });
+    function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.closest(".tie-pop-x")) { if (ktModalClose) history.back(); else close(); } });
     document.body.appendChild(ov);
+    ktModalOpen(close);  // 뒤로가기 시 팝업이 닫히도록
   }
   function renderGroupScenario(group) {
     setTabbar(""); backBtn.hidden = false; tabsEl.hidden = true;
