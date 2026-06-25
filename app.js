@@ -2445,8 +2445,9 @@
     var pv = fx.preview, previewHtml = "";
     if (pv) {
       var wpts = (pv.watchPoints || []).map(function (p) { return "<li>" + esc(stripFormation(p)) + "</li>"; }).join("");
-      var strat = (pv.homeStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(a.name) + '</div><div class="strat-txt">' + esc(stripFormation(pv.homeStrategy)) + "</div></div>" : "") +
-        (pv.awayStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(b.name) + '</div><div class="strat-txt">' + esc(stripFormation(pv.awayStrategy)) + "</div></div>" : "");
+      // 전략은 fx의 home/away 기준이므로 a/b(한국경기는 swap됨) 대신 실제 home/away 팀명으로 매칭 — 안 그러면 제목·내용 뒤바뀜
+      var strat = (pv.homeStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(fx.homeName) + '</div><div class="strat-txt">' + esc(stripFormation(pv.homeStrategy)) + "</div></div>" : "") +
+        (pv.awayStrategy ? '<div class="strat-box"><div class="strat-team">' + esc(fx.awayName) + '</div><div class="strat-txt">' + esc(stripFormation(pv.awayStrategy)) + "</div></div>" : "");
       previewHtml = (wpts ? '<div class="block"><h3>관전 포인트</h3><ul class="watch-list">' + wpts + "</ul></div>" : "") +
         (strat ? '<div class="block"><h3>예상 전략</h3><div class="strat">' + strat + "</div></div>" : "");
     }
