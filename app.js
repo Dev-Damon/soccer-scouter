@@ -3050,6 +3050,7 @@
     "match-15": "https://chzzk.naver.com/video/13795597", // 스코틀랜드-모로코
     "match-16": "https://chzzk.naver.com/video/13796304", // 브라질-아이티
     "match-17": "https://chzzk.naver.com/video/13876101", // 스코틀랜드-브라질
+    "match-18": "https://chzzk.naver.com/video/13876210", // 모로코-아이티
     "match-19": "https://chzzk.naver.com/video/13682431", // 미국-파라과이
     "match-20": "https://chzzk.naver.com/video/13700637", // 호주-튀르키예
     "match-21": "https://chzzk.naver.com/video/13795010", // 미국-호주
