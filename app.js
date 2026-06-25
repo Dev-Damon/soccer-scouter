@@ -2510,6 +2510,7 @@
       } else if (KickComments.settleMatch) { KickComments.settleMatch(fx.id); }
     }
     function updScore() {
+      if (parseHash().id !== fx.id) return;  // 다른 경기로 이동했으면 이 경기 갱신 안 함(섞임 방지)
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
         var _ko = matchKickoff(fx), _stale = _ko && Date.now() > _ko + 150 * 60000;  // 종료 시간 경과인데 'in'으로 남은 스테일 라이브 → 종료 처리
@@ -2528,7 +2529,7 @@
       var wasOpen = !!((slot.querySelector(".lu-subs-d") || {}).open);  // 교체명단 펼침 상태 보존(라이브 새로고침 시 접힘 방지)
       var eid = espnIdCache[fx.id]; if (eid) delete summaryCache[eid];
       fetchSummary(fx).then(function (d) {
-        if (!d || parseHash().name !== "match") return;
+        if (!d || parseHash().name !== "match" || parseHash().id !== fx.id) return;  // 현재 보고 있는 경기와 fx 일치할 때만(이전 경기의 늦은 응답 차단)
         renderLineup(slot, d, a, b, fx);
         var _det = slot.querySelector(".lu-subs-d"); if (_det && wasOpen) _det.open = true;  // 펼침 복원
         var lv = LIVE[fx.id];  // 라이브면 이 경기 기록을 즉시 DB에 반영(기록탭 새로고침 시 최신)
@@ -3250,6 +3251,9 @@
   }
   function renderLineup(slot, d, a, b, fx) {
     var rosters = d.rosters || [];
+    // ★방어: d(라인업 데이터)의 팀이 이 경기(a,b)와 다르면 렌더 거부 — 다른 경기 라인업 섞임 차단(동시 라이브 race·DB 오염 대비)
+    var _rt = rosters.map(function (rs) { return espnTeamId(rs.team && rs.team.displayName); }).filter(Boolean);
+    if (_rt.length && (_rt.indexOf(a.id) < 0 || _rt.indexOf(b.id) < 0)) { slot.innerHTML = ""; return; }
     var matchId = fx ? fx.id : null;
     // 교체 투입 정보 파싱(들어온 선수 → 몇분·나간 선수)
     var subInfo = {}, outInfo = {};
