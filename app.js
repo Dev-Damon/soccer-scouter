@@ -3123,12 +3123,17 @@
     }).catch(function () {});
   })();
   // ESPN officials(주심) → 표시 HTML. REF_INFO에서 국가·카드성향 보강(정확 이름 우선, 성 매칭 백업).
+  function refToks(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z ]/g, " ").split(/\s+/).filter(Boolean); }
   function refInfoOf(nm) {
     if (!nm) return null;
     if (REF_INFO[nm]) return REF_INFO[nm];
-    var sur = nm.split(" ").pop();
-    var k = Object.keys(REF_INFO).filter(function (key) { return key.split(" ").pop() === sur; });
-    return k.length === 1 ? REF_INFO[k[0]] : null;  // 성 유일 매칭만(동성 모호 방지)
+    // 토큰 교집합 매칭 — ESPN 긴이름("Yael Falcón Pérez") vs 위키 short("Yael Falcón") 불일치 대비
+    var nt = refToks(nm), best = null;
+    Object.keys(REF_INFO).forEach(function (k) {
+      var kt = refToks(k), inter = nt.filter(function (t) { return kt.indexOf(t) >= 0; });
+      if (inter.length >= 2 && (!best || inter.length > best.n)) best = { k: k, n: inter.length };
+    });
+    return best ? REF_INFO[best.k] : null;
   }
   function refereeHtml(d) {
     var offs = (d && d.gameInfo && d.gameInfo.officials) || [];
@@ -3138,8 +3143,8 @@
     var info = refInfoOf(nm);
     var flag = info && info.flag ? info.flag + " " : "";
     var ctry = info && info.country ? esc(info.country) : "";
-    var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + "</span>" : "";
-    var games = (info && info.games) ? ' <span class="muted-note">· ' + info.games + "경기</span>" : "";
+    var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + (info.foulsPg != null ? " · 파울 " + info.foulsPg : "") + "</span>" : "";
+    var games = (info && info.games) ? ' <span class="muted-note">· 통산 ' + info.games + "경기</span>" : "";
     return '<div class="ref-line">🧑‍⚖️ 주심 <b>' + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
   }
 
