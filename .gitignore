@@ -22,3 +22,4 @@ toss/public/
 toss/*.ait
 toss/bundle.*
 toss/*.js.map
+.fifa_state.json
