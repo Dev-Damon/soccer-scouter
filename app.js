@@ -769,7 +769,7 @@
     var now = Date.now(); return now >= ko && now < ko + 130 * 60000;
   }
   function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 150 * 60000) return false; return true; } return isTimeLive(f); }  // 종료(킥오프+150분 경과) 경기는 LIVE가 'in'으로 남아있어도 라이브 아님 — 스테일 라이브 오염 방어
-  function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM.mid === f.id); }  // ESPN 라이브 or JTBC 방송 감지
+  function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM[f.id]); }  // ESPN 라이브 or JTBC 방송 감지
   function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
   function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
   function liveSection() {
@@ -781,7 +781,7 @@
       dummy = [{ hs: 1, as: 0, clock: "67'", state: "in" }, { hs: 2, as: 2, clock: "81'", state: "in" }];
     } else {
       live = liveFixtures();
-      if (LIVE_STREAM && LIVE_STREAM.mid) { var _bf = fixturesById[LIVE_STREAM.mid]; if (_bf && live.indexOf(_bf) < 0) live = [_bf].concat(live); }  // JTBC 방송 감지 경기도 메인 라이브카드에
+      if (LIVE_STREAM) { Object.keys(LIVE_STREAM).forEach(function (mid) { var _bf = fixturesById[mid]; if (_bf && live.indexOf(_bf) < 0) live = [_bf].concat(live); }); }  // JTBC 방송 감지 경기들 메인 라이브카드에
     }
     if (!live.length) return "";
     // 오늘의 빅매치 카드(heroCard) 스타일 재사용 — 2경기면 세로로 나열. ESPN 데이터 없으면 '곧 시작' 0:0 표시
@@ -812,7 +812,7 @@
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
     var lv = lvOverride || LIVE[fx.id], live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
-    var preKick = !!(asLiveCard && LIVE_STREAM && LIVE_STREAM.mid === fx.id && !(LIVE[fx.id] && LIVE[fx.id].state === "in"));  // 방송 감지인데 아직 킥오프 전 → 시작시간만 간결히
+    var preKick = !!(asLiveCard && LIVE_STREAM && LIVE_STREAM[fx.id] && !(LIVE[fx.id] && LIVE[fx.id].state === "in"));  // 방송 감지인데 아직 킥오프 전 → 시작시간만 간결히
     var lS = lv ? (swap ? lv.as : lv.hs) : 0, rS = lv ? (swap ? lv.hs : lv.as) : 0;
     var mid = (live && asLiveCard)
       ? '<div class="hero-mid">' + (preKick ? '<span class="hero-kt">' + esc(fxTime(fx) || "") + "</span>" : "") + '<span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + "</span></div>"  // 방송 감지·미킥오프면 점수 위에 시작시간만
@@ -2522,7 +2522,7 @@
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
       if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
       var lbs = viewEl.querySelector(".live-btn-slot");  // 치지직 JTBC 라이브 송출 감지 시 "라이브 보기" 버튼(경기종료면 숨김)
-      if (lbs) { lbs.innerHTML = (LIVE_STREAM && LIVE_STREAM.mid === fx.id && LIVE_STREAM.url && !(lv && lv.state === "post")) ? (IS_TOSS ? '<button class="live-btn" data-ext="' + esc(LIVE_STREAM.url) + '"><span class="lb-dot"></span>라이브 보기 (JTBC)</button>' : '<a class="live-btn" href="' + esc(LIVE_STREAM.url) + '" target="_blank" rel="noopener"><span class="lb-dot"></span>라이브 보기 (JTBC)</a>') : ""; }  /* 토스는 openURL, 웹은 새 탭 */
+      if (lbs) { var _bc = LIVE_STREAM && LIVE_STREAM[fx.id]; lbs.innerHTML = (_bc && _bc.url && !(lv && lv.state === "post")) ? (IS_TOSS ? '<button class="live-btn" data-ext="' + esc(_bc.url) + '"><span class="lb-dot"></span>라이브 보기 (JTBC)</button>' : '<a class="live-btn" href="' + esc(_bc.url) + '" target="_blank" rel="noopener"><span class="lb-dot"></span>라이브 보기 (JTBC)</a>') : ""; }  /* 토스는 openURL, 웹은 새 탭 */
     }
     function refreshLineup() {
       var slot = viewEl.querySelector(".lineup-slot"); if (!slot) return;
@@ -2598,7 +2598,7 @@
 
   // ===================== 라이브 경기 (ESPN 공개 API · 분단위 폴링, 백엔드/키 불필요) =====================
   var LIVE = {};            // fixtureId -> {state:'in'|'post', clock, hs, as, events}
-  var LIVE_STREAM = null;   // {mid, url, title} — 치지직 JTBC 채널 라이브 송출 감지(서버 update_live가 live_state.ls에 기록)
+  var LIVE_STREAM = {};   // {mid: {mid,url,title}} 맵 — 치지직 JTBC/JTBCSPORTS 채널 라이브 송출 감지(서버 update_live가 live_state.ls 배열에 기록, 동시 2경기 중계 대응)
   var _pushedResults = {};  // 결과 중복 저장 방지
   var _livePushAt = 0;      // 라이브 공유캐시 push throttle
   var SB_PUB = "sb_publishable_AsDWJPjKDg1S5wqezB9Vtw_uxKFmE26", SB_URL = "https://jhzchgvnkwdroxfrgjvm.supabase.co";
@@ -2670,7 +2670,7 @@
     if (changed && window.KickComments && KickComments.pushLiveState && Date.now() - _livePushAt > 20000) {
       _livePushAt = Date.now();
       var lm = {}; Object.keys(LIVE).forEach(function (k) { if (LIVE[k] && LIVE[k].state === "in") lm[k] = { state: "in", hs: LIVE[k].hs, as: LIVE[k].as, clock: LIVE[k].clock, events: LIVE[k].events }; });
-      KickComments.pushLiveState({ t: Date.now(), live: lm, ls: LIVE_STREAM });  // ls 보존(서버 60초마다 갱신, 클라 push가 덮어쓰지 않게)
+      KickComments.pushLiveState({ t: Date.now(), live: lm, ls: Object.keys(LIVE_STREAM).map(function (k) { return LIVE_STREAM[k]; }) });  // ls 배열 보존(서버 60초마다 갱신, 클라 push가 덮어쓰지 않게)
     }
     return { changed: changed, anyLive: anyLive, anyToday: anyToday };
   }
@@ -2690,7 +2690,9 @@
   }
   // live_state.ls(서버 감지 JTBC 라이브) → LIVE_STREAM 반영. 변동 시 경기페이지 버튼 즉시 갱신.
   function applyLiveStream(d, fresh) {
-    var next = (fresh && d && d.ls && d.ls.mid && d.ls.url) ? d.ls : null;
+    // d.ls: 배열[{mid,url,title}](신) 또는 단일{mid,url}(구) 호환 → LIVE_STREAM 맵 {mid: {mid,url,title}}
+    var arr = !fresh || !d ? [] : Array.isArray(d.ls) ? d.ls : (d.ls && d.ls.mid ? [d.ls] : []);
+    var next = {}; arr.forEach(function (x) { if (x && x.mid && x.url) next[x.mid] = x; });
     if (JSON.stringify(next) === JSON.stringify(LIVE_STREAM)) return;
     LIVE_STREAM = next;
     if (window._matchLiveTick) window._matchLiveTick();
