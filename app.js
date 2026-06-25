@@ -4680,7 +4680,15 @@
       open = !open; panel.hidden = !open; fab.classList.toggle("open", open); fab.innerHTML = open ? "✕" : "💬"; twem(fab);
       if (open) {
         lastSig = ""; msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>';
-        KickComments.ready().then(function () { loadRender(true); });
+        var fired = false;
+        function go() { if (fired || !open) return; fired = true; loadRender(true); }
+        KickComments.ready().then(go).catch(function () {  // SDK 로드/세션 검증 실패 → 영구 "불러오는 중" 방지: 재시도 버튼
+          fired = true;  // 5초 타임아웃의 빈 렌더가 재시도 버튼 덮어쓰지 않게
+          var m = msgsEl(); if (!m || !open) return;
+          m.innerHTML = '<div class="chat-empty">채팅을 불러오지 못했어요.<br><button class="chat-retry" type="button" style="margin-top:8px">다시 시도</button></div>';
+          var rb = m.querySelector(".chat-retry"); if (rb) rb.addEventListener("click", function () { lastSig = ""; m.innerHTML = '<div class="chat-empty">불러오는 중…</div>'; fired = false; KickComments.ready().then(go).catch(function () {}); setTimeout(go, 5000); });
+        });
+        setTimeout(go, 5000);  // ready()가 5초 내 안 끝나면(세션 검증 hang 등) 메시지라도 먼저 로드 — SDK는 이미 떠 있어 chatRecent 동작
         ch = KickComments.chatSubscribe(function () { loadRender(false); });  // 실시간 신호 → 최신 재조회
         pollT = setInterval(function () { loadRender(false); }, 6000);        // 백업 폴링(실시간 누락 방지)
       } else {
