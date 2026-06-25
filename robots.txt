@@ -13,3 +13,6 @@ User-agent: Daumoa
 Allow: /
 
 Sitemap: https://kicktalk.xyz/sitemap.xml
+
+# Daum 웹마스터도구 사이트 소유확인 PIN
+#DaumWebMasterTool:9868ea4acf285978d599816a5bca71a8b5c1fa14a4aadfaa1b7438149099462b:/rROxydMIOcaD59/dAkQxg==
