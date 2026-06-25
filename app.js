@@ -795,7 +795,7 @@
   // 보정된 경기 분("5'"/"HT"/"") — ESPN displayClock이 킥오프 초반 정체될 때 시각 경과로 보강(전반 한정, 후반은 하프타임 변수라 ESPN 신뢰)
   function liveMin(fx, lv) {
     var c = (lv && lv.clock) || "";
-    if (/종료|HT|하프/.test(c)) return "HT";
+    if (/종료|HT|하프/.test(c)) return "전반 종료";  // 하프타임은 "전반 종료"로 표기(기존 톤 유지)
     var espn = parseInt(c, 10);
     var ko = matchKickoff(fx), el = ko ? Math.floor((Date.now() - ko) / 60000) : -1;
     if (!isNaN(espn)) return (el > espn && espn <= 45 && el <= 48) ? el + "'" : c;  // 전반 정체 보정
@@ -2532,7 +2532,7 @@
       fetchSummary(fx).then(function (d) {
         if (!d || parseHash().name !== "match" || parseHash().id !== fx.id) return;  // 현재 보고 있는 경기와 fx 일치할 때만(이전 경기의 늦은 응답 차단)
         renderLineup(slot, d, a, b, fx);
-        var rs = viewEl.querySelector(".ref-slot"); if (rs) rs.innerHTML = refereeHtml(d);  // 주심 정보(국가·카드성향)
+        var rs = viewEl.querySelector(".ref-slot"); if (rs) { rs.innerHTML = refereeHtml(d); twem(rs); }  // 주심 정보(국가·카드성향) + 국기 이모지 twemoji 변환(PC/윈도우 국기 미표시 대응)
         var _det = slot.querySelector(".lu-subs-d"); if (_det && wasOpen) _det.open = true;  // 펼침 복원
         var lv = LIVE[fx.id];  // 라이브면 이 경기 기록을 즉시 DB에 반영(기록탭 새로고침 시 최신)
         if (lv && lv.state === "in" && window.KickComments && KickComments.pushMatchStats) { var pl = computeMatchPlayers(d); if (pl.length) KickComments.pushMatchStats(fx.id, pl); }
