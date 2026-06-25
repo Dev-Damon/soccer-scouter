@@ -2255,16 +2255,59 @@
     if (/B$/.test(a) && s) s *= 1.4;
     return s;
   }
+  // 포지션 약어 → 깊이점수(0=GK ~ 6=최전방 스트라이커). 포메이션 라벨대로 라인 배치할 때 정렬 기준.
+  // ★F(=원톱 스트라이커)를 CF(=그 뒤 섀도/공미)보다 더 전진으로 둬야 3-4-2-1의 '2-1'이 안 뭉침(예전엔 둘 다 한 밴드라 3으로 보임)
+  function espnDepth(abbr) {
+    var a = (abbr || "").toUpperCase();
+    if (a === "G" || a === "GK") return 0;
+    if (/^(CD|CB|RB|LB|RWB|LWB|WB|D)(-|$)/.test(a)) return 1;
+    if (/^(DM|CDM)(-|$)/.test(a)) return 2;
+    if (/^(CM|RM|LM|M)(-|$)/.test(a)) return 3;
+    if (/AM/.test(a)) return 4;
+    if (/^(W|RW|LW|RF|LF)(-|$)/.test(a)) return 4.5;
+    if (/^(CF|SS)(-|$)/.test(a)) return 5;
+    if (/^(F|ST)(-|$)/.test(a)) return 6;
+    return 3;
+  }
+  function parseFormationCounts(f) {  // "3-4-2-1" → [3,4,2,1] (아웃필드 합 10일 때만)
+    if (!f) return null;
+    var parts = String(f).split(/[^0-9]+/).filter(Boolean).map(Number);
+    if (parts.length < 2) return null;
+    var sum = parts.reduce(function (a, b) { return a + b; }, 0);
+    return sum === 10 ? parts : null;
+  }
   function espnLineupCoords(rs) {
     var starters = (rs.roster || []).filter(function (p) { return p.starter && p.athlete && p.athlete.displayName; });  // 이름 없는 슬롯 제외(빈 동그라미 방지)
     if (starters.length < 9) return null;
+    // ① 포메이션 라벨이 있고 11명 정상 → 라벨(3-4-2-1)대로 라인 수·라인별 인원 정확히 배치 (ESPN이 섀도와 원톱을 같은 F계열로 줘 밴드가 뭉치는 문제 해결)
+    var counts = (starters.length === 11) ? parseFormationCounts(rs.formation) : null;
+    if (counts) {
+      var gk = null, outs = [];
+      starters.forEach(function (p) {
+        var abbr = (p.position && p.position.abbreviation) || "";
+        var it = { p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0, dp: espnDepth(abbr) };
+        if (it.dp === 0 && !gk) gk = it; else outs.push(it);
+      });
+      if (gk && outs.length === 10) {
+        outs.sort(function (a, b) { return (a.dp - b.dp) || (a.fp - b.fp); });  // 깊이순(수비→공격)으로 줄세운 뒤 라벨 인원수대로 슬라이스
+        var lines = [[gk]], idx = 0;
+        counts.forEach(function (c) { lines.push(outs.slice(idx, idx + c)); idx += c; });
+        var nl = lines.length, outF = [];
+        lines.forEach(function (line, li) {
+          var y = nl <= 1 ? 50 : 86 - (li / (nl - 1)) * 74;  // 86(GK) ~ 12(최전방) 균등
+          line.sort(function (x, y2) { return (x.sv - y2.sv) || (x.fp - y2.fp); });
+          line.forEach(function (it, i) { outF.push({ p: it.p, x: line.length === 1 ? 50 : (i + 0.5) / line.length * 100, y: y }); });
+        });
+        return outF;
+      }
+    }
+    // ② 폴백: 포메이션 라벨 없을 때 포지션 밴드 기반 균등 분포
     var bands = {};
     starters.forEach(function (p) { var abbr = (p.position && p.position.abbreviation) || ""; var bk = espnBand(abbr); (bands[bk] = bands[bk] || []).push({ p: p, sv: espnSideV(abbr), fp: p.formationPlace || 0 }); });
-    // 사용된 라인(밴드)만 GK(뒤)→최전방 사이에 '균등 분포' → 공격/미드/수비 간격 일정하게
     var usedBands = Object.keys(bands).map(Number).sort(function (a, b) { return a - b; });
     var n = usedBands.length, out = [];
     usedBands.forEach(function (bk, bi) {
-      var y = n <= 1 ? 50 : 86 - (bi / (n - 1)) * 74;  // 86(골키퍼) ~ 12(최전방) 균등
+      var y = n <= 1 ? 50 : 86 - (bi / (n - 1)) * 74;
       var arr = bands[bk];
       arr.sort(function (x, y2) { return (x.sv - y2.sv) || (x.fp - y2.fp); });
       arr.forEach(function (it, i) { out.push({ p: it.p, x: arr.length === 1 ? 50 : (i + 0.5) / arr.length * 100, y: y }); });
