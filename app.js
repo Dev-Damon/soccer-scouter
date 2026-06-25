@@ -4639,8 +4639,55 @@
       '<div class="chat-msgs"></div>' +
       '<div class="chat-inbar"><input class="chat-in" maxlength="300" placeholder="메시지 입력…"><button class="chat-send" type="button">전송</button></div>';
     document.body.appendChild(panel); document.body.appendChild(fab); twem(fab);
-    var ch = null, open = false, pollT = null, lastSig = "";
+    var ch = null, open = false, pollT = null;
+    var msgs = [], seenIds = {}, oldestId = null, newestId = null, loadingOld = false, noMore = false;
+    var INIT = 30, PAGE = 30;  // 초기 소량 → 빠른 첫 표시, 위로 스크롤 시 이전 페이지
     function msgsEl() { return panel.querySelector(".chat-msgs"); }
+    function resetChat() { msgs = []; seenIds = {}; oldestId = null; newestId = null; loadingOld = false; noMore = false; }
+    function addMsgs(list, where) {  // where: 'old'(앞에) | 그 외(뒤에) — 중복 id 제거
+      var added = [];
+      list.forEach(function (x) { if (!seenIds[x.id]) { seenIds[x.id] = 1; added.push(x); } });
+      if (!added.length) return added;
+      msgs = (where === "old") ? added.concat(msgs) : msgs.concat(added);
+      msgs.sort(function (a, b) { return a.id - b.id; });
+      oldestId = msgs[0].id; newestId = msgs[msgs.length - 1].id;
+      return added;
+    }
+    function paintChat(scrollMode) {  // 'bottom' | 'keep'(스크롤 위치 유지=이전로드) | null
+      var m = msgsEl(); if (!m) return;
+      if (!msgs.length) { m.innerHTML = '<div class="chat-empty">아직 메시지가 없어요.<br>첫 메시지를 남겨보세요!</div>'; return; }
+      var prevH = m.scrollHeight, prevTop = m.scrollTop;
+      m.innerHTML = msgs.map(bubble).join("");
+      twem(m);
+      if (scrollMode === "bottom") m.scrollTop = m.scrollHeight;
+      else if (scrollMode === "keep") m.scrollTop = prevTop + (m.scrollHeight - prevH);  // 위에 붙은 만큼 보정 → 읽던 위치 유지
+    }
+    function initialLoad() {
+      return KickComments.chatRecent(INIT).then(function (list) {
+        if (!open) return;
+        resetChat(); addMsgs(list, "init");
+        if (list.length < INIT) noMore = true;
+        paintChat("bottom");
+      });
+    }
+    function loadNewMsgs() {  // 폴링/실시간 — 새 메시지만 가볍게
+      if (!open || newestId == null) return;
+      KickComments.chatNewer(newestId, 80).then(function (list) {
+        if (!open || !list.length) return;
+        var m = msgsEl(); var atBottom = m ? (m.scrollHeight - m.scrollTop - m.clientHeight < 80) : true;
+        if (addMsgs(list, "new").length) paintChat(atBottom ? "bottom" : "keep");
+      }).catch(function () {});
+    }
+    function loadOlderMsgs() {  // 위로 스크롤 → 이전 페이지
+      if (loadingOld || noMore || oldestId == null || !open) return;
+      loadingOld = true;
+      KickComments.chatRecent(PAGE, oldestId).then(function (list) {
+        loadingOld = false; if (!open) return;
+        if (!list.length) { noMore = true; return; }
+        if (list.length < PAGE) noMore = true;
+        if (addMsgs(list, "old").length) paintChat("keep");
+      }).catch(function () { loadingOld = false; });
+    }
     function ncolor(name) { var cols = ["#5b9dff", "#e5748a", "#5bbf8a", "#f0a93b", "#b18cff", "#46c2d6", "#e0739e"], h = 0, i; for (i = 0; i < (name || "").length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0; return cols[h % cols.length]; }
     function chatTime(iso) {
       if (!iso) return ""; var d = new Date(iso); if (isNaN(d.getTime())) return "";
@@ -4664,46 +4711,35 @@
         '<span class="yc-time">' + esc(chatTime(m.created_at)) + "</span> " +
         '<span class="yc-msg">' + esc(m.body) + "</span></span></div>";
     }
-    function loadRender(forceBottom) {
-      var m = msgsEl(); if (!m) return;
-      var atBottom = forceBottom || (m.scrollHeight - m.scrollTop - m.clientHeight < 70);
-      KickComments.chatRecent(100).then(function (list) {
-        if (!open) return;
-        var sig = list.map(function (x) { return x.id; }).join(",");
-        if (sig === lastSig && !forceBottom) return;  // 변동 없으면 재렌더 생략
-        lastSig = sig;
-        m.innerHTML = list.length ? list.map(bubble).join("") : '<div class="chat-empty">아직 메시지가 없어요.<br>첫 메시지를 남겨보세요!</div>';
-        twem(m);
-        if (atBottom) m.scrollTop = m.scrollHeight;
-      }).catch(function () {});
-    }
     function toggle() {
       open = !open; panel.hidden = !open; fab.classList.toggle("open", open); fab.innerHTML = open ? "✕" : "💬"; twem(fab);
       if (open) {
-        lastSig = ""; msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>';
+        resetChat(); msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>';
         var fired = false;
-        function go() { if (fired || !open) return; fired = true; loadRender(true); }
+        function go() { if (fired || !open) return; fired = true; initialLoad().catch(function () {}); }
         KickComments.ready().then(go).catch(function () {  // SDK 로드/세션 검증 실패 → 영구 "불러오는 중" 방지: 재시도 버튼
           fired = true;  // 5초 타임아웃의 빈 렌더가 재시도 버튼 덮어쓰지 않게
           var m = msgsEl(); if (!m || !open) return;
           m.innerHTML = '<div class="chat-empty">채팅을 불러오지 못했어요.<br><button class="chat-retry" type="button" style="margin-top:8px">다시 시도</button></div>';
-          var rb = m.querySelector(".chat-retry"); if (rb) rb.addEventListener("click", function () { lastSig = ""; m.innerHTML = '<div class="chat-empty">불러오는 중…</div>'; fired = false; KickComments.ready().then(go).catch(function () {}); setTimeout(go, 5000); });
+          var rb = m.querySelector(".chat-retry"); if (rb) rb.addEventListener("click", function () { msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>'; fired = false; KickComments.ready().then(go).catch(function () {}); setTimeout(go, 5000); });
         });
         setTimeout(go, 5000);  // ready()가 5초 내 안 끝나면(세션 검증 hang 등) 메시지라도 먼저 로드 — SDK는 이미 떠 있어 chatRecent 동작
-        ch = KickComments.chatSubscribe(function () { loadRender(false); });  // 실시간 신호 → 최신 재조회
-        pollT = setInterval(function () { loadRender(false); }, 6000);        // 백업 폴링(실시간 누락 방지)
+        ch = KickComments.chatSubscribe(function () { loadNewMsgs(); });  // 실시간 신호 → 새 메시지만 가볍게
+        pollT = setInterval(function () { loadNewMsgs(); }, 6000);        // 백업 폴링(새 메시지만)
       } else {
         if (ch) { KickComments.chatUnsubscribe(ch); ch = null; }
         if (pollT) { clearInterval(pollT); pollT = null; }
       }
     }
+    // 위로 스크롤 시 이전 메시지 페이지 로드(맨 위 근처)
+    msgsEl().addEventListener("scroll", function () { if (this.scrollTop < 60) loadOlderMsgs(); });
     function send() {
       var inp = panel.querySelector(".chat-in"); var v = (inp.value || "").trim(); if (!v) return;
       inp.disabled = true;
       KickComments.chatSend(v).then(function (r) {
         inp.disabled = false;
         if (r && r.error) { var em = String(r.error.message || ""); alert(/banned/.test(em) ? "이용이 제한된 계정입니다." : /rate_limit/.test(em) ? "너무 빠르게 보내고 있어요. 잠시 후." : /has_link/.test(em) ? "링크는 보낼 수 없어요." : /blocked_word/.test(em) ? "부적절한 내용이에요." : "전송 실패"); return; }
-        inp.value = ""; inp.focus();
+        inp.value = ""; inp.focus(); loadNewMsgs();  // 보낸 메시지 즉시 반영(실시간 신호 대기 안 함)
       }).catch(function () { inp.disabled = false; alert("전송 실패"); });
     }
     fab.addEventListener("click", function () { if (open) { if (ktModalClose) history.back(); else toggle(); } else { toggle(); ktModalOpen(function () { if (open) toggle(); }); } });

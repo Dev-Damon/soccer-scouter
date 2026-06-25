@@ -685,24 +685,33 @@
   })();
 
   // ── 실시간 채팅(통합 채팅방, Supabase Realtime) ──
-  function chatRecent(limit) {
+  // 유저 메타(포인트 티어·칭호·훈장) 일괄 보강 — 이 배치에 등장한 user_id만 조회(전체 X)라 빠름
+  function _enrichChat(list) {
+    var uids = [], seen = {}; list.forEach(function (m) { if (m.user_id && !seen[m.user_id]) { seen[m.user_id] = 1; uids.push(m.user_id); } });
+    if (!uids.length) return Promise.resolve(list);
+    return Promise.all([
+      sb.rpc("points_for", { ids: uids }),
+      sb.from("profiles").select("user_id,title,best_streak").in("user_id", uids)
+    ]).then(function (arr) {
+      var pm = {}, tmm = {}, smm = {};
+      ((arr[0] && arr[0].data) || []).forEach(function (x) { pm[x.user_id] = x.points; });
+      ((arr[1] && arr[1].data) || []).forEach(function (x) { if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
+      list.forEach(function (m) { if (m.user_id != null && pm[m.user_id] != null) m._pts = pm[m.user_id]; if (m.user_id != null && tmm[m.user_id]) m._title = tmm[m.user_id]; if (m.user_id != null && smm[m.user_id]) m._streak = smm[m.user_id]; });
+      return list;
+    }).catch(function () { return list; });
+  }
+  // 최신 limit개(beforeId 주면 그 이전 페이지) — id 커서 기반 페이지네이션. 오름차순(과거→최신)으로 반환.
+  function chatRecent(limit, beforeId) {
     if (!client()) return Promise.resolve([]);
-    return sb.from("chat_messages").select("*").order("created_at", { ascending: false }).limit(limit || 100)
-      .then(function (r) {
-        var list = (r.data || []).slice().reverse();
-        var uids = [], seen = {}; list.forEach(function (m) { if (m.user_id && !seen[m.user_id]) { seen[m.user_id] = 1; uids.push(m.user_id); } });
-        if (!uids.length) return list;
-        return Promise.all([  // 티어 포인트는 배팅대기금 포함(points_for) + 칭호·훈장은 profiles
-          sb.rpc("points_for", { ids: uids }),
-          sb.from("profiles").select("user_id,title,best_streak").in("user_id", uids)
-        ]).then(function (arr) {
-          var pm = {}, tmm = {}, smm = {};
-          ((arr[0] && arr[0].data) || []).forEach(function (x) { pm[x.user_id] = x.points; });
-          ((arr[1] && arr[1].data) || []).forEach(function (x) { if (x.title) tmm[x.user_id] = x.title; if (x.best_streak) smm[x.user_id] = x.best_streak; });
-          list.forEach(function (m) { if (m.user_id != null && pm[m.user_id] != null) m._pts = pm[m.user_id]; if (m.user_id != null && tmm[m.user_id]) m._title = tmm[m.user_id]; if (m.user_id != null && smm[m.user_id]) m._streak = smm[m.user_id]; });
-          return list;
-        }).catch(function () { return list; });
-      }).catch(function () { return []; });
+    var q = sb.from("chat_messages").select("*").order("id", { ascending: false }).limit(limit || 30);
+    if (beforeId != null) q = q.lt("id", beforeId);
+    return q.then(function (r) { return _enrichChat((r.data || []).slice().reverse()); }).catch(function () { return []; });
+  }
+  // afterId 이후의 새 메시지만(폴링/실시간 보강용) — 적게 조회라 가벼움
+  function chatNewer(afterId, limit) {
+    if (!client() || afterId == null) return Promise.resolve([]);
+    return sb.from("chat_messages").select("*").gt("id", afterId).order("id", { ascending: true }).limit(limit || 80)
+      .then(function (r) { return _enrichChat(r.data || []); }).catch(function () { return []; });
   }
   // 관리자 채팅 검색/삭제(RLS: 관리자 UID만)
   function chatSearch(q) {
@@ -823,7 +832,7 @@
     listPosts: listPosts, getPost: getPost, bumpView: bumpView, createPost: createPost,
     deletePost: deletePost, updatePost: updatePost, togglePostLike: togglePostLike, togglePostReaction: togglePostReaction,
     listAllPostsAdmin: listAllPostsAdmin, adminHidePost: adminHidePost,
-    chatRecent: chatRecent, chatSend: chatSend, chatSubscribe: chatSubscribe, chatUnsubscribe: chatUnsubscribe,
+    chatRecent: chatRecent, chatNewer: chatNewer, chatSend: chatSend, chatSubscribe: chatSubscribe, chatUnsubscribe: chatUnsubscribe,
     chatSearch: chatSearch, chatDelete: chatDelete
   };
 })();
