@@ -45,9 +45,10 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
     var c=st&&st.content;
     if(c&&c.status==='OPEN'&&c.liveTitle){
       var title=c.liveTitle, nowT=Date.now();
+      var tns=title.replace(/\s/g,'');  // 공백 제거 비교 — 치지직 제목 "남아프리카 공화국"(공백) vs 팀명 "남아프리카공화국"(공백없음) 불일치 방지
       var fx=D.fixtures.find(f=>{
         if(!f.homeId||!f.awayId)return false;
-        var ok=koNames(f.homeId).some(n=>title.includes(n))&&koNames(f.awayId).some(n=>title.includes(n));
+        var ok=koNames(f.homeId).some(n=>tns.includes(n.replace(/\s/g,'')))&&koNames(f.awayId).some(n=>tns.includes(n.replace(/\s/g,'')));
         if(!ok)return false; var ko=koOf(f); return ko&&nowT>=ko-60*60000&&nowT<ko+180*60000;  // 킥오프 60분전~180분후만
       });
       if(fx) ls={mid:fx.id,url:'https://chzzk.naver.com/live/'+JTBC_CH,title:title};
