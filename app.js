@@ -792,7 +792,17 @@
     return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
   }
   // 라이브 시계 라벨: 숫자 시계는 "LIVE 67'", 텍스트 상태(전반 종료 등)는 그대로
-  function liveClk(c) { c = c || ""; return /^\d/.test(c) ? "LIVE " + esc(c) : (c ? esc(c) : "LIVE"); }
+  // 보정된 경기 분("5'"/"HT"/"") — ESPN displayClock이 킥오프 초반 정체될 때 시각 경과로 보강(전반 한정, 후반은 하프타임 변수라 ESPN 신뢰)
+  function liveMin(fx, lv) {
+    var c = (lv && lv.clock) || "";
+    if (/종료|HT|하프/.test(c)) return "HT";
+    var espn = parseInt(c, 10);
+    var ko = matchKickoff(fx), el = ko ? Math.floor((Date.now() - ko) / 60000) : -1;
+    if (!isNaN(espn)) return (el > espn && espn <= 45 && el <= 48) ? el + "'" : c;  // 전반 정체 보정
+    if (el >= 0 && el <= 48) return el + "'";  // ESPN 분 없을 때 시각 경과(전반 범위)
+    return c;
+  }
+  function liveClk(fx, lv) { var c = liveMin(fx, lv); return /^\d/.test(c) ? "LIVE " + esc(c) : (c ? esc(c) : "LIVE"); }
   function heroCard(fx, lvOverride, asLiveCard) {
     var groupLabel = fx.group ? fx.group + "조" : (fx.stage || "");
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
@@ -807,14 +817,14 @@
     var mid = (live && asLiveCard)
       ? '<div class="hero-mid">' + (preKick ? '<span class="hero-kt">' + esc(fxTime(fx) || "") + "</span>" : "") + '<span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + "</span></div>"  // 방송 감지·미킥오프면 점수 위에 시작시간만
       : live
-      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 중 ' + esc(lv.clock || "") + "</span></div>"  // 빅매치는 라이브 강조 X(전용 라이브카드가 위에 있음)
+      ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">경기 중 ' + esc(liveMin(fx, lv) || "") + "</span></div>"  // 빅매치는 라이브 강조 X(전용 라이브카드가 위에 있음)
       : ended
       ? '<div class="hero-mid"><span class="hero-score">' + (lS | 0) + " : " + (rS | 0) + '</span><span class="hero-fin">종료' + (fxTime(fx) ? " · " + esc(fxTime(fx)) : "") + "</span></div>"
       : '<div class="hero-mid"><span class="hero-kick">' + esc(fxTime(fx) || "시간 미정") + "</span><span class=\"hero-vs\">VS</span></div>";
     var lvG = teamGoals(fx, lv, lName, "l"), rvG = teamGoals(fx, lv, rName, "r");  // 좌/우 팀별 득점자(가운데로 수렴)
     return '<div class="hero' + (live && asLiveCard ? " hero-live" : "") + (asLiveCard ? " live-hero" : "") + '"' + heroAttr + ">" +
       '<div class="hero-grid"></div>' +
-      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "" : "오늘의 빅매치 · ") + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>' + liveClk(lv.clock) + "</span>" : "") + "</div>" +
+      '<div class="hero-tag"><span class="dot"></span>' + (asLiveCard ? "" : "오늘의 빅매치 · ") + esc(groupLabel) + ((asLiveCard && live) ? '<span class="hero-taglive"><span class="hlv-dot"></span>' + liveClk(fx, lv) + "</span>" : "") + "</div>" +
       '<div class="hero-match">' +
         '<div class="hero-side"><span class="hero-flag">' + esc(flagOf(lId)) + "</span>" +
           '<span class="hero-team">' + esc(lName) + "</span></div>" +
@@ -862,7 +872,7 @@
     if (live || ended) {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-score">' + (lScore | 0) + ' <i>-</i> ' + (rScore | 0) + "</span>" +
-        (live ? '<span class="fx-live"><span class="lv-dot"></span>' + liveClk(lv.clock) + "</span>"
+        (live ? '<span class="fx-live"><span class="lv-dot"></span>' + liveClk(fx, lv) + "</span>"
               : '<span class="fx-final">종료' + (fxTime(fx) ? " · " + esc(fxTime(fx)) : "") + "</span>");
     } else {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
@@ -2090,7 +2100,7 @@
       var statusH;
       if (isLive || ended) {
         var myS = (fx.homeId === t.id) ? lv.hs : lv.as, opS = (fx.homeId === t.id) ? lv.as : lv.hs;
-        statusH = '<span class="tlv-badge' + (isLive ? " live" : "") + '">' + (isLive ? "🔴 " + liveClk(lv.clock) : "경기 종료") + "</span>" +
+        statusH = '<span class="tlv-badge' + (isLive ? " live" : "") + '">' + (isLive ? "🔴 " + liveClk(fx, lv) : "경기 종료") + "</span>" +
           '<span class="tlv-score">' + (myS | 0) + " : " + (opS | 0) + "</span>";
       } else { statusH = '<span class="tlv-when">⏱ ' + esc(fxTime(fx) || "곧") + " 킥오프</span>"; }
       banner.innerHTML = '<div class="team-live clickable" data-match="' + esc(fx.id) + '">' + statusH + '<span class="tlv-vs">vs ' + esc(oppName) + '</span><span class="tlv-go">경기 →</span></div>';
@@ -2506,7 +2516,7 @@
         var _ended = lv.state === "post" || _stale, _isLive = lv.state === "in" && !_stale;
         var as_ = aIsHome ? lv.hs : lv.as, bs_ = aIsHome ? lv.as : lv.hs;
         c.innerHTML = '<div class="vs-score">' + (as_ | 0) + ' <span>-</span> ' + (bs_ | 0) + "</div>" +
-          '<div class="vs-clock' + (_isLive ? " live" : "") + '">' + (_ended ? "경기 종료" : esc(lv.clock || "LIVE")) + "</div>";
+          '<div class="vs-clock' + (_isLive ? " live" : "") + '">' + (_ended ? "경기 종료" : esc(liveMin(fx, lv) || "LIVE")) + "</div>";
       }
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
       if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
@@ -2762,7 +2772,7 @@
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
       if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh();    // 나라상세 라이브 배너 점수 갱신
       var lk = liveKey();
-      if ((res.changed || lk !== _lastLiveKey) && onHomeSchedule()) renderSchedule();  // 라이브 집합이 바뀌면(정각 시작 등) 새로고침 없이 자동 갱신
+      if ((res.changed || lk !== _lastLiveKey || res.anyLive) && onHomeSchedule()) renderSchedule();  // 라이브 중엔 매 폴링 재렌더(ESPN clock 정체여도 시각 기반 분 갱신)
       _lastLiveKey = lk;
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
       scheduleLive(nextLiveDelay(res.anyLive));
