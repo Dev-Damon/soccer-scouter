@@ -2364,8 +2364,9 @@
       sorted.forEach(function (p) { if (!cur || Math.abs(p.y - cur.ref) > 8) { cur = { ref: p.y, items: [] }; bands.push(cur); } cur.items.push(p); });
       var n = bands.length, out = [];
       bands.forEach(function (band, bi) {
-        var t = n <= 1 ? 0.5 : bi / (n - 1);  // 0=골키퍼 ~ 1=최전방
-        var px = left ? W * (0.05 + t * 0.36) : W * (0.95 - t * 0.36);  // 좌5→41%, 우95→59% (중앙 간격 + 양 팀 바깥)
+        // GK는 골대쪽(5%/95%) 고정, 모든 세로선 가로 간격 균등. 마지막 라인→센터(50%)는 '반 칸'으로 둬서 양 팀 최전방 사이 간격까지 다른 라인 간격과 동일하게.
+        var gap = 0.45 / (n - 0.5);  // 5%~50% 구간을 (n-0.5)칸으로 분할 → 한 칸 = 모든 간격(팀내·센터 건너편)이 동일
+        var px = left ? W * (0.05 + bi * gap) : W * (0.95 - bi * gap);
         var items = band.items.slice().sort(function (p, q) { return p.x - q.x; });
         var m = items.length;
         items.forEach(function (d, i) {
@@ -3112,6 +3113,7 @@
     "match-2": "https://chzzk.naver.com/video/13666274", // 대한민국-체코
     "match-3": "https://chzzk.naver.com/video/13775195", // 체코-남아프리카공화국
     "match-4": "https://chzzk.naver.com/video/13779536", // 멕시코-대한민국
+    "match-6": "https://chzzk.naver.com/video/13877815", // 남아프리카공화국-대한민국
     "match-7": "https://chzzk.naver.com/video/13680813", // 캐나다-보스니아 헤르체고비나
     "match-8": "https://chzzk.naver.com/video/13697795", // 카타르-스위스
     "match-9": "https://chzzk.naver.com/video/13776758", // 스위스-보스니아 헤르체고비나
