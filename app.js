@@ -1022,10 +1022,16 @@
   var KR = "south-korea";
   function scnStats(id) { var s = STAND[id]; return s ? { p: s.p, w: s.w, d: s.d, l: s.l, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts } : { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 }; }
   // 두 팀 맞대결 결과(승자승) — 이미 치른 경기 기준. A 우선=-1, B 우선=1, 없으면 0
+  var STORED_RESULTS = {};  // {mid:{hs,as}} — 종료경기 결과 캐시(loadStoredResults가 채움). 과거 맞대결 승자승을 LIVE 로드 타이밍과 무관하게 항상 인식
+  function resultOf(fx) {  // 종료 결과 {hs,as} or null — LIVE(post) 우선, 없으면 저장 결과
+    var lv = LIVE[fx.id]; if (lv && lv.state === "post" && lv.hs != null) return { hs: lv.hs, as: lv.as };
+    var s = STORED_RESULTS[fx.id]; return (s && s.hs != null) ? { hs: s.hs, as: s.as } : null;
+  }
+  function h2hFx(idA, idB) { return (DATA.fixtures || []).filter(function (f) { return (f.homeId === idA && f.awayId === idB) || (f.homeId === idB && f.awayId === idA); })[0]; }
   function scnH2H(idA, idB) {
-    var fx = (DATA.fixtures || []).filter(function (f) { return (f.homeId === idA && f.awayId === idB) || (f.homeId === idB && f.awayId === idA); }).filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "post" && lv.hs != null; })[0];
-    if (!fx) return 0;
-    var lv = LIVE[fx.id], aS = fx.homeId === idA ? lv.hs : lv.as, bS = fx.homeId === idA ? lv.as : lv.hs;
+    var fx = h2hFx(idA, idB); if (!fx) return 0;
+    var r = resultOf(fx); if (!r) return 0;
+    var aS = fx.homeId === idA ? r.hs : r.as, bS = fx.homeId === idA ? r.as : r.hs;
     return aS > bS ? -1 : aS < bS ? 1 : 0;
   }
   function scnCmp(a, b) {
@@ -1056,10 +1062,10 @@
   // 승점만으로 순위 범위(best~worst). 승점 동률 팀은 골득실로 갈리지만 스코어를 모르므로 "그 동률 구간 어디든 가능"으로 보수적 판정 → 골득실 의존 케이스를 '확정'으로 오판하지 않음.
   // 두 팀 맞대결 승자 — 이미 끝났거나 picks(시나리오)로 정해진 결과 반영. A우위 -1 / B우위 1 / 미정(무·맞대결없음) 0
   function h2hWinner(idA, idB, picks) {
-    var fx = (DATA.fixtures || []).filter(function (f) { return (f.homeId === idA && f.awayId === idB) || (f.homeId === idB && f.awayId === idA); })[0];
+    var fx = h2hFx(idA, idB);
     if (!fx) return 0;
-    var lv = LIVE[fx.id], out;
-    if (lv && lv.state === "post" && lv.hs != null) out = lv.hs > lv.as ? "h" : lv.hs < lv.as ? "a" : "d";
+    var r = resultOf(fx), out;  // 종료 결과(LIVE post or 저장) 우선 — 과거 맞대결 승자승 항상 반영
+    if (r) out = r.hs > r.as ? "h" : r.hs < r.as ? "a" : "d";
     else out = picks[fx.id];
     if (!out || out === "d") return 0;
     var aWin = (fx.homeId === idA && out === "h") || (fx.awayId === idA && out === "a");
@@ -2437,7 +2443,7 @@
     }
 
     var pr = predict(a, b);
-    var mf = matchFormation(a, b);
+    var mf = (isLiveFix(fx) || matchEnded(fx)) ? "" : matchFormation(a, b);  // 라이브/종료는 실제 라인업(아래 espnPitch)으로 충분 — 예상 라인업 숨김(중복+좌표/라벨 혼란 방지)
     var ia = a.indices || {}, ib = b.indices || {};
     var cmp = cmpRow("공격력", ia.attack, ib.attack) + cmpRow("수비력", ia.defense, ib.defense) +
       cmpRow("조직력", ia.organization, ib.organization) + cmpRow("경험치", ia.experience, ib.experience) +
@@ -2728,14 +2734,22 @@
   function loadStoredResults() {
     if (!window.KickComments || !KickComments.matchResults) return;
     KickComments.ready().then(KickComments.matchResults).then(function (res) {
-      var changed = false;
+      var changed = false, srChanged = false;
       Object.keys(res || {}).forEach(function (mid) {
         // DB에 결과 있으면 = 종료된 경기. LIVE가 비었거나 '아직 in(스테일)'이면 post로 덮어씀(ESPN이 스코어보드서 내려 안 잡히던 끝난 경기가 라이브로 멈춰있던 버그 해결)
         if (!(res[mid] && res[mid].hs != null)) return;
+        var sr = { hs: res[mid].hs, as: res[mid].as };
+        if (JSON.stringify(STORED_RESULTS[mid]) !== JSON.stringify(sr)) { STORED_RESULTS[mid] = sr; srChanged = true; }  // 승자승 계산용 캐시(변동 시 경우의수 재렌더)
         if (LIVE[mid] && LIVE[mid].state === "post") return;
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
       if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
+      if (changed || srChanged) {  // 승자승 캐시 갱신 시 경우의수 페이지(한국/조별/경기상세) 재계산
+        var ph = parseHash();
+        if (ph.name === "scenario") renderScenario();
+        else if (ph.name === "groupscn" && ph.id) renderGroupScenario(ph.id);
+        else if (ph.name === "match" && ph.id) renderMatch(ph.id);
+      }
     }).catch(function () {});
   }
   function onHomeSchedule() {
