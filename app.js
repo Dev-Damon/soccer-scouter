@@ -4662,12 +4662,13 @@
       if (scrollMode === "bottom") m.scrollTop = m.scrollHeight;
       else if (scrollMode === "keep") m.scrollTop = prevTop + (m.scrollHeight - prevH);  // 위에 붙은 만큼 보정 → 읽던 위치 유지
     }
+    var preloaded = false;
     function initialLoad() {
       return KickComments.chatRecent(INIT).then(function (list) {
-        if (!open) return;
         resetChat(); addMsgs(list, "init");
         if (list.length < INIT) noMore = true;
-        paintChat("bottom");
+        preloaded = true;
+        paintChat(open ? "bottom" : null);  // 열려있으면 바로 맨아래로, 프리로드(닫힘)면 DOM만 채워둠(숨김 상태)
       });
     }
     function loadNewMsgs() {  // 폴링/실시간 — 새 메시지만 가볍게
@@ -4714,16 +4715,20 @@
     function toggle() {
       open = !open; panel.hidden = !open; fab.classList.toggle("open", open); fab.innerHTML = open ? "✕" : "💬"; twem(fab);
       if (open) {
-        resetChat(); msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>';
-        var fired = false;
-        function go() { if (fired || !open) return; fired = true; initialLoad().catch(function () {}); }
-        KickComments.ready().then(go).catch(function () {  // SDK 로드/세션 검증 실패 → 영구 "불러오는 중" 방지: 재시도 버튼
-          fired = true;  // 5초 타임아웃의 빈 렌더가 재시도 버튼 덮어쓰지 않게
-          var m = msgsEl(); if (!m || !open) return;
-          m.innerHTML = '<div class="chat-empty">채팅을 불러오지 못했어요.<br><button class="chat-retry" type="button" style="margin-top:8px">다시 시도</button></div>';
-          var rb = m.querySelector(".chat-retry"); if (rb) rb.addEventListener("click", function () { msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>'; fired = false; KickComments.ready().then(go).catch(function () {}); setTimeout(go, 5000); });
-        });
-        setTimeout(go, 5000);  // ready()가 5초 내 안 끝나면(세션 검증 hang 등) 메시지라도 먼저 로드 — SDK는 이미 떠 있어 chatRecent 동작
+        if (preloaded) {  // 프리로드 완료 → 즉시 표시 후 새 메시지만 보충
+          paintChat("bottom"); loadNewMsgs();
+        } else {
+          msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>';
+          var fired = false;
+          function go() { if (fired) return; fired = true; initialLoad().catch(function () {}); }
+          KickComments.ready().then(go).catch(function () {  // SDK 로드/세션 검증 실패 → 영구 "불러오는 중" 방지: 재시도 버튼
+            fired = true;  // 5초 타임아웃의 빈 렌더가 재시도 버튼 덮어쓰지 않게
+            var m = msgsEl(); if (!m || !open) return;
+            m.innerHTML = '<div class="chat-empty">채팅을 불러오지 못했어요.<br><button class="chat-retry" type="button" style="margin-top:8px">다시 시도</button></div>';
+            var rb = m.querySelector(".chat-retry"); if (rb) rb.addEventListener("click", function () { msgsEl().innerHTML = '<div class="chat-empty">불러오는 중…</div>'; fired = false; KickComments.ready().then(go).catch(function () {}); setTimeout(go, 5000); });
+          });
+          setTimeout(go, 5000);  // ready()가 5초 내 안 끝나면(세션 검증 hang 등) 메시지라도 먼저 로드 — SDK는 이미 떠 있어 chatRecent 동작
+        }
         ch = KickComments.chatSubscribe(function () { loadNewMsgs(); });  // 실시간 신호 → 새 메시지만 가볍게
         pollT = setInterval(function () { loadNewMsgs(); }, 6000);        // 백업 폴링(새 메시지만)
       } else {
@@ -4748,6 +4753,8 @@
     panel.querySelector(".chat-close").addEventListener("click", function () { if (ktModalClose) history.back(); else toggle(); });
     panel.querySelector(".chat-send").addEventListener("click", send);
     panel.querySelector(".chat-in").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); send(); } });
+    // 버튼 누르기 전 백그라운드 프리로드 — 첫 페인트 끝난 뒤(2.5초) 최근 메시지를 미리 받아둠 → 열 때 즉시 표시
+    setTimeout(function () { if (!preloaded && !open) KickComments.ready().then(function () { if (!preloaded && !open) initialLoad().catch(function () {}); }).catch(function () {}); }, 2500);
   })();
 
   // 토스트 + 일일 출석 +200 KP
