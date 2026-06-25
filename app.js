@@ -2479,6 +2479,7 @@
         '<div class="block h2h-slot"></div>' +
         '<div class="block mf-block"' + (mf ? "" : ' style="display:none"') + ">" + (mf || "") + "</div>" +
         '<div class="block card-slot" style="display:none"></div>' +
+        '<div class="ref-slot"></div>' +
         '<div class="block lineup-slot"></div>' +
         '<div class="mom-slot"></div>' +
         /* 선수 평점·MVP 버튼은 종료 후에만(MOM 포디움이 진입점) — 예정/진행 경기엔 표시 안 함 */
@@ -2531,6 +2532,7 @@
       fetchSummary(fx).then(function (d) {
         if (!d || parseHash().name !== "match" || parseHash().id !== fx.id) return;  // 현재 보고 있는 경기와 fx 일치할 때만(이전 경기의 늦은 응답 차단)
         renderLineup(slot, d, a, b, fx);
+        var rs = viewEl.querySelector(".ref-slot"); if (rs) rs.innerHTML = refereeHtml(d);  // 주심 정보(국가·카드성향)
         var _det = slot.querySelector(".lu-subs-d"); if (_det && wasOpen) _det.open = true;  // 펼침 복원
         var lv = LIVE[fx.id];  // 라이브면 이 경기 기록을 즉시 DB에 반영(기록탭 새로고침 시 최신)
         if (lv && lv.state === "in" && window.KickComments && KickComments.pushMatchStats) { var pl = computeMatchPlayers(d); if (pl.length) KickComments.pushMatchStats(fx.id, pl); }
@@ -3111,6 +3113,35 @@
       if (h.name === "rate") renderMatchRate(h.id); else if (h.name === "match") renderMatch(h.id);  // 로드 시 평점화면이면 다시 그려 반영
     }).catch(function () {});
   })();
+  // 주심 정보(referees.json) — 이름→{country,flag,conf,yp(경기당옐로),rp(경기당레드),games}. ESPN officials 이름과 매칭. push만으로 웹/토스 반영.
+  var REF_INFO = {};
+  (function () {
+    if (!window.fetch) return;
+    fetch("https://kicktalk.xyz/referees.json?b=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && typeof d === "object") REF_INFO = d;
+      var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id);
+    }).catch(function () {});
+  })();
+  // ESPN officials(주심) → 표시 HTML. REF_INFO에서 국가·카드성향 보강(정확 이름 우선, 성 매칭 백업).
+  function refInfoOf(nm) {
+    if (!nm) return null;
+    if (REF_INFO[nm]) return REF_INFO[nm];
+    var sur = nm.split(" ").pop();
+    var k = Object.keys(REF_INFO).filter(function (key) { return key.split(" ").pop() === sur; });
+    return k.length === 1 ? REF_INFO[k[0]] : null;  // 성 유일 매칭만(동성 모호 방지)
+  }
+  function refereeHtml(d) {
+    var offs = (d && d.gameInfo && d.gameInfo.officials) || [];
+    var ref = offs.filter(function (o) { return /referee/i.test((o.position && o.position.name) || ""); })[0] || offs[0];
+    if (!ref) return "";
+    var nm = ref.displayName || ref.fullName; if (!nm) return "";
+    var info = refInfoOf(nm);
+    var flag = info && info.flag ? info.flag + " " : "";
+    var ctry = info && info.country ? esc(info.country) : "";
+    var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + "</span>" : "";
+    var games = (info && info.games) ? ' <span class="muted-note">· ' + info.games + "경기</span>" : "";
+    return '<div class="ref-line">🧑‍⚖️ 주심 <b>' + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
+  }
 
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
   function ratingBox(r, dec) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(dec || 1) + "</span>"; }

@@ -1529,6 +1529,9 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .scn-note { background: var(--card-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
 .gsc-krhint { background: rgba(79,140,255,.12); border: 1px solid rgba(79,140,255,.4); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; line-height: 1.55; color: var(--text); margin: -4px 0 12px; }
 .tie-tag { font-size: 11px; font-weight: 700; opacity: .85; white-space: nowrap; }
+.ref-line { font-size: 13px; color: var(--text); background: var(--card-2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; margin: 0 0 4px; display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.ref-line b { font-weight: 700; }
+.ref-card { font-size: 12px; color: var(--muted); }
 .tie-q { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; margin-left: 3px; border-radius: 50%; background: rgba(127,127,127,.3); color: var(--text); font-size: 10px; font-weight: 800; cursor: pointer; vertical-align: middle; }
 .tie-pop-bg { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 9000; display: flex; align-items: center; justify-content: center; padding: 22px; }
 .tie-pop { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 14px; max-width: 360px; width: 100%; max-height: 84vh; overflow-y: auto; }
