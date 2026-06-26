@@ -1728,3 +1728,6 @@ html.light .gsc-branch b.p { color: #b07d00; }
 .stand2 tr.prov { opacity: .5; }
 .stand2 tr.prov.krrow { opacity: .72; }
 .prov-note { font-size: 10px; color: var(--muted); margin-left: 5px; font-weight: 600; }
+.ref-sym { font-weight: 900; font-size: 13px; vertical-align: 1px; margin-left: 1px; }
+.ref-sym.f { color: #e64980; }
+.ref-sym.m { color: #3b82f6; }

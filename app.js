@@ -3324,9 +3324,9 @@
     var ctry = info && info.country ? esc(info.country) : "";
     var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + (info.foulsPg != null ? " · 파울 " + info.foulsPg : "") + "</span>" : "";
     var games = (info && info.games) ? ' <span class="muted-note">· 통산 ' + info.games + "경기</span>" : "";
-    var sex = info ? (info.sex === "F" ? "F" : "M") : null;  // referees.json sex 필드(여성=F). 아이콘으로만 구분(텍스트 라벨 없음). info 없으면 중립
-    var icon = sex === "F" ? "👩‍⚖️" : sex === "M" ? "👨‍⚖️" : "🧑‍⚖️";
-    return '<div class="ref-line">' + icon + " 주심 <b>" + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
+    var sex = info ? (info.sex === "F" ? "F" : "M") : null;  // referees.json sex 필드(여성=F). 중립 판사 아이콘 + 색 성별기호(♀분홍/♂파랑). 판사 ZWJ 이모지는 웹(트웨모지)에서 성별 구분이 모호해서 기호로 구분.
+    var sym = sex === "F" ? ' <span class="ref-sym f">♀</span>' : sex === "M" ? ' <span class="ref-sym m">♂</span>' : "";
+    return '<div class="ref-line">🧑‍⚖️' + sym + " 주심 <b>" + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
   }
   // 주심 HTML 보장: d(라인업 응답)에 ESPN gameInfo 있으면 즉시, 없으면(과거 DB본) ESPN summary 직접 조회해 officials 보강.
   function ensureRefHtml(fx, d) {
