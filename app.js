@@ -3324,10 +3324,9 @@
     var ctry = info && info.country ? esc(info.country) : "";
     var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + (info.foulsPg != null ? " · 파울 " + info.foulsPg : "") + "</span>" : "";
     var games = (info && info.games) ? ' <span class="muted-note">· 통산 ' + info.games + "경기</span>" : "";
-    var sex = info ? (info.sex === "F" ? "F" : "M") : null;  // referees.json sex 필드(여성만 표기, 없으면 남성 기본). info 없으면 미상(중립)
+    var sex = info ? (info.sex === "F" ? "F" : "M") : null;  // referees.json sex 필드(여성=F). 아이콘으로만 구분(텍스트 라벨 없음). info 없으면 중립
     var icon = sex === "F" ? "👩‍⚖️" : sex === "M" ? "👨‍⚖️" : "🧑‍⚖️";
-    var sexTag = sex === "F" ? ' <span class="ref-sex">여성 주심</span>' : "";
-    return '<div class="ref-line">' + icon + " 주심 <b>" + esc(nm) + "</b>" + sexTag + " " + flag + ctry + card + games + "</div>";
+    return '<div class="ref-line">' + icon + " 주심 <b>" + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
   }
   // 주심 HTML 보장: d(라인업 응답)에 ESPN gameInfo 있으면 즉시, 없으면(과거 DB본) ESPN summary 직접 조회해 officials 보강.
   function ensureRefHtml(fx, d) {
