@@ -772,14 +772,9 @@
 
   // 메인 상단 '지금 라이브' 카드 — 라이브 경기 있을 때만 노출, 탭하면 경기상세
   var LIVE_DEMO = 0;  // 0=실제 라이브만. (?live=1/2 파라미터로는 여전히 더미 테스트 가능)
-  // 시각 기준 라이브: 킥오프 정각~+130분이면(종료/ESPN post 아니면) 라이브로 간주 → ESPN 'in' 늦어도 정각부터 카드 표시
-  function isTimeLive(f) {
-    if (!f || !f.homeId || !f.awayId) return false;
-    var lv = LIVE[f.id]; if (lv && lv.state === "post") return false;
-    var ko = matchKickoff(f); if (!ko) return false;
-    var now = Date.now(); return now >= ko && now < ko + 130 * 60000;
-  }
-  function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 150 * 60000) return false; return true; } return isTimeLive(f); }  // 종료(킥오프+150분 경과) 경기는 LIVE가 'in'으로 남아있어도 라이브 아님 — 스테일 라이브 오염 방어
+  // 라이브 판정은 ESPN 'in'만 신뢰 — 스케줄 킥오프(예:4시) 시각으로 라이브를 단정하지 않음.
+  // (예정시각이 지났어도 실제 시작이 늦으면 라이브 아님. 방송 선행 표시는 isLiveOrBcast/LIVE_STREAM가 담당.)
+  function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 150 * 60000) return false; return true; } return false; }  // 스테일(킥오프+150분 경과) 'in'은 라이브 아님 — 오염 방어
   function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM[f.id]); }  // ESPN 라이브 or JTBC 방송 감지
   function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
   function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
@@ -2771,7 +2766,7 @@
       });
     }
     // fetchLive(스코어 폴링)가 끝날 때마다 즉시 이 경기 점수 갱신(다음 20초 틱 안 기다림)
-    window._matchLiveTick = function () { updScore(); var lv = LIVE[fx.id]; if ((lv && lv.state === "in") || isTimeLive(fx)) refreshLineup(); };  // 시각상 라이브면 LIVE 미설정이어도 라인업·통계 갱신
+    window._matchLiveTick = function () { updScore(); var lv = LIVE[fx.id]; if (lv && lv.state === "in") refreshLineup(); };  // ESPN 'in'일 때만 라인업/통계 즉시 갱신(킥오프 전·ESPN 지연은 타이머 60초 폴링이 처리)
     updScore();
     var lvNow = LIVE[fx.id], ko = matchKickoff(fx);
     // 킥오프 2시간 전 ~ 종료 후까지 타이머 가동(선발 라인업 뜨자마자 자동 교체 + 라이브 스코어)
