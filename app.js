@@ -3141,6 +3141,7 @@
     "match-32": "https://chzzk.naver.com/video/13716097", // 스웨덴-튀니지
     "match-33": "https://chzzk.naver.com/video/13810944", // 네덜란드-스웨덴
     "match-34": "https://chzzk.naver.com/video/13814841", // 튀니지-일본
+    "match-36": "https://chzzk.naver.com/video/13894055", // 튀니지-네덜란드
     "match-37": "https://chzzk.naver.com/video/13728955", // 벨기에-이집트
     "match-38": "https://chzzk.naver.com/video/13730200", // 이란-뉴질랜드
     "match-39": "https://chzzk.naver.com/video/13828559", // 벨기에-이란
