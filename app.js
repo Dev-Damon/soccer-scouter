@@ -2674,7 +2674,7 @@
       fetchSummary(fx).then(function (d) {
         if (!d || parseHash().name !== "match" || parseHash().id !== fx.id) return;  // 현재 보고 있는 경기와 fx 일치할 때만(이전 경기의 늦은 응답 차단)
         renderLineup(slot, d, a, b, fx);
-        var rs = viewEl.querySelector(".ref-slot"); if (rs) { rs.innerHTML = refereeHtml(d); twem(rs); }  // 주심 정보(국가·카드성향) + 국기 이모지 twemoji 변환(PC/윈도우 국기 미표시 대응)
+        if (viewEl.querySelector(".ref-slot")) ensureRefHtml(fx, d).then(function (html) { var rs = viewEl.querySelector(".ref-slot"); if (rs && parseHash().name === "match" && parseHash().id === fx.id) { rs.innerHTML = html; twem(rs); } });  // 주심 정보(국가·카드성향) — DB본이라 gameInfo 없으면 ESPN officials 직접 보강. 국기 twemoji 변환(PC/윈도우 대응)
         var _det = slot.querySelector(".lu-subs-d"); if (_det && wasOpen) _det.open = true;  // 펼침 복원
         var lv = LIVE[fx.id];  // 라이브면 이 경기 기록을 즉시 DB에 반영(기록탭 새로고침 시 최신)
         if (lv && lv.state === "in" && window.KickComments && KickComments.pushMatchStats) { var pl = computeMatchPlayers(d); if (pl.length) KickComments.pushMatchStats(fx.id, pl); }
@@ -3015,7 +3015,7 @@
           // 방어: d의 팀이 이 경기(fx)와 일치할 때만 DB 저장(다른 경기 데이터로 DB 오염 방지)
           var _dt = (d.rosters || []).map(function (rs) { return espnTeamId(rs.team && rs.team.displayName); }).filter(Boolean);
           var _ok = _dt.indexOf(fx.homeId) >= 0 && _dt.indexOf(fx.awayId) >= 0;
-          if (_ok && hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames, boxscore: d.boxscore });
+          if (_ok && hasLineupData(d) && KC && KC.pushLineup) KC.pushLineup(fx.id, { rosters: d.rosters, keyEvents: d.keyEvents, header: d.header, headToHeadGames: d.headToHeadGames, boxscore: d.boxscore, gameInfo: d.gameInfo });  // gameInfo 포함 → 종료경기 DB본에서도 주심 정보 유지
           return _ok ? d : dbGet();  // 팀 불일치 데이터면 버리고 DB 백업 사용
         }).catch(function () { return dbGet(); });  // ESPN 실패 → DB 백업
       });
@@ -3306,6 +3306,16 @@
     var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + (info.foulsPg != null ? " · 파울 " + info.foulsPg : "") + "</span>" : "";
     var games = (info && info.games) ? ' <span class="muted-note">· 통산 ' + info.games + "경기</span>" : "";
     return '<div class="ref-line">🧑‍⚖️ 주심 <b>' + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
+  }
+  // 주심 HTML 보장: d(라인업 응답)에 ESPN gameInfo 있으면 즉시, 없으면(과거 DB본) ESPN summary 직접 조회해 officials 보강.
+  function ensureRefHtml(fx, d) {
+    if (d && d.gameInfo && d.gameInfo.officials && d.gameInfo.officials.length) return Promise.resolve(refereeHtml(d));
+    if (!window.fetch) return Promise.resolve("");
+    return resolveEspnId(fx).then(function (eid) {
+      if (!eid) return "";
+      if (summaryCache[eid] && summaryCache[eid].gameInfo) return refereeHtml(summaryCache[eid]);
+      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (e) { if (e && e.gameInfo) summaryCache[eid] = e; return refereeHtml(e); });
+    }).catch(function () { return ""; });
   }
 
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
