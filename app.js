@@ -20,8 +20,11 @@
     "marten-de-roon": "더 론", "kevin-de-bruyne": "데 브라위너", "charles-de-ketelaere": "데 케텔라레",
     "maxim-de-cuyper": "더 카위퍼르", "koni-de-winter": "더 빈터르"
   };
-  function pitchSurname(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return String(name || "").split(" ").slice(-1)[0]; }
-  function pitchName(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
+  // 일본 선수: 한국식 표기는 '성 이름' 순(예: 스즈키 자이온) → 성=첫 단어. 전체 4글자 이하면 풀네임(예: 도안 리츠).
+  function _isJp(pid) { var p = pid && playersById[pid]; return !!(p && p.team === "일본"); }
+  function _jpName(name) { var full = String(name || ""); return full.replace(/\s/g, "").length <= 4 ? full : full.split(" ")[0]; }
+  function pitchSurname(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; if (_isJp(pid)) return _jpName(name); return String(name || "").split(" ").slice(-1)[0]; }
+  function pitchName(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; if (_isJp(pid)) return _jpName(name); return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
   function pitchNameHtml(name, pid) { var nm = pitchName(name, pid); if (pid && PITCH_OVERRIDE[pid]) return esc(nm); return nm.split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈(오버라이드명은 한 줄)
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
