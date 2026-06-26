@@ -256,6 +256,7 @@
     if (parts[0] === "match") return { name: "match", id: parts[1] };
     if (parts[0] === "manager") return { name: "manager", id: parts[1] };
     if (parts[0] === "scenario") return { name: "scenario", id: parts[1] };
+    if (parts[0] === "kr32") return { name: "kr32" };
     if (parts[0] === "groupscn") return { name: "groupscn", id: parts[1] };
     if (parts[0] === "fifa") return { name: "fifa" };
     if (parts[0] === "search") return { name: "search" };
@@ -551,7 +552,8 @@
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
       '<div class="hb-sub">' + esc(witty) + "</div>" +
-      '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div>" +
+      (kr32Active() ? kr32BannerHtml()  // 한국 조별 종료(3위 확정) → D-day 대신 '32강 가려면?' 요약
+        : '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div>") +
       (krGroupRemain ? '<div class="hb-scn clickable" data-scngo>🇰🇷 한국 32강 진출 경우의 수 보기 ›</div>' : "") + "</div>";
   }
 
@@ -1366,6 +1368,94 @@
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     twem(viewEl);
     insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
+  }
+
+  // ===================== 🇰🇷 한국이 32강 가려면? (3위 와일드카드 — 사진 기반 9개 조건) =====================
+  // 한국은 A조 3위 확정. 12개 조 3위 중 상위 8팀이 32강 진출. 아래 9개는 "한국에 유리한 3차전 시나리오"(제공 이미지)
+  // 그대로 — 우리가 계산하는 게 아니라 사진 기준. 실제 스코어(resultOf)로 ✅성공/❌실패/⏳진행중만 자동 판정.
+  // 9개 중 3개 성공 시 진출. ※가정: '2골차/2점차'=2골차 이상 / '대승'=3골차 이상 / K조=콩고·우즈벡전 무승부.
+  function kr32res(mid) { var fx = fixturesById[mid]; return fx ? resultOf(fx) : null; }  // {hs,as}|null(미종료)
+  function kr32goals(mid, teamId) { var fx = fixturesById[mid], r = fx && resultOf(fx); if (!fx || !r) return null; return fx.homeId === teamId ? { gf: r.hs, ga: r.as } : { gf: r.as, ga: r.hs }; }
+  var KR32 = [
+    { group: "D", mids: ["match-24"], teams: ["australia", "paraguay"], desc: "호주 승 또는 파라과이 2골차 이상 승",
+      ev: function () { var au = kr32goals("match-24", "australia"); if (!au) return "pending"; if (au.gf > au.ga) return "success"; var pa = kr32goals("match-24", "paraguay"); return (pa.gf - pa.ga >= 2) ? "success" : "fail"; } },
+    { group: "E", mids: ["match-30", "match-29"], teams: ["ecuador", "curacao"], desc: "에콰도르·퀴라소 둘 다 승리 X",
+      ev: function () { var ec = kr32goals("match-30", "ecuador"), cu = kr32goals("match-29", "curacao"); if ((ec && ec.gf > ec.ga) || (cu && cu.gf > cu.ga)) return "fail"; return (ec && cu) ? "success" : "pending"; } },
+    { group: "F", mids: ["match-35"], teams: ["japan", "sweden"], desc: "일본이 스웨덴에 2골차 이상 승",
+      ev: function () { var jp = kr32goals("match-35", "japan"); if (!jp) return "pending"; return (jp.gf - jp.ga >= 2) ? "success" : "fail"; } },
+    { group: "G", mids: ["match-42", "match-41"], teams: ["belgium", "egypt"], desc: "벨기에 승 + 이집트 승",
+      ev: function () { var be = kr32goals("match-42", "belgium"), eg = kr32goals("match-41", "egypt"); if ((be && be.gf <= be.ga) || (eg && eg.gf <= eg.ga)) return "fail"; return (be && eg) ? "success" : "pending"; } },
+    { group: "H", mids: ["match-48", "match-47"], teams: ["spain", "saudi-arabia"], desc: "스페인 승 + 사우디 승",
+      ev: function () { var sp = kr32goals("match-48", "spain"), sa = kr32goals("match-47", "saudi-arabia"); if ((sp && sp.gf <= sp.ga) || (sa && sa.gf <= sa.ga)) return "fail"; return (sp && sa) ? "success" : "pending"; } },
+    { group: "I", mids: ["match-54"], teams: ["senegal", "iraq"], desc: "세네갈·이라크전 대승(3골차+)만 아니면 OK",
+      ev: function () { var r = kr32res("match-54"); if (!r) return "pending"; return (Math.abs(r.hs - r.as) >= 3) ? "fail" : "success"; } },
+    { group: "J", mids: ["match-59"], teams: ["austria", "algeria"], desc: "오스트리아 승",
+      ev: function () { var au = kr32goals("match-59", "austria"); if (!au) return "pending"; return (au.gf > au.ga) ? "success" : "fail"; } },
+    { group: "K", mids: ["match-66"], teams: ["dr-congo", "uzbekistan"], desc: "콩고-우즈벡전 무승부",
+      ev: function () { var r = kr32res("match-66"); if (!r) return "pending"; return (r.hs === r.as) ? "success" : "fail"; } },
+    { group: "L", mids: ["match-72"], teams: ["ghana", "croatia"], desc: "가나 승",
+      ev: function () { var gh = kr32goals("match-72", "ghana"); if (!gh) return "pending"; return (gh.gf > gh.ga) ? "success" : "fail"; } }
+  ];
+  var KR32_NEED = 3;
+  function kr32Eval() {
+    var conds = KR32.map(function (c) { return { c: c, st: c.ev() }; });
+    var s = conds.filter(function (x) { return x.st === "success"; }).length;
+    var f = conds.filter(function (x) { return x.st === "fail"; }).length;
+    var p = conds.filter(function (x) { return x.st === "pending"; }).length;
+    return { conds: conds, success: s, fail: f, pending: p, verdict: s >= KR32_NEED ? "in" : (s + p < KR32_NEED ? "out" : "live") };
+  }
+  function kr32Lab(st) { return st === "success" ? "✅ 성공" : st === "fail" ? "❌ 실패" : "⏳ 진행중"; }
+  // 한국 조별리그 종료(=3위 확정 와일드카드 국면)일 때만 노출
+  function kr32Active() {
+    var krFx = (DATA.fixtures || []).filter(isKoreaFx).filter(function (f) { return f.group; });
+    return krFx.length > 0 && krFx.every(matchEnded);
+  }
+  // 메인 히어로용 한 줄 요약 배너 (D-day 자리 대체)
+  function kr32BannerHtml() {
+    var ev = kr32Eval();
+    var txt = ev.verdict === "in" ? "🎉 한국 32강 진출 확정! (" + ev.success + "/" + KR32_NEED + ")"
+      : ev.verdict === "out" ? "😢 한국 32강 무산 (성공 " + ev.success + "/" + KR32_NEED + ")"
+      : "🇰🇷 한국 32강 가려면? · 성공 " + ev.success + "/" + KR32_NEED + " (⏳" + ev.pending + ")";
+    return '<div class="hb-dday kr32-banner ' + ev.verdict + ' clickable" data-kr32go>' + txt + " ›</div>";
+  }
+  function renderKr32() {
+    setTabbar(""); backBtn.hidden = false; tabsEl.hidden = true;
+    fetchStandings();
+    var ev = kr32Eval();
+    var head = ev.verdict === "in" ? "🎉 32강 진출 확정! (" + ev.success + "개 성공)"
+      : ev.verdict === "out" ? "😢 남은 조건으로 3개 불가 — 진출 무산"
+      : "⚔️ 9개 중 3개 성공 시 진출 · 현재 " + ev.success + "개 성공";
+    var hcls = ev.verdict === "in" ? "q12" : ev.verdict === "out" ? "out" : "p3";
+    var html = '<div class="sec-h">🇰🇷 한국이 32강 가려면?</div>';
+    html += '<div class="scn-note">한국은 <b>A조 3위 확정</b>. 12개 조 3위 중 <b>상위 8팀</b>이 32강. 아래 <b>9개 조건 중 3개</b>가 성공하면 진출!</div>';
+    html += '<div class="kr32-head ' + hcls + '">' + head + "</div>";
+    html += '<div class="kr32-prog">✅ 성공 ' + ev.success + " · ❌ 실패 " + ev.fail + " · ⏳ 진행중 " + ev.pending + "</div>";
+    html += '<div class="kr32-grid">';
+    ev.conds.forEach(function (x) {
+      var c = x.c, flags = c.teams.map(function (t) { return (teamsById[t] || {}).flag || ""; }).join(" ");
+      html += '<div class="kr32-card ' + x.st + '" data-match="' + esc(c.mids[0]) + '">' +
+        '<div class="kr32-c-top"><span class="kr32-grp">' + esc(c.group) + '조</span><span class="kr32-flags">' + flags + '</span><span class="kr32-st ' + x.st + '">' + kr32Lab(x.st) + "</span></div>" +
+        '<div class="kr32-desc">' + esc(c.desc) + "</div>" +
+        '<div class="kr32-go muted-note">경기 상세 보기 ›</div>' +
+        "</div>";
+    });
+    html += "</div>";
+    html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 시나리오 기준 · 실제 결과로 자동 갱신. 가정: 2골차=2골차 이상, 대승=3골차 이상.</div>';
+    viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
+    twem(viewEl);
+    insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
+  }
+  // 경기상세용: 그 조에 한국 32강 조건이 걸려 있으면 조건+상태 표시(D~L조). 한국과 무관한 조(A·B·C)는 미표시.
+  function kr32MatchBlock(fx) {
+    if (!fx || !fx.group || !kr32Active()) return "";
+    var c = KR32.filter(function (x) { return x.group === fx.group; })[0];
+    if (!c) return "";
+    var st = c.ev();
+    return '<div class="block kr32-mblock ' + st + '" data-kr32go>' +
+      "<h3>🇰🇷 한국 32강 조건 · " + esc(c.group) + "조</h3>" +
+      '<div class="kr32-mb-row"><span class="kr32-mb-desc">' + esc(c.desc) + '</span><span class="kr32-st ' + st + '">' + kr32Lab(st) + "</span></div>" +
+      '<div class="kr32-mb-foot muted-note">이 조건이 성공해야 한국에 유리 · 전체 9개 보기 ›</div>' +
+      "</div>";
   }
 
   // ===================== 공통: 선수 행 =====================
@@ -2520,6 +2610,7 @@
         '<div class="block"><h3>승부 예상</h3>' +  /* 2) 승부예상 게이지(몸값 밑) */
           '<div class="prob"><div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + '</div><div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + '</div><div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div></div>" +
           '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span><span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span><span>' + esc(b.name) + " 승</span></div></div>" +
+        kr32MatchBlock(fx) +  /* D~L조 경기면 한국 32강 와일드카드 조건 표시 */
         matchScenarioHtml(fx) +  /* 조별 경기면 32강 진출 경우의 수 + 조 순위 */
         '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
         '<div class="block bet-slot"></div>' +  /* 4) 포인트 베팅 */
@@ -2738,7 +2829,7 @@
         if (!d.live || !fresh) return;  // 5분 지난 캐시 무시(유령 방지)
         var changed = false;
         Object.keys(d.live).forEach(function (k) { if (!LIVE[k] && d.live[k] && d.live[k].state === "in") { LIVE[k] = d.live[k]; LIVE[k].cached = true; changed = true; } });
-        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
+        if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "kr32") renderKr32(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
       }).catch(function () {});
   }
   // live_state.ls(서버 감지 JTBC 라이브) → LIVE_STREAM 반영. 변동 시 경기페이지 버튼 즉시 갱신.
@@ -2791,6 +2882,7 @@
       if (changed || srChanged) {  // 승자승 캐시 갱신 시 경우의수 페이지(한국/조별/경기상세) 재계산
         var ph = parseHash();
         if (ph.name === "scenario") renderScenario();
+        else if (ph.name === "kr32") renderKr32();  // 결과 갱신 시 32강 조건 자동 재판정
         else if (ph.name === "groupscn" && ph.id) renderGroupScenario(ph.id);
         else if (ph.name === "match" && ph.id) renderMatch(ph.id);
       }
@@ -2875,6 +2967,7 @@
       standAt = Date.now();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
       else if (parseHash().name === "scenario") renderScenario();  // 순위 도착 시 경우의수 페이지 재렌더
+      else if (parseHash().name === "kr32") renderKr32();
       else if (parseHash().name === "groupscn" && parseHash().id) renderGroupScenario(parseHash().id);  // 조별 경우의수 페이지 갱신
       else if (parseHash().name === "match" && parseHash().id) renderMatch(parseHash().id);  // 경기상세 진출 경우의수 표 갱신
     }).catch(function () {});
@@ -4095,6 +4188,7 @@
     if (r.name === "match") { setTabbar(""); renderMatch(r.id); mountCmt("match:" + r.id, viewEl.querySelector(".cmt-slot")); bumpEngage(); return; }
     if (r.name === "manager") { setTabbar(""); return renderManager(r.id); }
     if (r.name === "scenario") { setTabbar(""); return renderScenario(r.id); }
+    if (r.name === "kr32") { setTabbar(""); return renderKr32(); }
     if (r.name === "groupscn") { setTabbar(""); return renderGroupScenario(r.id); }
     if (r.name === "fifa") { setTabbar(""); return renderFifa(); }
     if (r.name === "search") {
@@ -4335,6 +4429,7 @@
     var rgo = e.target.closest("[data-rate-go]"); if (rgo) { go("rate/" + rgo.getAttribute("data-rate-go")); return; }
     var cpk = e.target.closest("[data-cmp-pick]"); if (cpk) { go("compare/" + cmpA + "/" + cpk.getAttribute("data-cmp-pick")); return; }
     var cch = e.target.closest(".cmp-change"); if (cch) { go("compare/" + cch.getAttribute("data-cmp-change")); return; }
+    var k32 = e.target.closest("[data-kr32go]"); if (k32) { go("kr32"); return; }  // 한국 32강 가려면? 페이지
     var sg = e.target.closest("[data-scngo]"); if (sg) { go("scenario"); return; }  // 한국 경우의 수 진입
     var gsg = e.target.closest("[data-grpscn]"); if (gsg) { go("groupscn/" + gsg.getAttribute("data-grpscn")); return; }  // 조별 경우의 수 페이지 진입
     var fg = e.target.closest("[data-fifago]"); if (fg) { go("fifa"); return; }  // FIFA 랭킹 페이지 진입

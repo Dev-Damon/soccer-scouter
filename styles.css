@@ -1688,3 +1688,37 @@ html.light .gsc-branch b.p { color: #b07d00; }
 /* 기록탭 로딩 */
 .sc-loading { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 50px 0; color: var(--muted); font-size: 13px; }
 .sc-spin { width: 26px; height: 26px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: ktspin .8s linear infinite; }
+
+/* ===== 🇰🇷 한국 32강 가려면? (3위 와일드카드) ===== */
+.kr32-banner { margin-top: 13px; }
+.kr32-banner.in { background: linear-gradient(135deg, #2ecf83, #1aa564); }
+.kr32-banner.out { background: linear-gradient(135deg, #e5574d, #c93d34); }
+.kr32-banner.live { background: linear-gradient(135deg, #f5b301, #e09a00); color: #2a2000; }
+.kr32-head { font-size: 16px; font-weight: 900; text-align: center; padding: 15px 12px; border-radius: 12px; margin: 4px 0 12px; line-height: 1.45; }
+.kr32-head.q12 { background: rgba(46,207,131,.16); color: #178a52; }
+.kr32-head.p3 { background: rgba(245,179,1,.16); color: #b07d00; }
+.kr32-head.out { background: rgba(229,87,77,.14); color: #c93d34; }
+.kr32-prog { text-align: center; font-weight: 800; font-size: 13.5px; color: var(--text); margin-bottom: 14px; }
+.kr32-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 380px) { .kr32-grid { grid-template-columns: 1fr; } }
+.kr32-card { border-radius: 14px; padding: 12px 12px 11px; border: 1.5px solid var(--line); background: var(--card); cursor: pointer; transition: transform .12s, border-color .12s; }
+.kr32-card:active { transform: scale(.98); }
+.kr32-card.success { border-color: #2ecf83; background: rgba(46,207,131,.1); }
+.kr32-card.fail { border-color: #e5574d; background: rgba(229,87,77,.09); }
+.kr32-card.pending { border-color: var(--line); }
+.kr32-c-top { display: flex; align-items: center; gap: 7px; margin-bottom: 7px; }
+.kr32-grp { font-weight: 900; font-size: 13px; color: var(--accent); background: rgba(79,140,255,.14); border-radius: 7px; padding: 2px 7px; }
+.kr32-flags { font-size: 17px; line-height: 1; }
+.kr32-st { margin-left: auto; font-size: 11.5px; font-weight: 800; white-space: nowrap; }
+.kr32-st.success { color: #178a52; }
+.kr32-st.fail { color: #c93d34; }
+.kr32-st.pending { color: #b07d00; }
+.kr32-desc { font-size: 13.5px; font-weight: 700; line-height: 1.4; color: var(--text); }
+.kr32-go { font-size: 11px; margin-top: 7px; }
+.kr32-mblock { border-left: 4px solid var(--accent); cursor: pointer; }
+.kr32-mblock.success { border-left-color: #2ecf83; }
+.kr32-mblock.fail { border-left-color: #e5574d; }
+.kr32-mblock.pending { border-left-color: #f5b301; }
+.kr32-mb-row { display: flex; align-items: center; gap: 10px; }
+.kr32-mb-desc { font-size: 14px; font-weight: 800; line-height: 1.4; flex: 1; }
+.kr32-mb-foot { font-size: 11.5px; margin-top: 8px; }
