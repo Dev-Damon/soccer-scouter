@@ -1374,7 +1374,7 @@
   // ===================== 🇰🇷 한국이 32강 가려면? (3위 와일드카드 — 사진 기반 9개 조건) =====================
   // 한국은 A조 3위 확정. 12개 조 3위 중 상위 8팀이 32강 진출. 아래 9개는 "한국에 유리한 3차전 시나리오"(제공 이미지)
   // 그대로 — 우리가 계산하는 게 아니라 사진 기준. 실제 스코어(resultOf)로 ✅성공/❌실패/⏳진행중만 자동 판정.
-  // 9개 중 3개 성공 시 진출. ※가정: '2골차/2점차'=2골차 이상 / '대승'=3골차 이상 / K조=콩고·우즈벡전 무승부.
+  // 9개 중 3개 성공 시 진출. 조건/득실차 기준은 제공 이미지(한국 32강 경우의 수) 그대로 반영. 실제 스코어로 자동 판정.
   function kr32res(mid) { var fx = fixturesById[mid]; return fx ? resultOf(fx) : null; }  // {hs,as}|null(미종료)
   function kr32goals(mid, teamId) { var fx = fixturesById[mid], r = fx && resultOf(fx); if (!fx || !r) return null; return fx.homeId === teamId ? { gf: r.hs, ga: r.as } : { gf: r.as, ga: r.hs }; }
   var KR32 = [
@@ -1384,17 +1384,17 @@
       ev: function () { var ec = kr32goals("match-30", "ecuador"), cu = kr32goals("match-29", "curacao"); if ((ec && ec.gf > ec.ga) || (cu && cu.gf > cu.ga)) return "fail"; return (ec && cu) ? "success" : "pending"; } },
     { group: "F", mids: ["match-35"], teams: ["japan", "sweden"], desc: "일본이 스웨덴에 2골차 이상 승",
       ev: function () { var jp = kr32goals("match-35", "japan"); if (!jp) return "pending"; return (jp.gf - jp.ga >= 2) ? "success" : "fail"; } },
-    { group: "G", mids: ["match-42", "match-41"], teams: ["belgium", "egypt"], desc: "벨기에 승 + 이집트 승",
-      ev: function () { var be = kr32goals("match-42", "belgium"), eg = kr32goals("match-41", "egypt"); if ((be && be.gf <= be.ga) || (eg && eg.gf <= eg.ga)) return "fail"; return (be && eg) ? "success" : "pending"; } },
-    { group: "H", mids: ["match-48", "match-47"], teams: ["spain", "saudi-arabia"], desc: "스페인 승 + 사우디 승",
-      ev: function () { var sp = kr32goals("match-48", "spain"), sa = kr32goals("match-47", "saudi-arabia"); if ((sp && sp.gf <= sp.ga) || (sa && sa.gf <= sa.ga)) return "fail"; return (sp && sa) ? "success" : "pending"; } },
-    { group: "I", mids: ["match-54"], teams: ["senegal", "iraq"], desc: "세네갈·이라크전 대승(3골차+)만 아니면 OK",
-      ev: function () { var r = kr32res("match-54"); if (!r) return "pending"; return (Math.abs(r.hs - r.as) >= 3) ? "fail" : "success"; } },
-    { group: "J", mids: ["match-59"], teams: ["austria", "algeria"], desc: "오스트리아 승",
-      ev: function () { var au = kr32goals("match-59", "austria"); if (!au) return "pending"; return (au.gf > au.ga) ? "success" : "fail"; } },
-    { group: "K", mids: ["match-66"], teams: ["dr-congo", "uzbekistan"], desc: "콩고-우즈벡전 무승부",
-      ev: function () { var r = kr32res("match-66"); if (!r) return "pending"; return (r.hs === r.as) ? "success" : "fail"; } },
-    { group: "L", mids: ["match-72"], teams: ["ghana", "croatia"], desc: "가나 승",
+    { group: "G", mids: ["match-41"], teams: ["egypt", "iran"], desc: "이집트 승 (무승부 안 됨)",
+      ev: function () { var eg = kr32goals("match-41", "egypt"); if (!eg) return "pending"; return (eg.gf > eg.ga) ? "success" : "fail"; } },
+    { group: "H", mids: ["match-48"], teams: ["spain", "uruguay"], desc: "스페인 승 (무승부 안 됨)",
+      ev: function () { var sp = kr32goals("match-48", "spain"); if (!sp) return "pending"; return (sp.gf > sp.ga) ? "success" : "fail"; } },
+    { group: "I", mids: ["match-54"], teams: ["senegal", "iraq"], desc: "무승부 · 세네갈 1골차 승 · 이라크 4골차 이하 승",
+      ev: function () { var se = kr32goals("match-54", "senegal"); if (!se) return "pending"; var d = se.gf - se.ga; if (d === 0) return "success"; if (d > 0) return d <= 1 ? "success" : "fail"; return (-d) <= 4 ? "success" : "fail"; } },
+    { group: "J", mids: ["match-59"], teams: ["austria", "algeria"], desc: "오스트리아 승 또는 알제리 2골차 이상 승",
+      ev: function () { var au = kr32goals("match-59", "austria"); if (!au) return "pending"; if (au.gf > au.ga) return "success"; var al = kr32goals("match-59", "algeria"); return (al.gf - al.ga >= 2) ? "success" : "fail"; } },
+    { group: "K", mids: ["match-66"], teams: ["dr-congo", "uzbekistan"], desc: "무승부 또는 우즈벡 6골차 이하 승",
+      ev: function () { var uz = kr32goals("match-66", "uzbekistan"); if (!uz) return "pending"; var d = uz.gf - uz.ga; if (d === 0) return "success"; return (d > 0 && d <= 6) ? "success" : "fail"; } },
+    { group: "L", mids: ["match-72"], teams: ["ghana", "croatia"], desc: "가나 승 (무승부 안 됨)",
       ev: function () { var gh = kr32goals("match-72", "ghana"); if (!gh) return "pending"; return (gh.gf > gh.ga) ? "success" : "fail"; } }
   ];
   var KR32_NEED = 3;
@@ -1456,7 +1456,7 @@
           standTableHTML(thirds, { group: true, thirds: true, markProvisional: true }) + "</div>";
       }
     }
-    html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 시나리오 기준 · 실제 결과로 자동 갱신. 가정: 2골차=2골차 이상, 대승=3골차 이상.</div>';
+    html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 각 조 시나리오 기준 · 실제 결과로 자동 갱신.</div>';
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     twem(viewEl);
     insertAdFit(viewEl.querySelector(".ad-top"));  // 맨위 320x100
