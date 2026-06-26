@@ -2815,7 +2815,7 @@ window.DATA = {
       "name": "대한민국",
       "nameEn": "South Korea",
       "flag": "🇰🇷",
-      "fifaRank": 30,
+      "fifaRank": 31,
       "group": "A",
       "tierSummary": "손흥민과 김민재라는 월드클래스 듀오를 축으로, 유럽 빅리그에서 뛰는 핵심 선수들이 받쳐주는 아시아 강호로 본선 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
@@ -3184,7 +3184,7 @@ window.DATA = {
       "name": "캐나다",
       "nameEn": "Canada",
       "flag": "🇨🇦",
-      "fifaRank": 31,
+      "fifaRank": 32,
       "group": "B",
       "tierSummary": "데이비스와 조나단 데이비드가 이끄는 '황금세대'가 자국 개최의 이점을 업고 16강 이상을 노리는, 유럽 빅리그 주전급이 뼈대를 이룬 다크호스다.",
       "styleSummary": [
@@ -3787,7 +3787,7 @@ window.DATA = {
       "name": "스위스",
       "nameEn": "Switzerland",
       "flag": "🇨🇭",
-      "fifaRank": 17,
+      "fifaRank": 16,
       "group": "B",
       "tierSummary": "월드클래스 슈퍼스타는 없지만 빅리그 주전들로 빼곡한 탄탄한 조직력의 다크호스로, 토너먼트 16강 단골이지만 8강 벽을 넘는 게 숙제인 팀.",
       "styleSummary": [
@@ -4914,7 +4914,7 @@ window.DATA = {
       "name": "미국",
       "nameEn": "United States",
       "flag": "🇺🇸",
-      "fifaRank": 14,
+      "fifaRank": 15,
       "group": "D",
       "tierSummary": "유럽 빅리그에서 뛰는 황금세대가 절정에 달한, 개최국 어드밴티지를 등에 업은 다크호스 8강 후보다.",
       "styleSummary": [
@@ -5345,7 +5345,7 @@ window.DATA = {
       "name": "호주",
       "nameEn": "Australia",
       "flag": "🇦🇺",
-      "fifaRank": 26,
+      "fifaRank": 28,
       "group": "D",
       "tierSummary": "유럽 2부와 J리그·MLS·A리그에 흩어진 견실한 주전들과 소수의 유망주가 떠받치는, 조직력으로 버티는 6회 연속 본선 진출 중위권 팀.",
       "styleSummary": [
@@ -5547,7 +5547,7 @@ window.DATA = {
       "name": "튀르키예",
       "nameEn": "Turkey",
       "flag": "🇹🇷",
-      "fifaRank": 32,
+      "fifaRank": 27,
       "group": "D",
       "tierSummary": "24년 만에 월드컵 본선에 복귀한 다크호스로, 차분한 베테랑 사령탑 칼하노을루를 축으로 아르다 귈레르·케난 이을드즈 등 유럽 빅클럽의 젊은 재능들이 폭발력을 더한 '신구 조화형' 팀이다.",
       "styleSummary": [
@@ -6188,7 +6188,7 @@ window.DATA = {
       "name": "코트디부아르",
       "nameEn": "Ivory Coast",
       "flag": "🇨🇮",
-      "fifaRank": 29,
+      "fifaRank": 30,
       "group": "E",
       "tierSummary": "12년 만에 본선에 복귀한 2023 아프리카 네이션스컵 챔피언으로, 유럽 빅리그 주전급 자원이 빼곡한 다크호스지만 독일이 버틴 E조에서 16강 경쟁이 만만치 않은 중상위권 전력이다.",
       "styleSummary": [
@@ -6827,7 +6827,7 @@ window.DATA = {
       "name": "일본",
       "nameEn": "Japan",
       "flag": "🇯🇵",
-      "fifaRank": 16,
+      "fifaRank": 17,
       "group": "F",
       "tierSummary": "유럽 빅리그에 선수 대부분을 보낸 아시아 최강 다크호스로, 스타 1~2명 의존이 아니라 탄탄한 미드필더와 공격 자원의 두께가 강점인 8강권 전력이다.",
       "styleSummary": [
@@ -7675,7 +7675,7 @@ window.DATA = {
       "name": "이집트",
       "nameEn": "Egypt",
       "flag": "🇪🇬",
-      "fifaRank": 27,
+      "fifaRank": 26,
       "group": "G",
       "tierSummary": "살라라는 세계적 슈퍼스타와 마르무시라는 두 번째 칼날을 앞세웠지만, 스쿼드 26명 중 17명이 자국 리그(특히 알 아흘리) 소속인 '에이스 의존형' 다크호스다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 28,
+      "fifaRank": 29,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
