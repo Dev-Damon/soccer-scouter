@@ -914,9 +914,10 @@
       var _gv = Math.abs(s.gd), _gs = s.gd > 0 ? "+" : s.gd < 0 ? "−" : "";
       var gd = '<span class="gdcell" style="color:' + (s.gd > 0 ? "#2ec56e" : s.gd < 0 ? "#ef5350" : "inherit") + '"><span class="gdsign">' + _gs + '</span><span class="gdnum">' + _gv + "</span></span>";
       var qual = opt.thirds ? (i < 8) : (i < 2);
-      h += '<tr class="' + (qual ? "qual" : "") + (id === "south-korea" ? " krrow" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
+      var prov = opt.markProvisional && ((s.w || 0) + (s.d || 0) + (s.l || 0)) < 3;  // 2경기만 치른 팀(순위 미확정) → 흐리게 + '잔여1'
+      h += '<tr class="' + (qual ? "qual" : "") + (id === "south-korea" ? " krrow" : "") + (prov ? " prov" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
         '<td class="c rk">' + (i + 1) + "</td>" +
-        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span></td>" +
+        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span>" + (prov ? '<span class="prov-note">·잔여1</span>' : "") + "</td>" +
         (opt.group ? '<td class="c">' + esc(grp) + "</td>" : "") +
         "<td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + '</td><td class="gd"' + GDS + ">" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
     });
@@ -1452,7 +1453,7 @@
         var krTi = thirds.map(function (o) { return o.r.id; }).indexOf(KR) + 1;
         html += '<div class="kr32-third"><div class="scn-mini-h">🥉 실시간 3위 팀 순위 <span class="muted-note">상위 8팀 진출</span></div>' +
           (krTi ? '<div class="kr32-third-note">🇰🇷 한국은 현재 3위 팀 중 <b>' + krTi + '위</b> · ' + (krTi <= 8 ? "진출권(8위 이내) ✅" : "진출권 밖 (8위 밖) ⚠️") + "</div>" : "") +
-          standTableHTML(thirds, { group: true, thirds: true }) + "</div>";
+          standTableHTML(thirds, { group: true, thirds: true, markProvisional: true }) + "</div>";
       }
     }
     html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 시나리오 기준 · 실제 결과로 자동 갱신. 가정: 2골차=2골차 이상, 대승=3골차 이상.</div>';
@@ -3323,7 +3324,10 @@
     var ctry = info && info.country ? esc(info.country) : "";
     var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + (info.foulsPg != null ? " · 파울 " + info.foulsPg : "") + "</span>" : "";
     var games = (info && info.games) ? ' <span class="muted-note">· 통산 ' + info.games + "경기</span>" : "";
-    return '<div class="ref-line">🧑‍⚖️ 주심 <b>' + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
+    var sex = info ? (info.sex === "F" ? "F" : "M") : null;  // referees.json sex 필드(여성만 표기, 없으면 남성 기본). info 없으면 미상(중립)
+    var icon = sex === "F" ? "👩‍⚖️" : sex === "M" ? "👨‍⚖️" : "🧑‍⚖️";
+    var sexTag = sex === "F" ? ' <span class="ref-sex">여성 주심</span>' : "";
+    return '<div class="ref-line">' + icon + " 주심 <b>" + esc(nm) + "</b>" + sexTag + " " + flag + ctry + card + games + "</div>";
   }
   // 주심 HTML 보장: d(라인업 응답)에 ESPN gameInfo 있으면 즉시, 없으면(과거 DB본) ESPN summary 직접 조회해 officials 보강.
   function ensureRefHtml(fx, d) {
