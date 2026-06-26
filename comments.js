@@ -135,6 +135,12 @@
     });
     return sb;
   }
+  // 마지막 접속시각 기록(관리자 회원목록용). 로그인 사용자가 앱 열 때 갱신, 10분 스로틀로 쓰기 최소화.
+  function touchLastSeen(uid) {
+    if (!sb || !uid) return;
+    try { var k = "kc_seen_" + uid, t = +(localStorage.getItem(k) || 0); if (Date.now() - t < 600000) return; localStorage.setItem(k, String(Date.now())); } catch (e) {}
+    sb.from("profiles").upsert({ user_id: uid, last_seen: new Date().toISOString() }, { onConflict: "user_id" }).then(function () {}, function () {});
+  }
   function refreshUser() {
     if (!client()) return Promise.resolve(null);
     // getSession()=로컬 세션(자동갱신, 네트워크 실패에 강함). getUser()는 매번 서버검증이라 일시적 실패 시 로그아웃처럼 보임.
@@ -142,6 +148,7 @@
       .then(function (r) { user = (r && r.data && r.data.session && r.data.session.user) || null; return user; })
       .then(function (u) {
         if (!u) { profile = null; return u; }
+        touchLastSeen(u.id);  // 접속 기록
         return sb.from("profiles").select("nickname").eq("user_id", u.id).maybeSingle()
           .then(function (pr) { profile = (pr && pr.data) || null; return u; })
           .catch(function () { return u; });

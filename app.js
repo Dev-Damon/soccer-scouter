@@ -3815,14 +3815,23 @@
     });
   }
   function fmtJoin(iso) { try { var s = new Date(iso).toLocaleString("sv-SE", { timeZone: "Asia/Seoul" }), p = s.split(" "); return '<span class="mb-d">' + p[0].replace(/-/g, ".") + '</span><span class="mb-t">' + (p[1] || "") + "</span>"; } catch (e) { return ""; } }
+  function mbSeenTs(u) { return u.last_active || u.last_seen || null; }  // 마지막 접속(없으면 마지막 활동 폴백, RPC가 greatest로 계산)
+  function mbSeen(u) {
+    var t = mbSeenTs(u); if (!t) return '<span class="mb-seen off">-</span>';
+    var s = (Date.now() - new Date(t).getTime()) / 1000;
+    var txt = s < 60 ? "방금" : s < 3600 ? Math.floor(s / 60) + "분" : s < 86400 ? Math.floor(s / 3600) + "시간" : s < 2592000 ? Math.floor(s / 86400) + "일" : Math.floor(s / 2592000) + "달";
+    var cls = s < 86400 ? " hot" : "";  // 최근 24h 접속 강조
+    return '<span class="mb-seen' + cls + '">' + txt + "</span>";
+  }
   function membersTableHtml() {
     var us = (adminCache.users || []).slice();
     if (memberSort === "join") us.sort(function (a, b) { return (b.joined || "").localeCompare(a.joined || ""); });
+    else if (memberSort === "points") us.sort(function (a, b) { return (b.points || 0) - (a.points || 0); });
+    else if (memberSort === "seen") us.sort(function (a, b) { return (new Date(mbSeenTs(b) || 0)).getTime() - (new Date(mbSeenTs(a) || 0)).getTime(); });
     else us.sort(function (a, b) { return (b.comments + b.chats + b.ratings + b.posts) - (a.comments + a.chats + a.ratings + a.posts); });
-    if (memberSort === "points") us.sort(function (a, b) { return (b.points || 0) - (a.points || 0); });
-    var sorts = '<div class="mb-sorts"><button class="mb-sort' + (memberSort === "act" ? " on" : "") + '" data-msort="act">활동순</button><button class="mb-sort' + (memberSort === "points" ? " on" : "") + '" data-msort="points">포인트순</button><button class="mb-sort' + (memberSort === "join" ? " on" : "") + '" data-msort="join">가입순</button></div>';
-    var head = '<div class="mb-row mb-head"><span class="mb-n">이름</span><span>가입</span><span>포인트</span><span>댓글</span><span>채팅</span><span>평점</span><span>글</span></div>';
-    var rows = us.length ? us.map(function (u) { return '<div class="mb-row mb-clk"' + (u.user_id ? ' data-auid="' + esc(u.user_id) + '"' : "") + '><span class="mb-n">' + esc(u.name) + '</span><span class="mb-j">' + (u.joined ? fmtJoin(u.joined) : "") + '</span><span class="mb-pt">' + (u.points || 0).toLocaleString() + '</span><span>' + u.comments + '</span><span>' + u.chats + '</span><span>' + u.ratings + '</span><span>' + u.posts + "</span></div>"; }).join("") : '<div class="empty">회원이 없습니다.</div>';
+    var sorts = '<div class="mb-sorts"><button class="mb-sort' + (memberSort === "act" ? " on" : "") + '" data-msort="act">활동순</button><button class="mb-sort' + (memberSort === "seen" ? " on" : "") + '" data-msort="seen">접속순</button><button class="mb-sort' + (memberSort === "points" ? " on" : "") + '" data-msort="points">포인트순</button><button class="mb-sort' + (memberSort === "join" ? " on" : "") + '" data-msort="join">가입순</button></div>';
+    var head = '<div class="mb-row mb-head"><span class="mb-n">이름</span><span>가입</span><span>접속</span><span>포인트</span><span>댓글</span><span>채팅</span><span>평점</span><span>글</span></div>';
+    var rows = us.length ? us.map(function (u) { return '<div class="mb-row mb-clk"' + (u.user_id ? ' data-auid="' + esc(u.user_id) + '"' : "") + '><span class="mb-n">' + esc(u.name) + '</span><span class="mb-j">' + (u.joined ? fmtJoin(u.joined) : "") + '</span><span>' + mbSeen(u) + '</span><span class="mb-pt">' + (u.points || 0).toLocaleString() + '</span><span>' + u.comments + '</span><span>' + u.chats + '</span><span>' + u.ratings + '</span><span>' + u.posts + "</span></div>"; }).join("") : '<div class="empty">회원이 없습니다.</div>';
     return sorts + '<div class="mb-table">' + head + rows + "</div>";
   }
   var ADM_RSN = { checkin: "출석", draw: "럭키드로우", bet: "베팅", bet_win: "베팅 적중", bet_refund: "베팅 취소", cheer: "응원", purchase: "칭호 구매" };
