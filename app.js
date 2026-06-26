@@ -25,7 +25,7 @@
   function _jpName(name) { var full = String(name || ""); return full.replace(/\s/g, "").length <= 4 ? full : full.split(" ")[0]; }
   function pitchSurname(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; if (_isJp(pid)) return _jpName(name); return String(name || "").split(" ").slice(-1)[0]; }
   function pitchName(name, pid) { if (pid && PITCH_OVERRIDE[pid]) return PITCH_OVERRIDE[pid]; if (_isJp(pid)) return _jpName(name); return (pid && _surnameDup[pid]) ? (name || "") : String(name || "").split(" ").slice(-1)[0]; }
-  function pitchNameHtml(name, pid) { var nm = pitchName(name, pid); if (pid && PITCH_OVERRIDE[pid]) return esc(nm); return nm.split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈(오버라이드명은 한 줄)
+  function pitchNameHtml(name, pid) { var nm = pitchName(name, pid); if ((pid && PITCH_OVERRIDE[pid]) || _isJp(pid)) return esc(nm); return nm.split(" ").map(esc).join("<br>"); }  // 풀네임이면 단어마다 줄바꿈(오버라이드명·일본선수는 한 줄)
   var teamsById = {};
   DATA.teams.forEach(function (t) { teamsById[t.id] = t; });
   var fixturesById = {};
