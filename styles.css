@@ -1737,3 +1737,5 @@ html.light .gsc-branch b.p { color: #b07d00; }
 .clb.cct { color: #b07d00; background: rgba(245,179,1,.16); }
 .kr32-third-note.in { color: #178a52; }
 .kr32-third-note.out { color: #c93d34; }
+.hero-score.hero-loading { opacity: .55; letter-spacing: 1px; animation: heroPulse 1s ease-in-out infinite; }
+@keyframes heroPulse { 0%,100% { opacity: .35; } 50% { opacity: .7; } }
