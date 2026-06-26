@@ -1731,3 +1731,9 @@ html.light .gsc-branch b.p { color: #b07d00; }
 .ref-sym { font-weight: 900; font-size: 13px; vertical-align: 1px; margin-left: 1px; }
 .ref-sym.f { color: #e64980; }
 .ref-sym.m { color: #3b82f6; }
+.clb { display: inline-block; font-size: 9.5px; font-weight: 800; border-radius: 5px; padding: 1px 4px; margin-left: 5px; vertical-align: 1px; white-space: nowrap; }
+.clb.cin { color: #178a52; background: rgba(46,207,131,.16); }
+.clb.cout { color: #c93d34; background: rgba(229,87,77,.14); }
+.clb.cct { color: #b07d00; background: rgba(245,179,1,.16); }
+.kr32-third-note.in { color: #178a52; }
+.kr32-third-note.out { color: #c93d34; }

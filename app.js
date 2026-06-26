@@ -918,9 +918,11 @@
       var gd = '<span class="gdcell" style="color:' + (s.gd > 0 ? "#2ec56e" : s.gd < 0 ? "#ef5350" : "inherit") + '"><span class="gdsign">' + _gs + '</span><span class="gdnum">' + _gv + "</span></span>";
       var qual = opt.thirds ? (i < 8) : (i < 2);
       var prov = opt.markProvisional && ((s.w || 0) + (s.d || 0) + (s.l || 0)) < 3;  // 2경기만 치른 팀(순위 미확정) → 흐리게 + '잔여1'
+      var clb = "";  // 진출 확정/탈락/경합 뱃지
+      if (opt.clinch && row.clinch) clb = row.clinch === "in" ? '<span class="clb cin">✅확정</span>' : row.clinch === "out" ? '<span class="clb cout">❌탈락</span>' : row.clinch === "contest" ? '<span class="clb cct">⚔️경합</span>' : "";
       h += '<tr class="' + (qual ? "qual" : "") + (id === "south-korea" ? " krrow" : "") + (prov ? " prov" : "") + '"' + (t ? ' data-team="' + esc(t.id) + '"' : "") + ">" +
         '<td class="c rk">' + (i + 1) + "</td>" +
-        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span>" + (prov ? '<span class="prov-note">·잔여1</span>' : "") + "</td>" +
+        '<td class="tm"><span class="team-flag">' + esc(t ? t.flag : "🏳️") + '</span><span class="tm-n">' + esc(t ? t.name : id) + "</span>" + clb + (prov ? '<span class="prov-note">·잔여1</span>' : "") + "</td>" +
         (opt.group ? '<td class="c">' + esc(grp) + "</td>" : "") +
         "<td>" + s.w + "</td><td>" + s.d + "</td><td>" + s.l + "</td><td>" + s.gf + "</td><td>" + s.ga + '</td><td class="gd"' + GDS + ">" + gd + '</td><td class="pts">' + s.pts + "</td></tr>";
     });
@@ -1422,6 +1424,52 @@
       : "🇰🇷 한국 32강 가려면? · 성공 " + ev.success + "/" + KR32_NEED + " (⏳" + ev.pending + ")";
     return '<div class="hb-dday kr32-banner ' + ev.verdict + ' clickable" data-kr32go>' + txt + " ›</div>";
   }
+  // 12개 조 3위 와일드카드 진출 '확정/탈락' 판정. 조가 끝난(3위 확정) 팀만 in/out 판정, 진행중 조의 3위는 'live'(미확정).
+  // 안전(보수)판정: 다른 조 3위가 '위로 올라갈 가능성'을 worst-case로 세어 8위 밖 불가 → 확정 / 최선의 경우에도 8위 밖 → 탈락. 동점은 골득실로 역전 가능하다고 보수적으로 처리.
+  function kr32Clinch() {
+    var groups = DATA.groups || [];
+    if (!groups.length || !Object.keys(STAND).length) return {};
+    function gInfo(g) {
+      var gids = g.teamIds || [];
+      var allFx = (DATA.fixtures || []).filter(function (f) { return gids.indexOf(f.homeId) >= 0 && gids.indexOf(f.awayId) >= 0; });
+      var remaining = allFx.filter(function (f) { return !matchEnded(f); });
+      var rows = gids.map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
+      return { gids: gids, remaining: remaining, third: rows[2], done: remaining.length === 0 };
+    }
+    var infos = {}; groups.forEach(function (g) { infos[g.group] = gInfo(g); });
+    function thirdPtsRange(gi) {  // 조 3위팀이 가질 수 있는 최종 승점 범위(남은 경기 모든 조합)
+      if (gi.done) { var p = gi.third ? gi.third.s.pts : 0; return { min: p, max: p }; }
+      var combos = scnEnum(gi.remaining), mn = 99, mx = -1;
+      combos.forEach(function (c) {
+        var picks = {}; gi.remaining.forEach(function (f, i) { picks[f.id] = c[i]; });
+        var pts = scnPtsAfter(gi.gids, gi.remaining, picks);
+        var arr = gi.gids.map(function (id) { return pts[id]; }).sort(function (a, b) { return b - a; });
+        var third = arr[2] || 0; if (third < mn) mn = third; if (third > mx) mx = third;
+      });
+      return { min: mn, max: mx };
+    }
+    var ranges = {}; groups.forEach(function (g) { ranges[g.group] = thirdPtsRange(infos[g.group]); });
+    var out = {};
+    groups.forEach(function (g) {
+      var gi = infos[g.group];
+      if (!gi.done || !gi.third) { out[g.group] = "live"; return; }
+      var T = gi.third.s, P = T.pts, worstAbove = 0, bestAbove = 0;
+      groups.forEach(function (g2) {
+        if (g2.group === g.group) return;
+        var gi2 = infos[g2.group], r2 = ranges[g2.group];
+        if (gi2.done) {
+          var C = gi2.third.s;
+          var above = C.pts > P || (C.pts === P && (C.gd > T.gd || (C.gd === T.gd && C.gf > T.gf)));
+          if (above) { worstAbove++; bestAbove++; }
+        } else {
+          if (r2.max >= P) worstAbove++;   // 동점 가능 → 골득실로 역전 가능(보수적으로 위)
+          if (r2.min > P) bestAbove++;      // 최악(그 조 입장 약체)에도 T보다 승점 높음 → 무조건 위
+        }
+      });
+      out[g.group] = worstAbove <= 7 ? "in" : (bestAbove >= 8 ? "out" : "contest");
+    });
+    return out;
+  }
   function renderKr32() {
     setTabbar(""); backBtn.hidden = false; tabsEl.hidden = true;
     fetchStandings();
@@ -1453,10 +1501,18 @@
       });
       thirds.sort(function (a, b) { return scnCmp(a.r, b.r); });
       if (thirds.length) {
+        var clinch = kr32Clinch();
+        thirds.forEach(function (o) { o.clinch = clinch[o.g]; });  // 행별 진출확정/탈락/경합
         var krTi = thirds.map(function (o) { return o.r.id; }).indexOf(KR) + 1;
-        html += '<div class="kr32-third"><div class="scn-mini-h">🥉 실시간 3위 팀 순위 <span class="muted-note">상위 8팀 진출</span></div>' +
-          (krTi ? '<div class="kr32-third-note">🇰🇷 한국은 현재 3위 팀 중 <b>' + krTi + '위</b> · ' + (krTi <= 8 ? "진출권(8위 이내) ✅" : "진출권 밖 (8위 밖) ⚠️") + "</div>" : "") +
-          standTableHTML(thirds, { group: true, thirds: true, markProvisional: true }) + "</div>";
+        var krCl = clinch[(teamsById[KR] || {}).group];
+        var krNote = krCl === "in" ? "🎉 한국 32강 진출 <b>확정!</b> (3위 팀 중 어떤 경우의 수에도 8위 이내)"
+          : krCl === "out" ? "😢 한국 32강 진출 <b>무산</b> (어떤 경우에도 8위 밖)"
+          : krTi ? "🇰🇷 한국은 현재 3위 팀 중 <b>" + krTi + "위</b> · " + (krTi <= 8 ? "진출권(8위 이내) — 아직 확정은 아님" : "진출권 밖 (8위 밖)") + ", 남은 경기로 변동"
+          : "";
+        var nDone = 0; thirds.forEach(function (o) { if (o.clinch === "in") nDone++; });
+        html += '<div class="kr32-third"><div class="scn-mini-h">🥉 실시간 3위 팀 순위 <span class="muted-note">상위 8팀 진출 · 확정 ' + nDone + "팀</span></div>" +
+          (krNote ? '<div class="kr32-third-note ' + (krCl || "") + '">' + krNote + "</div>" : "") +
+          standTableHTML(thirds, { group: true, thirds: true, markProvisional: true, clinch: true }) + "</div>";
       }
     }
     html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 각 조 시나리오 기준 · 실제 결과로 자동 갱신.</div>';
