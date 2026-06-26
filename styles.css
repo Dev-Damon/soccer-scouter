@@ -1722,3 +1722,6 @@ html.light .gsc-branch b.p { color: #b07d00; }
 .kr32-mb-row { display: flex; align-items: center; gap: 10px; }
 .kr32-mb-desc { font-size: 14px; font-weight: 800; line-height: 1.4; flex: 1; }
 .kr32-mb-foot { font-size: 11.5px; margin-top: 8px; }
+.kr32-third { margin-top: 18px; }
+.kr32-third .scn-mini-h { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+.kr32-third-note { font-size: 12.5px; font-weight: 700; color: var(--text); margin: 4px 0 9px; padding: 8px 11px; background: var(--card); border-radius: 9px; }

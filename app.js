@@ -1440,6 +1440,21 @@
         "</div>";
     });
     html += "</div>";
+    // 실시간 3위 팀 순위 — 12개 조 현재 3위 팀을 모아 순위(2026 타이브레이커: 승점→승자승→골득실). 상위 8팀 진출, 한국 강조.
+    if (Object.keys(STAND).length) {
+      var thirds = [];
+      (DATA.groups || []).forEach(function (g) {
+        var rows = (g.teamIds || []).map(function (id) { return { id: id, t: teamsById[id], s: scnStats(id) }; }).sort(scnCmp);
+        if (rows[2]) thirds.push({ g: g.group, r: rows[2] });
+      });
+      thirds.sort(function (a, b) { return scnCmp(a.r, b.r); });
+      if (thirds.length) {
+        var krTi = thirds.map(function (o) { return o.r.id; }).indexOf(KR) + 1;
+        html += '<div class="kr32-third"><div class="scn-mini-h">🥉 실시간 3위 팀 순위 <span class="muted-note">상위 8팀 진출</span></div>' +
+          (krTi ? '<div class="kr32-third-note">🇰🇷 한국은 현재 3위 팀 중 <b>' + krTi + '위</b> · ' + (krTi <= 8 ? "진출권(8위 이내) ✅" : "진출권 밖 (8위 밖) ⚠️") + "</div>" : "") +
+          standTableHTML(thirds, { group: true, thirds: true }) + "</div>";
+      }
+    }
     html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 시나리오 기준 · 실제 결과로 자동 갱신. 가정: 2골차=2골차 이상, 대승=3골차 이상.</div>';
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     twem(viewEl);
