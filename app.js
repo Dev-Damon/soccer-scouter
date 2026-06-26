@@ -1426,7 +1426,7 @@
       : ev.verdict === "out" ? "😢 남은 조건으로 3개 불가 — 진출 무산"
       : "⚔️ 9개 중 3개 성공 시 진출 · 현재 " + ev.success + "개 성공";
     var hcls = ev.verdict === "in" ? "q12" : ev.verdict === "out" ? "out" : "p3";
-    var html = '<div class="sec-h">🇰🇷 한국이 32강 가려면?</div>';
+    var html = '<div class="adslot ad-top"></div><div class="sec-h">🇰🇷 한국이 32강 가려면?</div>';
     html += '<div class="scn-note">한국은 <b>A조 3위 확정</b>. 12개 조 3위 중 <b>상위 8팀</b>이 32강. 아래 <b>9개 조건 중 3개</b>가 성공하면 진출!</div>';
     html += '<div class="kr32-head ' + hcls + '">' + head + "</div>";
     html += '<div class="kr32-prog">✅ 성공 ' + ev.success + " · ❌ 실패 " + ev.fail + " · ⏳ 진행중 " + ev.pending + "</div>";
@@ -1458,7 +1458,8 @@
     html += '<div class="muted-note" style="font-size:11px;margin-top:8px">※ 한국에 유리한 3차전 시나리오 기준 · 실제 결과로 자동 갱신. 가정: 2골차=2골차 이상, 대승=3골차 이상.</div>';
     viewEl.innerHTML = html + '<div class="adslot ad-bot"></div>';
     twem(viewEl);
-    insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
+    insertAdFit(viewEl.querySelector(".ad-top"));  // 맨위 320x100
+    insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");  // 맨밑 320x50
   }
   // 경기상세용: 그 조에 한국 32강 조건이 걸려 있으면 조건+상태 표시(D~L조). 한국과 무관한 조(A·B·C)는 미표시.
   function kr32MatchBlock(fx) {
