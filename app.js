@@ -803,15 +803,12 @@
     return '<div class="live-sec"><div class="live-sec-h"><span class="lv-pip"></span> 지금 라이브 <span class="live-sec-n">' + live.length + "경기</span></div><div class=\"live-cards\">" + cards + "</div></div>";
   }
   // 라이브 시계 라벨: 숫자 시계는 "LIVE 67'", 텍스트 상태(전반 종료 등)는 그대로
-  // 보정된 경기 분("5'"/"HT"/"") — ESPN displayClock이 킥오프 초반 정체될 때 시각 경과로 보강(전반 한정, 후반은 하프타임 변수라 ESPN 신뢰)
+  // 경기 분 — ESPN displayClock("10'"/"HT") 그대로 사용. 스케줄 킥오프(예:4시) 기준 시각계산 안 함:
+  // 실제 킥오프가 지연되면 시각경과가 ESPN 실제분보다 커져 과다표시(7분인데 9분)되던 버그 → 제거하고 ESPN 신뢰.
   function liveMin(fx, lv) {
     var c = (lv && lv.clock) || "";
-    if (/종료|HT|하프/.test(c)) return "전반 종료";  // 하프타임은 "전반 종료"로 표기(기존 톤 유지)
-    var espn = parseInt(c, 10);
-    var ko = matchKickoff(fx), el = ko ? Math.floor((Date.now() - ko) / 60000) : -1;
-    if (!isNaN(espn)) return (el > espn && espn <= 45 && el <= 48) ? el + "'" : c;  // 전반 정체 보정
-    if (el >= 0 && el <= 48) return el + "'";  // ESPN 분 없을 때 시각 경과(전반 범위)
-    return c;
+    if (/종료|HT|하프/.test(c)) return "전반 종료";  // 하프타임은 "전반 종료"로 표기
+    return c;  // ESPN 시계 그대로(빈값이면 빈값 → liveClk가 'LIVE'로 처리)
   }
   function liveClk(fx, lv) { var c = liveMin(fx, lv); return /^\d/.test(c) ? "LIVE " + esc(c) : (c ? esc(c) : "LIVE"); }
   function heroCard(fx, lvOverride, asLiveCard) {
