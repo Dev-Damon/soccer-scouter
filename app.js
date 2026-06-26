@@ -2545,7 +2545,7 @@
           var _nmW = nm.split(" "), _multi = _nmW.length > 1 && !_ov;  // 풀네임은 단어마다 줄바꿈(SVG tspan), 오버라이드명은 한 줄
           var nmSvg = _multi ? _nmW.map(function (w, i) { return '<tspan x="' + px.toFixed(0) + '" dy="' + (i ? 14 : 0) + '">' + esc(w) + "</tspan>"; }).join("") : esc(nm);
           var nameFont = _multi ? 14 : 18;
-          var pd = d.rate ? ' data-rate="' + esc(d.pid) + '" data-rmatch="' + esc(d.rate) + '" style="cursor:pointer"' : (d.pid ? ' data-player="' + esc(d.pid) + '"' : "");
+          var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";  // 잔디 선수 탭 → 선수 상세(평점은 하단 버튼에서만)
           var rbsvg = "";
           if (d.rating != null) {
             var rc = d.rating >= 7.0 ? "#1aa55b" : d.rating >= 6.5 ? "#c99a1c" : "#cc6b22";
@@ -3461,7 +3461,7 @@
     var rb = ratingBox(ratingOf(matchId, nm));
     var sub = info ? '<span class="lu-subin">⇄ ' + esc(info.clk) + " · " + esc(info.outKo) + "</span>"
             : oinfo ? '<span class="lu-subin lu-subout">↓ ' + esc(oinfo.clk) + " · " + esc(oinfo.inKo) + " 교체</span>" : "";
-    var tap = mp ? (ended ? ' data-rate="' + esc(mp.id) + '" data-rmatch="' + esc(matchId) + '"' : ' data-player="' + esc(mp.id) + '"') : "";  // 종료=평점시트, 아니면 상세
+    var tap = mp ? ' data-player="' + esc(mp.id) + '"' : "";  // 라인업 선수 탭 → 선수 상세(평점은 하단 버튼에서만)
     return '<div class="lu-p' + (mp ? " clickable" : "") + '"' + tap + '><span class="lu-num">' + esc(num) + '</span><span class="lu-pmain"><span class="lu-nm">' + esc(nm) + gi + "</span>" + sub + "</span>" + (pos && !info && !oinfo ? '<span class="lu-pos">' + esc(pos) + "</span>" : "") + rb + "</div>";
   }
   function enToKo(name, teamKo) { var mp = playerByName(name || "", teamKo); return mp ? mp.name : (name || ""); }
