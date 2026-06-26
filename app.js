@@ -3325,8 +3325,7 @@
     var card = (info && info.yp != null) ? ' <span class="ref-card">경기당 🟨' + info.yp + (info.rp != null ? " 🟥" + info.rp : "") + (info.foulsPg != null ? " · 파울 " + info.foulsPg : "") + "</span>" : "";
     var games = (info && info.games) ? ' <span class="muted-note">· 통산 ' + info.games + "경기</span>" : "";
     var sex = info ? (info.sex === "F" ? "F" : "M") : null;  // referees.json sex 필드(여성=F). 아이콘으로만 구분(텍스트 라벨 없음). info 없으면 중립
-    // 판사 ZWJ 이모지(👩‍⚖️/👨‍⚖️)는 작은 크기에서 성별 구분이 모호(머리색만 차이) → 성별이 또렷한 얼굴 이모지 사용. '주심' 텍스트가 역할 설명.
-    var icon = sex === "F" ? "👩" : sex === "M" ? "👨" : "🧑‍⚖️";
+    var icon = sex === "F" ? "👩‍⚖️" : sex === "M" ? "👨‍⚖️" : "🧑‍⚖️";
     return '<div class="ref-line">' + icon + " 주심 <b>" + esc(nm) + "</b> " + flag + ctry + card + games + "</div>";
   }
   // 주심 HTML 보장: d(라인업 응답)에 ESPN gameInfo 있으면 즉시, 없으면(과거 DB본) ESPN summary 직접 조회해 officials 보강.
