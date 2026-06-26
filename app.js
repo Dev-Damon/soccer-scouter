@@ -3197,6 +3197,8 @@
       freshDone = true;
       if (!d) { if (!cached) slot.style.display = "none"; return; }
       lineupCacheSet(fx.id, d); renderLineup(slot, d, a, b, fx);
+      // 주심 정보(국가·카드성향) — 최초 진입(종료/예정 포함)에도 표시. d에 gameInfo 없으면(DB본) ESPN officials 직접 보강.
+      if (viewEl.querySelector(".ref-slot")) ensureRefHtml(fx, d).then(function (html) { var rs = viewEl.querySelector(".ref-slot"); if (rs && parseHash().name === "match" && parseHash().id === fx.id) { rs.innerHTML = html; twem(rs); } });
     }).catch(function () { if (!cached) slot.style.display = "none"; });
   }
   // 경기 하이라이트 URL — 종료경기 풀하이라이트(치지직/JTBC). scripts/fetch_highlights.js가 종료경기를 자동 매칭해 마커 사이를 갱신.
