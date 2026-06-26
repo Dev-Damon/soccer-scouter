@@ -1715,7 +1715,7 @@ html.light .gsc-branch b.p { color: #b07d00; }
 .kr32-st.pending { color: #b07d00; }
 .kr32-desc { font-size: 13.5px; font-weight: 700; line-height: 1.4; color: var(--text); }
 .kr32-go { font-size: 11px; margin-top: 7px; }
-.kr32-mblock { border-left: 4px solid var(--accent); cursor: pointer; }
+.kr32-mblock { border-left: 4px solid var(--accent); padding: 12px 14px 13px 16px; background: var(--card); border-radius: 0 12px 12px 0; cursor: pointer; }
 .kr32-mblock.success { border-left-color: #2ecf83; }
 .kr32-mblock.fail { border-left-color: #e5574d; }
 .kr32-mblock.pending { border-left-color: #f5b301; }
