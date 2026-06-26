@@ -229,21 +229,27 @@
     if (key.indexOf("t:") === 0) { var tv = key.slice(2); for (var j = 0; j < cands.length; j++) { if (_txtKey(cands[j]) === tv) return cands[j]; } }
     return null;
   }
+  var _scrollGen = 0;
   function restoreScroll(mem) {
+    var gen = ++_scrollGen;  // 새 복원 시작 → 이전 화면의 복원 루프 무효화(스테일 루프가 새 페이지 스크롤 잡는 것 방지)
     var y = typeof mem === "number" ? mem : (mem && mem.y) || 0;
     var anchor = (mem && typeof mem === "object") ? mem.anchor : null;
     if (!y && !anchor) { window.scrollTo(0, 0); return; }
-    var start = null, hits = 0;
+    var start = null, hits = 0, userScrolled = false;
+    function onUser() { userScrolled = true; }  // 사용자가 스크롤 시도(휠/터치/키) → 복원 즉시 중단해 손 제어권 넘김
+    function cleanup() { window.removeEventListener("wheel", onUser); window.removeEventListener("touchmove", onUser); window.removeEventListener("keydown", onUser, true); }
+    window.addEventListener("wheel", onUser, { passive: true }); window.addEventListener("touchmove", onUser, { passive: true }); window.addEventListener("keydown", onUser, true);
     function step(ts) {
+      if (gen !== _scrollGen || userScrolled) { cleanup(); return; }  // 새 네비게이션이 시작됐거나 사용자가 스크롤하면 멈춤 → 떨림 방지
       if (start == null) start = ts;
       var el = anchor ? findAnchor(anchor.key) : null;
       if (el) {
         var max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
         var target = Math.max(0, Math.min(window.scrollY + (el.getBoundingClientRect().top - anchor.top), max));
         window.scrollTo(0, target);
-        if (Math.abs(el.getBoundingClientRect().top - anchor.top) <= 2) { if (++hits >= 3 && ts - start > 120) return; } else { hits = 0; }
+        if (Math.abs(el.getBoundingClientRect().top - anchor.top) <= 2) { if (++hits >= 3 && ts - start > 120) { cleanup(); return; } } else { hits = 0; }
       } else { window.scrollTo(0, y); }
-      if (ts - start < 2500) requestAnimationFrame(step);
+      if (ts - start < 1500) requestAnimationFrame(step); else cleanup();  // 최대 1.5초로 단축(과거 2.5초)
     }
     requestAnimationFrame(step);
   }
