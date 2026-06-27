@@ -1486,7 +1486,7 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .kki-tx b { font-size: 14px; font-weight: 800; color: var(--text); }
 .kki-tx span { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
 .kki-never { font-size: 11px; color: var(--muted); text-decoration: underline; margin-top: 4px; cursor: pointer; align-self: flex-start; }
-.kki-btn { background: var(--accent); color: #fff; font-weight: 800; font-size: 12.5px; padding: 8px 12px; border: 0; border-radius: 9px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.kki-btn { background: var(--accent); color: #fff; font-weight: 800; font-size: 12.5px; line-height: 1.25; padding: 8px 10px; border: 0; border-radius: 9px; cursor: pointer; white-space: normal; word-break: keep-all; text-align: center; flex-shrink: 0; max-width: 92px; }
 .kki-x { background: none; border: 0; color: var(--muted); font-size: 17px; cursor: pointer; padding: 2px 4px; align-self: flex-start; line-height: 1; }
 .kk-ios { position: fixed; inset: 0; z-index: 1300; background: rgba(10,16,30,.55); display: flex; align-items: flex-end; justify-content: center; padding: 14px; }
 .kk-ios-card { background: var(--card); border-radius: 16px; padding: 18px 18px 16px; max-width: 420px; width: 100%; box-shadow: 0 8px 30px rgba(0,0,0,.3); }
