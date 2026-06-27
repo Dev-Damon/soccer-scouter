@@ -2557,7 +2557,7 @@
           var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";  // 잔디 선수 탭 → 선수 상세(평점은 하단 버튼에서만)
           var rbsvg = "";
           if (d.rating != null) {
-            var rc = d.rating >= 7.0 ? "#1aa55b" : d.rating >= 6.5 ? "#c99a1c" : "#cc6b22";
+            var rc = ratingHex(d.rating);
             var bx = px + 5, by = py - 27;
             rbsvg = '<rect x="' + bx.toFixed(0) + '" y="' + by.toFixed(0) + '" width="29" height="18" rx="3.5" fill="' + rc + '" stroke="#0b1220" stroke-width="1" class="rbox-tap" style="cursor:pointer"/>' +
               '<text x="' + (bx + 14.5).toFixed(0) + '" y="' + (by + 13.5).toFixed(0) + '" fill="#fff" font-size="13.5" font-weight="800" text-anchor="middle" style="pointer-events:none">' + d.rating.toFixed(1) + "</text>";
@@ -3414,7 +3414,10 @@
   }
 
   function ratingOf(matchId, name) { var m = MATCH_RATINGS[matchId]; if (!m || !m.byName || !name) return null; if (m.byName[name] != null) return m.byName[name]; var sur = name.split(" ").pop(); return m.byName[sur] != null ? m.byName[sur] : null; }
-  function ratingBox(r, dec) { if (r == null) return ""; var cls = r >= 7.0 ? "rb-good" : r >= 6.5 ? "rb-ok" : "rb-low"; return '<span class="rbox ' + cls + '">' + r.toFixed(dec || 1) + "</span>"; }
+  // 평점 색 — SofaScore식 풀팔레트(공통). 잔디 배지·팀평균·MVP카드 모두 이 함수 사용.
+  function ratingHex(r) { return r >= 9 ? "#2e5bd6" : r >= 8 ? "#1aa5b8" : r >= 7 ? "#1aa55b" : r >= 6.5 ? "#c99a1c" : r >= 6 ? "#cc6b22" : "#cf4639"; }
+  function ratingCls(r) { return r >= 9 ? "rb-elite" : r >= 8 ? "rb-great" : r >= 7 ? "rb-good" : r >= 6.5 ? "rb-ok" : r >= 6 ? "rb-mid" : "rb-low"; }
+  function ratingBox(r, dec) { if (r == null) return ""; return '<span class="rbox ' + ratingCls(r) + '">' + r.toFixed(dec || 1) + "</span>"; }
   function teamRatingOf(matchId, teamId) { var m = MATCH_RATINGS[matchId]; return (m && m.team && m.team[teamId] != null) ? m.team[teamId] : null; }
   // 골/교체 표시용 — keyEvents에서 득점자·교체나간선수 추출(ESPN 이름 기준)
   function matchEventMap(keyEvents) {
@@ -3658,7 +3661,7 @@
       head += '<div class="mr-hint muted-note">제일 잘한 선수에게 🏆 한 번만! 평점은 경기 활약(골·도움·카드)과 민심을 반영해요.</div>';
       function card(p) {
         var voted = mine === p.pid, pct = total > 0 ? Math.round(p.v / total * 100) : 0;
-        var rc = p.r >= 7.0 ? "#1aa55b" : p.r >= 6.5 ? "#e8a90c" : "#e5566a";  // 공식 사진식 색
+        var rc = ratingHex(p.r);  // 평점 색(공통 풀팔레트)
         return '<div class="mvp-card' + (voted ? " voted" : "") + (p === mom ? " mom" : "") + '">' +
           '<div class="mvp-top"><span class="mvp-nm" data-player="' + esc(p.pid) + '">' + (p === mom ? "⭐ " : "") + esc(p.name) + ofTags(p) + '</span><span class="mvp-rt" style="color:' + rc + '">' + p.r.toFixed(1) + "</span></div>" +
           '<div class="mvp-vbar"><span style="width:' + pct + '%"></span></div>' +
