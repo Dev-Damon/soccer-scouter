@@ -1482,11 +1482,11 @@ g.mf-p[data-rate]:hover circle { stroke: #fff; stroke-width: 3.5; }
 .kk-install { position: fixed; left: 10px; right: 10px; bottom: calc(60px + env(safe-area-inset-bottom, 0px)); z-index: 1200; display: flex; align-items: center; gap: 11px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 6px 22px rgba(40,55,85,.18); padding: 11px 13px; max-width: 480px; margin: 0 auto; transform: translateY(150%); transition: transform .28s ease; }
 .kk-install.on { transform: translateY(0); }
 .kki-ic { width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0; }
-.kki-tx { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.kki-tx { flex: 1; min-width: 0; display: flex; flex-direction: column; word-break: keep-all; }
 .kki-tx b { font-size: 14px; font-weight: 800; color: var(--text); }
-.kki-tx span { font-size: 11.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kki-tx span { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
 .kki-never { font-size: 11px; color: var(--muted); text-decoration: underline; margin-top: 4px; cursor: pointer; align-self: flex-start; }
-.kki-btn { background: var(--accent); color: #fff; font-weight: 800; font-size: 13px; padding: 9px 15px; border: 0; border-radius: 9px; cursor: pointer; white-space: nowrap; }
+.kki-btn { background: var(--accent); color: #fff; font-weight: 800; font-size: 12.5px; padding: 8px 12px; border: 0; border-radius: 9px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
 .kki-x { background: none; border: 0; color: var(--muted); font-size: 17px; cursor: pointer; padding: 2px 4px; align-self: flex-start; line-height: 1; }
 .kk-ios { position: fixed; inset: 0; z-index: 1300; background: rgba(10,16,30,.55); display: flex; align-items: flex-end; justify-content: center; padding: 14px; }
 .kk-ios-card { background: var(--card); border-radius: 16px; padding: 18px 18px 16px; max-width: 420px; width: 100%; box-shadow: 0 8px 30px rgba(0,0,0,.3); }
