@@ -418,6 +418,29 @@
     return renderSchedule();
   }
 
+  // 홈 하단 소개 — 렌더 후에도 DOM에 남는 한국어 본문(크롤러 인덱싱 + 사용자 안내). #seo-home(초기 HTML)과 함께 콘텐츠 신호 보강.
+  function homeAboutHtml() {
+    return '<section class="home-about">' +
+      '<h2>2026 북중미 월드컵, 킥톡으로 즐기는 법</h2>' +
+      '<p>2026 FIFA 월드컵은 사상 처음으로 <b>48개국</b>이 참가하는 대회로, 미국·캐나다·멕시코 3개국이 공동 개최합니다. 2026년 <b>6월 11일</b> 멕시코시티 에스타디오 아스테카에서 개막해 <b>7월 19일</b> 뉴욕·뉴저지 메트라이프 스타디움에서 막을 내립니다. 16개 도시에서 총 <b>104경기</b>가 열리며, 4팀씩 12개 조로 나뉘어 각 조 1·2위와 성적이 좋은 3위 여덟 팀까지 32강 토너먼트에 오릅니다. 킥톡은 이 모든 경기를 한국어로, 폰 하나로 빠짐없이 따라갈 수 있게 돕습니다.</p>' +
+      '<h3>킥톡에서 할 수 있는 것</h3>' +
+      '<ul class="ha-list">' +
+      '<li><b>실시간 경기</b> — 진행 중인 경기의 스코어·라인업·주심을 실시간으로 확인합니다.</li>' +
+      '<li><b>선수 평점</b> — 경기마다 선수별 평점을 색상 배지로 보여주고(6점 미만 빨강 ~ 9점 이상 파랑) 팀 평균 평점까지 제공합니다.</li>' +
+      '<li><b>전력 분석</b> — 48개국 대표팀의 스타일과 전력 지표, 선수 능력치·등번호·프로필을 정리했습니다.</li>' +
+      '<li><b>승부예측 &amp; 랭킹</b> — 무료 승부예측과 포인트 랭킹, 경기 MVP 투표에 참여할 수 있습니다.</li>' +
+      '<li><b>하이라이트</b> — 치지직·JTBC 중계 하이라이트를 한곳에 모았습니다.</li>' +
+      '</ul>' +
+      '<h3>경기 평점은 어떻게 보나요?</h3>' +
+      '<p>경기 상세 화면의 라인업에서 각 선수 위에 평점 배지가 표시됩니다. 색상이 활약도를 한눈에 보여줘요 — <b>빨강</b>(6.0 미만), <b>주황</b>(6.0~6.4), <b>노랑</b>(6.5~6.9), <b>초록</b>(7.0~7.9), <b>청록</b>(8.0~8.9), <b>파랑</b>(9.0 이상). 교체 투입된 선수와 팀 전체 평균 평점도 함께 확인할 수 있습니다.</p>' +
+      '<h3>자주 묻는 질문</h3>' +
+      '<p class="ha-q"><b>Q. 2026 월드컵은 언제 시작하나요?</b><br>2026년 6월 11일 멕시코시티에서 개막해 7월 19일 결승을 치릅니다.</p>' +
+      '<p class="ha-q"><b>Q. 몇 개국이 참가하나요?</b><br>역대 최다인 48개국이 참가해 16개 도시에서 104경기를 치릅니다.</p>' +
+      '<p class="ha-q"><b>Q. 킥톡은 무료인가요?</b><br>네, 모든 기능을 무료로 이용할 수 있습니다. 설치 없이 웹에서 바로 쓰고, 홈 화면에 추가하면 앱처럼 사용할 수 있어요.</p>' +
+      '<p class="ha-foot"><a href="about.html">킥톡 소개</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">서비스 약관</a> · <a href="patchnotes.html">패치노트</a></p>' +
+      '</section>';
+  }
+
   // ===================== 월드컵 기록(득점왕·도움·자책골·카드) =====================
   var statsData = null, statsLoading = null, scoreCat = "goals";
   var SCORE_CATS = [["goals", "⚽ 득점"], ["assists", "🅰️ 도움"], ["og", "🥅 자책골"], ["cards", "🟨 카드"]];
@@ -714,7 +737,7 @@
     }
     listHtml += '<div class="adslot cpang-m"></div>';  // 모바일 쿠팡(320x50)
 
-    viewEl.innerHTML = topBanner() + liveSection() + strip + '<div class="adslot home-ad"></div>' + heroHtml + '<div class="cheer-slot"></div>' + listHtml;  // 광고(320x100): 날짜 스트립 밑 · 빅매치 위
+    viewEl.innerHTML = topBanner() + liveSection() + strip + '<div class="adslot home-ad"></div>' + heroHtml + '<div class="cheer-slot"></div>' + listHtml + homeAboutHtml();  // 광고(320x100): 날짜 스트립 밑 · 빅매치 위 / 하단: 소개 본문(SEO)
     insertAdFit(viewEl.querySelector(".home-ad"));
     insertCoupang(viewEl.querySelector(".cpang-m"), 320, 100);
     startWittyTicker();

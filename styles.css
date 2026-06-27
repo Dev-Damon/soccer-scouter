@@ -685,8 +685,22 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 #seo-home p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 #seo-home .seo-teams { display: flex; flex-wrap: wrap; gap: 8px; }
 #seo-home .seo-teams a { font-size: 13px; font-weight: 700; color: var(--text); background: var(--bg-soft, #0f1a2a); border: 1px solid var(--line, #1e2a3a); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
+#seo-home .seo-feats { margin: 6px 0 8px; padding-left: 18px; }
+#seo-home .seo-feats li { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 5px; }
+#seo-home .seo-feats b, #seo-home p b { color: var(--text); }
 #seo-home .seo-foot { margin-top: 20px; font-size: 12px; }
 #seo-home .seo-foot a { color: var(--muted); }
+/* 홈 하단 소개 본문(렌더 후 유지 · SEO) */
+.home-about { max-width: 720px; margin: 26px auto 8px; padding: 18px 16px 8px; border-top: 1px solid var(--line, #1e2a3a); color: var(--text); }
+.home-about h2 { font-size: 17px; font-weight: 800; line-height: 1.45; margin: 4px 0 10px; }
+.home-about h3 { font-size: 14px; color: var(--text); font-weight: 700; margin: 18px 0 8px; }
+.home-about p { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin: 0 0 8px; }
+.home-about .ha-list { margin: 6px 0 8px; padding-left: 18px; }
+.home-about .ha-list li { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 5px; }
+.home-about .ha-list b, .home-about p b { color: var(--text); }
+.home-about .ha-q { margin-bottom: 10px; }
+.home-about .ha-foot { margin-top: 18px; font-size: 12px; }
+.home-about .ha-foot a { color: var(--muted); text-decoration: none; }
 .squad-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .squad-sort { display: inline-flex; gap: 0; background: var(--bg-soft, #0f1a2a); border: 1px solid var(--line, #1e2a3a); border-radius: 999px; padding: 2px; }
 .ssort { background: none; border: 0; color: var(--muted, #9fb0c3); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; cursor: pointer; line-height: 1; white-space: nowrap; }
