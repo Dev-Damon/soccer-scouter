@@ -52,6 +52,13 @@
   <url><loc>https://kicktalk.xyz/t/croatia.html</loc></url>
   <url><loc>https://kicktalk.xyz/t/ghana.html</loc></url>
   <url><loc>https://kicktalk.xyz/t/panama.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://kicktalk.xyz/news/worldcup-2026-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/title-contenders.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/korea-team.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/player-rating-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/superstars-11.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/groups-preview.html</loc></url>
 <url><loc>https://kicktalk.xyz/m/mexico-vs-south-africa.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/south-korea-vs-czech-republic.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/czech-republic-vs-south-africa.html</loc><changefreq>daily</changefreq></url>
@@ -124,11 +131,4 @@
 <url><loc>https://kicktalk.xyz/m/panama-vs-croatia.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/panama-vs-england.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/croatia-vs-ghana.html</loc><changefreq>daily</changefreq></url>
-  <url><loc>https://kicktalk.xyz/news/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kicktalk.xyz/news/worldcup-2026-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/title-contenders.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/korea-team.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/player-rating-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/superstars-11.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/groups-preview.html</loc></url>
 </urlset>
