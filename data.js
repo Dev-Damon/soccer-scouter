@@ -3400,7 +3400,7 @@ window.DATA = {
       "name": "보스니아 헤르체고비나",
       "nameEn": "Bosnia and Herzegovina",
       "flag": "🇧🇦",
-      "fifaRank": 62,
+      "fifaRank": 61,
       "group": "B",
       "tierSummary": "2014년 이후 12년 만에 본선에 복귀한 다크호스로, 노장 제코를 구심점 삼아 유럽 각지에서 성장한 디아스포라 자원으로 무장한 중하위 시드 팀이다.",
       "styleSummary": [
@@ -3569,7 +3569,7 @@ window.DATA = {
       "name": "카타르",
       "nameEn": "Qatar",
       "flag": "🇶🇦",
-      "fifaRank": 61,
+      "fifaRank": 60,
       "group": "B",
       "tierSummary": "2회 연속 아시안컵 우승으로 아시아 정상에 오른 강팀이지만, 선수 대부분이 자국 리그 소속이라 유럽 강호들과 맞붙는 본선에서는 도전자에 가깝다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 59,
+      "fifaRank": 58,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -8760,7 +8760,7 @@ window.DATA = {
       "name": "사우디아라비아",
       "nameEn": "Saudi Arabia",
       "flag": "🇸🇦",
-      "fifaRank": 58,
+      "fifaRank": 59,
       "group": "H",
       "tierSummary": "아시아 전통의 강호이자 2022년 아르헨티나를 꺾은 이변의 주인공으로, 조별리그 통과를 목표로 하는 다크호스이지만 본선 직전 감독 교체와 유럽파 부족이 변수인 도전자급 팀이다.",
       "styleSummary": [
@@ -8992,7 +8992,7 @@ window.DATA = {
       "name": "우루과이",
       "nameEn": "Uruguay",
       "flag": "🇺🇾",
-      "fifaRank": 18,
+      "fifaRank": 19,
       "group": "H",
       "tierSummary": "유럽·남미 빅클럽에서 뛰는 세대교체 핵심들을 비엘사 감독이 거칠고 짜임새 있게 묶어낸, 8강 이상을 노리는 강호다.",
       "styleSummary": [
@@ -9241,7 +9241,7 @@ window.DATA = {
       "name": "프랑스",
       "nameEn": "France",
       "flag": "🇫🇷",
-      "fifaRank": 2,
+      "fifaRank": 1,
       "group": "I",
       "tierSummary": "2018 우승·2022 준우승의 두 번에 걸친 결승 단골이자, 발롱도르 수상자 뎀벨레와 주장 음바페를 앞세운 명실상부 우승 후보 0순위 강팀입니다.",
       "styleSummary": [
@@ -9448,7 +9448,7 @@ window.DATA = {
       "name": "세네갈",
       "nameEn": "Senegal",
       "flag": "🇸🇳",
-      "fifaRank": 19,
+      "fifaRank": 18,
       "group": "I",
       "tierSummary": "2021년·2025년 아프리카 네이션스컵을 제패한 아프리카 최강 전력 중 하나로, 프리미어리그를 비롯한 빅리그 주축 선수가 즐비한 다크호스급 팀입니다.",
       "styleSummary": [
@@ -9629,7 +9629,7 @@ window.DATA = {
       "name": "이라크",
       "nameEn": "Iraq",
       "flag": "🇮🇶",
-      "fifaRank": 60,
+      "fifaRank": 63,
       "group": "I",
       "tierSummary": "1986년 이후 40년 만에 본선에 복귀한 다크호스로, 베테랑 골키퍼와 노련한 타깃맨을 중심에 두고 유럽파 디아스포라 선수들이 가세한 끈끈한 언더독 팀이다.",
       "styleSummary": [
@@ -9853,7 +9853,7 @@ window.DATA = {
       "name": "노르웨이",
       "nameEn": "Norway",
       "flag": "🇳🇴",
-      "fifaRank": 22,
+      "fifaRank": 23,
       "group": "I",
       "tierSummary": "28년 만의 본선 복귀를 일군 황금세대로, 홀란과 외데고르라는 세계적 스타를 축으로 한 다크호스 다.",
       "styleSummary": [
@@ -10065,7 +10065,7 @@ window.DATA = {
       "name": "아르헨티나",
       "nameEn": "Argentina",
       "flag": "🇦🇷",
-      "fifaRank": 1,
+      "fifaRank": 2,
       "group": "J",
       "tierSummary": "2022년 우승팀이자 현 디펜딩 챔피언으로, 메시의 마지막 월드컵을 우승으로 장식하려는 J조 최강 우승 후보입니다.",
       "styleSummary": [
@@ -10481,7 +10481,7 @@ window.DATA = {
       "name": "오스트리아",
       "nameEn": "Austria",
       "flag": "🇦🇹",
-      "fifaRank": 23,
+      "fifaRank": 22,
       "group": "J",
       "tierSummary": "1998년 이후 28년 만에 본선에 복귀한 랑니크 감독의 오스트리아는 분데스리가 출신 베테랑들이 즐비한 단단한 중상위권 팀으로, 16강 이상을 노리는 다크호스다.",
       "styleSummary": [

@@ -1,5 +1,5 @@
 {
- "_ts": 1782512620928,
+ "_ts": 1782530634714,
  "mexico": {
   "r": 9,
   "p": 1736.01,
@@ -31,16 +31,16 @@
   "chR": -2
  },
  "bosnia-and-herzegovina": {
-  "r": 62,
+  "r": 61,
   "p": 1408.93,
   "ch": 21.71,
-  "chR": 2
+  "chR": 3
  },
  "qatar": {
-  "r": 61,
+  "r": 60,
   "p": 1411.07,
   "ch": -39.24,
-  "chR": -5
+  "chR": -4
  },
  "switzerland": {
   "r": 16,
@@ -139,10 +139,10 @@
   "chR": 2
  },
  "tunisia": {
-  "r": 59,
+  "r": 58,
   "p": 1426.59,
   "ch": -49.82,
-  "chR": -14
+  "chR": -13
  },
  "belgium": {
   "r": 10,
@@ -170,57 +170,57 @@
  },
  "spain": {
   "r": 3,
-  "p": 1864.32,
-  "ch": -10.39,
+  "p": 1879.58,
+  "ch": 4.87,
   "chR": -1
  },
  "cape-verde": {
   "r": 64,
-  "p": 1401.77,
-  "ch": 30.66,
+  "p": 1402.97,
+  "ch": 31.86,
   "chR": 3
  },
  "saudi-arabia": {
-  "r": 58,
-  "p": 1426.71,
-  "ch": 2.83,
-  "chR": 3
+  "r": 59,
+  "p": 1425.51,
+  "ch": 1.63,
+  "chR": 2
  },
  "uruguay": {
-  "r": 18,
-  "p": 1649.97,
-  "ch": -23.1,
-  "chR": -2
- },
- "france": {
-  "r": 2,
-  "p": 1894.4,
-  "ch": 23.7,
-  "chR": 1
- },
- "senegal": {
   "r": 19,
-  "p": 1638.36,
-  "ch": -45.71,
-  "chR": -4
- },
- "iraq": {
-  "r": 60,
-  "p": 1419.24,
-  "ch": -27.04,
+  "p": 1634.71,
+  "ch": -38.36,
   "chR": -3
  },
+ "france": {
+  "r": 1,
+  "p": 1906.84,
+  "ch": 36.14,
+  "chR": 2
+ },
+ "senegal": {
+  "r": 18,
+  "p": 1653.43,
+  "ch": -30.64,
+  "chR": -3
+ },
+ "iraq": {
+  "r": 63,
+  "p": 1404.17,
+  "ch": -42.11,
+  "chR": -6
+ },
  "norway": {
-  "r": 22,
-  "p": 1606.48,
-  "ch": 49.04,
-  "chR": 9
+  "r": 23,
+  "p": 1594.04,
+  "ch": 36.6,
+  "chR": 8
  },
  "argentina": {
-  "r": 1,
+  "r": 2,
   "p": 1901.93,
   "ch": 24.66,
-  "chR": 0
+  "chR": -1
  },
  "algeria": {
   "r": 29,
@@ -229,10 +229,10 @@
   "chR": -1
  },
  "austria": {
-  "r": 23,
+  "r": 22,
   "p": 1599.99,
   "ch": 2.59,
-  "chR": 1
+  "chR": 2
  },
  "jordan": {
   "r": 72,
@@ -290,24 +290,24 @@
  },
  "_all": [
   {
-   "code": "ARG",
-   "name": "Argentina",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ar.svg",
-   "id": "argentina",
-   "r": 1,
-   "p": 1901.93,
-   "ch": 24.66,
-   "chR": 0
-  },
-  {
    "code": "FRA",
    "name": "France",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fr.svg",
    "id": "france",
+   "r": 1,
+   "p": 1906.84,
+   "ch": 36.14,
+   "chR": 2
+  },
+  {
+   "code": "ARG",
+   "name": "Argentina",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ar.svg",
+   "id": "argentina",
    "r": 2,
-   "p": 1894.4,
-   "ch": 23.7,
-   "chR": 1
+   "p": 1901.93,
+   "ch": 24.66,
+   "chR": -1
   },
   {
    "code": "ESP",
@@ -315,8 +315,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/es.svg",
    "id": "spain",
    "r": 3,
-   "p": 1864.32,
-   "ch": -10.39,
+   "p": 1879.58,
+   "ch": 4.87,
    "chR": -1
   },
   {
@@ -460,24 +460,24 @@
    "chR": 1
   },
   {
-   "code": "URU",
-   "name": "Uruguay",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
-   "id": "uruguay",
-   "r": 18,
-   "p": 1649.97,
-   "ch": -23.1,
-   "chR": -2
-  },
-  {
    "code": "SEN",
    "name": "Senegal",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sn.svg",
    "id": "senegal",
+   "r": 18,
+   "p": 1653.43,
+   "ch": -30.64,
+   "chR": -3
+  },
+  {
+   "code": "URU",
+   "name": "Uruguay",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
+   "id": "uruguay",
    "r": 19,
-   "p": 1638.36,
-   "ch": -45.71,
-   "chR": -4
+   "p": 1634.71,
+   "ch": -38.36,
+   "chR": -3
   },
   {
    "code": "DEN",
@@ -500,24 +500,24 @@
    "chR": -1
   },
   {
-   "code": "NOR",
-   "name": "Norway",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
-   "id": "norway",
-   "r": 22,
-   "p": 1606.48,
-   "ch": 49.04,
-   "chR": 9
-  },
-  {
    "code": "AUT",
    "name": "Austria",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/at.svg",
    "id": "austria",
-   "r": 23,
+   "r": 22,
    "p": 1599.99,
    "ch": 2.59,
-   "chR": 1
+   "chR": 2
+  },
+  {
+   "code": "NOR",
+   "name": "Norway",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
+   "id": "norway",
+   "r": 23,
+   "p": 1594.04,
+   "ch": 36.6,
+   "chR": 8
   },
   {
    "code": "ECU",
@@ -860,64 +860,64 @@
    "chR": -7
   },
   {
-   "code": "KSA",
-   "name": "Saudi Arabia",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sa.svg",
-   "id": "saudi-arabia",
-   "r": 58,
-   "p": 1426.71,
-   "ch": 2.83,
-   "chR": 3
-  },
-  {
    "code": "TUN",
    "name": "Tunisia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tn.svg",
    "id": "tunisia",
-   "r": 59,
+   "r": 58,
    "p": 1426.59,
    "ch": -49.82,
-   "chR": -14
+   "chR": -13
   },
   {
-   "code": "IRQ",
-   "name": "Iraq",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/iq.svg",
-   "id": "iraq",
-   "r": 60,
-   "p": 1419.24,
-   "ch": -27.04,
-   "chR": -3
+   "code": "KSA",
+   "name": "Saudi Arabia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sa.svg",
+   "id": "saudi-arabia",
+   "r": 59,
+   "p": 1425.51,
+   "ch": 1.63,
+   "chR": 2
   },
   {
    "code": "QAT",
    "name": "Qatar",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/qa.svg",
    "id": "qatar",
-   "r": 61,
+   "r": 60,
    "p": 1411.07,
    "ch": -39.24,
-   "chR": -5
+   "chR": -4
   },
   {
    "code": "BIH",
    "name": "Bosnia and Herzegovina",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ba.svg",
    "id": "bosnia-and-herzegovina",
-   "r": 62,
+   "r": 61,
    "p": 1408.93,
    "ch": 21.71,
-   "chR": 2
+   "chR": 3
   },
   {
    "code": "BFA",
    "name": "Burkina Faso",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bf.svg",
    "id": null,
-   "r": 63,
+   "r": 62,
    "p": 1406.99,
    "ch": 0,
-   "chR": -1
+   "chR": 0
+  },
+  {
+   "code": "IRQ",
+   "name": "Iraq",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/iq.svg",
+   "id": "iraq",
+   "r": 63,
+   "p": 1404.17,
+   "ch": -42.11,
+   "chR": -6
   },
   {
    "code": "CPV",
@@ -925,8 +925,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cv.svg",
    "id": "cape-verde",
    "r": 64,
-   "p": 1401.77,
-   "ch": 30.66,
+   "p": 1402.97,
+   "ch": 31.86,
    "chR": 3
   },
   {
