@@ -437,6 +437,16 @@
       '<p class="ha-q"><b>Q. 2026 월드컵은 언제 시작하나요?</b><br>2026년 6월 11일 멕시코시티에서 개막해 7월 19일 결승을 치릅니다.</p>' +
       '<p class="ha-q"><b>Q. 몇 개국이 참가하나요?</b><br>역대 최다인 48개국이 참가해 16개 도시에서 104경기를 치릅니다.</p>' +
       '<p class="ha-q"><b>Q. 킥톡은 무료인가요?</b><br>네, 모든 기능을 무료로 이용할 수 있습니다. 설치 없이 웹에서 바로 쓰고, 홈 화면에 추가하면 앱처럼 사용할 수 있어요.</p>' +
+      '<h3>월드컵 가이드 · 칼럼</h3>' +
+      '<ul class="ha-list">' +
+      '<li><a href="news/worldcup-2026-guide.html">2026 월드컵 완전 가이드 — 일정·개최지·새 포맷</a></li>' +
+      '<li><a href="news/title-contenders.html">우승후보 전격 분석 — 프랑스·스페인·아르헨티나·브라질</a></li>' +
+      '<li><a href="news/korea-team.html">손흥민·김민재의 대한민국 — A조 분석·16강 시나리오</a></li>' +
+      '<li><a href="news/superstars-11.html">꼭 봐야 할 슈퍼스타 11인</a></li>' +
+      '<li><a href="news/player-rating-guide.html">축구 경기 평점 보는 법</a></li>' +
+      '<li><a href="news/groups-preview.html">조별리그 12개 조 완벽 정리</a></li>' +
+      '</ul>' +
+      '<p><a href="news/">월드컵 가이드 전체 보기 →</a></p>' +
       '<p class="ha-foot"><a href="about.html">킥톡 소개</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">서비스 약관</a> · <a href="patchnotes.html">패치노트</a></p>' +
       '</section>';
   }

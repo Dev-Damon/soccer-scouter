@@ -1,0 +1,93 @@
+// 뉴스/칼럼 정적 페이지 생성 — 오리지널 한국어 콘텐츠(애드센스 대응). news/_src/<slug>.html 본문 → 완성 페이지 + 허브 + sitemap.
+const fs = require("fs");
+const path = require("path");
+const ROOT = path.join(__dirname, "..");
+
+const PUB = "2026-06-27";
+const ARTICLES = [
+  { slug: "worldcup-2026-guide", title: "2026 북중미 월드컵 완전 가이드 — 일정·개최지·48개국 새 포맷", desc: "사상 첫 48개국, 미국·캐나다·멕시코 공동 개최. 2026 월드컵 일정·개최 도시·32강 진출 방식까지 처음 보는 사람을 위한 완전 가이드." },
+  { slug: "title-contenders", title: "2026 월드컵 우승후보 전격 분석 — 프랑스·스페인·아르헨티나·브라질", desc: "프랑스·스페인·아르헨티나·브라질·잉글랜드·포르투갈. 2026 북중미 월드컵 우승후보들의 강점과 핵심 선수를 분석한다." },
+  { slug: "korea-team", title: "손흥민·김민재의 대한민국 2026 월드컵 — A조 분석·16강 시나리오", desc: "FIFA 31위 대한민국의 2026 월드컵 A조(멕시코·남아공·체코) 분석. 손흥민·김민재·이강인 핵심 3인과 16강 시나리오." },
+  { slug: "player-rating-guide", title: "축구 경기 평점이란? 평점·색상 보는 법 완전 정리", desc: "경기 평점이 무엇이고 어떻게 매겨지는지, 킥톡 라인업의 색상 평점 배지(빨강~파랑)를 읽는 법까지 한 번에 정리." },
+  { slug: "superstars-11", title: "2026 월드컵 꼭 봐야 할 슈퍼스타 11인", desc: "손흥민·음바페·야말·벨링엄·비니시우스·메시·호날두까지. 2026 월드컵에서 놓치면 안 될 슈퍼스타 11인을 소개한다." },
+  { slug: "groups-preview", title: "2026 월드컵 조별리그 12개 조 완벽 정리", desc: "A조부터 L조까지, 2026 북중미 월드컵 12개 조의 구성과 1강·다크호스·관전 포인트를 한눈에 정리했다." },
+];
+
+const CSS = "body{margin:0;background:#070d18;color:#eaf0fb;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;line-height:1.6}.wrap{max-width:680px;margin:0 auto;padding:18px}a{color:#4f8cff;text-decoration:none}header{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #243049;margin-bottom:14px;font-weight:800}.crumb{font-size:12.5px;color:#6f7d96;margin:0 0 6px}.crumb a{color:#9fb0cc}article h2{font-size:23px;line-height:1.4;margin:10px 0 14px}article h3{font-size:17px;color:#eaf0fb;margin:24px 0 8px}article p{font-size:15.5px;color:#cdd7e8;line-height:1.85;margin:0 0 13px}article ul{margin:6px 0 14px;padding-left:20px}article li{font-size:15px;color:#cdd7e8;line-height:1.8;margin-bottom:6px}article b,article strong{color:#eaf0fb}.cta{display:inline-block;background:#4f8cff;color:#06122a;font-weight:800;border-radius:10px;padding:11px 18px;margin:8px 0 6px}.more{margin-top:30px;padding-top:16px;border-top:1px solid #243049}.more h4{font-size:14px;color:#9fb0cc;margin:0 0 10px}.more a{display:block;padding:7px 0;font-size:14.5px}footer{margin-top:26px;padding-top:14px;border-top:1px solid #243049;color:#6f7d96;font-size:12px}.artlist{list-style:none;padding:0}.artlist li{background:#0f1a2a;border:1px solid #1e2a3a;border-radius:12px;padding:14px 16px;margin-bottom:12px}.artlist h3{margin:0 0 6px;font-size:17px}.artlist p{margin:0;font-size:14px;color:#9fb0cc;line-height:1.7}";
+
+const GA = "<script async src='https://www.googletagmanager.com/gtag/js?id=G-KNLJ29Y409'></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KNLJ29Y409');</script>";
+const ADS = "<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1649642792791162' crossorigin='anonymous'></script>";
+
+function head(title, desc, canonical, ld) {
+  return "<!DOCTYPE html><html lang=ko><head><meta charset=UTF-8>"
+    + "<meta name=viewport content='width=device-width,initial-scale=1'>"
+    + GA + ADS
+    + `<title>${title}</title><meta name=description content="${desc}">`
+    + `<link rel=canonical href='${canonical}'><meta name=robots content='index,follow'>`
+    + "<link rel=icon type='image/svg+xml' href='https://kicktalk.xyz/icon.svg'>"
+    + `<meta property=og:type content=article><meta property=og:title content="${title}">`
+    + `<meta property=og:description content="${desc}"><meta property=og:url content='${canonical}'>`
+    + "<meta property=og:image content='https://kicktalk.xyz/og.png'>"
+    + "<meta name=twitter:card content=summary_large_image>"
+    + `<script type=application/ld+json>${ld}</script>`
+    + `<style>${CSS}</style></head><body><div class=wrap>`;
+}
+const FOOT = "<footer>킥톡(KickTalk) — 2026 북중미 월드컵 선수·국가 분석 · 실시간 경기 · <a href='https://kicktalk.xyz/'>kicktalk.xyz</a><br><a href='https://kicktalk.xyz/about.html'>킥톡 소개</a> · <a href='https://kicktalk.xyz/privacy.html'>개인정보처리방침</a> · <a href='https://kicktalk.xyz/terms.html'>서비스 약관</a></footer></div></body></html>";
+
+fs.mkdirSync(path.join(ROOT, "news"), { recursive: true });
+
+function firstP(body) {
+  const m = body.match(/<p>([\s\S]*?)<\/p>/);
+  return m ? m[1].replace(/<[^>]+>/g, "").trim() : "";
+}
+
+const made = [];
+ARTICLES.forEach(function (a) {
+  const body = fs.readFileSync(path.join(ROOT, "news/_src", a.slug + ".html"), "utf8").trim();
+  const canonical = `https://kicktalk.xyz/news/${a.slug}.html`;
+  const ld = JSON.stringify({
+    "@context": "https://schema.org", "@type": "Article",
+    headline: a.title, description: a.desc, inLanguage: "ko",
+    datePublished: PUB, dateModified: PUB,
+    image: "https://kicktalk.xyz/og.png",
+    author: { "@type": "Organization", name: "킥톡 KickTalk" },
+    publisher: { "@type": "Organization", name: "킥톡 KickTalk", url: "https://kicktalk.xyz/" },
+    mainEntityOfPage: canonical,
+  });
+  // 다른 글 추천(현재 글 제외 3개)
+  const others = ARTICLES.filter(function (x) { return x.slug !== a.slug; }).slice(0, 3);
+  const more = "<div class=more><h4>함께 보면 좋은 글</h4>"
+    + others.map(function (o) { return `<a href='https://kicktalk.xyz/news/${o.slug}.html'>${o.title} →</a>`; }).join("")
+    + "</div>";
+  const html = head(a.title, a.desc, canonical, ld)
+    + "<header>⚽ <a href='https://kicktalk.xyz/'>킥톡 KickTalk</a></header>"
+    + "<p class=crumb><a href='https://kicktalk.xyz/'>홈</a> › <a href='https://kicktalk.xyz/news/'>월드컵 가이드</a></p>"
+    + "<article>" + body + "</article>"
+    + "<a class=cta href='https://kicktalk.xyz/'>킥톡에서 실시간 경기·라인업·평점 보기 →</a>"
+    + more + FOOT;
+  fs.writeFileSync(path.join(ROOT, "news", a.slug + ".html"), html);
+  made.push({ slug: a.slug, title: a.title, excerpt: firstP(body) });
+});
+
+// 허브 페이지
+const hubLd = JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", name: "월드컵 가이드·칼럼 | 킥톡", url: "https://kicktalk.xyz/news/", inLanguage: "ko" });
+const hub = head("2026 월드컵 가이드·칼럼 | 킥톡", "2026 북중미 월드컵 가이드, 우승후보 분석, 대한민국 전망, 선수 평점 보는 법까지 — 킥톡이 정리한 월드컵 읽을거리.", "https://kicktalk.xyz/news/", hubLd)
+  + "<header>⚽ <a href='https://kicktalk.xyz/'>킥톡 KickTalk</a></header>"
+  + "<p class=crumb><a href='https://kicktalk.xyz/'>홈</a> › 월드컵 가이드</p>"
+  + "<article><h2>2026 월드컵 가이드 · 칼럼</h2><p>2026 북중미 월드컵을 더 깊이 즐기기 위한 읽을거리를 모았습니다. 대회 포맷부터 우승후보, 대한민국 전망, 선수 평점 보는 법까지.</p></article>"
+  + "<ul class=artlist>"
+  + made.map(function (m) { return `<li><h3><a href='https://kicktalk.xyz/news/${m.slug}.html'>${m.title}</a></h3><p>${m.excerpt}</p></li>`; }).join("")
+  + "</ul>" + FOOT;
+fs.writeFileSync(path.join(ROOT, "news", "index.html"), hub);
+
+// sitemap 갱신 — 기존 /news/ 항목 제거 후 재삽입(idempotent)
+let sm = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
+sm = sm.split("\n").filter(function (l) { return l.indexOf("/news/") < 0; }).join("\n");
+const newsUrls = ["  <url><loc>https://kicktalk.xyz/news/</loc><changefreq>weekly</changefreq></url>"]
+  .concat(ARTICLES.map(function (a) { return `  <url><loc>https://kicktalk.xyz/news/${a.slug}.html</loc></url>`; }))
+  .join("\n");
+sm = sm.replace("</urlset>", newsUrls + "\n</urlset>");
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sm);
+
+console.log("생성:", made.length, "기사 + 허브 + sitemap 갱신");
+console.log("sitemap url 수:", (sm.match(/<loc>/g) || []).length);
