@@ -3333,6 +3333,7 @@
     "match-44": "https://chzzk.naver.com/video/13729415", // 사우디아라비아-우루과이
     "match-45": "https://chzzk.naver.com/video/13827138", // 스페인-사우디아라비아
     "match-46": "https://chzzk.naver.com/video/13829279", // 우루과이-카보베르데
+    "match-47": "https://chzzk.naver.com/video/13911167", // 카보베르데-사우디아라비아
     "match-48": "https://chzzk.naver.com/video/13911135", // 우루과이-스페인
     "match-49": "https://chzzk.naver.com/video/13744157", // 프랑스-세네갈
     "match-50": "https://chzzk.naver.com/video/13744863", // 이라크-노르웨이
