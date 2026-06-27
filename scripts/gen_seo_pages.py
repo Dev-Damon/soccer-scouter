@@ -5,6 +5,7 @@ D=json.loads(src[i:j+1])
 def e(s): return html.escape(str(s if s is not None else ""))
 teamById={t["id"]:t for t in D["teams"]}
 teamByName={t["name"]:t for t in D["teams"]}
+pById={p["id"]:p for p in D["players"]}
 os.makedirs("p",exist_ok=True); os.makedirs("t",exist_ok=True)
 CSS="body{margin:0;background:#070d18;color:#eaf0fb;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;line-height:1.6}.wrap{max-width:680px;margin:0 auto;padding:18px}a{color:#4f8cff;text-decoration:none}header{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #243049;margin-bottom:18px;font-weight:800}h1{font-size:24px;margin:6px 0 2px}h1 small{font-size:14px;color:#9fb0cc;font-weight:600}h2{font-size:15px;color:#9fb0cc;margin:20px 0 8px}.meta{color:#9fb0cc;font-size:14px;margin:0 0 12px}.facts{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}.facts li{background:#111c30;border:1px solid #243049;border-radius:8px;padding:5px 11px;font-size:13.5px;font-weight:700}.one{background:#111c30;border-left:3px solid #4f8cff;border-radius:8px;padding:11px 14px;font-size:14.5px}ul.dims{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}ul.dims li{background:#111c30;border:1px solid #243049;border-radius:8px;padding:6px 11px;font-size:14px}ul.dims b{float:right;color:#4f8cff}.cta{display:inline-block;background:#4f8cff;color:#06122a;font-weight:800;border-radius:10px;padding:11px 18px;margin:18px 0 6px}.links{font-size:13.5px;color:#9fb0cc;margin-top:10px}footer{margin-top:26px;padding-top:14px;border-top:1px solid #243049;color:#6f7d96;font-size:12px}"
 def page(title,desc,canonical,ld,bodyhtml,ogt,robots="index,follow"):
@@ -57,9 +58,21 @@ for t in D["teams"]:
     title=f"{tn} 2026 월드컵 대표팀 명단·전력·선수 | 킥톡"
     desc=f"{tn}({t.get('nameEn','')}) 2026 북중미 월드컵 대표팀 명단 {len(roster)}명 — 선수별 능력치·등번호·소속을 한눈에. 킥톡."
     body=f"<h1>{e(tn)} <small>{e(t.get('nameEn',''))}</small></h1>"
-    body+=f"<p class=meta>2026 FIFA 월드컵 대표팀 · 선수 {len(roster)}명</p>"
+    meta=f"2026 FIFA 월드컵 대표팀 · 선수 {len(roster)}명"
+    if t.get('fifaRank'): meta=f"2026 FIFA 월드컵 대표팀 · FIFA 랭킹 {e(t['fifaRank'])}위 · {e(t.get('group',''))}조 · 선수 {len(roster)}명"
+    body+=f"<p class=meta>{meta}</p>"
+    if t.get('tierSummary'): body+=f"<p class=one>{e(t['tierSummary'])}</p>"
     body+=f"<a class=cta href='https://kicktalk.xyz/#team/{e(tid)}'>킥톡에서 {e(tn)} 전력·예상 포메이션 보기 →</a>"
+    idx=t.get('indices') or {}
+    if idx:
+        body+="<h2>전력 지표</h2><ul class=dims>"+"".join(f"<li>{lab} <b>{e(idx[k])}</b></li>" for k,lab in [("attack","공격"),("defense","수비"),("organization","조직력"),("experience","경험")] if k in idx)+"</ul>"
+    if t.get('styleSummary'): body+="<h2>플레이 스타일</h2><ul>"+"".join(f"<li>{e(s)}</li>" for s in t['styleSummary'])+"</ul>"
+    mgr=t.get('manager') or {}
+    if mgr.get('name'): body+=f"<h2>감독</h2><p class=meta>{e(mgr['name'])}{(' — '+e(mgr.get('note',''))) if mgr.get('note') else ''}</p>"
+    keyp=[pById[k] for k in (t.get('keyPlayerIds') or []) if k in pById]
+    if keyp: body+="<h2>핵심 선수</h2><ul>"+"".join(f"<li><a href='https://kicktalk.xyz/p/{e(p['id'])}.html'>{e(p['name'])} ({e(p.get('position',''))}, {e(p.get('club',''))})</a></li>" for p in keyp)+"</ul>"
     body+="<h2>대표팀 선수단</h2><ul>"+"".join(f"<li><a href='https://kicktalk.xyz/p/{e(p['id'])}.html'>{('['+str(p['number'])+'] ' if p.get('number') is not None else '')}{e(p['name'])} ({e(p.get('position',''))})</a></li>" for p in roster)+"</ul>"
+    body+="<p class=links><a href='https://kicktalk.xyz/news/'>월드컵 가이드·칼럼</a> · <a href='https://kicktalk.xyz/'>킥톡 홈</a></p>"
     ld=json.dumps({"@context":"https://schema.org","@type":"SportsTeam","name":tn,"sport":"축구","url":f"https://kicktalk.xyz/t/{tid}.html"},ensure_ascii=False)
     open(f"t/{tid}.html","w",encoding="utf-8").write(page(title,desc,f"https://kicktalk.xyz/t/{tid}.html",ld,body,f"{tn} 2026 월드컵 대표팀 | 킥톡"))
     nt+=1
