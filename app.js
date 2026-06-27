@@ -3389,6 +3389,14 @@
     "match-70": "https://chzzk.naver.com/video/13860139" // 파나마-크로아티아
     /* HL-AUTO-END */
   };
+  // 하이라이트도 런타임 JSON(highlights.json)으로 갱신 — 토스 미니앱은 app.js를 번들 스냅샷으로 갖기 때문에, 빌드 이후 추가된 하이라이트가 안 보였음. 평점/주심과 동일하게 런타임 fetch로 양쪽(웹/토스) 자동 반영.
+  (function () {
+    if (!window.fetch) return;
+    fetch("https://kicktalk.xyz/highlights.json?b=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && typeof d === "object") { for (var k in d) MATCH_HIGHLIGHTS[k] = d[k]; }
+      var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id);  // 도착 시 하이라이트 버튼 반영
+    }).catch(function () {});
+  })();
   // 선수 평점 — 외부 JSON(match-ratings.json)에서 런타임 로드. 웹/토스 공통, .ait 재빌드 없이 평점만 갱신 가능(파일 push만으로 양쪽 반영).
   var MATCH_RATINGS = {};
   (function () {

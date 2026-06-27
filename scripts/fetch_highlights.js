@@ -136,6 +136,9 @@ function buildBlock(map, fixById) {
   fs.readFileSync(APP); // touch guard
   fs.writeFileSync(APP, src);
 
+  // highlights.json 동시 출력 — 토스 미니앱(app.js 번들 스냅샷)도 런타임 fetch로 최신 하이라이트 수신
+  try { fs.writeFileSync(path.join(ROOT, 'highlights.json'), JSON.stringify(merged) + '\n'); console.log('[highlights] highlights.json 갱신:', Object.keys(merged).length); } catch (e) {}
+
   // 문법 검증
   try { execFileSync(process.execPath, ['--check', APP], { stdio: 'ignore' }); }
   catch (e) { console.log('[highlights] 문법오류 — 롤백'); execFileSync('git', ['checkout', '--', 'app.js'], { cwd: ROOT, stdio: 'ignore' }); process.exit(1); }
