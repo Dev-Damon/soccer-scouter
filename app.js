@@ -2951,6 +2951,10 @@
   }
   function applyEspn(d) {
     var changed = false, anyLive = false, anyToday = false, seen = {};
+    // fixByPair 재생성 — 녹아웃(32강~)은 로드시 homeId가 null(슬롯)이라 정적표에 없음.
+    // resolveKnockout가 진출팀을 채운 뒤 현재 팀ID로 매번 다시 만들어야 녹아웃 라이브도 매칭됨.
+    fixByPair = {};
+    (DATA.fixtures || []).forEach(function (f) { if (f.homeId && f.awayId) fixByPair[[f.homeId, f.awayId].sort().join("|")] = f.id; });
     (d.events || []).forEach(function (e) {
       var c = (e.competitions || [])[0]; if (!c) return;
       var comp = c.competitors || [];
