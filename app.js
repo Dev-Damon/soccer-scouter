@@ -3432,6 +3432,7 @@
     "match-56": "https://chzzk.naver.com/video/13746888", // 오스트리아-요르단
     "match-57": "https://chzzk.naver.com/video/13842853", // 아르헨티나-오스트리아
     "match-58": "https://chzzk.naver.com/video/13845549", // 요르단-알제리
+    "match-60": "https://chzzk.naver.com/video/13929001", // 요르단-아르헨티나
     "match-62": "https://chzzk.naver.com/video/13762270", // 우즈베키스탄-콜롬비아
     "match-63": "https://chzzk.naver.com/video/13858502", // 포르투갈-우즈베키스탄
     "match-64": "https://chzzk.naver.com/video/13861060", // 콜롬비아-콩고민주공화국
