@@ -1,7 +1,7 @@
 // Supabase app_data → 정적 results.json + stats.json 스냅샷 생성.
 // 목적: 앱이 종료경기 결과·통계를 Supabase(무료한도 egress) 대신 GitHub Pages(무료 CDN)에서 로드하게 → egress 대폭 절감 + "-" 깜빡임 제거.
 // 운영: settle/stats 갱신 후(또는 cron/Actions) 실행해 커밋. 생성 시에도 필요한 행만 조회해 egress 최소화.
-import { writeFileSync } from "node:fs";
+import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -36,4 +36,10 @@ rows.forEach((row) => {
 const stats = { players: Object.keys(agg).map((k) => agg[k]) };
 writeFileSync(join(ROOT, "stats.json"), JSON.stringify(stats));
 console.log("stats.json:", stats.players.length, "선수");
+
+// 2b) 경기별 st/<mid>.json — matchStatsOne(평점/MVP) 정적 로드용
+mkdirSync(join(ROOT, "st"), { recursive: true });
+let nst = 0;
+rows.forEach((row) => { const mid = row.key.slice("stats:".length); writeFileSync(join(ROOT, "st", mid + ".json"), JSON.stringify(row.data || {})); nst++; });
+console.log("st/ 경기별 통계:", nst);
 console.log("완료 — results.json/stats.json 커밋하면 앱이 정적으로 로드(Supabase egress 회피).");
