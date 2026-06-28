@@ -308,8 +308,19 @@
   var PRED = null, PRED_CHAMP = "england";
   function brkStrength(id) { var t = teamsById[id]; if (!t) return 0; var x = t.indices || {}; var mv = TEAM_MV[id] || 0; return (x.attack || 60) + (x.defense || 60) + (x.organization || 60) + (x.experience || 40) * 0.4 + Math.sqrt(mv) * 2 + (60 - (t.fifaRank || 60)) * 0.5; }
   function predictBracket() {
-    var gr = {}; (DATA.groups || []).forEach(function (g) { gr[g.group] = (g.teamIds || []).slice().sort(function (a, b) { return brkStrength(b) - brkStrength(a); }); });
-    var thirds = Object.keys(gr).map(function (L) { return { L: L, id: gr[L][2] }; }).filter(function (o) { return o.id; }).sort(function (a, b) { return brkStrength(b.id) - brkStrength(a.id); });
+    // 조별 끝난 조 = 실제 ESPN 순위(STAND)로 32강 자리 채움 / 진행중 조 = 킥톡 전력지수 예측. (마지막 조 종료 시 실제 진출 32팀 자동 반영)
+    var st = STAND || {};
+    function grpFinished(ids) { return ids.length >= 4 && ids.every(function (id) { var s = st[id]; return s && s.p >= 3; }); }
+    function realOrder(ids) { return ids.slice().sort(function (a, b) { var sa = st[a] || {}, sb = st[b] || {}; return (sb.pts || 0) - (sa.pts || 0) || (sb.gd || 0) - (sa.gd || 0) || (sb.gf || 0) - (sa.gf || 0) || brkStrength(b) - brkStrength(a); }); }
+    var gr = {}, realG = {};
+    (DATA.groups || []).forEach(function (g) {
+      var ids = (g.teamIds || []).slice();
+      if (grpFinished(ids)) { gr[g.group] = realOrder(ids); realG[g.group] = 1; }
+      else gr[g.group] = ids.sort(function (a, b) { return brkStrength(b) - brkStrength(a); });
+    });
+    // 각 조 3위 중 상위 8팀: 끝난 조 3위는 실제 성적으로 상위 배치(모든 조 종료 시 실제 8팀 정확), 진행중 조는 예측.
+    function thirdScore(o) { var s = st[o.id]; return (realG[o.L] && s) ? 1e7 + (s.pts || 0) * 1e4 + (s.gd || 0) * 100 + (s.gf || 0) : brkStrength(o.id); }
+    var thirds = Object.keys(gr).map(function (L) { return { L: L, id: gr[L][2] }; }).filter(function (o) { return o.id; }).sort(function (a, b) { return thirdScore(b) - thirdScore(a); });
     var usedThird = {};
     function slotTeam(s) {
       var m = /^([12])([A-L])$/.exec(s); if (m) { var arr = gr[m[2]] || []; return arr[m[1] === "1" ? 0 : 1]; }
@@ -396,9 +407,10 @@
   }
   window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) layoutBracket(); });
   function renderBracket() {
+    fetchStandings();  // 실제 순위 비동기 로드 → 도착 시 자동 재렌더(끝난 조는 실제 진출팀으로 채움)
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
-    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="muted-note">(조별리그 끝나면 실제 결과 반영)</span></div><div class="brk2-fit"></div>';
+    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="muted-note">조별 끝난 조는 실제 순위 반영 · 토너먼트 승자는 킥톡 예측</span></div><div class="brk2-fit"></div>';
     _brkLastW = -1;  // 새 fit → 강제 재측정
     var _bfit = viewEl.querySelector(".brk2-fit");
     if (window.ResizeObserver && _bfit) { if (_brkRO) _brkRO.disconnect(); _brkRO = new ResizeObserver(function () { layoutBracket(); }); _brkRO.observe(_bfit); }
@@ -3084,6 +3096,7 @@
       });
       standAt = Date.now();
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
+      else if (parseHash().name === "home" && homeTab === "bracket" && !searchEl.value.trim()) renderBracket();  // 대진표: 순위 도착 시 끝난 조 실제 진출팀 반영
       else if (parseHash().name === "scenario") renderScenario();  // 순위 도착 시 경우의수 페이지 재렌더
       else if (parseHash().name === "kr32") renderKr32();
       else if (parseHash().name === "groupscn" && parseHash().id) renderGroupScenario(parseHash().id);  // 조별 경우의수 페이지 갱신
