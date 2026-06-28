@@ -2742,6 +2742,10 @@
     }
 
     var pr = predict(a, b);
+    if (!/조별/.test(fx.stage || "") && pr.draw) {  // 토너먼트(32강~결승)는 무승부 없음 → 무 확률을 양팀 승률에 비례 배분, 무=0
+      var _sab = pr.winA + pr.winB || 1, _wa = Math.round(pr.winA + pr.draw * pr.winA / _sab);
+      pr = { winA: _wa, draw: 0, winB: 100 - _wa };
+    }
     var mf = (isLiveFix(fx) || matchEnded(fx)) ? "" : matchFormation(a, b);  // 라이브/종료는 실제 라인업(아래 espnPitch)으로 충분 — 예상 라인업 숨김(중복+좌표/라벨 혼란 방지)
     var ia = a.indices || {}, ib = b.indices || {};
     var cmp = cmpRow("공격력", ia.attack, ib.attack) + cmpRow("수비력", ia.defense, ib.defense) +
@@ -2774,7 +2778,7 @@
         mvCompareHtml(a, b) +  /* 1) 스쿼드 몸값 게이지(위로) */
         '<div class="block"><h3>승부 예상</h3>' +  /* 2) 승부예상 게이지(몸값 밑) */
           '<div class="prob"><div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + '</div><div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + '</div><div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div></div>" +
-          '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span><span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span><span>' + esc(b.name) + " 승</span></div></div>" +
+          '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span>' + (pr.draw ? '<span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span>' : "") + '<span>' + esc(b.name) + " 승</span></div></div>" +
         kr32MatchBlock(fx) +  /* D~L조 경기면 한국 32강 와일드카드 조건 표시 */
         matchScenarioHtml(fx) +  /* 조별 경기면 32강 진출 경우의 수 + 조 순위 */
         '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
@@ -3226,11 +3230,9 @@
       var locked = !!bet;  // 베팅하면 예측 고정(변경 불가)
       var mine = bet ? bet.choice : KickComments.predMine(fx.id), total = c.total || 0, op = isOpen() && !locked;
       function pct(n) { return total > 0 ? Math.round(n / total * 100) : 0; }
-      var opts = [
-        { ch: leftCh, name: a.name, flag: a.flag, n: c[leftCh] || 0 },
-        { ch: "draw", name: "무승부", flag: "", n: c.draw || 0 },
-        { ch: rightCh, name: b.name, flag: b.flag, n: c[rightCh] || 0 }
-      ];
+      var opts = [{ ch: leftCh, name: a.name, flag: a.flag, n: c[leftCh] || 0 }];
+      if (/조별/.test(fx.stage || "")) opts.push({ ch: "draw", name: "무승부", flag: "", n: c.draw || 0 });  // 토너먼트는 무승부 선택지 제외
+      opts.push({ ch: rightCh, name: b.name, flag: b.flag, n: c[rightCh] || 0 });
       var cols = opts.map(function (o) {
         var p = pct(o.n), on = mine === o.ch;
         return '<button class="pred-col' + (on ? " on" : "") + '"' + (op ? ' data-pred="' + o.ch + '"' : " disabled") + '>' +
