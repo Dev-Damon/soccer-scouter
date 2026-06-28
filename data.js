@@ -8115,7 +8115,7 @@ window.DATA = {
       "name": "뉴질랜드",
       "nameEn": "New Zealand",
       "flag": "🇳🇿",
-      "fifaRank": 84,
+      "fifaRank": 86,
       "group": "G",
       "tierSummary": "FIFA 85위의 오세아니아 맹주로, 16년 만에 본선에 복귀한 '언더독' 팀이지만 우디 같은 프리미어리그급 핵심 선수와 유럽파 젊은 피가 섞여 한 방을 노린다.",
       "styleSummary": [
