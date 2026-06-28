@@ -812,7 +812,7 @@
   // 득점왕/기록 — 경기별 행(stats:매치id)을 모아 선수별 합산. 크론 + 라이브 보는 클라이언트가 같은 행을 갱신
   function matchStats() {
     if (!sb) return Promise.resolve(null);
-    return sb.from("app_data").select("key,data").then(function (r) {
+    return sb.from("app_data").select("key,data").like("key", "stats:%").then(function (r) {  // ★stats: 행만(서버사이드 필터). 기존 전체 select는 app_data 18MB를 매번 끌어와 egress 한도 초과의 주범이었음.
       var rows = (r.data || []).filter(function (row) { return row.key && row.key.indexOf("stats:") === 0; });
       if (!rows.length) return null;
       var agg = {};
@@ -830,10 +830,18 @@
   // 라이브 경기 보는 사람이 그 경기 기록을 즉시 DB에 갱신(20분 크론 안 기다림)
   function pushMatchStats(mid, players) { if (!sb || !mid || !players || !players.length) return Promise.resolve(null); return sb.rpc("set_match_stats", { mid: mid, d: { players: players } }).then(function () { return true; }).catch(function () { return null; }); }
   // 한 경기 기록(평점 산출용)
-  function matchStatsOne(mid) { if (!sb || !mid) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "stats:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
+  function matchStatsOne(mid) {  // ★정적 st/ 우선(무료 CDN) → Supabase egress 회피. 없으면 Supabase 폴백.
+    if (!mid) return Promise.resolve(null);
+    return fetch("https://kicktalk.xyz/st/" + mid + ".json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+      .then(function (s) { if (s && s.players) return s; if (!sb) return null; return sb.from("app_data").select("data").eq("key", "stats:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); });
+  }
   // 확정 라인업 DB 저장/조회(영구 보존 + 종료경기 빠른 로딩, ESPN 백업)
   function pushLineup(mid, d) { if (!sb || !mid || !d) return Promise.resolve(null); return sb.rpc("set_match_lineup", { mid: mid, d: d }).then(function () { return true; }).catch(function () { return null; }); }
-  function getLineup(mid) { if (!sb || !mid) return Promise.resolve(null); return sb.from("app_data").select("data").eq("key", "lineup:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); }
+  function getLineup(mid) {  // ★정적 lu/ 우선(라인업+boxscore 통계, 무료 CDN) → 종료경기 통계 즉시 복구 + Supabase egress(18MB 라인업) 회피. 없으면 Supabase 폴백.
+    if (!mid) return Promise.resolve(null);
+    return fetch("https://kicktalk.xyz/lu/" + mid + ".json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+      .then(function (s) { if (s && s.rosters) return s; if (!sb) return null; return sb.from("app_data").select("data").eq("key", "lineup:" + mid).maybeSingle().then(function (r) { return (r.data && r.data.data) || null; }).catch(function () { return null; }); });
+  }
 
   window.KickComments = {
     matchStats: matchStats, pushMatchStats: pushMatchStats, matchStatsOne: matchStatsOne, pushLineup: pushLineup, getLineup: getLineup,

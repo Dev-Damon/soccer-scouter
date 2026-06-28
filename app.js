@@ -503,14 +503,13 @@
   function ensureStats() {
     if (statsData) return Promise.resolve(statsData);
     if (statsLoading) return statsLoading;
-    // DB(크론+라이브 클라이언트 적재) 우선 → 새로고침마다 최신. 단 클라이언트 ready 후 조회(아니면 sb null로 폴백 캐싱됨)
-    var ready = (window.KickComments && KickComments.ready) ? KickComments.ready() : Promise.resolve();
-    statsLoading = ready.then(function () {
-      return (window.KickComments && KickComments.matchStats) ? KickComments.matchStats() : null;
-    }).then(function (db) {
-      if (db && db.players && db.players.length) return db;
-      return fetch("https://kicktalk.xyz/stats.json").then(function (r) { return r.json(); });  // DB 비었을 때만 폴백
-    }).then(function (j) { statsData = j || { players: [] }; return statsData; }).catch(function () { statsData = { players: [] }; return statsData; });
+    // ★정적 stats.json 우선(GitHub Pages CDN ~150KB) → Supabase egress 회피. 기존엔 Supabase matchStats가 app_data 전체(약 18MB)를 매 호출마다 가져와 무료한도 초과의 주범이었음. 정적이 비었을 때만 Supabase 폴백.
+    statsLoading = fetch("https://kicktalk.xyz/stats.json?b=" + Date.now()).then(function (r) { return r.json(); }).catch(function () { return null; })
+      .then(function (j) {
+        if (j && j.players && j.players.length) return j;
+        var ready = (window.KickComments && KickComments.ready) ? KickComments.ready() : Promise.resolve();
+        return ready.then(function () { return (window.KickComments && KickComments.matchStats) ? KickComments.matchStats() : null; });
+      }).then(function (j) { statsData = j || { players: [] }; return statsData; }).catch(function () { statsData = { players: [] }; return statsData; });
     return statsLoading;
   }
   function scVal(p) { return scoreCat === "cards" ? ((p.yellow || 0) + (p.red || 0) * 2) : (p[scoreCat] || 0); }
@@ -3033,27 +3032,29 @@
   }
   // 저장된 종료경기 결과를 LIVE에 병합(ESPN이 안 줘도 카드에 결과 유지)
   function loadStoredResults() {
-    if (!window.KickComments || !KickComments.matchResults) return;
-    KickComments.ready().then(KickComments.matchResults).then(function (res) {
+    function apply(res) {
       var changed = false, srChanged = false;
       Object.keys(res || {}).forEach(function (mid) {
-        // DB에 결과 있으면 = 종료된 경기. LIVE가 비었거나 '아직 in(스테일)'이면 post로 덮어씀(ESPN이 스코어보드서 내려 안 잡히던 끝난 경기가 라이브로 멈춰있던 버그 해결)
+        // 종료경기 결과. LIVE가 비었거나 '아직 in(스테일)'이면 post로 덮어씀.
         if (!(res[mid] && res[mid].hs != null)) return;
         var sr = { hs: res[mid].hs, as: res[mid].as };
-        if (JSON.stringify(STORED_RESULTS[mid]) !== JSON.stringify(sr)) { STORED_RESULTS[mid] = sr; srChanged = true; }  // 승자승 계산용 캐시(변동 시 경우의수 재렌더)
+        if (JSON.stringify(STORED_RESULTS[mid]) !== JSON.stringify(sr)) { STORED_RESULTS[mid] = sr; srChanged = true; }
         if (LIVE[mid] && LIVE[mid].state === "post") return;
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
-      if (resolveKnockout() && parseHash().name === "home" && !searchEl.value.trim()) renderHome();  // 녹아웃 결과 도착 → 다음 라운드 팀 자동 채움(일정/대진표)
-      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
-      if (changed || srChanged) {  // 승자승 캐시 갱신 시 경우의수 페이지(한국/조별/경기상세) 재계산
+      if (resolveKnockout() && parseHash().name === "home" && !searchEl.value.trim()) renderHome();  // 녹아웃 결과 도착 → 다음 라운드 자동 채움
+      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }
+      if (changed || srChanged) {
         var ph = parseHash();
         if (ph.name === "scenario") renderScenario();
-        else if (ph.name === "kr32") renderKr32();  // 결과 갱신 시 32강 조건 자동 재판정
+        else if (ph.name === "kr32") renderKr32();
         else if (ph.name === "groupscn" && ph.id) renderGroupScenario(ph.id);
         else if (ph.name === "match" && ph.id) renderMatch(ph.id);
       }
-    }).catch(function () {});
+    }
+    // ★정적 results.json 우선(GitHub Pages CDN, 즉시·무료) → Supabase egress 회피 + "-" 깜빡임 제거. Supabase가 한도초과로 막혀도 결과는 정적으로 표시됨. Supabase는 라이브 갱신 보조.
+    fetch("https://kicktalk.xyz/results.json?b=" + Date.now()).then(function (r) { return r.json(); }).then(apply).catch(function () {});
+    if (window.KickComments && KickComments.matchResults) KickComments.ready().then(KickComments.matchResults).then(apply).catch(function () {});
   }
   function onHomeSchedule() {
     return parseHash().name === "home" && !searchEl.value.trim() && homeTab === "schedule";
