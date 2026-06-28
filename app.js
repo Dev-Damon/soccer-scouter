@@ -3043,7 +3043,7 @@
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
       if (resolveKnockout() && parseHash().name === "home" && !searchEl.value.trim()) renderHome();  // 녹아웃 결과 도착 → 다음 라운드 자동 채움
-      if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }
+      if (changed) { if (onHomeSchedule()) renderSchedule(); else if (parseHash().name === "home" && homeTab === "scorers" && !searchEl.value.trim()) renderScorers(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }
       if (changed || srChanged) {
         var ph = parseHash();
         if (ph.name === "scenario") renderScenario();
@@ -3096,7 +3096,9 @@
       if (window._matchLiveTick) window._matchLiveTick();  // 경기페이지면 점수 즉시 반영
       if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh();    // 나라상세 라이브 배너 점수 갱신
       var lk = liveKey();
-      if ((res.changed || lk !== _lastLiveKey || res.anyLive) && onHomeSchedule()) renderSchedule();  // 라이브 중엔 매 폴링 재렌더(ESPN clock 정체여도 시각 기반 분 갱신)
+      var _liveCh = (res.changed || lk !== _lastLiveKey || res.anyLive);
+      if (_liveCh && onHomeSchedule()) renderSchedule();  // 라이브 중엔 매 폴링 재렌더(ESPN clock 정체여도 시각 기반 분 갱신)
+      else if (_liveCh && parseHash().name === "home" && homeTab === "scorers" && !searchEl.value.trim()) renderScorers();  // ★라이브 골 감지 → 득점순위 즉시 갱신(goalsFromResults가 LIVE 골 병합, 20분 크론 안 기다림)
       _lastLiveKey = lk;
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) fetchStandings(true);
       scheduleLive(nextLiveDelay(res.anyLive));

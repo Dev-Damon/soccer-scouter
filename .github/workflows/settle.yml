@@ -16,5 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      # 게이트 — 라이브/최근 종료 경기 없으면 정산 스킵(헛돌지 않게)
+      - name: 라이브/최근경기 확인
+        id: gate
+        run: |
+          if node scripts/has_active.mjs; then echo "active=1" >> "$GITHUB_OUTPUT"; else echo "active=0" >> "$GITHUB_OUTPUT"; fi
       - name: 종료 경기 베팅 정산
+        if: steps.gate.outputs.active == '1'
         run: node scripts/settle.js

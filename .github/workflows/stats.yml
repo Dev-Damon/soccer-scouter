@@ -16,14 +16,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      # 게이트 — 라이브/최근 종료 경기 없으면 이하 전부 스킵(끝난 경기 데이터는 불변 → 헛돌지 않게)
+      - name: 라이브/최근경기 확인
+        id: gate
+        run: |
+          if node scripts/has_active.mjs; then echo "active=1" >> "$GITHUB_OUTPUT"; else echo "active=0" >> "$GITHUB_OUTPUT"; fi
       - name: 기록 집계 → DB 적재
+        if: steps.gate.outputs.active == '1'
         run: node scripts/fetch_stats.js
       # ↓ 정적 스냅샷 — 앱이 Supabase(무료 egress 한도) 대신 GitHub Pages(무료 CDN)에서 결과·통계·라인업을 로드하게.
       - name: 정적 결과/통계 생성 (results.json · stats.json · st/)
+        if: steps.gate.outputs.active == '1'
         run: node scripts/gen_static_data.mjs
       - name: 경기 통계(boxscore) 백필 — 새 종료경기만 (증분)
+        if: steps.gate.outputs.active == '1'
         run: node scripts/backfill_boxscore.mjs
       - name: 변경 시 커밋 & 푸시
+        if: steps.gate.outputs.active == '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
