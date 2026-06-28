@@ -342,6 +342,40 @@
     var lLose = node.lsf === node.l8_0 ? node.l8_1 : node.l8_0, rLose = node.rsf === node.r8_0 ? node.r8_1 : node.r8_0;  // 3·4위전 = 양 4강 패자
     return { r32: r32, r32win: r32win, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf, third: [lLose, rLose] };
   }
+  // ===== 녹아웃 자동 채움 — 슬롯 라벨을 실제 팀으로 해석. 32강=실제 조 순위, 16강~결승=실제 경기 승자/패자. =====
+  // 라운드가 끝날 때마다 다음 경기 팀이 자동으로 채워진다(스케줄·경기상세·대진표 공통). 원본 슬롯 라벨은 _slotA/_slotB에 보존해 매번 재해석.
+  function resolveKnockout() {
+    var st = STAND || {}, changed = false;
+    function grpFin(ids) { return ids.length >= 4 && ids.every(function (id) { var s = st[id]; return s && s.p >= 3; }); }
+    function ordOf(ids) { return ids.slice().sort(function (a, b) { var sa = st[a] || {}, sb = st[b] || {}; return (sb.pts || 0) - (sa.pts || 0) || (sb.gd || 0) - (sa.gd || 0) || (sb.gf || 0) - (sa.gf || 0) || brkStrength(b) - brkStrength(a); }); }
+    var gr = {}, realG = {};
+    (DATA.groups || []).forEach(function (g) { var ids = (g.teamIds || []).slice(); if (grpFin(ids)) { gr[g.group] = ordOf(ids); realG[g.group] = 1; } });
+    var thirds = Object.keys(gr).map(function (L) { return { L: L, id: gr[L][2] }; }).filter(function (o) { return o.id; })
+      .sort(function (a, b) { var sa = st[a.id] || {}, sb = st[b.id] || {}; return (sb.pts || 0) - (sa.pts || 0) || (sb.gd || 0) - (sa.gd || 0) || (sb.gf || 0) - (sa.gf || 0); });
+    var usedThird = {};
+    function slotTeam(label) {
+      var m = /^([A-L])조\s*([12])위$/.exec(label || ""); if (m) { var arr = gr[m[1]]; return (realG[m[1]] && arr) ? arr[m[2] === "1" ? 0 : 1] : null; }
+      var t = /^([A-L/]+)조\s*3위$/.exec(label || ""); if (t) { var cands = t[1].split("/"); var pick = thirds.filter(function (o) { return cands.indexOf(o.L) >= 0 && realG[o.L] && !usedThird[o.L]; })[0]; if (pick) { usedThird[pick.L] = 1; return pick.id; } }
+      return null;
+    }
+    function koWinner(label) {
+      var m = /(\d+)경기\s*(승자|패자)/.exec(label || ""); if (!m) return null;
+      var fx = fixturesById["match-" + m[1]]; if (!fx || !matchEnded(fx)) return null;
+      var r = resultOf(fx); if (!r || r.hs == null || !fx.homeId || !fx.awayId || r.hs === r.as) return null;  // 무승부(승부차기)는 PK 결과 데이터 필요
+      var win = r.hs > r.as ? fx.homeId : fx.awayId, lose = r.hs > r.as ? fx.awayId : fx.homeId;
+      return m[2] === "승자" ? win : lose;
+    }
+    (DATA.fixtures || []).forEach(function (fx) {
+      if (fx.group) return;
+      if (fx._slotA == null) { fx._slotA = fx.homeName; fx._slotB = fx.awayName; }  // 원본 슬롯 라벨 보존
+      var r32 = fx.stage === "32강";
+      var ha = r32 ? slotTeam(fx._slotA) : koWinner(fx._slotA);
+      var hb = r32 ? slotTeam(fx._slotB) : koWinner(fx._slotB);
+      if (ha && fx.homeId !== ha) { fx.homeId = ha; var ta = teamsById[ha]; if (ta) fx.homeName = ta.name; changed = true; }
+      if (hb && fx.awayId !== hb) { fx.awayId = hb; var tb = teamsById[hb]; if (tb) fx.awayName = tb.name; changed = true; }
+    });
+    return changed;
+  }
   // 세로형 32강 대진표 — 한 경기 = 팀카드(조/순위 2줄) 위아래로 쌓음. 가운데 결승.
   // ★카드 크기는 고정, 너비가 넓어지면 '연결선(컬럼 간격)'만 좌우로 늘림(전체 확대 X). 리사이즈 시 재배치.
   var _brkRO = null, _brkLastW = -1;
@@ -3008,6 +3042,7 @@
         if (LIVE[mid] && LIVE[mid].state === "post") return;
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
       });
+      if (resolveKnockout() && parseHash().name === "home" && !searchEl.value.trim()) renderHome();  // 녹아웃 결과 도착 → 다음 라운드 팀 자동 채움(일정/대진표)
       if (changed) { if (onHomeSchedule()) renderSchedule(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }  // 저장 스코어 도착 시 경기상세 조현황(경기결과) 갱신
       if (changed || srChanged) {  // 승자승 캐시 갱신 시 경우의수 페이지(한국/조별/경기상세) 재계산
         var ph = parseHash();
@@ -3095,8 +3130,10 @@
         });
       });
       standAt = Date.now();
+      var _koCh = resolveKnockout();  // 순위 도착 → 녹아웃 32강 실제 팀 자동 채움
       if (parseHash().name === "home" && homeTab === "groups" && !searchEl.value.trim()) renderGroups();
       else if (parseHash().name === "home" && homeTab === "bracket" && !searchEl.value.trim()) renderBracket();  // 대진표: 순위 도착 시 끝난 조 실제 진출팀 반영
+      else if (_koCh && parseHash().name === "home" && homeTab === "schedule" && !searchEl.value.trim()) renderSchedule();  // 일정: 녹아웃 32강 실제 팀 반영
       else if (parseHash().name === "scenario") renderScenario();  // 순위 도착 시 경우의수 페이지 재렌더
       else if (parseHash().name === "kr32") renderKr32();
       else if (parseHash().name === "groupscn" && parseHash().id) renderGroupScenario(parseHash().id);  // 조별 경우의수 페이지 갱신
