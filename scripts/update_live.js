@@ -12,6 +12,16 @@ function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[�
 const T_ALIAS={czechia:'czech-republic',korearepublic:'south-korea',usa:'united-states',turkiye:'turkey',caboverde:'cape-verde',cotedivoire:'ivory-coast',congodr:'dr-congo',bosniaherzegovina:'bosnia-and-herzegovina'};
 function espnTeam(nm){var s=norm(nm).replace(/ /g,'');var slug=norm(nm).replace(/ /g,'-');slug=T_ALIAS[s]||slug;return teamsById[slug]||null;}
 const fixByPair={}; D.fixtures.forEach(f=>{if(f.homeId&&f.awayId)fixByPair[[f.homeId,f.awayId].sort().join('|')]=f.id;});
+function koEpoch(fx){const dt=(fx.kstDate||fx.date),tm=(fx.kstTime||fx.time||'00:00');const t=Date.parse(dt+'T'+tm+':00+09:00');return isNaN(t)?0:t;}
+// 녹아웃(32강~)은 정적 data.js에서 homeId가 null(슬롯)이라 fixByPair에 없음.
+// ESPN 이벤트(실제 팀쌍)를 킥오프 시각(±2시간)으로 미해소 녹아웃 fixture에 매칭해 그 자리에서 해소 → ESPN 공유캐시·JTBC 감지 둘 다 녹아웃 반영.
+function resolveFid(hT,aT,eDateMs){
+  var fid=fixByPair[[hT.id,aT.id].sort().join('|')]; if(fid)return fid;
+  var best=null,bestD=Infinity;
+  D.fixtures.forEach(f=>{if(f.group||(f.homeId&&f.awayId))return;var ko=koEpoch(f);if(!ko)return;var dd=Math.abs(ko-eDateMs);if(dd<bestD){bestD=dd;best=f;}});
+  if(best&&bestD<2*3600000){best.homeId=hT.id;best.awayId=aT.id;best.homeName=hT.name;best.awayName=aT.name;fixByPair[[hT.id,aT.id].sort().join('|')]=best.id;return best.id;}
+  return null;
+}
 function parseGoals(c){var o=[];(c.details||[]).forEach(d=>{var t=(d.type&&d.type.text)||'';if(/disallow/i.test(t))return;var og=d.ownGoal===true||/own.?goal/i.test(t);var g=d.scoringPlay===true||/goal/i.test(t);if(!g)return;o.push({who:((d.athletesInvolved||[])[0]||{}).displayName||'',clk:(d.clock||{}).displayValue||'',og:og});});return o;}
 const SCORE='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=';
 const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=';
@@ -27,7 +37,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
       var ht=(ty.name==='STATUS_HALFTIME'||ty.detail==='HT'||ty.description==='Halftime');  // 하프타임
       var comp=c.competitors||[]; var H=comp.find(x=>x.homeAway==='home'),A=comp.find(x=>x.homeAway==='away'); if(!H||!A)return;
       var hT=espnTeam((H.team||{}).displayName),aT=espnTeam((A.team||{}).displayName); if(!hT||!aT)return;
-      var fid=fixByPair[[hT.id,aT.id].sort().join('|')]; if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
+      var fid=resolveFid(hT,aT,Date.parse(e.date)); if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
       var hs=fx.homeId===hT.id?+H.score:+A.score, as=fx.homeId===hT.id?+A.score:+H.score, ev=parseGoals(c);
       if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:ht?'전반 종료':((e.status||{}).displayClock||''),events:ev};
       else posts[fid]={eid:e.id,hs:hs,as:as,ev:ev};
