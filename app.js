@@ -732,6 +732,7 @@
   // 페이지 맨 아래에 쿠팡 배너 1개(모든 페이지 공통) — 이미 있으면 스킵
   function coupangBottom() { if (!viewEl || viewEl.querySelector(".cpang-m")) return; var cp = document.createElement("div"); cp.className = "adslot cpang-m"; viewEl.appendChild(cp); insertCoupang(cp, 320, 100); }
   function renderSchedule() {
+    fetchStandings(); resolveKnockout();  // 녹아웃(32강~) 일정에 실제 진출팀 자동 채움(순위 도착 시 재렌더)
     var dates = fixtureDates();
     if (!dates.length) {
       viewEl.innerHTML = '<div class="empty">경기 일정 데이터를 채우는 중입니다.</div>';
@@ -2721,7 +2722,8 @@
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     backBtn.hidden = false; tabsEl.hidden = true;
     window._mscNeedsLive = false;  // 조현황 경기결과에 '-'(스코어 미로드)가 있으면 teamResults가 true로 → 저장 스코어 도착 시 재렌더
-    if (fx.group) fetchStandings();  // 조별 경기면 순위 로드(종료경기도 조현황 순위표 필요) → 도착 시 자동 재렌더. STAND는 정적 순위라 라이브 섞임과 무관
+    if (fx.group || !fx.homeId || !fx.awayId) fetchStandings();  // 조별=순위표용 / 녹아웃 미확정=실제 진출팀 해석용 순위 로드 → 도착 시 자동 재렌더
+    if (!fx.homeId || !fx.awayId) resolveKnockout();  // STAND/결과 이미 있으면 즉시 실제 팀으로 해석
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
     if (fx.awayId === "south-korea" && a && b) { var _sw = a; a = b; b = _sw; }  // 대한민국 경기는 항상 한국을 왼쪽에
     var when = fmtDate(fxDate(fx)).d + (fxTime(fx) ? " " + esc(fxTime(fx)) : "");
