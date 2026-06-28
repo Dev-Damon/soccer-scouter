@@ -3569,7 +3569,7 @@ window.DATA = {
       "name": "카타르",
       "nameEn": "Qatar",
       "flag": "🇶🇦",
-      "fifaRank": 60,
+      "fifaRank": 59,
       "group": "B",
       "tierSummary": "2회 연속 아시안컵 우승으로 아시아 정상에 오른 강팀이지만, 선수 대부분이 자국 리그 소속이라 유럽 강호들과 맞붙는 본선에서는 도전자에 가깝다.",
       "styleSummary": [
@@ -4686,7 +4686,7 @@ window.DATA = {
       "name": "스코틀랜드",
       "nameEn": "Scotland",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "fifaRank": 41,
+      "fifaRank": 42,
       "group": "C",
       "tierSummary": "1998년 이후 28년 만의 월드컵 본선에 오른 스코틀랜드는 월드클래스 1명(맥토미니)과 풍부한 빅리그 베테랑들로 무장했지만, 브라질·모로코가 버틴 C조에서는 16강이 현실적 목표인 다크호스다.",
       "styleSummary": [
@@ -7226,7 +7226,7 @@ window.DATA = {
       "name": "튀니지",
       "nameEn": "Tunisia",
       "flag": "🇹🇳",
-      "fifaRank": 58,
+      "fifaRank": 57,
       "group": "F",
       "tierSummary": "유럽 무대 미드필더와 견고한 수비를 앞세워 아프리카 예선을 무실점 1위로 통과한, 조 최강은 아니어도 한 방 있는 다크호스 팀입니다.",
       "styleSummary": [
@@ -8760,7 +8760,7 @@ window.DATA = {
       "name": "사우디아라비아",
       "nameEn": "Saudi Arabia",
       "flag": "🇸🇦",
-      "fifaRank": 59,
+      "fifaRank": 58,
       "group": "H",
       "tierSummary": "아시아 전통의 강호이자 2022년 아르헨티나를 꺾은 이변의 주인공으로, 조별리그 통과를 목표로 하는 다크호스이지만 본선 직전 감독 교체와 유럽파 부족이 변수인 도전자급 팀이다.",
       "styleSummary": [
@@ -9241,7 +9241,7 @@ window.DATA = {
       "name": "프랑스",
       "nameEn": "France",
       "flag": "🇫🇷",
-      "fifaRank": 1,
+      "fifaRank": 2,
       "group": "I",
       "tierSummary": "2018 우승·2022 준우승의 두 번에 걸친 결승 단골이자, 발롱도르 수상자 뎀벨레와 주장 음바페를 앞세운 명실상부 우승 후보 0순위 강팀입니다.",
       "styleSummary": [
@@ -10065,7 +10065,7 @@ window.DATA = {
       "name": "아르헨티나",
       "nameEn": "Argentina",
       "flag": "🇦🇷",
-      "fifaRank": 2,
+      "fifaRank": 1,
       "group": "J",
       "tierSummary": "2022년 우승팀이자 현 디펜딩 챔피언으로, 메시의 마지막 월드컵을 우승으로 장식하려는 J조 최강 우승 후보입니다.",
       "styleSummary": [
@@ -10701,7 +10701,7 @@ window.DATA = {
       "name": "요르단",
       "nameEn": "Jordan",
       "flag": "🇯🇴",
-      "fifaRank": 72,
+      "fifaRank": 73,
       "group": "J",
       "tierSummary": "사상 첫 월드컵 본선에 오른 다크호스로, 2023 아시안컵 준우승 멤버를 중심으로 한 끈끈한 수비와 알타마리·올완의 역습이 무기인 도전자 티어 팀입니다.",
       "styleSummary": [
@@ -11119,7 +11119,7 @@ window.DATA = {
       "name": "콩고민주공화국",
       "nameEn": "DR Congo",
       "flag": "🇨🇩",
-      "fifaRank": 46,
+      "fifaRank": 41,
       "group": "K",
       "tierSummary": "유럽 5대 리그와 아프리카 무대를 누비는 검증된 베테랑 수비·공격진에 신예 미드필더가 결합된, 조 최약체로 분류되지만 한 방이 있는 '복병형' 다크호스다.",
       "styleSummary": [
@@ -11357,7 +11357,7 @@ window.DATA = {
       "name": "우즈베키스탄",
       "nameEn": "Uzbekistan",
       "flag": "🇺🇿",
-      "fifaRank": 57,
+      "fifaRank": 60,
       "group": "K",
       "tierSummary": "사상 첫 월드컵 본선에 오른 중앙아시아 개척자로, 맨시티 후사노프와 역대 최다 득점자 쇼무로도프를 축으로 조직력과 수비를 앞세워 첫 승에 도전하는 다크호스다.",
       "styleSummary": [
@@ -12471,7 +12471,7 @@ window.DATA = {
       "name": "파나마",
       "nameEn": "Panama",
       "flag": "🇵🇦",
-      "fifaRank": 42,
+      "fifaRank": 44,
       "group": "L",
       "tierSummary": "유럽·멕시코·MLS·칠레 등 다양한 리그에 흩어진 베테랑 중심의 단단한 다크호스로, 조직력과 투지로 강팀을 괴롭히는 전형적인 콘카카프 강호다.",
       "styleSummary": [
