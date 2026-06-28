@@ -1507,7 +1507,7 @@
   function kr32BannerHtml() {
     var ev = kr32Eval();
     var txt = ev.verdict === "in" ? "🎉 한국 32강 진출 확정! (" + ev.success + "/" + KR32_NEED + ")"
-      : ev.verdict === "out" ? "😢 한국 32강 무산 (성공 " + ev.success + "/" + KR32_NEED + ")"
+      : ev.verdict === "out" ? "😢 한국 32강 무산"
       : "🇰🇷 한국 32강 가려면? · 성공 " + ev.success + "/" + KR32_NEED + " (⏳" + ev.pending + ")";
     return '<div class="hb-dday kr32-banner ' + ev.verdict + ' clickable" data-kr32go>' + txt + " ›</div>";
   }
