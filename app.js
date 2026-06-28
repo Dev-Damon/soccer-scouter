@@ -763,7 +763,7 @@
     var dayFixtures = (DATA.fixtures || []).filter(function (f) { return fxDate(f) === selectedDate; })
       .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
 
-    // 빅매치 히어로: 양 팀 모두 알려진 경기 중 FIFA 합산 랭킹이 가장 높은 경기 (라이브 경기는 상단 라이브카드로 빠지므로 제외)
+    // 빅매치 히어로: FIFA 랭킹이 가장 높은 나라가 포함된 경기 (라이브 경기는 상단 라이브카드로 빠지므로 제외)
     var hero = pickBigMatch(dayFixtures.filter(function (f) { return !isLiveOrBcast(f); }));
     var heroHtml = hero ? heroCard(hero) : "";
 
@@ -843,7 +843,7 @@
       if (!fx.homeId || !fx.awayId) return;
       var h = teamsById[fx.homeId], a = teamsById[fx.awayId];
       var hr = (h && h.fifaRank) || 999, ar = (a && a.fifaRank) || 999;
-      var s = hr + ar;
+      var s = Math.min(hr, ar) * 1000 + Math.max(hr, ar);  // FIFA 랭킹 가장 높은 한 팀이 포함된 경기 우선(동률 시 상대팀 랭킹으로 보조)
       if (s < bestScore) { bestScore = s; best = fx; }
     });
     return best;
