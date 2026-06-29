@@ -3232,20 +3232,22 @@
     }
     function paint(c, bet) {
       var locked = !!bet;  // 베팅하면 예측 고정(변경 불가)
-      var mine = bet ? bet.choice : KickComments.predMine(fx.id), total = c.total || 0, op = isOpen() && !locked;
-      function pct(n) { return total > 0 ? Math.round(n / total * 100) : 0; }
+      var mine = bet ? bet.choice : KickComments.predMine(fx.id), op = isOpen() && !locked;
       var opts = [{ ch: leftCh, name: a.name, flag: a.flag, n: c[leftCh] || 0 }];
       if (/조별/.test(fx.stage || "")) opts.push({ ch: "draw", name: "무승부", flag: "", n: c.draw || 0 });  // 토너먼트는 무승부 선택지 제외
       opts.push({ ch: rightCh, name: b.name, flag: b.flag, n: c[rightCh] || 0 });
-      var cols = opts.map(function (o) {
-        var p = pct(o.n), on = mine === o.ch;
+      // ★표시되는 선택지 합으로 % 계산(녹아웃은 무승부 표 제외) + pct100으로 합 100% 보장. (c.total로 나누면 안 보이는 무승부 표 때문에 67%+0%처럼 100%가 안 됐음)
+      var shown = opts.reduce(function (s, o) { return s + o.n; }, 0);
+      var pcts = shown > 0 ? pct100(opts.map(function (o) { return o.n / shown * 100; })) : opts.map(function () { return 0; });
+      var cols = opts.map(function (o, i) {
+        var on = mine === o.ch;
         return '<button class="pred-col' + (on ? " on" : "") + '"' + (op ? ' data-pred="' + o.ch + '"' : " disabled") + '>' +
           '<span class="pred-col-team">' + (o.flag ? '<span class="pred-col-flag">' + esc(o.flag) + "</span>" : "") + esc(o.name) + "</span>" +
-          '<span class="pred-col-pct">' + p + "%</span></button>";
+          '<span class="pred-col-pct">' + pcts[i] + "%</span></button>";
       }).join("");
       slot.innerHTML = '<div class="pred-box"><div class="pred-q">이 경기의 승리팀을 맞혀보세요! 🔮</div>' +
         '<div class="pred-cols">' + cols + "</div>" +
-        '<div class="pred-foot">' + (total ? "<b>" + total.toLocaleString() + "</b>명 참여중" : "첫 예측을 남겨보세요") + " · ⏱ " + cd() + (locked ? " · 💰 베팅완료(예측 고정)" : "") + "</div></div>";
+        '<div class="pred-foot">' + (shown ? "<b>" + shown.toLocaleString() + "</b>명 참여중" : "첫 예측을 남겨보세요") + " · ⏱ " + cd() + (locked ? " · 💰 베팅완료(예측 고정)" : "") + "</div></div>";
       slot._predOpen = op;
       twem(slot);
     }
