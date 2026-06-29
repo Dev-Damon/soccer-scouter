@@ -832,6 +832,27 @@
         setTimeout(updArrows, 60); setTimeout(updArrows, 320);
       }
     }
+
+    // 좌우 스와이프로 날짜 이동 — viewEl에 1회만 부착(재렌더마다 중복 방지). 날짜 스트립 위 스와이프는 제외(스트립 자체 스크롤).
+    if (!window._dateSwipeAttached) {
+      window._dateSwipeAttached = true;
+      var _sx = 0, _sy = 0, _trk = false, _fromStrip = false;
+      viewEl.addEventListener("touchstart", function (e) {
+        if (!onHomeSchedule() || !e.touches || e.touches.length !== 1) { _trk = false; return; }
+        var t = e.touches[0]; _sx = t.clientX; _sy = t.clientY; _trk = true;
+        _fromStrip = !!(e.target.closest && e.target.closest(".datestrip-wrap"));
+      }, { passive: true });
+      viewEl.addEventListener("touchend", function (e) {
+        if (!_trk) return; _trk = false; if (_fromStrip || !onHomeSchedule()) return;
+        var t = e.changedTouches && e.changedTouches[0]; if (!t) return;
+        var dx = t.clientX - _sx, dy = t.clientY - _sy;
+        if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;  // 가로 우세 스와이프만(세로 스크롤과 구분)
+        var ds = fixtureDates(), i = ds.indexOf(selectedDate); if (i < 0) return;
+        var ni = dx < 0 ? i + 1 : i - 1;  // 왼쪽으로 밀면 다음 날, 오른쪽으로 밀면 이전 날
+        if (ni < 0 || ni >= ds.length) return;
+        selectedDate = ds[ni]; renderSchedule();
+      }, { passive: true });
+    }
   }
 
   function pickBigMatch(list) {
