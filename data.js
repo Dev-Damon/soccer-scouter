@@ -2591,7 +2591,7 @@ window.DATA = {
       "name": "남아프리카공화국",
       "nameEn": "South Africa",
       "flag": "🇿🇦",
-      "fifaRank": 54,
+      "fifaRank": 56,
       "group": "A",
       "tierSummary": "16년 만에 월드컵 본선에 돌아온 바파나 바파나는 AFCON 4강 신화를 쓴 후고 브로스 사단으로, 슈퍼스타는 없지만 조직력과 골키퍼 능력치가 돋보이는 다크호스 다크호스급 팀이다.",
       "styleSummary": [
@@ -2815,7 +2815,7 @@ window.DATA = {
       "name": "대한민국",
       "nameEn": "South Korea",
       "flag": "🇰🇷",
-      "fifaRank": 31,
+      "fifaRank": 32,
       "group": "A",
       "tierSummary": "손흥민과 김민재라는 월드클래스 듀오를 축으로, 유럽 빅리그에서 뛰는 핵심 선수들이 받쳐주는 아시아 강호로 본선 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
@@ -3184,7 +3184,7 @@ window.DATA = {
       "name": "캐나다",
       "nameEn": "Canada",
       "flag": "🇨🇦",
-      "fifaRank": 32,
+      "fifaRank": 30,
       "group": "B",
       "tierSummary": "데이비스와 조나단 데이비드가 이끄는 '황금세대'가 자국 개최의 이점을 업고 16강 이상을 노리는, 유럽 빅리그 주전급이 뼈대를 이룬 다크호스다.",
       "styleSummary": [
@@ -6188,7 +6188,7 @@ window.DATA = {
       "name": "코트디부아르",
       "nameEn": "Ivory Coast",
       "flag": "🇨🇮",
-      "fifaRank": 30,
+      "fifaRank": 31,
       "group": "E",
       "tierSummary": "12년 만에 본선에 복귀한 2023 아프리카 네이션스컵 챔피언으로, 유럽 빅리그 주전급 자원이 빼곡한 다크호스지만 독일이 버틴 E조에서 16강 경쟁이 만만치 않은 중상위권 전력이다.",
       "styleSummary": [

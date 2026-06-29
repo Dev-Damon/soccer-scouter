@@ -1,5 +1,5 @@
 {
- "_ts": 1782685519170,
+ "_ts": 1782764742878,
  "mexico": {
   "r": 9,
   "p": 1736.01,
@@ -7,16 +7,16 @@
   "chR": 5
  },
  "south-africa": {
-  "r": 54,
-  "p": 1451.24,
-  "ch": 22.86,
-  "chR": 6
+  "r": 56,
+  "p": 1430.97,
+  "ch": 2.59,
+  "chR": 4
  },
  "south-korea": {
-  "r": 31,
+  "r": 32,
   "p": 1558.72,
   "ch": -32.91,
-  "chR": -6
+  "chR": -7
  },
  "czech-republic": {
   "r": 48,
@@ -25,10 +25,10 @@
   "chR": -8
  },
  "canada": {
-  "r": 32,
-  "p": 1551.07,
-  "ch": -8.41,
-  "chR": -2
+  "r": 30,
+  "p": 1571.34,
+  "ch": 11.86,
+  "chR": 0
  },
  "bosnia-and-herzegovina": {
   "r": 61,
@@ -109,10 +109,10 @@
   "chR": 0
  },
  "ivory-coast": {
-  "r": 30,
+  "r": 31,
   "p": 1565.48,
   "ch": 24.61,
-  "chR": 3
+  "chR": 2
  },
  "ecuador": {
   "r": 24,
@@ -580,34 +580,34 @@
    "chR": -1
   },
   {
+   "code": "CAN",
+   "name": "Canada",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ca.svg",
+   "id": "canada",
+   "r": 30,
+   "p": 1571.34,
+   "ch": 11.86,
+   "chR": 0
+  },
+  {
    "code": "CIV",
    "name": "Côte d'Ivoire",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ci.svg",
    "id": "ivory-coast",
-   "r": 30,
+   "r": 31,
    "p": 1565.48,
    "ch": 24.61,
-   "chR": 3
+   "chR": 2
   },
   {
    "code": "KOR",
    "name": "Korea Republic",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kr.svg",
    "id": "south-korea",
-   "r": 31,
+   "r": 32,
    "p": 1558.72,
    "ch": -32.91,
-   "chR": -6
-  },
-  {
-   "code": "CAN",
-   "name": "Canada",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ca.svg",
-   "id": "canada",
-   "r": 32,
-   "p": 1551.07,
-   "ch": -8.41,
-   "chR": -2
+   "chR": -7
   },
   {
    "code": "UKR",
@@ -820,34 +820,34 @@
    "chR": 2
   },
   {
-   "code": "RSA",
-   "name": "South Africa",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/za.svg",
-   "id": "south-africa",
-   "r": 54,
-   "p": 1451.24,
-   "ch": 22.86,
-   "chR": 6
-  },
-  {
    "code": "IRL",
    "name": "Republic of Ireland",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ie.svg",
    "id": null,
-   "r": 55,
+   "r": 54,
    "p": 1441.1,
    "ch": 0,
-   "chR": 3
+   "chR": 4
   },
   {
    "code": "SVN",
    "name": "Slovenia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/si.svg",
    "id": null,
-   "r": 56,
+   "r": 55,
    "p": 1441.09,
    "ch": 0,
-   "chR": 3
+   "chR": 4
+  },
+  {
+   "code": "RSA",
+   "name": "South Africa",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/za.svg",
+   "id": "south-africa",
+   "r": 56,
+   "p": 1430.97,
+   "ch": 2.59,
+   "chR": 4
   },
   {
    "code": "TUN",
