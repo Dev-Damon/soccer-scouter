@@ -75,6 +75,26 @@ function buildBlock(map, fixById) {
   const teamsById = {}; D.teams.forEach(t => teamsById[t.id] = t);
   const names = id => [teamsById[id] && teamsById[id].name].concat(ALIAS[id] || []).filter(Boolean);
 
+  // 녹아웃(32강~)은 정적 data.js에서 homeId=null → ESPN 실제 팀쌍을 킥오프 시각(±2h)으로 매칭해 해소(라이브/JTBC 감지와 동일 패턴). 없으면 32강 하이라이트가 영영 안 잡힘.
+  const T_ALIAS_ESPN = { czechia: 'czech-republic', korearepublic: 'south-korea', usa: 'united-states', turkiye: 'turkey', caboverde: 'cape-verde', cotedivoire: 'ivory-coast', congodr: 'dr-congo', bosniaherzegovina: 'bosnia-and-herzegovina' };
+  const normN = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i').replace(/ø/g, 'o').replace(/ł/g, 'l').replace(/đ/g, 'd').replace(/ð/g, 'd').replace(/æ/g, 'ae').replace(/œ/g, 'oe').replace(/ß/g, 'ss').replace(/þ/g, 'th').replace(/[^a-z ]/g, '').trim();
+  const espnTeamId = nm => { const s = normN(nm).replace(/ /g, ''); let slug = normN(nm).replace(/ /g, '-'); slug = T_ALIAS_ESPN[s] || slug; return teamsById[slug] ? slug : null; };
+  try {
+    const _now = Date.now(), espnDates = [];
+    for (let i = 0; i < 4; i++) { const dt = new Date(_now - i * 86400000); espnDates.push('' + dt.getUTCFullYear() + String(dt.getUTCMonth() + 1).padStart(2, '0') + String(dt.getUTCDate()).padStart(2, '0')); }  // 오늘~3일전(녹아웃 백필 포함)
+    for (const dt of espnDates) {
+      const j = await getJson('https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=' + dt);
+      (j && j.events || []).forEach(e => {
+        const c = (e.competitions || [])[0]; if (!c) return; const stt = ((e.status || {}).type || {}).state; if (stt !== 'in' && stt !== 'post') return;
+        const comp = c.competitors || [], H = comp.find(x => x.homeAway === 'home'), A = comp.find(x => x.homeAway === 'away'); if (!H || !A) return;
+        const hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName); if (!hid || !aid) return;
+        const ed = Date.parse(e.date); let best = null, bestD = Infinity;
+        D.fixtures.forEach(f => { if (f.group || (f.homeId && f.awayId)) return; const ko = kickoff(f); if (!ko) return; const d = Math.abs(ko - ed); if (d < bestD) { bestD = d; best = f; } });
+        if (best && bestD < 2 * 3600000) { best.homeId = hid; best.awayId = aid; best.homeName = (teamsById[hid] || {}).name || best.homeName; best.awayName = (teamsById[aid] || {}).name || best.awayName; }
+      });
+    }
+  } catch (e) { console.log('[highlights] 녹아웃 ESPN 해소 실패(조별은 정상):', e.message); }
+
   let src = fs.readFileSync(APP, 'utf8');
   const { map: existing, hasMarkers } = parseExisting(src);
   if (!hasMarkers) { console.log('[highlights] HL-AUTO 마커 없음 — app.js에 마커 추가 필요. 중단.'); process.exit(0); }
@@ -153,7 +173,7 @@ function buildBlock(map, fixById) {
 
   // 커밋·배포 (다른 작업 미스테이지 변경에도 안전하도록 autostash 리베이스)
   try {
-    execFileSync('git', ['add', 'app.js', 'index.html', 'scripts/highlight_delays.log'], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('git', ['add', 'app.js', 'index.html', 'highlights.json', 'scripts/highlight_delays.log'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['commit', '-m', '하이라이트 자동수집: ' + newIds.join(',')], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['-c', 'rebase.autoStash=true', 'pull', '--rebase', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
     execFileSync('git', ['push', 'origin', 'main'], { cwd: ROOT, stdio: 'ignore' });
