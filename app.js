@@ -2662,8 +2662,8 @@
     return '<div class="mf-wrap"><svg viewBox="0 0 ' + W2 + " " + H2 + '" class="mf-pitch">' + pitch + side(plA, true, "#4f8cff") + side(plB, false, "#e5566a") + "</svg></div>";
   }
   function mfHead(a, fa, b, fb, matchId) {
-    var tra = ratingBox(teamRatingOf(matchId, a.id), 2), trb = ratingBox(teamRatingOf(matchId, b.id), 2);
-    return '<div class="mf-head"><span class="mf-a"><span class="mf-tm" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(shortTeamName(a.id, a.name)) + '</span>' + (tra ? " " + tra : "") + " <b>" + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + (trb ? trb + " " : "") + '<span class="mf-tm" data-team="' + esc(b.id) + '">' + esc(shortTeamName(b.id, b.name)) + " " + esc(b.flag) + "</span></span></div>";
+    // 나라(팀) 평균 평점 배지 제거 — 선수 평점만 표시(사용자 요청 2026-06-29).
+    return '<div class="mf-head"><span class="mf-a"><span class="mf-tm" data-team="' + esc(a.id) + '">' + esc(a.flag) + " " + esc(shortTeamName(a.id, a.name)) + '</span> <b>' + esc(fa || "") + '</b></span><span class="mf-b"><b>' + esc(fb || "") + "</b> " + '<span class="mf-tm" data-team="' + esc(b.id) + '">' + esc(shortTeamName(b.id, b.name)) + " " + esc(b.flag) + "</span></span></div>";
   }
   function matchFormation(a, b) {
     if (!(a.lineup && a.lineup.length && b.lineup && b.lineup.length)) return "";
