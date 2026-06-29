@@ -759,6 +759,9 @@
         '<span class="dchip-mo">' + f.mo + "월</span></button>";
     });
     strip += '</div><button class="ds-arrow r" aria-label="다음 날짜">›</button></div>';
+    // 스와이프 안내(한 번 보고 닫으면 다시 안 뜸 · 첫 스와이프 시 자동 사라짐)
+    var _seenSwipe = false; try { _seenSwipe = localStorage.getItem("kt_swipehint") === "1"; } catch (e) {}
+    var hintHtml = (!_seenSwipe && dates.length > 1) ? '<div id="swipeHint" style="display:flex;align-items:center;justify-content:center;gap:4px;font-size:11.5px;color:#9aa7b8;padding:5px 0 1px">↔ 좌우로 스와이프하면 날짜 이동<button id="swipeHintX" style="border:none;background:transparent;color:#9aa7b8;font-size:12px;cursor:pointer;padding:1px 5px">✕</button></div>' : "";
 
     var dayFixtures = (DATA.fixtures || []).filter(function (f) { return fxDate(f) === selectedDate; })
       .sort(function (a, b) { return (a.time || "99:99") < (b.time || "99:99") ? -1 : 1; });
@@ -793,7 +796,9 @@
     }
     listHtml += '<div class="adslot cpang-m"></div>';  // 모바일 쿠팡(320x50)
 
-    viewEl.innerHTML = topBanner() + liveSection() + strip + '<div class="adslot home-ad"></div>' + heroHtml + '<div class="cheer-slot"></div>' + listHtml + homeAboutHtml();  // 광고(320x100): 날짜 스트립 밑 · 빅매치 위 / 하단: 소개 본문(SEO)
+    viewEl.innerHTML = topBanner() + liveSection() + strip + hintHtml + '<div class="adslot home-ad"></div>' + heroHtml + '<div class="cheer-slot"></div>' + listHtml + homeAboutHtml();  // 광고(320x100): 날짜 스트립 밑 · 빅매치 위 / 하단: 소개 본문(SEO)
+    var _shx = viewEl.querySelector("#swipeHintX");
+    if (_shx) _shx.addEventListener("click", function () { try { localStorage.setItem("kt_swipehint", "1"); } catch (e) {} var h = viewEl.querySelector("#swipeHint"); if (h) h.remove(); });
     insertAdFit(viewEl.querySelector(".home-ad"));
     insertCoupang(viewEl.querySelector(".cpang-m"), 320, 100);
     startWittyTicker();
@@ -850,6 +855,7 @@
         var ds = fixtureDates(), i = ds.indexOf(selectedDate); if (i < 0) return;
         var ni = dx < 0 ? i + 1 : i - 1;  // 왼쪽으로 밀면 다음 날, 오른쪽으로 밀면 이전 날
         if (ni < 0 || ni >= ds.length) return;
+        try { localStorage.setItem("kt_swipehint", "1"); } catch (e2) {}  // 첫 스와이프 후 안내 자동 제거
         selectedDate = ds[ni]; renderSchedule();
       }, { passive: true });
     }
