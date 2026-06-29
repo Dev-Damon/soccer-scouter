@@ -3839,7 +3839,8 @@
       var H = parseInt(e.homeTeamScore, 10), A = parseInt(e.awayTeamScore, 10);
       var blockHome = e.atVs !== "@";
       var bs = blockHome ? H : A, os = blockHome ? A : H;
-      var gr = e.gameResult;  // 블록팀 기준 W/L/D (ESPN 권위 데이터)
+      // 블록팀 기준 W/L/D — ESPN gameResult가 스코어와 불일치하는 경우가 있어(브라질 4:0인데 '패'로 표시) 스코어로 직접 판정.
+      var gr = (!isNaN(bs) && !isNaN(os)) ? (bs > os ? "W" : bs < os ? "L" : "D") : e.gameResult;
       var pScore, pOpp, res;
       if (blockIsPersp) { pScore = bs; pOpp = os; res = gr; }
       else { pScore = os; pOpp = bs; res = (gr === "W" ? "L" : gr === "L" ? "W" : "D"); }
