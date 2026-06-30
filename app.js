@@ -330,6 +330,8 @@
     }
     function win(a, b) { if (!a) return b; if (!b) return a; if (a === PRED_CHAMP || b === PRED_CHAMP) return PRED_CHAMP; return brkStrength(a) >= brkStrength(b) ? a : b; }
     var r32 = {}; BRACKET.r32.forEach(function (m) { r32[m.m] = { a: slotTeam(m.a), b: slotTeam(m.b) }; });
+    // 실제 대진 확정/교정된 32강 경기는 예측 대신 fixture 실제 팀 사용(ko_teams.json·resolveKnockout 반영). 예측이 빗나간 대진표를 실제로.
+    BRACKET.r32.forEach(function (m) { var fx = fixturesById["match-" + m.m]; if (fx && fx.homeId && fx.awayId) r32[m.m] = { a: fx.homeId, b: fx.awayId }; });
     var node = {}, r32win = {};
     function side(arr, pfx) {
       var w = arr.map(function (mn) { var wn = win(r32[mn].a, r32[mn].b); r32win[mn] = wn; return wn; });
@@ -3529,7 +3531,7 @@
         }
         fx._espnFixed = true;  // 예측 resolveKnockout이 다시 덮지 않게
       }
-      if (any) { var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id); else if (onHomeSchedule()) renderSchedule(); else if (h.name === "kr32") renderKr32(); }
+      if (any) { var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id); else if (onHomeSchedule()) renderSchedule(); else if (h.name === "home" && homeTab === "bracket") renderBracket(); else if (h.name === "kr32") renderKr32(); }
     }).catch(function () {});
   })();
   // 선수 평점 — 외부 JSON(match-ratings.json)에서 런타임 로드. 웹/토스 공통, .ait 재빌드 없이 평점만 갱신 가능(파일 push만으로 양쪽 반영).
