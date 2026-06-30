@@ -883,7 +883,7 @@
   var LIVE_DEMO = 0;  // 0=실제 라이브만. (?live=1/2 파라미터로는 여전히 더미 테스트 가능)
   // 라이브 판정은 ESPN 'in'만 신뢰 — 스케줄 킥오프(예:4시) 시각으로 라이브를 단정하지 않음.
   // (예정시각이 지났어도 실제 시작이 늦으면 라이브 아님. 방송 선행 표시는 isLiveOrBcast/LIVE_STREAM가 담당.)
-  function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 150 * 60000) return false; return true; } return false; }  // 스테일(킥오프+150분 경과) 'in'은 라이브 아님 — 오염 방어
+  function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 210 * 60000) return false; return true; } return false; }  // 스테일(킥오프+210분 경과(연장·승부차기 포함)) 'in'은 라이브 아님 — 오염 방어
   function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM[f.id]); }  // ESPN 라이브 or JTBC 방송 감지
   function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
   function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
@@ -2855,7 +2855,7 @@
       if (parseHash().id !== fx.id) return;  // 다른 경기로 이동했으면 이 경기 갱신 안 함(섞임 방지)
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
-        var _ko = matchKickoff(fx), _stale = _ko && Date.now() > _ko + 150 * 60000;  // 종료 시간 경과인데 'in'으로 남은 스테일 라이브 → 종료 처리
+        var _ko = matchKickoff(fx), _stale = _ko && Date.now() > _ko + 210 * 60000;  // 종료 시간 경과인데 'in'으로 남은 스테일 라이브 → 종료 처리
         var _ended = lv.state === "post" || _stale, _isLive = lv.state === "in" && !_stale;
         var as_ = aIsHome ? lv.hs : lv.as, bs_ = aIsHome ? lv.as : lv.hs;
         c.innerHTML = '<div class="vs-score">' + (as_ | 0) + ' <span>-</span> ' + (bs_ | 0) + "</div>" +
