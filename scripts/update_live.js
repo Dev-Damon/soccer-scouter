@@ -79,6 +79,23 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
   }
   console.log(new Date().toISOString(),'live:',Object.keys(live).length,'/ 종료저장:',nr,'경기');
 
+  // ko_teams.json 자동 갱신 — ESPN로 해소된 녹아웃 실제 대진(예측 빗나가도 클라가 런타임 교정). 변경 시에만 커밋·푸시(노이즈 방지).
+  try{
+    const fs=require('fs'), {execFileSync}=require('child_process');
+    const ROOT2=path.join(__dirname,'..'), KOF=path.join(ROOT2,'ko_teams.json');
+    let ko={}; try{ko=JSON.parse(fs.readFileSync(KOF,'utf8'))}catch(e){}
+    let koChanged=false;
+    D.fixtures.forEach(f=>{ if(f.group||!f.homeId||!f.awayId)return; var cur=ko[f.id]; if(!cur||cur.homeId!==f.homeId||cur.awayId!==f.awayId){ ko[f.id]={homeId:f.homeId,awayId:f.awayId,homeName:f.homeName||(teamsById[f.homeId]||{}).name||'',awayName:f.awayName||(teamsById[f.awayId]||{}).name||''}; koChanged=true; } });
+    if(koChanged){
+      fs.writeFileSync(KOF, JSON.stringify(ko)+'\n');
+      execFileSync('git',['add','ko_teams.json'],{cwd:ROOT2,stdio:'ignore'});
+      execFileSync('git',['commit','-m','녹아웃 실제대진 갱신(ko_teams.json)'],{cwd:ROOT2,stdio:'ignore'});
+      execFileSync('git',['-c','rebase.autoStash=true','pull','--rebase','origin','main'],{cwd:ROOT2,stdio:'ignore'});
+      execFileSync('git',['push','origin','main'],{cwd:ROOT2,stdio:'ignore'});
+      console.log('ko_teams.json 갱신·배포');
+    }
+  }catch(e){ console.log('ko_teams 갱신 실패(라이브는 정상):',e.message); }
+
   // ③ 종료경기 OG 카드 자동 재생성+배포 — 결과가 새/변경된 경기만(경기별 ?v 증가로 카톡 캐시 무효화)
   try{
     const fs=require('fs'), {execFileSync}=require('child_process');
