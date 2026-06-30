@@ -2859,7 +2859,15 @@
     if (matchEnded(fx) && window.KickComments) {  // 종료경기 정산 트리거(크론 안 기다리고 즉시)
       var _lv = LIVE[fx.id];
       if (_lv && _lv.state === "post" && _lv.hs != null && _lv.as != null && KickComments.settleWithResult) {
-        KickComments.settleWithResult(fx.id, _lv.hs > _lv.as ? "home" : _lv.hs < _lv.as ? "away" : "draw");  // 최종 스코어로 즉시 정산(멱등)
+        var _isGrp = /조별/.test(fx.stage || ""), _outcome;
+        if (_isGrp) _outcome = _lv.hs > _lv.as ? "home" : _lv.hs < _lv.as ? "away" : "draw";
+        else {  // 녹아웃: 진출팀(승부차기 승자 포함)으로 정산. 무승부(1-1 PK)인데 승자 미정이면 보류
+          var _adv = advancerOf(fx);
+          if (_adv) _outcome = _adv === fx.homeId ? "home" : "away";
+          else if (_lv.hs !== _lv.as) _outcome = _lv.hs > _lv.as ? "home" : "away";
+          else _outcome = null;
+        }
+        if (_outcome) KickComments.settleWithResult(fx.id, _outcome);  // 최종 결과로 즉시 정산(멱등)
       } else if (KickComments.settleMatch) { KickComments.settleMatch(fx.id); }
     }
     function updScore() {
@@ -3372,7 +3380,8 @@
       if (!open) { slot.innerHTML = '<div class="bet-box">' + head + '<div class="bet-closed">⏱ 베팅 마감된 경기</div></div>'; return; }
       var stake = Math.max(10, Math.min(slot._betStake || 100, bal || 100));
       slot._betStake = stake;
-      var opts = [L, "draw", R].map(function (ch) {
+      var betChs = /조별/.test(fx.stage || "") ? [L, "draw", R] : [L, R];  // 녹아웃(32강~)은 무승부 없음 → 두 팀만(연장·승부차기로 승자 결정)
+      var opts = betChs.map(function (ch) {
         return '<button class="bet-opt" data-betch="' + ch + '"><span class="bet-opt-name">' + esc(NAME[ch]) + "</span><span class=\"bet-opt-odds\">×" + ODDS[ch] + '</span><span class="bet-opt-win" data-odds="' + ODDS[ch] + '">적중 +' + Math.round(stake * ODDS[ch]).toLocaleString() + "</span></button>";
       }).join("");
       slot.innerHTML = '<div class="bet-box">' + head +
