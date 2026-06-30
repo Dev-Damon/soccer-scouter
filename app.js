@@ -367,6 +367,7 @@
     }
     (DATA.fixtures || []).forEach(function (fx) {
       if (fx.group) return;
+      if (fx._espnFixed) return;  // 실제 ESPN 경기로 교정된 대진은 예측으로 덮지 않음
       if (fx._slotA == null) { fx._slotA = fx.homeName; fx._slotB = fx.awayName; }  // 원본 슬롯 라벨 보존
       var r32 = fx.stage === "32강";
       var ha = r32 ? slotTeam(fx._slotA) : koWinner(fx._slotA);
@@ -3000,6 +3001,7 @@
           best.homeId = hid; best.awayId = aid;
           best.homeName = (teamsById[hid] || {}).name || best.homeName;
           best.awayName = (teamsById[aid] || {}).name || best.awayName;
+          best._espnFixed = true;  // 예측 resolveKnockout이 다시 덮지 않게
           fixByPair[pairKey] = best.id; changed = true;
         }
       }
