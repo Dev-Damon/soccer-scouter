@@ -305,7 +305,7 @@
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
   var BL_R32 = [74, 77, 73, 75, 83, 84, 81, 82], BR_R32 = [76, 78, 79, 80, 86, 88, 85, 87];
   // ===== 킥톡 예측 대진표 — 전력(지수+몸값+FIFA랭킹)으로 조 순위·승자 예측. 잉글랜드는 매 경기 승리 강제(우승 고정). 참고용. =====
-  var PRED = null, PRED_CHAMP = "england";
+  var PRED = null, PRED_CHAMP = "england", KO_WIN = {};  // KO_WIN[fid]=진출팀id(승부차기 승자 등 ko_teams.json·ESPN winner 플래그로 채움)
   function brkStrength(id) { var t = teamsById[id]; if (!t) return 0; var x = t.indices || {}; var mv = TEAM_MV[id] || 0; return (x.attack || 60) + (x.defense || 60) + (x.organization || 60) + (x.experience || 40) * 0.4 + Math.sqrt(mv) * 2 + (60 - (t.fifaRank || 60)) * 0.5; }
   function predictBracket() {
     // 조별 끝난 조 = 실제 ESPN 순위(STAND)로 32강 자리 채움 / 진행중 조 = 킥톡 전력지수 예측. (마지막 조 종료 시 실제 진출 32팀 자동 반영)
@@ -333,14 +333,16 @@
     // 실제 대진 확정/교정된 32강 경기는 예측 대신 fixture 실제 팀 사용(ko_teams.json·resolveKnockout 반영). 예측이 빗나간 대진표를 실제로.
     BRACKET.r32.forEach(function (m) { var fx = fixturesById["match-" + m.m]; if (fx && fx.homeId && fx.awayId) r32[m.m] = { a: fx.homeId, b: fx.awayId }; });
     var node = {}, r32win = {};
-    function side(arr, pfx) {
-      var w = arr.map(function (mn) { var wn = win(r32[mn].a, r32[mn].b); r32win[mn] = wn; return wn; });
-      var l16 = []; for (var i = 0; i < 4; i++) { node[pfx + "16_" + i] = win(w[2 * i], w[2 * i + 1]); l16.push(node[pfx + "16_" + i]); }
-      var l8 = []; for (i = 0; i < 2; i++) { node[pfx + "8_" + i] = win(l16[2 * i], l16[2 * i + 1]); l8.push(node[pfx + "8_" + i]); }
-      node[pfx + "sf"] = win(l8[0], l8[1]); return node[pfx + "sf"];
+    // 끝난 경기는 ESPN 실제 진출팀(승부차기 승자 포함), 진행전은 전력 예측. 라운드별 실제 승자가 위로 전파됨 → 32강 결과 실시간 반영.
+    function nodeWin(mn, a, b) { var fx = fixturesById["match-" + mn]; var w = fx && advancerOf(fx); return w || win(a, b); }
+    function side(arr, pfx, r16m, r8m, sfm) {
+      var w = arr.map(function (mn) { var wn = nodeWin(mn, r32[mn].a, r32[mn].b); r32win[mn] = wn; return wn; });
+      var l16 = []; for (var i = 0; i < 4; i++) { node[pfx + "16_" + i] = nodeWin(r16m[i], w[2 * i], w[2 * i + 1]); l16.push(node[pfx + "16_" + i]); }
+      var l8 = []; for (i = 0; i < 2; i++) { node[pfx + "8_" + i] = nodeWin(r8m[i], l16[2 * i], l16[2 * i + 1]); l8.push(node[pfx + "8_" + i]); }
+      node[pfx + "sf"] = nodeWin(sfm, l8[0], l8[1]); return node[pfx + "sf"];
     }
-    var lf = side(BL_R32, "l"), rf = side(BR_R32, "r");
-    node.fin = win(lf, rf);
+    var lf = side(BL_R32, "l", [89, 90, 93, 94], [97, 98], 101), rf = side(BR_R32, "r", [91, 92, 95, 96], [99, 100], 102);
+    node.fin = nodeWin(104, lf, rf);
     var lLose = node.lsf === node.l8_0 ? node.l8_1 : node.l8_0, rLose = node.rsf === node.r8_0 ? node.r8_1 : node.r8_0;  // 3·4위전 = 양 4강 패자
     return { r32: r32, r32win: r32win, node: node, champion: node.fin, runnerUp: node.fin === lf ? rf : lf, third: [lLose, rLose] };
   }
@@ -363,8 +365,8 @@
     function koWinner(label) {
       var m = /(\d+)경기\s*(승자|패자)/.exec(label || ""); if (!m) return null;
       var fx = fixturesById["match-" + m[1]]; if (!fx || !matchEnded(fx)) return null;
-      var r = resultOf(fx); if (!r || r.hs == null || !fx.homeId || !fx.awayId || r.hs === r.as) return null;  // 무승부(승부차기)는 PK 결과 데이터 필요
-      var win = r.hs > r.as ? fx.homeId : fx.awayId, lose = r.hs > r.as ? fx.awayId : fx.homeId;
+      var win = advancerOf(fx); if (!win || !fx.homeId || !fx.awayId) return null;  // 진출팀(승부차기 winId 포함). 승자 미확정이면 null
+      var lose = win === fx.homeId ? fx.awayId : fx.homeId;
       return m[2] === "승자" ? win : lose;
     }
     (DATA.fixtures || []).forEach(function (fx) {
@@ -1149,6 +1151,15 @@
   function resultOf(fx) {  // 종료 결과 {hs,as} or null — LIVE(post) 우선, 없으면 저장 결과
     var lv = LIVE[fx.id]; if (lv && lv.state === "post" && lv.hs != null) return { hs: lv.hs, as: lv.as };
     var s = STORED_RESULTS[fx.id]; return (s && s.hs != null) ? { hs: s.hs, as: s.as } : null;
+  }
+  function advancerOf(fx) {  // 녹아웃 진출팀 id(승부차기 포함) or null — ESPN winner 플래그(winId) 우선, 없으면 승패 스코어. 동점인데 winId 없으면 null(아직 미확정)
+    if (!fx) return null;
+    var lv = LIVE[fx.id];
+    if (lv && lv.state === "post" && lv.winId) return lv.winId;
+    if (KO_WIN[fx.id]) return KO_WIN[fx.id];
+    var r = resultOf(fx);
+    if (r && r.hs != null && r.hs !== r.as && fx.homeId && fx.awayId) return r.hs > r.as ? fx.homeId : fx.awayId;
+    return null;
   }
   function h2hFx(idA, idB) { return (DATA.fixtures || []).filter(function (f) { return (f.homeId === idA && f.awayId === idB) || (f.homeId === idB && f.awayId === idA); })[0]; }
   function scnH2H(idA, idB) {
@@ -3018,11 +3029,13 @@
       if (state === "pre") { if (LIVE[fid]) { delete LIVE[fid]; changed = true; } return; }
       var hs = +H.score, as = +A.score;
       var ht = state === "in" && (st.name === "STATUS_HALFTIME" || st.detail === "HT" || st.description === "Halftime");  // 하프타임 감지
+      var winId = (H.winner === true) ? hid : ((A.winner === true) ? aid : null);  // 진출팀(녹아웃 승부차기 포함) — ESPN가 종료 시 표시
       var rec = {
         state: state, clock: ht ? "전반 종료" : ((e.status && e.status.displayClock) || ""),
         hs: (fx.homeId === hid) ? hs : as, as: (fx.homeId === hid) ? as : hs,
-        events: parseGoals(c)
+        events: parseGoals(c), winId: winId
       };
+      if (winId) KO_WIN[fid] = winId;
       if (JSON.stringify(LIVE[fid]) !== JSON.stringify(rec)) { LIVE[fid] = rec; changed = true; }
       if (state === "post" && window.KickComments && KickComments.pushResult && !_pushedResults[fid]) { _pushedResults[fid] = 1; KickComments.pushResult(fid, rec.hs, rec.as, rec.events); }  // 결과+득점자 영구 저장
     });
@@ -3530,9 +3543,10 @@
           fx.awayName = t.awayName || (teamsById[t.awayId] || {}).name || fx.awayName;
           any = true;
         }
+        if (t.winId && KO_WIN[id] !== t.winId) { KO_WIN[id] = t.winId; any = true; }  // 진출팀(승부차기 승자) 반영 → 대진표 윗라운드 자동 채움
         fx._espnFixed = true;  // 예측 resolveKnockout이 다시 덮지 않게
       }
-      if (any) { var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id); else if (onHomeSchedule()) renderSchedule(); else if (h.name === "home" && homeTab === "bracket") renderBracket(); else if (h.name === "kr32") renderKr32(); }
+      if (any) { resolveKnockout(); var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id); else if (onHomeSchedule()) renderSchedule(); else if (h.name === "home" && homeTab === "bracket") renderBracket(); else if (h.name === "kr32") renderKr32(); }
     }).catch(function () {});
   })();
   // 선수 평점 — 외부 JSON(match-ratings.json)에서 런타임 로드. 웹/토스 공통, .ait 재빌드 없이 평점만 갱신 가능(파일 push만으로 양쪽 반영).

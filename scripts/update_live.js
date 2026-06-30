@@ -29,7 +29,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
   // 오늘+어제(UTC) 스캔 (KST 경계 자정 넘는 경기 포함)
   var now=new Date(), dates=[];
   for(var i=0;i<2;i++){var dt=new Date(now.getTime()-i*86400000);dates.push(dt.toISOString().slice(0,10).replace(/-/g,''));}
-  var live={}, posts={};  // posts: fid -> {eid,hs,as,ev}
+  var live={}, posts={}, koWin={};  // posts: fid -> {eid,hs,as,ev} / koWin: fid -> 진출팀id(승부차기 승자 포함, ESPN winner 플래그)
   for(const dt of dates){
     var raw=await get(SCORE+dt), d; try{d=JSON.parse(raw)}catch(e){continue}
     (d.events||[]).forEach(e=>{
@@ -39,8 +39,9 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
       var hT=espnTeam((H.team||{}).displayName),aT=espnTeam((A.team||{}).displayName); if(!hT||!aT)return;
       var fid=resolveFid(hT,aT,Date.parse(e.date)); if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
       var hs=fx.homeId===hT.id?+H.score:+A.score, as=fx.homeId===hT.id?+A.score:+H.score, ev=parseGoals(c);
+      var winId=H.winner===true?hT.id:(A.winner===true?aT.id:null);  // 진출팀(녹아웃 승부차기 포함)
       if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:ht?'전반 종료':((e.status||{}).displayClock||''),events:ev};
-      else posts[fid]={eid:e.id,hs:hs,as:as,ev:ev};
+      else { posts[fid]={eid:e.id,hs:hs,as:as,ev:ev}; if(winId&&!fx.group) koWin[fid]=winId; }
     });
     await sleep(80);
   }
@@ -85,7 +86,9 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
     const ROOT2=path.join(__dirname,'..'), KOF=path.join(ROOT2,'ko_teams.json');
     let ko={}; try{ko=JSON.parse(fs.readFileSync(KOF,'utf8'))}catch(e){}
     let koChanged=false;
-    D.fixtures.forEach(f=>{ if(f.group||!f.homeId||!f.awayId)return; var cur=ko[f.id]; if(!cur||cur.homeId!==f.homeId||cur.awayId!==f.awayId){ ko[f.id]={homeId:f.homeId,awayId:f.awayId,homeName:f.homeName||(teamsById[f.homeId]||{}).name||'',awayName:f.awayName||(teamsById[f.awayId]||{}).name||''}; koChanged=true; } });
+    D.fixtures.forEach(f=>{ if(f.group||!f.homeId||!f.awayId)return; var cur=ko[f.id]; var w=koWin[f.id]||(cur&&cur.winId)||null;  // 진출팀(승부차기 승자) 보존·갱신
+      var ent={homeId:f.homeId,awayId:f.awayId,homeName:f.homeName||(teamsById[f.homeId]||{}).name||'',awayName:f.awayName||(teamsById[f.awayId]||{}).name||''}; if(w)ent.winId=w;
+      if(!cur||cur.homeId!==f.homeId||cur.awayId!==f.awayId||(cur.winId||null)!==(ent.winId||null)){ ko[f.id]=ent; koChanged=true; } });
     if(koChanged){
       fs.writeFileSync(KOF, JSON.stringify(ko)+'\n');
       execFileSync('git',['add','ko_teams.json'],{cwd:ROOT2,stdio:'ignore'});
