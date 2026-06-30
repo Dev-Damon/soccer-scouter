@@ -3528,6 +3528,7 @@
     "match-74": "https://chzzk.naver.com/video/13960528", // 독일-파라과이
     "match-75": "https://chzzk.naver.com/video/13959896", // 네덜란드-모로코
     "match-76": "https://chzzk.naver.com/video/13957443", // 브라질-일본
+    "match-77": "https://chzzk.naver.com/video/13974385", // 프랑스-스웨덴
     "match-78": "https://chzzk.naver.com/video/13973145" // 코트디부아르-노르웨이
     /* HL-AUTO-END */
   };
