@@ -3525,9 +3525,10 @@
     "match-71": "https://chzzk.naver.com/video/13927371", // 파나마-잉글랜드
     "match-72": "https://chzzk.naver.com/video/13927378", // 크로아티아-가나
     "match-73": "https://chzzk.naver.com/video/13943390", // 남아프리카공화국-캐나다
-    "match-74": "https://chzzk.naver.com/video/13960528", // 독일-파라과이 하이라이트(사용자 지정)
+    "match-74": "https://chzzk.naver.com/video/13960528", // 독일-파라과이
     "match-75": "https://chzzk.naver.com/video/13959896", // 네덜란드-모로코
-    "match-76": "https://chzzk.naver.com/video/13957443" // 브라질-일본
+    "match-76": "https://chzzk.naver.com/video/13957443", // 브라질-일본
+    "match-78": "https://chzzk.naver.com/video/13973145" // 코트디부아르-노르웨이
     /* HL-AUTO-END */
   };
   // 하이라이트도 런타임 JSON(highlights.json)으로 갱신 — 토스 미니앱은 app.js를 번들 스냅샷으로 갖기 때문에, 빌드 이후 추가된 하이라이트가 안 보였음. 평점/주심과 동일하게 런타임 fetch로 양쪽(웹/토스) 자동 반영.
