@@ -2997,7 +2997,9 @@
       if (!fixByPair[pairKey]) {
         var ed = Date.parse(e.date), best = null, bestD = Infinity;
         (DATA.fixtures || []).forEach(function (f) { if (f.group) return; var ko = matchKickoff(f); if (!ko) return; var dd = Math.abs(ko - ed); if (dd < bestD) { bestD = dd; best = f; } });
-        if (best && bestD < 2 * 3600000 && (best.homeId !== hid || best.awayId !== aid)) {
+        // 한 팀이라도 일치하는 근접시각 녹아웃 경기일 때만 상대팀 교정(엉뚱한 경기 재배정 방지).
+        var overlap = best && (best.homeId === hid || best.awayId === aid || best.homeId === aid || best.awayId === hid);
+        if (best && bestD < 2 * 3600000 && overlap && (best.homeId !== hid || best.awayId !== aid)) {
           best.homeId = hid; best.awayId = aid;
           best.homeName = (teamsById[hid] || {}).name || best.homeName;
           best.awayName = (teamsById[aid] || {}).name || best.awayName;
@@ -3509,6 +3511,25 @@
     fetch("https://kicktalk.xyz/highlights.json?b=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
       if (d && typeof d === "object") { for (var k in d) MATCH_HIGHLIGHTS[k] = d[k]; }
       var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id);  // 도착 시 하이라이트 버튼 반영
+    }).catch(function () {});
+  })();
+  // 녹아웃(32강~) 실제 대진 — 런타임 JSON(ko_teams.json)으로 교정. 예측 resolveKnockout이 실제와 다를 때(예: 독일-스웨덴 예측 → 실제 독일-파라과이) 실제 ESPN 팀으로 덮음. 라이브 폴링 윈도우 지난 종료경기도 교정됨.
+  (function () {
+    if (!window.fetch) return;
+    fetch("https://kicktalk.xyz/ko_teams.json?b=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || typeof d !== "object") return;
+      var any = false;
+      for (var id in d) {
+        var fx = fixturesById[id], t = d[id]; if (!fx || !t || !t.homeId || !t.awayId) continue;
+        if (fx.homeId !== t.homeId || fx.awayId !== t.awayId) {
+          fx.homeId = t.homeId; fx.awayId = t.awayId;
+          fx.homeName = t.homeName || (teamsById[t.homeId] || {}).name || fx.homeName;
+          fx.awayName = t.awayName || (teamsById[t.awayId] || {}).name || fx.awayName;
+          any = true;
+        }
+        fx._espnFixed = true;  // 예측 resolveKnockout이 다시 덮지 않게
+      }
+      if (any) { var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id); else if (onHomeSchedule()) renderSchedule(); else if (h.name === "kr32") renderKr32(); }
     }).catch(function () {});
   })();
   // 선수 평점 — 외부 JSON(match-ratings.json)에서 런타임 로드. 웹/토스 공통, .ait 재빌드 없이 평점만 갱신 가능(파일 push만으로 양쪽 반영).
