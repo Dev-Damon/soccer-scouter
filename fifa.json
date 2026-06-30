@@ -1,5 +1,5 @@
 {
- "_ts": 1782764742878,
+ "_ts": 1782780955634,
  "mexico": {
   "r": 9,
   "p": 1736.01,
@@ -50,8 +50,8 @@
  },
  "brazil": {
   "r": 5,
-  "p": 1785.2,
-  "ch": 19.34,
+  "p": 1804.93,
+  "ch": 39.07,
   "chR": 1
  },
  "morocco": {
@@ -128,8 +128,8 @@
  },
  "japan": {
   "r": 17,
-  "p": 1673.68,
-  "ch": 12.1,
+  "p": 1653.95,
+  "ch": -7.63,
   "chR": 1
  },
  "sweden": {
@@ -335,8 +335,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/br.svg",
    "id": "brazil",
    "r": 5,
-   "p": 1785.2,
-   "ch": 19.34,
+   "p": 1804.93,
+   "ch": 39.07,
    "chR": 1
   },
   {
@@ -455,8 +455,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/jp.svg",
    "id": "japan",
    "r": 17,
-   "p": 1673.68,
-   "ch": 12.1,
+   "p": 1653.95,
+   "ch": -7.63,
    "chR": 1
   },
   {
