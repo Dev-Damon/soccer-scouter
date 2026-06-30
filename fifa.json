@@ -1,5 +1,5 @@
 {
- "_ts": 1782795367560,
+ "_ts": 1782851185829,
  "mexico": {
   "r": 9,
   "p": 1736.01,
@@ -13,10 +13,10 @@
   "chR": 4
  },
  "south-korea": {
-  "r": 32,
+  "r": 31,
   "p": 1558.72,
   "ch": -32.91,
-  "chR": -7
+  "chR": -6
  },
  "czech-republic": {
   "r": 48,
@@ -109,10 +109,10 @@
   "chR": 0
  },
  "ivory-coast": {
-  "r": 31,
-  "p": 1565.48,
-  "ch": 24.61,
-  "chR": 2
+  "r": 33,
+  "p": 1541.84,
+  "ch": 0.97,
+  "chR": 0
  },
  "ecuador": {
   "r": 24,
@@ -157,10 +157,10 @@
   "chR": 3
  },
  "iran": {
-  "r": 21,
+  "r": 22,
   "p": 1609.84,
   "ch": -9.74,
-  "chR": -1
+  "chR": -2
  },
  "new-zealand": {
   "r": 86,
@@ -211,10 +211,10 @@
   "chR": -6
  },
  "norway": {
-  "r": 23,
-  "p": 1594.04,
-  "ch": 36.6,
-  "chR": 8
+  "r": 21,
+  "p": 1617.67,
+  "ch": 60.23,
+  "chR": 10
  },
  "argentina": {
   "r": 1,
@@ -229,10 +229,10 @@
   "chR": -1
  },
  "austria": {
-  "r": 22,
+  "r": 23,
   "p": 1598.82,
   "ch": 1.42,
-  "chR": 2
+  "chR": 1
  },
  "jordan": {
   "r": 73,
@@ -490,34 +490,34 @@
    "chR": 1
   },
   {
+   "code": "NOR",
+   "name": "Norway",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
+   "id": "norway",
+   "r": 21,
+   "p": 1617.67,
+   "ch": 60.23,
+   "chR": 10
+  },
+  {
    "code": "IRN",
    "name": "IR Iran",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ir.svg",
    "id": "iran",
-   "r": 21,
+   "r": 22,
    "p": 1609.84,
    "ch": -9.74,
-   "chR": -1
+   "chR": -2
   },
   {
    "code": "AUT",
    "name": "Austria",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/at.svg",
    "id": "austria",
-   "r": 22,
+   "r": 23,
    "p": 1598.82,
    "ch": 1.42,
-   "chR": 2
-  },
-  {
-   "code": "NOR",
-   "name": "Norway",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
-   "id": "norway",
-   "r": 23,
-   "p": 1594.04,
-   "ch": 36.6,
-   "chR": 8
+   "chR": 1
   },
   {
    "code": "ECU",
@@ -590,34 +590,34 @@
    "chR": 0
   },
   {
-   "code": "CIV",
-   "name": "Côte d'Ivoire",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ci.svg",
-   "id": "ivory-coast",
-   "r": 31,
-   "p": 1565.48,
-   "ch": 24.61,
-   "chR": 2
-  },
-  {
    "code": "KOR",
    "name": "Korea Republic",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kr.svg",
    "id": "south-korea",
-   "r": 32,
+   "r": 31,
    "p": 1558.72,
    "ch": -32.91,
-   "chR": -7
+   "chR": -6
   },
   {
    "code": "UKR",
    "name": "Ukraine",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ua.svg",
    "id": null,
-   "r": 33,
+   "r": 32,
    "p": 1549.29,
    "ch": 0,
-   "chR": -1
+   "chR": 0
+  },
+  {
+   "code": "CIV",
+   "name": "Côte d'Ivoire",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ci.svg",
+   "id": "ivory-coast",
+   "r": 33,
+   "p": 1541.84,
+   "ch": 0.97,
+   "chR": 0
   },
   {
    "code": "RUS",

@@ -2815,7 +2815,7 @@ window.DATA = {
       "name": "대한민국",
       "nameEn": "South Korea",
       "flag": "🇰🇷",
-      "fifaRank": 32,
+      "fifaRank": 31,
       "group": "A",
       "tierSummary": "손흥민과 김민재라는 월드클래스 듀오를 축으로, 유럽 빅리그에서 뛰는 핵심 선수들이 받쳐주는 아시아 강호로 본선 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
@@ -6188,7 +6188,7 @@ window.DATA = {
       "name": "코트디부아르",
       "nameEn": "Ivory Coast",
       "flag": "🇨🇮",
-      "fifaRank": 31,
+      "fifaRank": 33,
       "group": "E",
       "tierSummary": "12년 만에 본선에 복귀한 2023 아프리카 네이션스컵 챔피언으로, 유럽 빅리그 주전급 자원이 빼곡한 다크호스지만 독일이 버틴 E조에서 16강 경쟁이 만만치 않은 중상위권 전력이다.",
       "styleSummary": [
@@ -7898,7 +7898,7 @@ window.DATA = {
       "name": "이란",
       "nameEn": "Iran",
       "flag": "🇮🇷",
-      "fifaRank": 21,
+      "fifaRank": 22,
       "group": "G",
       "tierSummary": "아시아 강호답게 조직적인 수비와 세트피스에 강하지만, 타레미 한 명에게 득점을 크게 의존하는 '벨기에 다음 2위 다툼' 다크호스다.",
       "styleSummary": [
@@ -9853,7 +9853,7 @@ window.DATA = {
       "name": "노르웨이",
       "nameEn": "Norway",
       "flag": "🇳🇴",
-      "fifaRank": 23,
+      "fifaRank": 21,
       "group": "I",
       "tierSummary": "28년 만의 본선 복귀를 일군 황금세대로, 홀란과 외데고르라는 세계적 스타를 축으로 한 다크호스 다.",
       "styleSummary": [
@@ -10481,7 +10481,7 @@ window.DATA = {
       "name": "오스트리아",
       "nameEn": "Austria",
       "flag": "🇦🇹",
-      "fifaRank": 22,
+      "fifaRank": 23,
       "group": "J",
       "tierSummary": "1998년 이후 28년 만에 본선에 복귀한 랑니크 감독의 오스트리아는 분데스리가 출신 베테랑들이 즐비한 단단한 중상위권 팀으로, 16강 이상을 노리는 다크호스다.",
       "styleSummary": [
