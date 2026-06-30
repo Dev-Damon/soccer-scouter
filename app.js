@@ -3484,6 +3484,7 @@
     "match-71": "https://chzzk.naver.com/video/13927371", // 파나마-잉글랜드
     "match-72": "https://chzzk.naver.com/video/13927378", // 크로아티아-가나
     "match-73": "https://chzzk.naver.com/video/13943390", // 남아프리카공화국-캐나다
+    "match-74": "https://chzzk.naver.com/video/13958827", // 독일-파라과이
     "match-76": "https://chzzk.naver.com/video/13957443" // 브라질-일본
     /* HL-AUTO-END */
   };
