@@ -303,7 +303,7 @@
     return s;
   }
   var R32M = {}; BRACKET.r32.forEach(function (m) { R32M[m.m] = m; });
-  var BL_R32 = [74, 77, 73, 75, 76, 78, 79, 80], BR_R32 = [83, 84, 81, 82, 86, 88, 85, 87];
+  var BL_R32 = [74, 77, 73, 75, 83, 84, 81, 82], BR_R32 = [76, 78, 79, 80, 86, 88, 85, 87];
   // ===== 킥톡 예측 대진표 — 전력(지수+몸값+FIFA랭킹)으로 조 순위·승자 예측. 잉글랜드는 매 경기 승리 강제(우승 고정). 참고용. =====
   var PRED = null, PRED_CHAMP = "england";
   function brkStrength(id) { var t = teamsById[id]; if (!t) return 0; var x = t.indices || {}; var mv = TEAM_MV[id] || 0; return (x.attack || 60) + (x.defense || 60) + (x.organization || 60) + (x.experience || 40) * 0.4 + Math.sqrt(mv) * 2 + (60 - (t.fifaRank || 60)) * 0.5; }
