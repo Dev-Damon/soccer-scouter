@@ -22,7 +22,7 @@ function resolveFid(hT,aT,eDateMs){
   if(best&&bestD<2*3600000){best.homeId=hT.id;best.awayId=aT.id;best.homeName=hT.name;best.awayName=aT.name;fixByPair[[hT.id,aT.id].sort().join('|')]=best.id;return best.id;}
   return null;
 }
-function parseGoals(c){var o=[];(c.details||[]).forEach(d=>{var t=(d.type&&d.type.text)||'';if(/disallow/i.test(t))return;var og=d.ownGoal===true||/own.?goal/i.test(t);var g=d.scoringPlay===true||/goal/i.test(t);if(!g)return;o.push({who:((d.athletesInvolved||[])[0]||{}).displayName||'',clk:(d.clock||{}).displayValue||'',og:og});});return o;}
+function parseGoals(c){var o=[];(c.details||[]).forEach(d=>{var t=(d.type&&d.type.text)||'';if(/disallow/i.test(t))return;if(d.shootout===true)return;/*승부차기 PK 제외*/var og=d.ownGoal===true||/own.?goal/i.test(t);var g=d.scoringPlay===true||/goal/i.test(t);if(!g)return;o.push({who:((d.athletesInvolved||[])[0]||{}).displayName||'',clk:(d.clock||{}).displayValue||'',og:og});});return o;}
 const SCORE='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=';
 const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=';
 (async()=>{

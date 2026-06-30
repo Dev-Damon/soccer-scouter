@@ -2968,6 +2968,7 @@
     (c.details || []).forEach(function (d) {
       var txt = (d.type && d.type.text) || "";
       if (/disallow/i.test(txt)) return;
+      if (d.shootout === true) return;  // 승부차기 PK는 득점자 목록서 제외(스코어는 정규+연장 기준이라 1-1인데 골 4개로 보이던 버그)
       var isOG = d.ownGoal === true || /own.?goal/i.test(txt) || /own.?goal/i.test((d.type && d.type.id) || "");
       var isGoal = d.scoringPlay === true || /goal/i.test(txt);
       if (!isGoal) return;
@@ -2990,7 +2991,19 @@
       if (!H || !A) return;
       var hid = espnTeamId(H.team && H.team.displayName), aid = espnTeamId(A.team && A.team.displayName);
       if (!hid || !aid) return;
-      var fid = fixByPair[[hid, aid].sort().join("|")]; if (!fid) return;
+      // 녹아웃 대진이 예측과 달라 실제 ESPN 팀과 안 맞으면(예: 독일-스웨덴 예측인데 실제 독일-파라과이) → 킥오프 시각(±2h)으로 매칭해 실제 팀으로 교정.
+      var pairKey = [hid, aid].sort().join("|");
+      if (!fixByPair[pairKey]) {
+        var ed = Date.parse(e.date), best = null, bestD = Infinity;
+        (DATA.fixtures || []).forEach(function (f) { if (f.group) return; var ko = matchKickoff(f); if (!ko) return; var dd = Math.abs(ko - ed); if (dd < bestD) { bestD = dd; best = f; } });
+        if (best && bestD < 2 * 3600000 && (best.homeId !== hid || best.awayId !== aid)) {
+          best.homeId = hid; best.awayId = aid;
+          best.homeName = (teamsById[hid] || {}).name || best.homeName;
+          best.awayName = (teamsById[aid] || {}).name || best.awayName;
+          fixByPair[pairKey] = best.id; changed = true;
+        }
+      }
+      var fid = fixByPair[pairKey]; if (!fid) return;
       seen[fid] = 1;
       var fx = fixturesById[fid]; if (!fx) return;
       var st = (e.status && e.status.type) || {}; var state = st.state;
