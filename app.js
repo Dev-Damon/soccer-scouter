@@ -3516,7 +3516,7 @@
     "match-71": "https://chzzk.naver.com/video/13927371", // 파나마-잉글랜드
     "match-72": "https://chzzk.naver.com/video/13927378", // 크로아티아-가나
     "match-73": "https://chzzk.naver.com/video/13943390", // 남아프리카공화국-캐나다
-    "match-74": "https://chzzk.naver.com/video/13958744", // 독일-파라과이(기존 13958827 삭제됨 → 32강전 풀영상으로 교체)
+    "match-74": "https://chzzk.naver.com/video/13960528", // 독일-파라과이 하이라이트(사용자 지정)
     "match-75": "https://chzzk.naver.com/video/13959896", // 네덜란드-모로코
     "match-76": "https://chzzk.naver.com/video/13957443" // 브라질-일본
     /* HL-AUTO-END */
