@@ -61,7 +61,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
       var fx=D.fixtures.find(f=>{
         if(!f.homeId||!f.awayId)return false;
         var ok=koNames(f.homeId).some(n=>tns.includes(n.replace(/\s/g,'')))&&koNames(f.awayId).some(n=>tns.includes(n.replace(/\s/g,'')));
-        if(!ok)return false; var ko=koOf(f); return ko&&nowT>=ko-60*60000&&nowT<ko+180*60000;  // 킥오프 60분전~180분후만
+        if(!ok)return false; var ko=koOf(f); return ko&&nowT>=ko-120*60000&&nowT<ko+180*60000;  // 킥오프 120분전~180분후(방송 선행 링크 미리 확보 — JTBC는 보통 40분전, 더 일찍 시작하기도)
       });
       if(fx && !ls.some(x=>x.mid===fx.id)) ls.push({mid:fx.id,url:'https://chzzk.naver.com/live/'+ch,title:title});
     }
