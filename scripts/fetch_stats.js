@@ -29,6 +29,10 @@ function findFixture(h,a){return D.fixtures.find(f=>f.homeId===h&&f.awayId===a)|
   function rec(key,name){ return stats[key]||(stats[key]={key, name, flag:'', teamName:'', goals:0,assists:0,og:0,yellow:0,red:0,apps:0}); }
   // eid → 우리 match_id 매핑(경기별 행 키)
   const eidToMatch={};
+  // 녹아웃(32강~) fixture는 정적 data.js에서 homeId=null(슬롯) → findFixture 실패로 통째 스킵되어 도움·출전·카드가 안 잡히던 버그.
+  // ko_teams.json(실제 대진, update_live가 매분 갱신)의 팀쌍으로 매칭해 녹아웃 경기도 집계.
+  const koPair={};
+  try{ const KO=JSON.parse(await get('https://kicktalk.xyz/ko_teams.json?b='+Date.now())); for(const mid in KO){ const k=KO[mid]; if(k&&k.homeId&&k.awayId) koPair[[k.homeId,k.awayId].sort().join('|')]=mid; } }catch(e){ console.log('[stats] ko_teams 로드 실패(조별은 정상):',e.message); }
   for(const dt of DATES){
     let d; try{d=JSON.parse(await get(SCORE+dt))}catch(e){continue}
     (d.events||[]).forEach(e=>{
@@ -36,7 +40,9 @@ function findFixture(h,a){return D.fixtures.find(f=>f.homeId===h&&f.awayId===a)|
       var c=(e.competitions||[])[0]; if(!c)return; var comp=c.competitors||[];
       var hC=comp.find(x=>x.homeAway==='home'),aC=comp.find(x=>x.homeAway==='away'); if(!hC||!aC)return;
       var hT=espnTeam((hC.team||{}).displayName),aT=espnTeam((aC.team||{}).displayName);
-      var fx=(hT&&aT)?findFixture(hT.id,aT.id):null; if(fx) eidToMatch[e.id]=fx.id;
+      var fx=(hT&&aT)?findFixture(hT.id,aT.id):null;
+      if(!fx && hT && aT){ var kmid=koPair[[hT.id,aT.id].sort().join('|')]; if(kmid) fx={id:kmid}; }  // 녹아웃 실제대진(ko_teams.json)
+      if(fx) eidToMatch[e.id]=fx.id;
     });
     await sleep(110);
   }
