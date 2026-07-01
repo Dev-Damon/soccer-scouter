@@ -33,11 +33,12 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
   for(const dt of dates){
     var raw=await get(SCORE+dt), d; try{d=JSON.parse(raw)}catch(e){continue}
     (d.events||[]).forEach(e=>{
-      var c=(e.competitions||[])[0]; if(!c)return; var ty=((e.status||{}).type||{}); var st=ty.state; if(st!=='in'&&st!=='post')return;
+      var c=(e.competitions||[])[0]; if(!c)return; var ty=((e.status||{}).type||{}); var st=ty.state; if(st!=='in'&&st!=='post'&&st!=='pre')return;
       var ht=(ty.name==='STATUS_HALFTIME'||ty.detail==='HT'||ty.description==='Halftime');  // 하프타임
       var comp=c.competitors||[]; var H=comp.find(x=>x.homeAway==='home'),A=comp.find(x=>x.homeAway==='away'); if(!H||!A)return;
       var hT=espnTeam((H.team||{}).displayName),aT=espnTeam((A.team||{}).displayName); if(!hT||!aT)return;
       var fid=resolveFid(hT,aT,Date.parse(e.date)); if(!fid)return; var fx=D.fixtures.find(f=>f.id===fid);
+      if(st==='pre')return;  // 'pre'(경기전)는 녹아웃 대진 해소만 하고 라이브/결과 저장은 안 함 → 방송 선행 링크가 미해소 fixture에도 붙게(잉글랜드-콩고 등)
       var hs=fx.homeId===hT.id?+H.score:+A.score, as=fx.homeId===hT.id?+A.score:+H.score, ev=parseGoals(c);
       var winId=H.winner===true?hT.id:(A.winner===true?aT.id:null);  // 진출팀(녹아웃 승부차기 포함)
       if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:ht?'전반 종료':((e.status||{}).displayClock||''),events:ev};
