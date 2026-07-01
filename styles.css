@@ -218,6 +218,13 @@ table.stand2 tr.krrow td { font-weight: 800; }
 .team-rank { color: var(--muted); font-size: 12px; }
 .team-wc { margin-top: 5px; font-size: 12.5px; font-weight: 700; color: var(--accent); }
 .team-wc.best { margin-top: 2px; color: #c98a1c; }  /* 역대 최고 = 금색 계열로 최근과 구분 */
+.wc-more { margin-top: 4px; }
+.wc-more summary { font-size: 11.5px; color: var(--accent); cursor: pointer; list-style: none; font-weight: 700; }
+.wc-more summary::-webkit-details-marker { display: none; }
+.wc-more summary::before { content: "▸ "; }
+.wc-more[open] summary::before { content: "▾ "; }
+.wc-more-body { margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.55; }
+.wc-more-body b { color: var(--text); }
 /* 역대 상대전적 */
 .h2h-list { display: flex; flex-direction: column; gap: 4px; }
 .h2h-row { display: flex; align-items: center; gap: 8px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; }

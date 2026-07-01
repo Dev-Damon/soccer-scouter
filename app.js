@@ -2252,24 +2252,35 @@
     twem(viewEl);
     if (hid) { var el = viewEl.querySelector(".mvr-row.me"); if (el) el.scrollIntoView({ block: "center" }); }
   }
-  // 역대 최고 월드컵 성적(팩트). s=단계, n=우승/준우승 횟수(있으면), y=대표 연도. 첫 본선국은 생략(lastWc가 '첫 본선' 표시).
+  // 역대 월드컵 성적(팩트). s=최고 단계, y=최고 성적 연도. 우승/준우승국은 n=횟수·ys=연도 전부. ap=본선 진출 횟수(2026 포함). note=주석. 첫 본선국은 생략.
   var WC_BEST = {
-    mexico: { s: "8강", y: "1970" }, "south-africa": { s: "조별리그" }, "south-korea": { s: "4강", y: "2002" },
-    "czech-republic": { s: "준우승", y: "1962" }, canada: { s: "조별리그" }, "bosnia-and-herzegovina": { s: "조별리그", y: "2014" },
-    qatar: { s: "조별리그", y: "2022" }, switzerland: { s: "8강", y: "1954" }, brazil: { s: "우승", n: 5 },
-    morocco: { s: "4강", y: "2022" }, haiti: { s: "조별리그", y: "1974" }, scotland: { s: "조별리그" },
-    "united-states": { s: "4강", y: "1930" }, paraguay: { s: "8강", y: "2010" }, australia: { s: "16강", y: "2006" },
-    turkey: { s: "4강", y: "2002" }, germany: { s: "우승", n: 4 }, "ivory-coast": { s: "조별리그" },
-    ecuador: { s: "16강", y: "2006" }, netherlands: { s: "준우승", n: 3 }, japan: { s: "16강", y: "2022" },
-    sweden: { s: "준우승", y: "1958" }, tunisia: { s: "조별리그" }, belgium: { s: "4강", y: "2018" },
-    egypt: { s: "조별리그" }, iran: { s: "조별리그" }, "new-zealand": { s: "조별리그" }, spain: { s: "우승", y: "2010" },
-    "saudi-arabia": { s: "16강", y: "1994" }, uruguay: { s: "우승", n: 2 }, france: { s: "우승", n: 2 },
-    senegal: { s: "8강", y: "2002" }, iraq: { s: "조별리그", y: "1986" }, norway: { s: "16강", y: "1998" },
-    argentina: { s: "우승", n: 3 }, algeria: { s: "16강", y: "2014" }, austria: { s: "4강", y: "1954" },
-    portugal: { s: "4강", y: "1966" }, "dr-congo": { s: "조별리그", y: "1974" }, colombia: { s: "8강", y: "2014" },
-    england: { s: "우승", y: "1966" }, croatia: { s: "준우승", y: "2018" }, ghana: { s: "8강", y: "2010" },
-    panama: { s: "조별리그", y: "2018" }
+    mexico: { s: "8강", y: "1970", ap: 18 }, "south-africa": { s: "조별리그", ap: 4 }, "south-korea": { s: "4강", y: "2002", ap: 12 },
+    "czech-republic": { s: "준우승", y: "1962", ap: 10, note: "(체코슬로바키아 포함)" }, canada: { s: "조별리그", ap: 3 }, "bosnia-and-herzegovina": { s: "조별리그", y: "2014", ap: 2 },
+    qatar: { s: "조별리그", y: "2022", ap: 2 }, switzerland: { s: "8강", y: "1954", ap: 13 }, brazil: { s: "우승", n: 5, ys: "1958·1962·1970·1994·2002", ap: 23 },
+    morocco: { s: "4강", y: "2022", ap: 7 }, haiti: { s: "조별리그", y: "1974", ap: 2 }, scotland: { s: "조별리그", ap: 9 },
+    "united-states": { s: "4강", y: "1930", ap: 12 }, paraguay: { s: "8강", y: "2010", ap: 9 }, australia: { s: "16강", y: "2006", ap: 7 },
+    turkey: { s: "4강", y: "2002", ap: 3 }, germany: { s: "우승", n: 4, ys: "1954·1974·1990·2014", ap: 21 }, "ivory-coast": { s: "조별리그", ap: 4 },
+    ecuador: { s: "16강", y: "2006", ap: 5 }, netherlands: { s: "준우승", n: 3, ys: "1974·1978·2010", ap: 12 }, japan: { s: "16강", y: "2022", ap: 8 },
+    sweden: { s: "준우승", n: 1, ys: "1958", ap: 13 }, tunisia: { s: "조별리그", ap: 7 }, belgium: { s: "4강", y: "2018", ap: 15 },
+    egypt: { s: "조별리그", ap: 4 }, iran: { s: "조별리그", ap: 7 }, "new-zealand": { s: "조별리그", ap: 3 }, spain: { s: "우승", n: 1, ys: "2010", ap: 17 },
+    "saudi-arabia": { s: "16강", y: "1994", ap: 7 }, uruguay: { s: "우승", n: 2, ys: "1930·1950", ap: 15 }, france: { s: "우승", n: 2, ys: "1998·2018", ap: 17 },
+    senegal: { s: "8강", y: "2002", ap: 4 }, iraq: { s: "조별리그", y: "1986", ap: 2 }, norway: { s: "16강", y: "1998", ap: 4 },
+    argentina: { s: "우승", n: 3, ys: "1978·1986·2022", ap: 19 }, algeria: { s: "16강", y: "2014", ap: 5 }, austria: { s: "4강", y: "1954", ap: 8 },
+    portugal: { s: "4강", y: "1966", ap: 9 }, "dr-congo": { s: "조별리그", y: "1974", ap: 2, note: "(자이르 시절)" }, colombia: { s: "8강", y: "2014", ap: 7 },
+    england: { s: "우승", n: 1, ys: "1966", ap: 17 }, croatia: { s: "준우승", n: 1, ys: "2018", ap: 7 }, ghana: { s: "8강", y: "2010", ap: 5 },
+    panama: { s: "조별리그", y: "2018", ap: 2 }
   };
+  // 표면 '역대 최고' 요약 텍스트(우승 N회 / 최고 단계·연도)
+  function wcBestText(b) { return esc(b.s) + (b.n > 1 ? " " + b.n + "회" : "") + (b.n === 1 && b.ys ? " · " + esc(b.ys) : "") + (b.y ? " · " + esc(b.y) : ""); }
+  // 더보기: 본선 진출 횟수 + 우승/준우승 연도 전부 + 최고 성적
+  function wcMoreHtml(id) {
+    var b = WC_BEST[id]; if (!b || !b.ap) return "";
+    var line = "본선 진출 <b>" + b.ap + "회</b>" + (b.note ? " " + esc(b.note) : "");
+    if (b.n && b.s === "우승") line += " · 우승 " + (b.n > 1 ? b.n + "회 " : "") + "(" + esc(b.ys) + ")";
+    else if (b.n && b.s === "준우승") line += " · 준우승 " + (b.n > 1 ? b.n + "회 " : "") + "(" + esc(b.ys) + ")";
+    else line += " · 최고 " + esc(b.s) + (b.y ? " (" + esc(b.y) + ")" : "");
+    return '<details class="wc-more"><summary>역대 월드컵 성적 더보기</summary><div class="wc-more-body">' + line + "</div></details>";
+  }
   function renderTeam(id) {
     var t = teamsById[id];
     if (!t) { viewEl.innerHTML = '<div class="empty">팀을 찾을 수 없어요.</div>'; return; }
@@ -2291,7 +2302,7 @@
         (t.lastWc ? '<div class="team-wc">🏆 ' + (t.lastWc.inLast2022
           ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
           : (t.lastWc.year ? "최근 월드컵 " + esc(t.lastWc.year) + " · " + esc(t.lastWc.stage) : "2026 첫 본선 진출")) + "</div>" : "") +
-        (WC_BEST[t.id] ? '<div class="team-wc best">🏅 역대 최고 ' + esc(WC_BEST[t.id].s) + (WC_BEST[t.id].n ? " " + WC_BEST[t.id].n + "회" : "") + (WC_BEST[t.id].y ? " · " + esc(WC_BEST[t.id].y) : "") + "</div>" : "") +
+        (WC_BEST[t.id] ? '<div class="team-wc best">🏅 역대 최고 ' + wcBestText(WC_BEST[t.id]) + "</div>" + wcMoreHtml(t.id) : "") +
         "</div>" +
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
