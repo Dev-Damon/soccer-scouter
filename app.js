@@ -389,7 +389,7 @@
     var avail = Math.floor(fit.clientWidth) || 320;  // 가용 폭(ResizeObserver 콜백에서 측정 = 패딩 적용된 정확값)
     if (avail === _brkLastW) return;  // 폭 변화 없으면 스킵(높이 변경에 의한 RO 무한루프 방지)
     _brkLastW = avail;
-    var W = Math.max(320, avail), H = 560, CY = H / 2, i;
+    var W = Math.max(320, avail), H = 820, CY = H / 2, i;  // 경기 사이 세로 간격 확대(한 경기 두 팀은 붙고 경기끼리는 벌어져 페어 구분 쉬움)
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
     var cardW = 58, Wp = 22, Wf = 42, OFF = PRED ? 18 : 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백 (예측 모드는 세로카드라 간격↑)
