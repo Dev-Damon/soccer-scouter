@@ -3613,8 +3613,13 @@
     if (!window.fetch) return Promise.resolve("");
     return resolveEspnId(fx).then(function (eid) {
       if (!eid) return "";
-      if (summaryCache[eid] && summaryCache[eid].gameInfo) return refereeHtml(summaryCache[eid]);
-      return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (e) { if (e && e.gameInfo) summaryCache[eid] = e; return refereeHtml(e); });
+      if (summaryCache[eid] && summaryCache[eid].gameInfo && summaryCache[eid].gameInfo.officials && summaryCache[eid].gameInfo.officials.length) return refereeHtml(summaryCache[eid]);
+      var sumFallback = function () { return fetch(ESPN_SUM + eid, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (e) { if (e && e.gameInfo) summaryCache[eid] = e; return refereeHtml(e); }).catch(function () { return ""; }); };
+      // ESPN core API 우선 — 심판을 킥오프 무렵부터 제공(summary는 경기 진행돼야 채워져 더 늦음). officials 인라인(position.name/displayName)이라 refereeHtml 그대로 호환.
+      return fetch("https://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.world/events/" + eid + "/competitions/" + eid + "/officials", { cache: "no-store" })
+        .then(function (r) { return r.json(); })
+        .then(function (o) { return (o && o.items && o.items.length) ? refereeHtml({ gameInfo: { officials: o.items } }) : sumFallback(); })
+        .catch(sumFallback);
     }).catch(function () { return ""; });
   }
 
