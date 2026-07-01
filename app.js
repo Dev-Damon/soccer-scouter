@@ -2252,6 +2252,24 @@
     twem(viewEl);
     if (hid) { var el = viewEl.querySelector(".mvr-row.me"); if (el) el.scrollIntoView({ block: "center" }); }
   }
+  // 역대 최고 월드컵 성적(팩트). s=단계, n=우승/준우승 횟수(있으면), y=대표 연도. 첫 본선국은 생략(lastWc가 '첫 본선' 표시).
+  var WC_BEST = {
+    mexico: { s: "8강", y: "1970" }, "south-africa": { s: "조별리그" }, "south-korea": { s: "4강", y: "2002" },
+    "czech-republic": { s: "준우승", y: "1962" }, canada: { s: "조별리그" }, "bosnia-and-herzegovina": { s: "조별리그", y: "2014" },
+    qatar: { s: "조별리그", y: "2022" }, switzerland: { s: "8강", y: "1954" }, brazil: { s: "우승", n: 5 },
+    morocco: { s: "4강", y: "2022" }, haiti: { s: "조별리그", y: "1974" }, scotland: { s: "조별리그" },
+    "united-states": { s: "4강", y: "1930" }, paraguay: { s: "8강", y: "2010" }, australia: { s: "16강", y: "2006" },
+    turkey: { s: "4강", y: "2002" }, germany: { s: "우승", n: 4 }, "ivory-coast": { s: "조별리그" },
+    ecuador: { s: "16강", y: "2006" }, netherlands: { s: "준우승", n: 3 }, japan: { s: "16강", y: "2022" },
+    sweden: { s: "준우승", y: "1958" }, tunisia: { s: "조별리그" }, belgium: { s: "4강", y: "2018" },
+    egypt: { s: "조별리그" }, iran: { s: "조별리그" }, "new-zealand": { s: "조별리그" }, spain: { s: "우승", y: "2010" },
+    "saudi-arabia": { s: "16강", y: "1994" }, uruguay: { s: "우승", n: 2 }, france: { s: "우승", n: 2 },
+    senegal: { s: "8강", y: "2002" }, iraq: { s: "조별리그", y: "1986" }, norway: { s: "16강", y: "1998" },
+    argentina: { s: "우승", n: 3 }, algeria: { s: "16강", y: "2014" }, austria: { s: "4강", y: "1954" },
+    portugal: { s: "4강", y: "1966" }, "dr-congo": { s: "조별리그", y: "1974" }, colombia: { s: "8강", y: "2014" },
+    england: { s: "우승", y: "1966" }, croatia: { s: "준우승", y: "2018" }, ghana: { s: "8강", y: "2010" },
+    panama: { s: "조별리그", y: "2018" }
+  };
   function renderTeam(id) {
     var t = teamsById[id];
     if (!t) { viewEl.innerHTML = '<div class="empty">팀을 찾을 수 없어요.</div>'; return; }
@@ -2273,6 +2291,7 @@
         (t.lastWc ? '<div class="team-wc">🏆 ' + (t.lastWc.inLast2022
           ? "직전 월드컵 2022 · " + esc(t.lastWc.stage)
           : (t.lastWc.year ? "최근 월드컵 " + esc(t.lastWc.year) + " · " + esc(t.lastWc.stage) : "2026 첫 본선 진출")) + "</div>" : "") +
+        (WC_BEST[t.id] ? '<div class="team-wc best">🏅 역대 최고 ' + esc(WC_BEST[t.id].s) + (WC_BEST[t.id].n ? " " + WC_BEST[t.id].n + "회" : "") + (WC_BEST[t.id].y ? " · " + esc(WC_BEST[t.id].y) : "") + "</div>" : "") +
         "</div>" +
       "</div>" +
       '<div class="quote">' + esc(t.tierSummary) + "</div>";
