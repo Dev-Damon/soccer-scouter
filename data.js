@@ -5124,7 +5124,7 @@ window.DATA = {
       "name": "파라과이",
       "nameEn": "Paraguay",
       "flag": "🇵🇾",
-      "fifaRank": 37,
+      "fifaRank": 36,
       "group": "D",
       "tierSummary": "16년 만에 본선에 복귀한 남미의 전통 강호로, 견고한 수비 조직과 노련한 베테랑을 앞세워 16강을 노리는 다크호스다.",
       "styleSummary": [
@@ -5345,7 +5345,7 @@ window.DATA = {
       "name": "호주",
       "nameEn": "Australia",
       "flag": "🇦🇺",
-      "fifaRank": 28,
+      "fifaRank": 27,
       "group": "D",
       "tierSummary": "유럽 2부와 J리그·MLS·A리그에 흩어진 견실한 주전들과 소수의 유망주가 떠받치는, 조직력으로 버티는 6회 연속 본선 진출 중위권 팀.",
       "styleSummary": [
@@ -5547,7 +5547,7 @@ window.DATA = {
       "name": "튀르키예",
       "nameEn": "Turkey",
       "flag": "🇹🇷",
-      "fifaRank": 27,
+      "fifaRank": 26,
       "group": "D",
       "tierSummary": "24년 만에 월드컵 본선에 복귀한 다크호스로, 차분한 베테랑 사령탑 칼하노을루를 축으로 아르다 귈레르·케난 이을드즈 등 유럽 빅클럽의 젊은 재능들이 폭발력을 더한 '신구 조화형' 팀이다.",
       "styleSummary": [
@@ -6386,7 +6386,7 @@ window.DATA = {
       "name": "에콰도르",
       "nameEn": "Ecuador",
       "flag": "🇪🇨",
-      "fifaRank": 24,
+      "fifaRank": 29,
       "group": "E",
       "tierSummary": "남미 예선에서 아르헨티나 다음으로 좋은 성적을 낸 '황금세대' 다크호스로, 유럽 빅클럽에 포진한 단단한 수비진과 카이세도를 앞세워 16강 이상을 노리는 팀입니다.",
       "styleSummary": [
@@ -7016,7 +7016,7 @@ window.DATA = {
       "name": "스웨덴",
       "nameEn": "Sweden",
       "flag": "🇸🇪",
-      "fifaRank": 36,
+      "fifaRank": 38,
       "group": "F",
       "tierSummary": "조 최하위로 예선을 마치고도 사상 처음으로 플레이오프를 뚫고 본선에 오른 '언더독'이지만, 이사크-요케레스라는 세계 정상급 투톱과 프리미어리그 즐비한 멤버를 보유한 다크호스다.",
       "styleSummary": [
@@ -7675,7 +7675,7 @@ window.DATA = {
       "name": "이집트",
       "nameEn": "Egypt",
       "flag": "🇪🇬",
-      "fifaRank": 26,
+      "fifaRank": 25,
       "group": "G",
       "tierSummary": "살라라는 세계적 슈퍼스타와 마르무시라는 두 번째 칼날을 앞세웠지만, 스쿼드 26명 중 17명이 자국 리그(특히 알 아흘리) 소속인 '에이스 의존형' 다크호스다.",
       "styleSummary": [
@@ -9241,7 +9241,7 @@ window.DATA = {
       "name": "프랑스",
       "nameEn": "France",
       "flag": "🇫🇷",
-      "fifaRank": 2,
+      "fifaRank": 1,
       "group": "I",
       "tierSummary": "2018 우승·2022 준우승의 두 번에 걸친 결승 단골이자, 발롱도르 수상자 뎀벨레와 주장 음바페를 앞세운 명실상부 우승 후보 0순위 강팀입니다.",
       "styleSummary": [
@@ -10065,7 +10065,7 @@ window.DATA = {
       "name": "아르헨티나",
       "nameEn": "Argentina",
       "flag": "🇦🇷",
-      "fifaRank": 1,
+      "fifaRank": 2,
       "group": "J",
       "tierSummary": "2022년 우승팀이자 현 디펜딩 챔피언으로, 메시의 마지막 월드컵을 우승으로 장식하려는 J조 최강 우승 후보입니다.",
       "styleSummary": [
@@ -10268,7 +10268,7 @@ window.DATA = {
       "name": "알제리",
       "nameEn": "Algeria",
       "flag": "🇩🇿",
-      "fifaRank": 29,
+      "fifaRank": 28,
       "group": "J",
       "tierSummary": "유럽 빅리그에서 뛰는 재능들이 풍부한 아프리카 강호로, 마레즈의 노련함과 아무라의 폭발력을 앞세워 J조 16강을 노리는 다크호스다.",
       "styleSummary": [
