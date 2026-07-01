@@ -400,7 +400,10 @@
     function box(cx, cy, w, h, cls, html, attr) { boxes.push('<div class="bx ' + cls + '"' + (attr || "") + ' style="left:' + (cx - w / 2) + 'px;top:' + (cy - h / 2) + 'px;width:' + w + 'px;min-height:' + h + 'px">' + html + "</div>"); }
     function teamAttr(tid) { var t = teamsById[tid]; return t ? ' data-team="' + esc(tid) + '" title="' + esc(t.name) + '"' : ""; }  // 클릭→나라상세 + 마우스오버 툴팁
     function vbox(id, cx, cy, w) { BX[id] = { cx: cx, cy: cy, w: w }; }
-    function tcard(s, cx, cy, tid, isWin) {
+    // 노드 id → FIFA 경기번호. isReal = 그 경기가 끝나 실제 진출팀 확정(예측 아님).
+    var NODE_MN = { l16_0: 89, l16_1: 90, l16_2: 93, l16_3: 94, r16_0: 91, r16_1: 92, r16_2: 95, r16_3: 96, l8_0: 97, l8_1: 98, r8_0: 99, r8_1: 100, lsf: 101, rsf: 102, fin: 104 };
+    function isReal(mn) { var fx = mn && fixturesById["match-" + mn]; return !!(fx && advancerOf(fx)); }
+    function tcard(s, cx, cy, tid, isWin, real) {
       var t = brkSlot(s), sp = t.lastIndexOf(" "), g = sp > 0 ? t.slice(0, sp) : t, r = sp > 0 ? t.slice(sp + 1) : "";
       if (PRED && tid) {
         var tm = teamsById[tid];
@@ -408,22 +411,23 @@
         var labelHtml, is3 = g.indexOf("·") >= 0;
         if (is3) { var tg = tm && tm.group; labelHtml = g.split("·").map(function (x) { return x === tg ? '<b class="hl3">' + esc(x) + "</b>" : esc(x); }).join("·") + " " + esc(r); }
         else labelHtml = esc(g + " " + r);
-        box(cx, cy, cardW, 32, "tc pred" + (isWin ? " win" : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl' + (is3 ? " bxl3" : "") + '">' + labelHtml + "</span>", teamAttr(tid));
+        box(cx, cy, cardW, 32, "tc pred" + (isWin ? (real ? " win real" : " win pw") : ""), '<span class="bxf">' + esc(tm ? tm.flag : "") + '</span><span class="bxl' + (is3 ? " bxl3" : "") + '">' + labelHtml + "</span>" + (isWin && real ? '<span class="rmark">✓</span>' : ""), teamAttr(tid));
         return;
       }
       box(cx, cy, cardW, 26, "tc", "<b>" + esc(g) + "</b>" + (r ? "<i>" + esc(r) + "</i>" : ""));
     }
-    function conBox(id, cx, cy, w, lbl) {  // 16강~4강 노드: 예측 승자 국기(클릭가능) or 라벨
+    function conBox(id, cx, cy, w, lbl) {  // 16강~4강 노드: 실제 진출팀(초록+✓) or 킥톡 예측(점선) or 라벨
       var tid = PRED && PRED.node[id], t = tid && teamsById[tid];
-      box(cx, cy, w, 14, "con", t ? '<span class="bxf">' + esc(t.flag) + "</span>" : lbl, t ? teamAttr(tid) : "");
+      var real = !!(t && isReal(NODE_MN[id]));
+      box(cx, cy, w, 14, "con" + (t ? (real ? " real" : " pred") : ""), t ? '<span class="bxf">' + esc(t.flag) + "</span>" + (real ? '<span class="cmark">✓</span>' : "") : lbl, t ? teamAttr(tid) : "");
       vbox(id, cx, cy, w);
     }
-    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; var wn = PRED && PRED.r32win[mn]; tcard(m.a, cx, cy - OFF, pt && pt.a, pt && wn === pt.a); tcard(m.b, cx, cy + OFF, pt && pt.b, pt && wn === pt.b); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
+    function pair(id, mn, cx, cy, ed) { var m = R32M[mn]; var pt = PRED && PRED.r32[mn]; var wn = PRED && PRED.r32win[mn]; var rl = isReal(mn); tcard(m.a, cx, cy - OFF, pt && pt.a, pt && wn === pt.a, rl); tcard(m.b, cx, cy + OFF, pt && pt.b, pt && wn === pt.b, rl); vbox(id, cx, cy, cardW); P.push("M" + ed + " " + (cy - OFF) + " V" + (cy + OFF)); }
     for (i = 0; i < 8; i++) pair("lr" + i, BL_R32[i], XL, r32cy[i], XL + cardW / 2);
     for (i = 0; i < 4; i++) conBox("l16_" + i, X16, c16cy[i], Wp, "16강");
     for (i = 0; i < 2; i++) conBox("l8_" + i, X8, c8cy[i], Wp, "8강");
     conBox("lsf", X4, CY, Wp, "4강");
-    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin", PRED && PRED.champion ? '<div class="trophy">🏆</div><div class="bxf champf">' + esc((teamsById[PRED.champion] || {}).flag || "") + "</div>" : '<div class="trophy">🏆</div><div class="finlbl">결승</div>', PRED && PRED.champion ? teamAttr(PRED.champion) : "");
+    vbox("fin", XF, CY, Wf); box(XF, CY, Wf, Wf, "fin" + (PRED && PRED.champion ? (isReal(104) ? " real" : " pred") : ""), PRED && PRED.champion ? '<div class="trophy">🏆</div><div class="bxf champf">' + esc((teamsById[PRED.champion] || {}).flag || "") + "</div>" + (isReal(104) ? '<span class="cmark">✓</span>' : "") : '<div class="trophy">🏆</div><div class="finlbl">결승</div>', PRED && PRED.champion ? teamAttr(PRED.champion) : "");
     box(XF, CY + Wf / 2 + 16, 74, 16, "thirdpl", (PRED && PRED.third) ? ('🥉 <span class="bxf">' + esc((teamsById[PRED.third[0]] || {}).flag || "") + '</span><span class="bxf">' + esc((teamsById[PRED.third[1]] || {}).flag || "") + "</span>") : "🥉 3·4위전");
     conBox("rsf", XR4, CY, Wp, "4강");
     for (i = 0; i < 2; i++) conBox("r8_" + i, XR8, c8cy[i], Wp, "8강");
@@ -449,7 +453,7 @@
     fetchStandings();  // 실제 순위 비동기 로드 → 도착 시 자동 재렌더(끝난 조는 실제 진출팀으로 채움)
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
-    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="muted-note">조별 끝난 조는 실제 순위 반영 · 토너먼트 승자는 킥톡 예측</span></div><div class="brk2-fit"></div>';
+    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="brk-legend"><span class="lg-real">✓ 실제 진출</span> · <span class="lg-pred">┄ 킥톡 예측</span></span></div><div class="brk2-fit"></div>';
     _brkLastW = -1;  // 새 fit → 강제 재측정
     var _bfit = viewEl.querySelector(".brk2-fit");
     if (window.ResizeObserver && _bfit) { if (_brkRO) _brkRO.disconnect(); _brkRO = new ResizeObserver(function () { layoutBracket(); }); _brkRO.observe(_bfit); }
