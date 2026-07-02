@@ -225,6 +225,17 @@ table.stand2 tr.krrow td { font-weight: 800; }
 .wc-more[open] summary::before { content: "▾ "; }
 .wc-more-body { margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.55; }
 .wc-more-body b { color: var(--text); }
+.wc-tbl { width: 100%; max-width: 260px; border-collapse: collapse; font-size: 12px; }
+.wc-tbl td { padding: 3px 8px; border-bottom: 1px solid var(--line); }
+.wc-tbl td:first-child { color: var(--muted); width: 52px; font-variant-numeric: tabular-nums; }
+.wc-r { font-weight: 800; text-align: right; }
+.wc-r.wc-win { color: #c99a1c; }
+.wc-r.wc-ru { color: #8a94a6; }
+.wc-r.wc-sf { color: #1aa55b; }
+.wc-r.wc-qf { color: #3b6ef6; }
+.wc-r.wc-r16 { color: #5b86d4; }
+.wc-r.wc-gs { color: var(--muted); font-weight: 600; }
+.wc-note { margin-top: 6px; font-size: 10.5px; color: var(--muted); }
 /* 역대 상대전적 */
 .h2h-list { display: flex; flex-direction: column; gap: 4px; }
 .h2h-row { display: flex; align-items: center; gap: 8px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; }
