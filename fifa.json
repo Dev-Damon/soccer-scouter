@@ -1,10 +1,10 @@
 {
- "_ts": 1782950243157,
+ "_ts": 1782962855124,
  "mexico": {
-  "r": 9,
+  "r": 10,
   "p": 1754.3,
   "ch": 66.82,
-  "chR": 5
+  "chR": 4
  },
  "south-africa": {
   "r": 56,
@@ -31,10 +31,10 @@
   "chR": 0
  },
  "bosnia-and-herzegovina": {
-  "r": 61,
-  "p": 1408.93,
-  "ch": 21.71,
-  "chR": 3
+  "r": 64,
+  "p": 1395.77,
+  "ch": 8.55,
+  "chR": 0
  },
  "qatar": {
   "r": 59,
@@ -67,15 +67,15 @@
   "chR": -5
  },
  "scotland": {
-  "r": 42,
+  "r": 41,
   "p": 1491.22,
   "ch": -12.12,
-  "chR": 0
+  "chR": 1
  },
  "united-states": {
   "r": 15,
-  "p": 1677.17,
-  "ch": 5.94,
+  "p": 1690.33,
+  "ch": 19.1,
   "chR": 2
  },
  "paraguay": {
@@ -145,10 +145,10 @@
   "chR": -12
  },
  "belgium": {
-  "r": 10,
-  "p": 1735.42,
-  "ch": -6.82,
-  "chR": -1
+  "r": 9,
+  "p": 1756.52,
+  "ch": 14.28,
+  "chR": 0
  },
  "egypt": {
   "r": 25,
@@ -175,10 +175,10 @@
   "chR": -1
  },
  "cape-verde": {
-  "r": 64,
+  "r": 63,
   "p": 1402.97,
   "ch": 31.86,
-  "chR": 3
+  "chR": 4
  },
  "saudi-arabia": {
   "r": 58,
@@ -187,10 +187,10 @@
   "chR": 3
  },
  "uruguay": {
-  "r": 19,
+  "r": 18,
   "p": 1634.71,
   "ch": -38.36,
-  "chR": -3
+  "chR": -2
  },
  "france": {
   "r": 1,
@@ -199,16 +199,16 @@
   "chR": 2
  },
  "senegal": {
-  "r": 18,
-  "p": 1653.43,
-  "ch": -30.64,
-  "chR": -3
+  "r": 19,
+  "p": 1632.33,
+  "ch": -51.74,
+  "chR": -4
  },
  "iraq": {
-  "r": 63,
+  "r": 62,
   "p": 1404.17,
   "ch": -42.11,
-  "chR": -6
+  "chR": -5
  },
  "norway": {
   "r": 21,
@@ -247,10 +247,10 @@
   "chR": -3
  },
  "dr-congo": {
-  "r": 41,
-  "p": 1495.48,
-  "ch": 21.05,
-  "chR": 5
+  "r": 42,
+  "p": 1484.97,
+  "ch": 10.54,
+  "chR": 4
  },
  "uzbekistan": {
   "r": 60,
@@ -266,8 +266,8 @@
  },
  "england": {
   "r": 4,
-  "p": 1840.46,
-  "ch": 12.44,
+  "p": 1850.97,
+  "ch": 22.95,
   "chR": 0
  },
  "croatia": {
@@ -325,8 +325,8 @@
    "flagUrl": "https://flagcdn.com/28x21/gb-eng.png",
    "id": "england",
    "r": 4,
-   "p": 1840.46,
-   "ch": 12.44,
+   "p": 1850.97,
+   "ch": 22.95,
    "chR": 0
   },
   {
@@ -370,24 +370,24 @@
    "chR": -3
   },
   {
-   "code": "MEX",
-   "name": "Mexico",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mx.svg",
-   "id": "mexico",
-   "r": 9,
-   "p": 1754.3,
-   "ch": 66.82,
-   "chR": 5
-  },
-  {
    "code": "BEL",
    "name": "Belgium",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/be.svg",
    "id": "belgium",
+   "r": 9,
+   "p": 1756.52,
+   "ch": 14.28,
+   "chR": 0
+  },
+  {
+   "code": "MEX",
+   "name": "Mexico",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mx.svg",
+   "id": "mexico",
    "r": 10,
-   "p": 1735.42,
-   "ch": -6.82,
-   "chR": -1
+   "p": 1754.3,
+   "ch": 66.82,
+   "chR": 4
   },
   {
    "code": "COL",
@@ -435,8 +435,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/us.svg",
    "id": "united-states",
    "r": 15,
-   "p": 1677.17,
-   "ch": 5.94,
+   "p": 1690.33,
+   "ch": 19.1,
    "chR": 2
   },
   {
@@ -460,24 +460,24 @@
    "chR": 1
   },
   {
-   "code": "SEN",
-   "name": "Senegal",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sn.svg",
-   "id": "senegal",
-   "r": 18,
-   "p": 1653.43,
-   "ch": -30.64,
-   "chR": -3
-  },
-  {
    "code": "URU",
    "name": "Uruguay",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
    "id": "uruguay",
-   "r": 19,
+   "r": 18,
    "p": 1634.71,
    "ch": -38.36,
-   "chR": -3
+   "chR": -2
+  },
+  {
+   "code": "SEN",
+   "name": "Senegal",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sn.svg",
+   "id": "senegal",
+   "r": 19,
+   "p": 1632.33,
+   "ch": -51.74,
+   "chR": -4
   },
   {
    "code": "DEN",
@@ -690,24 +690,24 @@
    "chR": 3
   },
   {
-   "code": "COD",
-   "name": "Congo DR",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cd.svg",
-   "id": "dr-congo",
-   "r": 41,
-   "p": 1495.48,
-   "ch": 21.05,
-   "chR": 5
-  },
-  {
    "code": "SCO",
    "name": "Scotland",
    "flagUrl": "https://flagcdn.com/28x21/gb-sct.png",
    "id": "scotland",
-   "r": 42,
+   "r": 41,
    "p": 1491.22,
    "ch": -12.12,
-   "chR": 0
+   "chR": 1
+  },
+  {
+   "code": "COD",
+   "name": "Congo DR",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cd.svg",
+   "id": "dr-congo",
+   "r": 42,
+   "p": 1484.97,
+   "ch": 10.54,
+   "chR": 4
   },
   {
    "code": "CMR",
@@ -890,44 +890,44 @@
    "chR": -10
   },
   {
-   "code": "BIH",
-   "name": "Bosnia and Herzegovina",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ba.svg",
-   "id": "bosnia-and-herzegovina",
-   "r": 61,
-   "p": 1408.93,
-   "ch": 21.71,
-   "chR": 3
-  },
-  {
    "code": "BFA",
    "name": "Burkina Faso",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bf.svg",
    "id": null,
-   "r": 62,
+   "r": 61,
    "p": 1406.99,
    "ch": 0,
-   "chR": 0
+   "chR": 1
   },
   {
    "code": "IRQ",
    "name": "Iraq",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/iq.svg",
    "id": "iraq",
-   "r": 63,
+   "r": 62,
    "p": 1404.17,
    "ch": -42.11,
-   "chR": -6
+   "chR": -5
   },
   {
    "code": "CPV",
    "name": "Cabo Verde",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cv.svg",
    "id": "cape-verde",
-   "r": 64,
+   "r": 63,
    "p": 1402.97,
    "ch": 31.86,
-   "chR": 3
+   "chR": 4
+  },
+  {
+   "code": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ba.svg",
+   "id": "bosnia-and-herzegovina",
+   "r": 64,
+   "p": 1395.77,
+   "ch": 8.55,
+   "chR": 0
   },
   {
    "code": "GHA",

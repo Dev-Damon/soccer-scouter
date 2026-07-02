@@ -2335,7 +2335,7 @@ window.DATA = {
       "name": "멕시코",
       "nameEn": "Mexico",
       "flag": "🇲🇽",
-      "fifaRank": 9,
+      "fifaRank": 10,
       "group": "A",
       "tierSummary": "개최국 멕시코는 산티아고 히메네스와 라울 히메네스의 공격진, 노련한 유럽파 수비를 앞세워 조 1위와 16강 이상을 노리는 중상위권 전력이다.",
       "styleSummary": [
@@ -3400,7 +3400,7 @@ window.DATA = {
       "name": "보스니아 헤르체고비나",
       "nameEn": "Bosnia and Herzegovina",
       "flag": "🇧🇦",
-      "fifaRank": 61,
+      "fifaRank": 64,
       "group": "B",
       "tierSummary": "2014년 이후 12년 만에 본선에 복귀한 다크호스로, 노장 제코를 구심점 삼아 유럽 각지에서 성장한 디아스포라 자원으로 무장한 중하위 시드 팀이다.",
       "styleSummary": [
@@ -4686,7 +4686,7 @@ window.DATA = {
       "name": "스코틀랜드",
       "nameEn": "Scotland",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "fifaRank": 42,
+      "fifaRank": 41,
       "group": "C",
       "tierSummary": "1998년 이후 28년 만의 월드컵 본선에 오른 스코틀랜드는 월드클래스 1명(맥토미니)과 풍부한 빅리그 베테랑들로 무장했지만, 브라질·모로코가 버틴 C조에서는 16강이 현실적 목표인 다크호스다.",
       "styleSummary": [
@@ -7450,7 +7450,7 @@ window.DATA = {
       "name": "벨기에",
       "nameEn": "Belgium",
       "flag": "🇧🇪",
-      "fifaRank": 10,
+      "fifaRank": 9,
       "group": "G",
       "tierSummary": "황금 세대의 노련함과 도쿠·오나나로 대표되는 신예가 공존하는, 우승까지는 한 끗 모자란 강력한 다크호스다.",
       "styleSummary": [
@@ -8557,7 +8557,7 @@ window.DATA = {
       "name": "카보베르데",
       "nameEn": "Cape Verde",
       "flag": "🇨🇻",
-      "fifaRank": 64,
+      "fifaRank": 63,
       "group": "H",
       "tierSummary": "사상 첫 월드컵 본선에 오른 인구 50만의 '블루 샤크', 디아스포라 출신 유럽파를 끌어모아 조직력과 수비 안정성으로 무장한 다크호스다.",
       "styleSummary": [
@@ -8992,7 +8992,7 @@ window.DATA = {
       "name": "우루과이",
       "nameEn": "Uruguay",
       "flag": "🇺🇾",
-      "fifaRank": 19,
+      "fifaRank": 18,
       "group": "H",
       "tierSummary": "유럽·남미 빅클럽에서 뛰는 세대교체 핵심들을 비엘사 감독이 거칠고 짜임새 있게 묶어낸, 8강 이상을 노리는 강호다.",
       "styleSummary": [
@@ -9448,7 +9448,7 @@ window.DATA = {
       "name": "세네갈",
       "nameEn": "Senegal",
       "flag": "🇸🇳",
-      "fifaRank": 18,
+      "fifaRank": 19,
       "group": "I",
       "tierSummary": "2021년·2025년 아프리카 네이션스컵을 제패한 아프리카 최강 전력 중 하나로, 프리미어리그를 비롯한 빅리그 주축 선수가 즐비한 다크호스급 팀입니다.",
       "styleSummary": [
@@ -9629,7 +9629,7 @@ window.DATA = {
       "name": "이라크",
       "nameEn": "Iraq",
       "flag": "🇮🇶",
-      "fifaRank": 63,
+      "fifaRank": 62,
       "group": "I",
       "tierSummary": "1986년 이후 40년 만에 본선에 복귀한 다크호스로, 베테랑 골키퍼와 노련한 타깃맨을 중심에 두고 유럽파 디아스포라 선수들이 가세한 끈끈한 언더독 팀이다.",
       "styleSummary": [
@@ -11119,7 +11119,7 @@ window.DATA = {
       "name": "콩고민주공화국",
       "nameEn": "DR Congo",
       "flag": "🇨🇩",
-      "fifaRank": 41,
+      "fifaRank": 42,
       "group": "K",
       "tierSummary": "유럽 5대 리그와 아프리카 무대를 누비는 검증된 베테랑 수비·공격진에 신예 미드필더가 결합된, 조 최약체로 분류되지만 한 방이 있는 '복병형' 다크호스다.",
       "styleSummary": [
