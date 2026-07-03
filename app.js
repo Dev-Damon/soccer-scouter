@@ -986,6 +986,21 @@
     var g = fixturesById["match-" + m[1]]; if (!g || !g.homeId || !g.awayId) return null;
     return [g.homeId, g.awayId];
   }
+  // 국기 이모지 → ISO2 코드(리저널 인디케이터/잉글랜드 등 태그시퀀스). twemoji 없이도 이미지로 확실히 렌더하기 위함.
+  var FLAG_SUB = { "england": "gb-eng", "scotland": "gb-sct", "wales": "gb-wls" };
+  function isoFromFlag(emoji) {
+    if (!emoji) return null;
+    var cps = Array.from(emoji).map(function (c) { return c.codePointAt(0); }).filter(function (p) { return p >= 0x1F1E6 && p <= 0x1F1FF; });
+    if (cps.length === 2) return String.fromCharCode(cps[0] - 0x1F1E6 + 97) + String.fromCharCode(cps[1] - 0x1F1E6 + 97);
+    return null;  // 태그시퀀스(잉글랜드 등)는 팀id로 별도 처리
+  }
+  // 후보국 국기 — flagcdn 이미지(토스/기기 무관하게 표시). 실패 시 이모지 폴백.
+  function candFlagHtml(id) {
+    var t = teamsById[id];
+    var iso = FLAG_SUB[id] || isoFromFlag(t && t.flag);
+    if (iso) return '<img class="fx-cand-img" src="https://flagcdn.com/h24/' + iso + '.png" srcset="https://flagcdn.com/h48/' + iso + '.png 2x" alt="" loading="lazy">';
+    return '<span class="fx-cand-fl">' + esc(flagOf(id)) + "</span>";  // 폴백
+  }
   // 일정 카드 한쪽 슬롯을 두 후보국(국기 위·이름 아래 · 나란히)으로 렌더. side='home'|'away'.
   // 그 슬롯을 누르면 앞 경기(예: 90경기) 상세로 이동 — data-match="match-N"(공용 [data-match] 핸들러가 처리).
   function candSideHtml(ids, label, side) {
@@ -993,7 +1008,7 @@
     var mAttr = mm ? ' data-match="match-' + mm[1] + '"' : "";
     var cells = ids.map(function (id) {
       var t = teamsById[id];
-      return '<span class="fx-cand"><span class="fx-cand-fl">' + esc(flagOf(id)) + '</span>' +
+      return '<span class="fx-cand">' + candFlagHtml(id) +
         '<span class="fx-cand-nm">' + esc(SHORT_TEAM[id] || (t ? t.name : id)) + "</span></span>";
     }).join('<span class="fx-cand-x">/</span>');
     return '<div class="fx-side cand ' + side + (mAttr ? " tap" : "") + '"' + mAttr + '>' +
