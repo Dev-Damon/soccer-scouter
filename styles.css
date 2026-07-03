@@ -122,6 +122,15 @@ html, body {
 .fx-side.away { flex-direction: row-reverse; text-align: right; }
 .fx-flag { font-size: 26px; flex: none; }
 .fx-team { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* 미확정 녹아웃 슬롯 — 후보 두 나라(국기 위·이름 아래, 나란히) */
+.fx-side.cand { flex-direction: column; align-items: flex-start; gap: 3px; }
+.fx-side.cand.away { align-items: flex-end; }
+.fx-cand-lbl { font-size: 10px; font-weight: 700; color: var(--muted); }
+.fx-cand-row { display: flex; align-items: flex-start; gap: 6px; max-width: 100%; }
+.fx-cand { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; }
+.fx-cand-fl { font-size: 21px; line-height: 1; }
+.fx-cand-nm { font-size: 10.5px; font-weight: 700; text-align: center; line-height: 1.15; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fx-cand-x { align-self: center; margin-top: 8px; color: var(--muted); font-size: 11px; font-weight: 700; }
 .fx-mid { display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .fx-time { font-weight: 800; font-size: 14px; }
 .fx-vs { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
