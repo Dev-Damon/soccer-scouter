@@ -5756,7 +5756,7 @@ window.DATA = {
       "name": "독일",
       "nameEn": "Germany",
       "flag": "🇩🇪",
-      "fifaRank": 13,
+      "fifaRank": 12,
       "group": "E",
       "tierSummary": "무지알라와 비르츠로 대표되는 세계 최고급 공격형 미드필더진에 키미히와 뤼디거의 경험이 더해진 우승 후보권 강팀이지만, 확실한 월드클래스 9번 스트라이커의 부재가 마지막 퍼즐이다.",
       "styleSummary": [
@@ -6593,7 +6593,7 @@ window.DATA = {
       "name": "네덜란드",
       "nameEn": "Netherlands",
       "flag": "🇳🇱",
-      "fifaRank": 7,
+      "fifaRank": 8,
       "group": "F",
       "tierSummary": "반 다이크와 프렝키 더용을 축으로 한 유럽 강호로, 우승 후보 한 단계 아래의 '강력한 다크호스' 티어다.",
       "styleSummary": [
@@ -10920,7 +10920,7 @@ window.DATA = {
       "name": "포르투갈",
       "nameEn": "Portugal",
       "flag": "🇵🇹",
-      "fifaRank": 8,
+      "fifaRank": 7,
       "group": "K",
       "tierSummary": "유럽 정상급 우승 후보로, 호날두의 마지막 월드컵을 PSG 우승 군단과 황금 세대가 떠받치는 K조 압도적 1강이다.",
       "styleSummary": [
@@ -12003,7 +12003,7 @@ window.DATA = {
       "name": "크로아티아",
       "nameEn": "Croatia",
       "flag": "🇭🇷",
-      "fifaRank": 12,
+      "fifaRank": 14,
       "group": "L",
       "tierSummary": "모드리치를 중심으로 한 황금세대가 마지막 불꽃을 태우는 가운데 그바르디올·스타니시치 등 신구 조화로 16강 이상을 노리는 강호급 팀이다.",
       "styleSummary": [
