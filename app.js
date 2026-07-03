@@ -987,13 +987,17 @@
     return [g.homeId, g.awayId];
   }
   // 일정 카드 한쪽 슬롯을 두 후보국(국기 위·이름 아래 · 나란히)으로 렌더. side='home'|'away'.
+  // 그 슬롯을 누르면 앞 경기(예: 90경기) 상세로 이동 — data-match="match-N"(공용 [data-match] 핸들러가 처리).
   function candSideHtml(ids, label, side) {
+    var mm = /(\d+)경기/.exec(label || "");
+    var mAttr = mm ? ' data-match="match-' + mm[1] + '"' : "";
     var cells = ids.map(function (id) {
       var t = teamsById[id];
       return '<span class="fx-cand"><span class="fx-cand-fl">' + esc(flagOf(id)) + '</span>' +
         '<span class="fx-cand-nm">' + esc(SHORT_TEAM[id] || (t ? t.name : id)) + "</span></span>";
     }).join('<span class="fx-cand-x">/</span>');
-    return '<div class="fx-side cand ' + side + '"><span class="fx-cand-lbl">' + esc(label) + "</span>" +
+    return '<div class="fx-side cand ' + side + (mAttr ? " tap" : "") + '"' + mAttr + '>' +
+      '<span class="fx-cand-lbl">' + esc(label) + (mAttr ? ' <span class="fx-cand-go">›</span>' : "") + "</span>" +
       '<span class="fx-cand-row">' + cells + "</span></div>";
   }
   function fixtureCard(fx) {
