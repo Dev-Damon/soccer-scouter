@@ -16,6 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      # 배당 동기화 — match_odds를 화면(betOddsOf)과 동일 공식으로 채움. 녹아웃 라운드 확정 시 배당 누락(→2.0 기본값) 방지.
+      - name: 배당 동기화 (match_odds)
+        env:
+          ODDS_SYNC_SECRET: ${{ secrets.ODDS_SYNC_SECRET }}
+        run: node scripts/sync_odds.mjs
       # 게이트 — 라이브/최근 종료 경기 없으면 정산 스킵(헛돌지 않게)
       - name: 라이브/최근경기 확인
         id: gate
