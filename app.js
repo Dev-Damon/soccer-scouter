@@ -980,6 +980,22 @@
     }).join("");
   }
 
+  // 미확정 녹아웃 슬롯("N경기 승자")에서 그 경기 두 후보국 id를 뽑음(두 팀 다 확정된 경우만).
+  function slotCands(label) {
+    var m = /(\d+)경기\s*승자/.exec(label || ""); if (!m) return null;
+    var g = fixturesById["match-" + m[1]]; if (!g || !g.homeId || !g.awayId) return null;
+    return [g.homeId, g.awayId];
+  }
+  // 일정 카드 한쪽 슬롯을 두 후보국(국기 위·이름 아래 · 나란히)으로 렌더. side='home'|'away'.
+  function candSideHtml(ids, label, side) {
+    var cells = ids.map(function (id) {
+      var t = teamsById[id];
+      return '<span class="fx-cand"><span class="fx-cand-fl">' + esc(flagOf(id)) + '</span>' +
+        '<span class="fx-cand-nm">' + esc(SHORT_TEAM[id] || (t ? t.name : id)) + "</span></span>";
+    }).join('<span class="fx-cand-x">/</span>');
+    return '<div class="fx-side cand ' + side + '"><span class="fx-cand-lbl">' + esc(label) + "</span>" +
+      '<span class="fx-cand-row">' + cells + "</span></div>";
+  }
   function fixtureCard(fx) {
     var both = !!(fx.homeId && fx.awayId);
     var clickable = !!(fx.homeId || fx.awayId);
@@ -1006,12 +1022,19 @@
     }
     var lG = teamGoals(fx, lv, lName, "l"), rG = teamGoals(fx, lv, rName, "r");  // 좌(홈쪽)/우(원정쪽) 득점자(가운데로 수렴)
     var goals = (lG || rG) ? '<div class="fx-goals"><div class="fx-g-l">' + lG + '</div><div class="fx-g-r">' + rG + "</div></div>" : "";
+    // 미확정 녹아웃 슬롯은 후보 두 나라로 표시(경기 전만). 앞 경기 두 팀이 확정된 경우에 한함.
+    var lCand = (!lId && !live && !ended) ? slotCands(lName) : null;
+    var rCand = (!rId && !live && !ended) ? slotCands(rName) : null;
+    var homeSide = lCand ? candSideHtml(lCand, lName, "home")
+      : '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(lId)) + "</span>" +
+        '<span class="fx-team">' + esc(lName) + "</span></div>";
+    var awaySide = rCand ? candSideHtml(rCand, rName, "away")
+      : '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(rId)) + "</span>" +
+        '<span class="fx-team">' + esc(rName) + "</span></div>";
     return '<div class="fixture' + (clickable ? " clickable" : "") + (live ? " is-live" : "") + '"' + attr + ">" +
-      '<div class="fx-side home"><span class="fx-flag">' + esc(flagOf(lId)) + "</span>" +
-        '<span class="fx-team">' + esc(lName) + "</span></div>" +
+      homeSide +
       '<div class="fx-mid">' + mid + "</div>" +
-      '<div class="fx-side away"><span class="fx-flag">' + esc(flagOf(rId)) + "</span>" +
-        '<span class="fx-team">' + esc(rName) + "</span></div>" +
+      awaySide +
       goals + (meta ? '<div class="fx-meta">' + meta + "</div>" : "") +
       "</div>";
   }
@@ -3614,7 +3637,8 @@
     "match-81": "https://chzzk.naver.com/video/13991420", // 미국-보스니아 헤르체고비나
     "match-82": "https://chzzk.naver.com/video/13990715", // 벨기에-세네갈
     "match-83": "https://chzzk.naver.com/video/14007311", // 포르투갈-크로아티아
-    "match-84": "https://chzzk.naver.com/video/14006308" // 스페인-오스트리아
+    "match-84": "https://chzzk.naver.com/video/14006308", // 스페인-오스트리아
+    "match-85": "https://chzzk.naver.com/video/14008538" // 스위스-알제리
     /* HL-AUTO-END */
   };
   // 하이라이트도 런타임 JSON(highlights.json)으로 갱신 — 토스 미니앱은 app.js를 번들 스냅샷으로 갖기 때문에, 빌드 이후 추가된 하이라이트가 안 보였음. 평점/주심과 동일하게 런타임 fetch로 양쪽(웹/토스) 자동 반영.
