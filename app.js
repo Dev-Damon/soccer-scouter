@@ -2150,6 +2150,9 @@
   // 골키퍼 국가대표 실점·무실점 — gk.json(나무위키 등 정확 소스 수집). {pid:{g:경기,c:실점,cs:무실점}}
   var PLAYER_GK = {};
   (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/gk.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_GK, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
+  // 역대 소속팀(연도별) — 주요선수(ovr 상위)만. careers.json(위키피디아 실제 이력 수집). {pid:[{years,club,loan}]}
+  var PLAYER_CAREER = {};
+  (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/careers.json?b=1").then(function(r){return r.json();}).then(function(d){ if(d) Object.assign(PLAYER_CAREER, d); var h=parseHash(); if(h.name==="player"&&h.id) renderPlayer(h.id); }).catch(function(){}); })();
   // FIFA 랭킹 — fifa.json(scripts/update_fifa.js가 2h마다 갱신)에서 런타임 로드 → 토스도 재빌드 없이 최신 랭킹 반영.
   var FIFA_TS = 0;  // FIFA 랭킹 갱신 시각(fifa.json _ts)
   (function(){ if(!window.fetch) return; fetch("https://kicktalk.xyz/fifa.json?b="+Date.now()).then(function(r){return r.json();}).then(function(d){ if(!d) return; if(d._ts) FIFA_TS=d._ts; if(Array.isArray(d._all)) FIFA_ALL=d._all; var ch=false; DATA.teams.forEach(function(t){ var e=d[t.id]; if(e==null) return; var r=(typeof e==="object")?e.r:e; if(r!=null && t.fifaRank!==r){ t.fifaRank=r; ch=true; } if(typeof e==="object"){ t.fifaPts=e.p; t.fifaCh=e.ch; t.fifaChR=e.chR; } }); var h=parseHash(); if((ch||FIFA_TS||FIFA_ALL.length) && (h.name==="home"||h.name==="team"||h.name==="fifa")) route(); }).catch(function(){}); })();
@@ -2194,6 +2197,17 @@
     var powerHtml = p.power ? (powerRadar(p.power) + (IS_TOSS ? "" : '<button class="share-card" data-share-card="' + esc(p.id) + '">📤 능력치 카드 이미지로 공유</button>') + '<button class="cmp-go" data-cmp-go="' + esc(p.id) + '">⚖️ 다른 선수와 능력치 비교</button>') : "";  /* 토스는 외부 공유 숨김 */
     var strengths = (p.strengths || []).map(function (s) { return '<span class="tag">' + esc(s) + "</span>"; }).join("");
     var weaknesses = (p.weaknesses || []).map(function (s) { return '<span class="tag weak">' + esc(s) + "</span>"; }).join("");
+
+    // 역대 소속팀(연도별) — 주요선수만(careers.json). 대중이 커리어 급을 가늠하도록 상단 표시.
+    var career = PLAYER_CAREER[p.id];
+    var careerHtml = "";
+    if (career && career.length) {
+      careerHtml = '<div class="block"><h3>역대 소속팀 <span class="muted-note">연도별 · 위키피디아</span></h3><div class="career">' +
+        career.map(function (c) {
+          return '<div class="career-row"><span class="career-yr">' + esc(c.years || "") + '</span>' +
+            '<span class="career-club">' + esc(c.club || "") + (c.loan ? ' <span class="career-loan">임대</span>' : "") + "</span></div>";
+        }).join("") + "</div></div>";
+    }
 
     // 커리어 타임라인: honours + 이적 (연도 추출 가능하면 표시)
     var tlItems = [];

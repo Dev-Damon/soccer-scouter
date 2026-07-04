@@ -918,6 +918,13 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .tl-year { font-size: 11.5px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tl-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin: 4px auto 0; box-shadow: 0 0 0 3px rgba(79,140,255,.15); }
 .tl-text { font-size: 13.5px; line-height: 1.4; }
+/* 역대 소속팀(주요선수) */
+.career { display: flex; flex-direction: column; }
+.career-row { display: grid; grid-template-columns: 92px 1fr; align-items: baseline; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.career-row:last-child { border-bottom: 0; }
+.career-yr { font-size: 12px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.career-club { font-size: 14px; font-weight: 700; line-height: 1.35; }
+.career-loan { font-size: 10.5px; font-weight: 700; color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 1px 5px; margin-left: 4px; vertical-align: 1px; }
 
 /* 검색 보조 */
 .grade-browse { display: grid; gap: 8px; }
