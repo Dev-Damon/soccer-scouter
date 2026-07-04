@@ -3659,6 +3659,7 @@
     "match-84": "https://chzzk.naver.com/video/14006308", // 스페인-오스트리아
     "match-85": "https://chzzk.naver.com/video/14008538", // 스위스-알제리
     "match-86": "https://chzzk.naver.com/video/14024062", // 아르헨티나-카보베르데
+    "match-87": "https://chzzk.naver.com/video/14024866", // 콜롬비아-가나
     "match-88": "https://chzzk.naver.com/video/14022980" // 호주-이집트
     /* HL-AUTO-END */
   };
