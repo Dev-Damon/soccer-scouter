@@ -3714,6 +3714,7 @@
     "match-86": "https://chzzk.naver.com/video/14024062", // 아르헨티나-카보베르데
     "match-87": "https://chzzk.naver.com/video/14024866", // 콜롬비아-가나
     "match-88": "https://chzzk.naver.com/video/14022980", // 호주-이집트
+    "match-89": "https://chzzk.naver.com/video/14040738", // 파라과이-프랑스
     "match-90": "https://chzzk.naver.com/video/14039158" // 캐나다-모로코
     /* HL-AUTO-END */
   };
