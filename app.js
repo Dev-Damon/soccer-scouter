@@ -657,8 +657,13 @@
       '<div class="hb-kicker">KICKTALK · 2026 WORLD CUP</div>' +
       '<div class="hb-title">국가와 선수를 한눈에</div>' +
       '<div class="hb-sub">' + esc(witty) + "</div>" +
-      (kr32Active() ? kr32BannerHtml()  // 한국 조별 종료(3위 확정) → D-day 대신 '32강 가려면?' 요약
-        : '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div>") +
+      (SPOILER_ON
+        // 스포일러 방지: 한국 결과(무산/진출/일정종료·녹아웃 상대) 노출 금지. 조별 예정경기 D-day만 안전.
+        ? ((nextKr && nextKr.group)
+            ? '<div class="hb-dday clickable"' + ddayTap + ">" + dday + " ›</div>"
+            : '<div class="hb-dday">🇰🇷 대한민국 대표팀</div>')
+        : (kr32Active() ? kr32BannerHtml()  // 한국 조별 종료(3위 확정) → D-day 대신 '32강 가려면?' 요약
+          : '<div class="hb-dday' + (nextKr ? " clickable" : "") + '"' + ddayTap + ">" + dday + (nextKr ? " ›" : "") + "</div>")) +
       (krGroupRemain ? '<div class="hb-scn clickable" data-scngo>🇰🇷 한국 32강 진출 경우의 수 보기 ›</div>' : "") + "</div>";
   }
 
@@ -939,7 +944,7 @@
     var swap = (fx.awayId === "south-korea");  // 대한민국 무조건 왼쪽
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
-    var lv = lvOverride || LIVE[fx.id];
+    var lv = lvOverride || lvOf(fx.id);  // 스포일러 모드면 null → 빅매치 히어로도 스코어 대신 예정(VS/시간)
     var espnIn = !!(lv && lv.state === "in");            // ESPN 실시간 스코어 확보됨
     var ended = !!(lv && lv.state === "post");
     var ko = matchKickoff(fx), started = !!(ko && Date.now() >= ko);
