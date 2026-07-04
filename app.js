@@ -3649,15 +3649,16 @@
     "match-74": "https://chzzk.naver.com/video/13960528", // E조 1위-A/B/C/D/F조 3위
     "match-75": "https://chzzk.naver.com/video/13959896", // F조 1위-C조 2위
     "match-76": "https://chzzk.naver.com/video/13957443", // C조 1위-F조 2위
-    "match-77": "https://chzzk.naver.com/video/13974385", // 프랑스-스웨덴
-    "match-78": "https://chzzk.naver.com/video/13973145", // 코트디부아르-노르웨이
-    "match-79": "https://chzzk.naver.com/video/13975768", // 멕시코-에콰도르
+    "match-77": "https://chzzk.naver.com/video/13974385", // I조 1위-C/D/F/G/H조 3위
+    "match-78": "https://chzzk.naver.com/video/13973145", // E조 2위-I조 2위
+    "match-79": "https://chzzk.naver.com/video/13975768", // A조 1위-C/E/F/H/I조 3위
     "match-80": "https://chzzk.naver.com/video/13988742", // 잉글랜드-콩고민주공화국
     "match-81": "https://chzzk.naver.com/video/13991420", // 미국-보스니아 헤르체고비나
     "match-82": "https://chzzk.naver.com/video/13990715", // 벨기에-세네갈
     "match-83": "https://chzzk.naver.com/video/14007311", // 포르투갈-크로아티아
     "match-84": "https://chzzk.naver.com/video/14006308", // 스페인-오스트리아
     "match-85": "https://chzzk.naver.com/video/14008538", // 스위스-알제리
+    "match-86": "https://chzzk.naver.com/video/14024062", // 아르헨티나-카보베르데
     "match-88": "https://chzzk.naver.com/video/14022980" // 호주-이집트
     /* HL-AUTO-END */
   };
