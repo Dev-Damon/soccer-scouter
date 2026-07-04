@@ -926,6 +926,17 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .career-club { font-size: 14px; font-weight: 700; line-height: 1.35; }
 .career-loan { font-size: 10.5px; font-weight: 700; color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 1px 5px; margin-left: 4px; vertical-align: 1px; }
 .tl-dot.cl { background: var(--ok, #16a34a); box-shadow: 0 0 0 3px rgba(22,163,74,.15); }
+/* 스포일러 방지 모드 */
+.theme-btn.on { filter: none; }
+#spoilerBtn.on { background: rgba(79,140,255,.14); border-radius: 10px; }
+.spoiler-note { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 16px; text-align: center; font-size: 14.5px; line-height: 1.6; color: var(--text); margin: 8px 0; }
+.spoiler-note .muted-note { font-size: 12.5px; }
+.grp-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+.grp-h { font-weight: 800; font-size: 14px; color: var(--accent); margin-bottom: 8px; }
+.grp-teams { display: flex; flex-wrap: wrap; gap: 7px; }
+.grp-team { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 700; background: var(--bg); border: 1px solid var(--line); border-radius: 9px; padding: 6px 10px; cursor: pointer; }
+.grp-team:active { transform: scale(.98); }
+.grp-team .gt-fl { font-size: 17px; }
 
 /* 검색 보조 */
 .grade-browse { display: grid; gap: 8px; }

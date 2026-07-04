@@ -43,6 +43,13 @@
   // 날짜 스트립 선택
   var selectedDate = null;
 
+  // ===== 스포일러 방지 모드 — 켜지면 경기결과(스코어·순위·득점왕·대진승자·폼·라이브 등) 전부 숨김. 하이라이트 링크는 유지. 기본 ON. =====
+  var SPOILER_ON = true;
+  try { SPOILER_ON = (localStorage.getItem("kt_spoiler") || "1") === "1"; } catch (e) {}
+  function spoiler() { return SPOILER_ON; }  // true면 결과 숨김
+  // 스포일러 모드에선 LIVE(스코어·상태·승자·골) 데이터를 렌더에 노출하지 않음(결과 원천 차단)
+  function lvOf(id) { return SPOILER_ON ? null : LIVE[id]; }
+
   // 푸터: 비워둠 (불필요한 안내 문구 제거)
   if (sampleNote) sampleNote.innerHTML = "";
 
@@ -450,6 +457,7 @@
   }
   window.addEventListener("resize", function () { if (viewEl.querySelector(".brk2-fit")) layoutBracket(); });
   function renderBracket() {
+    if (SPOILER_ON) { viewEl.innerHTML = '<div class="spoiler-note">🙈 <b>스포일러 방지 모드</b><br>대진표는 진출 결과가 드러나서 숨겼어요.<br><span class="muted-note">오른쪽 위 🙈 버튼을 눌러 끄면 볼 수 있어요.</span></div>'; return; }
     fetchStandings();  // 실제 순위 비동기 로드 → 도착 시 자동 재렌더(끝난 조는 실제 진출팀으로 채움)
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
@@ -523,6 +531,7 @@
   }
   function scVal(p) { return scoreCat === "cards" ? ((p.yellow || 0) + (p.red || 0) * 2) : (p[scoreCat] || 0); }
   function renderScorers() {
+    if (SPOILER_ON) { viewEl.innerHTML = '<div class="spoiler-note">🙈 <b>스포일러 방지 모드</b><br>득점 순위·기록은 경기 결과가 드러나서 숨겼어요.<br><span class="muted-note">오른쪽 위 🙈 버튼을 눌러 끄면 볼 수 있어요.</span></div>'; return; }
     // 통계(Supabase) 로딩 동안 빈 화면 대신 탭+스피너 즉시 표시
     if (!viewEl.querySelector(".rank-sb")) viewEl.innerHTML = '<div class="rank-sorts">' + SCORE_CATS.map(function (c) { return '<button class="rank-sb' + (scoreCat === c[0] ? " on" : "") + '" data-scat="' + esc(c[0]) + '">' + c[1] + "</button>"; }).join("") + '</div><div class="sc-loading"><span class="sc-spin"></span><span>기록 불러오는 중…</span></div>';
     ensureStats().then(function (j) {
@@ -784,8 +793,8 @@
       (fmtDate(selectedDate).dow ? fmtDate(selectedDate).dow + "요일" : "") +
       ' · ' + dayFixtures.length + '경기 <span class="kst-note">한국시간</span></div>';
     dayFixtures.forEach(function (fx) { if ((!hero || fx !== hero) && !isLiveOrBcast(fx)) listHtml += fixtureCard(fx); });  // 라이브/방송중 경기는 상단 라이브카드에만
-    // 주요 소식 (팀 뉴스가 있을 때만)
-    var hn = homeNews(8);
+    // 주요 소식 (팀 뉴스가 있을 때만) — 스포일러 모드면 결과가 새어나갈 수 있어 숨김
+    var hn = SPOILER_ON ? [] : homeNews(8);
     if (hn.length) {
       listHtml += '<div class="sec-h">📰 이 날 경기 나라 소식</div><div class="news-list">';
       hn.forEach(function (x) {
@@ -890,10 +899,11 @@
   // 라이브 판정은 ESPN 'in'만 신뢰 — 스케줄 킥오프(예:4시) 시각으로 라이브를 단정하지 않음.
   // (예정시각이 지났어도 실제 시작이 늦으면 라이브 아님. 방송 선행 표시는 isLiveOrBcast/LIVE_STREAM가 담당.)
   function isLiveFix(f) { var lv = LIVE[f.id]; if (lv && lv.state === "in") { var ko = matchKickoff(f); if (ko && Date.now() > ko + 210 * 60000) return false; return true; } return false; }  // 스테일(킥오프+210분 경과(연장·승부차기 포함)) 'in'은 라이브 아님 — 오염 방어
-  function isLiveOrBcast(f) { return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM[f.id]); }  // ESPN 라이브 or JTBC 방송 감지
+  function isLiveOrBcast(f) { if (SPOILER_ON) return false; return isLiveFix(f) || !!(LIVE_STREAM && LIVE_STREAM[f.id]); }  // ESPN 라이브 or JTBC 방송 감지(스포일러 모드면 라이브카드로 안 뺌)
   function liveFixtures() { return (DATA.fixtures || []).filter(isLiveFix); }
   function liveKey() { return liveFixtures().map(function (f) { return f.id; }).sort().join(","); }
   function liveSection() {
+    if (SPOILER_ON) return "";  // 스포일러 방지: 라이브 스코어 섹션 숨김
     var tn = +((location.search.match(/[?&]live=(\d)/) || [])[1] || 0);  // ?live=1 / ?live=2 → 더미 라이브카드 테스트
     if (!tn && LIVE_DEMO && !liveFixtures().length) tn = LIVE_DEMO;
     var live, dummy = null;
@@ -982,6 +992,7 @@
 
   // 미확정 녹아웃 슬롯("N경기 승자")에서 그 경기 두 후보국 id를 뽑음(두 팀 다 확정된 경우만).
   function slotCands(label) {
+    if (SPOILER_ON) return null;  // 스포일러 방지: 앞 경기 진출팀(후보국) 노출 안 함 → "N경기 승자" 그대로
     var m = /(\d+)경기\s*승자/.exec(label || ""); if (!m) return null;
     var g = fixturesById["match-" + m[1]]; if (!g || !g.homeId || !g.awayId) return null;
     return [g.homeId, g.awayId];
@@ -1023,7 +1034,7 @@
     var timeLabel = fxTime(fx) ? esc(fxTime(fx)) : "시간 미정";
     var groupLabel = fx.group ? esc(fx.group) + "조" : esc(fx.stage || "");
     var meta = [fx.venue, fx.city, hostCountry(fx)].filter(Boolean).map(esc).join(" · ");
-    var lv = LIVE[fx.id];
+    var lv = lvOf(fx.id);  // 스포일러 모드면 null → 스코어/라이브/종료 대신 예정(VS/시간)으로 표시
     var live = !!(lv && lv.state === "in"), ended = !!(lv && lv.state === "post");
     var swap = (fx.awayId === "south-korea");  // 대한민국은 무조건 왼쪽
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
@@ -1060,6 +1071,7 @@
 
   // 팀 최근 경기 폼(✓승 ✗패 –무) — LIVE(=match_results 로드됨)에서 도출, 최대 5개
   function formDots(teamId) {
+    if (SPOILER_ON) return "";  // 스포일러 방지: 최근 폼(승/무/패) 숨김
     var fxs = (DATA.fixtures || []).filter(function (f) { return f.homeId === teamId || f.awayId === teamId; })
       .filter(function (f) { var lv = LIVE[f.id]; return lv && lv.state === "post" && lv.hs != null; })
       .sort(function (a, b) { return (fxDate(a) || "") < (fxDate(b) || "") ? -1 : 1; });
@@ -1158,6 +1170,17 @@
     var groups = DATA.groups || [];
     if (!groups.length) {
       viewEl.innerHTML = '<div class="empty">조 편성 데이터를 채우는 중입니다.</div>';
+      return;
+    }
+    if (SPOILER_ON) {  // 스포일러 방지: 순위·승패 숨기고 조 편성(팀)만 표시
+      var sh = '<div class="spoiler-note">🙈 <b>스포일러 방지 모드</b> · 순위·승패는 숨겼어요 (조 편성만 표시)<br><span class="muted-note">오른쪽 위 🙈 버튼으로 끌 수 있어요.</span></div>';
+      groups.forEach(function (g) {
+        sh += '<div class="grp-card"><div class="grp-h">' + esc(g.group) + '조</div><div class="grp-teams">' +
+          (g.teamIds || []).map(function (id) { var t = teamsById[id]; return t ? '<div class="grp-team clickable" data-team="' + esc(id) + '"><span class="gt-fl">' + esc(t.flag || "") + "</span>" + esc(t.name) + "</div>" : ""; }).join("") +
+          "</div></div>";
+      });
+      viewEl.innerHTML = sh + '<div class="adslot ad-bot"></div>';
+      twem(viewEl); insertAdFit(viewEl.querySelector(".ad-bot"), "DAN-SWWhds5NegoTMohB", "320", "50");
       return;
     }
     fetchStandings();  // ESPN 순위 비동기 갱신(캐시 60초) → 도착 시 자동 재렌더
@@ -2128,6 +2151,7 @@
     return m;
   }
   function applyWcAmatch(p, id) {
+    if (SPOILER_ON) return;  // 스포일러 방지: 이번 월드컵 출전·득점(결과) 미반영
     if (posClass(p.position) === "gk") return;  // 골키퍼는 실점/무실점(gk.json)을 정적 표시 — 가산 안 함
     ensureStats().then(function (j) {
       var hh = parseHash(); if (hh.name !== "player" || hh.id !== id) return;
@@ -2257,7 +2281,7 @@
       var opp = teamsById[f.homeId === t.id ? f.awayId : f.homeId];
       var oppNm = opp ? (esc(opp.flag) + " " + esc(shortTeamName(opp.id, opp.name))) : esc((f.homeId === t.id ? f.awayName : f.homeName) || "미정");
       var when = esc(shortDate(fxDate(f)) + (fxTime(f) ? " " + shortTime(fxTime(f)) : ""));  // 6/12 10시 (조 표기 제거, 년도 제거)
-      var lv = LIVE[f.id], live = !!(lv && lv.state === "in"), ended = matchEnded(f);
+      var lv = lvOf(f.id), live = !!(lv && lv.state === "in"), ended = !SPOILER_ON && matchEnded(f);
       var hasScore = !!(lv && (lv.state === "in" || lv.state === "post") && lv.hs != null);
       var badge;
       if (hasScore) {  // 종료/진행 경기는 우리팀 기준 스코어 표시(승=초록·무=회색·패=빨강)
@@ -2642,6 +2666,7 @@
       "</" + tag + ">";
   }
   function matchNews(team, max) {
+    if (SPOILER_ON) return "";  // 스포일러 방지: 뉴스에 결과가 섞일 수 있어 숨김
     if (!team || !team.news || !team.news.length) return "";
     var kn = team.news.slice().sort(function (a, b) { return (isKoreanSrc(a) ? 0 : 1) - (isKoreanSrc(b) ? 0 : 1); }).slice(0, max || 3);
     return '<div class="mn-team"><div class="mn-h"><span class="mn-flag">' + esc(team.flag) + "</span>" + esc(team.name) + " 주요 소식</div>" +
@@ -2917,7 +2942,7 @@
       var _sab = pr.winA + pr.winB || 1, _wa = Math.round(pr.winA + pr.draw * pr.winA / _sab);
       pr = { winA: _wa, draw: 0, winB: 100 - _wa };
     }
-    var mf = (isLiveFix(fx) || matchEnded(fx)) ? "" : matchFormation(a, b);  // 라이브/종료는 실제 라인업(아래 espnPitch)으로 충분 — 예상 라인업 숨김(중복+좌표/라벨 혼란 방지)
+    var mf = (!SPOILER_ON && (isLiveFix(fx) || matchEnded(fx))) ? "" : matchFormation(a, b);  // 라이브/종료는 실제 라인업(espnPitch)으로 대체 — 단 스포일러 모드면 실제 라인업 대신 예상 포메이션 유지
     var ia = a.indices || {}, ib = b.indices || {};
     var cmp = cmpRow("공격력", ia.attack, ib.attack) + cmpRow("수비력", ia.defense, ib.defense) +
       cmpRow("조직력", ia.organization, ib.organization) + cmpRow("경험치", ia.experience, ib.experience) +
@@ -3001,6 +3026,7 @@
       } else if (KickComments.settleMatch) { KickComments.settleMatch(fx.id); }
     }
     function updScore() {
+      if (SPOILER_ON) return;  // 스포일러 방지: 경기 상세 스코어·골·라이브 버튼 미표시(하이라이트 버튼은 별도 유지)
       if (parseHash().id !== fx.id) return;  // 다른 경기로 이동했으면 이 경기 갱신 안 함(섞임 방지)
       var lv = LIVE[fx.id], c = viewEl.querySelector(".vs-center"); if (!c) return;
       if (lv && (lv.state === "in" || lv.state === "post")) {
@@ -3921,6 +3947,7 @@
       if (inN) subInfo[inN] = { clk: clk, outKo: enToKo(outN, evKo) };
       if (outN) outInfo[outN] = { clk: clk, inKo: enToKo(inN, evKo) };  // 교체로 빠진 선발 → 명단에 표시(경기중)
     });
+    if (SPOILER_ON) { slot.style.display = "none"; return; }  // 스포일러 방지: 실제 라인업·경기통계·주요이벤트(득점/카드) 숨김
     var _em = matchEventMap(d.keyEvents);  // 득점/교체 표시용
     var hasLineup = rosters.some(function (r) { return (r.roster || []).some(function (p) { return p.starter; }); });
     var events = (d.keyEvents || []).filter(function (ev) { var ty = (ev.type && ev.type.type) || ""; return /goal|scored|yellow|red|substitution/.test(ty); });
@@ -4026,6 +4053,7 @@
   }
   function renderMatchRate(matchId) {
     backBtn.hidden = false; tabsEl.hidden = true;
+    if (SPOILER_ON) { viewEl.innerHTML = '<div class="spoiler-note">🙈 <b>스포일러 방지 모드</b><br>선수 평점은 경기 결과가 드러나서 숨겼어요.<br><span class="muted-note">오른쪽 위 🙈 버튼으로 끌 수 있어요.</span></div>'; return; }
     var fx = fixturesById[matchId];
     if (!fx) { viewEl.innerHTML = '<div class="empty">경기를 찾을 수 없어요.</div>'; return; }
     var a = teamsById[fx.homeId], b = teamsById[fx.awayId];
@@ -4972,6 +5000,23 @@
       cur = document.documentElement.classList.contains("light") ? "dark" : "light";
       try { localStorage.setItem(KEY, cur); } catch (e) {}
       apply(cur);
+    });
+  })();
+
+  // ===== 스포일러 방지 모드 토글 — 기본 ON, localStorage(kt_spoiler) =====
+  (function () {
+    function apply() {
+      var b = document.getElementById("spoilerBtn");
+      if (b) { b.textContent = SPOILER_ON ? "🙈" : "👀"; b.title = SPOILER_ON ? "스포일러 방지: 켜짐 (결과 숨김)" : "스포일러 방지: 꺼짐 (결과 표시)"; b.classList.toggle("on", SPOILER_ON); }
+    }
+    apply();
+    var btn = document.getElementById("spoilerBtn");
+    if (btn) btn.addEventListener("click", function () {
+      SPOILER_ON = !SPOILER_ON;
+      try { localStorage.setItem("kt_spoiler", SPOILER_ON ? "1" : "0"); } catch (e) {}
+      apply();
+      ktToast(SPOILER_ON ? "🙈 스포일러 방지 켜짐 — 경기 결과를 숨겨요" : "👀 스포일러 방지 꺼짐 — 결과가 표시돼요");
+      route();  // 현재 화면 즉시 다시 그림
     });
   })();
 
