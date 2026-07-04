@@ -925,6 +925,7 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 .career-yr { font-size: 12px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .career-club { font-size: 14px; font-weight: 700; line-height: 1.35; }
 .career-loan { font-size: 10.5px; font-weight: 700; color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 1px 5px; margin-left: 4px; vertical-align: 1px; }
+.tl-dot.cl { background: var(--ok, #16a34a); box-shadow: 0 0 0 3px rgba(22,163,74,.15); }
 
 /* 검색 보조 */
 .grade-browse { display: grid; gap: 8px; }

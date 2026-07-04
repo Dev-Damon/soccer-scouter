@@ -2198,28 +2198,23 @@
     var strengths = (p.strengths || []).map(function (s) { return '<span class="tag">' + esc(s) + "</span>"; }).join("");
     var weaknesses = (p.weaknesses || []).map(function (s) { return '<span class="tag weak">' + esc(s) + "</span>"; }).join("");
 
-    // 역대 소속팀(연도별) — 주요선수만(careers.json). 대중이 커리어 급을 가늠하도록 상단 표시.
+    // 커리어 타임라인 — 역대 소속팀(주요선수, careers.json) + honours + 이적을 한 타임라인에 최신순으로 섞음.
     var career = PLAYER_CAREER[p.id];
-    var careerHtml = "";
-    if (career && career.length) {
-      careerHtml = '<div class="block"><h3>역대 소속팀 <span class="muted-note">연도별 · 위키피디아</span></h3><div class="career">' +
-        career.map(function (c) {
-          return '<div class="career-row"><span class="career-yr">' + esc(c.years || "") + '</span>' +
-            '<span class="career-club">' + esc(c.club || "") + (c.loan ? ' <span class="career-loan">임대</span>' : "") + "</span></div>";
-        }).join("") + "</div></div>";
-    }
-
-    // 커리어 타임라인: honours + 이적 (연도 추출 가능하면 표시)
     var tlItems = [];
-    (p.honours || []).forEach(function (h) { tlItems.push(h); });
-    if (p.notableTransfer) tlItems.push(p.notableTransfer);
-    tlItems = tlItems.map(function (it) {
-      var ys = it.match(/\d{4}/g);
-      return { text: it, yr: ys ? Math.max.apply(null, ys.map(Number)) : 0 };
-    }).sort(function (a, b) { return b.yr - a.yr; });  // 최신이 맨 위
+    (career || []).forEach(function (c) {
+      var yss = (c.years || "").match(/\d{4}/g);
+      var ongoing = /[–\-]\s*$/.test(c.years || "");  // "2024–" 진행중
+      var yr = ongoing ? 9999 : (yss ? Math.max.apply(null, yss.map(Number)) : 0);
+      var yLabel = ongoing ? "현재" : (yss ? yss[yss.length - 1] : "");
+      tlItems.push({ yr: yr, kind: "club", yLabel: yLabel,
+        html: "<b>" + esc(c.club || "") + "</b>" + (c.loan ? ' <span class="career-loan">임대</span>' : "") + ' <span class="muted-note">' + esc(c.years || "") + "</span>" });
+    });
+    (p.honours || []).forEach(function (h) { var ys = h.match(/\d{4}/g); tlItems.push({ yr: ys ? Math.max.apply(null, ys.map(Number)) : 0, kind: "hon", yLabel: ys ? Math.max.apply(null, ys.map(Number)) : "", html: esc(h) }); });
+    if (p.notableTransfer) { var yst = p.notableTransfer.match(/\d{4}/g); tlItems.push({ yr: yst ? Math.max.apply(null, yst.map(Number)) : 0, kind: "hon", yLabel: yst ? Math.max.apply(null, yst.map(Number)) : "", html: esc(p.notableTransfer) }); }
+    tlItems.sort(function (a, b) { return b.yr - a.yr; });  // 최신이 맨 위
     var timeline = tlItems.map(function (o) {
-      return '<div class="tl-item"><span class="tl-year">' + (o.yr || "") + '</span><span class="tl-dot"></span>' +
-        '<span class="tl-text">' + esc(o.text) + "</span></div>";
+      return '<div class="tl-item' + (o.kind === "club" ? " tl-club" : "") + '"><span class="tl-year">' + (o.yLabel || "") + '</span><span class="tl-dot' + (o.kind === "club" ? " cl" : "") + '"></span>' +
+        '<span class="tl-text">' + o.html + "</span></div>";
     }).join("");
 
     viewEl.innerHTML =
@@ -2234,7 +2229,6 @@
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
-        careerHtml +
         (p.power ? powerHtml : scoutHtml) +
         '<div class="rate-slot" data-pid="' + esc(p.id) + '"></div>' +
         '<div class="sw">' +

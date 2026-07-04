@@ -1,5 +1,5 @@
 // 축구 스카우터 — 서비스워커 (오프라인 캐시)
-var CACHE = "scouter-v6.25";
+var CACHE = "scouter-v6.26";
 var ASSETS = [
   "./",
   "./index.html",
