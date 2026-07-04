@@ -41,8 +41,10 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
       if(st==='pre')return;  // 'pre'(경기전)는 녹아웃 대진 해소만 하고 라이브/결과 저장은 안 함 → 방송 선행 링크가 미해소 fixture에도 붙게(잉글랜드-콩고 등)
       var hs=fx.homeId===hT.id?+H.score:+A.score, as=fx.homeId===hT.id?+A.score:+H.score, ev=parseGoals(c);
       var winId=H.winner===true?hT.id:(A.winner===true?aT.id:null);  // 진출팀(녹아웃 승부차기 포함)
+      var ph=null,pa=null, Hp=H.shootoutScore, Ap=A.shootoutScore;  // 승부차기 스코어(ESPN) — home/away를 fx 기준으로 정렬
+      if(Hp!=null&&Ap!=null){ ph=fx.homeId===hT.id?+Hp:+Ap; pa=fx.homeId===hT.id?+Ap:+Hp; }
       if(st==='in') live[fid]={state:'in',hs:hs,as:as,clock:ht?'전반 종료':((e.status||{}).displayClock||''),events:ev};
-      else { posts[fid]={eid:e.id,hs:hs,as:as,ev:ev}; if(winId&&!fx.group) koWin[fid]=winId; }
+      else { posts[fid]={eid:e.id,hs:hs,as:as,ev:ev,ph:ph,pa:pa}; if(winId&&!fx.group) koWin[fid]=winId; }
     });
     await sleep(80);
   }
@@ -72,7 +74,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
   var nr=0;
   for(const fid of Object.keys(posts)){  // ② 종료경기 결과+라인업 영구저장
     var p=posts[fid];
-    await rpc('set_match_result',{mid:fid,h:p.hs,a:p.as,ev:p.ev});
+    await rpc('set_match_result',{mid:fid,h:p.hs,a:p.as,ev:p.ev,ph:p.ph,pa:p.pa});
     try{ var s=JSON.parse(await get(SUM+p.eid));
       var _box=((s.boxscore||{}).teams||[]).length>=2;  // 통계 있을 때만 저장 → 빈 통계로 기존 좋은 데이터 덮어쓰기 방지
       if(_box && (s.rosters||[]).some(rs=>(rs.roster||[]).some(x=>x.starter))) await rpc('set_match_lineup',{mid:fid,d:{rosters:s.rosters,keyEvents:s.keyEvents,header:s.header,headToHeadGames:s.headToHeadGames,boxscore:s.boxscore}});

@@ -1045,11 +1045,13 @@
     var lId = swap ? fx.awayId : fx.homeId, lName = swap ? fx.awayName : fx.homeName;
     var rId = swap ? fx.homeId : fx.awayId, rName = swap ? fx.homeName : fx.awayName;
     var lScore = lv ? (swap ? lv.as : lv.hs) : 0, rScore = lv ? (swap ? lv.hs : lv.as) : 0;
+    var penX = (ended && lv && lv.hs === lv.as && lv.ph != null && lv.pa != null) ? (swap ? [lv.pa, lv.ph] : [lv.ph, lv.pa]) : null;  // 승부차기 스코어(좌-우, swap 반영)
     var mid;
     if (live || ended) {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
         '<span class="fx-score">' + (lScore | 0) + ' <i>-</i> ' + (rScore | 0) + "</span>" +
         (live ? '<span class="fx-live"><span class="lv-dot"></span>' + liveClk(fx, lv) + "</span>"
+              : penX ? '<span class="fx-final fx-pen">승부차기 ' + penX[0] + '-' + penX[1] + "</span>"
               : '<span class="fx-final">종료' + (fxTime(fx) ? " · " + esc(fxTime(fx)) : "") + "</span>");
     } else {
       mid = '<span class="fx-stage">' + groupLabel + "</span>" +
@@ -2231,15 +2233,15 @@
     var career = PLAYER_CAREER[p.id];
     var tlItems = [];
     (career || []).forEach(function (c) {
-      var yss = (c.years || "").match(/\d{4}/g);
+      var yss = (c.years || "").match(/\b(?:19|20)\d{2}\b/g);
       var ongoing = /[–\-]\s*$/.test(c.years || "");  // "2024–" 진행중
       var yr = ongoing ? 9999 : (yss ? Math.max.apply(null, yss.map(Number)) : 0);
       var yLabel = ongoing ? "현재" : (yss ? yss[yss.length - 1] : "");
       tlItems.push({ yr: yr, kind: "club", yLabel: yLabel,
         html: "<b>" + esc(c.club || "") + "</b>" + (c.loan ? ' <span class="career-loan">임대</span>' : "") + ' <span class="muted-note">' + esc(c.years || "") + "</span>" });
     });
-    (p.honours || []).forEach(function (h) { var ys = h.match(/\d{4}/g); tlItems.push({ yr: ys ? Math.max.apply(null, ys.map(Number)) : 0, kind: "hon", yLabel: ys ? Math.max.apply(null, ys.map(Number)) : "", html: esc(h) }); });
-    if (p.notableTransfer) { var yst = p.notableTransfer.match(/\d{4}/g); tlItems.push({ yr: yst ? Math.max.apply(null, yst.map(Number)) : 0, kind: "hon", yLabel: yst ? Math.max.apply(null, yst.map(Number)) : "", html: esc(p.notableTransfer) }); }
+    (p.honours || []).forEach(function (h) { var ys = h.match(/\b(?:19|20)\d{2}\b/g); tlItems.push({ yr: ys ? Math.max.apply(null, ys.map(Number)) : 0, kind: "hon", yLabel: ys ? Math.max.apply(null, ys.map(Number)) : "", html: esc(h) }); });
+    if (p.notableTransfer) { var yst = p.notableTransfer.match(/\b(?:19|20)\d{2}\b/g); tlItems.push({ yr: yst ? Math.max.apply(null, yst.map(Number)) : 0, kind: "hon", yLabel: yst ? Math.max.apply(null, yst.map(Number)) : "", html: esc(p.notableTransfer) }); }
     tlItems.sort(function (a, b) { return b.yr - a.yr; });  // 최신이 맨 위
     var timeline = tlItems.map(function (o) {
       return '<div class="tl-item' + (o.kind === "club" ? " tl-club" : "") + '"><span class="tl-year">' + (o.yLabel || "") + '</span><span class="tl-dot' + (o.kind === "club" ? " cl" : "") + '"></span>' +
@@ -3038,8 +3040,14 @@
         var _ko = matchKickoff(fx), _stale = _ko && Date.now() > _ko + 210 * 60000;  // 종료 시간 경과인데 'in'으로 남은 스테일 라이브 → 종료 처리
         var _ended = lv.state === "post" || _stale, _isLive = lv.state === "in" && !_stale;
         var as_ = aIsHome ? lv.hs : lv.as, bs_ = aIsHome ? lv.as : lv.hs;
+        var penHtml = "";
+        if (_ended && lv.hs === lv.as && lv.ph != null && lv.pa != null) {  // 승부차기 결과(무승부일 때)
+          var pA = aIsHome ? lv.ph : lv.pa, pB = aIsHome ? lv.pa : lv.ph;
+          var pwId = lv.ph > lv.pa ? fx.homeId : fx.awayId, pwT = teamsById[pwId];
+          penHtml = '<div class="vs-pen">🥅 승부차기 <b>' + pA + " : " + pB + "</b>" + (pwT ? ' · ' + esc(flagOf(pwId)) + " " + esc(pwT.name) + " 승" : "") + "</div>";
+        }
         c.innerHTML = '<div class="vs-score">' + (as_ | 0) + ' <span>-</span> ' + (bs_ | 0) + "</div>" +
-          '<div class="vs-clock' + (_isLive ? " live" : "") + '">' + (_ended ? "경기 종료" : esc(liveMin(fx, lv) || "LIVE")) + "</div>";
+          '<div class="vs-clock' + (_isLive ? " live" : "") + '">' + (_ended ? "경기 종료" : esc(liveMin(fx, lv) || "LIVE")) + "</div>" + penHtml;
       }
       var gw = viewEl.querySelector(".vs-goals");  // 경기카드처럼 득점자 표시(좌=홈, 우=원정)
       if (gw) { var lg = teamGoals(fx, lv, a.name, "l"), rg = teamGoals(fx, lv, b.name, "r"); gw.innerHTML = (lg || rg) ? '<div class="vg-l">' + lg + '</div><div class="vg-r">' + rg + "</div>" : ""; twem(gw); }
@@ -3276,7 +3284,7 @@
         var sr = { hs: res[mid].hs, as: res[mid].as };
         if (JSON.stringify(STORED_RESULTS[mid]) !== JSON.stringify(sr)) { STORED_RESULTS[mid] = sr; srChanged = true; }
         if (LIVE[mid] && LIVE[mid].state === "post") return;
-        LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], stored: true }; changed = true;
+        LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], ph: res[mid].ph, pa: res[mid].pa, stored: true }; changed = true;
       });
       if (resolveKnockout() && parseHash().name === "home" && !searchEl.value.trim()) renderHome();  // 녹아웃 결과 도착 → 다음 라운드 자동 채움
       if (changed) { if (onHomeSchedule()) renderSchedule(); else if (parseHash().name === "home" && homeTab === "scorers" && !searchEl.value.trim()) renderScorers(); if (window._matchLiveTick) window._matchLiveTick(); if (window._teamLiveTick) window._teamLiveTick(); if (window._teamSchedRefresh) window._teamSchedRefresh(); if (parseHash().name === "match" && parseHash().id && window._mscNeedsLive) renderMatch(parseHash().id); }
