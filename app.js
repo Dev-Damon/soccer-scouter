@@ -2234,6 +2234,7 @@
         "</div>" +
         '<div class="quote">' + esc(p.oneLiner) + "</div>" +
         '<div class="facts">' + factsHtml + "</div>" +
+        careerHtml +
         (p.power ? powerHtml : scoutHtml) +
         '<div class="rate-slot" data-pid="' + esc(p.id) + '"></div>' +
         '<div class="sw">' +
