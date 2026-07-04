@@ -5025,6 +5025,43 @@
     });
   })();
 
+  // ===== 첫 방문 인트로 오버레이 — 스포일러 방지 모드 안내(1회, localStorage kt_intro) =====
+  (function () {
+    try { if (localStorage.getItem("kt_intro") === "1") return; } catch (e) {}
+    function setSpoiler(on) {
+      SPOILER_ON = on;
+      try { localStorage.setItem("kt_spoiler", on ? "1" : "0"); } catch (e) {}
+      var b = document.getElementById("spoilerBtn");
+      if (b) { b.textContent = on ? "🙈" : "👀"; b.classList.toggle("on", on); }
+      route();
+    }
+    function show() {
+      if (document.getElementById("introOv")) return;
+      var sb = document.getElementById("spoilerBtn"); if (sb) sb.classList.add("pulse");
+      var ov = document.createElement("div");
+      ov.className = "intro-ov"; ov.id = "introOv";
+      ov.innerHTML =
+        '<div class="intro-card">' +
+          '<div class="intro-emoji">🙈</div>' +
+          '<div class="intro-title">스포일러 방지 모드가 켜져 있어요</div>' +
+          '<div class="intro-body">경기 <b>스코어·순위·대진 결과</b>를 미리 안 보이게 가려뒀어요.<br>나중에 몰아볼 때 김 안 새도록요. (하이라이트 링크는 그대로 볼 수 있어요)</div>' +
+          '<div class="intro-hint">오른쪽 위 <b>🙈</b> 버튼으로 언제든 켜고 끌 수 있어요 ☝️</div>' +
+          '<div class="intro-btns">' +
+            '<button class="intro-btn primary" id="introKeep">이대로 볼게요 · 결과 숨김</button>' +
+            '<button class="intro-btn" id="introOff">결과 바로 볼래요</button>' +
+          "</div>" +
+        "</div>";
+      document.body.appendChild(ov);
+      twem(ov);
+      function close() { try { localStorage.setItem("kt_intro", "1"); } catch (e) {} if (sb) sb.classList.remove("pulse"); if (ov.parentNode) ov.parentNode.removeChild(ov); }
+      ov.querySelector("#introKeep").addEventListener("click", function () { close(); });
+      ov.querySelector("#introOff").addEventListener("click", function () { close(); setSpoiler(false); ktToast("👀 결과가 표시돼요 — 🙈 버튼으로 다시 숨길 수 있어요"); });
+      ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    }
+    // 부팅 스플래시 제거 + 앱 첫 렌더 뒤 잠깐 후 표시
+    setTimeout(show, 800);
+  })();
+
   // ===== 모달 뒤로가기 닫기 (응원하기·채팅) — 열 때 history state push, 뒤로가기면 페이지 대신 모달 닫기 =====
   var ktModalClose = null;
   function ktModalOpen(closeFn) { ktModalClose = closeFn; try { history.pushState({ ktModal: 1 }, ""); } catch (e) {} }
