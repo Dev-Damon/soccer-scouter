@@ -3207,10 +3207,12 @@
       var hs = +H.score, as = +A.score;
       var ht = state === "in" && (st.name === "STATUS_HALFTIME" || st.detail === "HT" || st.description === "Halftime");  // 하프타임 감지
       var winId = (H.winner === true) ? hid : ((A.winner === true) ? aid : null);  // 진출팀(녹아웃 승부차기 포함) — ESPN가 종료 시 표시
+      var Hp = H.shootoutScore, Ap = A.shootoutScore, ph = null, pa = null;  // 승부차기 스코어(ESPN) — fx 기준 정렬
+      if (Hp != null && Ap != null) { ph = (fx.homeId === hid) ? +Hp : +Ap; pa = (fx.homeId === hid) ? +Ap : +Hp; }
       var rec = {
         state: state, clock: ht ? "전반 종료" : ((e.status && e.status.displayClock) || ""),
         hs: (fx.homeId === hid) ? hs : as, as: (fx.homeId === hid) ? as : hs,
-        events: parseGoals(c), winId: winId
+        events: parseGoals(c), winId: winId, ph: ph, pa: pa
       };
       if (winId) KO_WIN[fid] = winId;
       if (JSON.stringify(LIVE[fid]) !== JSON.stringify(rec)) { LIVE[fid] = rec; changed = true; }
@@ -3283,7 +3285,10 @@
         if (!(res[mid] && res[mid].hs != null)) return;
         var sr = { hs: res[mid].hs, as: res[mid].as };
         if (JSON.stringify(STORED_RESULTS[mid]) !== JSON.stringify(sr)) { STORED_RESULTS[mid] = sr; srChanged = true; }
-        if (LIVE[mid] && LIVE[mid].state === "post") return;
+        if (LIVE[mid] && LIVE[mid].state === "post") {
+          if (res[mid].ph != null && LIVE[mid].ph == null) { LIVE[mid].ph = res[mid].ph; LIVE[mid].pa = res[mid].pa; changed = true; }  // 이미 post(applyEspn 등)여도 승부차기 스코어는 병합
+          return;
+        }
         LIVE[mid] = { state: "post", hs: res[mid].hs, as: res[mid].as, clock: "", events: res[mid].ev || [], ph: res[mid].ph, pa: res[mid].pa, stored: true }; changed = true;
       });
       if (resolveKnockout() && parseHash().name === "home" && !searchEl.value.trim()) renderHome();  // 녹아웃 결과 도착 → 다음 라운드 자동 채움
