@@ -28,7 +28,7 @@ const SUM='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summa
 (async()=>{
   // 오늘+어제(UTC) 스캔 (KST 경계 자정 넘는 경기 포함)
   var now=new Date(), dates=[];
-  for(var i=0;i<2;i++){var dt=new Date(now.getTime()-i*86400000);dates.push(dt.toISOString().slice(0,10).replace(/-/g,''));}
+  for(var i=0;i<(process.env.BACKFILL_DAYS?+process.env.BACKFILL_DAYS:2);i++){var dt=new Date(now.getTime()-i*86400000);dates.push(dt.toISOString().slice(0,10).replace(/-/g,''));}
   var live={}, posts={}, koWin={};  // posts: fid -> {eid,hs,as,ev} / koWin: fid -> 진출팀id(승부차기 승자 포함, ESPN winner 플래그)
   for(const dt of dates){
     var raw=await get(SCORE+dt), d; try{d=JSON.parse(raw)}catch(e){continue}
