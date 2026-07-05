@@ -1,5 +1,5 @@
 {
- "_ts": 1783211374390,
+ "_ts": 1783294196895,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -56,8 +56,8 @@
  },
  "morocco": {
   "r": 6,
-  "p": 1788.86,
-  "ch": 33.76,
+  "p": 1803.99,
+  "ch": 48.89,
   "chR": 1
  },
  "haiti": {
@@ -194,8 +194,8 @@
  },
  "france": {
   "r": 1,
-  "p": 1916.24,
-  "ch": 45.54,
+  "p": 1925.86,
+  "ch": 55.16,
   "chR": 2
  },
  "senegal": {
@@ -295,8 +295,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fr.svg",
    "id": "france",
    "r": 1,
-   "p": 1916.24,
-   "ch": 45.54,
+   "p": 1925.86,
+   "ch": 55.16,
    "chR": 2
   },
   {
@@ -345,8 +345,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ma.svg",
    "id": "morocco",
    "r": 6,
-   "p": 1788.86,
-   "ch": 33.76,
+   "p": 1803.99,
+   "ch": 48.89,
    "chR": 1
   },
   {
