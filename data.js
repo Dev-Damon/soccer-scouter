@@ -8992,7 +8992,7 @@ window.DATA = {
       "name": "우루과이",
       "nameEn": "Uruguay",
       "flag": "🇺🇾",
-      "fifaRank": 19,
+      "fifaRank": 20,
       "group": "H",
       "tierSummary": "유럽·남미 빅클럽에서 뛰는 세대교체 핵심들을 비엘사 감독이 거칠고 짜임새 있게 묶어낸, 8강 이상을 노리는 강호다.",
       "styleSummary": [
@@ -9853,7 +9853,7 @@ window.DATA = {
       "name": "노르웨이",
       "nameEn": "Norway",
       "flag": "🇳🇴",
-      "fifaRank": 21,
+      "fifaRank": 19,
       "group": "I",
       "tierSummary": "28년 만의 본선 복귀를 일군 황금세대로, 홀란과 외데고르라는 세계적 스타를 축으로 한 다크호스 다.",
       "styleSummary": [

@@ -1,5 +1,5 @@
 {
- "_ts": 1783312209683,
+ "_ts": 1783377029616,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -187,10 +187,10 @@
   "chR": 3
  },
  "uruguay": {
-  "r": 19,
+  "r": 20,
   "p": 1634.71,
   "ch": -38.36,
-  "chR": -3
+  "chR": -4
  },
  "france": {
   "r": 1,
@@ -211,10 +211,10 @@
   "chR": -6
  },
  "norway": {
-  "r": 21,
-  "p": 1617.67,
-  "ch": 60.23,
-  "chR": 10
+  "r": 19,
+  "p": 1651.29,
+  "ch": 93.85,
+  "chR": 12
  },
  "argentina": {
   "r": 2,
@@ -266,8 +266,8 @@
  },
  "england": {
   "r": 4,
-  "p": 1850.97,
-  "ch": 22.95,
+  "p": 1871.38,
+  "ch": 43.36,
   "chR": 0
  },
  "croatia": {
@@ -325,8 +325,8 @@
    "flagUrl": "https://flagcdn.com/28x21/gb-eng.png",
    "id": "england",
    "r": 4,
-   "p": 1850.97,
-   "ch": 22.95,
+   "p": 1871.38,
+   "ch": 43.36,
    "chR": 0
   },
   {
@@ -470,34 +470,34 @@
    "chR": -3
   },
   {
+   "code": "NOR",
+   "name": "Norway",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
+   "id": "norway",
+   "r": 19,
+   "p": 1651.29,
+   "ch": 93.85,
+   "chR": 12
+  },
+  {
    "code": "URU",
    "name": "Uruguay",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
    "id": "uruguay",
-   "r": 19,
+   "r": 20,
    "p": 1634.71,
    "ch": -38.36,
-   "chR": -3
+   "chR": -4
   },
   {
    "code": "DEN",
    "name": "Denmark",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/dk.svg",
    "id": null,
-   "r": 20,
+   "r": 21,
    "p": 1619.47,
    "ch": 0,
-   "chR": 1
-  },
-  {
-   "code": "NOR",
-   "name": "Norway",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/no.svg",
-   "id": "norway",
-   "r": 21,
-   "p": 1617.67,
-   "ch": 60.23,
-   "chR": 10
+   "chR": 0
   },
   {
    "code": "IRN",
