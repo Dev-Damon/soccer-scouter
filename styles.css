@@ -612,16 +612,16 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .con { min-height: 20px !important; }
 .brk-stage .con .bxf { font-size: 17px; }
 .brk-stage .con .bxf img { width: 19px; height: 19px; }
-/* 대진표 실제결과(풀컬러+초록+✓) vs 킥톡 예측(회색조+점선) — 확실히 대비 */
+/* 대진표: 국기는 항상 풀컬러, 구분은 '배경 카드'로 — 실제진출=초록카드+✓ / 킥톡예측=회색카드+점선 */
 .brk-stage .con.real { background: #12a150; border-color: #4ade80; box-shadow: 0 0 0 1.5px rgba(74,222,128,.5); }
 .brk-stage .con.real .bxf { filter: none; opacity: 1; }
-.brk-stage .con.pred { background: transparent; border: 1px dashed #8aa0c4; }
-.brk-stage .con.pred .bxf { opacity: .5; filter: grayscale(1); }  /* 예측은 회색조+흐림 → 한눈에 '아직 예측'임을 구분 */
+.brk-stage .con.pred { background: rgba(148,163,193,.28); border: 1px dashed rgba(110,132,170,.9); }  /* 예측=회색 배경카드+점선(국기는 컬러 유지) */
+.brk-stage .con.pred .bxf { opacity: 1; filter: none; }
 .brk-stage .con .cmark { font-size: 8px; font-weight: 900; color: #eafff4; margin-left: 1px; }
 .brk-stage .tc.pred.win.real .rmark { position: absolute; top: 0; right: 2px; font-size: 8px; font-weight: 900; color: #16a34a; }
-.brk-stage .tc.pred.win.pw { border-color: #8aa0c4; border-style: dashed; background: rgba(138,160,196,.08); box-shadow: none; }
-.brk-stage .tc.pred.win.pw .bxl { color: #7488a8; font-weight: 800; }
-.brk-stage .tc.pred.win.pw .bxf { filter: grayscale(1); opacity: .55; }  /* 예측 진출팀 국기도 회색조 */
+.brk-stage .tc.pred.win.pw { border: 1px dashed rgba(110,132,170,.9); background: rgba(148,163,193,.28); box-shadow: none; }  /* 예측 진출팀=회색 배경카드+점선 */
+.brk-stage .tc.pred.win.pw .bxl { color: #5f7099; font-weight: 800; }
+.brk-stage .tc.pred.win.pw .bxf { filter: none; opacity: 1; }  /* 국기는 컬러 유지 */
 .brk-stage .fin.real { box-shadow: 0 0 0 2px #2ecf83, 0 2px 6px rgba(0,0,0,.15); }
 .brk-stage .fin.real .cmark { position: absolute; top: 2px; right: 4px; font-size: 9px; font-weight: 900; color: #2ecf83; }
 .brk-stage .fin.pred { opacity: .92; }
