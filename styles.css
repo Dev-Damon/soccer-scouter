@@ -612,14 +612,16 @@ html.light .chat-fab { background: radial-gradient(circle at 34% 28%, #7ff5cf, #
 .brk-stage .con { min-height: 20px !important; }
 .brk-stage .con .bxf { font-size: 17px; }
 .brk-stage .con .bxf img { width: 19px; height: 19px; }
-/* 대진표 실제결과(초록+✓) vs 킥톡 예측(점선) 구분 */
-.brk-stage .con.real { background: #127a4a; border-color: #39d98a; }
-.brk-stage .con.pred { background: transparent; border: 1px dashed #6f93d6; }
-.brk-stage .con.pred .bxf { opacity: .72; }
-.brk-stage .con .cmark { font-size: 8px; font-weight: 900; color: #c6ffe0; margin-left: 1px; }
-.brk-stage .tc.pred.win.real .rmark { position: absolute; top: 0; right: 2px; font-size: 8px; font-weight: 900; color: #2ecf83; }
-.brk-stage .tc.pred.win.pw { border-color: #6f93d6; border-style: dashed; background: rgba(111,147,214,.10); box-shadow: none; }
-.brk-stage .tc.pred.win.pw .bxl { color: #6f93d6; font-weight: 800; }
+/* 대진표 실제결과(풀컬러+초록+✓) vs 킥톡 예측(회색조+점선) — 확실히 대비 */
+.brk-stage .con.real { background: #12a150; border-color: #4ade80; box-shadow: 0 0 0 1.5px rgba(74,222,128,.5); }
+.brk-stage .con.real .bxf { filter: none; opacity: 1; }
+.brk-stage .con.pred { background: transparent; border: 1px dashed #8aa0c4; }
+.brk-stage .con.pred .bxf { opacity: .5; filter: grayscale(1); }  /* 예측은 회색조+흐림 → 한눈에 '아직 예측'임을 구분 */
+.brk-stage .con .cmark { font-size: 8px; font-weight: 900; color: #eafff4; margin-left: 1px; }
+.brk-stage .tc.pred.win.real .rmark { position: absolute; top: 0; right: 2px; font-size: 8px; font-weight: 900; color: #16a34a; }
+.brk-stage .tc.pred.win.pw { border-color: #8aa0c4; border-style: dashed; background: rgba(138,160,196,.08); box-shadow: none; }
+.brk-stage .tc.pred.win.pw .bxl { color: #7488a8; font-weight: 800; }
+.brk-stage .tc.pred.win.pw .bxf { filter: grayscale(1); opacity: .55; }  /* 예측 진출팀 국기도 회색조 */
 .brk-stage .fin.real { box-shadow: 0 0 0 2px #2ecf83, 0 2px 6px rgba(0,0,0,.15); }
 .brk-stage .fin.real .cmark { position: absolute; top: 2px; right: 4px; font-size: 9px; font-weight: 900; color: #2ecf83; }
 .brk-stage .fin.pred { opacity: .92; }

@@ -461,7 +461,7 @@
     fetchStandings();  // 실제 순위 비동기 로드 → 도착 시 자동 재렌더(끝난 조는 실제 진출팀으로 채움)
     PRED = predictBracket();
     var champ = teamsById[PRED.champion] || {}, ru = teamsById[PRED.runnerUp] || {};
-    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="brk-legend"><span class="lg-real">✓ 실제 진출</span> · <span class="lg-pred">┄ 킥톡 예측</span></span></div><div class="brk2-fit"></div>';
+    viewEl.innerHTML = '<div class="adslot"></div><div class="brk-note">🏆 킥톡 예측 <span class="muted-note">자체 지수 기반 · 참고용</span><br>우승 ' + esc(champ.flag || "") + " " + esc(champ.name || "") + " · 준우승 " + esc(ru.flag || "") + " " + esc(ru.name || "") + '<br><span class="brk-legend"><span class="lg-real">✅ 실제 진출(컬러)</span> · <span class="lg-pred">┄ 킥톡 예측(흐림·회색)</span></span></div><div class="brk2-fit"></div>';
     _brkLastW = -1;  // 새 fit → 강제 재측정
     var _bfit = viewEl.querySelector(".brk2-fit");
     if (window.ResizeObserver && _bfit) { if (_brkRO) _brkRO.disconnect(); _brkRO = new ResizeObserver(function () { layoutBracket(); }); _brkRO.observe(_bfit); }
