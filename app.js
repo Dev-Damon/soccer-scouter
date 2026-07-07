@@ -2837,6 +2837,8 @@
           var nmSvg = _multi ? _nmW.map(function (w, i) { return '<tspan x="' + px.toFixed(0) + '" dy="' + (i ? 14 : 0) + '">' + esc(w) + "</tspan>"; }).join("") : esc(nm);
           var nameFont = _multi ? 14 : 18;
           var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";  // 잔디 선수 탭 → 선수 상세(평점은 하단 버튼에서만)
+          var _mp = d.pid ? playersById[d.pid] : null;  // 소속팀 툴팁(마우스 호버)
+          var titleSvg = (_mp && _mp.club) ? '<title>' + esc(raw + " · " + _mp.club) + "</title>" : "";
           var rbsvg = "";
           if (d.rating != null) {
             var rc = ratingHex(d.rating);
@@ -2848,7 +2850,7 @@
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
           var ovrBadge = ovrBadgeSvg(d.pid, px, py);  // OVR 숫자뱃지 미리보기(?ovrbadge=N)
           var _ovrc = ovrRing(d.pid);  // OVR 링(?ovrpal=N 미리보기), 없으면 기본 테두리
-          out.push('<g class="mf-p"' + pd + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="' + (_ovrc || "#0b1220") + '" stroke-width="' + (_ovrc ? "4" : "2") + '"/>' +
+          out.push('<g class="mf-p"' + pd + '>' + titleSvg + '<circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="' + (_ovrc || "#0b1220") + '" stroke-width="' + (_ovrc ? "4" : "2") + '"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="' + nameFont + '" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + nmSvg + "</text>" + rbsvg + icoSvg + ovrBadge + "</g>");
         });
