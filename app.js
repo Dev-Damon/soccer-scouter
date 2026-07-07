@@ -399,7 +399,7 @@
     var W = Math.max(320, avail), H = 625, CY = H / 2, i;  // 경기 사이 세로 간격(한 경기 두 팀은 붙고 경기끼리는 살짝 벌어져 페어 구분). 560=붙음 820=과다 → 625
     function cyA(n) { var a = [], k; for (k = 0; k < n; k++) a.push(H / (2 * n) * (2 * k + 1)); return a; }
     var r32cy = cyA(8), c16cy = cyA(4), c8cy = cyA(2);
-    var cardW = 58, Wp = 22, Wf = 42, OFF = PRED ? 18 : 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백 (예측 모드는 세로카드라 간격↑)
+    var cardW = 58, Wp = 26, Wf = 42, OFF = PRED ? 18 : 15, edge = cardW / 2 + 5;  // R32 카드 중심 = 좌측 여백 (예측 모드는 세로카드라 간격↑). Wp=16강+ 국기박스 너비
     var span = (W / 2) - edge;  // R32열 → 중앙(결승)까지 가로 거리(넓을수록 길어짐 = 연결선만 늘어남)
     var XL = edge, X16 = edge + span * 0.426, X8 = edge + span * 0.618, X4 = edge + span * 0.765, XF = W / 2;  // 비율은 원본 360px 디자인과 동일
     var XR = W - edge, XR16 = W - X16, XR8 = W - X8, XR4 = W - X4;
@@ -2837,8 +2837,8 @@
           var nmSvg = _multi ? _nmW.map(function (w, i) { return '<tspan x="' + px.toFixed(0) + '" dy="' + (i ? 14 : 0) + '">' + esc(w) + "</tspan>"; }).join("") : esc(nm);
           var nameFont = _multi ? 14 : 18;
           var pd = d.pid ? ' data-player="' + esc(d.pid) + '"' : "";  // 잔디 선수 탭 → 선수 상세(평점은 하단 버튼에서만)
-          var _mp = d.pid ? playersById[d.pid] : null;  // 소속팀 툴팁(마우스 호버)
-          var titleSvg = (_mp && _mp.club) ? '<title>' + esc(raw + " · " + _mp.club) + "</title>" : "";
+          var _mp = d.pid ? playersById[d.pid] : null;  // 소속팀 즉시 툴팁(마우스 호버) — data-club을 커스텀 툴팁이 읽음
+          var clubAttr = (_mp && _mp.club) ? ' data-club="' + esc(raw + " · " + _mp.club) + '"' : "";
           var rbsvg = "";
           if (d.rating != null) {
             var rc = ratingHex(d.rating);
@@ -2850,7 +2850,7 @@
           var icoSvg = ico ? '<text x="' + (px - 20).toFixed(0) + '" y="' + (py - 12).toFixed(0) + '" font-size="13" text-anchor="middle">' + ico + "</text>" : "";
           var ovrBadge = ovrBadgeSvg(d.pid, px, py);  // OVR 숫자뱃지 미리보기(?ovrbadge=N)
           var _ovrc = ovrRing(d.pid);  // OVR 링(?ovrpal=N 미리보기), 없으면 기본 테두리
-          out.push('<g class="mf-p"' + pd + '>' + titleSvg + '<circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="' + (_ovrc || "#0b1220") + '" stroke-width="' + (_ovrc ? "4" : "2") + '"/>' +
+          out.push('<g class="mf-p"' + pd + clubAttr + '><circle cx="' + px.toFixed(0) + '" cy="' + py.toFixed(0) + '" r="17" fill="' + col + '" stroke="' + (_ovrc || "#0b1220") + '" stroke-width="' + (_ovrc ? "4" : "2") + '"/>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 6).toFixed(0) + '" fill="#fff" font-size="17" font-weight="800" text-anchor="middle">' + esc(num) + '</text>' +
             '<text x="' + px.toFixed(0) + '" y="' + (py + 31).toFixed(0) + '" fill="#fff" font-size="' + nameFont + '" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:rgba(0,0,0,.4);stroke-width:3px">' + nmSvg + "</text>" + rbsvg + icoSvg + ovrBadge + "</g>");
         });
@@ -5275,6 +5275,26 @@
       }).catch(function () {});
     });
   }
+
+  // 라인업 선수 즉시 소속팀 툴팁 — data-club 요소 위에서 지연 없이 표시(네이티브 title은 느림)
+  (function () {
+    var tip = null;
+    function show(el, e) {
+      if (!tip) { tip = document.createElement("div"); tip.className = "mf-tip"; document.body.appendChild(tip); }
+      tip.textContent = el.getAttribute("data-club");
+      tip.style.display = "block";
+      var w = tip.offsetWidth, x = e.clientX + 14, y = e.clientY + 16;
+      if (x + w > window.innerWidth - 6) x = e.clientX - w - 14;
+      if (x < 4) x = 4;
+      tip.style.left = x + "px"; tip.style.top = y + "px";
+    }
+    function hide() { if (tip) tip.style.display = "none"; }
+    document.addEventListener("mousemove", function (e) {
+      var el = e.target && e.target.closest ? e.target.closest("[data-club]") : null;
+      if (el) show(el, e); else hide();
+    }, { passive: true });
+    window.addEventListener("blur", hide);
+  }());
 
   restoreLiveCache();   // ★route 전에 캐시된 라이브 상태 복원 → 첫 렌더부터(재방문 사용자) 라이브카드 보이게
   route();
