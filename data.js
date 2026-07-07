@@ -6593,7 +6593,7 @@ window.DATA = {
       "name": "네덜란드",
       "nameEn": "Netherlands",
       "flag": "🇳🇱",
-      "fifaRank": 8,
+      "fifaRank": 9,
       "group": "F",
       "tierSummary": "반 다이크와 프렝키 더용을 축으로 한 유럽 강호로, 우승 후보 한 단계 아래의 '강력한 다크호스' 티어다.",
       "styleSummary": [
@@ -7450,7 +7450,7 @@ window.DATA = {
       "name": "벨기에",
       "nameEn": "Belgium",
       "flag": "🇧🇪",
-      "fifaRank": 9,
+      "fifaRank": 8,
       "group": "G",
       "tierSummary": "황금 세대의 노련함과 도쿠·오나나로 대표되는 신예가 공존하는, 우승까지는 한 끗 모자란 강력한 다크호스다.",
       "styleSummary": [

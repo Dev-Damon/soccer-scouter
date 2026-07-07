@@ -1,5 +1,5 @@
 {
- "_ts": 1783393242228,
+ "_ts": 1783452664065,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -121,10 +121,10 @@
   "chR": -2
  },
  "netherlands": {
-  "r": 8,
+  "r": 9,
   "p": 1775.54,
   "ch": 21.97,
-  "chR": 0
+  "chR": -1
  },
  "japan": {
   "r": 17,
@@ -145,10 +145,10 @@
   "chR": -12
  },
  "belgium": {
-  "r": 9,
-  "p": 1756.52,
-  "ch": 14.28,
-  "chR": 0
+  "r": 8,
+  "p": 1778.36,
+  "ch": 36.12,
+  "chR": 1
  },
  "egypt": {
   "r": 24,
@@ -170,8 +170,8 @@
  },
  "spain": {
   "r": 3,
-  "p": 1892.28,
-  "ch": 17.57,
+  "p": 1912.34,
+  "ch": 37.63,
   "chR": -1
  },
  "cape-verde": {
@@ -315,8 +315,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/es.svg",
    "id": "spain",
    "r": 3,
-   "p": 1892.28,
-   "ch": 17.57,
+   "p": 1912.34,
+   "ch": 37.63,
    "chR": -1
   },
   {
@@ -360,24 +360,24 @@
    "chR": -2
   },
   {
-   "code": "NED",
-   "name": "Netherlands",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nl.svg",
-   "id": "netherlands",
-   "r": 8,
-   "p": 1775.54,
-   "ch": 21.97,
-   "chR": 0
-  },
-  {
    "code": "BEL",
    "name": "Belgium",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/be.svg",
    "id": "belgium",
+   "r": 8,
+   "p": 1778.36,
+   "ch": 36.12,
+   "chR": 1
+  },
+  {
+   "code": "NED",
+   "name": "Netherlands",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/nl.svg",
+   "id": "netherlands",
    "r": 9,
-   "p": 1756.52,
-   "ch": 14.28,
-   "chR": 0
+   "p": 1775.54,
+   "ch": 21.97,
+   "chR": -1
   },
   {
    "code": "MEX",
