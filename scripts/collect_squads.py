@@ -27,7 +27,7 @@ try:
 except Exception:
     _SSL = ssl._create_unverified_context()
 
-UA = "KickTalkSquadBot/1.0 (https://kicktalk.xyz; suckd9111@gmail.com)"
+UA = "KickTalkSquadBot/1.0 (https://kicktalk.xyz; stonesoft617@gmail.com)"
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(HERE, "..", "data.js")
 OUT_DIR = os.path.join(HERE, "out")
