@@ -744,6 +744,10 @@ body { padding-bottom: 64px; overflow-x: hidden; } /* 하단 탭바 공간 + 가
 #seo-home .seo-foot { margin-top: 20px; font-size: 12px; }
 #seo-home .seo-foot a { color: var(--muted); }
 /* 홈 하단 소개 본문(렌더 후 유지 · SEO) */
+.home-intro { max-width: 720px; margin: 8px auto 4px; padding: 12px 14px; background: var(--card); border: 1px solid var(--line, #1e2a3a); border-radius: 12px; }
+.home-intro .hi-lead { margin: 0; font-size: 13px; line-height: 1.65; color: var(--muted); }
+.home-intro .hi-lead b { color: var(--text); }
+.home-intro .hi-lead a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .home-about { max-width: 720px; margin: 26px auto 8px; padding: 18px 16px 8px; border-top: 1px solid var(--line, #1e2a3a); color: var(--text); }
 .home-about h2 { font-size: 17px; font-weight: 800; line-height: 1.45; margin: 4px 0 10px; }
 .home-about h3 { font-size: 14px; color: var(--text); font-weight: 700; margin: 18px 0 8px; }

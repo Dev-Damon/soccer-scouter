@@ -636,6 +636,13 @@
   ];
   function isKoreaFx(f) { return f.homeName === "대한민국" || f.awayName === "대한민국" || f.homeId === "south-korea" || f.awayId === "south-korea"; }
   function ddayCount(targetKst, todayKst) { return Math.round((Date.parse(targetKst + "T00:00:00Z") - Date.parse(todayKst + "T00:00:00Z")) / 86400000); }
+  // 홈 최상단 소개 배너 — 첫 화면(스크롤 전)에 사이트 성격+가이드 진입점 노출(콘텐츠 신호·신규 방문자 안내)
+  function homeIntroBanner() {
+    return '<section class="home-intro">' +
+      '<p class="hi-lead"><b>킥톡</b>은 2026 북중미 월드컵 48개국의 선수·전력 분석과 실시간 경기·평점을 한국어로 정리한 축구 앱입니다. 아래에서 오늘의 일정과 경기를 확인하고, 대회 규칙·전술·관전 포인트는 <a href="news/">월드컵 가이드</a>에서 읽어보세요.</p>' +
+      '</section>';
+  }
+
   function topBanner() {
     var today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
     var fxs = DATA.fixtures || [];
@@ -819,7 +826,7 @@
     }
     listHtml += '<div class="adslot cpang-m"></div>';  // 모바일 쿠팡(320x50)
 
-    viewEl.innerHTML = topBanner() + liveSection() + strip + hintHtml + '<div class="adslot home-ad"></div>' + heroHtml + '<div class="cheer-slot"></div>' + listHtml + homeAboutHtml();  // 광고(320x100): 날짜 스트립 밑 · 빅매치 위 / 하단: 소개 본문(SEO)
+    viewEl.innerHTML = homeIntroBanner() + topBanner() + liveSection() + strip + hintHtml + '<div class="adslot home-ad"></div>' + heroHtml + '<div class="cheer-slot"></div>' + listHtml + homeAboutHtml();  // 광고(320x100): 날짜 스트립 밑 · 빅매치 위 / 하단: 소개 본문(SEO)
     var _shx = viewEl.querySelector("#swipeHintX");
     if (_shx) _shx.addEventListener("click", function () { try { localStorage.setItem("kt_swipehint", "1"); } catch (e) {} var h = viewEl.querySelector("#swipeHint"); if (h) h.remove(); });
     insertAdFit(viewEl.querySelector(".home-ad"));
