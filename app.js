@@ -3723,14 +3723,15 @@
     "match-86": "https://chzzk.naver.com/video/14024062", // J조 1위-H조 2위
     "match-87": "https://chzzk.naver.com/video/14024866", // K조 1위-D/E/I/J/L조 3위
     "match-88": "https://chzzk.naver.com/video/14022980", // D조 2위-G조 2위
-    "match-89": "https://chzzk.naver.com/video/14040738", // 파라과이-프랑스
-    "match-90": "https://chzzk.naver.com/video/14039158", // 캐나다-모로코
-    "match-91": "https://chzzk.naver.com/video/14056738", // 브라질-노르웨이
-    "match-92": "https://chzzk.naver.com/video/14057875", // 멕시코-잉글랜드
+    "match-89": "https://chzzk.naver.com/video/14040738", // 74경기 승자-77경기 승자
+    "match-90": "https://chzzk.naver.com/video/14039158", // 73경기 승자-75경기 승자
+    "match-91": "https://chzzk.naver.com/video/14056738", // 76경기 승자-78경기 승자
+    "match-92": "https://chzzk.naver.com/video/14057875", // 79경기 승자-80경기 승자
     "match-93": "https://chzzk.naver.com/video/14071386", // 포르투갈-스페인
     "match-94": "https://chzzk.naver.com/video/14072446", // 미국-벨기에
     "match-95": "https://chzzk.naver.com/video/14085998", // 아르헨티나-이집트
-    "match-96": "https://chzzk.naver.com/video/14087721" // 스위스-콜롬비아
+    "match-96": "https://chzzk.naver.com/video/14087721", // 스위스-콜롬비아
+    "match-97": "https://chzzk.naver.com/video/14119829" // 프랑스-모로코
     /* HL-AUTO-END */
   };
   // 하이라이트도 런타임 JSON(highlights.json)으로 갱신 — 토스 미니앱은 app.js를 번들 스냅샷으로 갖기 때문에, 빌드 이후 추가된 하이라이트가 안 보였음. 평점/주심과 동일하게 런타임 fetch로 양쪽(웹/토스) 자동 반영.
