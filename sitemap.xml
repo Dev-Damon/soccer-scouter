@@ -52,6 +52,43 @@
   <url><loc>https://kicktalk.xyz/t/croatia.html</loc></url>
   <url><loc>https://kicktalk.xyz/t/ghana.html</loc></url>
   <url><loc>https://kicktalk.xyz/t/panama.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://kicktalk.xyz/news/worldcup-2026-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/title-contenders.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/korea-team.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/player-rating-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/superstars-11.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/groups-preview.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/offside-rule.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/football-positions.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/penalty-shootout.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/individual-awards.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/var-explained.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/knockout-format.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/formations.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/worldcup-history.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/cards-rules.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/match-structure.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/set-piece.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/football-glossary.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/handball-rule.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/squad-numbers.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/group-draw.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/substitution-rules.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/how-to-watch.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/soccer-basics.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/fifa-ranking.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/golden-boot-history.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/korea-worldcup-history.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/tactics-deep.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/goalkeeper-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/football-derby.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/a-match.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/install-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/leagues-guide.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/continental-cups.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/soccer-field.html</loc></url>
+  <url><loc>https://kicktalk.xyz/news/host-cities-2026.html</loc></url>
 <url><loc>https://kicktalk.xyz/m/mexico-vs-south-africa.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/south-korea-vs-czech-republic.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/czech-republic-vs-south-africa.html</loc><changefreq>daily</changefreq></url>
@@ -124,41 +161,4 @@
 <url><loc>https://kicktalk.xyz/m/panama-vs-croatia.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/panama-vs-england.html</loc><changefreq>daily</changefreq></url>
 <url><loc>https://kicktalk.xyz/m/croatia-vs-ghana.html</loc><changefreq>daily</changefreq></url>
-  <url><loc>https://kicktalk.xyz/news/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kicktalk.xyz/news/worldcup-2026-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/title-contenders.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/korea-team.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/player-rating-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/superstars-11.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/groups-preview.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/offside-rule.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/football-positions.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/penalty-shootout.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/individual-awards.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/var-explained.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/knockout-format.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/formations.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/worldcup-history.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/cards-rules.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/match-structure.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/set-piece.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/football-glossary.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/handball-rule.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/squad-numbers.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/group-draw.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/substitution-rules.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/how-to-watch.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/soccer-basics.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/fifa-ranking.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/golden-boot-history.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/korea-worldcup-history.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/tactics-deep.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/goalkeeper-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/football-derby.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/a-match.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/install-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/leagues-guide.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/continental-cups.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/soccer-field.html</loc></url>
-  <url><loc>https://kicktalk.xyz/news/host-cities-2026.html</loc></url>
 </urlset>
