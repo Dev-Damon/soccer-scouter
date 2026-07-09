@@ -1,5 +1,5 @@
 {
- "_ts": 1783468876672,
+ "_ts": 1783555304234,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -43,10 +43,10 @@
   "chR": -3
  },
  "switzerland": {
-  "r": 15,
-  "p": 1696.29,
-  "ch": 46.23,
-  "chR": 4
+  "r": 14,
+  "p": 1710.88,
+  "ch": 60.82,
+  "chR": 5
  },
  "brazil": {
   "r": 5,
@@ -218,8 +218,8 @@
  },
  "argentina": {
   "r": 2,
-  "p": 1913.71,
-  "ch": 36.44,
+  "p": 1925.15,
+  "ch": 47.88,
   "chR": -1
  },
  "algeria": {
@@ -305,8 +305,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ar.svg",
    "id": "argentina",
    "r": 2,
-   "p": 1913.71,
-   "ch": 36.44,
+   "p": 1925.15,
+   "ch": 47.88,
    "chR": -1
   },
   {
@@ -420,24 +420,24 @@
    "chR": -2
   },
   {
-   "code": "ITA",
-   "name": "Italy",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/it.svg",
-   "id": null,
-   "r": 14,
-   "p": 1704.73,
-   "ch": 0,
-   "chR": -2
-  },
-  {
    "code": "SUI",
    "name": "Switzerland",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ch.svg",
    "id": "switzerland",
+   "r": 14,
+   "p": 1710.88,
+   "ch": 60.82,
+   "chR": 5
+  },
+  {
+   "code": "ITA",
+   "name": "Italy",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/it.svg",
+   "id": null,
    "r": 15,
-   "p": 1696.29,
-   "ch": 46.23,
-   "chR": 4
+   "p": 1704.73,
+   "ch": 0,
+   "chR": -3
   },
   {
    "code": "USA",
