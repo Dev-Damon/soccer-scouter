@@ -45,10 +45,28 @@ function koUtc(f) { try { return new Date(`${f.kstDate}T${f.kstTime}:00+09:00`).
 // 확정팀 맵: 조별=fixtures, 녹아웃=ko_teams.json
 const resolved = {};
 D.fixtures.forEach(f => { if (f.homeId && f.awayId && byId[f.homeId] && byId[f.awayId]) resolved[f.id] = { homeId: f.homeId, awayId: f.awayId }; });
+let KO = {};
 try {
-  const ko = await fetch('https://kicktalk.xyz/ko_teams.json?b=' + Date.now()).then(r => r.json());
-  for (const mid of Object.keys(ko)) { const k = ko[mid]; if (k.homeId && k.awayId && byId[k.homeId] && byId[k.awayId]) resolved[mid] = { homeId: k.homeId, awayId: k.awayId }; }
+  KO = await fetch('https://kicktalk.xyz/ko_teams.json?b=' + Date.now()).then(r => r.json());
+  for (const mid of Object.keys(KO)) { const k = KO[mid]; if (k.homeId && k.awayId && byId[k.homeId] && byId[k.awayId]) resolved[mid] = { homeId: k.homeId, awayId: k.awayId }; }
 } catch (e) { console.error('ko_teams fetch 실패(조별만 동기화):', e.message); }
+
+// ko_teams에 아직 없는 다음 라운드를 앞 경기 승자/패자로 유도한다.
+// ko_teams는 update_live가 ESPN 라이브 윈도우에서 채우므로, 아직 안 열린 경기(예: 준결승 직후의
+// 결승·3-4위전)는 비어 있다. 그러면 여기서 배당 행을 못 만들고 → place_bet이 기본값 2.0으로 저장한다
+// (클라 resolveKnockout은 이미 팀을 풀어 화면엔 제 배당이 보이므로 화면≠저장 불일치가 된다).
+// fixture 라벨("101경기 승자"/"101경기 패자")을 ko_teams의 winId로 푼다 — app.js resolveKnockout과 같은 규칙.
+function fromLabel(label) {
+  const m = /(\d+)경기\s*(승자|패자)/.exec(label || ''); if (!m) return null;
+  const k = KO['match-' + m[1]]; if (!k || !k.winId || !k.homeId || !k.awayId) return null;
+  const loser = k.winId === k.homeId ? k.awayId : k.homeId;
+  return m[2] === '승자' ? k.winId : loser;
+}
+for (const f of D.fixtures) {
+  if (resolved[f.id]) continue;
+  const h = fromLabel(f.homeName), a = fromLabel(f.awayName);
+  if (h && a && byId[h] && byId[a]) { resolved[f.id] = { homeId: h, awayId: a }; console.log(`유도: ${f.id} = ${byId[h].name} vs ${byId[a].name}`); }
+}
 
 const rows = [];
 for (const mid of Object.keys(resolved)) {
