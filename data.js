@@ -8334,7 +8334,7 @@ window.DATA = {
       "name": "스페인",
       "nameEn": "Spain",
       "flag": "🇪🇸",
-      "fifaRank": 3,
+      "fifaRank": 2,
       "group": "H",
       "tierSummary": "유로 2024 우승과 압도적 점유율 축구로 무장한, 이번 대회 강력한 우승 후보 중 하나다.",
       "styleSummary": [
@@ -9241,7 +9241,7 @@ window.DATA = {
       "name": "프랑스",
       "nameEn": "France",
       "flag": "🇫🇷",
-      "fifaRank": 1,
+      "fifaRank": 3,
       "group": "I",
       "tierSummary": "2018 우승·2022 준우승의 두 번에 걸친 결승 단골이자, 발롱도르 수상자 뎀벨레와 주장 음바페를 앞세운 명실상부 우승 후보 0순위 강팀입니다.",
       "styleSummary": [
@@ -10065,7 +10065,7 @@ window.DATA = {
       "name": "아르헨티나",
       "nameEn": "Argentina",
       "flag": "🇦🇷",
-      "fifaRank": 2,
+      "fifaRank": 1,
       "group": "J",
       "tierSummary": "2022년 우승팀이자 현 디펜딩 챔피언으로, 메시의 마지막 월드컵을 우승으로 장식하려는 J조 최강 우승 후보입니다.",
       "styleSummary": [

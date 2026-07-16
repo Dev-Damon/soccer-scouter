@@ -1,5 +1,5 @@
 {
- "_ts": 1784154396492,
+ "_ts": 1784240820953,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -169,10 +169,10 @@
   "chR": -1
  },
  "spain": {
-  "r": 3,
-  "p": 1934.79,
-  "ch": 60.08,
-  "chR": -1
+  "r": 2,
+  "p": 1965.61,
+  "ch": 90.9,
+  "chR": 0
  },
  "cape-verde": {
   "r": 64,
@@ -193,10 +193,10 @@
   "chR": -4
  },
  "france": {
-  "r": 1,
+  "r": 3,
   "p": 1948.97,
   "ch": 78.27,
-  "chR": 2
+  "chR": 0
  },
  "senegal": {
   "r": 18,
@@ -217,10 +217,10 @@
   "chR": 12
  },
  "argentina": {
-  "r": 2,
-  "p": 1943.47,
-  "ch": 66.2,
-  "chR": -1
+  "r": 1,
+  "p": 1970.37,
+  "ch": 93.1,
+  "chR": 0
  },
  "algeria": {
   "r": 29,
@@ -290,34 +290,34 @@
  },
  "_all": [
   {
-   "code": "FRA",
-   "name": "France",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fr.svg",
-   "id": "france",
-   "r": 1,
-   "p": 1948.97,
-   "ch": 78.27,
-   "chR": 2
-  },
-  {
    "code": "ARG",
    "name": "Argentina",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ar.svg",
    "id": "argentina",
-   "r": 2,
-   "p": 1943.47,
-   "ch": 66.2,
-   "chR": -1
+   "r": 1,
+   "p": 1970.37,
+   "ch": 93.1,
+   "chR": 0
   },
   {
    "code": "ESP",
    "name": "Spain",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/es.svg",
    "id": "spain",
+   "r": 2,
+   "p": 1965.61,
+   "ch": 90.9,
+   "chR": 0
+  },
+  {
+   "code": "FRA",
+   "name": "France",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/fr.svg",
+   "id": "france",
    "r": 3,
-   "p": 1934.79,
-   "ch": 60.08,
-   "chR": -1
+   "p": 1948.97,
+   "ch": 78.27,
+   "chR": 0
   },
   {
    "code": "ENG",
