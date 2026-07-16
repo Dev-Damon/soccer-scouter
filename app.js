@@ -2638,20 +2638,43 @@
     if (vals.length) return vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
     return t.fifaRank ? Math.max(45, 92 - t.fifaRank * 0.4) : 55; // 폴백: FIFA 랭킹
   }
+  // 실제 배당(market-odds.json) — 런타임 로드(아래 로더). 로드 전엔 비어 있어 자체 추정으로 폴백한다.
+  // ⚠️ scripts/sync_odds.mjs도 같은 JSON을 읽는다. 배당 계산이 두 곳(화면·서버저장)이라
+  //    한쪽만 바꾸면 화면 배당과 실제 저장 배당이 어긋난다(2026-07-03에 그 사고가 났었다).
+  var MARKET_ODDS = {};
+  // 실제 배당이 있으면 그걸 쓴다. 자체 능력치 추정보다 정확하고,
+  // 90분 기준이라 이 앱 베팅 정산(승부차기=무승부)과 같은 기준이다.
+  function marketFor(aId, bId) {
+    var m = MARKET_ODDS[[aId, bId].sort().join("|")];
+    return (m && m.p && m.p[aId] != null && m.p[bId] != null) ? m : null;
+  }
   function predict(a, b) {
     var pa = teamPower(a), pb = teamPower(b), diff = pa - pb;
+    var ga = Math.max(0, Math.round(1.35 + diff / 22));
+    var gb = Math.max(0, Math.round(1.35 - diff / 22));
+    var mk = marketFor(a.id, b.id);
+    if (mk) {
+      var q = pct100([mk.p[a.id] * 100, mk.p.draw * 100, mk.p[b.id] * 100]);
+      return { winA: q[0], draw: q[1], winB: q[2], ga: ga, gb: gb, pa: Math.round(pa), pb: Math.round(pb), mkt: mk };
+    }
     var ea = 1 / (1 + Math.pow(10, -diff / 16)); // a의 상대 우위(0~1)
     var draw = 0.30 * (1 - Math.min(1, Math.abs(diff) / 35));
     var winA = ea * (1 - draw), winB = (1 - ea) * (1 - draw);
     var s = winA + winB + draw; winA /= s; winB /= s; draw /= s;
-    var ga = Math.max(0, Math.round(1.35 + diff / 22));
-    var gb = Math.max(0, Math.round(1.35 - diff / 22));
     // 정수 합이 정확히 100이 되도록(최대잔여법) — 안 하면 게이지 끝이 1~2% 비거나 넘침
     var pct = pct100([winA * 100, draw * 100, winB * 100]);
     return {
       winA: pct[0], draw: pct[1], winB: pct[2],
-      ga: ga, gb: gb, pa: Math.round(pa), pb: Math.round(pb),
+      ga: ga, gb: gb, pa: Math.round(pa), pb: Math.round(pb), mkt: null,
     };
+  }
+  // 승부예상 밑 출처 한 줄. 실제 배당이면 북메이커·기준일·링크를, 아니면 자체 추정임을 밝힌다.
+  function probSrcHtml(pr) {
+    if (!pr.mkt) return '<div class="prob-src">출처: 킥톡 팀 능력치(공격·수비·조직력·경험) 자체 추정</div>';
+    var m = pr.mkt;
+    return '<div class="prob-src">출처: <a href="' + esc(m.url || "#") + '" target="_blank" rel="noopener">' + esc(m.src || "북메이커 배당") + "</a>" +
+      (m.asOf ? " · " + esc(m.asOf) + " 기준" : "") + " · 마진 제거 후 정규화 · 90분 기준(승부차기=무)" +
+      (m.note ? "<br>" + esc(m.note) : "") + "</div>";
   }
   // 실수 배열을 합 100인 정수 배열로 — 내림 후 잔여(소수부 큰 순)에 +1 분배
   function pct100(vals) {
@@ -2954,9 +2977,12 @@
     }
 
     var pr = predict(a, b);
-    if (!/조별/.test(fx.stage || "") && pr.draw) {  // 토너먼트(32강~결승)는 무승부 없음 → 무 확률을 양팀 승률에 비례 배분, 무=0
+    // 토너먼트(32강~결승)는 '진출' 기준이라 무승부가 없어서, 자체 추정일 땐 무 확률을 양팀에 비례 배분한다.
+    // 단 실제 배당(mkt)은 90분 기준 승/무/패라 그대로 보여준다 — 접으면 시장이 매긴 무승부 확률을 버리는 셈이고,
+    // 이 앱 베팅도 90분 기준(승부차기=무승부)이라 배당과 화면이 어긋난다.
+    if (!/조별/.test(fx.stage || "") && pr.draw && !pr.mkt) {
       var _sab = pr.winA + pr.winB || 1, _wa = Math.round(pr.winA + pr.draw * pr.winA / _sab);
-      pr = { winA: _wa, draw: 0, winB: 100 - _wa };
+      pr = { winA: _wa, draw: 0, winB: 100 - _wa, ga: pr.ga, gb: pr.gb, pa: pr.pa, pb: pr.pb, mkt: null };
     }
     var mf = (!SPOILER_ON && (isLiveFix(fx) || matchEnded(fx))) ? "" : matchFormation(a, b);  // 라이브/종료는 실제 라인업(espnPitch)으로 대체 — 단 스포일러 모드면 실제 라인업 대신 예상 포메이션 유지
     var ia = a.indices || {}, ib = b.indices || {};
@@ -2988,9 +3014,10 @@
         "</div>" +
         '<div class="vs-goals"></div>' +  /* 골 표기는 스코어 바로 아래 */
         mvCompareHtml(a, b) +  /* 1) 스쿼드 몸값 게이지(위로) */
-        '<div class="block"><h3>승부 예상</h3>' +  /* 2) 승부예상 게이지(몸값 밑) */
+        '<div class="block"><h3>승부 예상' + (pr.mkt ? '<span class="prob-src-tag">실제 배당 기준</span>' : "") + "</h3>" +  /* 2) 승부예상 게이지(몸값 밑) */
           '<div class="prob"><div class="prob-seg a" style="width:' + pr.winA + '%">' + (pr.winA >= 12 ? pr.winA + "%" : "") + '</div><div class="prob-seg d" style="width:' + pr.draw + '%">' + (pr.draw >= 12 ? pr.draw + "%" : "") + '</div><div class="prob-seg b" style="width:' + pr.winB + '%">' + (pr.winB >= 12 ? pr.winB + "%" : "") + "</div></div>" +
-          '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span>' + (pr.draw ? '<span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span>' : "") + '<span>' + esc(b.name) + " 승</span></div></div>" +
+          '<div class="prob-legend"><span>' + esc(a.name) + ' 승</span>' + (pr.draw ? '<span class="pl-draw" style="left:' + (pr.winA + pr.draw / 2) + '%">무</span>' : "") + '<span>' + esc(b.name) + " 승</span></div>" +
+          probSrcHtml(pr) + "</div>" +
         kr32MatchBlock(fx) +  /* D~L조 경기면 한국 32강 와일드카드 조건 표시 */
         matchScenarioHtml(fx) +  /* 조별 경기면 32강 진출 경우의 수 + 조 순위 */
         '<div class="block pred-slot"></div>' +  /* 3) 경기 예측 투표(맞혀보세요) */
@@ -3765,6 +3792,19 @@
         fx._espnFixed = true;  // 예측 resolveKnockout이 다시 덮지 않게
       }
       if (any) { resolveKnockout(); var h = parseHash(); if (h.name === "match" && h.id) renderMatch(h.id); else if (onHomeSchedule()) renderSchedule(); else if (h.name === "home" && homeTab === "bracket") renderBracket(); else if (h.name === "kr32") renderKr32(); }
+    }).catch(function () {});
+  })();
+  // 실제 배당(market-odds.json) — 런타임 로드. 웹/토스 공통, 재빌드 없이 배당만 갱신 가능(파일 push만으로 양쪽 반영).
+  // 로드되면 예측 게이지·베팅 배당이 실제 배당 기준으로 바뀌므로 현재 화면을 다시 그린다.
+  (function () {
+    if (!window.fetch) return;
+    fetch("https://kicktalk.xyz/market-odds.json?b=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || typeof d !== "object") return;
+      var any = false;
+      for (var k in d) { if (k !== "_" && d[k] && d[k].p) { MARKET_ODDS[k] = d[k]; any = true; } }
+      if (!any) return;
+      var h = parseHash();
+      if (h.name === "match" && h.id) renderMatch(h.id);
     }).catch(function () {});
   })();
   // 선수 평점 — 외부 JSON(match-ratings.json)에서 런타임 로드. 웹/토스 공통, .ait 재빌드 없이 평점만 갱신 가능(파일 push만으로 양쪽 반영).

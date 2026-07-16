@@ -1,0 +1,17 @@
+{
+  "_": "실제 북메이커 배당에서 뽑은 승/무/패 확률. 킥톡 자체 능력치 추정(predict)보다 우선한다. 90분 기준(승부차기는 무승부) — 이 앱 베팅 정산과 같은 기준이다. 값 = 3-way 머니라인 내재확률에서 마진(vig) 제거 후 정규화(합=1). 팀 짝으로 키를 잡아 홈/원정이 뒤집혀도 안전. app.js(MARKET_ODDS)와 scripts/sync_odds.mjs가 이 파일 하나를 같이 본다 — 그래서 화면 배당과 저장 배당이 어긋나지 않는다. 새 경기는 여기에 추가만 하면 앱 재빌드·토스 재배포 없이 반영된다.",
+  "argentina|spain": {
+    "p": { "spain": 0.4144, "draw": 0.3197, "argentina": 0.2660 },
+    "src": "Lucky Rebel 배당(+133/+202/+263)",
+    "url": "https://www.bettingnews.com/articles/soccer/spain-vs-argentina-world-cup-final-odds-insights-can-messi-repeat-on-sunday/",
+    "asOf": "2026-07-15",
+    "note": "Opta 수퍼컴퓨터 스페인 우승 56.15%와 일치(41%+무승부 절반≈57%)"
+  },
+  "england|france": {
+    "p": { "france": 0.4737, "draw": 0.2632, "england": 0.2632 },
+    "src": "FanDuel 배당(+100/+260/+260)",
+    "url": "https://www.foxsports.com/stories/soccer/2026-world-cup-third-place-odds-france-england",
+    "asOf": "2026-07-15",
+    "note": "Squawka 프랑스 57%·Onside AI 62%와 일치(48%+무승부 절반≈61%)"
+  }
+}
