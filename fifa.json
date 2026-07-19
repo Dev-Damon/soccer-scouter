@@ -1,5 +1,5 @@
 {
- "_ts": 1784420881319,
+ "_ts": 1784503708127,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -266,8 +266,8 @@
  },
  "england": {
   "r": 4,
-  "p": 1889.42,
-  "ch": 61.4,
+  "p": 1922.83,
+  "ch": 94.81,
   "chR": 0
  },
  "croatia": {
@@ -325,8 +325,8 @@
    "flagUrl": "https://flagcdn.com/28x21/gb-eng.png",
    "id": "england",
    "r": 4,
-   "p": 1889.42,
-   "ch": 61.4,
+   "p": 1922.83,
+   "ch": 94.81,
    "chR": 0
   },
   {
@@ -1275,8 +1275,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
    "id": null,
    "r": 99,
-   "p": 1225.68,
-   "ch": 0,
+   "p": 1227.2,
+   "ch": 1.52,
    "chR": 0
   },
   {
@@ -1865,8 +1865,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mm.svg",
    "id": null,
    "r": 158,
-   "p": 1010.91,
-   "ch": 0,
+   "p": 1009.39,
+   "ch": -1.52,
    "chR": 0
   },
   {
