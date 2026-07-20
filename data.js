@@ -8334,7 +8334,7 @@ window.DATA = {
       "name": "스페인",
       "nameEn": "Spain",
       "flag": "🇪🇸",
-      "fifaRank": 2,
+      "fifaRank": 1,
       "group": "H",
       "tierSummary": "유로 2024 우승과 압도적 점유율 축구로 무장한, 이번 대회 강력한 우승 후보 중 하나다.",
       "styleSummary": [
@@ -10065,7 +10065,7 @@ window.DATA = {
       "name": "아르헨티나",
       "nameEn": "Argentina",
       "flag": "🇦🇷",
-      "fifaRank": 1,
+      "fifaRank": 2,
       "group": "J",
       "tierSummary": "2022년 우승팀이자 현 디펜딩 챔피언으로, 메시의 마지막 월드컵을 우승으로 장식하려는 J조 최강 우승 후보입니다.",
       "styleSummary": [
