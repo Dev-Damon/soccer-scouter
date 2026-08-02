@@ -1,292 +1,292 @@
 {
- "_ts": 1785627250119,
+ "_ts": 1785713673934,
  "mexico": {
   "r": 10,
   "p": 1754.3,
-  "ch": 66.82,
-  "chR": 4
+  "ch": 0,
+  "chR": 0
  },
  "south-africa": {
   "r": 54,
   "p": 1451.24,
-  "ch": 22.86,
-  "chR": 6
+  "ch": 0,
+  "chR": 0
  },
  "south-korea": {
   "r": 32,
   "p": 1558.72,
-  "ch": -32.91,
-  "chR": -7
+  "ch": 0,
+  "chR": 0
  },
  "czech-republic": {
   "r": 48,
   "p": 1467.26,
-  "ch": -38.48,
-  "chR": -8
+  "ch": 0,
+  "chR": 0
  },
  "canada": {
   "r": 30,
   "p": 1571.34,
-  "ch": 11.86,
+  "ch": 0,
   "chR": 0
  },
  "bosnia-and-herzegovina": {
   "r": 61,
   "p": 1408.93,
-  "ch": 21.71,
-  "chR": 3
+  "ch": 0,
+  "chR": 0
  },
  "qatar": {
   "r": 59,
-  "p": 1411.07,
-  "ch": -39.24,
-  "chR": -3
+  "p": 1411.06,
+  "ch": 0,
+  "chR": 0
  },
  "switzerland": {
   "r": 14,
   "p": 1710.88,
-  "ch": 60.82,
-  "chR": 5
+  "ch": 0,
+  "chR": 0
  },
  "brazil": {
   "r": 5,
-  "p": 1804.93,
-  "ch": 39.07,
-  "chR": 1
+  "p": 1804.92,
+  "ch": 0,
+  "chR": 0
  },
  "morocco": {
   "r": 6,
   "p": 1803.99,
-  "ch": 48.89,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "haiti": {
   "r": 88,
   "p": 1264.58,
-  "ch": -28.52,
-  "chR": -5
+  "ch": 0,
+  "chR": 0
  },
  "scotland": {
   "r": 42,
   "p": 1491.22,
-  "ch": -12.12,
+  "ch": 0,
   "chR": 0
  },
  "united-states": {
   "r": 16,
   "p": 1690.33,
-  "ch": 19.1,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "paraguay": {
   "r": 34,
   "p": 1542.48,
-  "ch": 37.13,
-  "chR": 7
+  "ch": 0,
+  "chR": 0
  },
  "australia": {
   "r": 28,
   "p": 1581.51,
-  "ch": 2.17,
-  "chR": -1
+  "ch": 0,
+  "chR": 0
  },
  "turkey": {
   "r": 27,
   "p": 1582.54,
-  "ch": -23.19,
-  "chR": -5
+  "ch": 0,
+  "chR": 0
  },
  "germany": {
   "r": 12,
   "p": 1726.22,
-  "ch": -9.55,
-  "chR": -2
+  "ch": 0,
+  "chR": 0
  },
  "curacao": {
   "r": 82,
-  "p": 1285.65,
-  "ch": -9.12,
+  "p": 1285.64,
+  "ch": 0,
   "chR": 0
  },
  "ivory-coast": {
   "r": 31,
-  "p": 1565.48,
-  "ch": 24.61,
-  "chR": 2
+  "p": 1565.47,
+  "ch": 0,
+  "chR": 0
  },
  "ecuador": {
   "r": 25,
   "p": 1592.59,
-  "ch": -5.93,
-  "chR": -2
+  "ch": 0,
+  "chR": 0
  },
  "netherlands": {
   "r": 9,
   "p": 1775.54,
-  "ch": 21.97,
-  "chR": -1
+  "ch": 0,
+  "chR": 0
  },
  "japan": {
   "r": 17,
   "p": 1673.68,
-  "ch": 12.1,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "sweden": {
   "r": 37,
   "p": 1525.58,
-  "ch": 15.79,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "tunisia": {
   "r": 57,
-  "p": 1426.59,
-  "ch": -49.82,
-  "chR": -12
+  "p": 1426.58,
+  "ch": 0,
+  "chR": 0
  },
  "belgium": {
   "r": 8,
   "p": 1778.36,
-  "ch": 36.12,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "egypt": {
   "r": 24,
-  "p": 1597.05,
-  "ch": 34.68,
-  "chR": 5
+  "p": 1597.04,
+  "ch": 0,
+  "chR": 0
  },
  "iran": {
   "r": 22,
-  "p": 1609.84,
-  "ch": -9.74,
-  "chR": -2
+  "p": 1609.85,
+  "ch": 0,
+  "chR": 0
  },
  "new-zealand": {
   "r": 86,
   "p": 1269.8,
-  "ch": -5.78,
-  "chR": -1
+  "ch": 0,
+  "chR": 0
  },
  "spain": {
   "r": 1,
   "p": 1995.88,
-  "ch": 121.17,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "cape-verde": {
   "r": 64,
   "p": 1402.97,
-  "ch": 31.86,
-  "chR": 3
+  "ch": 0,
+  "chR": 0
  },
  "saudi-arabia": {
   "r": 58,
-  "p": 1425.51,
-  "ch": 1.63,
-  "chR": 3
+  "p": 1425.52,
+  "ch": 0,
+  "chR": 0
  },
  "uruguay": {
   "r": 20,
-  "p": 1634.71,
-  "ch": -38.36,
-  "chR": -4
+  "p": 1634.7,
+  "ch": 0,
+  "chR": 0
  },
  "france": {
   "r": 3,
   "p": 1948.97,
-  "ch": 78.27,
+  "ch": 0,
   "chR": 0
  },
  "senegal": {
   "r": 18,
   "p": 1653.43,
-  "ch": -30.64,
-  "chR": -3
+  "ch": 0,
+  "chR": 0
  },
  "iraq": {
   "r": 63,
   "p": 1404.17,
-  "ch": -42.11,
-  "chR": -6
+  "ch": 0,
+  "chR": 0
  },
  "norway": {
   "r": 19,
   "p": 1651.29,
-  "ch": 93.85,
-  "chR": 12
+  "ch": 0,
+  "chR": 0
  },
  "argentina": {
   "r": 2,
   "p": 1970.37,
-  "ch": 93.1,
-  "chR": -1
+  "ch": 0,
+  "chR": 0
  },
  "algeria": {
   "r": 29,
   "p": 1576.8,
-  "ch": 5.77,
-  "chR": -1
+  "ch": 0,
+  "chR": 0
  },
  "austria": {
   "r": 23,
   "p": 1598.82,
-  "ch": 1.42,
-  "chR": 1
+  "ch": 0,
+  "chR": 0
  },
  "jordan": {
   "r": 73,
   "p": 1350.41,
-  "ch": -37.33,
-  "chR": -10
+  "ch": 0,
+  "chR": 0
  },
  "portugal": {
   "r": 7,
-  "p": 1787.86,
-  "ch": 20.01,
-  "chR": -2
+  "p": 1787.85,
+  "ch": 0,
+  "chR": 0
  },
  "dr-congo": {
   "r": 41,
   "p": 1495.48,
-  "ch": 21.05,
-  "chR": 5
+  "ch": 0,
+  "chR": 0
  },
  "uzbekistan": {
   "r": 60,
   "p": 1409.73,
-  "ch": -49,
-  "chR": -10
+  "ch": 0,
+  "chR": 0
  },
  "colombia": {
   "r": 11,
   "p": 1739.89,
-  "ch": 41.54,
-  "chR": 2
+  "ch": 0,
+  "chR": 0
  },
  "england": {
   "r": 4,
   "p": 1922.83,
-  "ch": 94.81,
+  "ch": 0,
   "chR": 0
  },
  "croatia": {
   "r": 13,
   "p": 1723.05,
-  "ch": 8.18,
-  "chR": -2
+  "ch": 0,
+  "chR": 0
  },
  "ghana": {
   "r": 65,
   "p": 1387,
-  "ch": 40.12,
-  "chR": 8
+  "ch": 0,
+  "chR": 0
  },
  "panama": {
   "r": 44,
-  "p": 1478.42,
-  "ch": -60.74,
-  "chR": -10
+  "p": 1478.41,
+  "ch": 0,
+  "chR": 0
  },
  "_all": [
   {
@@ -296,8 +296,8 @@
    "id": "spain",
    "r": 1,
    "p": 1995.88,
-   "ch": 121.17,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "ARG",
@@ -306,8 +306,8 @@
    "id": "argentina",
    "r": 2,
    "p": 1970.37,
-   "ch": 93.1,
-   "chR": -1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "FRA",
@@ -316,7 +316,7 @@
    "id": "france",
    "r": 3,
    "p": 1948.97,
-   "ch": 78.27,
+   "ch": 0,
    "chR": 0
   },
   {
@@ -326,7 +326,7 @@
    "id": "england",
    "r": 4,
    "p": 1922.83,
-   "ch": 94.81,
+   "ch": 0,
    "chR": 0
   },
   {
@@ -335,9 +335,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/br.svg",
    "id": "brazil",
    "r": 5,
-   "p": 1804.93,
-   "ch": 39.07,
-   "chR": 1
+   "p": 1804.92,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "MAR",
@@ -346,8 +346,8 @@
    "id": "morocco",
    "r": 6,
    "p": 1803.99,
-   "ch": 48.89,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "POR",
@@ -355,9 +355,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pt.svg",
    "id": "portugal",
    "r": 7,
-   "p": 1787.86,
-   "ch": 20.01,
-   "chR": -2
+   "p": 1787.85,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "BEL",
@@ -366,8 +366,8 @@
    "id": "belgium",
    "r": 8,
    "p": 1778.36,
-   "ch": 36.12,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "NED",
@@ -376,8 +376,8 @@
    "id": "netherlands",
    "r": 9,
    "p": 1775.54,
-   "ch": 21.97,
-   "chR": -1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "MEX",
@@ -386,8 +386,8 @@
    "id": "mexico",
    "r": 10,
    "p": 1754.3,
-   "ch": 66.82,
-   "chR": 4
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "COL",
@@ -396,8 +396,8 @@
    "id": "colombia",
    "r": 11,
    "p": 1739.89,
-   "ch": 41.54,
-   "chR": 2
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "GER",
@@ -406,8 +406,8 @@
    "id": "germany",
    "r": 12,
    "p": 1726.22,
-   "ch": -9.55,
-   "chR": -2
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "CRO",
@@ -416,8 +416,8 @@
    "id": "croatia",
    "r": 13,
    "p": 1723.05,
-   "ch": 8.18,
-   "chR": -2
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "SUI",
@@ -426,8 +426,8 @@
    "id": "switzerland",
    "r": 14,
    "p": 1710.88,
-   "ch": 60.82,
-   "chR": 5
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "ITA",
@@ -437,7 +437,7 @@
    "r": 15,
    "p": 1704.73,
    "ch": 0,
-   "chR": -3
+   "chR": 0
   },
   {
    "code": "USA",
@@ -446,8 +446,8 @@
    "id": "united-states",
    "r": 16,
    "p": 1690.33,
-   "ch": 19.1,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "JPN",
@@ -456,8 +456,8 @@
    "id": "japan",
    "r": 17,
    "p": 1673.68,
-   "ch": 12.1,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "SEN",
@@ -466,8 +466,8 @@
    "id": "senegal",
    "r": 18,
    "p": 1653.43,
-   "ch": -30.64,
-   "chR": -3
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "NOR",
@@ -476,8 +476,8 @@
    "id": "norway",
    "r": 19,
    "p": 1651.29,
-   "ch": 93.85,
-   "chR": 12
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "URU",
@@ -485,9 +485,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/uy.svg",
    "id": "uruguay",
    "r": 20,
-   "p": 1634.71,
-   "ch": -38.36,
-   "chR": -4
+   "p": 1634.7,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "DEN",
@@ -505,9 +505,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ir.svg",
    "id": "iran",
    "r": 22,
-   "p": 1609.84,
-   "ch": -9.74,
-   "chR": -2
+   "p": 1609.85,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "AUT",
@@ -516,8 +516,8 @@
    "id": "austria",
    "r": 23,
    "p": 1598.82,
-   "ch": 1.42,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "EGY",
@@ -525,9 +525,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/eg.svg",
    "id": "egypt",
    "r": 24,
-   "p": 1597.05,
-   "ch": 34.68,
-   "chR": 5
+   "p": 1597.04,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "ECU",
@@ -536,8 +536,8 @@
    "id": "ecuador",
    "r": 25,
    "p": 1592.59,
-   "ch": -5.93,
-   "chR": -2
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "NGA",
@@ -556,8 +556,8 @@
    "id": "turkey",
    "r": 27,
    "p": 1582.54,
-   "ch": -23.19,
-   "chR": -5
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "AUS",
@@ -566,8 +566,8 @@
    "id": "australia",
    "r": 28,
    "p": 1581.51,
-   "ch": 2.17,
-   "chR": -1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "ALG",
@@ -576,8 +576,8 @@
    "id": "algeria",
    "r": 29,
    "p": 1576.8,
-   "ch": 5.77,
-   "chR": -1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "CAN",
@@ -586,7 +586,7 @@
    "id": "canada",
    "r": 30,
    "p": 1571.34,
-   "ch": 11.86,
+   "ch": 0,
    "chR": 0
   },
   {
@@ -595,9 +595,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ci.svg",
    "id": "ivory-coast",
    "r": 31,
-   "p": 1565.48,
-   "ch": 24.61,
-   "chR": 2
+   "p": 1565.47,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "KOR",
@@ -606,8 +606,8 @@
    "id": "south-korea",
    "r": 32,
    "p": 1558.72,
-   "ch": -32.91,
-   "chR": -7
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "UKR",
@@ -617,7 +617,7 @@
    "r": 33,
    "p": 1549.29,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "PAR",
@@ -626,8 +626,8 @@
    "id": "paraguay",
    "r": 34,
    "p": 1542.48,
-   "ch": 37.13,
-   "chR": 7
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "RUS",
@@ -656,8 +656,8 @@
    "id": "sweden",
    "r": 37,
    "p": 1525.58,
-   "ch": 15.79,
-   "chR": 1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "WAL",
@@ -667,7 +667,7 @@
    "r": 38,
    "p": 1516.95,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "HUN",
@@ -687,7 +687,7 @@
    "r": 40,
    "p": 1502.13,
    "ch": 0,
-   "chR": 3
+   "chR": 0
   },
   {
    "code": "COD",
@@ -696,8 +696,8 @@
    "id": "dr-congo",
    "r": 41,
    "p": 1495.48,
-   "ch": 21.05,
-   "chR": 5
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "SCO",
@@ -706,7 +706,7 @@
    "id": "scotland",
    "r": 42,
    "p": 1491.22,
-   "ch": -12.12,
+   "ch": 0,
    "chR": 0
   },
   {
@@ -717,7 +717,7 @@
    "r": 43,
    "p": 1481.24,
    "ch": 0,
-   "chR": 1
+   "chR": 0
   },
   {
    "code": "PAN",
@@ -725,9 +725,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/pa.svg",
    "id": "panama",
    "r": 44,
-   "p": 1478.42,
-   "ch": -60.74,
-   "chR": -10
+   "p": 1478.41,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "SVK",
@@ -737,7 +737,7 @@
    "r": 45,
    "p": 1473.66,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "GRE",
@@ -747,7 +747,7 @@
    "r": 46,
    "p": 1473.19,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "VEN",
@@ -757,7 +757,7 @@
    "r": 47,
    "p": 1469.18,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "CZE",
@@ -766,8 +766,8 @@
    "id": "czech-republic",
    "r": 48,
    "p": 1467.26,
-   "ch": -38.48,
-   "chR": -8
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "CHI",
@@ -777,7 +777,7 @@
    "r": 49,
    "p": 1458.2,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "PER",
@@ -787,7 +787,7 @@
    "r": 50,
    "p": 1457.69,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "CRC",
@@ -797,7 +797,7 @@
    "r": 51,
    "p": 1456.03,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "ROU",
@@ -807,7 +807,7 @@
    "r": 52,
    "p": 1455.89,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "MLI",
@@ -817,7 +817,7 @@
    "r": 53,
    "p": 1455.59,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "RSA",
@@ -826,8 +826,8 @@
    "id": "south-africa",
    "r": 54,
    "p": 1451.24,
-   "ch": 22.86,
-   "chR": 6
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "IRL",
@@ -837,7 +837,7 @@
    "r": 55,
    "p": 1441.1,
    "ch": 0,
-   "chR": 3
+   "chR": 0
   },
   {
    "code": "SVN",
@@ -847,7 +847,7 @@
    "r": 56,
    "p": 1441.09,
    "ch": 0,
-   "chR": 3
+   "chR": 0
   },
   {
    "code": "TUN",
@@ -855,9 +855,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tn.svg",
    "id": "tunisia",
    "r": 57,
-   "p": 1426.59,
-   "ch": -49.82,
-   "chR": -12
+   "p": 1426.58,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "KSA",
@@ -865,9 +865,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sa.svg",
    "id": "saudi-arabia",
    "r": 58,
-   "p": 1425.51,
-   "ch": 1.63,
-   "chR": 3
+   "p": 1425.52,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "QAT",
@@ -875,9 +875,9 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/qa.svg",
    "id": "qatar",
    "r": 59,
-   "p": 1411.07,
-   "ch": -39.24,
-   "chR": -3
+   "p": 1411.06,
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "UZB",
@@ -886,8 +886,8 @@
    "id": "uzbekistan",
    "r": 60,
    "p": 1409.73,
-   "ch": -49,
-   "chR": -10
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "BIH",
@@ -896,8 +896,8 @@
    "id": "bosnia-and-herzegovina",
    "r": 61,
    "p": 1408.93,
-   "ch": 21.71,
-   "chR": 3
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "BFA",
@@ -916,8 +916,8 @@
    "id": "iraq",
    "r": 63,
    "p": 1404.17,
-   "ch": -42.11,
-   "chR": -6
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "CPV",
@@ -926,8 +926,8 @@
    "id": "cape-verde",
    "r": 64,
    "p": 1402.97,
-   "ch": 31.86,
-   "chR": 3
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "GHA",
@@ -936,8 +936,8 @@
    "id": "ghana",
    "r": 65,
    "p": 1387,
-   "ch": 40.12,
-   "chR": 8
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "HON",
@@ -947,7 +947,7 @@
    "r": 66,
    "p": 1378.97,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "ALB",
@@ -957,7 +957,7 @@
    "r": 67,
    "p": 1376.03,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "UAE",
@@ -1016,8 +1016,8 @@
    "id": "jordan",
    "r": 73,
    "p": 1350.41,
-   "ch": -37.33,
-   "chR": -10
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "ISL",
@@ -1105,8 +1105,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cw.svg",
    "id": "curacao",
    "r": 82,
-   "p": 1285.65,
-   "ch": -9.12,
+   "p": 1285.64,
+   "ch": 0,
    "chR": 0
   },
   {
@@ -1117,7 +1117,7 @@
    "r": 83,
    "p": 1283.05,
    "ch": 0,
-   "chR": 1
+   "chR": 0
   },
   {
    "code": "GAB",
@@ -1127,7 +1127,7 @@
    "r": 84,
    "p": 1272.51,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "BUL",
@@ -1137,7 +1137,7 @@
    "r": 85,
    "p": 1271.68,
    "ch": 0,
-   "chR": 2
+   "chR": 0
   },
   {
    "code": "NZL",
@@ -1146,8 +1146,8 @@
    "id": "new-zealand",
    "r": 86,
    "p": 1269.8,
-   "ch": -5.78,
-   "chR": -1
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "ANG",
@@ -1157,7 +1157,7 @@
    "r": 87,
    "p": 1265.58,
    "ch": 0,
-   "chR": 1
+   "chR": 0
   },
   {
    "code": "HAI",
@@ -1166,8 +1166,8 @@
    "id": "haiti",
    "r": 88,
    "p": 1264.58,
-   "ch": -28.52,
-   "chR": -5
+   "ch": 0,
+   "chR": 0
   },
   {
    "code": "UGA",
@@ -1210,24 +1210,24 @@
    "chR": 0
   },
   {
-   "code": "BEN",
-   "name": "Benin",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bj.svg",
-   "id": null,
-   "r": 93,
-   "p": 1252.17,
-   "ch": 0,
-   "chR": 0
-  },
-  {
    "code": "THA",
    "name": "Thailand",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
    "id": null,
+   "r": 93,
+   "p": 1253.53,
+   "ch": 2.73,
+   "chR": 1
+  },
+  {
+   "code": "BEN",
+   "name": "Benin",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bj.svg",
+   "id": null,
    "r": 94,
-   "p": 1250.8,
+   "p": 1252.17,
    "ch": 0,
-   "chR": 0
+   "chR": -1
   },
   {
    "code": "PLE",
@@ -1275,8 +1275,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
    "id": null,
    "r": 99,
-   "p": 1227.2,
-   "ch": 1.52,
+   "p": 1227.32,
+   "ch": 0.12,
    "chR": 0
   },
   {
@@ -1440,34 +1440,34 @@
    "chR": 0
   },
   {
+   "code": "IDN",
+   "name": "Indonesia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/id.svg",
+   "id": null,
+   "r": 116,
+   "p": 1159.68,
+   "ch": 2.54,
+   "chR": 2
+  },
+  {
    "code": "GAM",
    "name": "The Gambia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/gm.svg",
    "id": null,
-   "r": 116,
+   "r": 117,
    "p": 1159.64,
    "ch": 0,
-   "chR": 0
+   "chR": -1
   },
   {
    "code": "SDN",
    "name": "Sudan",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sd.svg",
    "id": null,
-   "r": 117,
+   "r": 118,
    "p": 1157.22,
    "ch": 0,
-   "chR": 0
-  },
-  {
-   "code": "IDN",
-   "name": "Indonesia",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/id.svg",
-   "id": null,
-   "r": 118,
-   "p": 1157.14,
-   "ch": 0,
-   "chR": 0
+   "chR": -1
   },
   {
    "code": "TOG",
@@ -1481,7 +1481,7 @@
   },
   {
    "code": "PRK",
-   "name": "Korea DPR",
+   "name": "DPR Korea",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kp.svg",
    "id": null,
    "r": 120,
@@ -1635,8 +1635,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ph.svg",
    "id": null,
    "r": 135,
-   "p": 1100.95,
-   "ch": 0,
+   "p": 1099.53,
+   "ch": -1.42,
    "chR": 0
   },
   {
@@ -1645,8 +1645,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/my.svg",
    "id": null,
    "r": 136,
-   "p": 1086.22,
-   "ch": 0,
+   "p": 1088.17,
+   "ch": 1.95,
    "chR": 0
   },
   {
@@ -1765,8 +1765,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sg.svg",
    "id": null,
    "r": 148,
-   "p": 1057.95,
-   "ch": 0,
+   "p": 1062.05,
+   "ch": 4.1,
    "chR": 0
   },
   {
@@ -1801,7 +1801,7 @@
   },
   {
    "code": "SKN",
-   "name": "St Kitts and Nevis",
+   "name": "St. Kitts and Nevis",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kn.svg",
    "id": null,
    "r": 152,
@@ -1841,7 +1841,7 @@
   },
   {
    "code": "HKG",
-   "name": "Hong Kong, China",
+   "name": "Hong Kong",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/hk.svg",
    "id": null,
    "r": 156,
@@ -1865,8 +1865,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mm.svg",
    "id": null,
    "r": 158,
-   "p": 1009.39,
-   "ch": -1.52,
+   "p": 1010.2,
+   "ch": 0.81,
    "chR": 0
   },
   {
@@ -1941,7 +1941,7 @@
   },
   {
    "code": "LCA",
-   "name": "St Lucia",
+   "name": "St. Lucia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/lc.svg",
    "id": null,
    "r": 166,
@@ -1981,7 +1981,7 @@
   },
   {
    "code": "VIN",
-   "name": "St Vincent and the Grenadines",
+   "name": "St. Vincent / Grenadines",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vc.svg",
    "id": null,
    "r": 170,
@@ -2035,8 +2035,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kh.svg",
    "id": null,
    "r": 175,
-   "p": 922.32,
-   "ch": 0,
+   "p": 919.02,
+   "ch": -3.3,
    "chR": 0
   },
   {
@@ -2135,8 +2135,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/la.svg",
    "id": null,
    "r": 185,
-   "p": 885.03,
-   "ch": 0,
+   "p": 880.96,
+   "ch": -4.07,
    "chR": 0
   },
   {
@@ -2221,7 +2221,7 @@
   },
   {
    "code": "BRU",
-   "name": "Brunei Darussalam",
+   "name": "Brunei",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bn.svg",
    "id": null,
    "r": 194,
@@ -2295,8 +2295,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/tl.svg",
    "id": null,
    "r": 201,
-   "p": 831,
-   "ch": 0,
+   "p": 827.54,
+   "ch": -3.46,
    "chR": 0
   },
   {
