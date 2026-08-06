@@ -1,13 +1,7 @@
 {
- "updated": "2026-08-06T10:07:22Z",
+ "updated": "2026-08-06T12:25:04Z",
  "byTeam": {
   "멕시코": [
-   {
-    "title": "'5G 연속골 무산' 손흥민, 한국 울린 멕시코 GK에 또 막혔다...LAFC는 승부차기 혈투 끝 치바스 제압→승점 2 획득",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAzdTB1Sks4ZVpGamtNVG1pVFpXMDZXbmk0Vmo4akdPQU85UEVwTTcya09taWF4Nlc1UmIxVk1Ya28wVm9OVXN0Q0M2M3Z4c3M?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-08-06"
-   },
    {
     "title": "4년 전도 임기 이슈 재계약 거절했던 벤투 감독, “임시 감독 NO” & 아기레 감독은 ‘한국행’ 관심 있다는데…초유의 임시 감독 프로젝트, 포옛 감독만 나홀로 지원?",
     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XaExfc19lZzVFOXY3cWh6T0gyZFhERlo5ZnhUNktiNDg1d2FKZS1ZcUxpLXNBa25JbDFuOTJjdmhwbWpWNGxZZjZ4bExoTDRLSDRPYmhlSUI5cFF1WDFESmU2LTJ5bmUzVkpFTVJIOFRXdw?oc=5",
@@ -21,9 +15,15 @@
     "date": "2026-08-02"
    },
    {
+    "title": "'이걸 막네' 손흥민, 또 '멕시코 국대 골키퍼' 넘지 못했다→4경기 연속 득점 행진 끝... LAFC 승부차기 돌입",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9LVHFNc2FlQUl1b0VhMnFza0I4UERMaVhYZnZDYkxOUl92Zzlybjg2T3RWOXhvVV9STzVoSEhJWHZoaTRJSGdzc0dQZTA4c0JqZTUwZ1ROTEkwWHJMQzVuT3RnamhXbDR2anRmemNNQnRzdi1kb3c?oc=5",
+    "source": "starnewskorea.com",
+    "date": "2026-08-06"
+   },
+   {
     "title": "’통한의 실책’ 홍명보호, 멕시코에 0-1 분패",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPelU5UWI0bUk3WEdTVklIV0RKQ0c4RmotRVhPOWQyY0kzbjBvRWlGSk81UjV0UHY3Y2JCMVF6TkR5YzJXdnBLdVRJRkpSYXNMeW8waHdxMlF4eW50clhNY0ZJWkRhTnc?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-06-19"
    },
    {
@@ -34,12 +34,6 @@
    }
   ],
   "남아프리카공화국": [
-   {
-    "title": "“홍명보 너무 욕 먹을까 봐 못 올린 '영상'...사퇴하신 김에 올립니다”",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE14N2pCTHdyZ2U4eWdZOGhSeGEwNlF0WEtTY3RuSjhZaDd4S3NsYUhhR2JqWlpmWnhvT2lpa3R4dno5YVZoVl9wMXFuSjI1MkxzMzZSMjJ3?oc=5",
-    "source": "위키트리",
-    "date": "2026-08-06"
-   },
    {
     "title": "'한국축구 나락 보낸' 남아공대표팀 브로스 감독, 지도자 은퇴",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9BLWFwSGxJdkpBWGtCZmdRT2M1SGoxeURRY1AwWmphR2ZmSEcwOE1TTFI1TDJBVUVyUlZpTzNmcU4xaTNKS3hrcGFpQmRGY0NlWVF0QVBYWXJMYUXSAWBBVV95cUxNSVcwYWVjS195Wm56TElSWGxIbnppTFBoQlpuYjFVZ0otUUdrUVhVNy0xWGJ2aXRWc01HUFFqbk1CSm5IT1ZGLURaTnJ4a21PUzVsT0p3c1JfaWxsd3pPQk4?oc=5",
@@ -63,32 +57,38 @@
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxT01DSDhNWWhlWjhYbE1jNnZxQjhnN1FsTXVMa3gxLUhiYVpkSE5ZOE05Wm1WRkM1RWNYZGtQS20zSjlhRGFJR2J3eC1fVEM5aUE?oc=5",
     "source": "매일경제",
     "date": "2026-08-01"
+   },
+   {
+    "title": "한국전이 마지막 경기…남아공 25세 국대 숨진채 발견",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBTbFZzMW5OS0VPZHRXXzRhdThMa1hJbHZiNFJXMTQwLV8xck5VUno4SmJGVTJOSmVmYmQzZjFaYjIwQWFLZmpET1hRRE4teEo5QmxaYTNqTW42Vks2OENaZFRHT1hJekp0N3dWbTdJWEFlZVAz0gFmQVVfeXFMT0c2TEQ2S2w5ZzJiSFB6VnVnQ3FvSkgzbURLZ1dwaHQ2RFdSaHFOSlpaOXNTdjYyRFNxcWVMYUhTMEFudkxPRmpCaGFrUGdpNFhLaG5JaF9DcU5JNFBPX3BDMTlxWW9n?oc=5",
+    "source": "동아일보",
+    "date": "2026-07-12"
    }
   ],
   "대한민국": [
    {
-    "title": "홍명보 후임보다 빨리 정해졌다...'이례적 공채' 韓 대표팀, 임시감독 데뷔 무대 확정! 9월 A매치 에콰도르·우루과이와 2연전 [공식발표]",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE13ZTBnNEFuWmlsNUQ4cXY2UEZYeWVaTFVrT3g2Vzl0TTBScXNPUVpza000a3JpRk1WOF9NRXpULXZuTW5CWjVMcXg1bHZFRm8?oc=5",
+    "title": "심판 성접대라니…한국 축구대표팀, 향후 월드컵 못나갈 가능성은[초점]",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0zTUVscW9RMkRGUkdJUTJyTEQ4RVVZLXp6cmpvLXdVM2dQMG1aUll6ZU9UYWFLWXZ4LVlDaGszU2VSV3ZjV3R6aXhoZmNUZlBIX1ZLRktZbWd3NjRk?oc=5",
+    "source": "네이트",
+    "date": "2026-08-06"
+   },
+   {
+    "title": "\"홍명보 너무 욕 먹을까봐 못 올렸다\" 팬들 분노한 '충격 영상' 공개...최후의 하이드레이션 브레이크 뒷짐 논란 \"자원봉자사인 줄\"",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5QNllELTBaMkRES3VMUEhiUnE5YmRMa2d0ZGljaUEtREw2TS1TWFptY3RHM1BQX1VZYndWM2h6LVVrX1NhNmI3UTIyRW1oVHc?oc=5",
     "source": "v.daum.net",
     "date": "2026-08-05"
    },
    {
-    "title": "\"감독보다 선수들이 더 바빴다\" 홍명보의 마지막 작전시간, 50초 동안 서성인 장면 공개",
-    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE52TDljaE05Unhod1ozWXU2Y2dsOWJCQzA4YzZQT243ZGtXcG04SEVXUTFzSUo3d0ZBMzU0WDFtU0xjWTJGMENGVi1ROGlEYmc4NWVrLUdRZnB3WFpsS19tN1ZB?oc=5",
-    "source": "미주중앙일보",
+    "title": "한국 축구 대표팀 임시 감독의 '모의고사' 시작된다",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1KazA4bXE2c1JyS1FINTZJYV9XQWIxZ2FNeUVJZGI2RXNNaVJuS2JfNGdVQzZZTXEyeExsajJ6Z1JoZnZxbFY5UVpBLTZnYjB2d1hUMk83bC1tVGlLdno5Vzd6ZnU5Nk9ic1FiMHNtY1lMU3BmdDZid3RqQllvUQ?oc=5",
+    "source": "오마이스타",
     "date": "2026-08-05"
    },
    {
-    "title": "[단독] '펩의 오른팔' 토렌트, 한국 축구대표팀 감독 도전···공개 채용 지원 결심 '코칭스태프 구성 마무리'",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9acTIwLWF3MVoyMEc5OGlRN1BfSVoteEVUMWZLQlZMUlJfNXlpYlZVa0EySWtIZ1VMd1VTLTRBMlRWTjd0WVRXTll2NmJ6RUVxMmVSNmxScndHZ0xP?oc=5",
-    "source": "네이트",
-    "date": "2026-08-04"
-   },
-   {
-    "title": "‘한국 축구대표팀 감독’ 유력 후보였는데…돌연 코트디부아르 지휘봉 잡은 ‘거장’",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5RNVNzMTM5QlVueXdaRldGbUZWMGRsYVhYeUhxT3ZXWW9hZWVub2NRbTNrcWFXa3l3X0k5SGk2UWphNF8xY2xyM1l3NnJqUDZ4WVJhcmxB?oc=5",
+    "title": "한국 축구 악재…10분 응급처치에도 들것 실려 이송된 '한국 국가대표'",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE94SWl5UVlJMDNlNEViZjREejdqMjlJcHUxcXFFeTc0cjhBN0c1RFZKZ05LRVhuTzM0NG9zZGt0OXUtdjl0a3V6OGpiMTlPU1l0VzNoQjZR?oc=5",
     "source": "위키트리",
-    "date": "2026-08-05"
+    "date": "2026-08-06"
    },
    {
     "title": "‘취재 결과’ 나왔다 “이강인, 한 대 쥐어박고 싶다” 한국 대표팀 ‘새 감독’ 자리, LEE 아들처럼 아낀 은...",
@@ -133,7 +133,7 @@
    {
     "title": "한국팀 맡을 뻔 했던 캐나다 마시 감독…미국에선 ’배신자’ 논란",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03WlM4UlFBaUZQRFdfajVUUjFZcllQNWc3UFVYVHpPSkxmSlNsbFhQRlJadDI3WkxaeU12VUVxdDVOODJ0cWtBVlNFM3A2cTNyS0ExS0hSMHJSSVdLRldrR3lRamJkVnc?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-06-30"
    },
    {
@@ -151,7 +151,7 @@
    {
     "title": "韓축구 역대급 천운! 32강서 '30위' 캐나다와 맞대결 유력... 또 상대는 홈 이점 잃고 에이스도 누웠다 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBsaWpUZGpUSjdDeU4xTWJyaV8wUTYxSDJYTHF0d0JkdG5VTVZwU3BuWVFBM1ZOT2VxbU92ZlpRX21MQ1EwM3ltc2FsV3ZOSFp0WVMxZ0N5cFkzVmp6M3N4STdNT2ExSFhNUFHSAW9BVV95cUxQcXFMUFZtMFFTS244TnktblJmaTdBNUpoT3B1NjJzMnZRaG9UT24yYmJfYUJDZlcxQ2lSS3JNME9BaTFzNk93dWh4N1dSQUJ2aTdnX05FN2tPektsTHFTTzllU2Q5M3d0UVRfNW9fQTg?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-25"
    },
    {
@@ -197,7 +197,7 @@
    {
     "title": "아시안게임 축구대표팀, 내달 15일 카타르와 첫 경기…21일 여자축구 남북전",
     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9SeU1LRDVvcDhBVFZtS3kxMkJlUFJmQ1Y3dEZJazNuQndjUnM3U2IyeENiQnRMbnZBRE13dzJsdkJudDVMSGtEejd1WE5TS3lLdlBVeQ?oc=5",
-    "source": "news1.kr",
+    "source": "뉴스1",
     "date": "2026-08-03"
    },
    {
@@ -247,7 +247,7 @@
    {
     "title": "\"경기에만 집중\" VS \"메시, 하고 싶은대로 다 해\"",
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ual9FZGljc2prZWV3dk43Z29ReDNSS1ZBdDdBUDBEcVhyZ3hvNDZHX05IZXVqdVA2N1J5X1NvcnR2YVhobFhKNFJCQmE1M094cHllZWFlS0I3TGtRM1p2akFyb3lmMDFNTWYyRkZUNGtXbmo4M0p0Y9IBeEFVX3lxTE90NVBrWDRvemV4VERYVnpoVktWLTJQSXhQeVM2bFR5ZjVpZWtuRUV5U2xiWm9RMUZSUl9Zbk8yRHhnY3k4bXljZ3NWSnYza1ZwSzdobWwwNHJQYmZwbGFZN0VXZVVTTXpLb3NZTHdmM21LNkFWN0lvQw?oc=5",
-    "source": "MBC 뉴스",
+    "source": "imnews.imbc.com",
     "date": "2026-07-11"
    },
    {
@@ -265,6 +265,12 @@
     "date": "2026-07-31"
    },
    {
+    "title": "대통령보다 더 큰 압박을 받는 브라질 축구대표팀 감독",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9iYlBCY082ZGZlR3B4TGZBbmNydVBNWGx3Z3ZXVUJCaGw5TkM0TkxyRHRZM0J6SWtSVDVicU1QLUFYR0JxSUczNkJENFFvSGRKZ1ZjNjMzT3JQZ9IBX0FVX3lxTE5pYVVfd04waS1pVGhMZW96VGp2SVJXSGhTUmVxZ19uQ1NQVmQ1eUh1UlJTVDRSSXplUmJJRWNsTGZUT2FZLU5zeXRPRjNOaWlkY1UxMTFFenhRRHpodmFV?oc=5",
+    "source": "경향신문",
+    "date": "2026-06-15"
+   },
+   {
     "title": "네이마르, 브라질 대표팀 은퇴 선언…\"이제 국가대표 유니폼을 벗는다\"",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5DMTU0VkdiUmZpWFAwWGdWeVNWMmNsc0tGMGNtOHpFb1ZBaGJfdVloWTEwX0lyNERWNFZpMHlkNmgyTk1Db2wxY241YnVUSE9nN2M2Y0lB?oc=5",
     "source": "인터내셔널포커스",
@@ -277,15 +283,9 @@
     "date": "2026-07-31"
    },
    {
-    "title": "대통령보다 더 큰 압박을 받는 브라질 축구대표팀 감독",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9iYlBCY082ZGZlR3B4TGZBbmNydVBNWGx3Z3ZXVUJCaGw5TkM0TkxyRHRZM0J6SWtSVDVicU1QLUFYR0JxSUczNkJENFFvSGRKZ1ZjNjMzT3JQZ9IBX0FVX3lxTE5pYVVfd04waS1pVGhMZW96VGp2SVJXSGhTUmVxZ19uQ1NQVmQ1eUh1UlJTVDRSSXplUmJJRWNsTGZUT2FZLU5zeXRPRjNOaWlkY1UxMTFFenhRRHpodmFV?oc=5",
-    "source": "경향신문",
-    "date": "2026-06-15"
-   },
-   {
     "title": "’펠레 넘어 브라질 최다 득점’ 네이마르 국가대표 은퇴 선언",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE11THpGSlVaX0d0MlkwckhfdEQzVFprMWxkaDJuVjJzWE5kLXd6Tlh1V1NTMU03ekdsTVVnb04yVzJQWmNaQlEwUlk1SDdnU1BibU80NVVFQ2NmWl8xMkNldDlnTkN3bjA?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-07-30"
    }
   ],
@@ -305,7 +305,7 @@
    {
     "title": "'월드컵 8강인데 압도적 경기력' 프랑스, 모로코 2-0 완파 '3회 연속 4강 진출'... 음바페·뎀벨레 환상골 폭발 [월드컵 리뷰] - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBoREIwVVZhWVZyNmk0TF9FcWMtTGpHMXNJcWNyWWJxZHZUbjlQdjFuOTBlNXJYSEllQ0JvVEdBa0lUVFZUa2tQYTdrSFZzOW04bEIwZXZ1aXdvVEVaMzhzYVdNVi1DRXNJLXfSAW9BVV95cUxNQmpSNGdqT2RhNEE2bjZSZTg3UC1ZcmRiVzJzWVp0TWtmUi1sVm5oMGN5cWNiTTlONnlRNTFaNzhfbHZpTFBYVGZrYnNrUC05Q25pc2xqLVNDYW83cU5HM190QkFxSGZzZWF2MTMxZW8?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-10"
    },
    {
@@ -329,6 +329,12 @@
     "date": "2026-06-03"
    },
    {
+    "title": "[줌인] 갱단의 나라 아이티, 어떻게 52년 만에 월드컵에 돌아왔나 - 조선비즈",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOT1RxWGNoZjdyRkV3bFZ3dkoxUG1hUkxVRzdrV2I4d3E3NFVHck9RLURDaXVYUU9GcEFkNG16TkgxdmhfWWotbFhqcVhGT3ltSG0yWEtUMkVuNmhORkpHaGp1cWVKSHF2REwwWkRiZkpHODkyV3FRaFNhdnlfN3RhRXpCMWltVVRGRE1lSkRrenI3QU1QeDMtMWhmM2l6Z9IBsgFBVV95cUxPOWMwbklVNEhwZ1lLSEtTcHVPX1dhdHVMdENwUnZRWG82MkdTcmFyc3lydGpTRHNoOXdYMl9DQ0ZaVDVHdDI3cEpPRlE1SlBiSVZkY1VDTHRvaGVUZU45YnJnNDZHX2Z5Z0lUTmZCYWg3cDlnZkJzQnh4cHVscXFPUS1kZjVQcm52Z0loS3p6Qy0tUFZsSGZnRXhsd3A1RDIwLVhFdGZ1WFcxWlpVM1NZRGpR?oc=5",
+    "source": "Chosunbiz",
+    "date": "2026-06-04"
+   },
+   {
     "title": "[북중미 프리뷰XC조] 너를 잡아야 내가 산다…아이티 vs 스코틀랜드, 승점 3점을 둘러싼 ‘치열한 혈투’",
     "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5JUzR3MnZnREt6NDRlM3g0dUxaTzdVM2tETkZkeEdUWEEwcmJsQ3NxNEN1V2REU1ZVMzBjU1RNQUFhWWU1M3hzUmhEbjAyTVliMnFxUXNBempMc3ZPSkHSAWNBVV95cUxNazhCX3pCYVpNS01kYTlTbDlBcXZEdk9tb1dkUUdla3NSRlpEZ3U0RF9ueXd5X1Nmb240MWtFRE1mc1RkMXdGc0h0Slk1c1lWTU1YanVGN3hYUDhNRU1rd1lCTW8?oc=5",
     "source": "스포츠경향",
@@ -345,19 +351,13 @@
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE13UVVUMFhMMnFrcVpleDVYbnQtSHpDV1NjTmJib0ZDeV9tZkYwZ3pCYzhpYXNibjdOSi0wNWJwNnFuOFdjbEwzVjNKMG56MHNFWWZncUY0M3A2RFBTcGpKY0hlZGRab3ZMMklxcFowa2JWS1NSV0hFVw?oc=5",
     "source": "Vietnam.vn",
     "date": "2026-06-19"
-   },
-   {
-    "title": "'월드컵 출전' 아이티의 국내파 선수, 극적으로 비자 받고 합류",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1YUjJKWHpzVGRUZ0VFWkFXREhKSnV1M3lmM2k0YkNSNGJHeUZtVnJ3NFJZSjBaSTg5VUVxM3VFeUV6Tkk2Yk54MGVWUVViblF0aW9ZQmdseE9ibjhIS1lJdg?oc=5",
-    "source": "news1.kr",
-    "date": "2026-06-03"
    }
   ],
   "스코틀랜드": [
    {
     "title": "\"한국 때문에 우리 탈락한다\"... 홍명보호 충격패에 '28년 만의 월드컵' 스코틀랜드 초비상 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE92djBmeTNXVlh3Ql9IbW9KcGhibmFCV2hTcUF2Y0JJLXpGUF9pYWtXbFIxNlRwMEp1aTUwU0s2VmlweGNabE5HVXc0VS1HQmRkX2hMamsxcURvYzMxRjZ4bmhFYWVWUUlDcEHSAW9BVV95cUxPTW1FZ252TzhKc3VRSFdEUXFROUVSR2lvTUFPTlBCUlE4cC1INnFYSnZ1LWpjbFlrWi1taDlWWXpGWEw1RGw4UVppQjVubk0zVDZ0MlljRktZcjlKM2lYUG05LWFiYzdDZS1lQUl5MG8?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-25"
    },
    {
@@ -373,16 +373,16 @@
     "date": "2026-06-25"
    },
    {
+    "title": "32강 진출 실패 후폭풍‥스코틀랜드 감독 사임에 우루과이 전세기 취소까지",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1zZ3V3MEFuUFhtTTRLckZYRXhyTEMwTmxSWDYySHp6d3VCTmVmdGQ3S3hjYzFtMnN0cDJvSHZxUlllMDMwWkxNQnNMenpaN0dLTDhPMC1XS2tmX1dBNnBlbzd6c0haWDBzOXZsbkRRaHhhZXZHV1kwSNIBeEFVX3lxTE1xN1ZOcmtycnRqZHkwcjZ3QWpWRGM2ZUozZFVmYzR3cXBwakQwaUhPdnM5SmM5dGp3UjMzOXdxY3VhQWdNZmZPWGhodXUtYjhJcjV5b0hDalVRN2FQRWQxLW93Z2lrWllRZ3lJZTVpZ3QwbGxBd2h4Xw?oc=5",
+    "source": "imnews.imbc.com",
+    "date": "2026-06-28"
+   },
+   {
     "title": "[월드컵] '8천명' 스코틀랜드 팬들의 야구장 침공…MLB 마이애미 '방긋'",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE15WG9ETUg1b3FqLTE0WVlLUENFNlJmR2ZzV3lKb281U1JkY0Vrei1rcEZoUjRzYWowRGJ1WDhwaU1MQVVteVRIenc5bUVkUk1qTGRBY01rUk1EeUHSAWBBVV95cUxOVEFGZk8tTV90RjNtWlUyR0RiT1hLR0gtX0FCdW1tMHhjdk1MVkVva3VmR1RHdVhfYmhPTmJtZzQxLWY2X28tZFQ1XzhkMk1IU1VibTlMeDJOZUpqbVo4bUk?oc=5",
     "source": "연합뉴스",
     "date": "2026-06-23"
-   },
-   {
-    "title": "32강 진출 실패 후폭풍‥스코틀랜드 감독 사임에 우루과이 전세기 취소까지",
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1zZ3V3MEFuUFhtTTRLckZYRXhyTEMwTmxSWDYySHp6d3VCTmVmdGQ3S3hjYzFtMnN0cDJvSHZxUlllMDMwWkxNQnNMenpaN0dLTDhPMC1XS2tmX1dBNnBlbzd6c0haWDBzOXZsbkRRaHhhZXZHV1kwSNIBeEFVX3lxTE1xN1ZOcmtycnRqZHkwcjZ3QWpWRGM2ZUozZFVmYzR3cXBwakQwaUhPdnM5SmM5dGp3UjMzOXdxY3VhQWdNZmZPWGhodXUtYjhJcjV5b0hDalVRN2FQRWQxLW93Z2lrWllRZ3lJZTVpZ3QwbGxBd2h4Xw?oc=5",
-    "source": "MBC 뉴스",
-    "date": "2026-06-28"
    }
   ],
   "미국": [
@@ -399,12 +399,6 @@
     "date": "2026-08-04"
    },
    {
-    "title": "'손흥민 스승' 포체티노, 미국과 재계약…2030 월드컵까지 지휘",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9GZ0J4V2wtSmcxYmkxWDlES3g5eGE3REY1R0JSRWhLWmhSczVkMkJ6S2dKcFQ0c3hKd1FuU2RSOW5aWEVUWVlFdVVySXNpOWpSQUpIdXh0UWoxQQ?oc=5",
-    "source": "파이낸셜뉴스",
-    "date": "2026-08-04"
-   },
-   {
     "title": "[오피셜] '손흥민 은사' 포체티노, 美 단일 월드컵 최다승+16강 진출→2030년까지 재계약 성공! \"더 발전할 수 있는 잠재력 있어\"",
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5aUTMwQ3JraHBsN21aM2p4dy1JN3FYRUE0V3d3ZmtNY1FweGoydVo1X2luc1NvU1dLWHhLU0JkWmt6aWJfRGtGUHNRLWd1a3VEcDNMc3pzUDVXaUkt?oc=5",
     "source": "네이트",
@@ -415,20 +409,26 @@
     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EUldLd2d4d3lFLU00c3ZBbTlqT0puY3JZSG5BeHRpenFCWlZpYlRjQ1QwWGpNOHNhLU1vdzNRbmZTUDdHd29sSXIwVlhlWVk?oc=5",
     "source": "v.daum.net",
     "date": "2026-08-04"
+   },
+   {
+    "title": "[오피셜]포체티노 토트넘 복귀 없다! 미국 대표팀 2030년까지 계약 연장…\"美 축구 전반에 걸친 프로젝트 담당\"",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBoYTV5SHlTaHlwZ3FmY0JzMFZSSElid245czJlRzJrMTNrM3h2ZzJKZVJrLWdVYnJ1c2dGeERxRERoWnQ0SV9xNWJDQWNkMjRkREhRV21uQmxRYjBtb0tvVFZsYmZTN1FOQzRNbGRjOGs5YUdSZnRkZFVoYW55QQ?oc=5",
+    "source": "sportschosun.com",
+    "date": "2026-08-04"
    }
   ],
   "파라과이": [
-   {
-    "title": "프랑스 \"진흙탕 싸움에 어울려준 것\" 파라과이 \"축구는 원래 이렇다\"...거칠었던 신경전",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBLWUQwcHhvTnpmMm5RZjUyR1FtVUQwRS00N0JublUxanFYSUJQRUJQRE9VOXdycDJGU3BNRGlXU25PS2Y2LTNoRy1ZeER1RU1RdDc1SQ?oc=5",
-    "source": "JTBC",
-    "date": "2026-07-05"
-   },
    {
     "title": "호주-파라과이 무승부…한국 3위 경쟁 6위로 추락",
     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1teEs5VTdqY1FMZ0Z4WFU1RzViTlE2dVkyUjVMbndfU1J0bUJ4dUdSVWZWUUQ0MU10OU9vNGx1Q05sMC1EVXVENjlwelA1QjdJc1h4cVQ2N0V3dGlvUWNLXzZNSjBZNFNJYzBIb2JvRGczRURQ0gFmQVVfeXFMTkF6WWREeGk4aklhRlIyYjhtN0NCd1BiaDZPVzAtSVNYSmtPSzhZc25oeXd4U3hJZU9vVkJ1eGFERGhES2pVWVdUOUNpbkhFWDVBNy16ZjNKY3BqV2RXZjN1SHJpaDZR?oc=5",
     "source": "동아일보",
     "date": "2026-06-26"
+   },
+   {
+    "title": "프랑스 \"진흙탕 싸움에 어울려준 것\" 파라과이 \"축구는 원래 이렇다\"...거칠었던 신경전",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBLWUQwcHhvTnpmMm5RZjUyR1FtVUQwRS00N0JublUxanFYSUJQRUJQRE9VOXdycDJGU3BNRGlXU25PS2Y2LTNoRy1ZeER1RU1RdDc1SQ?oc=5",
+    "source": "JTBC",
+    "date": "2026-07-05"
    },
    {
     "title": "[2026 북중미] \"알비로하 감사해\"...독일 꺾은 파라과이, 에콰도르 이어 임시공휴일 지정",
@@ -439,13 +439,13 @@
    {
     "title": "12년 만에 토너먼트 진출한 ‘전차군단’ 독일, 파라과이에 승부차기 끝 충격패 [북중미 월드컵]",
     "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9vdDlyaFZFYU9UZnpuMjkyVW85R0FRNlI1UFpVaVFqZ3ROU3BoS2prbEhrUVFnbjBoT2Q1TkVQcHBuSEs3b1ljNS1td0Juc3pjdGRNUFl3VlpkVzVLaTVHYURKUQ?oc=5",
-    "source": "kukinews.com",
+    "source": "쿠키뉴스",
     "date": "2026-08-02"
    },
    {
     "title": "\"호주 너마저...\" 韓축구 초비상, 오늘 아무도 안 도와줬다... 파라과이와 0-0 무승부 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CeTlwRjd1d3BkdEdCMkQzeVI3VUlpTDJGbFk5Um9oN1h4UlhnRzVhOG5WdFFoQ05QNHlvMmNfcW50bmhLeWhfX0Roc1pHNFpXLXZlNXA4eEdKXzd6MkZ6RFVoYjdObWpyclHSAW9BVV95cUxNNjFuZnZhejE4YkRlZ21WUnV5S3FBREhGeU5Nb25hcnhWazJDX3NNWkk1WEpLLXR3ZGZMbXlHYTVTTzI2NWlwd1RlTGhlUjRWYkktcGNFVVFURGhNeXFpSmtWNG5QSEdtY28zX2lKQjg?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-26"
    }
   ],
@@ -469,24 +469,24 @@
     "date": "2026-07-31"
    },
    {
-    "title": "호주-파라과이 무승부…한국 3위 경쟁 6위로 추락",
-    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1teEs5VTdqY1FMZ0Z4WFU1RzViTlE2dVkyUjVMbndfU1J0bUJ4dUdSVWZWUUQ0MU10OU9vNGx1Q05sMC1EVXVENjlwelA1QjdJc1h4cVQ2N0V3dGlvUWNLXzZNSjBZNFNJYzBIb2JvRGczRURQ0gFmQVVfeXFMTkF6WWREeGk4aklhRlIyYjhtN0NCd1BiaDZPVzAtSVNYSmtPSzhZc25oeXd4U3hJZU9vVkJ1eGFERGhES2pVWVdUOUNpbkhFWDVBNy16ZjNKY3BqV2RXZjN1SHJpaDZR?oc=5",
-    "source": "동아일보",
-    "date": "2026-06-26"
+    "title": "韓 축구, 홍명보 후임 찾기 '안갯속'...위르겐 클린스만 경질 때도 거론됐던 아놀드, 이라크와 동행 지속 \"7개월 단기 계약에 합의\"",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBIaWtGMDdhdXhIYWY3RkFnT2JrbDZpMFZvZDFISU5jNHJCdXBTeFc3aGlqbVhlNER0YjhySmFURkJSMnVPOU9POWdVNnE1Wk9MR2ZuSmptczlYTk01SVMwNmotWTBYX1B5YkFGaXdaZk5XUU1ISkE?oc=5",
+    "source": "Your Field",
+    "date": "2026-08-06"
    },
    {
-    "title": "\"호주 너마저...\" 韓축구 초비상, 오늘 아무도 안 도와줬다... 파라과이와 0-0 무승부 - 머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CeTlwRjd1d3BkdEdCMkQzeVI3VUlpTDJGbFk5Um9oN1h4UlhnRzVhOG5WdFFoQ05QNHlvMmNfcW50bmhLeWhfX0Roc1pHNFpXLXZlNXA4eEdKXzd6MkZ6RFVoYjdObWpyclHSAW9BVV95cUxNNjFuZnZhejE4YkRlZ21WUnV5S3FBREhGeU5Nb25hcnhWazJDX3NNWkk1WEpLLXR3ZGZMbXlHYTVTTzI2NWlwd1RlTGhlUjRWYkktcGNFVVFURGhNeXFpSmtWNG5QSEdtY28zX2lKQjg?oc=5",
-    "source": "mt.co.kr",
-    "date": "2026-06-26"
+    "title": "'충격' 월드컵 뛰고 '마약 파티'라니... 호주 국대, 하룻밤 새 과속 2번 \"코카인 환각 질주\" 역대급 기행",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE82d0Y4WWd0MWFCdjgxMHpqYjVEYzNsVmxaX3AtMWJzX3Q3MTRKVDgxdHlkTEh6WXNMWDFEQVJycWtfYVpGQmFpZWotVlFQUVlMbDNzRDk5TFR4YjVFVWtrT3Z3VUsxNzRVNkpUYnpGTm1tNm5pdmc?oc=5",
+    "source": "starnewskorea.com",
+    "date": "2026-07-24"
    }
   ],
   "튀르키예": [
    {
-    "title": "'24년만 진출→역대급 환송식' 튀르키예, 부끄러운 2패 탈락 [북중미 월드컵]",
-    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9Fa1ZoX2dQb3JDLXdjVFR1ekVRdVZoenNEaldQN1pJQURwdFNrZUFvOENqUzFkQlIxQUs4SFcyc3VlU28wNlE?oc=5",
+    "title": "'세상에' 이런 월드컵 출정식이 있다, 수천대 차량 호송 행렬에 입이 쩍…튀르키예 대표팀 역대급 출국길 화제",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5iSUNBLWtTYmZSRF9pcjZjNkxiSEJfSGFsVEJTWVZTcFRNQkdOcVowMHFCVWRJTVBxVFVBTmtXRG5zNUNGT3c?oc=5",
     "source": "v.daum.net",
-    "date": "2026-06-20"
+    "date": "2026-06-03"
    },
    {
     "title": "대표팀에 “귀국하지 마라”…온 국민 응원 받고 떠났는데 두 경기 만에 짐 싼 튀르키예",
@@ -529,19 +529,19 @@
    {
     "title": "'명장' 위르겐 클롭, 독일 축구대표팀 감독 부임…2030년 월드컵까지",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5uZEg2eFBIdHZiNTdWeGVRWVQ5Zl9FNmFOMU5hbUNTMkt2U2szMFdTSnlhalBxTDlSNGl5c2VGT3lQOGJNQkZER3lkbGVFUVdmb1czUGJpQWplX3J3VHRxMQ?oc=5",
-    "source": "news1.kr",
+    "source": "뉴스1",
     "date": "2026-07-24"
    },
    {
     "title": "김민재·노이어 등 독일 축구명가 뮌헨 선수단 제주 입성",
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE45dWtfUlFyMFRtT0QwZDQ5eHVHcURmRXZKNk56ZkhjelZQQ2lOdEhjODZjY0lmU09VbU5ZSTFWNzBiNG1uZHloblFQOHZqU2lpVEJyaDBXb1YyOEVC?oc=5",
-    "source": "뉴스핌",
+    "source": "newspim.com",
     "date": "2026-08-02"
    },
    {
     "title": "독일 축구대표팀, 나겔스만 후임으로 '명장' 클롭 감독 선임",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8tcUZpS2lpWHZjX0RkTXpkbmJ4TzBMNG9xVnlQdVh4MWdFRUI2VFVmM1l1MEVVdDl6a2dMdElHLXJOQmt3Q0dUekRnbHF4UE1STkRWOVU4cjlwekpNUFp5cdIBeEFVX3lxTE5aYUNnSXhnWEM3MHdEWkMwY3JWYXoxUVR4U2VuaFlES3VrVmhPc3daOEtqRF9mNl9QdFZvNy1MRU93OXAzc3dqR3hBWUNnU0V5a2x5XzhPWGJadnVGeU94dVdjdlhMeFZTczl1cGs3NVdmTDdLb0VYTw?oc=5",
-    "source": "newsis.com",
+    "source": "뉴시스",
     "date": "2026-07-24"
    }
   ],
@@ -567,7 +567,7 @@
    {
     "title": "'한국 전 감독' 아드보카트 일냈다, 인구 15만 퀴라소 월드컵 '사상 첫 승점'... 에콰도르와 0-0 무승부 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBZOGlTR0l5VF9GQ1ByUS1ULTJpWW8zN084bkhxWDJoVjM3d2ZDVU1ibGh2VGRjVm5EVGxuMkRSdEszTmpqbERtS0pYUW1OV1gxazdSM2drTFNkZVFXWnJLdGlDX2Q4NlpVa1HSAW9BVV95cUxQTG12T3JNTGFjV1VYTVZkNi1qOHRVMFVUT1NycDZxeG81VElDOE5mNlY0SUZlU0pBUS0wRlM1UTBaTDNXS3pMUlctbHNTOExFT2NGSTdGNTd4aDNRQ05lUEFwbmtyV1phbkZnbU92MlU?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-21"
    },
    {
@@ -611,15 +611,15 @@
   ],
   "에콰도르": [
    {
-    "title": "‘감독 공석’ 축구대표팀, 9월 에콰도르·우루과이 상대 A매치",
-    "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPSzFlNE00akNVQV9SZ3ZLel9VR3YxR1NqQl8wems2TUhDUmNxT1l5UzFGVzBteFk3UVpHOWEyY1E4bXcySkdvSFp0bVo1dXJxTllQTWZMSlRuN3MySF9jaDRJNXpjVXZSOFN2dTJiLXdETjN2SUJiVGc4VFQwWi1CUGRfdlRUN293RzI1by1kMlpWZ0M5NkFtb0Y5elNnb3R4MGZXS3BlSVVVWG1RTVE2a1V0ZVVhWXNGWFQydXoyNE1yUmRkWjIxMmhLcExlNzFVVlNfUFp0NWVvRDRoT3RMSmRncGpqeTBuaThxVHQ2cWxFc3h1bnZRcUxmYjZvOWpfLUhNMC1sV0dRZTV6VDZNRHFVNk1pVV81?oc=5",
-    "source": "데일리안",
-    "date": "2026-08-05"
+    "title": "축구대표팀, 9월 에콰도르·우루과이와 격돌",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1PUXR6b2dPMkZTdjg0bndNUjg1aHNkeENYUUF0ZmFjRGZUZ2N1MzFRSVlDUGY0c00zcTBVblhPT1hrSzVrcUt2ZnRpemhoZDN6NEozUEc2TFc0VjJiUzRyaFhibzNnZTIxQkxmYQ?oc=5",
+    "source": "경상일보",
+    "date": "2026-08-06"
    },
    {
-    "title": "감독 없는 축구대표팀, 에콰도르·우루과이와 평가전",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1Vei1FUzAtQ2ZmVDVtMWxDNFFWYkgwQkZpMF9vT1BCNlZTZ0tzbXlQZ21xOHFxSkE1dC1MLUJFd2VsOC1MVHc4dG9rbEF1UDNTMHFTUlktazc1UkRDMmMxaENrZ3l2Snc?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "title": "’감독 공석’ 축구대표팀, 다음 달 에콰도르·우루과이와 평가전",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0yRlZzQWlONzJra1lhT19LLV9GUUUtYXVwY29Xckc1RjlHSDhLNjJpR2EwZndGQ3FSd1BxTE9iMUdWM0Z0N0s3S2dNT01NQUtHYk5PUFVwZUROUHhPZHI2SUd0QXNxbW8?oc=5",
+    "source": "연합뉴스TV",
     "date": "2026-08-05"
    },
    {
@@ -663,7 +663,7 @@
    {
     "title": "텐 하흐 이어 슬롯도 네덜란드 감독 후보서 빠졌다…독일전 55일 앞 여전히 감독 공석 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5ScFF4NFBkYW9peEZmQl9hY1hncTYwTzlfX3F5d29VWk1KN25Gb1Q0QjF6b2dkcW1KTzZrMVM4V2tudDAxcUlLdW5wRk9hZVZrckxMYXlRb3JJc056SFg1YUJHRlcydWdxMHfSAW9BVV95cUxORDRxUXVYWEp2WEJUZ2o2djVQNVl6SUVPZmxRb0x3VTZKMjl5RzZKcEdOWHBLUmNfYThwNmJNUWZacTJ5SEJtVF84REVGdUJCdFZ1dVM2cFZZZkFoZEQtVWlsZDY5MXZjTnNKT1E1bjg?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-08-01"
    },
    {
@@ -693,16 +693,16 @@
     "date": "2026-07-31"
    },
    {
-    "title": "부상 털어낸 도미야스, 크리스털 팰리스 입단…EPL 복귀 눈앞",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE85Y0pLZ1Q2WWJJRGZPdzh6ZDhySXd1M2JfYU9jc05tNV83T3FkSVp4UVBUdzFoNFlibkF5MHk4WGY0QzVHM3ZoeFRfdEppZFpvVU5tcUZodWMxM09xS1AwQkY4RUd4cHc?oc=5",
-    "source": "yonhapnewstv.co.kr",
-    "date": "2026-08-06"
-   },
-   {
     "title": "韓 축구에 굴욕 안겼던 감독, 일본 A대표팀 사령탑 사실상 확정... 올림픽대표팀 '겸임'",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5DTjdVQ3FmSGxQeWx0MzZhWTUwa200XzJsNThKbTBlVmFLU0xZYUJWdzJrcWVDTWpNdXA4SG5xOGdJWXRnTFdwLTQ2dFZJWlBtQkNpUWxwRmcyM1N1VGZQWWRlbnlvOGNXRmx3c29hQ0xlbHZIbUE?oc=5",
     "source": "starnewskorea.com",
     "date": "2026-07-15"
+   },
+   {
+    "title": "부상 털어낸 도미야스, 크리스털 팰리스 입단…EPL 복귀 눈앞",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE85Y0pLZ1Q2WWJJRGZPdzh6ZDhySXd1M2JfYU9jc05tNV83T3FkSVp4UVBUdzFoNFlibkF5MHk4WGY0QzVHM3ZoeFRfdEppZFpvVU5tcUZodWMxM09xS1AwQkY4RUd4cHc?oc=5",
+    "source": "연합뉴스TV",
+    "date": "2026-08-06"
    }
   ],
   "스웨덴": [
@@ -741,7 +741,7 @@
    {
     "title": "한국 축구대표팀 사령탑 후보였던 르나르 감독, 코트디부아르 복귀",
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9SWUs3WGFaMHloYVZJVUQyaXBHMVFYRlhnVlc5Zy1ONDFVeEFRcVpfN1lEMlpLT1FDR294SklmMmNUSm5mM2VRa0lCV2ZPUXFZay1hM2RoN2FUdERwYWlYa3BtVGVVY0VQS0Z2ZXZVZUNMSzBVV0NtZtIBeEFVX3lxTE9SWUs3WGFaMHloYVZJVUQyaXBHMVFYRlhnVlc5Zy1ONDFVeEFRcVpfN1lEMlpLT1FDR294SklmMmNUSm5mM2VRa0lCV2ZPUXFZay1hM2RoN2FUdERwYWlYa3BtVGVVY0VQS0Z2ZXZVZUNMSzBVV0NtZg?oc=5",
-    "source": "newsis.com",
+    "source": "뉴시스",
     "date": "2026-08-05"
    },
    {
@@ -772,21 +772,15 @@
   "벨기에": [
    {
     "title": "\"벨기에 축구 대표팀 새 사령탑에 네덜란드 판 보멀\"",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9ORkJ3Ymo4U2V6TXpYcEdjMHJyc0NVSWdoQ093NEROUDFKUTVjTUNZN1RvWWE0Ui1YQ2luSlhtTlZpZzloTzV3eXVza1A1bTg?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-07-22"
-   },
-   {
-    "title": "판 보멀, 벨기에 축구대표팀 사령탑 되나…현지 언론 \"계약 임박\"",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE52RHZqam9HeXBEV0RJTmRkSW91OGZPZ3FJZGJUVkpjaWRaYXBXTUx1SlpleFF5T2FDZ2pVOFBYNVFUMEpqNlJtT3NLTlpVVGxhNi1pTTBwbmFrdWJIcWVrTVlqb21KZ00?oc=5",
-    "source": "yonhapnewstv.co.kr",
-    "date": "2026-07-22"
-   },
-   {
-    "title": "'월드컵 8강' 벨기에 축구팀 감독에 네덜란드 '전설' 판 보멀",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBpb2pOcXFRM0QxbW42YWNzMXhxbHlOdHV2elhjZmJJRzNUbzRVUlI4QzVYWGdTRGowVGZmelhvM0RzWWJtRnotMjg5UGZnN2c1QlZHcEJnU05Jb00?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAzeFo2Qzd6TjZJQ0Myakktb0J4ZUhhd3l0eExmNVQ1MkpwVEFUclZTN1hmUzBHSUpXaldiZkVtaTV0aEpDOHBNNl80cVRreFN4RjM4NFduSkFNeknSAWBBVV95cUxQZG9MdzlCclc5Rk9fVE9oM2xiV2xrYWJfdnJQWmlhODZjdzhhcVpkWnVzOHdEbnRzTHpjR19zazNBZURaOEZPQmlMOV9TeFlWQ0JVdGJTdWp5TlNGQ2dxMjE?oc=5",
     "source": "연합뉴스",
-    "date": "2026-07-25"
+    "date": "2026-07-22"
+   },
+   {
+    "title": "축구대표팀, 32강 가면 벨기에와 맞붙는다",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Jd1lWRWd6RzA4RDA2ckZET3pkbFpOOEktS0IxaWZkN29LNlhQTTFJX1FxNjhvSm94TzEtNGFOOFNHNTlidlcxbE9VRGxINmw3OEVvdFc1dHhjU1E?oc=5",
+    "source": "KBS 뉴스",
+    "date": "2026-06-27"
    },
    {
     "title": "축구대표팀 수비수 이한범, 벨기에 명문 브뤼헤 입단",
@@ -795,10 +789,16 @@
     "date": "2026-08-04"
    },
    {
-    "title": "축구대표팀, 32강 가면 벨기에와 맞붙는다",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Jd1lWRWd6RzA4RDA2ckZET3pkbFpOOEktS0IxaWZkN29LNlhQTTFJX1FxNjhvSm94TzEtNGFOOFNHNTlidlcxbE9VRGxINmw3OEVvdFc1dHhjU1E?oc=5",
-    "source": "KBS 뉴스",
-    "date": "2026-06-27"
+    "title": "미국 선수 '출전 정지 번복'...벨기에 “FIFA, 오늘 만우절이냐?” [앵커리포트]",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5qOUx3TXBKcU52RXlmNHpLRGEzNnlONFowR3BQeWpTQi15YlZiUlg1OFlwUkF5eldoSUxuRmlrMHF2REdjRnpLUWhSM1BxdUpLSktGNFM0V2N5MXVOMEE?oc=5",
+    "source": "YTN",
+    "date": "2026-07-06"
+   },
+   {
+    "title": "[월드컵 리뷰] '메리노 천금 결승골' 스페인, 벨기에 2-1 꺾고 월드컵 4강 진출 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5wT1dWLVcyaVF6enAyT0F6RTdZcEt4YVAtdmVjN0ZtR0JEMjdWMW9Zc2FNWHJiYVlmWjJIaDBSczBQNGNqeFFoU1hRb2xCeVFEUTJDcVYwSWlsRkxXdkRva0REOHItZjlJcUHSAW9BVV95cUxPclFMa0h4Z24wbFdOZ2pBUW9EbGRvRTl0ekd1VzRndUgwXzNWcVlFXzhCelBSM2lhMS1MWmJ3SmxHUTFNQkx2SUMwMU9hckNpWTlZU3JOLXFpRUg1UlFpNWtfSnUxOUY4ZmJKVTRuLWs?oc=5",
+    "source": "머니투데이",
+    "date": "2026-07-11"
    }
   ],
   "이집트": [
@@ -817,7 +817,7 @@
    {
     "title": "이집트, 92년 만에 월드컵 본선 첫 승리…살라흐 1골·1도움",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1CZkIwMk5tb0FHWWVremt4WlFFVmJBamJ4Z2FoZ2M2dnF4cXZLY0tCN1o0Vk9HNnVMNTkxNkoyTkJQcVNxVW8zVFAxSlhFRFFrVTB6LTRnMExUMXZPUTdBdHRFR3BPMGs?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-06-22"
    },
    {
@@ -829,7 +829,7 @@
    {
     "title": "두바이 재벌의 통 큰 선물…이집트 대표팀 전원에 자동차 선물 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GcF9LenR1QllaeV8ycEJJc2p5Y05YU1JQWG81aFppRG1ma28yODRkcFYzU05EVEMtVWZvY2RlWUM5VlBwb3F6WVJMbkN3Uk9wMkdKMVNWanlXWTYtbmJtRDJnaDNRdmo00gFuQVVfeXFMTnNGOTFtT0xjRkpxYmtiT1BKMXZMTWpHcEpmNDRORTJlb1cyT2UxcVVGSEoxUjJDS3hYb1BZaFFiRlRPcUgwY0lQV1VWeXJlbGs5emdRa0ktNjRHODBsTXgwTGJWaFFJWTNacVhxZUE?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-14"
    }
   ],
@@ -855,13 +855,13 @@
    {
     "title": "\"경기 끝나면 쫓겨났는데…\" 이란 대표팀, 미국 이동제한 조치 완화",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4wSHZ4ZUFya05Gc2FQMVgyYVRwYldQTXhLZ1ZnaS00dHc0alV0LXJUUDNsYnBJTlEtelY4ZDg0MHRBU29JZmVKaVFCMzJ3UzAyTFFSSzg2aHlTdWlkZFZRSXFCQ2NxQXM?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-06-24"
    },
    {
     "title": "이란 대표팀 우여곡절 끝에 미국 입성‥\"설렘 아닌 긴장감 느껴\"",
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBCTS1XSXJQWnhRTTl0M09RTFFVYWFZUUswYVYzY28tQzRVcExjZ0RXcXdmZXNUNlduejlGOFg4b2Ixc1hKeDVabVU0QWNOa0NXOWxpeE1wcC1WekhaNXB0V0dLVzJndlV4QU1KOGxhLVo3WGhnRTdHa9IBeEFVX3lxTE1QR25reExjeDkzYld1YnVPWkV5ZjhLRXZrQkYwZWNvVUJiaGx5RkFlbm5uTlRXb08tUWNrTlNQOWhmek5vQjJlRjJCaGRxcHFjSXhMaENOOUdkT2FXbnNydFhXWFZZWTZrTFdVWmJBZUl6WlVRR2lLdg?oc=5",
-    "source": "MBC 뉴스",
+    "source": "imnews.imbc.com",
     "date": "2026-06-15"
    }
   ],
@@ -887,17 +887,23 @@
    {
     "title": "우여곡절 끝에 월드컵 첫 경기 앞둔 이란, 뉴질랜드전서 승리 정조준[월드컵24시]",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1mOV9oMzlOaXRWY0NSeG9ndVFDZ3hmVVdZM1EwSkZFTy1scmRFakliNG5pazcxWVd3SVJVa29zSDNCRHh6ZnUzSHF1MDIzdG9rQWoxM2xsVVQxS0QwVExVRdIBeEFVX3lxTE90eGlQcWRmT2J3eGthSURVV0xvOWgtLWdCbGY5S1hsWlJtVFdtMkFKdmdIamRXWVZsZElEYktYb1VLeE5GY05scHdJZnhpQXE5YlN3QTdRQzVsSG5pNnhNUk5YYjZzdE5MM1NuRzkyUGU3Q2hzaEtOdg?oc=5",
-    "source": "newsis.com",
+    "source": "뉴시스",
     "date": "2026-06-16"
    },
    {
     "title": "'92년 기다린 월드컵 첫 승' 이집트, 뉴질랜드 3-1 꺾고 새 역사... 살라 1골·1도움 폭발 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAyNkNoLXhGcVdHZkF2R0M3N3ZvWHhaRDFucWNhTm8yazdULU10WHMzLUxfOTBRSnFJeDhjWVNXZXRaRGx0Y3dGcGJEbUpMLWt4Sm5PUjdhajhEWTlwenZwam4yTjNWOF85U0HSAW9BVV95cUxOdDJKTkNQa3I4SUp2dmRQWEt4QU14c1gtREJpeUxIOVlYZmNFSW1ROVZJbmpNcTJ0cGNVYVB2YkNDSWtYQ1NzVFUtZkdnVjdVT2U3dkdQSVYyNklHUFEtNzR0WE8xbXZMU1FYSVNIWGs?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-22"
    }
   ],
   "스페인": [
+   {
+    "title": "'西 국가대표 무려 9명' FC 바르셀로나 '월드컵 우승 스쿼드' 그대로 구현한다 \"맨시티 MF, 로드리 영입 추진\"",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBaRFZoakZPZk5nWEFKUEM0bmRWUGpjNUwzNVB1aWVPcEp6Rzd3aFp4b3BaTEdaNXRUNWRSeHFYTnVBNkFHVTJYbkpMZkkwRWxHbnJndmtubm14U2k5UFZIMw?oc=5",
+    "source": "네이트",
+    "date": "2026-08-06"
+   },
    {
     "title": "[기자의 시각] 스페인 축구의 부활에서 배울 것",
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSmRLQ0h3S1VCejN6STR6UlhMNjVlTHhXSmJfOGxfS2NOdkZTdEVYNks3a2loZEQtOXFhazNnVFlYblZxSlZUek9tRmYwMjd0b18tSU1keWhWZTBDTlJFWmdkVTk0al9Pem5KcV92elNicHdvQlJKc04wLTJjNUhlUjlxSVRLaTk4WlBMTnN3?oc=5",
@@ -911,22 +917,16 @@
     "date": "2026-07-20"
    },
    {
-    "title": "“월드컵 우승하면 감독 얼굴 문신”…스페인 선수 약속 지켰다",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1URmVVajVLMFVhMDFRMzV3OWRFWXVLZ1FaYU01UTJDQWhwQUhXQklDQnRKTkM3RFNVd01fcmE4OHgwaFNZVTBIM0pBSTFrQUVmSEpTd2Vn?oc=5",
-    "source": "joongang.co.kr",
-    "date": "2026-07-28"
-   },
-   {
     "title": "“춤추고 헹가래하고” 금의환향한 스페인 축구대표팀…환영식에 200만 명 몰려 [현장영상]",
     "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9XVmlCc0g2RnBWdDJWWDJHQjZxcjZjYW44b1lyZ0FKcmRidmlFVUJTd2JKZHNJZGtsOEl6Tm5vNnItcm5HOWhEOFlkZzJEV1BmalhWQzlyR0V1NVllaWfSAWNBVV95cUxPOFVXSTcyQm41UEw2dVZ4U1pKTjIxWU5oVm5FRVNCaDBnbHZUbGxCWFVPTzd4ME5lcndISTlnQ0JIbnNaZzg4TzBQRUhWYUxEb3daVVpPNS11MHI3NlpMbDRTTDg?oc=5",
     "source": "채널A",
     "date": "2026-07-22"
    },
    {
-    "title": "월드컵 우승·골든볼 품은 로드리…발롱도르 가장 강력한 후보?",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB4bEY4VWktdkt3alk3Tnp2MzVnRjFZSzB3aUhlSDJlTHJ6aXpvZjhDcGxEbGtFaHB0SG12M0lJVXdLYXE1bWhFZUZvT2tTOW8?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-08-03"
+    "title": "“월드컵 우승하면 감독 얼굴 문신”…스페인 선수 약속 지켰다",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1URmVVajVLMFVhMDFRMzV3OWRFWXVLZ1FaYU01UTJDQWhwQUhXQklDQnRKTkM3RFNVd01fcmE4OHgwaFNZVTBIM0pBSTFrQUVmSEpTd2Vn?oc=5",
+    "source": "joongang.co.kr",
+    "date": "2026-07-28"
    }
   ],
   "카보베르데": [
@@ -943,16 +943,16 @@
     "date": "2026-08-05"
    },
    {
-    "title": "우승팀 스페인이 유일하게 꺾지 못한 그 팀…'돌풍' 카보베르데 보지냐, FIFA 팬투표 드림팀 골키퍼 선정",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9wY0kxcFQxb3JUZzh1bUNBakVOMDNfNV9xazB5R0FuVVBsSzNQVmtldVA5U1IzNjNnaTkxY1owSFNDRnROXzlTTDVxSk9QZUp1emc?oc=5",
-    "source": "JTBC",
-    "date": "2026-08-05"
-   },
-   {
     "title": "감독은 모로코, 보지냐는 칠레서 새도전…클럽에서 이어지는 카보베르데 동화",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTzRYUFplM0F1bHBzSERJN1dqMmxTV0FCdUNPVV9lOURFZ0xDVm9ndzhQNlp0dkJwY0xYLVBsSFJONUxWb1JiMDl0MDdrQmlGWGNUeVN3?oc=5",
     "source": "네이트",
     "date": "2026-08-06"
+   },
+   {
+    "title": "우승팀 스페인이 유일하게 꺾지 못한 그 팀…'돌풍' 카보베르데 보지냐, FIFA 팬투표 드림팀 골키퍼 선정",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9wY0kxcFQxb3JUZzh1bUNBakVOMDNfNV9xazB5R0FuVVBsSzNQVmtldVA5U1IzNjNnaTkxY1owSFNDRnROXzlTTDVxSk9QZUp1emc?oc=5",
+    "source": "JTBC",
+    "date": "2026-08-05"
    },
    {
     "title": "보지냐 월드컵 영웅 ‘특권’…‘본명 대신 별명’ 허락받았다",
@@ -971,7 +971,7 @@
    {
     "title": "남자 U-23 축구대표팀, 아시안게임서 사우디·카타르와 D조 배정",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFcV9WODRid1lnV0ZxSjF0Unc4QnBjOXg5eGZvV2VCc3I2SHZKWUJQdE4yLWppOHBrRmFHTmZlc2JaQnRCcEJPdmpxQWxqZ2EtQnJFMkh1eXFhNExCVXF0QnZVU0cxZlp4SUxQSklZY21GQURtbHfSAXZBVV95cUxPZHpobFFqazJ4aHJaaGxGMVVmUG9oWloxVEFwRld2V21UaWV5ZC10UGFSX3h1a2twMzlEcnRqSlRHUjc0ZFdOTzE3am0zSTU5NS1UOEhMT3BmTGhTR3lUanl2eExJTjlPcjVyYUN3Y3N4X0lxR213?oc=5",
-    "source": "MBC 뉴스",
+    "source": "imnews.imbc.com",
     "date": "2026-07-23"
    },
    {
@@ -989,21 +989,21 @@
    {
     "title": "[오피셜] '한때 연봉 500억' 전 세계 축구 감독 1위 올랐던 만치니, 이탈리아 감독 복귀 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE4yRlVFd3kzeWh5ak5HOWxRcWVEdkxISkRQMGdLZFRvaDlLSEluMEcybVROVE1MU0NDcXhlZlNBWHBrak9Ib2Rqc3g5UkM1aGRybXFwaVFjdGlWOUxyWVotTTZTZVQ2Qnp2amfSAW9BVV95cUxQN21od2N0MUhpbnFtQkdfd2VzbGlpZDI3VUNIenhqWXJsV21jYi1DQ244MWlCYzJneEhvVEVUYVI1Qi1lMUFBY0hiVi1tZ1F1Y0FqN05HUi1SS0x3blUzaUZCSWFUUDRFZzhsVjE1MTA?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-29"
    }
   ],
   "우루과이": [
    {
-    "title": "감독 없는 축구대표팀, 에콰도르·우루과이와 평가전",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1Vei1FUzAtQ2ZmVDVtMWxDNFFWYkgwQkZpMF9vT1BCNlZTZ0tzbXlQZ21xOHFxSkE1dC1MLUJFd2VsOC1MVHc4dG9rbEF1UDNTMHFTUlktazc1UkRDMmMxaENrZ3l2Snc?oc=5",
-    "source": "yonhapnewstv.co.kr",
-    "date": "2026-08-05"
-   },
-   {
     "title": "선장 없는 축구 대표팀, 우루과이·에콰도르와 9월 A매치 성사",
     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQYmUwa2ZwbnRrQlNzaVBBblBhd05nczFQaV9QRkxzeGRqbkhMV09qX3NvaUg1dV9fZ1VmQ05wdE9vLVVBeDZTQ1hNX3RNaFZxM2VFdHhfTWkzcTRVcU1OYzNza3VzcjJXeDR1VWNUbDF3b1VoTU9SQkpLOUZhaDF0VFE2dw?oc=5",
     "source": "조선일보",
+    "date": "2026-08-05"
+   },
+   {
+    "title": "’감독 공석’ 축구대표팀, 다음 달 에콰도르·우루과이와 평가전",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0yRlZzQWlONzJra1lhT19LLV9GUUUtYXVwY29Xckc1RjlHSDhLNjJpR2EwZndGQ3FSd1BxTE9iMUdWM0Z0N0s3S2dNT01NQUtHYk5PUFVwZUROUHhPZHI2SUd0QXNxbW8?oc=5",
+    "source": "연합뉴스TV",
     "date": "2026-08-05"
    },
    {
@@ -1045,41 +1045,41 @@
     "date": "2026-07-12"
    },
    {
-    "title": "스페인 전 총리 “프랑스 축구팀에 프랑스인 없어” 인종차별 발언으로 뭇매",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nRk8xY1diXzBDbjMxQmpYVmpuM3N0SWhzcUVMbHh4bTN4eFc1ejY3a2ZLREpKOVR4NjBsUFRpdFJLZmZwYmpHZVYzZV81eEw0THYtNjNmUDlyQdIBX0FVX3lxTFBacncyZUVucjcza3l1MFpnc0F4TVM3NVdjRXRpLWJTSHJtNVRBV1ZickdTdkVNaGlmWkViYTRtMXFDY3g3YlRhb1lKeHBOZktzVTJteGRqT21zYXMzY204?oc=5",
-    "source": "경향신문",
-    "date": "2026-07-13"
-   },
-   {
     "title": "프랑스 축구전설 지단, 대표팀 새 사령탑…\"모든 걸 바칠 것\"",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tU0ZOTkMyRURxYXhXYmpJZktlc3ZfdjNqM0xUODd2SmxhakROeV9fZDJvR082LXR6Tk01ZDVrZktHaUZkMmtBd1FoMGF0UWFTOEVneVVxdVQzYjjSAWBBVV95cUxPNEtCYjJLNUdzUTJZOVVDNTJoRkcxYkNYbFI0a3NtQXRhQkV2a0d0X2F2MC1nOWd3WG9MQzVSMGFQckJqUGpNX1c0WE0taXpTNXlXNnNwZTdibS0wR1gwUmw?oc=5",
     "source": "연합뉴스",
     "date": "2026-07-28"
+   },
+   {
+    "title": "스페인 전 총리 “프랑스 축구팀에 프랑스인 없어” 인종차별 발언으로 뭇매",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nRk8xY1diXzBDbjMxQmpYVmpuM3N0SWhzcUVMbHh4bTN4eFc1ejY3a2ZLREpKOVR4NjBsUFRpdFJLZmZwYmpHZVYzZV81eEw0THYtNjNmUDlyQdIBX0FVX3lxTFBacncyZUVucjcza3l1MFpnc0F4TVM3NVdjRXRpLWJTSHJtNVRBV1ZickdTdkVNaGlmWkViYTRtMXFDY3g3YlRhb1lKeHBOZktzVTJteGRqT21zYXMzY204?oc=5",
+    "source": "경향신문",
+    "date": "2026-07-13"
    }
   ],
   "세네갈": [
    {
     "title": "한국, 월드컵 조 3위 경쟁 ’7위’로 하락…세네갈 대승으로 32강 경우의 수 감소",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MQ0RWczhFY3dfdFZZT0x6NE9YNXk4YTd3M3R1a2Zya1FvVi1Pdzh6NUFaZktiLXZmc09FcDJhWWl0em52T0J5VnRaRG9rbnFhR3hiZlp3d1NBN3Q1cG1zZE1PUG9UWGs?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-06-27"
    },
    {
-    "title": "[2026 북중미] 韓처럼 ‘1승’하고 32강 진출한 팀 있다…프랑스·노르웨이 사이서 살아남은 세네갈",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1UbS1jUTIwZUR1WGwtOElJT1lHQnBVY3U4eDVpRnJrVkhVSEw4ajFHbFYxOVFRTzlETDl1ektxZ0ozTFBSVXN0YWRQZ2tPOFU?oc=5",
+    "title": "\"이 감독 아래에서는 대표팀 물러나겠다\" 파격적인 보이콧...세네갈 MF, 벨기에전 패배 후 선언",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBJcXlkaTFaSXBKVkV0U19fU1EwWHdSeGVua0pCZ0NKV2pTb2ZvN1VUUy1aaHljZjVhaEY0OWI0TGVTdmdBMXNkNFMzcFlqTmM?oc=5",
     "source": "v.daum.net",
-    "date": "2026-06-28"
+    "date": "2026-07-02"
    },
    {
     "title": "32강 충격패에 선수단 갈등…세네갈, 타이우 감독 경질[월드컵]",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1EeUZ3dUUzdDJfOEJyUld0RUdYOGVETjh2RmhySDB1RnhKb25WX1JlZ1pTSktNMkVRZFExcUcySUN3QlBEOUFMbE5zVVpJVlM1dzE2M2NSM0FHdXdaSlBoeg?oc=5",
-    "source": "news1.kr",
+    "source": "뉴스1",
     "date": "2026-07-12"
    },
    {
     "title": "“‘세네갈 팀닥터가 산부인과 의사?’ 충격 폭로”…월드컵 탈락 뒤 황당 책임 공방 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE96WG9nSlZjZnRjcktSd3FJN3I0MHJtTmFTanJ5UEQ2VjRlY2JscGMwS1dneFZUMHdGQktHNzhHTWQ5WEc2R2JqU2M2LVdlY3hjM2d6SldQbHpuZ0FhalRHVTd2MEJpblNqakHSAW9BVV95cUxNM1NVbm9vMzlCdkFYLWlHR1ZucVkxQVJSTGM3cVJCOEgwMER1cEZ4Z1QyRUJwYVRrYWpJMXE3SGc3Q1VwbnV4c1VzWE9OMU0yS3gxZzBwX0haLXR0WlhCa05LY0RYMEEtX0ZyTHVMZ2s?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-18"
    },
    {
@@ -1097,16 +1097,16 @@
     "date": "2026-08-06"
    },
    {
-    "title": "韓 축구, 홍명보 후임 찾기 '안갯속'...위르겐 클린스만 경질 때도 거론됐던 아놀드, 이라크와 동행 지속 \"7개월 단기 계약에 합의\"",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8wdHR2N004RFFxTzR6NlRFV0prVThQSmpWZG9Wd0h6dFBaM2F4T2g5czBOZjFqejZYdmFrWE02Q1IxYThGWUF1Z3BtT09JZnJjdGlibVJ4djZ1REtTcnJlMWZ3UURfb3ZzSzlSOHlPYjJ6eVBkYW4zdmgzTQ?oc=5",
-    "source": "Your Field",
-    "date": "2026-08-06"
-   },
-   {
     "title": "40년 만의 월드컵 문턱인데···이라크, 감독·선수 손발 한 번 못 맞추고 경기 치를 판",
     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZa3FJUTF0TjM2clV3eWxfNE9mejZJajV4bjZ2TFpIMy1GSldER3NMSFVUM3VuQVhaUlFVbU9LT0FQSDh4RnBrWFo3MU1HR0ZWTVJLY0NpWVRiQdIBX0FVX3lxTE1vY3AwckJFSW1oOWN2b0FhdjZJZjNZOUpCVEh3czRISEM2SS10TnQ5ZEhpdjFyU0dzdl94RHNMR1gwR3lHU3gzLU12eGp5Q3E4YkY0V0R5TGRhNUFZMnV3?oc=5",
     "source": "경향신문",
     "date": "2026-03-05"
+   },
+   {
+    "title": "韓 축구, 홍명보 후임 찾기 '안갯속'...위르겐 클린스만 경질 때도 거론됐던 아놀드, 이라크와 동행 지속 \"7개월 단기 계약에 합의\"",
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8wdHR2N004RFFxTzR6NlRFV0prVThQSmpWZG9Wd0h6dFBaM2F4T2g5czBOZjFqejZYdmFrWE02Q1IxYThGWUF1Z3BtT09JZnJjdGlibVJ4djZ1REtTcnJlMWZ3UURfb3ZzSzlSOHlPYjJ6eVBkYW4zdmgzTQ?oc=5",
+    "source": "Your Field",
+    "date": "2026-08-06"
    },
    {
     "title": "[FIFA 월드컵 팀 프로필] 이라크의 프로필과 팀 히스토리",
@@ -1137,7 +1137,7 @@
    {
     "title": "브라질 잡은 노르웨이, 이번엔 잉글랜드...노르웨이 감독, \"부담은 저쪽이 더 크다\" - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5RbS1RRldMTUVqTE1WcnVLWFZZSU9VbTdVWWNROGsxVy1kS2lMTjVmb0xqQ3o4U1FPNTdqcU9Pb0pKb3h3bDZqeW5hSG1UNjY0V2tfZzQwcm5UWmFzX1FpdlYtcEhfaHcyRlHSAW9BVV95cUxNbUItZGdWbF9TdjZGTjlNeVJvRTc1dUx4R0VZV0o3VHozYVdLSjdNY0hYSjdRT3FWYmh2bnQxTmVNR3NfaDNXa2FQM1VYc0VCVFF6NU1tbGltQXVtVlhxV1pvamF2a0VFcG1KODFJeE0?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-11"
    },
    {
@@ -1149,7 +1149,7 @@
    {
     "title": "'최초 8강 진출' 노르웨이 축구 대표팀 금의환향",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IQkpCLWg1LTZJMVpwLWNfd1lRWkhiQ2hFZTgzMURZREVkZ01OQ2ZtcHpYNVF5NUFVQjQ3MnBPQ18wWWtuazNsZUVwX280NEYyazlQT0NkdnltS1hUdTRYWQ?oc=5",
-    "source": "newsis.com",
+    "source": "뉴시스",
     "date": "2026-07-14"
    }
   ],
@@ -1157,7 +1157,7 @@
    {
     "title": "은퇴 선언했던 '악몽'의 장소‥10년 지나 '신화' 꿈꾼다",
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5JS21ZQmxaUHd4c21CdHNhWjVuaTlOb3NCUnZKaS1oMUxuaDBaUUlnb0tjLWNJNUxUTldQbkdUazkyNDd2Sm1hR1F1TlNiMGdFU2FwMVpYSUJLVWdjOU9fVlJNdExpOUxxajdSODByQkJ1Q1VaaUtVcg?oc=5",
-    "source": "MBC 뉴스",
+    "source": "imnews.imbc.com",
     "date": "2026-07-19"
    },
    {
@@ -1169,7 +1169,7 @@
    {
     "title": "스페인, 16년 만에 월드컵 우승! 연장 혈투 끝 아르헨티나에 1-0 승리... '라스트 댄스' 메시 '2연패 무산' [월드컵 리뷰] - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE50SnM1SDlvQ1ZrUmEyczhmUXl4RFpmU3ZpVERSeFc0LVh1OW1DeEt4bzhxX3FpZEszM0ZOaVRma0kxMG8zRzFpY1NyMnJUNmFfbndXRnl4Y1RpUE5WSFRxQnl4cGpHV3lKb2fSAW9BVV95cUxPTFR0QjdMNEFnUS1QSVhSbXZCV3ZoSmRpR1VVODFDcEZfdUUtcmVnV2RDWWQyLXJGYTdlbFRUOXd5bXdna0duTVlZZThDYzZ3V1pFdUJYQXVpNnIyWTRtaTVDRExCUFVRdnFYZ2x1X2M?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-20"
    },
    {
@@ -1188,12 +1188,6 @@
   "알제리": [
    {
     "title": "[월드컵] '출정 선물'…알제리, 페트코비치 감독과 2년 계약 연장",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE44d2czZHBGdkp0ejhRcHdLTTQyaDlkOWNEZmtkZWhVRm8tdTlJYTdJUUxKRGhQcEFSdVlGOERybkhLUTRHV2FnM2V5ZFUzZXpIUDFwcXRSV0c1eWfSAWBBVV95cUxPY1ZxWk11TWN0ZjBDb2ExWFRNN29POU1sNnZzZ1RhNGx5cVZfb0N1LWVRQUtDQkZsOFRTb0lHSW1aVDU5SG9POXEzaHpNVUg3U0xTRU9oV2lxd2ZjR3V4YkU?oc=5",
-    "source": "연합뉴스",
-    "date": "2026-06-08"
-   },
-   {
-    "title": "[월드컵] '출정 선물'…알제리, 페트코비치 감독과 2년 계약 연장",
     "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFAxQlhIVC1ETjk2eTZiOFRYRWZCeEYtSE1wOGsweG0xWmNzVnBZeWl5aVV4QzNkWDFkNFV5ZDV5cG1GRFZScXc?oc=5",
     "source": "v.daum.net",
     "date": "2026-06-08"
@@ -1201,8 +1195,14 @@
    {
     "title": "오스트리아, 알제리와 비겨…'32강 좌절' 한국, 월드컵 최종 34위[월드컵24시]",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB4YXRpTEw0b0VEa01xSGpySkRJYTdXRldJdUpBSVpYWUhZcURid2loYjJIY3Rma3lDUnBCaUFmTVJMcTNQOHFKcFNDcWZ4aW9OQnJMYk96MGtwc2p4a1pFN9IBeEFVX3lxTE0yQzlEb01tel9RWTFhaVd2X20talZReFhxaEhSUTlzTkJoUVZqQ3VFYVd3cHd0Q09lWDZOYWpYbTRzVGpzY2E1M3JtVkhYWDJxYWlaTXVEX3dLVVhoTHNESHNzeGdhQXRiSVd2OEd5YmtnM2NpMnpJNQ?oc=5",
-    "source": "newsis.com",
+    "source": "뉴시스",
     "date": "2026-06-28"
+   },
+   {
+    "title": "[월드컵] '메시 해트트릭' 아르헨티나, 알제리 꺾고 2연패 시동",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1PeDN0MGJGX1JOMlpES3dFLWVuTjdzaHBUVEo3UmliX2ppYmFHUWRWdEZXWXZOQWNEXzhia2Y4M2xaczEwWDFfc25FbXkwMnZpcm9uT2E5dXhjb2fSAWBBVV95cUxQdGhpREQwRXJGRVVwWnAwQll2ZVIyVGVRTjJnSlNnVGNhU2c1cEdHcXFQQnpOaEJoQTlJX3Z3VzB1NjZzd1pSZzBnQXFXcHhiZzY2ZFJCbnM5aEtGLVNhZm0?oc=5",
+    "source": "연합뉴스",
+    "date": "2026-06-17"
    },
    {
     "title": "알제리 ‘마스크 골키퍼’가 ’마에스트로’ 지단 아들이라고?",
@@ -1213,7 +1213,7 @@
    {
     "title": "[AI프리뷰] 2026 월드컵 J조 아르헨티나-알제리전,'라스트댄스' 메시 활약에 주목",
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9vR3lPV1hObnUxVTRIUHc3S3VMcnhWN0htWUhEajl6M0FoMEwyMmp4Y3R4TFg3QmVGMDF5dmRfNUNOajltVUFQN1NFdEpUQVNkSC1JVjZheHV5QzFP?oc=5",
-    "source": "뉴스핌",
+    "source": "newspim.com",
     "date": "2026-06-16"
    }
   ],
@@ -1259,7 +1259,7 @@
    {
     "title": "야잔의 요르단·15만 인구 퀴라소…월드컵이 처음인 나라들",
     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBQM3VLNGhURFc3bV93Q0xIa3lZTFVNdGFiRVhCWS1LbmdPSzFLenZhQnExMnY1bWtsdWVQV1B1cGNYTHZxQ3JTb3ZITllYOWlsdHYxOQ?oc=5",
-    "source": "news1.kr",
+    "source": "뉴스1",
     "date": "2026-06-02"
    },
    {
@@ -1269,16 +1269,16 @@
     "date": "2026-06-06"
    },
    {
-    "title": "오스트리아, 요르단 꺾고 36년 만에 월드컵 본선 승리",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9FNmlHVC1aRXBLREt2VmNDYnRwR3Y2LUJXdWpJSE51cFdZU05KWHFjUk8wOU10SF96TWhEaGlnVzFFRGZrVmwwUDUwNHN6NjQxS2NOdDFfc0tDTHJZdVcyZUh6OWUwbWpr?oc=5",
-    "source": "2news.co.kr",
-    "date": "2026-06-17"
-   },
-   {
     "title": "오스트리아 대 요르단 경기 프리뷰 및 예측: 아시아 대표팀, 이변을 노린다",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQUFUQ0tobk9EN2FCQkFHaUNYcFZaZTRfTFBYcUlXNEVzeFNhcHplTFhJZE9UWEFyTTVabFljSVJ1YnMxdktRblU0UDdFeDNXQmt3RzBWM2R0aHpkX3E0WDZsN2lJUHA5ZDBBalVUSXFSSHU1YmJuS3laLXA3bmZxcEVVOE5NemVod2Uxc1ViRi04M0NOdkFJLWhFa05iTGc?oc=5",
     "source": "Vietnam.vn",
     "date": "2026-06-16"
+   },
+   {
+    "title": "오스트리아, 요르단 꺾고 36년 만에 월드컵 본선 승리",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9FNmlHVC1aRXBLREt2VmNDYnRwR3Y2LUJXdWpJSE51cFdZU05KWHFjUk8wOU10SF96TWhEaGlnVzFFRGZrVmwwUDUwNHN6NjQxS2NOdDFfc0tDTHJZdVcyZUh6OWUwbWpr?oc=5",
+    "source": "2news.co.kr",
+    "date": "2026-06-17"
    }
   ],
   "포르투갈": [
@@ -1291,7 +1291,7 @@
    {
     "title": "[월드컵 리뷰] '호날두 라스트 댄스 끝났다' 포르투갈, 스페인에 0-1 패배 '월드컵 8강 좌절' - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAtbEJxY2pTWk5ncXhyZTVVSEdaLVN4ZklhNVQ0TUZOdENOd3VnTE0zNjk2SFVUc04yUGV4OGpoTldIS0RjODl5Sm9lamhxeXo3cmpyUXVuejZzYmNnRzREWWxZUVlrVjNQUHfSAW9BVV95cUxPR25uUzZnNFExSWhXWEZPTUl5cHVaQ3BHRG43QXJiT25XZXFxel9rOHAwd1pBZkJpTThHNFlKYndvbkdULVB3N2F4c2NqVHJXNXZjMFRaeXA0Ymp0Q3JwX0hCVXJnOWxHNkNHZmJmclU?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-07"
    },
    {
@@ -1301,16 +1301,16 @@
     "date": "2026-06-18"
    },
    {
-    "title": "황인범, 포르투 공식 데뷔전서 우승…포르투갈 슈퍼컵 정상",
-    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAydG9tUmVXTVA3aUZxbmd1SFkzSHpKUDY1eWU0anpKU0ZBODkyeDBfNktNa3JZdmRRdDhoTDRXc0V3VEp4LWVMQ1g2b253dXNIWldnWnhqcTVxRlJjekhqNkxOUzNCa1pZeTVSYktpVWlfNHJQSmVz?oc=5",
-    "source": "조선일보",
-    "date": "2026-08-02"
+    "title": "“황인범, 용의 구장 입성” 옷피셜 떴다···포르투갈 명문 포르투행 ‘3+1년 계약’ 등번호 16번",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1xXzRJSktOSGFJWk94YWFhdElfVHpaR2FSMVBzMHNYMW9UMDlDdU9yeXNnRGxFZlRESEVZdld4Vi1MWG1TX2daZ21SSW9YTWx2eldDSTBOYTltd9IBX0FVX3lxTE9GeVZSVUhkcktGemtDQzFrLUlldTl5OWxZZFlYOHBNTG9iZFR0WDFsbjRfaTZtazlVRXhHOHNfTlo5bFJPMlF3bFJEZE1abVJnNE9lYUxhdGRhR2FYZ0Jn?oc=5",
+    "source": "경향신문",
+    "date": "2026-07-21"
    },
    {
-    "title": "[월드컵·리뷰] 호날두 ‘멀티골’ 포효…포르투갈, 우즈베키스탄 맹폭 ‘5-0 대승’ 분위기 반전",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4tRENYLTVqZGRCbkVQOGJTOVFPRjZ2V3liVTJPR2xsTG5lLXA1aFJtaWNSeFlKTkE4Z0FFNzBzTlpnUUZ2V0lzQmptelNlNnNqMkF1WF9jbGZZQdIBX0FVX3lxTE9CS1loRmJsS2V2d3lHVWl2NXZSUmhKRGJMMlY1WkxMMlJGb0hrajA3em5HMy1WZFd2eF94YzVWSGlRZ2ZZbVJCZTYxYTlHUGpOZGRJRWdrUWtQa3NpLUNB?oc=5",
-    "source": "경향신문",
-    "date": "2026-06-24"
+    "title": "'16강 탈락' 포르투갈, 헤수스 감독 선임…\"호날두 소집할 것\"[월드컵24시]",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5nbWJhZjh1RkhLVjNBM3lDWlFPOEYzVmk0dXFPYVNocmkxSXJ3U19fSXRkSlo5Rkw4SENKVDJuemdBc2xsaWszWDFpdUlGS19VSzNuMkJ6WkEzcUx0d2RUdTRKOWU2N2JhUnlPLTJULUF4UVFSRU8wLdIBeEFVX3lxTE5nbWJhZjh1RkhLVjNBM3lDWlFPOEYzVmk0dXFPYVNocmkxSXJ3U19fSXRkSlo5Rkw4SENKVDJuemdBc2xsaWszWDFpdUlGS19VSzNuMkJ6WkEzcUx0d2RUdTRKOWU2N2JhUnlPLTJULUF4UVFSRU8wLQ?oc=5",
+    "source": "뉴시스",
+    "date": "2026-07-11"
    }
   ],
   "콩고민주공화국": [
@@ -1355,7 +1355,7 @@
    {
     "title": "'임시 감독' 한국축구 대표팀, 9월 에콰도르·우루과이와 평가전",
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9aRS1BMW5oX0V5N1UyckRxVjhseGlsNDBGYUUwaThtNGJEaWtLSUdGcGRpXzU5Tzh4NlpTanNZb2FMQ0J6RXp0T2R2aVdqd1pDZUduUl81amVjQXpx?oc=5",
-    "source": "뉴스핌",
+    "source": "newspim.com",
     "date": "2026-08-05"
    },
    {
@@ -1367,7 +1367,7 @@
    {
     "title": "축구대표팀, 10월 A매치서 베네수엘라·우즈베키스탄과 맞대결",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBEMGJLLUxjcm53V2JtLW9kWGtJbmJ0dnVtVEhyLVBSTGdUazFDRkc1ZW9MSjZzOTkwSTAwNEphZ1V1N2dGY2hNOURyZXN5UXhfb2Zid2hJeUZBZExqeTBpaHJvMThzZU0?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-07-29"
    },
    {
@@ -1393,7 +1393,7 @@
    {
     "title": "'빛바랜 역사적 첫 골' 우즈벡, 세계의 벽 높았다... 콜롬비아에 1-3 완패 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBOcWV4OVJrN3JCX1pYUy1NejBTRnBqS0U1Vk9tSWJkWWdEcHVXVXlxT3FIZFA2TE93ZVVDdmZ2QXptYTNLNkpjS2pUWkxhdW1lOUhKZXd3TUJEeGlBVUM2VnlXaUpCcWlkTVHSAW9BVV95cUxOY01Jc0JjYjh2YlpUMWx0dlh5U0g2X0FELTRfaTU4UjBjT3hsZ1JwQUR0NmhiU1hHTHlxM0E1UmZjMjNpdWp5cWczenJNVlo1WFhfelBicVUwZEZTS3doVW9CTGgzYzl0WE43R3ZiRHM?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-18"
    },
    {
@@ -1423,15 +1423,9 @@
     "date": "2026-08-04"
    },
    {
-    "title": "\"대표팀서 은퇴하니 너무 편안해\" '탈트넘→맨시티 신화' 손흥민 절친 워커, '2부' 추락에도 축구에 진심 또 진심",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9MMk4weW1uQllSLS12ZkNOeEk4Z1NwX0h4bGxpd1ppRFhpZUswa2ZWMEpwemtPXzVXN0R0Z3lCMW9OLVpzSnJ5NExRU00ybW9NLU5XMkNQeGhtTVVFb0RvdDN4VGQybm9ub1BHR2lGOXhRRFp3WkF0ZUdyNlhMUQ?oc=5",
-    "source": "스포츠조선",
-    "date": "2026-08-06"
-   },
-   {
     "title": "'10골 대폭발' 잉글랜드, 프랑스 6-4 제압...사카 해트트릭 월드컵 3위 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BSzdoSGNMMExrcllRR1pvcEk5MlJwaXY3aG4zOTRpUUE2bWVac3lqZFZOQnVmWDNOQ0FfTl9nVV9qZHBXV25yT2ttRDN6WThyRnREcnJTV1VURUNtZmlrOEpmTTB4aHBkZVHSAW9BVV95cUxQb1NhQnduUXJLNDFuZ3o5dE9uVkE1eGRvM05IcnFXUnBNelZKcDd3a0lqbU11SHV6dU80RzFkVFRYSUptMThnMDBWVjRyd0E5OEhaNG4tb2V2RXI0VUNBM2FvN1ppaWdwUFgyWHRaaGs?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-07-19"
    },
    {
@@ -1439,6 +1433,12 @@
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52MDZpR2ZmSUVSN2Nudk1kS0JrRFFUNnBoeXZXRy1aWUNBT0dLT3VzX3g3SldUZVVQbzdrVEJjS1l1aThGTEwzajczaXV5TXo0Xy1MbmwyaHRzYmVCRzVQb3gzdjVERFRSRU45aDFvQ1RHSnJEVVE?oc=5",
     "source": "한겨레",
     "date": "2026-07-05"
+   },
+   {
+    "title": "\"대표팀서 은퇴하니 너무 편안해\" '탈트넘→맨시티 신화' 손흥민 절친 워커, '2부' 추락에도 축구에 진심 또 진심",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9MMk4weW1uQllSLS12ZkNOeEk4Z1NwX0h4bGxpd1ppRFhpZUswa2ZWMEpwemtPXzVXN0R0Z3lCMW9OLVpzSnJ5NExRU00ybW9NLU5XMkNQeGhtTVVFb0RvdDN4VGQybm9ub1BHR2lGOXhRRFp3WkF0ZUdyNlhMUQ?oc=5",
+    "source": "sportschosun.com",
+    "date": "2026-08-06"
    }
   ],
   "크로아티아": [
@@ -1457,13 +1457,13 @@
    {
     "title": "’월드컵 32강 탈락’ 크로아티아, 14년 만에 빌리치 감독 소환…“명가 재건“",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8zcXJoZGdUSlBscWY3YV80VEpzR3ZVVTJ0ZUNkRi1KT1VrQ1RPcU1VUjRTQnZnUHZxMjhGNk9TcmpnMEEzT2FPZTN5MERJUENZWThKN2ZBdUhoTHFHZFM0bG1ScmlJekk?oc=5",
-    "source": "yonhapnewstv.co.kr",
+    "source": "연합뉴스TV",
     "date": "2026-07-14"
    },
    {
     "title": "FIFA 북중미 월드컵",
     "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE13S2Y1RWFFVW5scHFNV19CVGJHdXR0aTBBNjA1bWlFc0toMHhXWVZqRkwwSlBLbXdQaEhRX1l4QU1MczdEUUtydVJsUWNTbHVpRzdaOVFQRENWUVRQY2tZRGxUQWw?oc=5",
-    "source": "뉴스핌",
+    "source": "newspim.com",
     "date": "2026-07-14"
    },
    {
@@ -1489,7 +1489,7 @@
    {
     "title": "'韓 축구 주먹감자 악연' 케이로스, 부임 두 달 만에 월드컵 승리 지휘... 가나, 파나마에 1-0 극장승 - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9DZFBZOUtIcVlSdzFUdHRrN1RLOUNES3BZNDhSZ2tEYUJoR2tGWjlxa2N3bmZWaVhvdjkxQ3QzQjVCLUJJdFQzMzZrT3l2Vm9aNHJwZDNlczlFWXY3Tjh4eDR4dmdxdDVpckHSAW9BVV95cUxQNmtKTHRrZExyLWt4YV9PWlliNVNYUjFoVWlWVXhueHJ5aEJvN0stYW1DMHJrNVJYMU42a0NXYzJzcXIwN01KU1d2U0daYVlNdUc1ek1HRDJMaEJaZHNIdjE1WTBDTEh5VzRmTks2VXM?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-18"
    },
    {
@@ -1501,7 +1501,7 @@
    {
     "title": "'평가전 4연패' 가나, 월드컵 두 달 남기고 축구대표팀 감독 경질",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE95Y2haLWE3cFNxY0dTNDk0RFNPUkdpOEduYWlZdlRsUl9zWkR2SG9pTGNvX0YyaWRSQkFGM05XRWhTdENsRWg1OEhLR2E4UkxDVHY3NWpKZmhYMHAyWGNVTTRKdEFaVElTMm9BUEoycnhMWHhJaVHSAXZBVV95cUxQMkhnMGJYZnpodTJXd1FvOXlfcTRsbmNJUWVLY3NNRGlEM1U1NzF2UkwzNk9MUHJWeTJ3bEUtbWhfYm1BQ3R4LV8wVHk3UlZWNFppWXdmdUxHRzNMM3RldEJEY3V1RnROamYzdnRYeHhMTF9yTmp3?oc=5",
-    "source": "MBC 뉴스",
+    "source": "imnews.imbc.com",
     "date": "2026-03-31"
    }
   ],
@@ -1509,7 +1509,7 @@
    {
     "title": "월드컵 '5번째 탈락팀' 나왔다, 8년 만에 나선 파나마 '2연패 조기 탈락' - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5vRndxOVlLTFc1MmJtcFJ3OGxSQ2xrUlRFbDFocFEzbnhEeUFvMTc5TElrOHYtTDRJRVl4bzBOUmdZbUxYbzZsdzVvNThvM0tndE5wWXIyN0xhdUIwbzN6RzVLZ3NHdzN2dnfSAW9BVV95cUxOMGNzak8zWnEtblo5amhmMm9JSTRQeV9uMTFxaUlGSC1makdNc2xicGpKZHNza3Q2WnFyTl91TktMeHJmbnY1RHB3bjItNldMN3JQUzU0dm5hRzE0TzN4N3ExSm43M2pJa3Q2elQtMkU?oc=5",
-    "source": "mt.co.kr",
+    "source": "머니투데이",
     "date": "2026-06-24"
    },
    {
@@ -1527,7 +1527,7 @@
    {
     "title": "[월드컵] 잉글랜드, '탈락 확정' 파나마에 2-0 승‥'케인 3호 골'",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA2Zm1TNU5sUFBYc3gtcnpVQU8tSmREeERPZHVGNFotTDYtcHdYR3dpcjNvTkx1djl4Zmk2c0xJeTlQQzhSUEp3S3ppekRuOUNOZWFtUU1JWGpJRW9uNndiUlpiWnNNdnotUWQ2MDA3cVBGMDFEb0HSAXZBVV95cUxNOW42b3JjbnhRdGdkbDRnLVRPNjdXN2JBV1JxMEEyRXNhSEM3R2FCVF9fODlxOGFBelJ6cFYzX2p1S2c0ZzdldlZxaV9QcE1wdUFUWk9PNnNHdmFXWHlwbk9PLUtqbTdiend1SXI1bjdpb1JocHJR?oc=5",
-    "source": "MBC 뉴스",
+    "source": "imnews.imbc.com",
     "date": "2026-06-28"
    },
    {
