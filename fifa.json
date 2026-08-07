@@ -1,5 +1,5 @@
 {
- "_ts": 1786059366175,
+ "_ts": 1786145790231,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -1190,34 +1190,34 @@
    "chR": 0
   },
   {
+   "code": "THA",
+   "name": "Thailand",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
+   "id": null,
+   "r": 91,
+   "p": 1255.32,
+   "ch": 4.52,
+   "chR": 3
+  },
+  {
    "code": "CHN",
    "name": "China PR",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cn.svg",
    "id": null,
-   "r": 91,
+   "r": 92,
    "p": 1254.81,
    "ch": 0,
-   "chR": 0
+   "chR": -1
   },
   {
    "code": "BHR",
    "name": "Bahrain",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bh.svg",
    "id": null,
-   "r": 92,
+   "r": 93,
    "p": 1254.41,
    "ch": 0,
-   "chR": 0
-  },
-  {
-   "code": "THA",
-   "name": "Thailand",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
-   "id": null,
-   "r": 93,
-   "p": 1253.53,
-   "ch": 2.73,
-   "chR": 1
+   "chR": -1
   },
   {
    "code": "BEN",
@@ -1275,8 +1275,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
    "id": null,
    "r": 99,
-   "p": 1229.5,
-   "ch": 2.3,
+   "p": 1230.67,
+   "ch": 3.47,
    "chR": 0
   },
   {
@@ -1450,24 +1450,24 @@
    "chR": 0
   },
   {
-   "code": "IDN",
-   "name": "Indonesia",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/id.svg",
-   "id": null,
-   "r": 117,
-   "p": 1157.5,
-   "ch": 0.36,
-   "chR": 1
-  },
-  {
    "code": "SDN",
    "name": "Sudan",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sd.svg",
    "id": null,
-   "r": 118,
+   "r": 117,
    "p": 1157.22,
    "ch": 0,
-   "chR": -1
+   "chR": 0
+  },
+  {
+   "code": "IDN",
+   "name": "Indonesia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/id.svg",
+   "id": null,
+   "r": 118,
+   "p": 1157.05,
+   "ch": -0.09,
+   "chR": 0
   },
   {
    "code": "TOG",
@@ -1635,8 +1635,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ph.svg",
    "id": null,
    "r": 135,
-   "p": 1099.53,
-   "ch": -1.42,
+   "p": 1097.74,
+   "ch": -3.21,
    "chR": 0
   },
   {
@@ -1765,8 +1765,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sg.svg",
    "id": null,
    "r": 148,
-   "p": 1062.05,
-   "ch": 4.1,
+   "p": 1062.5,
+   "ch": 4.55,
    "chR": 0
   },
   {
@@ -1865,8 +1865,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mm.svg",
    "id": null,
    "r": 158,
-   "p": 1010.2,
-   "ch": 0.81,
+   "p": 1012.09,
+   "ch": 2.7,
    "chR": 0
   },
   {
@@ -2035,8 +2035,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/kh.svg",
    "id": null,
    "r": 175,
-   "p": 921.09,
-   "ch": -1.23,
+   "p": 919.91,
+   "ch": -2.41,
    "chR": 0
   },
   {
@@ -2135,8 +2135,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/la.svg",
    "id": null,
    "r": 185,
-   "p": 880.96,
-   "ch": -4.07,
+   "p": 879.06,
+   "ch": -5.97,
    "chR": 0
   },
   {
