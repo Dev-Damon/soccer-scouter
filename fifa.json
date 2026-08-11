@@ -1,5 +1,5 @@
 {
- "_ts": 1786405065420,
+ "_ts": 1786491487627,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -1180,24 +1180,24 @@
    "chR": 0
   },
   {
-   "code": "ZAM",
-   "name": "Zambia",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/zm.svg",
-   "id": null,
-   "r": 90,
-   "p": 1255.82,
-   "ch": 0,
-   "chR": 0
-  },
-  {
    "code": "THA",
    "name": "Thailand",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
    "id": null,
+   "r": 90,
+   "p": 1256.73,
+   "ch": 5.93,
+   "chR": 4
+  },
+  {
+   "code": "ZAM",
+   "name": "Zambia",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/zm.svg",
+   "id": null,
    "r": 91,
-   "p": 1255.32,
-   "ch": 4.52,
-   "chR": 3
+   "p": 1255.82,
+   "ch": 0,
+   "chR": -1
   },
   {
    "code": "CHN",
@@ -1635,8 +1635,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ph.svg",
    "id": null,
    "r": 135,
-   "p": 1097.74,
-   "ch": -3.21,
+   "p": 1095.2,
+   "ch": -5.75,
    "chR": 0
   },
   {
@@ -1645,8 +1645,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/my.svg",
    "id": null,
    "r": 136,
-   "p": 1088.17,
-   "ch": 1.95,
+   "p": 1090.72,
+   "ch": 4.5,
    "chR": 0
   },
   {
@@ -1865,8 +1865,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/mm.svg",
    "id": null,
    "r": 158,
-   "p": 1012.09,
-   "ch": 2.7,
+   "p": 1010.68,
+   "ch": 1.29,
    "chR": 0
   },
   {
