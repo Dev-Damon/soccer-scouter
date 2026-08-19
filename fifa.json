@@ -1,5 +1,5 @@
 {
- "_ts": 1787096447166,
+ "_ts": 1787182868934,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -1180,24 +1180,24 @@
    "chR": 0
   },
   {
-   "code": "THA",
-   "name": "Thailand",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
-   "id": null,
-   "r": 90,
-   "p": 1256.73,
-   "ch": 5.93,
-   "chR": 4
-  },
-  {
    "code": "ZAM",
    "name": "Zambia",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/zm.svg",
    "id": null,
-   "r": 91,
+   "r": 90,
    "p": 1255.82,
    "ch": 0,
-   "chR": -1
+   "chR": 0
+  },
+  {
+   "code": "THA",
+   "name": "Thailand",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
+   "id": null,
+   "r": 91,
+   "p": 1254.93,
+   "ch": 4.13,
+   "chR": 3
   },
   {
    "code": "CHN",
@@ -1275,8 +1275,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
    "id": null,
    "r": 99,
-   "p": 1230.67,
-   "ch": 3.47,
+   "p": 1232.52,
+   "ch": 5.32,
    "chR": 0
   },
   {
@@ -1645,8 +1645,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/my.svg",
    "id": null,
    "r": 136,
-   "p": 1090.72,
-   "ch": 4.5,
+   "p": 1088.88,
+   "ch": 2.66,
    "chR": 0
   },
   {
@@ -1740,34 +1740,34 @@
    "chR": 0
   },
   {
+   "code": "SGP",
+   "name": "Singapore",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sg.svg",
+   "id": null,
+   "r": 146,
+   "p": 1064.3,
+   "ch": 6.35,
+   "chR": 2
+  },
+  {
    "code": "LES",
    "name": "Lesotho",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/ls.svg",
    "id": null,
-   "r": 146,
+   "r": 147,
    "p": 1064.29,
    "ch": 0,
-   "chR": 0
+   "chR": -1
   },
   {
    "code": "BOT",
    "name": "Botswana",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bw.svg",
    "id": null,
-   "r": 147,
+   "r": 148,
    "p": 1063.63,
    "ch": 0,
-   "chR": 0
-  },
-  {
-   "code": "SGP",
-   "name": "Singapore",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/sg.svg",
-   "id": null,
-   "r": 148,
-   "p": 1062.5,
-   "ch": 4.55,
-   "chR": 0
+   "chR": -1
   },
   {
    "code": "LTU",
