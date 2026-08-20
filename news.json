@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-20T20:56:09Z",
+ "updated": "2026-08-20T21:24:36Z",
  "byTeam": {
   "멕시코": [
    {
@@ -79,6 +79,12 @@
     "date": "2026-08-19"
    },
    {
+    "title": "[이벤트] 우리 축구대표팀에 뜨거운 응원을!",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQTUhxRDB3V2FSV1FjT0RwMzNGSWJPU1VhT3lKcDlWaWw1Y1p5T0hKdWFadVVtelhkTTJ5ZkgtZzNqd2tXVDJqZDUyWnZCeEpnMVVBXzVYakFmLUhrYUEzc3NBMndrQUR2VjRJUzNRaTZqVTVxUElDdU8xS2R5RUtBV3FFTzg?oc=5",
+    "source": "대한민국 정책브리핑",
+    "date": "2026-08-20"
+   },
+   {
     "title": "홍명보를 처벌할 수 있을까… ‘월드컵 실패’가 ‘형사 범죄’가 되려면",
     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSUtwQkdkdjUzSThJVGtORlJkS2pOMURkVU1IY3kteFpJX3RSYjdIUFlJQXNfMllkNFdEbEYwVUpkZU9Ka0RZTjFEbHcxZWtjZ0tTQzJycTVLcHg3VVROa0FtRWI1MUtnYWxjOFNoOGVCV3RNZUNiTUxLUHUwaEtjbUJGU2d5QQ?oc=5",
     "source": "조선일보",
@@ -88,12 +94,6 @@
     "title": "’포옛 서류 광탈’ 축구대표팀 임시감독 외국인 5명 최종 면접 치른다",
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPb01zcHFxbjI0MXZpZkRkY1drYjNQYTVMZGE0TlZ3MVZRWFVqblVlS0RnM29YbmwyMlU2dTd2eEtkSEtYZU1yaDZTVmlmOTNmeUlrRUVoQ0oxbUhjLWVUMWV6a3NocGs?oc=5",
     "source": "연합뉴스TV",
-    "date": "2026-08-18"
-   },
-   {
-    "title": "[공식발표] '무려 4경기' 韓 축구대표팀, A매치 장소·일정 확정... 임시 감독 체제 진행",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE16b0c4NlJlcURsQl82U09oYWJtR0tTNGl2NWZqYUJhUmh5MkxscmFvVE1lYmFRMkVLTTRSdmFiVzNwWTVGckQwYWZyMFNEdjNqMlhxeEdha2RpemdIbThqMFRFZDRPeGEwcGhzeVR5UjUzbHFSU2c?oc=5",
-    "source": "starnewskorea.com",
     "date": "2026-08-18"
    }
   ],
@@ -675,16 +675,16 @@
   ],
   "일본": [
    {
-    "title": "한·일 축구 미래조차 격차 벌어진다... 일본 U16, 유로 예선 '파격 참가' 확정 - 머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9KbXo5dGtXamoxdVZ5ZDZ5anFVYXNiNHhDa1BldGNPWTc2UTcxWVo4TU0tUFlBTW1rU00zZ2l3ZmZ3UmpHRGVHaWlJWFB3eW5nTGo1cUZ1VHJQdE9CdWJNMGR3cERFRENDYkHSAW9BVV95cUxPU2JjczFlQ0FMWEpxdlZJckF5ZjkxWWJDT3c4UURkTEh0S2lUaWoweXRpdUdsWDJEcks2Znh0empWQS0xUzFvS0JzMVBCeHZjQkZoU0hQQUlVMWNSbzNfZjNLZ2duRjRLQ1Zha0ctT2c?oc=5",
-    "source": "머니투데이",
-    "date": "2026-08-19"
-   },
-   {
     "title": "日 골키퍼 스즈키, EPL 애스턴 빌라 이적…이적료 560억·5년 계약",
     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1wSlo4ZkV2VWVuY3dtcVlhLUZDNURZSC1OSTF5WVF1MEFpcEt1T214ck1BNmZ6Yko2dUVoa2Z2WGprWUM0RnFuM0lpajBMUU0?oc=5",
     "source": "v.daum.net",
     "date": "2026-08-20"
+   },
+   {
+    "title": "한·일 축구 미래조차 격차 벌어진다... 일본 U16, 유로 예선 '파격 참가' 확정 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9KbXo5dGtXamoxdVZ5ZDZ5anFVYXNiNHhDa1BldGNPWTc2UTcxWVo4TU0tUFlBTW1rU00zZ2l3ZmZ3UmpHRGVHaWlJWFB3eW5nTGo1cUZ1VHJQdE9CdWJNMGR3cERFRENDYkHSAW9BVV95cUxPU2JjczFlQ0FMWEpxdlZJckF5ZjkxWWJDT3c4UURkTEh0S2lUaWoweXRpdUdsWDJEcks2Znh0empWQS0xUzFvS0JzMVBCeHZjQkZoU0hQQUlVMWNSbzNfZjNLZ2duRjRLQ1Zha0ctT2c?oc=5",
+    "source": "머니투데이",
+    "date": "2026-08-19"
    },
    {
     "title": "[오피셜] '한국 0-10 일본' EPL 충격, 현실 됐다!…日 국대 GK 스즈키 자이온, 애스턴 빌라 이적",
@@ -699,9 +699,9 @@
     "date": "2026-08-19"
    },
    {
-    "title": "'일본축구는 선수육성 보법자체가 다르네!' 일본 U16대표팀, UEFA U17 유럽선수권 참가팀들과 친선전",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1zT2xERzdXU0VsRmtzR2FhdmQ1NWM1MDN1cHFvdGs2cXBveXZiVEx3RHNWRndDNk9MejJQV3pxcXJodXVBaUR4T1daZ0hiX0U?oc=5",
-    "source": "v.daum.net",
+    "title": "'일본축구는 선수육성 보법자체가 다르네!' 일본 U16대표팀, UEFA U17 유럽선수권 참가팀들과 친선전 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9wR3dBNVJTN1JRVXI4enJuYzBVank4azJXanpscmlaOGR1X3ZfM21pMnlPQTdxcmlGUGpVeXFFX2R4VjV5WlZTSGtrZjhLU1NJOFYtaEZzdnBkTndQM2FadDlkTW8tcnpVOXfSAW9BVV95cUxNMVhvbFY0VlVXVFRUbkVoOXJwZ2JoN1JDd1Zxc180dklQS3hEQ0V2Rk5XUVNaWHBmM3VVQUxaYndkaUFXdzN1UGIwdTlDaHFLeUM2MmVOTDRyUjZSSkRoU3ZNWHdYYUJKczFQZzBISDA?oc=5",
+    "source": "머니투데이",
     "date": "2026-08-18"
    }
   ],
@@ -739,9 +739,21 @@
   ],
   "튀니지": [
    {
-    "title": "'2년간 감독만 7명' 튀니지 축구대표팀, 새 사령탑에 차아바니 감독 선임",
-    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBaTGpmVWFHQWtnN2xFQ0RqSURybklpRG5yTk82S1Rob0tnZGw2WTJlSGVnWVdMYXcwcThIeVpHVGdZUUNqYnc?oc=5",
+    "title": "[월드컵] 첫 경기 참패 튀니지, 라무시 감독 해임 후 르나르 선임",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtbmVMRHNLZnY0TkRiMVQtYW54Qk40Qks0Z0tva0NuWUs2Z1hFT2lUSDFCdmJLUFRFR3B0b1VmVlViNVBFc0NwRUhiZU5xWDE3Z2VBLW1sOHhaUVXSAWBBVV95cUxQYmV1aFp3MXdoQXM0RjVHOXZRVkdzQjJ4OXFfUXZIYTRhWThpekxfcjJPQ1BXNk9LQVlVSjVTTTZzVGV4R3J1Rk43d19LTUJaa0dmbXZmM2F0QkhyaHhubGs?oc=5",
+    "source": "연합뉴스",
+    "date": "2026-06-16"
+   },
+   {
+    "title": "'일본에 0-4·2전 전패' 르나르, 韓 대표팀 감독 유력 후보로 재등장...남아공·세네갈도 경쟁",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB4RGVKNW45ODJsbW92cFNlaFI0bmt1RHhsTk1JdkRBMnVEbTIzUWpLVmI3SWhtblJGWDI4Z1QzSVpjajhCZUN3MW1vellKWDQ?oc=5",
     "source": "v.daum.net",
+    "date": "2026-07-23"
+   },
+   {
+    "title": "'2년간 감독만 7명' 튀니지 축구대표팀, 새 사령탑에 차아바니 감독 선임",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA4aHlCdVZhUWxrOXk4dDJvODVwVTR0bG9GMU9DeHNIVy1BZGlHU2V4T0J0RW5LdndZSVZUNGRGaDJMSFdsYW9XVXJnRWktRTVDdjR5ZWFfVmdWNjV0cGNKTTFHYzYtODlIc2VOUWstLVhpT0o0QmFuLW1n?oc=5",
+    "source": "maniareport.com",
     "date": "2026-07-29"
    },
    {
@@ -755,18 +767,6 @@
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5GalBrZ25UMmlZaFdUblhTVVN3em4xc3FpX1NTLVdvWk9faUhqWEIwTnRUbWFpbE9aeGRjcF81amRtNmNlWGRnNUxSZ1UwVmhMQ2hMWjg4UURGWmtk?oc=5",
     "source": "뉴스핌",
     "date": "2026-06-21"
-   },
-   {
-    "title": "일본 축구, 튀니지와 대회 '1000번째 경기'서 첫 승 도전[월드컵24시]",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MdzFDczRoWkJWRWNiSnlXcDQxejNpUEcxcmMtZGVUV0Jpdnl2Tmt1UXBvbjVPMmgyMDdDQ2xha2lVVlQ3enpXWDdGN3pwUVdJTGl0YjhIWkZHQXRMSHpSTtIBeEFVX3lxTE5Wa2wyc0hpekl5ZTJ2bnRDZms3bldoMzFNeXFoSVo3QkNfWnE5bTRMRjYxV1RuQ3RuRmNJNEk5RXRZVHZhOUtoRDA5VUNQNzhFR2doZ0NZdWlwNGFDVUdueUFjUVNNakRJMEFJdmttS0NabEIwUzVRRg?oc=5",
-    "source": "뉴시스",
-    "date": "2026-06-20"
-   },
-   {
-    "title": "\"일본을 봐, 우린 급조된 팀\".. '눈물 펑펑' 튀니지 수비수, 자국 협회 향한 작심 통렬한 비판 - 머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBKUzdTRDZ5emttaG1FVnBaY0FuQmtIWG9paFJTdkFBTzJncmxnSjlsT0k1VjlHSWFfeXhqNlhPWTNzM1YwWloxRFpPd3ZPVF9YeFlhbXYyZmw3ZnY4MGN1dmNPT05Kdm9Ub2fSAW9BVV95cUxPMWlNVmxZMFFtbmtyQWpfRXVQeTJDdXIxLV9hSnJjVmVUZkQ5cXBHS280QjVTOTFaT3Azc1JyNnVzbkU3TFlqQTBQbHY3azRpcVdMLVRGN2hPYVd1aVBTSE9MdUxsT3ZpWUpvdEVCWGc?oc=5",
-    "source": "머니투데이",
-    "date": "2026-06-22"
    }
   ],
   "벨기에": [
@@ -899,6 +899,12 @@
   ],
   "스페인": [
    {
+    "title": "이강인에 빠진 스페인…\"축구 실력뿐 아니라 마케팅도 뛰어나\"",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IVkR4WjNLeTNET25YalROSzlDLVExSDRCNUtqS3ZkT1BVVG5MM2tZbU1EUE43NnQxR1FfWmxCX1ROcm40bDgzQUpSeGluYVh4dnZtN0JxRzBGckN1eElKdw?oc=5",
+    "source": "뉴시스",
+    "date": "2026-08-21"
+   },
+   {
     "title": "“캄사합니따”…스페인 팬 홀린 이강인 ‘마법’",
     "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1wbXpqVnF0dVUyU1VQVDhVZGVKSjl1M2c2aFUtcmFZcEJ1NnpEQWpRVmtZWHR6SGY2a25EVFd0UmlsSXUtVG16UjdrT01saGNyQkdzWWs5UGJRVElyd0g5QWRkQXg?oc=5",
     "source": "한겨레",
@@ -921,12 +927,6 @@
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE51LW1FVzZzd1hwMHFpVmpUTTh4LWJJYXNkY3Q3MlczTGtuM2VURkVMaGZ0TmFfZnNGUVVIaEQydmtmMXREOEhYVTJhdWd2Y0REcVVORzlPNmY2bHZ0U3ZlaFVjUHNQZEtjUEZhdXk0TEtuS3pwdmhEa9IBeEFVX3lxTE93bTlkd1hocVpmN2t4MkZ0N3ZPdDA2a0IyWmxXUjFuclpFa2pSYUFGSUdZeGhIYjVJUjhUMGxsczJFRWlsVHB0cngzRHlEem9JckNjUDBJb0RLNXlMM3JxSUp0SkVfdkVva0toUnBmVmdtVHNPaUZEag?oc=5",
     "source": "MBC 뉴스",
     "date": "2026-08-18"
-   },
-   {
-    "title": "'스페인축구의 전설' 사비, 네덜란드 대표팀 감독 부임",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA4UXVSdTBGYlg1VTZHZ1dsZU5VVGF5N0Rwd2w4ZVZ3OENYQksweTZpNHhtb0ZiUnA4YlpwcEhfZGo3UXh2MEFCZ0t3YlFzanVreFRQYWlTSF9lME1M?oc=5",
-    "source": "뉴스핌",
-    "date": "2026-08-13"
    }
   ],
   "카보베르데": [
