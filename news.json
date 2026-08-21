@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-21T22:19:51Z",
+ "updated": "2026-08-21T22:50:00Z",
  "byTeam": {
   "멕시코": [
    {
@@ -36,7 +36,7 @@
   "남아프리카공화국": [
    {
     "title": "'한국축구 나락 보낸' 남아공대표팀 브로스 감독, 지도자 은퇴",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9BLWFwSGxJdkpBWGtCZmdRT2M1SGoxeURRY1AwWmphR2ZmSEcwOE1TTFI1TDJBVUVyUlZpTzNmcU4xaTNKS3hrcGFpQmRGY0NlWVF0QVBYWXJMYUU?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9BLWFwSGxJdkpBWGtCZmdRT2M1SGoxeURRY1AwWmphR2ZmSEcwOE1TTFI1TDJBVUVyUlZpTzNmcU4xaTNKS3hrcGFpQmRGY0NlWVF0QVBYWXJMYUXSAWBBVV95cUxNSVcwYWVjS195Wm56TElSWGxIbnppTFBoQlpuYjFVZ0otUUdrUVhVNy0xWGJ2aXRWc01HUFFqbk1CSm5IT1ZGLURaTnJ4a21PUzVsT0p3c1JfaWxsd3pPQk4?oc=5",
     "source": "연합뉴스",
     "date": "2026-08-01"
    },
@@ -181,16 +181,16 @@
     "date": "2026-07-01"
    },
    {
-    "title": "[AI프리뷰] 2026 월드컵 19일 B조 스위스-보스니아전, 32강행 티켓이 걸린 일전",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9xMHVlWU5tU1VtOTJUUTRydG44ZTZuSlY4ellId1U2ZFNHck14eHZUWEs2cVFlbDBIckV3amxLN1ZHaDBxOXNDYkNZcXdTZ0dTRERXN0JYUjh1TXBK?oc=5",
-    "source": "네이트",
-    "date": "2026-06-18"
-   },
-   {
     "title": "'골 넣고 퇴장' 월드컵 진기록 나왔다, 미국은 보스니아 2-0 완파 '16강 진출' - 머니투데이",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1DQU9CSGlJWFRWT2J5MUFOUm15LWdwdGNsb0J0c3ZQa1pVeE1pVlRYVkh6MnYxRmpiMXFraVdVY0xXM0s2cFRLZ2hPWDl1NjZUM016UVRnQ3I1dmlOVTNTZGRkUlVEcUhFc0HSAW9BVV95cUxNRVNqWFZMSjIxLTFuM2N3TEw0aGxhREtCMk5Jc2NIU3V6NnNfM3VHQmxWc1NFTHFpOVJwb3VhTHczWmhfTW9lWU5ieHpfTnRFbDhDZTlidW5qWUZkSUNreFIwZTJDdFBuZGxiZ204ZXc?oc=5",
     "source": "머니투데이",
     "date": "2026-07-02"
+   },
+   {
+    "title": "[AI프리뷰] 2026 월드컵 19일 B조 스위스-보스니아전, 32강행 티켓이 걸린 일전",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9xMHVlWU5tU1VtOTJUUTRydG44ZTZuSlY4ellId1U2ZFNHck14eHZUWEs2cVFlbDBIckV3amxLN1ZHaDBxOXNDYkNZcXdTZ0dTRERXN0JYUjh1TXBK?oc=5",
+    "source": "네이트",
+    "date": "2026-06-18"
    }
   ],
   "카타르": [
@@ -219,10 +219,10 @@
     "date": "2026-06-14"
    },
    {
-    "title": "축구 대표팀 새 감독, 외국인 선호 3년 만에 4배 늘었다",
-    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFA1VXhOUGJqaGdTYjN4QkFwZmZqZkdDbVhpNFBIMGpET3RLaW5Yd1J6Z0h0THFpN3NNRElNSkFsNkRvdkFyYkE?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-07-22"
+    "title": "'4연패 도전' 남자축구, AG 조 추첨서 사우디·카타르와 한 조(종합)",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBrWXZRbXVKelJiYS1DdXFzakNPT18tTFhDaExoVmZUSlBkQlNoVk8zNmZYeG5TVF9wVkF3UW5haFI4LVdCT2lya1o2Sml6dlJGUXF2cDJrMzNFTjjSAWBBVV95cUxQUF94VkZmYzlzM2hVNldZYXJsUUR6Vm82ZmNTM3gyUEZmTmwtQjZzd0tsYWlfZDRtSE16UlpfcU9uLXJYMkxNdk95UTRqc2ZCYS1RSGg5cGc1eUJaeFNWWTc?oc=5",
+    "source": "연합뉴스",
+    "date": "2026-07-23"
    }
   ],
   "스위스": [
@@ -451,10 +451,10 @@
   ],
   "호주": [
    {
-    "title": "한국 여자축구, 호주와 3-3 무승부…아시안컵 조별리그 조 1위",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9vZWpBSWd0Q3MyQU8wa2U2R3MtZFdxZWc0YkN0T3JfbDAtYS1tVmZ4ZU14bTI4RXRQNXBGckNCeEU5cjBUVUV3WGhnSjY1WHl0bmpuZXNTUlJWcGPSAWBBVV95cUxOMGJFdjFEUEZRaE56c2NHREtDaGJ0UmdFbS11S0t3YkRHM1pfQk1udnBZMXRydDF4YVk5Z3RJSEMtNXlWMk42eEk5SjBoTVp4bTBsM2ZQaGFVNWlscWQ4NUc?oc=5",
-    "source": "연합뉴스",
-    "date": "2026-03-08"
+    "title": "알레산드로 치르카티가 호주 축구 역사상 가장 비싼 이적료를 기록한 선수 10인에 이름을 올렸습니다.",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVlJfcXZXVVNadGU1WW9OTnpMVjNkREthN3VYSmZtSklGQkZjdzVmZjJhbThpVjhIT2xtQTNQSmFiZlQzLXJmZlZoWjB5OExPT0pxWUlCZTA3M0JkTEdOaWVHMVA4ckdYMDNoeG5RZFd0c0lFS3g5Ml9MVnJ0Q3lMN0gzYnRlWVZHdC1MY1JncUNyV2luR2x3WVh4Zm0xdFNoLWRNSmNWY3ZVeEpMeVVEcGpINlR4enlfc2c?oc=5",
+    "source": "Vietnam.vn",
+    "date": "2026-08-20"
    },
    {
     "title": "[월드컵] 포포비치 호주 감독, 2027 아시안컵까지 계약 연장",
@@ -463,22 +463,22 @@
     "date": "2026-06-12"
    },
    {
-    "title": "이란 여자 축구대표팀 3명, 호주 망명 철회…3명만 잔류",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5qM2lpZmVkVkdfVURaNThJV0FlcFVwZlB1X01ld01CSFZNbG5xUGxfazFsY1RzYWZrSUVENkl1VzJzQ2dOLUd0Qmh6ZnV1bHYzZk1reldB?oc=5",
-    "source": "중앙일보",
-    "date": "2026-03-15"
+    "title": "한국 여자축구, 호주와 3-3 무승부…아시안컵 조별리그 조 1위",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9vZWpBSWd0Q3MyQU8wa2U2R3MtZFdxZWc0YkN0T3JfbDAtYS1tVmZ4ZU14bTI4RXRQNXBGckNCeEU5cjBUVUV3WGhnSjY1WHl0bmpuZXNTUlJWcGPSAWBBVV95cUxOMGJFdjFEUEZRaE56c2NHREtDaGJ0UmdFbS11S0t3YkRHM1pfQk1udnBZMXRydDF4YVk5Z3RJSEMtNXlWMk42eEk5SjBoTVp4bTBsM2ZQaGFVNWlscWQ4NUc?oc=5",
+    "source": "연합뉴스",
+    "date": "2026-03-08"
    },
    {
-    "title": "\"호주 너마저...\" 韓축구 초비상, 오늘 아무도 안 도와줬다... 파라과이와 0-0 무승부 - 머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CeTlwRjd1d3BkdEdCMkQzeVI3VUlpTDJGbFk5Um9oN1h4UlhnRzVhOG5WdFFoQ05QNHlvMmNfcW50bmhLeWhfX0Roc1pHNFpXLXZlNXA4eEdKXzd6MkZ6RFVoYjdObWpyclHSAW9BVV95cUxNNjFuZnZhejE4YkRlZ21WUnV5S3FBREhGeU5Nb25hcnhWazJDX3NNWkk1WEpLLXR3ZGZMbXlHYTVTTzI2NWlwd1RlTGhlUjRWYkktcGNFVVFURGhNeXFpSmtWNG5QSEdtY28zX2lKQjg?oc=5",
-    "source": "머니투데이",
+    "title": "호주-파라과이 무승부…한국 3위 경쟁 6위로 추락",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1teEs5VTdqY1FMZ0Z4WFU1RzViTlE2dVkyUjVMbndfU1J0bUJ4dUdSVWZWUUQ0MU10OU9vNGx1Q05sMC1EVXVENjlwelA1QjdJc1h4cVQ2N0V3dGlvUWNLXzZNSjBZNFNJYzBIb2JvRGczRURQ0gFmQVVfeXFMTkF6WWREeGk4aklhRlIyYjhtN0NCd1BiaDZPVzAtSVNYSmtPSzhZc25oeXd4U3hJZU9vVkJ1eGFERGhES2pVWVdUOUNpbkhFWDVBNy16ZjNKY3BqV2RXZjN1SHJpaDZR?oc=5",
+    "source": "동아일보",
     "date": "2026-06-26"
    },
    {
-    "title": "손현수와 엔드릭의 유니폼 교환 영상이 소셜 미디어에서 큰 화제를 모으며, 호주 축구 협회(AFF)는 \"이것이 바로 축구다!\"라며 찬사를 보냈습니다.",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPbE1oTFZMTk1MMFYyWExENVNtaTFhZFRYTHBFNC1Jakd5MDBEZzdIdmtQaDUzbi1pM1htdkxLMFlqaUMwbzBvOVo2eTEtbkFXRkpjRl9ERkRkMzNpTTZ6SWhzbWEyVV9qRy1uaGdNcWdMSUZfalozMl9XbWZ1akI5MnktUEx5cVd5WDVYNmc5bWRZbWJXYk9fZkNfclYybUxndmc?oc=5",
-    "source": "Vietnam.vn",
-    "date": "2026-08-17"
+    "title": "한국 여자 축구, 호주와 3대3 무승부... 아시안컵 조 1위로 8강행",
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNOEZ2VmRKbXVuOER6SGIxZ2xNZTd2TjVMUjdSVkJOS0V0MlU2dmZsd3pEUmtub3llUHFEbU9FcFVZUUNXSV9ncFdPVDhmbkpWNUQ4Z2FPaGpxQWlmYmE2UzRsNm9ESTQ1MlpRV0VPeDZUWTY5LXpZLWg0dGNPc0o4bTJEVQ?oc=5",
+    "source": "조선일보",
+    "date": "2026-03-08"
    }
   ],
   "튀르키예": [
@@ -539,10 +539,10 @@
     "date": "2026-07-24"
    },
    {
-    "title": "“가족 건드리면 떠난다”…독일 대표팀 감독, 취임 첫날 경고",
-    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBrSzY3eFYwS0c4MG5zdnRqcjVOTUk3OUFFU00yV1FwNksxSFVaSVQ3TWtJSmV3MnJpVXl1SGRyeHJqMFlKd1E?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-07-25"
+    "title": "'명장' 위르겐 클롭, 독일 축구대표팀 감독 부임…2030년 월드컵까지",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5uZEg2eFBIdHZiNTdWeGVRWVQ5Zl9FNmFOMU5hbUNTMkt2U2szMFdTSnlhalBxTDlSNGl5c2VGT3lQOGJNQkZER3lkbGVFUVdmb1czUGJpQWplX3J3VHRxMdIBZkFVX3lxTE9ZYTg1UWlZV2ZRVWRydTNzcF9HZWhqamJMVTZrc21mb0ZpNldoTHNaSTN3Y1dVRkd2TTBWbHJvb0ZUbjNKa3hLTVIzQldWV0hCemd6X2RBdE9FbmNpTXBEcnVRV0lvQQ?oc=5",
+    "source": "뉴스1",
+    "date": "2026-07-24"
    }
   ],
   "퀴라소": [
@@ -923,10 +923,10 @@
     "date": "2026-08-22"
    },
    {
-    "title": "[오피셜] '무려 10경기 출장 정지' 월드컵 결승 주먹질 추태 'FIFA 중징계 확정'",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9MZS15alJoUWJ2VFUxaERXMVhjOTAySG1Ed21jSDZzYVg3alZfc1FRVDdUWTJ0QlBxYVFLLWVtdlY1MEtWSE0xdk42anlER1l4TTloQVA2dnFKdVhuVWNsbGNsMmFodmRCMzRWMU12aHNSRXY0SVE?oc=5",
-    "source": "starnewskorea.com",
-    "date": "2026-08-22"
+    "title": "'스페인축구의 전설' 사비, 네덜란드 대표팀 감독 부임",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA4UXVSdTBGYlg1VTZHZ1dsZU5VVGF5N0Rwd2w4ZVZ3OENYQksweTZpNHhtb0ZiUnA4YlpwcEhfZGo3UXh2MEFCZ0t3YlFzanVreFRQYWlTSF9lME1M?oc=5",
+    "source": "뉴스핌",
+    "date": "2026-08-13"
    }
   ],
   "카보베르데": [
@@ -1071,12 +1071,6 @@
     "date": "2026-08-19"
    },
    {
-    "title": "[공식발표] 세네갈 대표팀, 새 사령탑으로 파트리크 비에이라 선임...비상위 만장일치 승인",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE82Wnl0OURoRFd2bTF3ZWlOdEI3czlOZEN0cjFhWTRlZ0wxTXQ1M0VKSU1zX3cwSnJpeFVYbzZremdPUjFBQ094RGRpNGo2WUxUbmdDNQ?oc=5",
-    "source": "OSEN",
-    "date": "2026-08-19"
-   },
-   {
     "title": "북중미 월드컵 32강서 탈락한 세네갈, 새 사령탑으로 프랑스 레전드 비에이라 선임",
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByNk5MTU83YXVFaEZscTNWT0tyeUYzQl95TDRGcDlOblJIejZBMmJsZDA3YUl6YkRFYm9nVmhRdENsRFdRUE5vSHdLZ3pleTlVM2VKWW1MMzNiUjFa?oc=5",
     "source": "네이트",
@@ -1087,6 +1081,12 @@
     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE53ejRLNkpxd1BiRU9LeUN4OGIyRmlvNVQ3bkg4RlJxaTVQMDgxcmxyeVFKVGxURFZjbFg2TWp1LTYwVVptS3RiWkhQbnJGZUh4dXlWWg?oc=5",
     "source": "xportsnews.com",
     "date": "2026-08-19"
+   },
+   {
+    "title": "한국, 월드컵 조 3위 경쟁 ’7위’로 하락…세네갈 대승으로 32강 경우의 수 감소",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MQ0RWczhFY3dfdFZZT0x6NE9YNXk4YTd3M3R1a2Zya1FvVi1Pdzh6NUFaZktiLXZmc09FcDJhWWl0em52T0J5VnRaRG9rbnFhR3hiZlp3d1NBN3Q1cG1zZE1PUG9UWGs?oc=5",
+    "source": "연합뉴스TV",
+    "date": "2026-06-27"
    }
   ],
   "이라크": [
@@ -1155,9 +1155,21 @@
   ],
   "아르헨티나": [
    {
-    "title": "메시의 팀 동료 세 명은 2026년 월드컵 결승전에서 싸움을 벌인 혐의로 FIFA로부터 거액의 벌금을 부과받았습니다.",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNcnBtT05fcExjRERVNDJNZjdPeXRKTUFlMDkxVnA2QnJOYjR4aXpxQTRRbzYtVG96WW5rdnZNUjczcWo0d0dPZUROampwWmExNjZuRTBwWmh3bTFxQmphWTNqY3Y0cTZYZlV1RFFxR1JMWnNCdzZ1MjFGaGQ1MURFakJYMFBubDhXeE5XazdaZ3VRV0ctQ1pMQWpuc2szYUZlNUE?oc=5",
+    "title": "[오피셜] FIFA, 아르헨티나 대표팀 징계 확정…결승전 주먹질 파레데스 ‘10경기 정지’·정치적 슬로건 협회에 1억 벌금형",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE0xS0dibWhjdF9vSTJfMG5WaWRvZVZtSnJEbGItNE9wQnFWMFM0bWtQQ3lPQVVvcTBnMnFRS0dhak1nOS1YUTlJc1BCOUJGdU0?oc=5",
+    "source": "v.daum.net",
+    "date": "2026-08-22"
+   },
+   {
+    "title": "FIFA는 월드컵 결승전 후 싸움을 벌인 파레데스에게 10경기 출장 정지와 24억 VND의 벌금을 부과했습니다. 아르헨티나는 어떻게 되었을까요?",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOR1dHSGw1bEEtQURNZmxWS1lhV3dSaFRpTFpBRTBweFRvLXZ4M1hrOENmVS1WWE00Y213RTM4b19TeGRDQlFQMHlXZ2ZWZ0dYX3YtSU93V09aamR2MHBJNnVPU2p4cUllaHdBZ2JsdlkzUkFLSVh0RnM3M1VKQXREaTRxd0VoVWwwTmNPcW1LYVJTVkpEODUtc1hnLVg1bVZvb05RVlM5U3NmcnBkck02bEVueENWLWVVU3RnQkVGR3h2S0E?oc=5",
     "source": "Vietnam.vn",
+    "date": "2026-08-22"
+   },
+   {
+    "title": "[오피셜]우승 뒤 주먹질 후폭풍…파레데스 10경기 정지, 아르헨티나 관중석도 반토막",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1OaGlSYWY0X2lDTEkxUjg3VlhjQmNaR3hqLWNwMkxKM0s4SFgxTzcybGNQV3BYUjB6MldVMm5IQmxSQmFUNE9wVkUyWEwzdHFINlY5U00xMm5pOUpkc0HSAWNBVV95cUxQNnFZUGc1WUM1a3VjRWI0Zm9veFltWmRrb2NDcmgxZ0VERmdrV3EtZG9mZTNCUTAwaUxacHNiZFZ1bnpHVGJkcnY4d0FrMk50YnJLWWJJMkJRbEw0elNqdXVfanc?oc=5",
+    "source": "스포츠경향",
     "date": "2026-08-22"
    },
    {
@@ -1167,21 +1179,9 @@
     "date": "2026-08-22"
    },
    {
-    "title": "[오피셜]우승 뒤 주먹질 후폭풍…파레데스 10경기 정지, 아르헨티나 관중석도 반토막",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1NTl9kVHdwX2NKRzdXQjVzeTRjUlFvUjhWNjZJLUxPWXpnem5LZy1PaklVSXBVaUNNMHV2MERVMUVwTE9PLXp1OHdyNTNBSjYzbjlaLVdVQmozT2g3?oc=5",
+    "title": "FIFA, 월드컵 결승에서 난투극 벌인 아르헨티나에 중징계",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5OTDZ1cTNPQUd0WVh5N0Y4X0dQM2UtbmMzeTdoZ1NkUmZJd0t4YWJiNEFuSTRTZXdNYU00a1NfNFdpd0czaTRvOEdvNEVuSWFFcWNnOVNoV3NpWjA3?oc=5",
     "source": "네이트",
-    "date": "2026-08-22"
-   },
-   {
-    "title": "FIFA, 2026 월드컵 사건으로 아르헨티나에 역사적 중징계 처분 : 남미동아뉴스 ; Paraguay Times",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE90Q21KcVlFZjZlUklldHI5V0FDRFhpV1Z0cHBHNkhNZDhHWVljQVo1dW1ab2hPQ1F3Zkh3UmRmSGVDUGlSVVVFVmxadHBFZXNSclg5alRZODFrUQ?oc=5",
-    "source": "뉴스케이",
-    "date": "2026-08-22"
-   },
-   {
-    "title": "\"대충격\" FIFA '오피셜' 공식발표, 월드컵 역사상 최악의 추태, 끝내 중징계 확정...\"대표팀 10경기 출전 정지\"→\"총 벌금만 7억 7000만원\"",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBRVVlGUTlEamZNRVV5aDlxWjRnSFlBajN4eWdBYVVsRmpENDNtTXFqZ1JUaWVNLXQ5SXNEOTRQNHhlcW9NaW9QUk9CbHh3YXc4eDdaTXZYc2FBVzZ1RW51bW1JOFlHaGhkOU5xZkRrT1hPWGdpaWM3aFprcDlUZw?oc=5",
-    "source": "스포츠조선",
     "date": "2026-08-22"
    }
   ],
