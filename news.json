@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-22T20:48:08Z",
+ "updated": "2026-08-22T21:17:50Z",
  "byTeam": {
   "멕시코": [
    {
@@ -463,12 +463,6 @@
     "date": "2026-06-12"
    },
    {
-    "title": "한국 여자축구, 호주와 3-3 무승부…아시안컵 조별리그 조 1위",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9vZWpBSWd0Q3MyQU8wa2U2R3MtZFdxZWc0YkN0T3JfbDAtYS1tVmZ4ZU14bTI4RXRQNXBGckNCeEU5cjBUVUV3WGhnSjY1WHl0bmpuZXNTUlJWcGPSAWBBVV95cUxOMGJFdjFEUEZRaE56c2NHREtDaGJ0UmdFbS11S0t3YkRHM1pfQk1udnBZMXRydDF4YVk5Z3RJSEMtNXlWMk42eEk5SjBoTVp4bTBsM2ZQaGFVNWlscWQ4NUc?oc=5",
-    "source": "연합뉴스",
-    "date": "2026-03-08"
-   },
-   {
     "title": "호주-파라과이 무승부…한국 3위 경쟁 6위로 추락",
     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1teEs5VTdqY1FMZ0Z4WFU1RzViTlE2dVkyUjVMbndfU1J0bUJ4dUdSVWZWUUQ0MU10OU9vNGx1Q05sMC1EVXVENjlwelA1QjdJc1h4cVQ2N0V3dGlvUWNLXzZNSjBZNFNJYzBIb2JvRGczRURQ0gFmQVVfeXFMTkF6WWREeGk4aklhRlIyYjhtN0NCd1BiaDZPVzAtSVNYSmtPSzhZc25oeXd4U3hJZU9vVkJ1eGFERGhES2pVWVdUOUNpbkhFWDVBNy16ZjNKY3BqV2RXZjN1SHJpaDZR?oc=5",
     "source": "동아일보",
@@ -479,12 +473,18 @@
     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNOEZ2VmRKbXVuOER6SGIxZ2xNZTd2TjVMUjdSVkJOS0V0MlU2dmZsd3pEUmtub3llUHFEbU9FcFVZUUNXSV9ncFdPVDhmbkpWNUQ4Z2FPaGpxQWlmYmE2UzRsNm9ESTQ1MlpRV0VPeDZUWTY5LXpZLWg0dGNPc0o4bTJEVQ?oc=5",
     "source": "조선일보",
     "date": "2026-03-08"
+   },
+   {
+    "title": "이란 여자 축구대표팀 호주 추가 망명…이란 \"납치 행각\" 반발",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9QbDBSbV9ucjQzUGVocW5aNHk1d1IwX1NtVTJBR2gwZHZYMGFOYUJnbm41NzMwdEExc1NYdkdFX1A3Nk1fZ3NXNjNSOW1NeFRRdG4yZWlR?oc=5",
+    "source": "중앙일보",
+    "date": "2026-03-11"
    }
   ],
   "튀르키예": [
    {
     "title": "'세상에' 이런 월드컵 출정식이 있다, 수천대 차량 호송 행렬에 입이 쩍…튀르키예 대표팀 역대급 출국길 화제",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4yUEZsa1NMbm5nQXBTajFFLTJIaUpwZEktallxZVRfNWlxektWdmpySjBvY2s0UXlBR18tazYtWE5sVFE3TXhhNTZmdzU0Rnc?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5iSUNBLWtTYmZSRF9pcjZjNkxiSEJfSGFsVEJTWVZTcFRNQkdOcVowMHFCVWRJTVBxVFVBTmtXRG5zNUNGT3c?oc=5",
     "source": "v.daum.net",
     "date": "2026-06-03"
    },
@@ -675,6 +675,12 @@
   ],
   "일본": [
    {
+    "title": "‘일본 심판이 한국에서 성 접대’ 논란에 일본축구협회 \"증거 없다\" 결론",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9NSTJZWS0zdmZlTmtIVEFaOFN3TWUzck1TaUM5cFRLZGRsaU0wSXFGSkl1S19WeUJqZ0R2ckJKYXo2QjhEa2xJeU5UdF9PNVd4enc?oc=5",
+    "source": "JTBC",
+    "date": "2026-08-23"
+   },
+   {
     "title": "한·일 축구 미래조차 격차 벌어진다... 일본 U16, 유로 예선 '파격 참가' 확정",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5GQVE0ekIxaUVaX0x4VHRDczFXTXVhYTYyNWoxVUpUVkxKTXNyeVZMZVRMM3ZiU3d1WGtIc1YwbTdzdkhJVnZKbXQ5eEQ4VDEwdjRCLURISDUtWVBPNkJxUnBKak16MUE3b25rbnF5WnhibGxEOGc?oc=5",
     "source": "starnewskorea.com",
@@ -697,12 +703,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Sel9OWmllaTZUSlBiTFdFUmVLS0NXSjMwei1XcDNGRlpFQ3Y5ZkgxakpuOFFRY1liUGNpdFR5TUlrZC1Bd0hVTHZDNjVReFZBQmxjTDB4OGxrN1XSAWBBVV95cUxQZ0ozcUszbnJjc1lqakZLZk5qR2xIbTRzdy15MkREeWZvb01sTlJsTTFrTnBWN3lTdW5GWUJQN3ZlUkdkVlZ5Z2pFeGxCYms0emJxekNYb2dkWVhmbkpwd20?oc=5",
     "source": "연합뉴스",
     "date": "2026-07-28"
-   },
-   {
-    "title": "'4년 전 항저우서 결승전 역전패 아픔' 日 감독, \"16년 만의 아시안게임 금메달 목표\"로 설욕 노린다",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWGREcnZ4UHNMSW8wSm9HM0hPVWlmdWpVdllYTHlRMVhrS041Vko0MjJvV2NPVDMtWUZ3czNfTzlGU0kwQTJDTTA1azdFZVRlLWpUN2hucXItcnhNQlFMcUM0ZG8tV1dZWGJFanhTSzIyLTI4N053YmMwNkRnS0NxY0pPcG9XTW91NlRz?oc=5",
-    "source": "조선일보",
-    "date": "2026-08-01"
    }
   ],
   "스웨덴": [
@@ -783,16 +783,16 @@
     "date": "2026-08-18"
    },
    {
-    "title": "판 보멀, 벨기에 축구대표팀 사령탑 되나…현지 언론 \"계약 임박\"",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE52RHZqam9HeXBEV0RJTmRkSW91OGZPZ3FJZGJUVkpjaWRaYXBXTUx1SlpleFF5T2FDZ2pVOFBYNVFUMEpqNlJtT3NLTlpVVGxhNi1pTTBwbmFrdWJIcWVrTVlqb21KZ00?oc=5",
-    "source": "연합뉴스TV",
-    "date": "2026-07-22"
-   },
-   {
     "title": "'월드컵 8강' 벨기에 축구팀 감독에 네덜란드 '전설' 판 보멀",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBpb2pOcXFRM0QxbW42YWNzMXhxbHlOdHV2elhjZmJJRzNUbzRVUlI4QzVYWGdTRGowVGZmelhvM0RzWWJtRnotMjg5UGZnN2c1QlZHcEJnU05Jb03SAWBBVV95cUxPQXJKby13S0o1UlM4bHNodkU5R01JU0pPZ2hDSkttTlJZaGJTai03NkRSSHVVX2J0UTlMWGpza19aY0xrSEZ1Q2xFTm1JZXRYSDN4SThObVFTVE94LWw4YkU?oc=5",
     "source": "연합뉴스",
     "date": "2026-07-25"
+   },
+   {
+    "title": "판 보멀, 벨기에 축구대표팀 사령탑 되나…현지 언론 \"계약 임박\"",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE52RHZqam9HeXBEV0RJTmRkSW91OGZPZ3FJZGJUVkpjaWRaYXBXTUx1SlpleFF5T2FDZ2pVOFBYNVFUMEpqNlJtT3NLTlpVVGxhNi1pTTBwbmFrdWJIcWVrTVlqb21KZ00?oc=5",
+    "source": "연합뉴스TV",
+    "date": "2026-07-22"
    },
    {
     "title": "미국 선수 '출전 정지 번복'...벨기에 “FIFA, 오늘 만우절이냐?” [앵커리포트]",
@@ -803,8 +803,26 @@
   ],
   "이집트": [
    {
+    "title": "두 아내의 난투극…이집트 축구 영웅, 그 자리서 실신",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRR050N2pNcGJBODQ5SmE0MkxKXzRQbzE4QUpKclhaLS1WMUphbWRuRlR4UTZUcVF4Y0x4XzlxdThxejQwa255cmhveVJmMEpEajdFWmlGeV9RQQ?oc=5",
+    "source": "한국경제",
+    "date": "2026-08-19"
+   },
+   {
     "title": "첫째 아내 vs 둘째 아내 \"막장 난투극\" 지켜보던 이집트 국대 감독은 '실신'... \"싸움 직후 첫째와 이혼한 이유는?\"",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5oN0xlLVphelI4RnRaNFV1YTd4VHJkZzRNVUhhMFB5VzlfQnV1dnhaTTlJRzBxOGR4NjJXMjh3TmtYU0dxLUZhNk9DOFp5OGc?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBzVkh3Wlg2bFlVMzNTT09nUGdjQ3dvMHllX2lZUDdnQ180LVJYdTc4aU5Rakx1Z2I3bWJVM3A3OGE5blFEUkR0c3M3dTBHUXR3ekFMLUZKN3duQm8tekpwMXhiaF9jQm12QTB3aVN0by1wMk5UOFE?oc=5",
+    "source": "starnewskorea.com",
+    "date": "2026-08-19"
+   },
+   {
+    "title": "국제인도국제연맹(FIFA)은 호삼 하산 감독과 월드컵 이집트 대표팀 선수 두 명에 대한 징계 조치를 조사하고 있다.",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHFmLUMyaEctNE51WGF3LWVuQ2VXdC1TdmEwSlFFU1NZc0hjbnQwYWxQNVlmdFNKSGd5ZnJkRTNKZl9pYV9VZXppN0V4eUVmbF9wM2xUUUhIUnNVclBhNWw5X1pDRzJsZkdXNkJHSzJLVnZmZHhBcUVFN0VJbXNXTENPMmpZTmtvR1NGbEpIMXd0eFdHeFY0Q2txUmZGUVJveXVTYVA2ZGNNZmloQ0VnZXlR?oc=5",
+    "source": "Vietnam.vn",
+    "date": "2026-08-21"
+   },
+   {
+    "title": "두 아내 간의 휴양지 난투극…말리지 못한 이집트 감독은 실신",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5TdkFJV3pGVThRZFo3c1d5NHdSY05QME9MRkdBRXc5R0x1WjhMX0JsMUJ6ampvZ3JOV1A4dEw2cXk5MzNhMEE?oc=5",
     "source": "v.daum.net",
     "date": "2026-08-19"
    },
@@ -813,24 +831,6 @@
     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1CZkIwMk5tb0FHWWVremt4WlFFVmJBamJ4Z2FoZ2M2dnF4cXZLY0tCN1o0Vk9HNnVMNTkxNkoyTkJQcVNxVW8zVFAxSlhFRFFrVTB6LTRnMExUMXZPUTdBdHRFR3BPMGs?oc=5",
     "source": "연합뉴스TV",
     "date": "2026-06-22"
-   },
-   {
-    "title": "[월드컵] 이집트축구협회 \"아르헨티나와 16강전 심판진 퇴출돼야\"",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE05TTVKTVp0b3JsZVBWeFh4SC00VjFFR2pwWjJmR1ctUWtoNEMzMElZMTBDXzh4RHhYQ2J6ekc4cFJFa1NCUmtjUjRoLUhmX2Nhd0wwLUdJblI4eEXSAWBBVV95cUxOZDhYWWRsVzRKcXdlUEJJeFFCbWFvb2ZlNElxLU1iUlJucDEyOENWT1JoYVFaZXZuUGt5b3JMRFltb2NXWU9aMllJSU9rNGY2UG0yaTRtbVRzblY0MzZCQXU?oc=5",
-    "source": "연합뉴스",
-    "date": "2026-07-09"
-   },
-   {
-    "title": "“공정하지 못한 경기였다” 15분 만에 3-2 역전패 이집트축구협회, FIFA에 아르헨티나전 심판진 공식 제소",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0xeHZJaE0zNnlKYWE4SlpQcWs2Znh2UmdBbWRfc1M3SWlfa1hhMURzVS1MUi1fRVg2Zzg3Q2dUTERfQ2xBbGFWcUhSOFRwaFE4Tk5aODNNektlOUF0VGfSAWNBVV95cUxPRDhsQk1iZXJxTlExVVJIa1J2RzZZMmlqYXJBQnBFMFBPdTQxVmpGb1lYZ3REbUVMUUMwYmw4Y3RjcThiVHk4QWFaMVdnTXBGT3dOT1NYQUdfLTNhQVdnSGNPeUU?oc=5",
-    "source": "스포츠경향",
-    "date": "2026-07-08"
-   },
-   {
-    "title": "이란, 이집트와 1-1 무‥한국, 32강 경쟁 8위로 밀려 [월드컵]",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90OEpUSEZfRGtqREk0MkNvMmFadk1JQWZkMDlNWmx5am1sRDExNnBTek1jamRpN2s4a2g0RlYyNHFzQ1RrNEJLcWxfYmJENEJRMFNYVzdOcWlEZVc4RlRZME40NzV4ajZlY3BsWmlJdGhqa2o0WGfSAXZBVV95cUxOdWlxSDRTOHJBV3FQV0pzU0NrUVZsdlh2WVZORjdwV0lQUURBd2djYU9FSUQwaXhhemNQS2NyOHZhYzVaY1ZFa2wxWHI2Q1Q3MHFWalk0QXZOZ0R6ZmtERFpQOHhMUlFKdDBqUzVzaURIdjNISlZ3?oc=5",
-    "source": "MBC 뉴스",
-    "date": "2026-06-27"
    }
   ],
   "이란": [
@@ -899,34 +899,34 @@
   ],
   "스페인": [
    {
-    "title": "스페인이 17세 이강인 노렸다…‘귀화 타진’ 8년 만에 다시 소환",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE40NWFUZmU4NlAySWtkVmFlM1FWLUVBLXltSGZ6UXgzZlFXSG12SjJLMzRiTUQzWi1fZ2RSdHVFZ1BZUFJTcEpQRk1mNHNFdGZ1R01pck5leGh5S0UxUnk4WU1fSFNvTVNVa1E?oc=5",
-    "source": "OBC 뉴스",
-    "date": "2026-08-22"
-   },
-   {
-    "title": "女 대표팀 선수에 '강제 키스·과도한 스킨십' 후 퇴출...'3년 징계' 해제 목전 둔 前 스페인축구연맹 회장, 축구계 복귀하나",
-    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE02NW8ydDJ2UV8tZFlvRlVRQS02UXl6MExpM2NCYThLcnAwaUxWckExQ0dTV0pDc1R5dXpmTl9VVENKRW1kYkE?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-08-21"
-   },
-   {
     "title": "\"스페인축구연맹, 이강인 귀화 진지하게 고려...시민권까지 제안\" 韓 축구 에이스 사라질 뻔했다, 데뷔전 먕활약에 과거 집중 조명",
     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBQci1CQjRyaDVPS0ZuZThpY3lDUXVYaVJXa2NFc0xPZVhQaVVyQlVQb212RlFnQ0NhRU80NFZhZmpMYnl6MzAxNE0tSDhKbmpPT05BV3ZxV1JyUWEta0dCU2p3b3d2NG1SVFhVQXZoYWM2WGFkNW5wUm5sSGtIdw?oc=5",
     "source": "스포츠조선",
     "date": "2026-08-22"
    },
    {
-    "title": "축구대표팀 임시 감독 후보 5명 중 3명 스페인 출신…20일부터 온라인 면접",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0ta1BGeG5vMXo2enNkWGgwampVNkZFdEN4cGRGNEQ3YW9vMjdyWWZRM1NtQ0EtUVgyaG8xNTdTSWZhX08ydDBzcDd4RHF5MlJPQjEwedIBWkFVX3lxTE1hX09zMnk4Vjg2azRQMDh0NndYd2pPd1YtS3F0X2VHSmZiM1pvVG1JYnhtdVhxLXY3TDFzRU94VXJ2cTQwbVBxbDI2Qm9xV1F4dnh6OWZwbDlSUQ?oc=5",
-    "source": "뉴스1",
-    "date": "2026-08-19"
-   },
-   {
     "title": "이강인에 빠진 스페인…\"축구 실력뿐 아니라 마케팅도 뛰어나\"",
     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IVkR4WjNLeTNET25YalROSzlDLVExSDRCNUtqS3ZkT1BVVG5MM2tZbU1EUE43NnQxR1FfWmxCX1ROcm40bDgzQUpSeGluYVh4dnZtN0JxRzBGckN1eElKd9IBeEFVX3lxTE1qdExpYm9NRFpBRGw5aWRJekljRkplWFN0WmhvelpoVUc4c3N4NHQwVEpaSk1sMzlVaERqSWNOblpTM3VlNExVamh6Q0ZYV1ZPc1E4N21JR1pseXlnTGhoWVNMWXJ2Q3FLT2RDeDd6dS03QXNOc2lETA?oc=5",
     "source": "뉴시스",
     "date": "2026-08-21"
+   },
+   {
+    "title": "“캄사합니따”…스페인 팬 홀린 이강인 ‘마법’",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1wbXpqVnF0dVUyU1VQVDhVZGVKSjl1M2c2aFUtcmFZcEJ1NnpEQWpRVmtZWHR6SGY2a25EVFd0UmlsSXUtVG16UjdrT01saGNyQkdzWWs5UGJRVElyd0g5QWRkQXg?oc=5",
+    "source": "한겨레",
+    "date": "2026-08-20"
+   },
+   {
+    "title": "女 대표팀 선수에 '강제 키스·과도한 스킨십' 후 퇴출...'3년 징계' 해제 목전 둔 前 스페인축구연맹 회장, 축구계 복귀하나",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE04Mkdkd21fOHpQdlhpWmdJeVE1YmJDdkY5cW05SVFMTlp0M3NKNjJiR2dnQ0dWeEZTRFBfVzR4b3d6NTlOS1YtUV9HMkkydmM?oc=5",
+    "source": "v.daum.net",
+    "date": "2026-08-21"
+   },
+   {
+    "title": "축구대표팀 임시 감독 후보 5명 중 3명 스페인 출신…20일부터 온라인 면접",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE44SldWdnBFczk0QmpxdDlOdnFvTExObllOR3I2Vk96RlQwVl9RY3RLN015T0hDMTd3MlhlY1JzSENMX3BhSWMwYW5fbWhaUjZvZEVkaGxDWGtNV040RmZhTDlOd2lYaThM?oc=5",
+    "source": "네이트",
+    "date": "2026-08-19"
    }
   ],
   "카보베르데": [
@@ -1167,10 +1167,10 @@
     "date": "2026-08-22"
    },
    {
-    "title": "'월드컵 결승전 난투극' 아르헨티나... FIFA, 중징계 철퇴",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9UWktVUEVjR0I3TVlCakNCOVJDdC1aZEhFWEM1aEtqemZrOW9nZ0otQUxxai1kMzhPX2F4TnNRT0F1S0FCbzFORkQ1dHozRWc?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-08-22"
+    "title": "월드컵 결승전 패배 후 난투극 '징계 예상했지만 가혹하다'…'10경기 출전 금지' 파레데스 항소 예정",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9HaVZCWFJzV3VjT0l2RnlHdU9hcGxuRUdXTlZUMXBMNDdBQWRFQlZhcnlzY2gwd01OMXNVZWQ4RjFnWjFhc0xoTi1zbHNHQWRlZ2h0UW1ZN0FTRmI1djZmeENfWUhodw?oc=5",
+    "source": "마이데일리",
+    "date": "2026-08-23"
    },
    {
     "title": "월드컵 결승서 주먹 날린 ‘메시 호위무사’...10경기 출전정지",
