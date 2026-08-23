@@ -1,5 +1,5 @@
 {
- "_ts": 1787442133218,
+ "_ts": 1787528555447,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -1190,34 +1190,34 @@
    "chR": 0
   },
   {
-   "code": "THA",
-   "name": "Thailand",
-   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
-   "id": null,
-   "r": 91,
-   "p": 1254.93,
-   "ch": 4.13,
-   "chR": 3
-  },
-  {
    "code": "CHN",
    "name": "China PR",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/cn.svg",
    "id": null,
-   "r": 92,
+   "r": 91,
    "p": 1254.81,
    "ch": 0,
-   "chR": -1
+   "chR": 0
   },
   {
    "code": "BHR",
    "name": "Bahrain",
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/bh.svg",
    "id": null,
-   "r": 93,
+   "r": 92,
    "p": 1254.41,
    "ch": 0,
-   "chR": -1
+   "chR": 0
+  },
+  {
+   "code": "THA",
+   "name": "Thailand",
+   "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
+   "id": null,
+   "r": 93,
+   "p": 1252.33,
+   "ch": 1.53,
+   "chR": 1
   },
   {
    "code": "BEN",
@@ -1265,8 +1265,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
    "id": null,
    "r": 98,
-   "p": 1234.34,
-   "ch": 7.14,
+   "p": 1236.94,
+   "ch": 9.74,
    "chR": 1
   },
   {
