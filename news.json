@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-23T18:56:50Z",
+ "updated": "2026-08-23T19:21:05Z",
  "byTeam": {
   "멕시코": [
    {
@@ -347,10 +347,10 @@
     "date": "2026-06-03"
    },
    {
-    "title": "[월드컵] 전쟁 이미지 때문에…아이티, 개막 직전 유니폼 디자인 변경",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5rUVdxbU0zb1ppaWtvSkZzamJKNjlYZG9BM2psZGRvakdTMTNoc05MZ3c3VmRhaXNsd1dTdjhTa2o3TEZOQUZPVzY5N1Z0d0Z4Wk1maWdON21DLXPSAWBBVV95cUxOQlBRZTNQT3RuM1oxZGdvZUNQdUxqQmNuT2M5NlZLTXFQQkdwSmN6YktlU3RRVnpfXzZVYnFicjd0X1dZME9JX1RLbzNRZ2FVNVBkZ3hGOWJvYmhlNnNXUU0?oc=5",
-    "source": "연합뉴스",
-    "date": "2026-06-11"
+    "title": "아이티 축구대표팀 유일 국내파, 미국 비자 받고 '지각 합류'",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1OY1pIQ19jTWYxb09xX3RIM25qTUtqUnJKd0dhWjFRVDRubndHR0RvSFg0SjhaYTRxTkQwOHExVWtCQTd5c1NkeUZpRUUwMWFoWkRv?oc=5",
+    "source": "네이트",
+    "date": "2026-06-03"
    }
   ],
   "스코틀랜드": [
@@ -655,21 +655,21 @@
     "date": "2026-08-13"
    },
    {
-    "title": "네덜란드, 축구대표팀 감독으로 사비 에르난데스 선임",
-    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE52WEZjYnVTcTU4NTA5OWJNc1YwVWo1UDFNYlM5Ykt3U0J3Q05rUmY0WldtOU51Y2Y4cldqUXdjc3dqM21ON2VMbW9RYw?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-08-13"
-   },
-   {
-    "title": "’스페인 전설’ 사비, 네덜란드 대표팀 감독 맡아",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVNlVDUkxJSmxEMGNLdW9GTmtCZFUxQ3JKYmZvUjgyTF9TSEVXRWpKNVgzeVhaQ19tU3FPbjVyUGIyZllrb0g4YzNPOUVGVHRRQ3pvQlI1Y3hZYmY5bGFzZ0JrOUwtZ0E?oc=5",
-    "source": "연합뉴스TV",
-    "date": "2026-08-13"
-   },
-   {
     "title": "한국행 거절하더니 \"난 네덜란드 축구의 아들\"... 사비, 슬롯도 제치고 첫 대표팀 '48년 만의 외인 감독'",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBRTXg3T0ExXzlNYk5Eb1RkZEoyU2xkUzFYOHkxOGt1WlJqVVpNeXFobmhTdnlyb1phQ2VKcFQtRlFzcDQwdFp5X0ZBbDAzRTZxc00tcXdad3RJcm5GM0ZPaXFUNm00UkR0Z25rQUgya2lNV3Z4aUE?oc=5",
     "source": "starnewskorea.com",
+    "date": "2026-08-13"
+   },
+   {
+    "title": "‘바르사 전설’ 사비, 네덜란드 축구대표팀 새 사령탑 선임",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE44alRGaTNlX1M0b01tdHc4NFlsZE1ENUZaalJvYmZnaUdkemlYVEU3Y3o2QTFvSWNGXzZCT2NmRllkcUU4eVBSaEtoRXVsZ29yWVVPLQ?oc=5",
+    "source": "이투데이",
+    "date": "2026-08-13"
+   },
+   {
+    "title": "네덜란드, 축구대표팀 감독으로 사비 에르난데스 선임",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE52WEZjYnVTcTU4NTA5OWJNc1YwVWo1UDFNYlM5Ykt3U0J3Q05rUmY0WldtOU51Y2Y4cldqUXdjc3dqM21ON2VMbW9RYw?oc=5",
+    "source": "v.daum.net",
     "date": "2026-08-13"
    }
   ],
@@ -681,10 +681,16 @@
     "date": "2026-07-03"
    },
    {
-    "title": "일본, 월드컵 최종명단 발표…유럽파 23명에 미토마는 낙마",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04Ylh1SVdqOXJ4Z1VVcU5pTVVjVDRkVWZ0SGQ5dWJwbmYzZ2UzZkNlek9aM2JBZ2lMSFRDYUljQ0dnY05UM0ZZSGRQcTBDMDZWMmhhOC0yRW42bTTSAWBBVV95cUxPd0w0VVlKTnBZT2Rwb1BhUHlhTGJzR3BpM2V1MUZTZlZqUng0SS03bV92a0lPdW9MNE8zRVA4ajZFUElVcjZMSm5Tc2NsTllYajZNNGdBM2E3dEJQOTlnM28?oc=5",
-    "source": "연합뉴스",
-    "date": "2026-05-15"
+    "title": "한·일 축구 미래조차 격차 벌어진다... 일본 U16, 유로 예선 '파격 참가' 확정",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5GQVE0ekIxaUVaX0x4VHRDczFXTXVhYTYyNWoxVUpUVkxKTXNyeVZMZVRMM3ZiU3d1WGtIc1YwbTdzdkhJVnZKbXQ5eEQ4VDEwdjRCLURISDUtWVBPNkJxUnBKak16MUE3b25rbnF5WnhibGxEOGc?oc=5",
+    "source": "starnewskorea.com",
+    "date": "2026-08-19"
+   },
+   {
+    "title": "'일본축구는 선수육성 보법자체가 다르네!' 일본 U16대표팀, UEFA U17 유럽선수권 참가팀들과 친선전",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1zT2xERzdXU0VsRmtzR2FhdmQ1NWM1MDN1cHFvdGs2cXBveXZiVEx3RHNWRndDNk9MejJQV3pxcXJodXVBaUR4T1daZ0hiX0U?oc=5",
+    "source": "v.daum.net",
+    "date": "2026-08-18"
    },
    {
     "title": "일본 축구대표팀 귀국길은 축제... 팬들은 \"감사합니다\" 연호, 역대급 취재진도 몰려",
@@ -693,16 +699,10 @@
     "date": "2026-07-02"
    },
    {
-    "title": "韓 축구에 굴욕 안겼던 감독, 일본 A대표팀 사령탑 사실상 확정... 올림픽대표팀 '겸임'",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5DTjdVQ3FmSGxQeWx0MzZhWTUwa200XzJsNThKbTBlVmFLU0xZYUJWdzJrcWVDTWpNdXA4SG5xOGdJWXRnTFdwLTQ2dFZJWlBtQkNpUWxwRmcyM1N1VGZQWWRlbnlvOGNXRmx3c29hQ0xlbHZIbUE?oc=5",
-    "source": "starnewskorea.com",
-    "date": "2026-07-15"
-   },
-   {
-    "title": "정대세 돌변! \"일본 정말 강해졌다\"더니…보름 만에 日 대표팀 향해 \"한계를 봤다, 더 이상 뭘 해야 할지 모르겠다\" 악평",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9mdzBNZk1hVGpOUDB5NkJ4TldTM1puVmUzUmNlZ3NZTjhPTjlkTjFuYlQ0cEhMRWN6ZzVKejJsRk83S3JFdTl3bjJ0MjNCRWM?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-07-25"
+    "title": "일본 축구 스타, 대표팀 강화책으로 '한일 정기전 부활' 제안",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Sel9OWmllaTZUSlBiTFdFUmVLS0NXSjMwei1XcDNGRlpFQ3Y5ZkgxakpuOFFRY1liUGNpdFR5TUlrZC1Bd0hVTHZDNjVReFZBQmxjTDB4OGxrN1XSAWBBVV95cUxQZ0ozcUszbnJjc1lqakZLZk5qR2xIbTRzdy15MkREeWZvb01sTlJsTTFrTnBWN3lTdW5GWUJQN3ZlUkdkVlZ5Z2pFeGxCYms0emJxekNYb2dkWVhmbkpwd20?oc=5",
+    "source": "연합뉴스",
+    "date": "2026-07-28"
    }
   ],
   "스웨덴": [
@@ -803,16 +803,16 @@
   ],
   "이집트": [
    {
-    "title": "국제인도국제연맹(FIFA)은 호삼 하산 감독과 월드컵 이집트 대표팀 선수 두 명에 대한 징계 조치를 조사하고 있다.",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHFmLUMyaEctNE51WGF3LWVuQ2VXdC1TdmEwSlFFU1NZc0hjbnQwYWxQNVlmdFNKSGd5ZnJkRTNKZl9pYV9VZXppN0V4eUVmbF9wM2xUUUhIUnNVclBhNWw5X1pDRzJsZkdXNkJHSzJLVnZmZHhBcUVFN0VJbXNXTENPMmpZTmtvR1NGbEpIMXd0eFdHeFY0Q2txUmZGUVJveXVTYVA2ZGNNZmloQ0VnZXlR?oc=5",
-    "source": "Vietnam.vn",
-    "date": "2026-08-21"
-   },
-   {
     "title": "두 아내의 난투극…이집트 축구 영웅, 그 자리서 실신",
     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRR050N2pNcGJBODQ5SmE0MkxKXzRQbzE4QUpKclhaLS1WMUphbWRuRlR4UTZUcVF4Y0x4XzlxdThxejQwa255cmhveVJmMEpEajdFWmlGeV9RQQ?oc=5",
     "source": "한국경제",
     "date": "2026-08-19"
+   },
+   {
+    "title": "국제인도국제연맹(FIFA)은 호삼 하산 감독과 월드컵 이집트 대표팀 선수 두 명에 대한 징계 조치를 조사하고 있다.",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHFmLUMyaEctNE51WGF3LWVuQ2VXdC1TdmEwSlFFU1NZc0hjbnQwYWxQNVlmdFNKSGd5ZnJkRTNKZl9pYV9VZXppN0V4eUVmbF9wM2xUUUhIUnNVclBhNWw5X1pDRzJsZkdXNkJHSzJLVnZmZHhBcUVFN0VJbXNXTENPMmpZTmtvR1NGbEpIMXd0eFdHeFY0Q2txUmZGUVJveXVTYVA2ZGNNZmloQ0VnZXlR?oc=5",
+    "source": "Vietnam.vn",
+    "date": "2026-08-21"
    },
    {
     "title": "첫째 아내 vs 둘째 아내 \"막장 난투극\" 지켜보던 이집트 국대 감독은 '실신'... \"싸움 직후 첫째와 이혼한 이유는?\"",
@@ -1115,10 +1115,10 @@
     "date": "2026-03-09"
    },
    {
-    "title": "이라크 축구대표팀, 전세기 구해 월드컵 PO 출전한다",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1nUnhLZENPanF2WE5JM2Zhbml6Nmdmd21RQ0duaWlKZW12ajNOa2UySElHbzMtcmlXaGozOU9JYjg1VjVjbGpOMjRVSi1YTTVjRmNucnRITTZJZmVTakhaejB1bkN0cEE?oc=5",
-    "source": "연합뉴스TV",
-    "date": "2026-03-16"
+    "title": "발 묶인 이라크 축구대표팀…\"월드컵 플레이오프 연기 요청\"",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9KdlV4ODVpQ3BEWkpneXZyRU92X1BiV0ZoY1htNUZwcmFNaUdjbklpc3M1M2ZwV1NtbGEwY05MLXI1cEViSEJBZWZtZGFTWWJGTFhyWA?oc=5",
+    "source": "JTBC",
+    "date": "2026-03-09"
    }
   ],
   "노르웨이": [
@@ -1449,27 +1449,27 @@
     "date": "2026-05-19"
    },
    {
+    "title": "‘또 부러진 경우의 수’ 크로아티아, 가나 2-1 격파→‘한국 탈락 임박’",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5femVDVzFXRUlhS1R1ajVITUczN0U2RFFIWFZ2bjR1Y2lGOHBkOGlsMV9qUFFNSEg5Ui1wZ0VwNnJTSDNVVUZzSzh1TXk4SU1pdnhsYjdfZW5OdG1aUnN3VnpqVlVvaXh6T1JReTNnbUh2UQ?oc=5",
+    "source": "sports.donga.com",
+    "date": "2026-06-28"
+   },
+   {
     "title": "[FIFA 월드컵 팀 프로필] 크로아티아의 프로필과 팀 히스토리",
     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMmZLTVhMdmxyZ0ZmZUJOaW11YmZDVHBEMFQxcDVxY2JZS2pPUUFuUzE0bU9vNEprRmhKU0pENTBnd2VzWFBlSHpFMW1zckwwSzZja3MzRTRxWExncE80bVZLeDdrdklwMGRxblNYNWhCMHlxRktucXBCSVlzMFhPdVRLMjFfUW92eWtVTXNXSlN5ejREQ01iMnVYMzRoQk5fZnZjMGlpTElzWlB2czdB?oc=5",
     "source": "FIFA",
     "date": "2026-06-04"
    },
    {
+    "title": "맥카지, 크로아티아 축구대표팀 협업 캡슐 컬렉션 출시",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBQZDFibjIyZGxLdzJLdnJGc05YRjV0aHlfVW5Ibm5LTlhFUEFJMnBqR1hva0J2M1RMZ0MwTGlJWEoyeFhzbEliaEVhbWJHT1loTlpyeGNHdmFTWG1y?oc=5",
+    "source": "뉴스핌",
+    "date": "2026-06-01"
+   },
+   {
     "title": "[속보] 크로아티아, 가나에 2-1승…한국 경우의 수 1개 남아",
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZVFoVkdKVzBndFM2cWgzLWRMc21VZ2xVdnpIVlFCUmlKTy1zMlUtdTFRUV9iaUZxTWN5T2ctR2Q0c2xySml6SEtybkRGLWZxeXNLZ3k0aTlSSHJicEdod3NzZndqYUdxOG0wdnNDRTdlX291a1ZJbThQYVJYcG1ubHFkOFlpVXBBOTVDRkVR?oc=5",
     "source": "국제신문",
-    "date": "2026-06-28"
-   },
-   {
-    "title": "'A매치 202경기' 모드리치, 체크무늬 유니폼 벗는다…크로아티아 황금시대 마침표 \"10월 6일 스페인전 끝으로 은퇴\"",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBWaU04QWU4X0YxSnUyeFhHWC0zSTdET3lXRklRX0lFckkwa19xai1jczZmV0lCMjY3NzFFcFI4aDBaTUZJV1VxbEJucktQQllLV3lxSw?oc=5",
-    "source": "v.daum.net",
-    "date": "2026-07-22"
-   },
-   {
-    "title": "‘또 부러진 경우의 수’ 크로아티아, 가나 2-1 격파→‘한국 탈락 임박’",
-    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5femVDVzFXRUlhS1R1ajVITUczN0U2RFFIWFZ2bjR1Y2lGOHBkOGlsMV9qUFFNSEg5Ui1wZ0VwNnJTSDNVVUZzSzh1TXk4SU1pdnhsYjdfZW5OdG1aUnN3VnpqVlVvaXh6T1JReTNnbUh2UQ?oc=5",
-    "source": "sports.donga.com",
     "date": "2026-06-28"
    }
   ],
