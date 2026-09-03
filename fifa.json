@@ -1,5 +1,5 @@
 {
- "_ts": 1788307766696,
+ "_ts": 1788394189233,
  "mexico": {
   "r": 10,
   "p": 1754.3,
@@ -1215,8 +1215,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/th.svg",
    "id": null,
    "r": 93,
-   "p": 1252.33,
-   "ch": 1.53,
+   "p": 1252.26,
+   "ch": 1.46,
    "chR": 1
   },
   {
@@ -1265,8 +1265,8 @@
    "flagUrl": "https://cdn.ipregistry.co/flags/twemoji/vn.svg",
    "id": null,
    "r": 98,
-   "p": 1236.94,
-   "ch": 9.74,
+   "p": 1237.02,
+   "ch": 9.82,
    "chR": 1
   },
   {
