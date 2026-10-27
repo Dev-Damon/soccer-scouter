@@ -706,6 +706,7 @@
   // 토스 인증 로그인(프로필 필요 시) — Promise<{authorizationCode,referrer}|null>. 서버에서 코드로 토스 API+복호화.
   function tossLogin() { return (IS_TOSS && window.tossUser && window.tossUser.login) ? window.tossUser.login() : Promise.resolve(null); }
   void tossUserKey; void tossLogin;  // 로그인은 방식 확정 시 연결(현재 준비만)
+  var _adNavSeen = -1, _adUsedKeys = {};  // 화면 이동(route) 단위 광고 호출 기록
   function insertAdFit(el, unit, w, h) {
     if (IS_TOSS) {  // 토스: 애드핏 대신 토스 배너(320x50→배너, 그 외→배너큰이미지). 키 있을 때만, 없으면 빈슬롯(:empty 숨김)
       if (!el || el.getAttribute("data-done")) return;
@@ -719,6 +720,13 @@
       return;
     }
     if (!el || el.getAttribute("data-done")) return;
+    // 애드핏 정책: 광고는 사용자의 화면 이동 1번에 1번만 호출한다. 실시간 데이터 갱신으로 같은 화면이 다시 그려질 때
+    // (일정 탭 라이브 15초 폴링, 조별순위 갱신 등) 광고를 새로 넣으면 사용자 조작 없이 광고가 재호출된다(자동 새로고침)
+    // → 같은 화면 이동 안에서 같은 자리는 다시 넣지 않고 빈 자리로 둔다. (2026-10-27 애드핏 비정상 노출 정지 대응)
+    var _adKey = (el.className || "") + "|" + (unit || "") + "|" + (w || "") + "x" + (h || "");
+    if (_adNavSeen !== _navCount) { _adNavSeen = _navCount; _adUsedKeys = {}; }
+    if (_adUsedKeys[_adKey]) { el.style.display = "none"; return; }
+    _adUsedKeys[_adKey] = 1;
     el.setAttribute("data-done", "1");
     el.style.boxSizing = "border-box"; el.style.minHeight = (parseInt(h || "100", 10) + 60) + "px";  // 광고 자리 미리 예약(광고높이+라벨+패딩 여유, border-box) → 광고가 늦게 떠도 슬롯 높이 불변 → 뒤로가기 스크롤 정확
     el.innerHTML = '<div class="ad-label">광고</div>';
